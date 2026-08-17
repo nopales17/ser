@@ -41,7 +41,7 @@ Allowed statuses: `planned`, `active`, `done`.
 
 ## Phase 3 -- MicroGym
 
-- status: active
+- status: done
 - goal: implement zero-LLM synthetic environments and trivial baseline
   controllers with known hidden state and computable optimal or near-optimal
   behavior.
@@ -53,25 +53,46 @@ Allowed statuses: `planned`, `active`, `done`.
   can be compared reproducibly; noisy, failed, and abstaining trajectories are
   represented; raw vector costs and stopping regret are computable; hidden and
   evaluator-only information are demonstrably firewalled from normal policies.
+- result: MicroGym v1 froze 24 regimes and 728 episodes, produced 7,280 valid
+  normal-policy runs plus 728 exact-oracle traces, and passed replay, firewall,
+  cost, seed, and invariance checks. The candidate lowered the preregistered
+  scalar objective mainly through lower expenditure, but worsened decision loss,
+  produced zero observation-conditioned branches, and failed the intended
+  adaptive-routing test. The admitted finding is narrow; no broad hypothesis was
+  promoted.
 
-## Phase 4 -- First controlled real environment
+## Phase 4 -- Adaptive-routing falsification follow-up
+
+- status: active
+- goal: determine whether a preregistered public-model policy can exhibit and
+  benefit from genuinely observation-conditioned routing once STOP calibration
+  no longer suppresses the branch choice.
+- boundary: preserve MicroGym v1 unchanged. Make the smallest synthetic
+  policy/admission-rule correction; require positive counterfactual branching
+  and retain the same-model open-loop control. Do not add IDS, GitLab, fuzzing,
+  LLMs, graphs, or a new domain.
+- exit: a frozen follow-up either demonstrates a paired advantage attributable
+  to realized-observation routing, or records a clean null/negative result and
+  narrows or rejects that mechanism before any semantic/software expansion.
+
+## Phase 5 -- Evidence-directed semantic or controlled-software bridge
 
 - status: planned
-- goal: select and adapt a real environment only after MicroGym exposes a
-  measurable routing question; the IDS archive is one candidate, not the default
-  by inheritance.
-- exit: intentionally coarse until Phase 3 evidence exists.
+- selection rule: after Phase 4 only, use a small IDS bridge if messy semantic
+  evidence is the named unresolved question; otherwise prefer a minimal
+  authorization-oriented controlled-software environment when it answers the
+  question more directly.
+- boundary: IDS remains an optional validation instrument, not the trunk. A new
+  environment requires one concrete unresolved claim.
+- exit: intentionally coarse until Phase 4 evidence exists.
 
-## Phase 5 -- Active evidence generation
-
-- status: planned
-- goal: investigate intervention selection in a software/testing environment if
-  earlier phases justify it.
-- exit: intentionally coarse.
-
-## Phase 6 -- Generalization and learned policies
+## Phase 6 -- Controlled active software and GitLab authorization research
 
 - status: planned
-- goal: consider cross-domain observation environments, SERT, or learned graph
-  policies only after simpler controllers demonstrate resource-normalized value.
+- goal: test chosen inspections, executions, tests, or fuzzing interventions in
+  controlled authorization software, then progress toward real GitLab
+  authorization-vulnerability investigation if evidence justifies it.
+- boundary: cross-substrate environments, SERT, and learned graph policies remain
+  dormant until a concrete uncertainty requires them; remote sensing is not a
+  scheduled phase.
 - exit: intentionally coarse; no implementation commitment.

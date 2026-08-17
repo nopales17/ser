@@ -17,11 +17,12 @@ The canonical entries are `Q-001` through `Q-009` in
 - `Q-006`: whether any of the nine deferred coupling names has irreducible
   semantics beyond ordinary policy or updater logic;
 - `Q-007`: which policy stopping rule minimizes submission/abstention regret
-  under vector cost after Phase 2 made STOP first-class;
+  under vector cost after MicroGym v1's myopic rule saved cost but suppressed
+  routing and stopped prematurely in 30 episodes;
 - `Q-008`: whether SER and SERT are the right names;
-- `Q-009`: what cross-environment evidence, matched baselines, holdouts,
-  ablations, uncertainty analyses, and independent confirmation warrant
-  scientific promotion.
+- `Q-009`: what evidence warrants promotion after MicroGym v1 showed that a
+  scalar-objective classifier can pass without actual adaptive behavior; Phase 4
+  must require observation-conditioned branching or explicitly test only STOP.
 
 Questions remain in the cold map even after resolution. Resolution updates their
 status and notes, links the evidence or ADR, and preserves the prior conceptual

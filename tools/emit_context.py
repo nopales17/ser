@@ -468,7 +468,7 @@ def render_context_packet(
         if finding["notes"]:
             lines.append(f"  Limitation: {finding['notes']}")
     lines.append(
-        "The IDS finding is historical environment evidence only. It does not support the SER controller, scope-aware gating, sparse propagation, compression, learned policy, or substrate-independence hypotheses."
+        "The IDS finding is historical environment evidence only. The MicroGym finding is narrow stopping/cost evidence and explicitly does not establish observation-conditioned routing. Neither supports scope-aware gating, sparse propagation, compression, learned policy, real-domain transfer, or substrate independence."
     )
 
     lines.extend(
@@ -486,7 +486,7 @@ def render_context_packet(
             "",
             current["roadmap"]["immediate_next_task"],
             "",
-            "The IDS archive remains read-only. Phase 3 authorizes only the minimal zero-LLM MicroGym and trivial experimental policies needed by the accepted contracts: no IDS code/data copy, adapter, production runtime, model integration, graph runtime, or coupling-law implementation.",
+            "The IDS archive remains read-only. Active Phase 4 authorizes only a synthetic adaptive-routing falsification follow-up: no IDS code/data copy, GitLab integration, adapter, production runtime, model integration, graph runtime, fuzzing, or coupling-law implementation.",
             "",
             "## 11. Important non-goals",
             "",
@@ -515,7 +515,7 @@ def render_context_packet(
             "- `reference/LEGACY_INVENTORY.yaml`: canonical Phase 1 component classifications, contamination risks, and Phase 2 recommendations.",
             "- `reference/LEGACY_INVENTORY.md`: generated readable inventory view; never edit directly.",
             "- `reference/IDS_LESSONS.md`: concise evidence and design lessons from the archive.",
-            "- `experiments/README.md`: evidence admission rules and current no-experiment state.",
+            "- `experiments/README.md`: evidence admission rules and admitted experiment index.",
             "",
         ]
     )

@@ -748,7 +748,7 @@ def check_status_cursor() -> dict[str, object]:
     )
 
 
-def check_phase2_status() -> dict[str, object]:
+def check_phase_progress_status() -> dict[str, object]:
     _, current = load_sources()
     contract_data = emit_context.contracts()
     counts = Counter(item["status"] for item in contract_data.get("contracts", []))
@@ -770,18 +770,39 @@ def check_phase2_status() -> dict[str, object]:
     ]
     if not formal.get("phase_2_complete"):
         errors.append("phase_2_complete is not true")
-    if formal.get("specification_status") != "accepted_architecture_without_empirical_validation":
+    if not str(formal.get("specification_status", "")).startswith("accepted_architecture_"):
         errors.append("specification status does not preserve the architecture/evidence distinction")
-    if phases.get(2, {}).get("status") != "done" or phases.get(3, {}).get("status") != "active":
-        errors.append("roadmap does not transition Phase 2 done -> Phase 3 active")
-    if current.get("runtime", {}).get("built") or current.get("runtime", {}).get("environments") != 0:
-        errors.append("status incorrectly reports runtime or environment implementation")
+    if not (
+        phases.get(2, {}).get("status") == "done"
+        and phases.get(3, {}).get("status") == "done"
+        and phases.get(4, {}).get("status") == "active"
+    ):
+        errors.append("roadmap does not transition Phase 2 done -> Phase 3 done -> Phase 4 active")
+    runtime = current.get("runtime", {})
+    if not runtime.get("built") or runtime.get("environments") != 6 or runtime.get("controllers") != 11:
+        errors.append("status does not report the implemented MicroGym runtime accurately")
+    if not current.get("knowledge_architecture", {}).get("phase_3_microgym_complete"):
+        errors.append("phase_3_microgym_complete is not true")
+    if current.get("evidence", {}).get("ser_experiments") != ["E-002"]:
+        errors.append("MicroGym evidence index must contain exactly E-002")
+    experiment_paths = (
+        "experiments/microgym_v1/population.json",
+        "experiments/microgym_v1/runs.jsonl",
+        "experiments/microgym_v1/oracle.jsonl",
+        "experiments/microgym_v1/summary.json",
+        "experiments/microgym_v1/validation.json",
+        "experiments/microgym_v1/adaptivity.json",
+        "experiments/microgym_v1/INTERPRETATION.md",
+    )
+    missing_experiment_paths = [path for path in experiment_paths if not (ROOT / path).exists()]
+    if missing_experiment_paths:
+        errors.append("missing MicroGym artifacts: " + ", ".join(missing_experiment_paths))
     return result(
-        "phase2_status",
+        "phase_progress_status",
         not errors,
         "errors: " + "; ".join(errors)
         if errors
-        else "Phase 2 counts match contracts, Phase 3 is active, and runtime/evidence remain unclaimed",
+        else "Phase 2 counts remain coherent; Phase 3 runtime/evidence are recorded narrowly; Phase 4 is the sole active follow-up",
     )
 
 
@@ -842,7 +863,7 @@ CHECKS = [
     check_adrs,
     check_roadmap,
     check_status_cursor,
-    check_phase2_status,
+    check_phase_progress_status,
     check_generated_markers,
     check_generated_freshness,
     check_context_size,

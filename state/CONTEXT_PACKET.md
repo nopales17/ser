@@ -31,15 +31,15 @@ The central empirical question is `H-001`: whether allocation organization contr
 
 ## 2. Current maturity / what has actually been built
 
-Project maturity is `phase_3_microgym_ready`. The durable knowledge architecture exists: canonical idea data, generated readable/context views, an ADR ledger, a single roadmap cursor, and a lightweight coherence checker. Runtime built: **false**. Controllers: **0**. Environments: **0**. Model integrations: **0**.
+Project maturity is `phase_3_microgym_complete_narrow_finding`. The durable knowledge architecture exists: canonical idea data, generated readable/context views, an ADR ledger, a single roadmap cursor, and a lightweight coherence checker. Runtime built: **true**. Controllers: **11**. Environments: **6**. Model integrations: **0**.
 
-No SER experiment has run and no SER scientific hypothesis has experimental support.
+MicroGym v1 is complete and valid, but its admitted finding is narrow: the myopic public-model candidate lowered an experiment-specific combined objective through lower spending and stopping while worsening decision loss and exhibiting no observation-conditioned routing. No general SER hypothesis was promoted.
 
 Legacy inventory: **31** component groups classified at archive commit `38b661324725c094ffcc820371a836573f4aadc5`: 0 reuse unchanged, 11 generalize, 14 empirical evidence only, 4 inspiration only, and 2 discard. No component is authorized for unchanged reuse.
 
 Phase 1 found no legacy code suitable for unchanged reuse. Trace/provenance envelopes, completeness and access-policy checks, hash manifests, evaluator separation, paired controls, blinding, replay, and failed-run preservation survive only as patterns to rebuild behind SER-owned contracts. IDS data and labels are deferred environment/evaluator assets; prompts, rankers, comparators, product neighborhoods, domain schemas, and normalizers remain excluded prior solution logic. No generic Scope, Interval, epistemic-memory, flag, signal, or SER coupling-operator implementation was found in the current archive or reachable history.
 
-Phase 2 formalization: **22** semantic contracts, **12** required invariants, and **4** domain pressure tests. Phase 2 separates latent world, released observation history, controller epistemic state, policy-neutral legal actions, raw vector resources, first-class stopping, and evaluator-owned outcomes. Observation and optional Hypothesis are distinct; Scope is optional; Signal and all nine coupling mechanisms are deferred. This is accepted specification, not runtime or experimental evidence.
+Phase 2 formalization: **22** semantic contracts, **12** required invariants, and **4** domain pressure tests. Phase 2 separates latent world, released observation history, controller epistemic state, policy-neutral legal actions, raw vector resources, first-class stopping, and evaluator-owned outcomes. MicroGym v1 implemented these semantics without a contract correction, but one synthetic implementation does not validate their generality. Observation and optional Hypothesis remain distinct; Scope is optional; Signal and all nine coupling mechanisms remain deferred.
 
 Do not infer runtime progress from the conceptual inventory. Mechanism entries preserve ideas; they are not code.
 
@@ -57,6 +57,7 @@ Do not infer runtime progress from the conceptual inventory. Mechanism entries p
 - `ADR-0010` **Preserve vector-valued resource accounting**: Episodes declare named resource dimensions and units. Per-action and cumulative costs are nonnegative vectors; budgets constrain named dimensions. The core defines no conversion factors or universal scalar. Experiments may preregister scalarization, lexicographic comparison, or Pareto analysis while retaining raw dimensions.
 - `ADR-0011` **First-class STOP and distinct termination causes**: `STOP` is a first-class controller action with a domain submission or abstention. Controller stop, environment termination, and runner/evaluator truncation remain distinct trace events and outcome dimensions.
 - `ADR-0012` **Minimal epistemic ontology and explicit deferral**: Observations are first-class released information; hypotheses are an optional controller representation with no required common semantic supertype. A universal `EpistemicUnit` is rejected from the minimal core. Scope is an optional typed capability with domain-owned semantics. Signal, graph state, coupling operators, learned routing, confidence calculus, and universal information-gain objectives are deferred.
+- `ADR-0013` **Evidence-directed environment selection and software research trunk**: GitLab authorization investigation is the primary practical research trunk. MicroGym is a control-mechanism validation instrument. IDS may be used only as a small semantic bridge if a positive MicroGym result leaves survival under messy semantic evidence unresolved. Controlled software investigation, including chosen tests or fuzzing, is preferred when it can directly and cleanly test the remaining question while advancing authorization research. Remote sensing and other substrates remain dormant falsification candidates, not scheduled phases. A new environment requires a concrete statement of the unresolved architectural claim it can distinguish.
 
 ## 4. Current high-value primitives
 
@@ -88,8 +89,8 @@ These are active candidate theoretical primitives. `P-002` is listed separately 
 - `H-007` **Observation-reasoning oscillation** (`seed`): Trajectory quality may relate to oscillation rate, the frequency of switching between external acquisition and internal inference, and oscillation depth, the resources spent within a mode before switching.
 - `H-008` **Environmental coherence timescale constrains reasoning depth** (`seed`): In changing environments, useful reasoning depth may depend on how long observations remain coherent with the underlying system.
 - `H-010` **Hierarchical boundary selection** (`seed`): Selecting epistemic scope across nested boundaries may be substrate-independent, such as function to runtime or pixel to larger physical system.
-- `H-011` **IDS-to-CVE as a future controlled environment** (`seed`): The completed IDS-to-CVE benchmark may be adaptable into an early real SER environment with partial evidence and known ground truth.
-- `H-012` **Software and fuzzing environment** (`seed`): A later software environment could test SER where the controller actively generates evidence through execution, tests, or fuzzing.
+- `H-011` **IDS-to-CVE as a possible semantic bridge** (`seed`): A small IDS-to-CVE experiment may serve as a semantic validation bridge only if MicroGym supports adaptive routing yet leaves unresolved whether the advantage survives imperfect semantic evidence.
+- `H-012` **Controlled software investigation toward GitLab authorization** (`seed`): The primary practical trunk should progress through minimal controlled software investigation toward GitLab authorization research, testing whether a controller chooses inspections, executions, tests, or fuzzing interventions that manufacture discriminating evidence efficiently.
 - `H-013` **Remote-sensing generalization environment** (`seed`): A later observation environment with spatial and temporal resolution, modality, latency, and measurement uncertainty could test cross-domain generality.
 - `H-014` **SERT learned routing policy** (`seed`): A future learned policy or training regime might learn to route epistemic resources from trajectories and outcomes.
 - `H-015` **Temporal graph policy or TGNN** (`seed`): If epistemic state becomes a temporal relational graph, a learned graph policy might predict where computation or evidence acquisition should go next.
@@ -121,28 +122,30 @@ These questions are part of the durable conceptual state. Future work should upd
 
 ## 8. Current experimental evidence
 
-SER evidence records: **0**.
+SER evidence records: **1**.
 - `E-001` **Historical IDS archive provides scoped benchmark artifacts** (`experimentally_supported`): The read-only IDS archive documents a completed, deterministic benchmark separating closed-book vulnerability-shape reconstruction from closed-corpus exact-CVE attribution over frozen artifacts, with explicit negative results and claim limits.
   Limitation: Evidence is historical and IDS-scoped. Phase 1 confirmed reproducible assets and important negative results, but also product/lexical confounds, population corrections, invalid or unrun evaluations, and no holdout. It is not experimental support for any SER hypothesis.
-The IDS finding is historical environment evidence only. It does not support the SER controller, scope-aware gating, sparse propagation, compression, learned policy, or substrate-independence hypotheses.
+- `E-002` **MicroGym v1 stopping efficiency without conditional routing** (`experimentally_supported`): On the frozen 728-episode MicroGym v1 population, the public-model myopic candidate lowered mean experiment-specific combined objective to 0.303159 versus 0.465220-0.481049 for five simple controls and 0.311429 for a matched model-aware open-loop control, but it had worse decision loss than every simple control, gained only 0.008269 against open-loop through lower expenditure, and exhibited zero observation-conditioned branches across 20 eligible counterfactual decision nodes.
+  Limitation: Narrow synthetic finding only. The preregistered mechanical classifier said strong_enough_to_continue because it lacked a positive-adaptivity admission requirement; scientific interpretation is narrow. It does not promote H-001, H-016, semantic reasoning, scope, coupling, IDS transfer, software investigation, or GitLab research.
+The IDS finding is historical environment evidence only. The MicroGym finding is narrow stopping/cost evidence and explicitly does not establish observation-conditioned routing. Neither supports scope-aware gating, sparse propagation, compression, learned policy, real-domain transfer, or substrate independence.
 
 ## 9. Current roadmap cursor
 
-Active: **Phase 3 -- MicroGym**. Status: `active`.
+Active: **Phase 4 -- Adaptive-routing falsification follow-up**. Status: `active`.
 
-Goal: implement zero-LLM synthetic environments and trivial baseline controllers with known hidden state and computable optimal or near-optimal behavior.
+Goal: determine whether a preregistered public-model policy can exhibit and benefit from genuinely observation-conditioned routing once STOP calibration no longer suppresses the branch choice.
 
-Exit: matched-cost fixed, random, exhaustive, and candidate routing policies can be compared reproducibly; noisy, failed, and abstaining trajectories are represented; raw vector costs and stopping regret are computable; hidden and evaluator-only information are demonstrably firewalled from normal policies.
+Exit: a frozen follow-up either demonstrates a paired advantage attributable to realized-observation routing, or records a clean null/negative result and narrows or rejects that mechanism before any semantic/software expansion.
 
 ## 10. Immediate next task
 
-Implement the smallest zero-LLM MicroGym against the accepted Phase 2 contracts, including hidden-state dynamics, noisy or failing actions, raw vector costs and budgets, explicit STOP or abstention, deterministic replay, trivial matched baselines, and an oracle or exact regret calculation.
+Design the smallest frozen synthetic follow-up whose admission rule requires actual observation-conditioned branching and whose same-model open-loop control isolates routing from stopping, without altering MicroGym v1 or introducing a new domain.
 
-The IDS archive remains read-only. Phase 3 authorizes only the minimal zero-LLM MicroGym and trivial experimental policies needed by the accepted contracts: no IDS code/data copy, adapter, production runtime, model integration, graph runtime, or coupling-law implementation.
+The IDS archive remains read-only. Active Phase 4 authorizes only a synthetic adaptive-routing falsification follow-up: no IDS code/data copy, GitLab integration, adapter, production runtime, model integration, graph runtime, fuzzing, or coupling-law implementation.
 
 ## 11. Important non-goals
 
-- No production SER runtime; Phase 3 permits only a minimal zero-LLM MicroGym and trivial experimental controllers.
+- No production SER runtime; the implemented code is a minimal zero-LLM MicroGym validation instrument and trivial experimental controllers.
 - No LLM/model integration, TGNN, graph neural network, learned policy, or training infrastructure.
 - No coupling-law implementation, universal epistemic graph, fuzzer, remote-sensing integration, or IDS adapter.
 - No IDS code or data import and no claim that IDS results validate SER.
@@ -166,4 +169,4 @@ Also avoid scientific overclaiming: a cold location is not acceptance, implement
 - `reference/LEGACY_INVENTORY.yaml`: canonical Phase 1 component classifications, contamination risks, and Phase 2 recommendations.
 - `reference/LEGACY_INVENTORY.md`: generated readable inventory view; never edit directly.
 - `reference/IDS_LESSONS.md`: concise evidence and design lessons from the archive.
-- `experiments/README.md`: evidence admission rules and current no-experiment state.
+- `experiments/README.md`: evidence admission rules and admitted experiment index.

@@ -26,7 +26,9 @@ is an independent field on concepts and evidence.
 | `reference/LEGACY_INVENTORY.yaml` | reference, canonical data | stable legacy component classifications, transfer rationale, contamination risks, and Phase 2 recommendations | permission to copy code/data or evidence for SER hypotheses |
 | `reference/LEGACY_INVENTORY.md` | generated view | nothing independently; readable rendering of the canonical legacy inventory | edits or import authorization |
 | `reference/IDS_LESSONS.md` | reference synthesis | concise evidence-backed lessons and explicit non-claims from the IDS archive | component identity, maturity, or SER validation |
-| `experiments/README.md` | evidence index | experiment admission, evidence-record rules, and current absence of SER results | unrun claims |
+| `experiments/README.md` | evidence index | experiment admission, evidence-record rules, and admitted result index | generalization beyond each frozen protocol |
+| `experiments/microgym_v1/` | evidence artifacts | frozen MicroGym v1 population, traces, validation, numeric summary, adaptivity audit, and scoped interpretation | broad SER, semantic, or real-domain claims |
+| `src/ser/` | implementation | minimal MicroGym runtime, public policies, evaluator-only oracle, trace/replay, and analysis behavior | theory maturity or empirical validity by itself |
 | `tools/` | artifact | executable knowledge-generation and checking behavior | validation of SER theory |
 
 ## Precedence

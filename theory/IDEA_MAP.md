@@ -4,13 +4,13 @@
 
 Readable rendering of canonical `theory/IDEA_MAP.yaml`. Status records maturity; this cold location records authority and preservation, not truth.
 
-Schema version: `1`. Total entries: **54**.
+Schema version: `1`. Total entries: **56**.
 
 ID families: `F-*` foundation or methodological constraint; `P-*` candidate primitive; `H-*` hypothesis; `M-*` proposed mechanism; `E-*` empirical finding; `Q-*` open question.
 
 Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `rejected`, `deprecated`
 
-## Foundations (7)
+## Foundations (8)
 
 ### `F-001` -- Epistemic resource allocation research boundary
 
@@ -116,6 +116,21 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Origin:** ADR-0009 and Phase 2 formalization, 2026-08-17
 - **Last reviewed:** `2026-08-17`
 - **Notes:** Accepted architectural boundary. Legality may depend on hidden safety constraints but must not encode hidden epistemic recommendations.
+
+### `F-008` -- Evidence-directed environment selection and software research trunk
+
+- **Status:** `accepted`
+- **Statement:** GitLab authorization investigation is SER's primary practical research trunk, while MicroGym is a control-mechanism validation instrument, IDS is only a possible semantic bridge, controlled software experimentation is a trunk-aligned intervention instrument, and remote sensing remains a dormant substrate-independence falsification candidate.
+- **Why it matters:** It prevents archive convenience or broad generalization ambitions from choosing environments before a concrete unresolved architectural question does.
+- **Depends on:** `F-001`, `F-004`
+- **Related to:** `H-009`, `H-011`, `H-012`, `H-013`, `M-011`
+- **Would support:** Not yet specified.
+- **Would falsify:** Not yet specified.
+- **Implementation refs:** `plan/ROADMAP.md`
+- **Evidence refs:** `DECISIONS.md`
+- **Origin:** Phase 3 steering decision and ADR-0013, 2026-08-17
+- **Last reviewed:** `2026-08-17`
+- **Notes:** Accepted roadmap governance, not evidence for SER, GitLab, IDS, fuzzing, or cross-domain generalization. A new environment is scheduled only when it can resolve a named uncertainty that current experiments cannot.
 
 ## Candidate primitives (9)
 
@@ -265,11 +280,11 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Related to:** `H-002`, `H-016`, `M-012`
 - **Would support:** A routing controller beats matched-total-compute baselines across preregistered environments.
 - **Would falsify:** Matched simpler strategies consistently equal or beat controlled routing.
-- **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Implementation refs:** `src/ser/policies/adaptive.py`
+- **Evidence refs:** `experiments/microgym_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Central hypothesis; currently unsupported by SER experiments.
+- **Notes:** MicroGym v1 did not support the central observation-conditioned routing claim: the candidate had zero counterfactual branching nodes. Its lower experiment-specific combined objective came from lower expenditure and stopping, with worse decision loss. The hypothesis remains working and unsupported.
 
 ### `H-002` -- Decision-relevant information utility objective
 
@@ -280,11 +295,11 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Related to:** `Q-001`, `Q-007`
 - **Would support:** The objective predicts near-optimal actions in environments with known hidden state and costs.
 - **Would falsify:** Policies optimizing it reduce nominal uncertainty while worsening relevant decisions or violating constraints.
-- **Implementation refs:** None recorded.
-- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
+- **Implementation refs:** `src/ser/policies/adaptive.py`
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `experiments/microgym_v1/summary.json`, `experiments/microgym_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Candidate policy principle only. Expected information gain, Shannon entropy, scalar reward, and any cost/latency/risk combination are excluded from the environment and formal problem definition.
+- **Notes:** MicroGym v1 operationalized one experiment-specific myopic Bayes-risk-minus-cost rule. It lowered the scalar combined objective but worsened decision loss, exhibited no conditional routing, and stopped prematurely in 30 episodes. This is evidence about that policy instance, not promotion of a universal objective.
 
 ### `H-003` -- Scope-aware allocation improves efficiency
 
@@ -340,11 +355,11 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Related to:** `H-001`, `Q-007`
 - **Would support:** Bandit- or search-like analysis predicts useful branch allocation in MicroGym.
 - **Would falsify:** The analogy hides state transitions or information structure essential to performance.
-- **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Implementation refs:** `src/ser/microgym/families.py`, `src/ser/policies/adaptive.py`
+- **Evidence refs:** `experiments/microgym_v1/adaptivity.json`, `experiments/microgym_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** May be an analogy rather than the final formalism.
+- **Notes:** MicroGym v1 included budgeted branch and repeated-evidence families, but the candidate produced zero observation-conditioned branches and always stopped in family E. The exploration-exploitation analogy remains unvalidated.
 
 ### `H-007` -- Observation-reasoning oscillation
 
@@ -406,35 +421,35 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Last reviewed:** `2026-08-17`
 - **Notes:** Core contracts permit domain actions with hierarchical targets and optional typed Scope, but require no hierarchy machinery. Cross-domain benefit remains untested.
 
-### `H-011` -- IDS-to-CVE as a future controlled environment
+### `H-011` -- IDS-to-CVE as a possible semantic bridge
 
 - **Status:** `seed`
-- **Statement:** The completed IDS-to-CVE benchmark may be adaptable into an early real SER environment with partial evidence and known ground truth.
-- **Why it matters:** It could provide a real task after synthetic control experiments while preserving evaluation discipline.
-- **Depends on:** `E-001`, `F-004`
-- **Related to:** `Q-004`
-- **Would support:** A Phase 1 inventory finds reusable, separable environment interfaces without importing IDS-specific theory.
-- **Would falsify:** The benchmark's task and artifacts cannot expose meaningful sequential epistemic allocation choices.
+- **Statement:** A small IDS-to-CVE experiment may serve as a semantic validation bridge only if MicroGym supports adaptive routing yet leaves unresolved whether the advantage survives imperfect semantic evidence.
+- **Why it matters:** It could isolate semantic-evidence interpretation without reopening IDS as the main SER research program.
+- **Depends on:** `E-001`, `F-004`, `F-008`
+- **Related to:** `Q-004`, `H-012`
+- **Would support:** A narrow sequential IDS task distinguishes adaptive routing from matched model-aware controls under imperfect semantic evidence.
+- **Would falsify:** The archive cannot expose meaningful sequential allocation or a controlled-software environment answers the same question more directly.
 - **Implementation refs:** None recorded.
 - **Evidence refs:** `reference/IDS_LEGACY.md`, `reference/LEGACY_INVENTORY.yaml`, `reference/IDS_LESSONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Candidate environment/adaptor only; not SER and not imported. Phase 1 found possible evaluator/environment assets, but the archived task is static and does not yet expose meaningful sequential allocation. All prompts, rankers, comparators, and construction heuristics remain prior solution logic.
+- **Notes:** Optional validation instrument, not the primary trunk, not SER, and not imported. It is justified only by a concrete unresolved semantic-transfer question after MicroGym; all archived prompts, rankers, comparators, and construction heuristics remain prior solution logic.
 
-### `H-012` -- Software and fuzzing environment
+### `H-012` -- Controlled software investigation toward GitLab authorization
 
 - **Status:** `seed`
-- **Statement:** A later software environment could test SER where the controller actively generates evidence through execution, tests, or fuzzing.
-- **Why it matters:** It exercises intervention choice rather than retrieval-only evidence acquisition.
-- **Depends on:** `H-009`
-- **Related to:** `F-003`
-- **Would support:** A controller chooses discriminating executions more efficiently than random or exhaustive strategies.
-- **Would falsify:** The environment measures software search skill without isolating epistemic allocation.
+- **Statement:** The primary practical trunk should progress through minimal controlled software investigation toward GitLab authorization research, testing whether a controller chooses inspections, executions, tests, or fuzzing interventions that manufacture discriminating evidence efficiently.
+- **Why it matters:** It tests active evidence generation while advancing the intended authorization-vulnerability research target rather than adding an unrelated validation domain.
+- **Depends on:** `H-009`, `F-008`
+- **Related to:** `F-003`, `H-011`
+- **Would support:** A controller chooses discriminating software interventions more efficiently than matched fixed, random, exhaustive, and non-adaptive strategies in a controlled authorization setting.
+- **Would falsify:** The environment measures generic software search skill without isolating epistemic allocation, or matched simple controls erase the claimed advantage.
 - **Implementation refs:** None recorded.
 - **Evidence refs:** None recorded.
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** No fuzzer or software adapter should be implemented in current phases.
+- **Notes:** Primary practical target and roadmap priority only; GitLab is not evidence for SER. No GitLab integration, fuzzer, or software adapter is authorized in Phase 3.
 
 ### `H-013` -- Remote-sensing generalization environment
 
@@ -449,7 +464,7 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Evidence refs:** None recorded.
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Generalization test, not a near-term target.
+- **Notes:** Dormant substrate-independence falsification candidate, not a planned implementation phase. Introduce it only if a later named architectural uncertainty cannot be resolved within software.
 
 ### `H-014` -- SERT learned routing policy
 
@@ -490,11 +505,11 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Related to:** `Q-009`
 - **Would support:** Preregistered resource-matched evaluations with ablations and independent confirmation.
 - **Would falsify:** Simpler matched strategies consistently match or beat SER across intended environments.
-- **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Implementation refs:** `src/ser/policies/adaptive.py`, `src/ser/evaluation/analysis.py`
+- **Evidence refs:** `experiments/microgym_v1/summary.json`, `experiments/microgym_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** No SER evidence exists.
+- **Notes:** MicroGym v1 is relevant but insufficient for promotion. The candidate lowered the experiment-specific combined objective while worsening decision loss and showing no observation-conditioned routing; the matched open-loop gap was small and cost-driven. Real-domain and ordinary-agent comparisons remain absent.
 
 ## Proposed mechanisms (12)
 
@@ -657,11 +672,11 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Related to:** `H-001`, `H-002`, `H-006`
 - **Would support:** Controllers recover known allocation structure and beat trivial matched baselines.
 - **Would falsify:** The environments cannot distinguish routing quality from task-solving capacity or have no useful baseline oracle.
-- **Implementation refs:** None recorded.
-- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `theory/DOMAIN_INSTANTIATIONS.md`
+- **Implementation refs:** `src/ser/microgym`, `src/ser/evaluation`, `tools/run_microgym.py`
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `theory/DOMAIN_INSTANTIATIONS.md`, `experiments/microgym_v1/population.json`, `experiments/microgym_v1/validation.json`, `experiments/microgym_v1/REPORT.md`, `experiments/microgym_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Phase 2 accepted the minimum requirements for Phase 3: known hidden state, finite inspectable dynamics, noisy/failing actions, vector costs and budgets, explicit STOP/abstention, deterministic replay, trivial baselines, and an oracle/regret computation. No environment is implemented.
+- **Notes:** Implemented as the MicroGym v1 control-mechanism validation instrument, not the practical research trunk: six families, 24 regimes, 728 frozen episodes, explicit public/evaluator projections, raw vector costs, STOP, failure, replay, baselines, ablations, and exact oracle. The instrument worked; its candidate policy result was narrow.
 
 ### `M-012` -- SER controller/runtime
 
@@ -676,9 +691,9 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `theory/INFORMATION_BOUNDARIES.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** The semantic role is now formalized, but the name and expansion remain provisional. Phase 3 may implement only a zero-LLM MicroGym controller against the accepted contracts; no production runtime is authorized.
+- **Notes:** The semantic role is formalized, but the name and expansion remain provisional. MicroGym v1 implemented an experimental candidate, not a validated or production SER runtime; no broad mechanism claim was promoted.
 
-## Empirical findings (1)
+## Empirical findings (2)
 
 ### `E-001` -- Historical IDS archive provides scoped benchmark artifacts
 
@@ -695,6 +710,21 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Last reviewed:** `2026-08-17`
 - **Notes:** Evidence is historical and IDS-scoped. Phase 1 confirmed reproducible assets and important negative results, but also product/lexical confounds, population corrections, invalid or unrun evaluations, and no holdout. It is not experimental support for any SER hypothesis.
 
+### `E-002` -- MicroGym v1 stopping efficiency without conditional routing
+
+- **Status:** `experimentally_supported`
+- **Statement:** On the frozen 728-episode MicroGym v1 population, the public-model myopic candidate lowered mean experiment-specific combined objective to 0.303159 versus 0.465220-0.481049 for five simple controls and 0.311429 for a matched model-aware open-loop control, but it had worse decision loss than every simple control, gained only 0.008269 against open-loop through lower expenditure, and exhibited zero observation-conditioned branches across 20 eligible counterfactual decision nodes.
+- **Why it matters:** It separates a valid cost-sensitive stopping result from the stronger adaptive-routing claim that Phase 3 intended to test.
+- **Depends on:** `F-004`, `F-006`, `M-011`
+- **Related to:** `H-001`, `H-002`, `H-006`, `H-016`, `Q-007`, `Q-009`
+- **Would support:** Exact replay, artifact hashes, seed isolation, evaluator firewall, matched open-loop comparison, and the counterfactual branch audit remain valid for the frozen population.
+- **Would falsify:** A replay/hash failure, hidden-information leak, seed coupling, population change, or incorrect branch enumeration invalidates the scoped finding.
+- **Implementation refs:** `src/ser`, `tools/run_microgym.py`, `tools/audit_microgym_adaptivity.py`
+- **Evidence refs:** `experiments/microgym_v1/PREREGISTRATION.md`, `experiments/microgym_v1/population.json`, `experiments/microgym_v1/runs.jsonl`, `experiments/microgym_v1/oracle.jsonl`, `experiments/microgym_v1/summary.json`, `experiments/microgym_v1/validation.json`, `experiments/microgym_v1/adaptivity.json`, `experiments/microgym_v1/REPORT.md`, `experiments/microgym_v1/INTERPRETATION.md`
+- **Origin:** frozen MicroGym v1 experiment, 2026-08-17
+- **Last reviewed:** `2026-08-17`
+- **Notes:** Narrow synthetic finding only. The preregistered mechanical classifier said strong_enough_to_continue because it lacked a positive-adaptivity admission requirement; scientific interpretation is narrow. It does not promote H-001, H-016, semantic reasoning, scope, coupling, IDS transfer, software investigation, or GitLab research.
+
 ## Open questions (9)
 
 ### `Q-001` -- What objective should the controller optimize?
@@ -707,10 +737,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `experiments/microgym_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Phase 2 settled raw nonnegative vector accounting and preregistration of any scalarization or Pareto rule. The policy objective and tradeoff rule remain intentionally unresolved.
+- **Notes:** Phase 2 settled raw nonnegative vector accounting and preregistration of any scalarization or Pareto rule. MicroGym v1 showed that a scalar combined-objective win can coincide with worse decision loss and no adaptive routing, so the policy objective and admission rule remain unresolved.
 
 ### `Q-002` -- What is the minimal explicit epistemic state?
 
@@ -721,8 +751,8 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Related to:** `P-008`, `Q-003`, `Q-005`
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
-- **Implementation refs:** None recorded.
-- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
+- **Implementation refs:** `src/ser/policies/adaptive.py`, `src/ser/evaluation/runner.py`
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `experiments/microgym_v1/summary.json`, `experiments/microgym_v1/adaptivity.json`, `experiments/microgym_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
 - **Notes:** Phase 2 accepted the minimum semantics of controller-entitled epistemic state without requiring hypotheses, confidence, graphs, or a single representation. Useful additional structure remains empirical and domain-sensitive.
@@ -800,7 +830,7 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Phase 2 accepted STOP as a first-class action and separated controller stopping from environment termination and truncation. No policy threshold is fixed; Phase 3 must make stopping regret computable.
+- **Notes:** MicroGym v1 made exact stopping regret computable. Its myopic rule eliminated post-sufficiency acquisitions but stopped prematurely in 30/728 episodes and suppressed all observation-conditioned routing; stopping remains an open policy question.
 
 ### `Q-008` -- Are SER and SERT the right names?
 
@@ -827,7 +857,7 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** `CHARTER.md`, `theory/CONTROL_PROBLEM.md`, `theory/DOMAIN_INSTANTIATIONS.md`
+- **Evidence refs:** `CHARTER.md`, `theory/CONTROL_PROBLEM.md`, `theory/DOMAIN_INSTANTIATIONS.md`, `experiments/microgym_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Governance and promotion paths are accepted, but scientific thresholds remain open. Formal coverage and four-domain pressure tests are specification evidence only, not empirical support or generalization evidence.
+- **Notes:** MicroGym v1 exposed a concrete admission-rule defect: the preregistered classifier returned strong_enough_to_continue without requiring observed adaptive behavior. The narrow finding was admitted without promoting general hypotheses; Phase 4 must require conditional routing or explicitly test only stopping.

@@ -156,11 +156,15 @@ resource budget, SER has not demonstrated architectural value in that scope.
 
 ## Current non-goals
 
-Phase 2 specified semantics without implementing a runtime. Active Phase 3 may
-implement only zero-LLM MicroGym environments, trace/accounting support, and
-trivial experimental policies required to test the accepted contracts.
+Phase 3 implemented a minimal zero-LLM MicroGym validation runtime and produced
+a narrow finding without validating observation-conditioned routing. Active
+Phase 4 may implement only the smallest synthetic policy/admission-rule follow-up
+needed to falsify that routing claim while preserving MicroGym v1 unchanged.
 
 LLM agents and model APIs, graph neural networks, TGNNs, learned policies,
-coupling laws, semantic compressors, fuzzers, IDS adapters, remote-sensing
-integrations, epistemic graph runtimes, and training infrastructure remain
-non-goals. Do not import IDS code or datasets.
+coupling laws, semantic compressors, fuzzers, IDS adapters, GitLab integration,
+remote-sensing integrations, epistemic graph runtimes, and training
+infrastructure remain non-goals. Do not import IDS code or datasets. GitLab
+authorization is the primary practical trunk and IDS a possible semantic
+validation instrument under ADR-0013; neither is current evidence or authorized
+Phase 4 implementation.

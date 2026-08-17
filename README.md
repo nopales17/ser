@@ -13,11 +13,12 @@ controller:
 
 `state -> choose epistemic action -> obtain result -> update state -> choose again`
 
-No SER runtime, controller, agent, learned policy, or experimental result exists
-yet. The repository contains the durable knowledge architecture and an accepted
-language-neutral control-problem specification. Phase 3 is ready to implement a
-minimal zero-LLM MicroGym without confusing specifications, implementations, and
-evidence.
+The durable knowledge architecture, accepted language-neutral control problem,
+and minimal zero-LLM MicroGym v1 validation runtime now exist. MicroGym produced
+a narrow result: cost-sensitive stopping lowered its experiment-specific
+combined objective, but the candidate showed no observation-conditioned routing.
+No production SER controller, learned policy, model integration, or real-domain
+evidence exists.
 
 ## Start here
 
@@ -50,8 +51,8 @@ The architecture separates where knowledge belongs from how mature it is:
   sources.
 - **Reference:** `reference/` owns vocabulary and historical context, not SER
   claims.
-- **Evidence:** `experiments/` will eventually index protocols and results. It
-  currently records that no SER experiments have run.
+- **Evidence:** `experiments/` indexes frozen protocols, traces, validation,
+  results, limitations, and admitted findings. MicroGym v1 is the first run.
 
 Concept maturity is recorded independently as `seed`, `working`, `accepted`,
 `experimentally_supported`, `rejected`, or `deprecated`. Neither placement in a
@@ -72,9 +73,10 @@ generated files directly.
 
 ## Current non-goals
 
-Phase 3 permits only a minimal zero-LLM MicroGym and trivial experimental
-controllers. It does not authorize LLM agents, model integrations, graph
-policies, coupling operators, fuzzers, IDS adapters, remote-sensing integrations,
-or training infrastructure. The completed IDS-to-CVE project is read-only
-historical input and a possible future environment; none of its results validate
-SER.
+Active Phase 4 permits only the smallest synthetic adaptive-routing falsification
+follow-up while preserving MicroGym v1. It does not authorize LLM agents, model
+integrations, graph policies, coupling operators, fuzzers, IDS adapters, GitLab
+integration, remote-sensing integrations, or training infrastructure. GitLab
+authorization is the practical research trunk, not current evidence; the
+completed IDS-to-CVE project remains read-only historical input and only a
+possible future semantic bridge.

@@ -1,7 +1,9 @@
 # Experiments
 
-No SER experiment has run. This directory is an evidence index, not permission
-to present proposals or historical IDS results as SER findings.
+This directory is an evidence index, not permission to generalize a scoped run.
+MicroGym v1 is the first SER experiment. Its frozen population, all traces,
+validation, preregistered report, counterfactual adaptivity audit, and post-run
+interpretation live in `microgym_v1/`.
 
 Before a SER run is admitted as evidence, its record should identify:
 
@@ -20,3 +22,10 @@ Results update `evidence_refs` in the canonical idea map. They do not silently
 change concept status. Negative results remain preserved, and an implementation
 failure rejects only the mechanism or scope the protocol can actually test.
 
+## Admitted evidence
+
+- `E-002` / MicroGym v1: a model-aware myopic stopping policy reduced the frozen
+  experiment-specific combined objective mainly by spending and deciding less.
+  It did not exhibit observation-conditioned routing, so the general adaptive
+  gating hypothesis remains unsupported and the next phase is a synthetic
+  falsification follow-up.

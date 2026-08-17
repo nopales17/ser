@@ -1,0 +1,149 @@
+{
+  "benchmark": "microgym-v1",
+  "checks": {
+    "action-order coverage": {
+      "detail": "all 24 regimes contain multiple frozen action presentation orders",
+      "status": "pass"
+    },
+    "action-order permutation": {
+      "detail": "adaptive outcome/resource signatures invariant in 6/6 family representatives after reversing presentation order",
+      "status": "pass"
+    },
+    "cost integrity": {
+      "detail": "trace costs, componentwise budgets, and evaluator totals agree across 7280 runs",
+      "status": "pass"
+    },
+    "deterministic replay": {
+      "detail": "exact public replay passed for 8008/8008 oracle and policy traces",
+      "status": "pass"
+    },
+    "evaluator firewall": {
+      "detail": "public projections omit truth/realization fields; a hidden-state probe fails; evaluator policies and invalid truth tokens are rejected",
+      "status": "pass"
+    },
+    "failed-run preservation": {
+      "detail": "artifacts retain 265 failed actions and 144 environment terminations; validity remains explicit",
+      "status": "pass"
+    },
+    "future-result blindness": {
+      "detail": "normal policies receive separate policy-only randomness plus distributions, never the environment seed, RNG slot, or sampled future result",
+      "status": "pass"
+    },
+    "hidden-state permutation": {
+      "detail": "adaptive outcome/resource signatures invariant in 6/6 family representatives after permuting hypothesis rows and labels",
+      "status": "pass"
+    },
+    "identifier scrambling": {
+      "detail": "adaptive outcome/resource signatures invariant in 6/6 family representatives after renaming hypotheses, actions, and outcomes",
+      "status": "pass"
+    },
+    "matched public model access": {
+      "detail": "all normal policies received the same public prior, declared likelihoods, costs, legal actions, released history, and budget projection",
+      "status": "pass"
+    },
+    "observation release": {
+      "detail": "all released observations carry step and result provenance across 7280 runs",
+      "status": "pass"
+    },
+    "opaque identifiers": {
+      "detail": "action IDs are opaque and contain no hypothesis-target labels",
+      "status": "pass"
+    },
+    "population scale": {
+      "detail": "24 regimes, 728 episodes, family counts {'A': 120, 'B': 120, 'C': 120, 'D': 120, 'E': 128, 'F': 120}",
+      "status": "pass"
+    },
+    "record hashes": {
+      "detail": "verified 8008/8008 content-addressed records",
+      "status": "pass"
+    },
+    "seed isolation": {
+      "detail": "population, hidden environment realization, and policy randomness use named domains; evaluator seeds are restricted, policy seeds are public, and perturbing the environment seed leaves random-policy routing unchanged",
+      "status": "pass"
+    }
+  },
+  "counts": {
+    "environment_terminations": 144,
+    "episodes": 728,
+    "failed_actions": 265,
+    "invalid_normal_runs": 0,
+    "normal_runs": 7280,
+    "oracle_runs": 728,
+    "problems": 24,
+    "valid_normal_runs": 7280
+  },
+  "failed_checks": [],
+  "oracle_assumptions": [
+    "exact dynamic programming over the frozen small public generative model",
+    "used only by evaluation and never exposed as a normal policy input"
+  ],
+  "policy_assumptions": {
+    "ablation_cost_blind": [
+      "uses only the declared public prior, likelihoods, costs, and released observations",
+      "uses Bayes-optimal answer-or-abstain submission under declared decision loss",
+      "uses adaptive expected Bayes-risk reduction but ignores resource cost"
+    ],
+    "ablation_information_blind": [
+      "uses only the declared public prior, likelihoods, costs, and released observations",
+      "uses Bayes-optimal answer-or-abstain submission under declared decision loss",
+      "selects minimum immediate primary-resource cost with opaque-ID tie-breaking",
+      "fixed stop after three acquisitions or when none remain legal",
+      "registered as the cost-only adaptive-policy ablation"
+    ],
+    "ablation_no_adaptation": [
+      "uses only the declared public prior, likelihoods, costs, and released observations",
+      "uses Bayes-optimal answer-or-abstain submission under declared decision loss",
+      "receives the same public generative model, objective, costs, and budget as the adaptive candidate",
+      "commits an open-loop acquisition plan from the prior before inspecting the episode's initial observation",
+      "neither action ranking nor stopping length can change in response to realized observations",
+      "released observations still inform the final answer so only acquisition control is ablated"
+    ],
+    "ablation_no_adaptive_stop": [
+      "uses only the declared public prior, likelihoods, costs, and released observations",
+      "uses Bayes-optimal answer-or-abstain submission under declared decision loss",
+      "uses observation-conditioned adaptive routing",
+      "cannot compare acquisition against STOP and instead stops after three acquisitions or exhaustion"
+    ],
+    "adaptive_belief": [
+      "uses only the declared public prior, likelihoods, costs, and released observations",
+      "uses Bayes-optimal answer-or-abstain submission under declared decision loss",
+      "maintains a posterior with the declared public observation model",
+      "chooses the legal action with greatest one-step Bayes-risk reduction minus experiment-specific primary cost",
+      "chooses STOP when no acquisition has positive myopic net value",
+      "is a candidate experimental policy, not a canonical SER objective"
+    ],
+    "cheap_first": [
+      "uses only the declared public prior, likelihoods, costs, and released observations",
+      "uses Bayes-optimal answer-or-abstain submission under declared decision loss",
+      "selects minimum immediate primary-resource cost with opaque-ID tie-breaking",
+      "fixed stop after three acquisitions or when none remain legal"
+    ],
+    "exhaustive": [
+      "uses only the declared public prior, likelihoods, costs, and released observations",
+      "uses Bayes-optimal answer-or-abstain submission under declared decision loss",
+      "precommits to presentation order and acquires every action affordable under that order",
+      "repeated tests are exhausted only after every test has been attempted once"
+    ],
+    "fixed_order": [
+      "uses only the declared public prior, likelihoods, costs, and released observations",
+      "uses Bayes-optimal answer-or-abstain submission under declared decision loss",
+      "follows the episode's frozen presentation order independently of observations",
+      "fixed stop after three acquisitions or when none remain legal"
+    ],
+    "greedy": [
+      "uses only the declared public prior, likelihoods, costs, and released observations",
+      "uses Bayes-optimal answer-or-abstain submission under declared decision loss",
+      "uses a fixed public pairwise-separation-per-cost score",
+      "does not recompute utility from observations",
+      "fixed stop after three acquisitions or when none remain legal"
+    ],
+    "random": [
+      "uses only the declared public prior, likelihoods, costs, and released observations",
+      "uses Bayes-optimal answer-or-abstain submission under declared decision loss",
+      "uniform seeded choice among legal acquisition actions",
+      "fixed stop after three acquisitions or when none remain legal"
+    ]
+  },
+  "schema_version": 1,
+  "status": "pass"
+}

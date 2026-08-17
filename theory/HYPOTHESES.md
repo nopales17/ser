@@ -36,12 +36,22 @@ The canonical statements, maturity, relations, and falsifiers live in
 
 ## Environment and late-stage hypotheses
 
-- `H-011`, `H-012`, and `H-013` preserve possible IDS, software/fuzzing, and
-  remote-sensing environments with conservative scope and priority.
+- `F-008` makes controlled software investigation toward GitLab authorization
+  the primary practical trunk while keeping environment selection conditional on
+  a named unresolved architectural question.
+- `H-011` preserves IDS only as a possible small semantic bridge after a
+  positive MicroGym result; it is not the main SER environment.
+- `H-012` preserves active software testing/fuzzing as a likely intervention
+  instrument aligned with the authorization-research trunk.
+- `H-013` preserves remote sensing only as a dormant substrate-independence
+  falsification candidate, not a planned phase.
 - `H-014` SERT and `H-015` a temporal graph policy/TGNN are late-stage seeds.
   They must not determine the first SER implementation.
 
-No SER hypothesis currently has SER experimental support.
+MicroGym v1 admitted the narrow finding `E-002`, but no general SER hypothesis
+was promoted. In particular, `H-001` and `H-016` remain unsupported because the
+candidate showed no observation-conditioned routing and its scalar-objective
+advantage traded worse decision loss for lower cost.
 
 The four Phase 2 domain instantiations establish representational coverage only.
 They do not validate allocation value, scope-aware routing, active investigation,

@@ -210,3 +210,34 @@ a new entry; do not rewrite it.
 - Revisit when: Multiple implemented environments expose the same missing
   semantic behavior and accepted contracts cannot represent it without repeated
   incompatible workarounds.
+
+## ADR-0013 -- Evidence-directed environment selection and software research trunk
+
+- Status: accepted
+- Date: 2026-08-17
+- Context: A synthetic control result does not by itself determine which real
+  environment best resolves the next uncertainty. Existing IDS artifacts are
+  convenient, but convenience is not a scientific reason to make IDS the main
+  SER development environment.
+- Decision: GitLab authorization investigation is the primary practical research
+  trunk. MicroGym is a control-mechanism validation instrument. IDS may be used
+  only as a small semantic bridge if a positive MicroGym result leaves survival
+  under messy semantic evidence unresolved. Controlled software investigation,
+  including chosen tests or fuzzing, is preferred when it can directly and
+  cleanly test the remaining question while advancing authorization research.
+  Remote sensing and other substrates remain dormant falsification candidates,
+  not scheduled phases. A new environment requires a concrete statement of the
+  unresolved architectural claim it can distinguish.
+- Why: This keeps domain expansion evidence-directed, separates validation
+  instruments from the practical target, and avoids inheritance from the IDS
+  archive determining the roadmap.
+- Alternatives rejected: making IDS the automatic Phase 4; treating every
+  pressure-test domain as a planned implementation; moving directly to GitLab
+  after a null MicroGym result; treating GitLab prioritization as evidence that
+  SER works.
+- Consequences: Phase 3 remains unchanged in scope. Its evidence determines
+  whether the next phase is correction/falsification, a narrow IDS semantic
+  bridge, or a controlled software/authz environment. No IDS, GitLab, fuzzing,
+  LLM, or remote-sensing implementation is authorized during Phase 3.
+- Revisit when: Phase 3 or later controlled-software evidence identifies a
+  different smallest environment needed to resolve a named uncertainty.

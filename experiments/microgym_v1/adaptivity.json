@@ -1,0 +1,123 @@
+{
+  "interpretation": "This counterfactual audit controls identifiers, presentation order, environment seed, and hidden truth. It is a structural diagnostic, not an outcome estimate.",
+  "method": "exhaustively enumerate policy-visible outcomes in the declared public model and test whether alternative realized outcomes at the same public decision node change the next policy action",
+  "policies": {
+    "ablation_no_adaptation": {
+      "branching_rate": 0.0,
+      "by_family": {
+        "A": {
+          "branching_nodes": 0,
+          "decision_nodes": 1
+        },
+        "B": {
+          "branching_nodes": 0,
+          "decision_nodes": 3
+        },
+        "C": {
+          "branching_nodes": 0,
+          "decision_nodes": 28
+        },
+        "D": {
+          "branching_nodes": 0,
+          "decision_nodes": 1
+        },
+        "E": {
+          "branching_nodes": 0,
+          "decision_nodes": 4
+        },
+        "F": {
+          "branching_nodes": 0,
+          "decision_nodes": 7
+        }
+      },
+      "counterfactual_decision_nodes": 44,
+      "examples": [],
+      "observation_conditioned_branching_nodes": 0
+    },
+    "ablation_no_adaptive_stop": {
+      "branching_rate": 0.014388489208633094,
+      "by_family": {
+        "A": {
+          "branching_nodes": 0,
+          "decision_nodes": 13
+        },
+        "B": {
+          "branching_nodes": 0,
+          "decision_nodes": 10
+        },
+        "C": {
+          "branching_nodes": 0,
+          "decision_nodes": 43
+        },
+        "D": {
+          "branching_nodes": 0,
+          "decision_nodes": 43
+        },
+        "E": {
+          "branching_nodes": 2,
+          "decision_nodes": 12
+        },
+        "F": {
+          "branching_nodes": 0,
+          "decision_nodes": 18
+        }
+      },
+      "counterfactual_decision_nodes": 139,
+      "examples": [
+        {
+          "action": "initial_observation",
+          "outcome_to_next_choice": {
+            "v0": "e0",
+            "v1": "e1"
+          },
+          "path": [],
+          "problem_id": "e-r0"
+        },
+        {
+          "action": "initial_observation",
+          "outcome_to_next_choice": {
+            "v0": "e0",
+            "v1": "e1"
+          },
+          "path": [],
+          "problem_id": "e-r1"
+        }
+      ],
+      "observation_conditioned_branching_nodes": 2
+    },
+    "adaptive_belief": {
+      "branching_rate": 0.0,
+      "by_family": {
+        "A": {
+          "branching_nodes": 0,
+          "decision_nodes": 1
+        },
+        "B": {
+          "branching_nodes": 0,
+          "decision_nodes": 3
+        },
+        "C": {
+          "branching_nodes": 0,
+          "decision_nodes": 7
+        },
+        "D": {
+          "branching_nodes": 0,
+          "decision_nodes": 1
+        },
+        "E": {
+          "branching_nodes": 0,
+          "decision_nodes": 4
+        },
+        "F": {
+          "branching_nodes": 0,
+          "decision_nodes": 4
+        }
+      },
+      "counterfactual_decision_nodes": 20,
+      "examples": [],
+      "observation_conditioned_branching_nodes": 0
+    }
+  },
+  "population_hash": "a9234fa60b40d3628f6317284a964c95917bcd7442796d8961f18b14b9958b3d",
+  "schema_version": 1
+}
