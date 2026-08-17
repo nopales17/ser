@@ -22,6 +22,13 @@ VALID_STATUSES = {
     "rejected",
     "deprecated",
 }
+VALID_CONTRACT_STATUSES = {
+    "accepted",
+    "optional",
+    "deferred",
+    "rejected_from_minimal_core",
+}
+VALID_CONTRACT_VISIBILITY = {"never", "direct", "indirect", "role_dependent"}
 KIND_PREFIX = {
     "foundation": "F",
     "primitive": "P",
@@ -71,6 +78,45 @@ REQUIRED_LEGACY_FIELDS = {
     "confidence",
     "notes",
 }
+REQUIRED_CONTRACT_FIELDS = {
+    "id",
+    "name",
+    "status",
+    "purpose",
+    "policy_visible",
+    "required_semantics",
+    "optional_semantics",
+    "must_not_assume",
+    "relationships",
+    "related_idea_ids",
+    "open_questions",
+    "future_extensions",
+    "phase3_required",
+}
+EXPECTED_CONTRACTS = {
+    "WorldState": "accepted",
+    "Observation": "accepted",
+    "EpistemicState": "accepted",
+    "ActionInterface": "accepted",
+    "Action": "accepted",
+    "ActionResult": "accepted",
+    "ResourceSchemaAndVector": "accepted",
+    "Budget": "accepted",
+    "Transition": "accepted",
+    "TraceAndManifest": "accepted",
+    "StopAction": "accepted",
+    "Termination": "accepted",
+    "Environment": "accepted",
+    "Policy": "accepted",
+    "StateUpdater": "accepted",
+    "Outcome": "accepted",
+    "Evaluator": "accepted",
+    "ExperimentRunner": "accepted",
+    "Hypothesis": "optional",
+    "ScopeCapability": "optional",
+    "Signal": "deferred",
+    "UniversalEpistemicUnit": "rejected_from_minimal_core",
+}
 REQUIRED_FILES = {
     "README.md",
     "AGENTS.md",
@@ -82,6 +128,10 @@ REQUIRED_FILES = {
     "theory/IDEA_MAP.md",
     "theory/HYPOTHESES.md",
     "theory/QUESTIONS.md",
+    "theory/CONTROL_PROBLEM.md",
+    "theory/CONTRACTS.yaml",
+    "theory/INFORMATION_BOUNDARIES.md",
+    "theory/DOMAIN_INSTANTIATIONS.md",
     "plan/ROADMAP.md",
     "state/STATUS.yaml",
     "state/CONTEXT_PACKET.md",
@@ -213,6 +263,272 @@ def check_statuses() -> dict[str, object]:
     if not detail:
         detail.append("all statuses valid; single-valued status prevents accepted/rejected overlap")
     return result("maturity_status", ok, "; ".join(detail))
+
+
+def check_contract_schema() -> dict[str, object]:
+    data = emit_context.contracts()
+    idea_ids = set(emit_context.idea_index())
+    contracts = data.get("contracts", [])
+    ids = [item.get("id", "") for item in contracts]
+    names = [item.get("name", "") for item in contracts]
+    contract_ids = set(ids)
+    duplicates = sorted(item for item, count in Counter(ids).items() if count > 1)
+    duplicate_names = sorted(item for item, count in Counter(names).items() if count > 1)
+    malformed = [item or "<empty>" for item in ids if not re.fullmatch(r"C-\d{3}", item)]
+    missing_fields = []
+    wrong_types = []
+    invalid_statuses = []
+    invalid_visibility = []
+    missing_relationships = []
+    missing_idea_refs = []
+    missing_question_refs = []
+    invalid_phase3_flags = []
+    list_fields = (
+        "required_semantics",
+        "optional_semantics",
+        "must_not_assume",
+        "relationships",
+        "related_idea_ids",
+        "open_questions",
+        "future_extensions",
+    )
+    for item in contracts:
+        contract_id = item.get("id", "<missing-id>")
+        absent = sorted(REQUIRED_CONTRACT_FIELDS - set(item))
+        if absent:
+            missing_fields.append(f"{contract_id}: {','.join(absent)}")
+        for field in list_fields:
+            if field in item and not isinstance(item[field], list):
+                wrong_types.append(f"{contract_id}.{field}")
+        if item.get("status") not in VALID_CONTRACT_STATUSES:
+            invalid_statuses.append(f"{contract_id}={item.get('status')}")
+        if item.get("policy_visible") not in VALID_CONTRACT_VISIBILITY:
+            invalid_visibility.append(f"{contract_id}={item.get('policy_visible')}")
+        if not isinstance(item.get("phase3_required"), bool):
+            invalid_phase3_flags.append(f"{contract_id}=non_boolean")
+        elif item.get("status") in {"deferred", "rejected_from_minimal_core"} and item["phase3_required"]:
+            invalid_phase3_flags.append(f"{contract_id}=deferred_but_required")
+        for target in item.get("relationships", []):
+            if target not in contract_ids:
+                missing_relationships.append(f"{contract_id}->{target}")
+        for target in item.get("related_idea_ids", []):
+            if target not in idea_ids:
+                missing_idea_refs.append(f"{contract_id}->{target}")
+        for target in item.get("open_questions", []):
+            if target not in idea_ids or not target.startswith("Q-"):
+                missing_question_refs.append(f"{contract_id}->{target}")
+
+    actual_contracts = {item.get("name"): item.get("status") for item in contracts}
+    contract_set_ok = actual_contracts == EXPECTED_CONTRACTS
+    status_vocabulary_ok = set(data.get("status_vocabulary", [])) == VALID_CONTRACT_STATUSES
+    visibility_vocabulary_ok = set(data.get("visibility_vocabulary", [])) == VALID_CONTRACT_VISIBILITY
+    ok = (
+        bool(contracts)
+        and not duplicates
+        and not duplicate_names
+        and not malformed
+        and not missing_fields
+        and not wrong_types
+        and not invalid_statuses
+        and not invalid_visibility
+        and not missing_relationships
+        and not missing_idea_refs
+        and not missing_question_refs
+        and not invalid_phase3_flags
+        and contract_set_ok
+        and status_vocabulary_ok
+        and visibility_vocabulary_ok
+    )
+    details = []
+    if duplicates or duplicate_names:
+        details.append("duplicate IDs/names: " + ", ".join(duplicates + duplicate_names))
+    if malformed:
+        details.append("malformed IDs: " + ", ".join(malformed))
+    if missing_fields:
+        details.append("missing fields: " + "; ".join(missing_fields[:8]))
+    if wrong_types:
+        details.append("wrong list types: " + ", ".join(wrong_types[:8]))
+    if invalid_statuses or invalid_visibility:
+        details.append("invalid status/visibility: " + ", ".join(invalid_statuses + invalid_visibility))
+    if missing_relationships or missing_idea_refs or missing_question_refs:
+        details.append(
+            "missing refs: "
+            + ", ".join((missing_relationships + missing_idea_refs + missing_question_refs)[:12])
+        )
+    if invalid_phase3_flags:
+        details.append("invalid Phase 3 flags: " + ", ".join(invalid_phase3_flags))
+    if not contract_set_ok:
+        details.append("contract names/statuses differ from accepted Phase 2 set")
+    if not status_vocabulary_ok or not visibility_vocabulary_ok:
+        details.append("contract vocabularies differ from checker")
+    if not details:
+        counts = Counter(item["status"] for item in contracts)
+        details.append(
+            f"{len(contracts)} unique contracts; statuses={dict(sorted(counts.items()))}; all relationships and idea/question refs resolve"
+        )
+    return result("contract_schema", ok, "; ".join(details))
+
+
+def check_control_invariants() -> dict[str, object]:
+    data = emit_context.contracts()
+    contract_ids = {item["id"] for item in data.get("contracts", [])}
+    invariants = data.get("required_invariants", [])
+    ids = [item.get("id", "") for item in invariants]
+    required_ids = {f"I-CP-{number:03d}" for number in range(1, 13)}
+    duplicates = sorted(item for item, count in Counter(ids).items() if count > 1)
+    malformed = [item or "<empty>" for item in ids if not re.fullmatch(r"I-CP-\d{3}", item)]
+    missing_fields = [
+        item.get("id", "<missing-id>")
+        for item in invariants
+        if not {"id", "statement", "represented_by"}.issubset(item)
+    ]
+    missing_refs = [
+        f"{item.get('id')}->{target}"
+        for item in invariants
+        for target in item.get("represented_by", [])
+        if target not in contract_ids
+    ]
+    empty = [
+        item.get("id", "<missing-id>")
+        for item in invariants
+        if not item.get("statement") or not item.get("represented_by")
+    ]
+    ok = (
+        set(ids) == required_ids
+        and not duplicates
+        and not malformed
+        and not missing_fields
+        and not missing_refs
+        and not empty
+    )
+    detail = []
+    if set(ids) != required_ids:
+        detail.append("required invariant set differs from I-CP-001..012")
+    if duplicates or malformed:
+        detail.append("duplicate/malformed: " + ", ".join(duplicates + malformed))
+    if missing_fields or empty:
+        detail.append("incomplete: " + ", ".join(missing_fields + empty))
+    if missing_refs:
+        detail.append("missing contract refs: " + ", ".join(missing_refs))
+    return result(
+        "control_invariants",
+        ok,
+        "; ".join(detail) if detail else "12 required invariants are unique, complete, and represented by existing contracts",
+    )
+
+
+def check_phase2_documents() -> dict[str, object]:
+    required_sections = {
+        "theory/CONTROL_PROBLEM.md": {
+            "Formal episode",
+            "Formal invariants",
+            "Phase 3 requirements",
+            "Adversarial pressure test",
+            "Explicitly Deferred",
+            "Exit-criteria answers",
+            "What is SER controlling?",
+        },
+        "theory/INFORMATION_BOUNDARIES.md": {
+            "Information classes",
+            "Role visibility matrix",
+            "Authorized flows",
+            "Prohibited leakage paths",
+            "Oracle policies",
+            "Information-boundary invariants",
+        },
+        "theory/DOMAIN_INSTANTIATIONS.md": {
+            "Case 1 — Minimal MicroGym",
+            "Case 2 — IDS to CVE partial-evidence attribution",
+            "Case 3 — Active software investigation",
+            "Case 4 — Remote-sensing generality pressure test",
+            "Cross-domain comparison",
+        },
+    }
+    missing = []
+    for raw_path, expected in required_sections.items():
+        text = (ROOT / raw_path).read_text(encoding="utf-8")
+        headings = set(re.findall(r"^## (.+)$", text, re.MULTILINE))
+        for heading in sorted(expected - headings):
+            missing.append(f"{raw_path}#{heading}")
+
+    control_text = (ROOT / "theory" / "CONTROL_PROBLEM.md").read_text(encoding="utf-8")
+    boundaries_text = (ROOT / "theory" / "INFORMATION_BOUNDARIES.md").read_text(encoding="utf-8")
+    required_terms = {
+        "CONTROL_PROBLEM": [
+            "WorldState",
+            "Observation",
+            "EpistemicState",
+            "ActionInterface",
+            "ActionResult",
+            "STOP",
+            "Outcome",
+            "RES",
+            "GATE",
+            "AMP",
+            "DAMP",
+            "INHIBIT",
+            "SCOPE_FILTER",
+            "TOPK",
+            "DEFEAT",
+            "PROMOTE",
+        ],
+        "INFORMATION_BOUNDARIES": [
+            "Environment",
+            "Controller",
+            "StateUpdater",
+            "Evaluator",
+            "Runner",
+            "Trace",
+            "evaluator_only",
+            "environment_private",
+            "controller_private",
+        ],
+    }
+    missing.extend(
+        f"CONTROL_PROBLEM:{term}" for term in required_terms["CONTROL_PROBLEM"] if term not in control_text
+    )
+    missing.extend(
+        f"INFORMATION_BOUNDARIES:{term}"
+        for term in required_terms["INFORMATION_BOUNDARIES"]
+        if term not in boundaries_text
+    )
+    return result(
+        "phase2_documents",
+        not missing,
+        "missing: " + ", ".join(missing[:16])
+        if missing
+        else "formal problem, information firewall, coupling classification, exit answers, and four domain pressure tests are present",
+    )
+
+
+def check_phase2_dispositions() -> dict[str, object]:
+    ideas = emit_context.idea_index()
+    expected_statuses = {
+        "F-002": "accepted",
+        "F-006": "accepted",
+        "F-007": "accepted",
+        "P-002": "rejected",
+        "P-009": "seed",
+    }
+    errors = [
+        f"{idea_id}={ideas.get(idea_id, {}).get('status')}"
+        for idea_id, expected in expected_statuses.items()
+        if ideas.get(idea_id, {}).get("status") != expected
+    ]
+    for number in range(1, 10):
+        idea_id = f"M-{number:03d}"
+        item = ideas.get(idea_id, {})
+        if item.get("status") != "seed" or "deferred" not in item.get("notes", "").lower():
+            errors.append(f"{idea_id}=not explicitly deferred seed")
+    if "deferred" not in ideas.get("P-009", {}).get("notes", "").lower():
+        errors.append("P-009=not explicitly deferred")
+    return result(
+        "phase2_dispositions",
+        not errors,
+        "errors: " + ", ".join(errors)
+        if errors
+        else "problem framing and firewalls accepted; universal unit rejected from core; Signal and all nine coupling mechanisms remain deferred seeds",
+    )
 
 
 def check_legacy_inventory() -> dict[str, object]:
@@ -432,6 +748,43 @@ def check_status_cursor() -> dict[str, object]:
     )
 
 
+def check_phase2_status() -> dict[str, object]:
+    _, current = load_sources()
+    contract_data = emit_context.contracts()
+    counts = Counter(item["status"] for item in contract_data.get("contracts", []))
+    formal = current.get("formal_control_problem", {})
+    phases = {phase["id"]: phase for phase in emit_context.parse_roadmap()}
+    expected = {
+        "contract_count": len(contract_data.get("contracts", [])),
+        "accepted_contracts": counts["accepted"],
+        "optional_contracts": counts["optional"],
+        "deferred_contracts": counts["deferred"],
+        "rejected_from_minimal_core": counts["rejected_from_minimal_core"],
+        "required_invariants": len(contract_data.get("required_invariants", [])),
+        "domain_pressure_tests": len(contract_data.get("domain_pressure_tests", [])),
+    }
+    errors = [
+        f"{key}={formal.get(key)} expected {value}"
+        for key, value in expected.items()
+        if formal.get(key) != value
+    ]
+    if not formal.get("phase_2_complete"):
+        errors.append("phase_2_complete is not true")
+    if formal.get("specification_status") != "accepted_architecture_without_empirical_validation":
+        errors.append("specification status does not preserve the architecture/evidence distinction")
+    if phases.get(2, {}).get("status") != "done" or phases.get(3, {}).get("status") != "active":
+        errors.append("roadmap does not transition Phase 2 done -> Phase 3 active")
+    if current.get("runtime", {}).get("built") or current.get("runtime", {}).get("environments") != 0:
+        errors.append("status incorrectly reports runtime or environment implementation")
+    return result(
+        "phase2_status",
+        not errors,
+        "errors: " + "; ".join(errors)
+        if errors
+        else "Phase 2 counts match contracts, Phase 3 is active, and runtime/evidence remain unclaimed",
+    )
+
+
 def check_generated_markers() -> dict[str, object]:
     bad = []
     for path in (emit_context.IDEA_OUTPUT, emit_context.CONTEXT_OUTPUT, emit_context.LEGACY_OUTPUT):
@@ -480,11 +833,16 @@ CHECKS = [
     check_id_references,
     check_file_references,
     check_statuses,
+    check_contract_schema,
+    check_control_invariants,
+    check_phase2_documents,
+    check_phase2_dispositions,
     check_legacy_inventory,
     check_legacy_source_references,
     check_adrs,
     check_roadmap,
     check_status_cursor,
+    check_phase2_status,
     check_generated_markers,
     check_generated_freshness,
     check_context_size,

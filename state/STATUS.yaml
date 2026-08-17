@@ -2,7 +2,7 @@
   "schema_version": 1,
   "as_of": "2026-08-17",
   "project_name": "SER (provisional)",
-  "project_maturity": "phase_2_minimal_control_formalization_ready",
+  "project_maturity": "phase_3_microgym_ready",
   "runtime": {
     "built": false,
     "controllers": 0,
@@ -14,7 +14,20 @@
     "generated_context": true,
     "coherence_checker": true,
     "phase_0_validation_complete": true,
-    "phase_1_legacy_inventory_complete": true
+    "phase_1_legacy_inventory_complete": true,
+    "phase_2_formalization_complete": true
+  },
+  "formal_control_problem": {
+    "phase_2_complete": true,
+    "specification_status": "accepted_architecture_without_empirical_validation",
+    "contract_count": 22,
+    "accepted_contracts": 18,
+    "optional_contracts": 2,
+    "deferred_contracts": 1,
+    "rejected_from_minimal_core": 1,
+    "required_invariants": 12,
+    "domain_pressure_tests": 4,
+    "summary": "Phase 2 separates latent world, released observation history, controller epistemic state, policy-neutral legal actions, raw vector resources, first-class stopping, and evaluator-owned outcomes. Observation and optional Hypothesis are distinct; Scope is optional; Signal and all nine coupling mechanisms are deferred. This is accepted specification, not runtime or experimental evidence."
   },
   "evidence": {
     "ser_experiments": [],
@@ -30,14 +43,14 @@
     "summary": "Phase 1 found no legacy code suitable for unchanged reuse. Trace/provenance envelopes, completeness and access-policy checks, hash manifests, evaluator separation, paired controls, blinding, replay, and failed-run preservation survive only as patterns to rebuild behind SER-owned contracts. IDS data and labels are deferred environment/evaluator assets; prompts, rankers, comparators, product neighborhoods, domain schemas, and normalizers remain excluded prior solution logic. No generic Scope, Interval, epistemic-memory, flag, signal, or SER coupling-operator implementation was found in the current archive or reachable history."
   },
   "roadmap": {
-    "active_phase_id": 2,
-    "active_phase_title": "Formalize the minimal control problem",
-    "immediate_next_task": "Specify, without implementation, the minimal domain-neutral contracts for state, observation, epistemic unit or hypothesis, signal, scope, action, action result, transition, environment, policy interface, typed cost, outcome, and experiment/evaluator behavior; name baselines and unresolved choices before MicroGym."
+    "active_phase_id": 3,
+    "active_phase_title": "MicroGym",
+    "immediate_next_task": "Implement the smallest zero-LLM MicroGym against the accepted Phase 2 contracts, including hidden-state dynamics, noisy or failing actions, raw vector costs and budgets, explicit STOP or abstention, deterministic replay, trivial matched baselines, and an oracle or exact regret calculation."
   },
   "non_goals": [
-    "No SER runtime or controller until Phase 2's conceptual exit criteria are met.",
+    "No production SER runtime; Phase 3 permits only a minimal zero-LLM MicroGym and trivial experimental controllers.",
     "No LLM/model integration, TGNN, graph neural network, learned policy, or training infrastructure.",
-    "No coupling-law implementation, fuzzer, remote-sensing integration, or IDS adapter.",
+    "No coupling-law implementation, universal epistemic graph, fuzzer, remote-sensing integration, or IDS adapter.",
     "No IDS code or data import and no claim that IDS results validate SER."
   ]
 }

@@ -11,15 +11,16 @@ resources among observation, retrieval, experimentation, hypothesis generation,
 hypothesis refinement, comparison, internal reasoning, abandonment, and stopping
 to obtain useful decision-relevant uncertainty reduction under constraints.
 
-The starting loop is:
+The accepted problem-level loop is:
 
 `state -> choose epistemic action -> obtain observation/result -> update state -> choose again`
 
-This loop and the provisional objective
-`expected decision-relevant information gain - cost - latency - risk` are working
-research formulations, not validated laws or settled implementations. The exact
-objective, state representation, action set, update rule, and stopping rule remain
-open.
+The role separation and sequential control formulation are accepted architectural
+framing under `F-002` and ADR-0008 through ADR-0012, not a validated controller.
+The provisional policy objective `expected decision-relevant information gain -
+cost - latency - risk` remains a working research hypothesis. Exact policy
+objectives, state representations, domain action schemas, update algorithms, and
+stopping rules remain open.
 
 The research target is substrate-independent. Candidate resources include model
 tokens, cheap- or frontier-model computation, retrieval, source inspection,
@@ -30,13 +31,15 @@ The central empirical question is `H-001`: whether allocation organization contr
 
 ## 2. Current maturity / what has actually been built
 
-Project maturity is `phase_2_minimal_control_formalization_ready`. The durable knowledge architecture exists: canonical idea data, generated readable/context views, an ADR ledger, a single roadmap cursor, and a lightweight coherence checker. Runtime built: **false**. Controllers: **0**. Environments: **0**. Model integrations: **0**.
+Project maturity is `phase_3_microgym_ready`. The durable knowledge architecture exists: canonical idea data, generated readable/context views, an ADR ledger, a single roadmap cursor, and a lightweight coherence checker. Runtime built: **false**. Controllers: **0**. Environments: **0**. Model integrations: **0**.
 
 No SER experiment has run and no SER scientific hypothesis has experimental support.
 
 Legacy inventory: **31** component groups classified at archive commit `38b661324725c094ffcc820371a836573f4aadc5`: 0 reuse unchanged, 11 generalize, 14 empirical evidence only, 4 inspiration only, and 2 discard. No component is authorized for unchanged reuse.
 
 Phase 1 found no legacy code suitable for unchanged reuse. Trace/provenance envelopes, completeness and access-policy checks, hash manifests, evaluator separation, paired controls, blinding, replay, and failed-run preservation survive only as patterns to rebuild behind SER-owned contracts. IDS data and labels are deferred environment/evaluator assets; prompts, rankers, comparators, product neighborhoods, domain schemas, and normalizers remain excluded prior solution logic. No generic Scope, Interval, epistemic-memory, flag, signal, or SER coupling-operator implementation was found in the current archive or reachable history.
+
+Phase 2 formalization: **22** semantic contracts, **12** required invariants, and **4** domain pressure tests. Phase 2 separates latent world, released observation history, controller epistemic state, policy-neutral legal actions, raw vector resources, first-class stopping, and evaluator-owned outcomes. Observation and optional Hypothesis are distinct; Scope is optional; Signal and all nine coupling mechanisms are deferred. This is accepted specification, not runtime or experimental evidence.
 
 Do not infer runtime progress from the conceptual inventory. Mechanism entries preserve ideas; they are not code.
 
@@ -49,19 +52,22 @@ Do not infer runtime progress from the conceptual inventory. Mechanism entries p
 - `ADR-0005` **Explicit single phase cursor**: `plan/ROADMAP.md` contains exactly one phase with status `active`. `state/STATUS.yaml` repeats the cursor only as a coherence-checked current-state fact. Phase detail remains coarse until it approaches execution.
 - `ADR-0006` **IDS archive isolation**: Treat `/Users/paolo/proj/ids-rule-to-cve-inference-archive` as read-only historical input. Phase 1 may classify reuse candidates, but copying code, importing data, building an adapter, or claiming transfer requires later explicit decisions and relevant evidence.
 - `ADR-0007` **Canonical legacy inventory and no-transfer default**: `reference/LEGACY_INVENTORY.yaml` is the canonical registry for Phase 1 legacy-component judgments, and `reference/LEGACY_INVENTORY.md` is its generated readable view. Classifications record research recommendations, not import authorization. The default remains no code or data transfer; any future reuse or environment ingestion requires a separate explicit decision.
+- `ADR-0008` **Separate latent world, epistemic state, and evaluation**: Environments own latent `WorldState`; normal policies act only on legitimately released observations, their controller-owned `EpistemicState`, legal action capabilities, and remaining budget; evaluators use a separate restricted view. Evaluator-only information has no path into normal policy state or interfaces.
+- `ADR-0009` **Policy-neutral environment and action-legality boundary**: The environment owns latent dynamics, initial observation release, legal concrete actions or generative capabilities, domain execution, and environment termination. It never consumes `EpistemicState`. Legality may depend on world constraints, public history, capabilities, and budget, but not private controller reasoning. Policy preference is a separate role.
+- `ADR-0010` **Preserve vector-valued resource accounting**: Episodes declare named resource dimensions and units. Per-action and cumulative costs are nonnegative vectors; budgets constrain named dimensions. The core defines no conversion factors or universal scalar. Experiments may preregister scalarization, lexicographic comparison, or Pareto analysis while retaining raw dimensions.
+- `ADR-0011` **First-class STOP and distinct termination causes**: `STOP` is a first-class controller action with a domain submission or abstention. Controller stop, environment termination, and runner/evaluator truncation remain distinct trace events and outcome dimensions.
+- `ADR-0012` **Minimal epistemic ontology and explicit deferral**: Observations are first-class released information; hypotheses are an optional controller representation with no required common semantic supertype. A universal `EpistemicUnit` is rejected from the minimal core. Scope is an optional typed capability with domain-owned semantics. Signal, graph state, coupling operators, learned routing, confidence calculus, and universal information-gain objectives are deferred.
 
 ## 4. Current high-value primitives
 
-- `P-001` **Explicit epistemic state** (`working`): A controller may require explicit state containing observations, hypotheses, claims, unknowns, contradictions, uncertainty, provenance, scope, available actions, and costs.
-- `P-002` **Epistemic unit** (`seed`): Knowledge and evidence may need a substrate-independent unit carrying content, type, scope, provenance, confidence, time, acquisition cost, and relations.
-- `P-003` **Scope** (`working`): Evidence and hypotheses may need explicit semantic, structural, temporal, spatial, and observational applicability boundaries.
-- `P-004` **Epistemic action** (`working`): Candidate actions include observe, retrieve, transform, hypothesize, compare, test, deepen, broaden, revise, abandon, and stop.
-- `P-005` **Epistemic resource** (`working`): Epistemic resources may include tokens, model tiers, compute, retrieval, inspection, execution, tests, observations, time, and money.
+- `P-001` **Explicit epistemic state** (`working`): A policy acts on controller-entitled epistemic state that may be raw public history, a summary, or a structured representation, but is never latent world state or evaluator-only information.
+- `P-003` **Scope** (`working`): Scope is optional domain-typed metadata describing the claimed applicability or support domain of an observation, hypothesis, action, or relation, with any algebra owned by that scope type.
+- `P-004` **Epistemic action** (`working`): An epistemic action is a controller choice using a domain-owned schema and payload that can affect available information, transform entitled state, intervene on the world, or explicitly stop; descriptive categories are not a universal enum.
+- `P-005` **Epistemic resource** (`working`): Episodes declare named epistemic resource dimensions and units; actions incur nonnegative raw resource vectors that aggregate componentwise and may be constrained by partial vector budgets.
 - `P-006` **Cost, latency, and risk** (`working`): An epistemic action can consume multiple costs and may introduce latency or risk in addition to monetary or compute expense.
 - `P-007` **Provenance** (`working`): Structured state and compressed summaries should retain links to recoverable source observations and transformation history.
-- `P-008` **Uncertainty and confidence** (`seed`): Epistemic state may need explicit uncertainty or confidence attached to claims, observations, and alternatives.
 
-These are candidate theoretical primitives. No Python class, graph schema, or universal resource conversion is accepted. `P-003` Scope, `H-003` scope-aware allocation, `M-006` SCOPE_FILTER, a future implementation, and experiment evidence are separate objects.
+These are active candidate theoretical primitives. `P-002` is listed separately as rejected from the minimal core. No Python class, graph schema, universal confidence calculus, or universal resource conversion is accepted. `P-003` Scope, `H-003` scope-aware allocation, `M-006` SCOPE_FILTER, a future implementation, and experiment evidence are separate objects.
 
 ## 5. Working hypotheses
 
@@ -73,8 +79,8 @@ These are candidate theoretical primitives. No Python class, graph schema, or un
 
 ## 6. Important speculative/cold ideas worth remembering
 
-- `P-002` **Epistemic unit** (`seed`): Knowledge and evidence may need a substrate-independent unit carrying content, type, scope, provenance, confidence, time, acquisition cost, and relations.
 - `P-008` **Uncertainty and confidence** (`seed`): Epistemic state may need explicit uncertainty or confidence attached to claims, observations, and alternatives.
+- `P-009` **Signal** (`seed`): Signal is a reserved candidate name for a future epistemic role that would need semantics irreducible to Observation, ActionResult, EpistemicState, relations, or reliability metadata.
 - `H-002` **Decision-relevant information utility objective** (`seed`): A useful action objective may resemble expected decision-relevant information gain minus cost, latency, and risk.
 - `H-003` **Scope-aware allocation improves efficiency** (`seed`): Representing applicability scope and using it in gating may improve resource efficiency when evidence has local relevance.
 - `H-004` **Sparse selective propagation** (`seed`): Selective local propagation of evidence may allocate resources more effectively than broadcasting every item to every hypothesis.
@@ -89,29 +95,29 @@ These are candidate theoretical primitives. No Python class, graph schema, or un
 - `H-015` **Temporal graph policy or TGNN** (`seed`): If epistemic state becomes a temporal relational graph, a learned graph policy might predict where computation or evidence acquisition should go next.
 - `H-016` **Resource-normalized SER advantage** (`seed`): A SER controller may achieve better outcome per constrained resource than fixed, random, exhaustive, frontier-reasoning, or ordinary-agent strategies.
 - `M-010` **Epistemic compressor** (`seed`): An epistemic compressor would transform raw history into decision-relevant structured state while preserving links to recoverable evidence.
-- `M-012` **SER controller/runtime** (`seed`): SER provisionally denotes a control architecture that maintains structured epistemic state and routes resources among epistemic actions.
+- `M-012` **SER controller/runtime** (`seed`): SER provisionally denotes a control architecture that selects, targets, times, and stops resource-consuming epistemic actions while maintaining controller-entitled epistemic state.
 - `M-011` **MicroGym synthetic environment family** (`working`): MicroGym should provide zero-LLM synthetic environments with known hidden state, explicit observation costs, actions with different information value, and computable optimal or near-optimal behavior.
-- Preserved coupling-operator family (`seed`): `M-001` RES, `M-002` GATE, `M-003` AMP, `M-004` DAMP, `M-005` INHIBIT, `M-006` SCOPE_FILTER, `M-007` TOPK, `M-008` DEFEAT, `M-009` PROMOTE. Their semantics are unresolved under `Q-006`; names must not be converted into code or theory by guesswork.
+- Preserved coupling-operator family (`seed`, deferred): `M-001` RES, `M-002` GATE, `M-003` AMP, `M-004` DAMP, `M-005` INHIBIT, `M-006` SCOPE_FILTER, `M-007` TOPK, `M-008` DEFEAT, `M-009` PROMOTE. None is required for the first MicroGym. Their semantics remain unresolved under `Q-006`; names must not be converted into code or theory by guesswork.
 
 Cold preservation is deliberate: it prevents intellectual loss without promoting these ideas. Observation/reasoning oscillation rate and depth are trajectory measurements, not fixed constants. Remote sensing, SERT, and TGNN work are late-stage generalization possibilities, not roadmap commitments.
 
 ### Unresolved questions that constrain later work
 
-- `Q-001` **What objective should the controller optimize?** (`working`): How should decision relevance, information gain, cost, latency, risk, and multi-resource constraints be represented and combined?
-- `Q-002` **What is the minimal explicit epistemic state?** (`working`): Which observations, hypotheses, claims, unknowns, contradictions, uncertainties, provenance, scope, actions, and costs must be represented for useful control?
-- `Q-003` **What schema should an epistemic unit use?** (`working`): Which metadata and relations are truly substrate-independent, and which should remain environment-specific?
+- `Q-001` **What objective should the controller optimize?** (`working`): How should a controller value decision quality and information under vector cost, latency, risk, and partially ordered resource constraints without assuming one universal scalarization?
+- `Q-002` **What is the minimal explicit epistemic state?** (`working`): Beyond the accepted minimum entitlement, update, identity, and provenance invariants, which observations, hypotheses, contradictions, uncertainties, scopes, and summaries are useful to represent for control?
+- `Q-003` **Should epistemic content share a common schema?** (`working`): Is a future common envelope for observations, hypotheses, results, and other epistemic content useful, and which metadata or relations—if any—are truly substrate-independent?
 - `Q-004` **What, if anything, should transfer from IDS?** (`working`): Which IDS archive components should be reused unchanged, generalized, treated only as evidence or inspiration, or discarded, including any interval/scope work?
 - `Q-005` **What can an epistemic compressor discard safely?** (`working`): What information can be removed from raw history without harming future epistemic decisions, correction, or audit?
 - `Q-006` **What are the coupling operators' semantics?** (`seed`): What precise inputs, outputs, algebra, conflict behavior, scope rules, and costs should RES, GATE, AMP, DAMP, INHIBIT, SCOPE_FILTER, TOPK, DEFEAT, and PROMOTE have?
-- `Q-007` **When should epistemic work stop?** (`working`): What stopping rule balances remaining decision-relevant uncertainty against expected information value, latency, cost, and risk?
+- `Q-007` **When should epistemic work stop?** (`working`): Which policy stopping rule best balances submission or abstention quality against expected remaining value, latency, vector cost, and risk, and how should stopping regret be measured?
 - `Q-008` **Are SER and SERT the right names?** (`seed`): The project name, the expansion of SER, and the future SERT policy/training name remain provisional.
-- `Q-009` **What evidence warrants scientific promotion?** (`working`): Which environments, baselines, ablations, uncertainty analyses, and independent confirmations are required before a SER hypothesis becomes experimentally supported or accepted?
+- `Q-009` **What evidence warrants scientific promotion?** (`working`): Which cross-environment evidence, matched baselines, ablations, holdouts, uncertainty analyses, and independent confirmations warrant promoting a SER hypothesis?
 
 These questions are part of the durable conceptual state. Future work should update their canonical entries with decisions or evidence instead of resolving them only in conversation.
 
 ## 7. Rejected/deprecated ideas
 
-None. The absence of rejected entries reflects project age, not confirmation of the seeded ideas.
+- `P-002` **Epistemic unit** (`rejected`): A universal semantic supertype unifying observations, hypotheses, and other epistemic content was considered for the minimal core and is not required.
 
 ## 8. Current experimental evidence
 
@@ -122,23 +128,23 @@ The IDS finding is historical environment evidence only. It does not support the
 
 ## 9. Current roadmap cursor
 
-Active: **Phase 2 -- Formalize the minimal control problem**. Status: `active`.
+Active: **Phase 3 -- MicroGym**. Status: `active`.
 
-Goal: define the smallest useful state, action, observation, transition, cost, outcome, stopping, and metric formulation.
+Goal: implement zero-LLM synthetic environments and trivial baseline controllers with known hidden state and computable optimal or near-optimal behavior.
 
-Exit: a falsifiable specification names baseline policies, resource accounting, and the questions that MicroGym must distinguish.
+Exit: matched-cost fixed, random, exhaustive, and candidate routing policies can be compared reproducibly; noisy, failed, and abstaining trajectories are represented; raw vector costs and stopping regret are computable; hidden and evaluator-only information are demonstrably firewalled from normal policies.
 
 ## 10. Immediate next task
 
-Specify, without implementation, the minimal domain-neutral contracts for state, observation, epistemic unit or hypothesis, signal, scope, action, action result, transition, environment, policy interface, typed cost, outcome, and experiment/evaluator behavior; name baselines and unresolved choices before MicroGym.
+Implement the smallest zero-LLM MicroGym against the accepted Phase 2 contracts, including hidden-state dynamics, noisy or failing actions, raw vector costs and budgets, explicit STOP or abstention, deterministic replay, trivial matched baselines, and an oracle or exact regret calculation.
 
-The IDS archive remains read-only. Phase 2 authorizes conceptual specification only: no code/data copy, adapter, MicroGym, controller, or model integration.
+The IDS archive remains read-only. Phase 3 authorizes only the minimal zero-LLM MicroGym and trivial experimental policies needed by the accepted contracts: no IDS code/data copy, adapter, production runtime, model integration, graph runtime, or coupling-law implementation.
 
 ## 11. Important non-goals
 
-- No SER runtime or controller until Phase 2's conceptual exit criteria are met.
+- No production SER runtime; Phase 3 permits only a minimal zero-LLM MicroGym and trivial experimental controllers.
 - No LLM/model integration, TGNN, graph neural network, learned policy, or training infrastructure.
-- No coupling-law implementation, fuzzer, remote-sensing integration, or IDS adapter.
+- No coupling-law implementation, universal epistemic graph, fuzzer, remote-sensing integration, or IDS adapter.
 - No IDS code or data import and no claim that IDS results validate SER.
 
 Also avoid scientific overclaiming: a cold location is not acceptance, implementation is not evidence, a failed mechanism does not erase its conceptual history, and additional model calls are not architectural success.
@@ -148,6 +154,10 @@ Also avoid scientific overclaiming: a cold location is not acceptance, implement
 - `CHARTER.md`: research boundary, invariants, category distinctions, promotion/demotion, and non-goals.
 - `MAP.md`: document ownership and precedence.
 - `DECISIONS.md`: append-only accepted ADR history.
+- `theory/CONTROL_PROBLEM.md`: authoritative language-neutral control problem and Phase 3 requirements.
+- `theory/CONTRACTS.yaml`: machine-readable semantic contracts and invariants; not runtime classes.
+- `theory/INFORMATION_BOUNDARIES.md`: role visibility, authorized flows, and prohibited leakage paths.
+- `theory/DOMAIN_INSTANTIATIONS.md`: four domain instantiations used to pressure-test generality.
 - `theory/IDEA_MAP.yaml`: canonical concept identities, statuses, relations, provenance, falsifiers, and references.
 - `theory/PRIMITIVES.md`, `theory/HYPOTHESES.md`, and `theory/QUESTIONS.md`: concise conceptual reading aids.
 - `plan/ROADMAP.md`: the only authoritative phase cursor.

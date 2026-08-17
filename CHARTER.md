@@ -21,23 +21,25 @@ resources among observation, retrieval, experimentation, hypothesis generation,
 hypothesis refinement, comparison, internal reasoning, abandonment, and stopping
 to obtain useful decision-relevant uncertainty reduction under constraints.
 
-The starting loop is:
+The accepted problem-level loop is:
 
 `state -> choose epistemic action -> obtain observation/result -> update state -> choose again`
 
-This loop and the provisional objective
-`expected decision-relevant information gain - cost - latency - risk` are working
-research formulations, not validated laws or settled implementations. The exact
-objective, state representation, action set, update rule, and stopping rule remain
-open.
+The role separation and sequential control formulation are accepted architectural
+framing under `F-002` and ADR-0008 through ADR-0012, not a validated controller.
+The provisional policy objective `expected decision-relevant information gain -
+cost - latency - risk` remains a working research hypothesis. Exact policy
+objectives, state representations, domain action schemas, update algorithms, and
+stopping rules remain open.
 
 The research target is substrate-independent. Candidate resources include model
 tokens, cheap- or frontier-model computation, retrieval, source inspection,
 program execution, tests, active experimentation, sensor observations,
 wall-clock time, and money.
 
-`SER` provisionally means a runtime substrate/control architecture for structured
-epistemic routing. The name and expansion are not permanent decisions.
+`SER` provisionally names a control architecture that selects, targets, times,
+and stops resource-consuming epistemic actions while maintaining
+controller-entitled state. The name and expansion are not permanent decisions.
 
 ## Category invariants
 
@@ -46,7 +48,7 @@ These categories must not collapse:
 - **Foundation:** a project framing, methodological constraint, or durable
   boundary used to organize the research.
 - **Primitive:** a candidate irreducible concept needed to state a theory, such
-  as scope, cost, or an epistemic unit.
+  as typed scope or vector resource cost. Rejected candidates remain recorded.
 - **Hypothesis:** a falsifiable or sharpenable claim about how primitives relate
   or what effect a mechanism will have.
 - **Mechanism:** a proposed operation or architecture intended to realize a
@@ -132,6 +134,21 @@ The following are never sufficient by themselves:
   input. Its artifacts may later be inventoried, but its results do not validate
   SER and no code or data transfers automatically.
 - **I-009 -- One roadmap cursor.** Exactly one roadmap phase is active.
+- **I-010 -- Information-role separation.** Latent world state, legitimately
+  released observations, controller epistemic state, and evaluator-only
+  information remain distinct. A normal policy cannot access hidden state except
+  through an authorized observation.
+- **I-011 -- Policy-neutral environments.** Environments define dynamics,
+  observations, and legal capabilities without consuming private controller
+  belief state or recommending which legal action is epistemically best.
+- **I-012 -- Raw vector resource accounting.** Resource dimensions and units are
+  preserved before any experiment-specific scalarization; absent cross-domain
+  dimensions are not silently treated as zero.
+- **I-013 -- Explicit termination semantics.** Controller STOP, environment
+  termination, and evaluator/runner truncation remain distinguishable.
+- **I-014 -- Minimal ontology.** Baseline policies remain valid without explicit
+  hypotheses, graph state, Signal, coupling operators, universal confidence, or
+  a universal epistemic-unit schema.
 
 The central falsification constraint is `F-004`: if a simpler frontier-model or
 ordinary-agent strategy consistently matches or beats SER under the same relevant
@@ -139,11 +156,11 @@ resource budget, SER has not demonstrated architectural value in that scope.
 
 ## Current non-goals
 
-During the knowledge-architecture and legacy-inventory phases, do not implement
-LLM agents, model APIs, graph neural networks, TGNNs, learned policies, coupling
-laws, fuzzers, IDS adapters, remote-sensing integrations, epistemic graph
-runtimes, or training infrastructure. Do not import IDS code or datasets.
+Phase 2 specified semantics without implementing a runtime. Active Phase 3 may
+implement only zero-LLM MicroGym environments, trace/accounting support, and
+trivial experimental policies required to test the accepted contracts.
 
-The current task is continuity and governance: preserve what future reasoning
-needs without storing raw chats as the primary project memory.
-
+LLM agents and model APIs, graph neural networks, TGNNs, learned policies,
+coupling laws, semantic compressors, fuzzers, IDS adapters, remote-sensing
+integrations, epistemic graph runtimes, and training infrastructure remain
+non-goals. Do not import IDS code or datasets.

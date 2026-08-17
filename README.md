@@ -8,14 +8,16 @@ resources. Its starting question is:
 > and stopping so that it produces the greatest useful reduction in uncertainty
 > under resource constraints?
 
-The proposed control loop is only an object of investigation:
+The accepted problem-level loop is an architectural framing, not a validated
+controller:
 
 `state -> choose epistemic action -> obtain result -> update state -> choose again`
 
 No SER runtime, controller, agent, learned policy, or experimental result exists
-yet. This repository currently contains only the durable knowledge architecture
-needed to investigate those possibilities without confusing ideas, decisions,
-implementations, and evidence.
+yet. The repository contains the durable knowledge architecture and an accepted
+language-neutral control-problem specification. Phase 3 is ready to implement a
+minimal zero-LLM MicroGym without confusing specifications, implementations, and
+evidence.
 
 ## Start here
 
@@ -23,8 +25,12 @@ For a fresh, portable briefing, read `state/CONTEXT_PACKET.md`. Then read:
 
 1. `CHARTER.md` for the research boundary and invariants.
 2. `MAP.md` for document authority.
-3. `theory/IDEA_MAP.md` for the readable conceptual inventory.
-4. `plan/ROADMAP.md` for the active phase and immediate next task.
+3. `theory/CONTROL_PROBLEM.md` and `theory/CONTRACTS.yaml` for the accepted
+   Phase 2 semantics.
+4. `theory/INFORMATION_BOUNDARIES.md` for access and leakage rules.
+5. `theory/DOMAIN_INSTANTIATIONS.md` for cross-domain pressure tests.
+6. `theory/IDEA_MAP.md` for the readable conceptual inventory.
+7. `plan/ROADMAP.md` for the active phase and immediate next task.
 
 `theory/IDEA_MAP.yaml` is canonical; `theory/IDEA_MAP.md` is generated. Stable
 concept IDs let documents refer to one idea without repeatedly renaming or
@@ -66,8 +72,9 @@ generated files directly.
 
 ## Current non-goals
 
-This phase does not build LLM agents, model integrations, graph policies,
-coupling operators, fuzzers, IDS adapters, remote-sensing integrations, or
-training infrastructure. The completed IDS-to-CVE project is read-only
+Phase 3 permits only a minimal zero-LLM MicroGym and trivial experimental
+controllers. It does not authorize LLM agents, model integrations, graph
+policies, coupling operators, fuzzers, IDS adapters, remote-sensing integrations,
+or training infrastructure. The completed IDS-to-CVE project is read-only
 historical input and a possible future environment; none of its results validate
 SER.

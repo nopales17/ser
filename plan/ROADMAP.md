@@ -26,22 +26,33 @@ Allowed statuses: `planned`, `active`, `done`.
 
 ## Phase 2 -- Formalize the minimal control problem
 
-- status: active
+- status: done
 - goal: define the smallest useful state, action, observation, transition, cost,
   outcome, stopping, and metric formulation.
 - boundary: do not freeze epistemic-unit or coupling-operator schemas merely to
   make implementation convenient.
 - exit: a falsifiable specification names baseline policies, resource accounting,
   and the questions that MicroGym must distinguish.
+- result: the accepted specification separates latent world, released history,
+  controller epistemic state, legal action capabilities, raw vector resources,
+  stopping, and evaluator outcomes; it defines 22 semantic contracts, 12
+  required invariants, baseline families, and four domain pressure tests. This
+  result is architectural, not experimental evidence.
 
 ## Phase 3 -- MicroGym
 
-- status: planned
+- status: active
 - goal: implement zero-LLM synthetic environments and trivial baseline
   controllers with known hidden state and computable optimal or near-optimal
   behavior.
+- boundary: implement only the accepted Phase 2 contracts needed for the
+  smallest falsifiable experiment. Do not add an LLM, graph runtime, learned
+  policy, coupling laws, universal confidence calculus, IDS adapter, or
+  production SER framework.
 - exit: matched-cost fixed, random, exhaustive, and candidate routing policies
-  can be compared reproducibly.
+  can be compared reproducibly; noisy, failed, and abstaining trajectories are
+  represented; raw vector costs and stopping regret are computable; hidden and
+  evaluator-only information are demonstrably firewalled from normal policies.
 
 ## Phase 4 -- First controlled real environment
 

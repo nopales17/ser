@@ -4,13 +4,13 @@
 
 Readable rendering of canonical `theory/IDEA_MAP.yaml`. Status records maturity; this cold location records authority and preservation, not truth.
 
-Schema version: `1`. Total entries: **51**.
+Schema version: `1`. Total entries: **54**.
 
 ID families: `F-*` foundation or methodological constraint; `P-*` candidate primitive; `H-*` hypothesis; `M-*` proposed mechanism; `E-*` empirical finding; `Q-*` open question.
 
 Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `rejected`, `deprecated`
 
-## Foundations (5)
+## Foundations (7)
 
 ### `F-001` -- Epistemic resource allocation research boundary
 
@@ -29,18 +29,18 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 
 ### `F-002` -- Iterative epistemic control loop
 
-- **Status:** `working`
-- **Statement:** A useful starting abstraction is state -> choose epistemic action -> obtain result -> update state -> choose again.
-- **Why it matters:** It identifies the object to formalize while leaving the state, policy, transition, and stopping rule open.
+- **Status:** `accepted`
+- **Statement:** The accepted problem abstraction separates latent world state, released observations/history, controller epistemic state, legal action capabilities, vector budgets, action results, controller-side state update, first-class stopping, and evaluator-owned outcomes across sequential steps.
+- **Why it matters:** It defines the object of study without prescribing a SER solution, state representation, policy objective, or domain pipeline.
 - **Depends on:** `F-001`
-- **Related to:** `P-001`, `P-004`, `H-001`
-- **Would support:** A formal control problem that covers multiple environments without domain-specific exceptions.
+- **Related to:** `F-006`, `F-007`, `P-001`, `P-004`, `H-001`
+- **Would support:** The same semantic contracts instantiate MicroGym, IDS attribution, active software investigation, and a dynamic remote-sensing pressure test without core exceptions.
 - **Would falsify:** A target environment whose useful epistemic behavior cannot be represented as iterative state/action/update decisions.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
-- **Origin:** design synthesis discussion, 2026-08-17
+- **Evidence refs:** `DECISIONS.md`, `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `theory/DOMAIN_INSTANTIATIONS.md`
+- **Origin:** design synthesis discussion and Phase 2 formalization, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Working abstraction, not a validated architecture.
+- **Notes:** Accepted as a problem-formulation and architectural boundary under ADR-0008 through ADR-0012. It carries no empirical claim that a SER controller is useful.
 
 ### `F-003` -- Substrate-independent formulation
 
@@ -52,10 +52,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** One minimal control formulation predicts useful policies in structurally different environments.
 - **Would falsify:** Required concepts or metrics remain inseparable from one substrate after attempted formalization.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/DOMAIN_INSTANTIATIONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** An aspiration under investigation, not demonstrated generality.
+- **Notes:** The common contracts survive four manual pressure tests, but manual instantiation is not evidence of implemented or empirical generality.
 
 ### `F-004` -- Matched-baseline falsification constraint
 
@@ -87,82 +87,112 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Last reviewed:** `2026-08-17`
 - **Notes:** Governance invariant, not a scientific proposition.
 
-## Candidate primitives (8)
+### `F-006` -- Latent-world and evaluator firewall
+
+- **Status:** `accepted`
+- **Statement:** Latent world state, legitimately released observations, controller epistemic state, and evaluator-only information are distinct roles; a normal policy can use hidden facts only after authorized observational release.
+- **Why it matters:** Partial observability, oracle comparison, and policy evaluation are uninterpretable when hidden truth or evaluator knowledge can leak into decisions.
+- **Depends on:** `F-001`, `F-002`
+- **Related to:** `P-001`, `P-007`, `F-004`
+- **Would support:** Future implementations can enforce and audit role-specific projections across MicroGym and real environments.
+- **Would falsify:** A required target environment cannot represent legitimate feedback without collapsing evaluator truth into normal policy access.
+- **Implementation refs:** None recorded.
+- **Evidence refs:** `DECISIONS.md`, `theory/CONTROL_PROBLEM.md`, `theory/INFORMATION_BOUNDARIES.md`, `theory/CONTRACTS.yaml`
+- **Origin:** ADR-0008 and Phase 2 formalization, 2026-08-17
+- **Last reviewed:** `2026-08-17`
+- **Notes:** Accepted architectural boundary, not a claim that a runtime firewall exists or has been validated.
+
+### `F-007` -- Policy-neutral environment contract
+
+- **Status:** `accepted`
+- **Statement:** An environment owns latent dynamics, observation release, legal actions or capabilities, domain execution, and environment termination without consuming controller-private belief state or choosing the epistemically preferred legal action.
+- **Why it matters:** Different policies and state representations need to share an environment without the environment silently implementing part of the controller.
+- **Depends on:** `F-002`, `F-006`
+- **Related to:** `P-004`, `P-005`, `H-001`, `M-011`
+- **Would support:** Random, fixed, exhaustive, oracle-reference, and candidate controllers can use the same environment contract under declared access classes.
+- **Would falsify:** Useful legal capability generation necessarily requires access to controller-private epistemic state in a target domain.
+- **Implementation refs:** None recorded.
+- **Evidence refs:** `DECISIONS.md`, `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `theory/DOMAIN_INSTANTIATIONS.md`
+- **Origin:** ADR-0009 and Phase 2 formalization, 2026-08-17
+- **Last reviewed:** `2026-08-17`
+- **Notes:** Accepted architectural boundary. Legality may depend on hidden safety constraints but must not encode hidden epistemic recommendations.
+
+## Candidate primitives (9)
 
 ### `P-001` -- Explicit epistemic state
 
 - **Status:** `working`
-- **Statement:** A controller may require explicit state containing observations, hypotheses, claims, unknowns, contradictions, uncertainty, provenance, scope, available actions, and costs.
-- **Why it matters:** Allocation decisions require a representation of what is known, unknown, conflicting, and possible next.
-- **Depends on:** `F-002`
+- **Statement:** A policy acts on controller-entitled epistemic state that may be raw public history, a summary, or a structured representation, but is never latent world state or evaluator-only information.
+- **Why it matters:** The semantic boundary permits different state and update strategies while keeping policy information entitlement auditable.
+- **Depends on:** `F-002`, `F-006`
 - **Related to:** `P-002`, `P-003`, `P-007`, `P-008`, `M-010`
 - **Would support:** A smaller explicit state is sufficient for near-optimal choices in MicroGym.
 - **Would falsify:** Explicit state provides no benefit over history-only baselines when resources are matched.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`, `reference/IDS_LESSONS.md`
+- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`, `reference/IDS_LESSONS.md`, `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `DECISIONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** The listed fields are candidates, not a frozen schema. IDS CDA ledgers are inspiration only: their separation of observations, propositions, alternatives, and unknowns is a Phase 2 test case, not an implementation reference.
+- **Notes:** Working candidate primitive. Phase 2 accepts the entitlement and representation-independence contract, not a particular structured schema. Baselines may use history only and maintain no hypotheses, graph, uncertainty calculus, or Scope.
 
 ### `P-002` -- Epistemic unit
 
-- **Status:** `seed`
-- **Statement:** Knowledge and evidence may need a substrate-independent unit carrying content, type, scope, provenance, confidence, time, acquisition cost, and relations.
-- **Why it matters:** A common unit could make heterogeneous evidence comparable and routable.
+- **Status:** `rejected`
+- **Statement:** A universal semantic supertype unifying observations, hypotheses, and other epistemic content was considered for the minimal core and is not required.
+- **Why it matters:** Rejecting the premature ontology keeps observation release, optional controller claims, provenance, and scope semantics distinct until repeated implementations demonstrate a true common invariant.
 - **Depends on:** `F-003`
 - **Related to:** `P-001`, `P-003`, `P-006`, `P-007`, `Q-003`
 - **Would support:** One minimal unit represents observations and claims across multiple environments without lossy special cases.
 - **Would falsify:** Cross-domain representations require incompatible semantics hidden behind a superficial common schema.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`
+- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`, `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `theory/DOMAIN_INSTANTIATIONS.md`, `DECISIONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Do not freeze the schema before Phase 2. Deep archive and history inspection found no EpistemicMemoryUnit, relevant generic Signal, or FlagAttachment model; the CDA ledger remains inspiration only.
+- **Notes:** Rejected only as a required Phase 2/Phase 3 primitive under ADR-0012. Observation and optional Hypothesis remain separate. A future infrastructure envelope may be reconsidered after multiple domains expose repeated semantics; the stable ID is preserved.
 
 ### `P-003` -- Scope
 
 - **Status:** `working`
-- **Statement:** Evidence and hypotheses may need explicit semantic, structural, temporal, spatial, and observational applicability boundaries.
-- **Why it matters:** Unscoped evidence can be propagated or trusted outside the conditions where it is informative.
-- **Depends on:** `P-002`
+- **Statement:** Scope is optional domain-typed metadata describing the claimed applicability or support domain of an observation, hypothesis, action, or relation, with any algebra owned by that scope type.
+- **Why it matters:** Explicit local applicability may support later gating tests without imposing one universal coordinate system or making scope mandatory for every policy.
+- **Depends on:** `F-003`
 - **Related to:** `H-003`, `H-010`, `Q-004`, `M-006`
 - **Would support:** Scope-aware controllers outperform matched scope-blind controls on environments with local relevance.
 - **Would falsify:** Scope annotations add cost without improving decisions in environments designed to require local applicability.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`, `reference/IDS_LESSONS.md`
+- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`, `reference/IDS_LESSONS.md`, `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `theory/DOMAIN_INSTANTIATIONS.md`, `DECISIONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Candidate primitive. Deep current-tree and reachable-history inspection found no generic Scope or Interval implementation. SameProductNeighborhood and claim-scope labels are IDS-specific evidence, not implementation refs; Phase 2 should specify Scope from scratch.
+- **Notes:** Working optional capability, not required in the first MicroGym. No universal compatible/intersection/contains operation is accepted. Deep archive inspection found no generic implementation, and product neighborhoods remain unrelated environment logic.
 
 ### `P-004` -- Epistemic action
 
 - **Status:** `working`
-- **Statement:** Candidate actions include observe, retrieve, transform, hypothesize, compare, test, deepen, broaden, revise, abandon, and stop.
-- **Why it matters:** The controller's choice space must distinguish ways of acquiring evidence from ways of transforming belief.
+- **Statement:** An epistemic action is a controller choice using a domain-owned schema and payload that can affect available information, transform entitled state, intervene on the world, or explicitly stop; descriptive categories are not a universal enum.
+- **Why it matters:** A minimal envelope must represent finite and generative domain actions, internal computation, active tests, failures, and STOP without making their parameters identical.
 - **Depends on:** `F-002`
 - **Related to:** `P-005`, `H-006`, `H-009`, `Q-002`
 - **Would support:** A compact action taxonomy covers optimal or near-optimal policies in early environments.
 - **Would falsify:** The taxonomy systematically aliases actions with different transition or cost behavior.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `theory/DOMAIN_INSTANTIATIONS.md`, `DECISIONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Action boundaries and granularity remain open.
+- **Notes:** Action identity, schema/kind, and declared payload are universal; target, typed scope, and analytic external/internal/mixed mode are optional. STOP is first-class under ADR-0011.
 
 ### `P-005` -- Epistemic resource
 
 - **Status:** `working`
-- **Statement:** Epistemic resources may include tokens, model tiers, compute, retrieval, inspection, execution, tests, observations, time, and money.
+- **Statement:** Episodes declare named epistemic resource dimensions and units; actions incur nonnegative raw resource vectors that aggregate componentwise and may be constrained by partial vector budgets.
 - **Why it matters:** The research concerns allocation across heterogeneous constraints, not merely reasoning length.
 - **Depends on:** `F-001`
 - **Related to:** `P-006`, `F-003`, `F-004`, `H-016`
 - **Would support:** Resource accounting predicts tradeoffs and permits matched comparisons.
 - **Would falsify:** Purported resource types cannot be made comparable enough to define constraints or baselines.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `DECISIONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** No universal scalar conversion is assumed.
+- **Notes:** ADR-0010 accepts vector accounting as architecture. A dimension absent from an episode schema is unmeasured or inapplicable, not zero; experiment-specific scalarization remains optional.
 
 ### `P-006` -- Cost, latency, and risk
 
@@ -174,25 +204,25 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Multi-cost policies improve task utility under explicit constraints.
 - **Would falsify:** The added dimensions never affect optimal decisions in relevant environments.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `DECISIONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** The combination rule is unresolved.
+- **Notes:** Raw measurable costs use declared vector dimensions. Latency may also advance a dynamic world; risk and multi-objective outcome semantics remain experiment-specific. No universal combination rule is accepted.
 
 ### `P-007` -- Provenance
 
 - **Status:** `working`
 - **Statement:** Structured state and compressed summaries should retain links to recoverable source observations and transformation history.
 - **Why it matters:** Future decisions and audits may need to recover why a claim exists and which evidence it depends on.
-- **Depends on:** `P-001`, `P-002`
+- **Depends on:** `P-001`
 - **Related to:** `M-010`, `H-005`
 - **Would support:** Provenance links allow compact state while preserving correction and audit behavior.
 - **Would falsify:** Maintaining sufficient provenance costs more than any decision benefit it enables in target settings.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`, `reference/IDS_LESSONS.md`
+- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`, `reference/IDS_LESSONS.md`, `theory/CONTROL_PROBLEM.md`, `theory/INFORMATION_BOUNDARIES.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Raw chat transcript accumulation is not the intended provenance system. Versioned traces, hash manifests, access declarations, and completeness gates generalize as patterns, but no IDS implementation is authorized for reuse.
+- **Notes:** Every externally acquired observation requires release provenance. Transition state references may be snapshots, hashes, or reconstruction recipes; full universal state serialization is not required.
 
 ### `P-008` -- Uncertainty and confidence
 
@@ -204,10 +234,25 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Calibrated uncertainty improves action choice and stopping under matched resources.
 - **Would falsify:** Explicit confidence fails to improve routing and introduces systematic miscalibration.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** No probabilistic semantics are fixed.
+- **Notes:** Optional controller/evidence metadata only. No baseline, observation, hypothesis, STOP, or outcome contract requires probabilistic confidence or a universal uncertainty calculus.
+
+### `P-009` -- Signal
+
+- **Status:** `seed`
+- **Statement:** Signal is a reserved candidate name for a future epistemic role that would need semantics irreducible to Observation, ActionResult, EpistemicState, relations, or reliability metadata.
+- **Why it matters:** Giving Signal stable identity preserves the earlier design question while preventing an undefined second evidence carrier from entering the minimal ontology.
+- **Depends on:** `F-002`
+- **Related to:** `P-001`, `P-002`, `P-008`, `Q-003`
+- **Would support:** A required behavior in multiple environments cannot be represented cleanly by accepted contracts without a distinct Signal role.
+- **Would falsify:** Proposed Signal use cases remain ordinary observations, action results, derived state, relations, or reliability annotations.
+- **Implementation refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `reference/LEGACY_INVENTORY.yaml`
+- **Origin:** Phase 1 contract recommendation and Phase 2 ontology review, 2026-08-17
+- **Last reviewed:** `2026-08-17`
+- **Notes:** Explicitly deferred. No irreducible role was found, no legacy implementation exists, and Signal is not required for Phase 3. Do not implement it merely because the name is preserved.
 
 ## Hypotheses (16)
 
@@ -236,10 +281,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** The objective predicts near-optimal actions in environments with known hidden state and costs.
 - **Would falsify:** Policies optimizing it reduce nominal uncertainty while worsening relevant decisions or violating constraints.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Exact terms, scaling, and estimators are unresolved.
+- **Notes:** Candidate policy principle only. Expected information gain, Shannon entropy, scalar reward, and any cost/latency/risk combination are excluded from the environment and formal problem definition.
 
 ### `H-003` -- Scope-aware allocation improves efficiency
 
@@ -248,13 +293,13 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Why it matters:** It connects the Scope primitive to a measurable allocation benefit.
 - **Depends on:** `P-003`
 - **Related to:** `H-004`, `M-002`, `M-006`
-- **Would support:** A scope-aware ablation improves matched-cost outcomes over scope-blind routing.
-- **Would falsify:** Scope-aware gating fails in environments constructed with explicit local relevance or costs more than it saves.
+- **Would support:** A scope-aware policy improves matched-cost vector outcomes over scope-blind, fixed-order, random, cheap-first, and exhaustive controls in a preregistered environment with explicit local relevance.
+- **Would falsify:** The apparent benefit disappears after controlling for order, cost, identifiers, formatting, or brute-force compute, or scope overhead costs more than it saves.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `theory/DOMAIN_INSTANTIATIONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Do not confuse with implementing a Scope class.
+- **Notes:** Scope is an optional typed capability. The first MicroGym need not implement it; a separate locality variant and shortcut controls are required before testing this hypothesis.
 
 ### `H-004` -- Sparse selective propagation
 
@@ -269,7 +314,7 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** No coupling operator has defined semantics or implementation. Deep archive and reachable-history search found no exact SER operator semantics; APF/APF2 candidate predicates are unrelated prior solution logic.
+- **Notes:** No coupling operator is required by the formal problem or initial MicroGym. Selective propagation remains a hypothesis that could later be implemented as ordinary policy or updater logic; all nine names remain deferred seeds.
 
 ### `H-005` -- Decision-sufficient epistemic compression
 
@@ -311,10 +356,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Rate and depth predict outcomes after controlling for total resources and task difficulty.
 - **Would falsify:** They add no explanatory or policy value beyond total action counts and costs.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `theory/DOMAIN_INSTANTIATIONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Initially measured trajectory properties, never fixed architectural constants.
+- **Notes:** Optional external_acquisition/internal_computation/mixed action metadata permits trace-derived measurement without prescribing oscillation; mixed actions are not forced into a false binary.
 
 ### `H-008` -- Environmental coherence timescale constrains reasoning depth
 
@@ -326,10 +371,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Optimal reasoning depth changes predictably as controlled environment dynamics change.
 - **Would falsify:** Coherence timescale fails to explain or predict allocation after matched controls.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/DOMAIN_INSTANTIATIONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Hypothesis, not a law.
+- **Notes:** Dynamic-world transitions, acquisition/release times, and action latency make this testable later. No coherence timescale is part of the core contract.
 
 ### `H-009` -- Active observation can manufacture discriminating evidence
 
@@ -341,10 +386,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Selected interventions distinguish hypotheses more efficiently than passive or random observations.
 - **Would falsify:** Intervention selection provides no gain over cost-matched passive sampling in target environments.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/DOMAIN_INSTANTIATIONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Passive: world -> observation. Active: choose input -> world/system -> observation.
+- **Notes:** The software pressure test shows the contracts can represent choose input -> world transition -> observation, including mixed world-changing and informative actions. This is formal coverage, not empirical support.
 
 ### `H-010` -- Hierarchical boundary selection
 
@@ -356,10 +401,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** A shared hierarchical selection mechanism improves routing in software and observation domains.
 - **Would falsify:** Boundary choice requires unrelated domain-specific machinery with no transferable abstraction.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/DOMAIN_INSTANTIATIONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Candidate generalization hypothesis.
+- **Notes:** Core contracts permit domain actions with hierarchical targets and optional typed Scope, but require no hierarchy machinery. Cross-domain benefit remains untested.
 
 ### `H-011` -- IDS-to-CVE as a future controlled environment
 
@@ -463,10 +508,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis inventory, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Exact semantics unresolved; do not implement.
+- **Notes:** Deferred. RES could name state-updater propagation, but no irreducible semantics have been shown beyond an ordinary updater transformation. It is not required for Phase 3; do not implement from the name alone.
 
 ### `M-002` -- GATE coupling operator
 
@@ -478,10 +523,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis inventory, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Exact semantics unresolved; do not implement.
+- **Notes:** Deferred. Policy routing may gate which legal action is chosen, but environment legality is separately defined by ActionInterface and must not encode a preferred policy. GATE is not required for Phase 3.
 
 ### `M-003` -- AMP coupling operator
 
@@ -493,10 +538,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis inventory, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Exact semantics unresolved; do not implement.
+- **Notes:** Deferred. Increasing influence may be ordinary updater or policy scoring logic; no separate universal operator has been justified. AMP is not required for Phase 3.
 
 ### `M-004` -- DAMP coupling operator
 
@@ -508,10 +553,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis inventory, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Exact semantics unresolved; do not implement.
+- **Notes:** Deferred. Reducing influence may be ordinary updater or policy scoring logic; no separate universal operator has been justified. DAMP is not required for Phase 3.
 
 ### `M-005` -- INHIBIT coupling operator
 
@@ -523,10 +568,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis inventory, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Exact semantics unresolved; do not implement.
+- **Notes:** Deferred. Suppression could occur in an updater or policy, while hard legality remains an environment responsibility. INHIBIT is not required for Phase 3.
 
 ### `M-006` -- SCOPE_FILTER coupling operator
 
@@ -538,10 +583,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis inventory, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Exact semantics unresolved; do not implement.
+- **Notes:** Deferred. Scope-aware policy gating is representable with the optional typed Scope capability, but it is not synonymous with environment legality and is not required for the first MicroGym.
 
 ### `M-007` -- TOPK coupling operator
 
@@ -553,10 +598,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis inventory, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Exact semantics and selection score unresolved; do not implement.
+- **Notes:** Deferred. Top-k behavior is presently ordinary policy selection or state compression, not a primitive coupling law. Its score and tie behavior remain unspecified, and it is not required for Phase 3.
 
 ### `M-008` -- DEFEAT coupling operator
 
@@ -568,10 +613,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis inventory, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Exact semantics unresolved; do not implement.
+- **Notes:** Deferred. A defeat relation may be useful only when an environment exposes optional structured hypotheses or arguments. Hypotheses are not core-required and DEFEAT is not required for Phase 3.
 
 ### `M-009` -- PROMOTE coupling operator
 
@@ -583,10 +628,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis inventory, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Not the same as maturity promotion; exact runtime semantics unresolved.
+- **Notes:** Deferred. Runtime activation or routing priority could be ordinary policy/updater state. This is not concept-maturity promotion, its exact semantics remain unresolved, and it is not required for Phase 3.
 
 ### `M-010` -- Epistemic compressor
 
@@ -613,25 +658,25 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Controllers recover known allocation structure and beat trivial matched baselines.
 - **Would falsify:** The environments cannot distinguish routing quality from task-solving capacity or have no useful baseline oracle.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `theory/DOMAIN_INSTANTIATIONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Phase 3 target; no environment implemented.
+- **Notes:** Phase 2 accepted the minimum requirements for Phase 3: known hidden state, finite inspectable dynamics, noisy/failing actions, vector costs and budgets, explicit STOP/abstention, deterministic replay, trivial baselines, and an oracle/regret computation. No environment is implemented.
 
 ### `M-012` -- SER controller/runtime
 
 - **Status:** `seed`
-- **Statement:** SER provisionally denotes a control architecture that maintains structured epistemic state and routes resources among epistemic actions.
+- **Statement:** SER provisionally denotes a control architecture that selects, targets, times, and stops resource-consuming epistemic actions while maintaining controller-entitled epistemic state.
 - **Why it matters:** It names the possible runtime object whose value the project may eventually test.
 - **Depends on:** `F-002`, `P-001`, `P-004`, `P-005`, `H-001`
 - **Related to:** `H-014`, `Q-008`
 - **Would support:** A minimal controller can be specified and evaluated without embedding the result in its design.
 - **Would falsify:** The proposed architecture adds no separable behavior beyond an ordinary agent loop.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `theory/INFORMATION_BOUNDARIES.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Name and expansion provisional. Do not implement in current phases.
+- **Notes:** The semantic role is now formalized, but the name and expansion remain provisional. Phase 3 may implement only a zero-LLM MicroGym controller against the accepted contracts; no production runtime is authorized.
 
 ## Empirical findings (1)
 
@@ -655,47 +700,47 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 ### `Q-001` -- What objective should the controller optimize?
 
 - **Status:** `working`
-- **Statement:** How should decision relevance, information gain, cost, latency, risk, and multi-resource constraints be represented and combined?
+- **Statement:** How should a controller value decision quality and information under vector cost, latency, risk, and partially ordered resource constraints without assuming one universal scalarization?
 - **Why it matters:** Different objectives can choose different actions and create different stopping behavior.
 - **Depends on:** `H-002`, `P-006`
 - **Related to:** `Q-007`
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Intentionally unresolved.
+- **Notes:** Phase 2 settled raw nonnegative vector accounting and preregistration of any scalarization or Pareto rule. The policy objective and tradeoff rule remain intentionally unresolved.
 
 ### `Q-002` -- What is the minimal explicit epistemic state?
 
 - **Status:** `working`
-- **Statement:** Which observations, hypotheses, claims, unknowns, contradictions, uncertainties, provenance, scope, actions, and costs must be represented for useful control?
+- **Statement:** Beyond the accepted minimum entitlement, update, identity, and provenance invariants, which observations, hypotheses, contradictions, uncertainties, scopes, and summaries are useful to represent for control?
 - **Why it matters:** Too little state loses decision information; too much recreates unbounded history.
 - **Depends on:** `P-001`
 - **Related to:** `P-008`, `Q-003`, `Q-005`
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Phase 2 formalization question.
+- **Notes:** Phase 2 accepted the minimum semantics of controller-entitled epistemic state without requiring hypotheses, confidence, graphs, or a single representation. Useful additional structure remains empirical and domain-sensitive.
 
-### `Q-003` -- What schema should an epistemic unit use?
+### `Q-003` -- Should epistemic content share a common schema?
 
 - **Status:** `working`
-- **Statement:** Which metadata and relations are truly substrate-independent, and which should remain environment-specific?
+- **Statement:** Is a future common envelope for observations, hypotheses, results, and other epistemic content useful, and which metadata or relations—if any—are truly substrate-independent?
 - **Why it matters:** Premature schema commitment could encode a single domain as universal theory.
 - **Depends on:** `P-002`
 - **Related to:** `Q-002`
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Intentionally unresolved until minimal control formalization.
+- **Notes:** Phase 2 rejected a universal EpistemicUnit from the minimal core and kept Observation plus optional Hypothesis as distinct roles. A later common envelope remains open if implementation evidence warrants it.
 
 ### `Q-004` -- What, if anything, should transfer from IDS?
 
@@ -737,25 +782,25 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`
+- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`, `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Intentionally cold and unresolved. Exact search across the archive's current tree and reachable history found no executable or documented SER operator semantics; APF/APF2 filters must not fill the gap by analogy.
+- **Notes:** All nine names remain cold, deferred, and unnecessary for the first MicroGym. Phase 2 classified possible future roles but found no irreducible semantics; exact archive search likewise found no executable or documented SER operator definitions. APF/APF2 filters must not fill the gap by analogy.
 
 ### `Q-007` -- When should epistemic work stop?
 
 - **Status:** `working`
-- **Statement:** What stopping rule balances remaining decision-relevant uncertainty against expected information value, latency, cost, and risk?
+- **Statement:** Which policy stopping rule best balances submission or abstention quality against expected remaining value, latency, vector cost, and risk, and how should stopping regret be measured?
 - **Why it matters:** Stopping is an epistemic action and central to resource efficiency.
 - **Depends on:** `H-002`, `P-004`
 - **Related to:** `H-006`, `Q-001`
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** No threshold or rule is fixed.
+- **Notes:** Phase 2 accepted STOP as a first-class action and separated controller stopping from environment termination and truncation. No policy threshold is fixed; Phase 3 must make stopping regret computable.
 
 ### `Q-008` -- Are SER and SERT the right names?
 
@@ -775,14 +820,14 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 ### `Q-009` -- What evidence warrants scientific promotion?
 
 - **Status:** `working`
-- **Statement:** Which environments, baselines, ablations, uncertainty analyses, and independent confirmations are required before a SER hypothesis becomes experimentally supported or accepted?
+- **Statement:** Which cross-environment evidence, matched baselines, ablations, holdouts, uncertainty analyses, and independent confirmations warrant promoting a SER hypothesis?
 - **Why it matters:** Promotion thresholds must resist development-set overfitting and broad claims from narrow evidence.
 - **Depends on:** `F-004`, `F-005`, `H-016`
 - **Related to:** None recorded.
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** `CHARTER.md`
+- **Evidence refs:** `CHARTER.md`, `theory/CONTROL_PROBLEM.md`, `theory/DOMAIN_INSTANTIATIONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Governance path is accepted; scientific thresholds remain open.
+- **Notes:** Governance and promotion paths are accepted, but scientific thresholds remain open. Formal coverage and four-domain pressure tests are specification evidence only, not empirical support or generalization evidence.

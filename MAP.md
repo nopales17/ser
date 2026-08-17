@@ -11,6 +11,10 @@ is an independent field on concepts and evidence.
 | `MAP.md` | cold | source ownership and precedence | substantive theory |
 | `theory/IDEA_MAP.yaml` | cold, canonical data | stable concept identities, maturity, relations, provenance, evidence links | current implementation state |
 | `theory/IDEA_MAP.md` | generated view | nothing independently; readable rendering of the YAML registry | edits or new concepts |
+| `theory/CONTROL_PROBLEM.md` | cold, canonical theory | accepted semantic formulation, invariants, contract interpretation, deferrals, and Phase 3 requirements | runtime API or evidence that a controller works |
+| `theory/CONTRACTS.yaml` | cold, canonical data | stable Phase 2 contract identities, status, required/optional semantics, relations, and invariants | language-specific class definitions |
+| `theory/INFORMATION_BOUNDARIES.md` | cold, canonical theory | role visibility, authorized flows, leakage prohibitions, and oracle separation | proof that a future implementation enforces the firewall |
+| `theory/DOMAIN_INSTANTIATIONS.md` | cold explanation | manual application and adversarial pressure testing of the common contracts across four domains | implemented environments or empirical generality |
 | `theory/PRIMITIVES.md` | cold explanation | distinctions and current candidate primitive vocabulary | maturity or identity independent of the idea map |
 | `theory/HYPOTHESES.md` | cold explanation | hypothesis families and evaluation discipline | hypothesis status independent of the idea map |
 | `theory/QUESTIONS.md` | cold explanation | unresolved research questions and their concept IDs | roadmap priority |

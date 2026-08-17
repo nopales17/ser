@@ -10,8 +10,11 @@ Read in this order:
 2. `CHARTER.md` -- research boundary, invariants, and non-goals.
 3. `MAP.md` -- which source is authoritative for each kind of knowledge.
 4. Relevant entries in `theory/IDEA_MAP.yaml` or its generated readable view.
-5. `plan/ROADMAP.md` -- the single active phase and its exit criteria.
-6. Implementation files, only after the conceptual context is understood.
+5. `theory/CONTROL_PROBLEM.md` and relevant entries in
+   `theory/CONTRACTS.yaml` -- accepted semantic contracts and deferrals.
+6. `theory/INFORMATION_BOUNDARIES.md` -- access roles and prohibited flows.
+7. `plan/ROADMAP.md` -- the single active phase and its exit criteria.
+8. Implementation files, only after the conceptual context is understood.
 
 If the generated packet is absent or stale, run `python3 tools/emit_context.py`
 before continuing.
@@ -40,6 +43,15 @@ before continuing.
 - Research boundary or invariant: append an ADR, then amend `CHARTER.md`.
 - Concept identity, relationship, maturity, or evidence link: edit
   `theory/IDEA_MAP.yaml`, then regenerate.
+- Formal control semantics, invariants, deferrals, or Phase 3 requirements: edit
+  `theory/CONTROL_PROBLEM.md`; append an ADR first when changing an accepted
+  architectural constraint.
+- Contract identity, status, or semantic fields: edit `theory/CONTRACTS.yaml`
+  and keep the control-problem prose aligned.
+- Role visibility or leakage rules: edit `theory/INFORMATION_BOUNDARIES.md`;
+  append an ADR first when changing the evaluator/controller firewall.
+- Domain pressure-test mappings: edit `theory/DOMAIN_INSTANTIATIONS.md` without
+  treating a manual instantiation as empirical evidence.
 - Plan or phase cursor: edit `plan/ROADMAP.md` and current facts in
   `state/STATUS.yaml`, then regenerate.
 - Present implementation/evidence fact: edit `state/STATUS.yaml`, then

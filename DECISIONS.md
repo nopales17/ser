@@ -93,3 +93,120 @@ a new entry; do not rewrite it.
 - Alternatives rejected: prose-only notes; copying candidate artifacts while
   evaluating them; treating `generalize` or `empirical_evidence_only` as implicit
   permission to import.
+
+## ADR-0008 -- Separate latent world, epistemic state, and evaluation
+
+- Status: accepted
+- Date: 2026-08-17
+- Context: A sequential epistemic-control comparison is uninterpretable if
+  hidden truth, controller-entitled information, private belief state, and
+  evaluator knowledge share one undifferentiated state object.
+- Decision: Environments own latent `WorldState`; normal policies act only on
+  legitimately released observations, their controller-owned `EpistemicState`,
+  legal action capabilities, and remaining budget; evaluators use a separate
+  restricted view. Evaluator-only information has no path into normal policy
+  state or interfaces.
+- Why: The separation makes partial observability, leakage audits, oracle
+  references, and fair baseline comparison explicit across all target domains.
+- Alternatives rejected: one global episode state passed to all components;
+  policy access to world handles with voluntary field discipline; treating
+  evaluator labels as ordinary environment metadata.
+- Consequences: Future implementations require explicit projections and access
+  classes. Oracle policies must run as separately labeled evaluator instruments.
+- Revisit when: A target domain cannot be represented without legitimate online
+  feedback from evaluation; that feedback must first be modeled as a new
+  provenance-bearing observation under a named access condition.
+
+## ADR-0009 -- Policy-neutral environment and action-legality boundary
+
+- Status: accepted
+- Date: 2026-08-17
+- Context: Environments must expose what can legally be attempted without
+  encoding which attempt is epistemically best or depending on SER's private
+  belief representation.
+- Decision: The environment owns latent dynamics, initial observation release,
+  legal concrete actions or generative capabilities, domain execution, and
+  environment termination. It never consumes `EpistemicState`. Legality may
+  depend on world constraints, public history, capabilities, and budget, but not
+  private controller reasoning. Policy preference is a separate role.
+- Why: This permits random, fixed, exhaustive, oracle-reference, learned, LLM,
+  and future SER policies to share the same environment without silently giving
+  the environment policy power.
+- Alternatives rejected: environment-supplied ranked recommendations; passing
+  controller belief into action generation; assuming every action set is a small
+  materialized list.
+- Consequences: Action interfaces may use schemas and validators for effectively
+  infinite spaces. Internal computation uses declared controller-side executors,
+  has no deliberate world effect, and does not expose controller state to the
+  environment; independent world evolution may still continue.
+- Revisit when: A domain demonstrates that legal capability genuinely depends on
+  controller-private state; the dependency must then be made public or modeled
+  as a controller-side validator.
+
+## ADR-0010 -- Preserve vector-valued resource accounting
+
+- Status: accepted
+- Date: 2026-08-17
+- Context: Tokens, compute, latency, money, tool calls, executions, and sensor
+  acquisitions are not universally commensurate, while resource-normalized
+  comparison requires their actual consumption to remain visible.
+- Decision: Episodes declare named resource dimensions and units. Per-action and
+  cumulative costs are nonnegative vectors; budgets constrain named dimensions.
+  The core defines no conversion factors or universal scalar. Experiments may
+  preregister scalarization, lexicographic comparison, or Pareto analysis while
+  retaining raw dimensions.
+- Why: Raw accounting prevents hidden conversions and permits the same contracts
+  to support domains with different scarce resources.
+- Alternatives rejected: one universal cost number; tokens as the default unit;
+  treating absent cross-domain dimensions as zero.
+- Consequences: A dimension absent from an episode schema is unmeasured or
+  inapplicable, while an omitted per-action value within a declared schema is
+  zero. Unknown action cost needs an explicit feasibility/overrun rule.
+- Revisit when: Empirical work identifies a stable, justified conversion within
+  a stated scope; any conversion remains experiment-specific unless separately
+  accepted.
+
+## ADR-0011 -- First-class STOP and distinct termination causes
+
+- Status: accepted
+- Date: 2026-08-17
+- Context: Treating termination as only a loop condition prevents analysis of
+  premature stopping, wasteful continuation, abstention, and budget truncation.
+- Decision: `STOP` is a first-class controller action with a domain submission or
+  abstention. Controller stop, environment termination, and runner/evaluator
+  truncation remain distinct trace events and outcome dimensions.
+- Why: Stopping is part of epistemic allocation and must be attributable to the
+  policy rather than conflated with external limits.
+- Alternatives rejected: implicit termination on answer production; treating
+  budget exhaustion as STOP; requiring every stop to include confidence or a
+  natural-language rationale.
+- Consequences: Phase 3 traces and evaluators must preserve a primary termination
+  cause. STOP correctness remains evaluator-owned rather than an action result.
+- Revisit when: Continuing tasks require pause/resume semantics; those semantics
+  may extend rather than collapse the three causes.
+
+## ADR-0012 -- Minimal epistemic ontology and explicit deferral
+
+- Status: accepted
+- Date: 2026-08-17
+- Context: A universal evidence ontology, graph, Signal type, scope algebra, or
+  coupling language is not needed to state the control problem or implement the
+  first MicroGym baselines.
+- Decision: Observations are first-class released information; hypotheses are an
+  optional controller representation with no required common semantic supertype.
+  A universal `EpistemicUnit` is rejected from the minimal core. Scope is an
+  optional typed capability with domain-owned semantics. Signal, graph state,
+  coupling operators, learned routing, confidence calculus, and universal
+  information-gain objectives are deferred.
+- Why: The smaller ontology supports hypothesis-free baselines and all four
+  pressure-test domains while keeping experimental questions out of the problem
+  definition.
+- Alternatives rejected: everything as `EpistemicUnit`; a mandatory
+  `EpistemicObject` envelope; mandatory graph state; preserving Signal or named
+  coupling operators solely because they already have names.
+- Consequences: Phase 3 begins with history-based state and no coupling operator.
+  Scope-aware gating requires a separate environment variant and controls before
+  it can support `H-003`.
+- Revisit when: Multiple implemented environments expose the same missing
+  semantic behavior and accepted contracts cannot represent it without repeated
+  incompatible workarounds.

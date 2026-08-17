@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 IDEA_SOURCE = ROOT / "theory" / "IDEA_MAP.yaml"
 STATUS_SOURCE = ROOT / "state" / "STATUS.yaml"
 LEGACY_SOURCE = ROOT / "reference" / "LEGACY_INVENTORY.yaml"
+CONTRACT_SOURCE = ROOT / "theory" / "CONTRACTS.yaml"
 IDEA_OUTPUT = ROOT / "theory" / "IDEA_MAP.md"
 CONTEXT_OUTPUT = ROOT / "state" / "CONTEXT_PACKET.md"
 LEGACY_OUTPUT = ROOT / "reference" / "LEGACY_INVENTORY.md"
@@ -42,8 +43,17 @@ KIND_LABELS = {
 
 
 def load_json_yaml(path: Path) -> dict:
-    """Load the JSON-compatible subset of YAML used by canonical data files."""
-    return json.loads(path.read_text(encoding="utf-8"))
+    """Load canonical JSON-compatible YAML and reject ambiguous duplicate keys."""
+
+    def unique_object(pairs: list[tuple[str, object]]) -> dict:
+        output = {}
+        for key, value in pairs:
+            if key in output:
+                raise ValueError(f"duplicate key {key!r} in {path.relative_to(ROOT)}")
+            output[key] = value
+        return output
+
+    return json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_object)
 
 
 def registry() -> dict:
@@ -56,6 +66,10 @@ def status() -> dict:
 
 def legacy_inventory() -> dict:
     return load_json_yaml(LEGACY_SOURCE)
+
+
+def contracts() -> dict:
+    return load_json_yaml(CONTRACT_SOURCE)
 
 
 def idea_index(data: dict | None = None) -> dict[str, dict]:
@@ -334,7 +348,12 @@ def render_context_packet(
         raise ValueError(f"expected exactly one active roadmap phase, found {len(active)}")
     active_phase = active[0]
 
-    primitives = [item for item in ideas if item["kind"] == "primitive"]
+    primitives = [
+        item
+        for item in ideas
+        if item["kind"] == "primitive"
+        and item["status"] in {"working", "accepted", "experimentally_supported"}
+    ]
     working_hypotheses = [
         item for item in ideas if item["kind"] == "hypothesis" and item["status"] == "working"
     ]
@@ -380,6 +399,8 @@ def render_context_packet(
         "",
         current["legacy_inventory"]["summary"],
         "",
+        f"Phase 2 formalization: **{current['formal_control_problem']['contract_count']}** semantic contracts, **{current['formal_control_problem']['required_invariants']}** required invariants, and **{current['formal_control_problem']['domain_pressure_tests']}** domain pressure tests. {current['formal_control_problem']['summary']}",
+        "",
         "Do not infer runtime progress from the conceptual inventory. Mechanism entries preserve ideas; they are not code.",
         "",
         "## 3. Settled architectural decisions",
@@ -393,7 +414,7 @@ def render_context_packet(
     lines.extend(
         [
             "",
-            "These are candidate theoretical primitives. No Python class, graph schema, or universal resource conversion is accepted. `P-003` Scope, `H-003` scope-aware allocation, `M-006` SCOPE_FILTER, a future implementation, and experiment evidence are separate objects.",
+            "These are active candidate theoretical primitives. `P-002` is listed separately as rejected from the minimal core. No Python class, graph schema, universal confidence calculus, or universal resource conversion is accepted. `P-003` Scope, `H-003` scope-aware allocation, `M-006` SCOPE_FILTER, a future implementation, and experiment evidence are separate objects.",
             "",
             "## 5. Working hypotheses",
             "",
@@ -414,7 +435,7 @@ def render_context_packet(
     if coupling:
         names = ", ".join(f"`{item['id']}` {item['title'].split()[0]}" for item in coupling)
         lines.append(
-            f"- Preserved coupling-operator family (`seed`): {names}. Their semantics are unresolved under `Q-006`; names must not be converted into code or theory by guesswork."
+            f"- Preserved coupling-operator family (`seed`, deferred): {names}. None is required for the first MicroGym. Their semantics remain unresolved under `Q-006`; names must not be converted into code or theory by guesswork."
         )
     lines.extend(
         [
@@ -465,7 +486,7 @@ def render_context_packet(
             "",
             current["roadmap"]["immediate_next_task"],
             "",
-            "The IDS archive remains read-only. Phase 2 authorizes conceptual specification only: no code/data copy, adapter, MicroGym, controller, or model integration.",
+            "The IDS archive remains read-only. Phase 3 authorizes only the minimal zero-LLM MicroGym and trivial experimental policies needed by the accepted contracts: no IDS code/data copy, adapter, production runtime, model integration, graph runtime, or coupling-law implementation.",
             "",
             "## 11. Important non-goals",
             "",
@@ -482,6 +503,10 @@ def render_context_packet(
             "- `CHARTER.md`: research boundary, invariants, category distinctions, promotion/demotion, and non-goals.",
             "- `MAP.md`: document ownership and precedence.",
             "- `DECISIONS.md`: append-only accepted ADR history.",
+            "- `theory/CONTROL_PROBLEM.md`: authoritative language-neutral control problem and Phase 3 requirements.",
+            "- `theory/CONTRACTS.yaml`: machine-readable semantic contracts and invariants; not runtime classes.",
+            "- `theory/INFORMATION_BOUNDARIES.md`: role visibility, authorized flows, and prohibited leakage paths.",
+            "- `theory/DOMAIN_INSTANTIATIONS.md`: four domain instantiations used to pressure-test generality.",
             "- `theory/IDEA_MAP.yaml`: canonical concept identities, statuses, relations, provenance, falsifiers, and references.",
             "- `theory/PRIMITIVES.md`, `theory/HYPOTHESES.md`, and `theory/QUESTIONS.md`: concise conceptual reading aids.",
             "- `plan/ROADMAP.md`: the only authoritative phase cursor.",
