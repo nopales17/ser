@@ -2,13 +2,13 @@
   "schema_version": 1,
   "as_of": "2026-08-17",
   "project_name": "SER (provisional)",
-  "project_maturity": "phase_5a_static_authzgym_benchmark_ready_no_model_evidence",
+  "project_maturity": "phase_5a_realmodel_v1_invalid_no_semantic_finding",
   "runtime": {
     "built": true,
     "controllers": 17,
     "environments": 13,
-    "model_integrations": 0,
-    "semantic_interpreters": 2
+    "model_integrations": 1,
+    "semantic_interpreters": 3
   },
   "knowledge_architecture": {
     "canonical_idea_map": true,
@@ -19,7 +19,8 @@
     "phase_2_formalization_complete": true,
     "phase_3_microgym_complete": true,
     "phase_4_routing_falsification_complete": true,
-    "phase_5a_1_and_5a_2_authzgym_benchmark_complete": true
+    "phase_5a_1_and_5a_2_authzgym_benchmark_complete": true,
+    "phase_5a_3_realmodel_v1_complete_invalid": true
   },
   "formal_control_problem": {
     "phase_2_complete": true,
@@ -35,7 +36,7 @@
   },
   "evidence": {
     "ser_experiments": ["E-002", "E-003"],
-    "summary": "MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. The separate routing-v1 benchmark then showed that, under one fixed equal-cost acquisition with clean public likelihoods, the unchanged candidate branched at all 6 eligible nodes, matched the closed-loop oracle, captured all exact one-step VOA, and made no spurious branches in 3 zero-VOA controls. Static Semantic AuthzGym protocol 1.1 is a frozen, validated benchmark calibration only: no real model was called and no new empirical finding was admitted. No general SER hypothesis was promoted; semantic action-value estimation remains untested.",
+    "summary": "MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. Routing-v1 then supported a narrow one-step routing result under clean supplied likelihoods. Static Semantic AuthzGym protocol 1.1 remains a validated benchmark calibration. Its separately frozen first real-model run completed all scheduled conditions, but the preregistered classifier returned invalid because only 88/192 runs passed the response/resource contract. No AuthzGym E-* finding was admitted, no general SER hypothesis was promoted, and valid semantic action-value estimation remains untested.",
     "microgym_v1": {
       "population_hash": "a9234fa60b40d3628f6317284a964c95917bcd7442796d8961f18b14b9958b3d",
       "problem_regimes": 24,
@@ -82,6 +83,23 @@
       "real_model_classifier_status": "not_run",
       "summary": "Static-only authored authorization repositories exercise four mechanism families, constrained H1-H4 diagnoses, purchased-artifact semantic interpretation, matched routing architectures, evaluator truth, resource accounting, failure decomposition, and paired invariance audits. Deterministic rule interpreters validate the instrument but provide no semantic-model or SER evidence."
     },
+    "authzgym_static_realmodel_v1": {
+      "evidence_status": "invalid_empirical_run_no_hypothesis_admission",
+      "model_identifier": "patchersniper_praneeth/gpt-5.4-nano",
+      "frozen_inputs_manifest_hash": "733db20bb45ce143a3a421a4539f70e73373e38205b758736bb4330ad4ccd730",
+      "development_calls": 1,
+      "frozen_provider_calls": 609,
+      "total_provider_calls": 610,
+      "evaluation_runs": 96,
+      "perturbation_runs": 96,
+      "valid_runs": 88,
+      "invalid_runs": 104,
+      "valid_frozen_model_responses": 336,
+      "invalid_frozen_model_responses": 273,
+      "accounted_total_cost_usd": 0.37906061,
+      "preregistered_classifier": "invalid",
+      "summary": "All frozen populations, architectures, evidence boundaries, hashes, and the $5 ceiling validated, but provider/schema/run validity failed. Output truncation produced 135 length-limited responses and 132 incomplete-JSON contents; dynamic next-artifact/reference constraints rejected additional responses. Diagnostic architecture metrics are not admitted as a matched empirical finding."
+    },
     "historical_only": [
       "E-001 describes scoped artifacts in the read-only IDS archive; it is not evidence for SER."
     ]
@@ -95,12 +113,12 @@
   "roadmap": {
     "active_phase_id": 5,
     "active_phase_title": "Controlled authorization action-value estimation",
-    "immediate_next_task": "Run one separately frozen inexpensive semantic-model evaluation on Static Semantic AuthzGym protocol 1.1 using the fixed prompts, parser, population, budgets, architectures, and classifier; admit the outcome only after exact validation and without post-evaluation tuning.",
+    "immediate_next_task": "Preregister a new static real-model protocol that first establishes response-contract reliability and a sufficient output ceiling on development episodes, then repeats the complete AuthzGym v1.1 population without tuning on preserved evaluation outputs.",
     "research_trunk": "GitLab authorization investigation is the primary practical target. MicroGym is a control validation instrument; IDS is only a possible semantic bridge; controlled software experimentation is trunk-aligned; remote sensing is dormant."
   },
   "non_goals": [
     "No production SER runtime; the implemented code consists of MicroGym and Static Semantic AuthzGym benchmark instruments plus small exact, reference, and deterministic mock controllers.",
-    "No real LLM/model integration yet; no general LLM agent, TGNN, graph neural network, learned policy, or training infrastructure.",
+    "One bounded real semantic-model experiment exists, but it is invalid and is not a general LLM agent; no TGNN, graph neural network, learned policy, or training infrastructure.",
     "No coupling-law implementation, universal epistemic graph, production fuzzer, remote-sensing integration, or IDS adapter.",
     "No IDS code or data import, real GitLab integration, or claim that IDS/GitLab validates SER."
   ]

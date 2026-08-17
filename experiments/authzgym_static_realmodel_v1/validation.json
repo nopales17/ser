@@ -1,0 +1,43 @@
+{
+  "benchmark": "authzgym-static-realmodel-v1",
+  "checks": {
+    "complete frozen populations": {
+      "detail": "evaluation records=96; perturbation records=96",
+      "status": "pass"
+    },
+    "frozen input hashes": {
+      "detail": "all preregistration, prompt, schema, model-config, and v1.1 population hashes match the pre-run manifest",
+      "status": "pass"
+    },
+    "hard provider spend ceiling": {
+      "detail": "development+frozen accounted cost=$0.379060610 < $5.00",
+      "status": "pass"
+    },
+    "provider response hashes": {
+      "detail": "verified 609 locally stored raw provider-response attempts",
+      "status": "pass"
+    },
+    "provider schema and run validity": {
+      "detail": "valid runs=88/192",
+      "status": "fail"
+    },
+    "purchased evidence scope": {
+      "detail": "each call contains exactly purchased source plus public inventory/state and no evaluator-only fields",
+      "status": "pass"
+    },
+    "record hashes": {
+      "detail": "verified 192 content-addressed run records",
+      "status": "pass"
+    },
+    "single frozen semantic model": {
+      "detail": "model identifiers=['patchersniper_praneeth/gpt-5.4-nano']",
+      "status": "pass"
+    },
+    "static-only action surface": {
+      "detail": "only bounded static artifact inspection occurred",
+      "status": "pass"
+    }
+  },
+  "schema_version": 1,
+  "status": "fail"
+}

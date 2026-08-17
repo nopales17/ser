@@ -788,8 +788,8 @@ def check_phase_progress_status() -> dict[str, object]:
         not runtime.get("built")
         or runtime.get("environments") != 13
         or runtime.get("controllers") != 17
-        or runtime.get("model_integrations") != 0
-        or runtime.get("semantic_interpreters") != 2
+        or runtime.get("model_integrations") != 1
+        or runtime.get("semantic_interpreters") != 3
     ):
         errors.append(
             "status does not report the implemented MicroGym/AuthzGym instruments accurately"
@@ -804,6 +804,10 @@ def check_phase_progress_status() -> dict[str, object]:
         "phase_5a_1_and_5a_2_authzgym_benchmark_complete"
     ):
         errors.append("phase_5a_1_and_5a_2_authzgym_benchmark_complete is not true")
+    if not current.get("knowledge_architecture", {}).get(
+        "phase_5a_3_realmodel_v1_complete_invalid"
+    ):
+        errors.append("phase_5a_3_realmodel_v1_complete_invalid is not true")
     if current.get("evidence", {}).get("ser_experiments") != ["E-002", "E-003"]:
         errors.append("MicroGym evidence index must contain exactly E-002 and E-003")
     experiment_paths = (
@@ -835,6 +839,19 @@ def check_phase_progress_status() -> dict[str, object]:
         "experiments/authzgym_static_v1_1/summary.json",
         "experiments/authzgym_static_v1_1/validation.json",
         "experiments/authzgym_static_v1_1/INTERPRETATION.md",
+        "experiments/authzgym_static_realmodel_v1/PREREGISTRATION.md",
+        "experiments/authzgym_static_realmodel_v1/FROZEN_INPUTS.json",
+        "experiments/authzgym_static_realmodel_v1/COST_GATE.json",
+        "experiments/authzgym_static_realmodel_v1/development_call.json",
+        "experiments/authzgym_static_realmodel_v1/development_provider_responses.jsonl",
+        "experiments/authzgym_static_realmodel_v1/evaluation_runs.jsonl",
+        "experiments/authzgym_static_realmodel_v1/perturbation_runs.jsonl",
+        "experiments/authzgym_static_realmodel_v1/provider_responses.jsonl",
+        "experiments/authzgym_static_realmodel_v1/summary.json",
+        "experiments/authzgym_static_realmodel_v1/validation.json",
+        "experiments/authzgym_static_realmodel_v1/REPORT.md",
+        "experiments/authzgym_static_realmodel_v1/INTERPRETATION.md",
+        "experiments/authzgym_static_realmodel_v1/IMPLEMENTATION_NOTES.md",
     )
     missing_experiment_paths = [path for path in experiment_paths if not (ROOT / path).exists()]
     if missing_experiment_paths:
@@ -856,6 +873,19 @@ def check_phase_progress_status() -> dict[str, object]:
             )
         )
         authz_status = current.get("evidence", {}).get("authzgym_static_v1_1", {})
+        authz_real_validation = json.loads(
+            (ROOT / "experiments/authzgym_static_realmodel_v1/validation.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        authz_real_summary = json.loads(
+            (ROOT / "experiments/authzgym_static_realmodel_v1/summary.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        authz_real_status = current.get("evidence", {}).get(
+            "authzgym_static_realmodel_v1", {}
+        )
         if authz_v1_validation.get("status") != "fail":
             errors.append("preserved AuthzGym v1 calibration must remain invalid")
         if authz_v1_1_validation.get("status") != "pass":
@@ -873,12 +903,24 @@ def check_phase_progress_status() -> dict[str, object]:
             errors.append(
                 "AuthzGym calibration must remain separate from empirical model evidence"
             )
+        if (
+            authz_real_validation.get("status") != "fail"
+            or authz_real_summary.get("classifier", {}).get("classification")
+            != "invalid"
+            or authz_real_status.get("evidence_status")
+            != "invalid_empirical_run_no_hypothesis_admission"
+            or authz_real_status.get("valid_runs") != 88
+            or authz_real_status.get("invalid_runs") != 104
+        ):
+            errors.append(
+                "AuthzGym real-model v1 must remain preserved as invalid without hypothesis admission"
+            )
     return result(
         "phase_progress_status",
         not errors,
         "errors: " + "; ".join(errors)
         if errors
-        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are recorded narrowly; Phase 5A AuthzGym is benchmark calibration only; Phase 5 remains active",
+        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are recorded narrowly; Phase 5A preserves benchmark calibration and an invalid first real-model run without hypothesis admission; Phase 5 remains active",
     )
 
 

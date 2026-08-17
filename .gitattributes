@@ -3,3 +3,4 @@ experiments/authzgym_static_v1/prompts/interpret_artifact_v1.txt whitespace=-bla
 experiments/authzgym_static_v1_1/PREREGISTRATION.md whitespace=-blank-at-eof
 experiments/authzgym_static_v1_1/model_conditions.json whitespace=-blank-at-eof
 experiments/authzgym_static_v1_1/prompts/interpret_artifact_v1.txt whitespace=-blank-at-eof
+src/ser/authzgym/real_runner.py whitespace=-blank-at-eof

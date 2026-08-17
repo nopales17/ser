@@ -1,0 +1,31 @@
+{
+  "condition_id": "patchersniper_gpt_5_4_nano_v1",
+  "model_identifier": "patchersniper_praneeth/gpt-5.4-nano",
+  "endpoint_label": "configured OpenAI-compatible institutional endpoint via UCSB egress",
+  "api_style": "openai_chat_completions_json_schema",
+  "base_url_env": "OPENAI_BASE_URL",
+  "api_key_env": "OPENAI_API_KEY",
+  "transport_client": "system-curl",
+  "transport_client_version": "curl 8.7.1 (x86_64-apple-darwin25.0)",
+  "runtime_version": "Python 3.14.6",
+  "proxy_kind": "ephemeral_local_socks5h",
+  "tls_verification": false,
+  "reasoning_effort": "none",
+  "temperature": null,
+  "max_output_tokens_per_artifact": 320,
+  "request_timeout_seconds": 90,
+  "connect_timeout_seconds": 15,
+  "maximum_attempts_per_semantic_call": 2,
+  "pricing": {
+    "input_per_million_tokens_usd": 0.2,
+    "cached_input_per_million_tokens_usd": 0.02,
+    "output_per_million_tokens_usd": 1.25
+  },
+  "hard_spend_ceiling_usd": 5.0,
+  "resource_ceilings": {
+    "input_tokens_per_sequential_run": 12000,
+    "output_tokens_per_sequential_run": 2000,
+    "input_tokens_per_monolithic_run": 12000,
+    "output_tokens_per_monolithic_run": 1280
+  }
+}

@@ -31,9 +31,9 @@ The central empirical question is `H-001`: whether allocation organization contr
 
 ## 2. Current maturity / what has actually been built
 
-Project maturity is `phase_5a_static_authzgym_benchmark_ready_no_model_evidence`. The durable knowledge architecture exists: canonical idea data, generated readable/context views, an ADR ledger, a single roadmap cursor, and a lightweight coherence checker. Runtime built: **true**. Controllers: **17**. Environments: **13**. Model integrations: **0**.
+Project maturity is `phase_5a_realmodel_v1_invalid_no_semantic_finding`. The durable knowledge architecture exists: canonical idea data, generated readable/context views, an ADR ledger, a single roadmap cursor, and a lightweight coherence checker. Runtime built: **true**. Controllers: **17**. Environments: **13**. Model integrations: **1**.
 
-MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. The separate routing-v1 benchmark then showed that, under one fixed equal-cost acquisition with clean public likelihoods, the unchanged candidate branched at all 6 eligible nodes, matched the closed-loop oracle, captured all exact one-step VOA, and made no spurious branches in 3 zero-VOA controls. Static Semantic AuthzGym protocol 1.1 is a frozen, validated benchmark calibration only: no real model was called and no new empirical finding was admitted. No general SER hypothesis was promoted; semantic action-value estimation remains untested.
+MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. Routing-v1 then supported a narrow one-step routing result under clean supplied likelihoods. Static Semantic AuthzGym protocol 1.1 remains a validated benchmark calibration. Its separately frozen first real-model run completed all scheduled conditions, but the preregistered classifier returned invalid because only 88/192 runs passed the response/resource contract. No AuthzGym E-* finding was admitted, no general SER hypothesis was promoted, and valid semantic action-value estimation remains untested.
 
 Static Semantic AuthzGym protocol 1.1 is frozen with 8 development, 24 primary evaluation, and 24 paired perturbation episodes. Its 384 records use deterministic test doubles; all 11 construction safeguards pass, but the status is `benchmark_calibration_only`, the real-model classifier is `not_run`, and no `E-*` finding was added. The preserved v1 calibration remains invalid because it exposed identifier-dependent mock degradation.
 
@@ -62,6 +62,7 @@ Do not infer runtime progress from the conceptual inventory. Mechanism entries p
 - `ADR-0013` **Evidence-directed environment selection and software research trunk**: GitLab authorization investigation is the primary practical research trunk. MicroGym is a control-mechanism validation instrument. IDS may be used only as a small semantic bridge if a positive MicroGym result leaves survival under messy semantic evidence unresolved. Controlled software investigation, including chosen tests or fuzzing, is preferred when it can directly and cleanly test the remaining question while advancing authorization research. Remote sensing and other substrates remain dormant falsification candidates, not scheduled phases. A new environment requires a concrete statement of the unresolved architectural claim it can distinguish.
 - `ADR-0014` **Route from synthetic control to controlled authorization evidence**: Complete Phase 4 with a narrowly scoped routing finding and make a minimal controlled authorization-oriented software environment the next validation phase. Its unresolved question is whether a controller can estimate decision-relevant epistemic-action values from imperfect software and authorization evidence when clean likelihood tables are not supplied. Do not begin with real GitLab integration. Do not add an IDS bridge unless a later explicit comparison shows that it is materially cleaner or cheaper for isolating that same question.
 - `ADR-0015` **Separate authorization benchmark calibration from model evidence**: Preserve the failed v1 calibration without rewriting it and freeze protocol 1.1 as a benchmark-integrity correction. Protocol 1.1 changes only the deterministic mock omission key from opaque artifact identity to semantic fact/relation role. Treat both protocols as construction and calibration, not empirical SER evidence. Any actual inexpensive-model evaluation must be a separate frozen experiment using the already frozen population, semantic interface, budgets, baselines, and classifier thresholds, or must declare a new protocol version before observing evaluation outcomes.
+- `ADR-0016` **Preserve the first real-model AuthzGym run as invalid**: Preserve the complete responses, traces, reports, and failure classification without repairing or re-running them. Admit no semantic or architecture-leverage finding and promote no hypothesis from diagnostic metrics. Keep Phase 5 active and Phase 5B blocked. The next admissible work is a separately versioned, preregistered static follow-up that establishes response-contract reliability and sufficient output budget on development episodes before repeating a complete frozen evaluation. Do not move to a larger population, stronger model, executable AuthzGym, historical cases, GitLab, or IDS to escape the invalid result.
 
 ## 4. Current high-value primitives
 
@@ -148,14 +149,14 @@ Exit: a frozen matched-control experiment determines whether useful action value
 
 ## 10. Immediate next task
 
-Run one separately frozen inexpensive semantic-model evaluation on Static Semantic AuthzGym protocol 1.1 using the fixed prompts, parser, population, budgets, architectures, and classifier; admit the outcome only after exact validation and without post-evaluation tuning.
+Preregister a new static real-model protocol that first establishes response-contract reliability and a sufficient output ceiling on development episodes, then repeats the complete AuthzGym v1.1 population without tuning on preserved evaluation outputs.
 
 The IDS archive remains read-only. Active Phase 5 now authorizes only the separately frozen inexpensive-model evaluation on Static Semantic AuthzGym protocol 1.1. It does not authorize IDS code/data copy, real GitLab integration, an adapter, a production runtime or general model integration, graph runtime, production fuzzing, or coupling-law implementation.
 
 ## 11. Important non-goals
 
 - No production SER runtime; the implemented code consists of MicroGym and Static Semantic AuthzGym benchmark instruments plus small exact, reference, and deterministic mock controllers.
-- No real LLM/model integration yet; no general LLM agent, TGNN, graph neural network, learned policy, or training infrastructure.
+- One bounded real semantic-model experiment exists, but it is invalid and is not a general LLM agent; no TGNN, graph neural network, learned policy, or training infrastructure.
 - No coupling-law implementation, universal epistemic graph, production fuzzer, remote-sensing integration, or IDS adapter.
 - No IDS code or data import, real GitLab integration, or claim that IDS/GitLab validates SER.
 

@@ -97,17 +97,19 @@ Allowed statuses: `planned`, `active`, `done`.
   new explicit decision showing it is a materially cleaner bridge for this
   exact question. Do not add graphs, coupling laws, learned policies, or
   cross-substrate environments.
-- current cursor: Phase 5A.1 construction and Phase 5A.2 freezing are complete;
-  Phase 5A overall is not complete. Static Semantic AuthzGym protocol 1.1
-  freezes 8 development, 24 primary evaluation, and 24
-  paired perturbation episodes; constrained H1-H4 diagnoses; purchased-artifact
-  semantic traces; fixed, ReAct-like, explicit-value, and secondary monolithic
-  architectures; matched budgets; evaluator truth; failure decomposition; and
-  a real-model classifier. Deterministic mock calibration passes all benchmark
-  safeguards but is not empirical evidence. The next step is a separately
-  frozen run with one selected inexpensive semantic model and no post-evaluation
-  prompt, parser, policy, population, budget, or threshold tuning.
-- readiness: Phase 5B is not ready. It requires an actual model to extract
+- current cursor: Phase 5A.1 construction, Phase 5A.2 benchmark freezing, and
+  Phase 5A.3 first real-model evaluation are complete; Phase 5A overall is not
+  complete. Real-model v1 ran all 96 primary and 96 perturbation architecture
+  conditions with one frozen inexpensive model for $0.379060610, but validation
+  failed because only 88/192 runs satisfied the response and resource contract.
+  The preregistered classification is `invalid`; diagnostic semantic, routing,
+  and paired metrics admit no empirical SER finding. The next step is a new
+  preregistered static protocol version that establishes response-contract
+  reliability and a sufficient output ceiling on development episodes before
+  repeating the complete frozen population. It must not tune accuracy from the
+  preserved v1 evaluation outputs or switch to a stronger model in the same
+  experiment.
+- readiness: Phase 5B is not ready. It requires a valid actual-model run to extract
   useful facts, rank inspections beyond trivial heuristics, route conditionally,
   and improve matched decision quality or efficiency under the frozen rule.
 - exit: a frozen matched-control experiment determines whether useful action

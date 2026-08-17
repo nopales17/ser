@@ -1,0 +1,100 @@
+{
+  "artifact_id": "a-fac94207",
+  "cached_input_tokens": 0,
+  "condition": {
+    "api_key_env": "OPENAI_API_KEY",
+    "api_style": "openai_chat_completions_json_schema",
+    "base_url_env": "OPENAI_BASE_URL",
+    "condition_id": "patchersniper_gpt_5_4_nano_v1",
+    "connect_timeout_seconds": 15,
+    "endpoint_label": "configured OpenAI-compatible institutional endpoint via UCSB egress",
+    "hard_spend_ceiling_usd": 5.0,
+    "max_output_tokens_per_artifact": 320,
+    "maximum_attempts_per_semantic_call": 2,
+    "model_identifier": "patchersniper_praneeth/gpt-5.4-nano",
+    "pricing": {
+      "cached_input_per_million_tokens_usd": 0.02,
+      "input_per_million_tokens_usd": 0.2,
+      "output_per_million_tokens_usd": 1.25
+    },
+    "proxy_kind": "ephemeral_local_socks5h",
+    "reasoning_effort": "none",
+    "request_timeout_seconds": 90,
+    "resource_ceilings": {
+      "input_tokens_per_monolithic_run": 12000,
+      "input_tokens_per_sequential_run": 12000,
+      "output_tokens_per_monolithic_run": 1280,
+      "output_tokens_per_sequential_run": 2000
+    },
+    "runtime_version": "Python 3.14.6",
+    "temperature": null,
+    "tls_verification": false,
+    "transport_client": "system-curl",
+    "transport_client_version": "curl 8.7.1 (x86_64-apple-darwin25.0)"
+  },
+  "cost_usd": 0.00067595,
+  "episode_id": "asv1-d-5e6417ce899f",
+  "input_tokens": 1586,
+  "latency_ms": 4160.121083026752,
+  "model_config_sha256": "24f47f849f04e978a061d247daf236fd8f5206d129fd3b879a26547db82af8df",
+  "output_tokens": 287,
+  "parsed_semantic_observation": {
+    "fact_keys": [
+      "alternate-entry",
+      "inherited-membership-included",
+      "token-scope-forwarded",
+      "feature-context-forwarded",
+      "role-preserved"
+    ],
+    "facts": [
+      "Authorization decision uses a special alternate entry path when request.channel equals \"alternate\".",
+      "Membership is retrieved with include_inherited=True.",
+      "Context is retrieved with token_scope forwarded from request.token.scope and feature_context forwarded from request.flags.",
+      "The actor.role value is passed through to role_view via fn_1d79911a2(actor.role)."
+    ],
+    "hypothesis_effects": {
+      "h1": 0.0,
+      "h2": 0.0,
+      "h3": 0.0,
+      "h4": 0.0
+    },
+    "uncertainty_flags": [
+      "authorization-uncertainty-no-next-artifacts",
+      "hypotheses-not-addressed-by-visible-code-effect"
+    ],
+    "unresolved_references": [
+      {
+        "relation_tag": "general_dependency",
+        "symbol": "fn_6d5342e0a"
+      },
+      {
+        "relation_tag": "general_dependency",
+        "symbol": "fn_2ae556977"
+      },
+      {
+        "relation_tag": "general_dependency",
+        "symbol": "fn_f72483101"
+      },
+      {
+        "relation_tag": "general_dependency",
+        "symbol": "fn_1d79911a2"
+      },
+      {
+        "relation_tag": "general_dependency",
+        "symbol": "fn_38faee818"
+      }
+    ]
+  },
+  "population_hash": "49206443c70e25f29f4276c1f4c4d7c27fcf9d56b5d9ea2b4e6f89980be1534f",
+  "prompt_sha256": "d91b4c504ac7beee4be32a6676baf6cd5c16b4fe1b7c92a59eef8f23bd2f8c77",
+  "provider_calls": 1,
+  "provider_model": "patchersniper_praneeth/gpt-5.4-nano",
+  "purpose": "single minimal connectivity/schema/usage development call; no accuracy tuning",
+  "raw_response_sha256": "b258e24f63929611d6d0dfb3cddffbcf2e2afe8abcff9ec5cb283b978c178127",
+  "reasoning_output_tokens": 0,
+  "record_hash": "738655fdc83b046998850fd6abf4fa93075035f15b6a3418ef8a480bff27f0f6",
+  "request_sha256": "d4fd4b471bf39d1b50bfa1ee836babde49280f656920ec96c1f6defba08fdf2a",
+  "schema_sha256": "9f734f2c3bfaa4174587f1ddf5ce93b707a0010cb6b2d3c511a0cf67bf70585a",
+  "schema_version": 1,
+  "system_fingerprint": null
+}

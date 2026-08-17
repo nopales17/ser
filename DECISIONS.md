@@ -310,3 +310,41 @@ a new entry; do not rewrite it.
 - Revisit when: The separate model run is complete, or a preregistered integrity
   failure requires another explicitly versioned correction before interpreting
   model performance.
+
+## ADR-0016 -- Preserve the first real-model AuthzGym run as invalid
+
+- Status: accepted
+- Date: 2026-08-17
+- Context: The separately frozen real-model v1 experiment completed every
+  scheduled primary and perturbation architecture-run with one inexpensive
+  model and valid cost, access, hash, and evidence-scope controls. However,
+  response/schema validity failed: only 88/192 runs were valid, 135 provider
+  responses hit the output-length limit, and dynamic artifact/reference
+  constraints rejected further syntactically valid outputs. The preregistered
+  classifier therefore returned `invalid`.
+- Decision: Preserve the complete responses, traces, reports, and failure
+  classification without repairing or re-running them. Admit no semantic or
+  architecture-leverage finding and promote no hypothesis from diagnostic
+  metrics. Keep Phase 5 active and Phase 5B blocked. The next admissible work is
+  a separately versioned, preregistered static follow-up that establishes
+  response-contract reliability and sufficient output budget on development
+  episodes before repeating a complete frozen evaluation. Do not move to a
+  larger population, stronger model, executable AuthzGym, historical cases,
+  GitLab, or IDS to escape the invalid result.
+- Why: Treating partial valid outputs as a matched architecture result would
+  violate the frozen classifier and confound semantic capability with interface
+  truncation and dynamic-contract failures. Preserving the invalid run exposes
+  the smallest current experimental defect without tuning on evaluation
+  behavior.
+- Alternatives rejected: parsing truncated JSON heuristically; manually
+  repairing responses; weakening legality/reference checks; comparing only
+  valid subsets as if randomized; increasing output tokens after evaluation;
+  silently switching models; advancing to a richer environment.
+- Consequences: Static AuthzGym remains the active validation instrument, but
+  real-model protocol v1 supplies no E-* finding and no support for H-016,
+  H-017, or H-018. Its transport/economic evidence is retained as implementation
+  fact: 610 inference calls including development cost $0.379060610 under the
+  frozen accounting rule, all research artifacts remained local, and the
+  egress tunnel terminated.
+- Revisit when: A new versioned static protocol passes its own full integrity,
+  response-validity, perturbation, and matched architecture gates.

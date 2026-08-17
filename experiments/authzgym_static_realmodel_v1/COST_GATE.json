@@ -1,0 +1,21 @@
+{
+  "cost_basis": "provider-reported usage at frozen listed token rates; not a billing statement",
+  "development_cost_usd": 0.00067595,
+  "development_input_tokens": 1586,
+  "development_output_tokens": 287,
+  "development_provider_calls": 1,
+  "development_record_hash": "738655fdc83b046998850fd6abf4fa93075035f15b6a3418ef8a480bff27f0f6",
+  "experiment": "authzgym-static-realmodel-v1",
+  "frozen_inputs_manifest_hash": "733db20bb45ce143a3a421a4539f70e73373e38205b758736bb4330ad4ccd730",
+  "hard_spend_ceiling_usd": 5.0,
+  "maximum_provider_attempts": 1248,
+  "normal_semantic_decisions": 624,
+  "proceed": true,
+  "projected_complete_cost_usd": 1.53667595,
+  "projected_frozen_cost_usd": 1.536,
+  "projected_input_tokens": 4608000,
+  "projected_output_tokens": 491520,
+  "record_hash": "5711ca77f43435ca66748051efaef200acc206f3d3f60ee62bdfa830ea8e2b61",
+  "required_margin_below_hard_cap_usd": 1.0,
+  "schema_version": 1
+}

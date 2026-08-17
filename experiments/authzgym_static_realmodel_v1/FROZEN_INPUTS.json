@@ -1,0 +1,1011 @@
+{
+  "classifier_thresholds": {
+    "maximum_acceptable_accuracy_degradation_vs_react": 0.041666666666666664,
+    "maximum_acceptable_cost_ratio_vs_react": 1.25,
+    "maximum_malformed_response_rate": 0.05,
+    "maximum_mean_token_ratio_to_best_control": 1.1,
+    "maximum_ser_mean_normalized_routing_regret": 0.35,
+    "maximum_zero_value_spurious_branch_rate": 0.25,
+    "minimum_accuracy_gain_over_fixed": 0.083333333333,
+    "minimum_accuracy_gain_over_react": 0.041666666667,
+    "minimum_effect_direction_precision": 0.6,
+    "minimum_effect_direction_recall": 0.5,
+    "minimum_eligible_group_branch_rate": 0.5,
+    "minimum_material_cost_reduction_vs_react": 0.1,
+    "minimum_material_routing_regret_reduction_vs_react": 0.1,
+    "minimum_material_useful_acquisition_gain_vs_react": 0.1,
+    "minimum_oracle_consistent_first_branch_rate": 0.6,
+    "minimum_perturbation_pair_stability": 0.9,
+    "minimum_semantic_fact_precision": 0.65,
+    "minimum_semantic_fact_recall": 0.5,
+    "minimum_ser_top1_useful_action_recall": 0.6,
+    "minimum_ser_top2_useful_action_recall": 0.8
+  },
+  "experiment": "authzgym-static-realmodel-v1",
+  "files": {
+    "PREREGISTRATION.md": "56d5e9068bbbf637fd7a16d7cbd0c17aa4489d35fe2023f8b273a0f18edefec9",
+    "implementation/src/ser/authzgym/model.py": "9637e6549e97e80d0a0d76e1cf5a03684af411a6f4fc54c8877504a136ed205b",
+    "implementation/src/ser/authzgym/policies.py": "092a7a87d1227c1a1c85ac46c7122e38ac1b6b24d7aaa90abee05abfe4167393",
+    "implementation/src/ser/authzgym/real_runner.py": "ce7d7f27d74352e059bd52eef1d19df1fb5356655ff6fda7d57cfd0a5894bca7",
+    "implementation/src/ser/authzgym/realmodel.py": "c4cf883b8d979f68d2dbade5294e27c3550335bd073490186f569e1dc72a7c08",
+    "implementation/src/ser/evaluation/authz_real_analysis.py": "16bc401060bd1b4036d7426372794b121921a8806851fc04034cafa9ddac1d81",
+    "implementation/tools/run_authzgym_realmodel.py": "023d1cca554f258aa202206374b94bcc0960138f9ecb090210d747b0ec577ec1",
+    "implementation/tools/verify_authzgym_realmodel.py": "8192bd91456680196f173ded219c19b932907c8f0b0f92f16510a57e1825493e",
+    "model_config.json": "24f47f849f04e978a061d247daf236fd8f5206d129fd3b879a26547db82af8df",
+    "prompts/semantic_interpretation_v1.txt": "d91b4c504ac7beee4be32a6676baf6cd5c16b4fe1b7c92a59eef8f23bd2f8c77",
+    "schemas/semantic_observation_v1.json": "9f734f2c3bfaa4174587f1ddf5ce93b707a0010cb6b2d3c511a0cf67bf70585a",
+    "source/development_population.json": "47ea8f0d20f5cdbf9b9f55ccf301a77fa742131d2b182a19ab29972b9102eb16",
+    "source/evaluation_population.json": "2b31c0830bde29c79bd815b4c33cb79071bae236d01ef53fc1ae7a7fb21f2a42",
+    "source/perturbation_population.json": "92410b13f08081343fb52e99e72fc138a590e4d0429a33763c8c73965c65e32b"
+  },
+  "frozen_before_evaluation": true,
+  "manifest_hash": "733db20bb45ce143a3a421a4539f70e73373e38205b758736bb4330ad4ccd730",
+  "run_schedule": [
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-61e9dbec46da",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-61e9dbec46da",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-61e9dbec46da",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-61e9dbec46da",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-ba29bc8c6f34",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-ba29bc8c6f34",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-ba29bc8c6f34",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-ba29bc8c6f34",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-05e172a77c7f",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-05e172a77c7f",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-05e172a77c7f",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-05e172a77c7f",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-1d5ae86b29ea",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-1d5ae86b29ea",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-1d5ae86b29ea",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-1d5ae86b29ea",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-d869862eebf7",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-d869862eebf7",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-d869862eebf7",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-d869862eebf7",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-943fe5d3864e",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-943fe5d3864e",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-943fe5d3864e",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-943fe5d3864e",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-367ad02dd00b",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-367ad02dd00b",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-367ad02dd00b",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-367ad02dd00b",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-aa26e9a616f4",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-aa26e9a616f4",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-aa26e9a616f4",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-aa26e9a616f4",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-bde71342c287",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-bde71342c287",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-bde71342c287",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-bde71342c287",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-04767b40b822",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-04767b40b822",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-04767b40b822",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-04767b40b822",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-6dfc510b760b",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-6dfc510b760b",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-6dfc510b760b",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-6dfc510b760b",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-0f261b668105",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-0f261b668105",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-0f261b668105",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-0f261b668105",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-fd89482b0702",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-fd89482b0702",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-fd89482b0702",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-fd89482b0702",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-ab179cacd002",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-ab179cacd002",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-ab179cacd002",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-ab179cacd002",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-536e4face66b",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-536e4face66b",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-536e4face66b",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-536e4face66b",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-758e5b3adc58",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-758e5b3adc58",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-758e5b3adc58",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-758e5b3adc58",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-8a345fa89ccb",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-8a345fa89ccb",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-8a345fa89ccb",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-8a345fa89ccb",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-50a2166c922f",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-50a2166c922f",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-50a2166c922f",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-50a2166c922f",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-31c9cd1eaa75",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-31c9cd1eaa75",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-31c9cd1eaa75",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-31c9cd1eaa75",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-83d43b735591",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-83d43b735591",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-83d43b735591",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-83d43b735591",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-111f00324cea",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-111f00324cea",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-111f00324cea",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-111f00324cea",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-e9075bea597c",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-e9075bea597c",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-e9075bea597c",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-e9075bea597c",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-21b243a7dfff",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-21b243a7dfff",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-21b243a7dfff",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-21b243a7dfff",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-f24e0eac6303",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-f24e0eac6303",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-f24e0eac6303",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-f24e0eac6303",
+      "split": "evaluation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-61e9dbec46da-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-61e9dbec46da-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-61e9dbec46da-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-61e9dbec46da-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-ba29bc8c6f34-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-ba29bc8c6f34-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-ba29bc8c6f34-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-ba29bc8c6f34-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-05e172a77c7f-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-05e172a77c7f-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-05e172a77c7f-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-05e172a77c7f-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-1d5ae86b29ea-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-1d5ae86b29ea-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-1d5ae86b29ea-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-1d5ae86b29ea-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-d869862eebf7-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-d869862eebf7-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-d869862eebf7-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-d869862eebf7-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-943fe5d3864e-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-943fe5d3864e-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-943fe5d3864e-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-943fe5d3864e-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-367ad02dd00b-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-367ad02dd00b-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-367ad02dd00b-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-367ad02dd00b-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-aa26e9a616f4-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-aa26e9a616f4-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-aa26e9a616f4-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-aa26e9a616f4-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-bde71342c287-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-bde71342c287-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-bde71342c287-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-bde71342c287-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-04767b40b822-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-04767b40b822-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-04767b40b822-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-04767b40b822-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-6dfc510b760b-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-6dfc510b760b-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-6dfc510b760b-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-6dfc510b760b-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-0f261b668105-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-0f261b668105-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-0f261b668105-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-0f261b668105-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-fd89482b0702-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-fd89482b0702-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-fd89482b0702-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-fd89482b0702-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-ab179cacd002-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-ab179cacd002-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-ab179cacd002-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-ab179cacd002-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-536e4face66b-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-536e4face66b-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-536e4face66b-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-536e4face66b-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-758e5b3adc58-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-758e5b3adc58-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-758e5b3adc58-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-758e5b3adc58-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-8a345fa89ccb-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-8a345fa89ccb-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-8a345fa89ccb-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-8a345fa89ccb-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-50a2166c922f-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-50a2166c922f-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-50a2166c922f-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-50a2166c922f-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-31c9cd1eaa75-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-31c9cd1eaa75-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-31c9cd1eaa75-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-31c9cd1eaa75-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-83d43b735591-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-83d43b735591-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-83d43b735591-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-83d43b735591-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-111f00324cea-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-111f00324cea-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-111f00324cea-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-111f00324cea-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-e9075bea597c-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-e9075bea597c-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-e9075bea597c-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-e9075bea597c-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-21b243a7dfff-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-21b243a7dfff-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-21b243a7dfff-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-21b243a7dfff-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "monolithic_semantic",
+      "episode_id": "asv1-e-f24e0eac6303-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "fixed_order_semantic",
+      "episode_id": "asv1-e-f24e0eac6303-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "react_like_semantic",
+      "episode_id": "asv1-e-f24e0eac6303-permuted",
+      "split": "perturbation"
+    },
+    {
+      "architecture": "ser_explicit_value",
+      "episode_id": "asv1-e-f24e0eac6303-permuted",
+      "split": "perturbation"
+    }
+  ],
+  "schema_version": 1,
+  "source_population_hashes": {
+    "development": "49206443c70e25f29f4276c1f4c4d7c27fcf9d56b5d9ea2b4e6f89980be1534f",
+    "evaluation": "cd8339fd3a0973da7135ca252244ce3b71e1ffc33674b5b8d03cad1fde46a2bb",
+    "perturbation": "7866ea2c4ea085152a365c32094a8ab1357b6154e0dd424211f3a4c57116fadd"
+  }
+}

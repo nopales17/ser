@@ -1,0 +1,76 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "fact_keys",
+    "facts",
+    "hypothesis_effects",
+    "unresolved_references",
+    "uncertainty_flags",
+    "recommended_next_artifact_id"
+  ],
+  "properties": {
+    "fact_keys": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "alternate-entry",
+          "direct-only-membership",
+          "inherited-membership-included",
+          "role-fallback",
+          "role-map-transform",
+          "role-preserved",
+          "missing-token-scope",
+          "missing-feature-context",
+          "token-scope-forwarded",
+          "feature-context-forwarded",
+          "sensitive-without-owner-check",
+          "ownership-compared",
+          "weak-ownership-audit",
+          "weak-membership-audit",
+          "weak-role-audit",
+          "weak-context-audit"
+        ]
+      },
+      "maxItems": 16
+    },
+    "facts": {
+      "type": "array",
+      "items": {"type": "string"},
+      "maxItems": 16
+    },
+    "hypothesis_effects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["hypothesis_id", "effect"],
+        "properties": {
+          "hypothesis_id": {"type": "string"},
+          "effect": {"type": "number", "minimum": -2.0, "maximum": 2.0}
+        }
+      },
+      "maxItems": 4
+    },
+    "unresolved_references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["symbol", "relation_tag"],
+        "properties": {
+          "symbol": {"type": "string"},
+          "relation_tag": {"type": "string"}
+        }
+      },
+      "maxItems": 16
+    },
+    "uncertainty_flags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "maxItems": 8
+    },
+    "recommended_next_artifact_id": {"type": ["string", "null"]}
+  }
+}

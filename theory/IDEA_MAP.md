@@ -70,7 +70,7 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Evidence refs:** `CHARTER.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Accepted methodological constraint; no comparison has run.
+- **Notes:** Accepted methodological constraint. MicroGym comparisons and one exact-likelihood routing comparison have run. Static AuthzGym real-model v1 also ran matched architectures, but its response-contract validation failed, so it supplies no valid architecture comparison or promotion evidence.
 
 ### `F-005` -- Authority-maturity separation
 
@@ -505,11 +505,11 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Related to:** `Q-009`
 - **Would support:** Preregistered resource-matched evaluations with ablations and independent confirmation.
 - **Would falsify:** Simpler matched strategies consistently match or beat SER across intended environments.
-- **Implementation refs:** `src/ser/policies/adaptive.py`, `src/ser/evaluation/analysis.py`, `src/ser/evaluation/routing.py`, `src/ser/evaluation/routing_analysis.py`, `src/ser/authzgym/policies.py`, `src/ser/evaluation/authz_analysis.py`
-- **Evidence refs:** `experiments/microgym_v1/summary.json`, `experiments/microgym_v1/INTERPRETATION.md`, `experiments/microgym_routing_v1/summary.json`, `experiments/microgym_routing_v1/INTERPRETATION.md`
+- **Implementation refs:** `src/ser/policies/adaptive.py`, `src/ser/evaluation/analysis.py`, `src/ser/evaluation/routing.py`, `src/ser/evaluation/routing_analysis.py`, `src/ser/authzgym/policies.py`, `src/ser/authzgym/real_runner.py`, `src/ser/evaluation/authz_analysis.py`, `src/ser/evaluation/authz_real_analysis.py`
+- **Evidence refs:** `experiments/microgym_v1/summary.json`, `experiments/microgym_v1/INTERPRETATION.md`, `experiments/microgym_routing_v1/summary.json`, `experiments/microgym_routing_v1/INTERPRETATION.md`, `experiments/authzgym_static_realmodel_v1/summary.json`, `experiments/authzgym_static_realmodel_v1/validation.json`, `experiments/authzgym_static_realmodel_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** MicroGym v1 was insufficient for promotion because its matched open-loop gap was small, cost-driven, and non-routing. Routing-v1 adds a favorable one-step exact-model routing result under identical fixed resources, but still lacks model-compute accounting, semantic evidence, ordinary-agent comparison, multiple domains, and independent confirmation. Static Semantic AuthzGym protocol 1.1 freezes matched semantic-routing comparisons, but its deterministic mocks are benchmark calibration only and add no evidence. The broad resource-normalized claim remains a seed.
+- **Notes:** MicroGym v1 was insufficient for promotion because its matched open-loop gap was small, cost-driven, and non-routing. Routing-v1 adds a favorable one-step exact-model routing result under identical fixed resources, but still lacks semantic evidence, multiple domains, and independent confirmation. Static AuthzGym real-model v1 completed its matched schedule but was classified invalid after 104/192 runs failed the response/resource contract; its 1-1-22 SER/ReAct paired diagnostic cannot support an architecture claim. The broad resource-normalized claim remains a seed.
 
 ### `H-017` -- Decision-value-conditioned epistemic routing
 
@@ -521,10 +521,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Across preregistered positive- and zero-VOA controls, a matched closed-loop policy branches when action values change, avoids spurious branches when they do not, and improves the relevant outcome over the best open-loop plan.
 - **Would falsify:** The policy branches on belief changes without value, fails to branch when exact action values change, or loses its advantage when action values must be estimated rather than supplied.
 - **Implementation refs:** `src/ser/policies/adaptive.py`, `src/ser/evaluation/routing.py`, `src/ser/evaluation/routing_analysis.py`, `src/ser/authzgym/policies.py`, `src/ser/evaluation/authz_analysis.py`
-- **Evidence refs:** `experiments/microgym_routing_v1/PREREGISTRATION.md`, `experiments/microgym_routing_v1/summary.json`, `experiments/microgym_routing_v1/INTERPRETATION.md`
+- **Evidence refs:** `experiments/microgym_routing_v1/PREREGISTRATION.md`, `experiments/microgym_routing_v1/summary.json`, `experiments/microgym_routing_v1/INTERPRETATION.md`, `experiments/authzgym_static_realmodel_v1/summary.json`, `experiments/authzgym_static_realmodel_v1/validation.json`, `experiments/authzgym_static_realmodel_v1/INTERPRETATION.md`
 - **Origin:** Phase 4 conceptual synthesis and frozen routing-v1 experiment, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Working hypothesis with one narrowly supportive explicit-likelihood, one-step experiment. The zero-VOA controls separate belief change from action-value change. Static Semantic AuthzGym protocol 1.1 implements a future semantic test but its deterministic mock calibration is not evidence. Semantic action-value estimation, model misspecification, multi-stage routing, and real-domain generality remain untested.
+- **Notes:** Working hypothesis with one narrowly supportive explicit-likelihood, one-step experiment. Static AuthzGym real-model v1 was not a valid semantic test: response truncation/dynamic-contract failures left only 88/192 valid runs, and diagnostic SER routing had zero oracle-consistent eligible first branches. No semantic-routing evidence is admitted. Valid semantic action-value estimation, model misspecification, multi-stage routing, and real-domain generality remain untested.
 
 ### `H-018` -- Bounded semantic action-value estimation
 
@@ -535,11 +535,11 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Related to:** `H-001`, `H-012`, `H-016`, `Q-001`, `Q-009`
 - **Would support:** Under a frozen static authorization benchmark, an actual inexpensive semantic model achieves preregistered fact quality and useful-action ranking, the explicit-value policy routes conditionally, respects zero-value controls, and improves matched decisions or efficiency over fixed and ReAct-like controls.
 - **Would falsify:** Purchased-artifact interpretations do not recover the required authorization relations, useful inspection rankings are no better than simple controls, routing is label-sensitive or oracle-dependent, or any apparent advantage disappears under matched evidence and model budgets.
-- **Implementation refs:** `src/ser/authzgym`, `src/ser/evaluation/authz_artifacts.py`, `src/ser/evaluation/authz_analysis.py`, `tools/run_authzgym_static.py`, `tools/verify_authzgym_static.py`
-- **Evidence refs:** `experiments/authzgym_static_v1_1/PREREGISTRATION.md`
+- **Implementation refs:** `src/ser/authzgym`, `src/ser/authzgym/realmodel.py`, `src/ser/authzgym/real_runner.py`, `src/ser/evaluation/authz_artifacts.py`, `src/ser/evaluation/authz_analysis.py`, `src/ser/evaluation/authz_real_analysis.py`, `tools/run_authzgym_static.py`, `tools/verify_authzgym_static.py`, `tools/run_authzgym_realmodel.py`, `tools/verify_authzgym_realmodel.py`
+- **Evidence refs:** `experiments/authzgym_static_v1_1/PREREGISTRATION.md`, `experiments/authzgym_static_realmodel_v1/PREREGISTRATION.md`, `experiments/authzgym_static_realmodel_v1/summary.json`, `experiments/authzgym_static_realmodel_v1/validation.json`, `experiments/authzgym_static_realmodel_v1/INTERPRETATION.md`, `experiments/authzgym_static_realmodel_v1/IMPLEMENTATION_NOTES.md`
 - **Origin:** Phase 5A Static Semantic AuthzGym design, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** The hypothesis is formalized and its benchmark is implemented. Protocol 1.1 deterministic interpreters are test doubles, the classifier is benchmark_calibration_only, no real model was called, and no empirical finding is admitted.
+- **Notes:** The hypothesis is formalized and its benchmark is implemented. The first actual-model experiment completed for $0.379060610 but was classified invalid: only 88/192 runs were valid, SER diagnostic fact precision/recall were 0.642/0.493, effect-direction precision/recall were 0.200/0.077, and top-1/top-2 useful-action recall were 0.179/0.321. These diagnostics do not promote or reject H-018; a valid response-contract-stable rerun is still required.
 
 ## Proposed mechanisms (13)
 
@@ -732,11 +732,11 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Related to:** `H-012`, `H-017`, `Q-009`
 - **Would support:** Frozen populations, exact replay, matched budgets, evaluator firewall, purchased-artifact scope, failure decomposition, and identifier/label/order perturbations reproduce before any empirical interpretation.
 - **Would falsify:** The benchmark leaks evaluator truth, confounds artifact identity with usefulness, cannot reproduce traces and budgets, or fails to distinguish semantic extraction from routing and decision failures.
-- **Implementation refs:** `src/ser/authzgym`, `src/ser/evaluation/authz_artifacts.py`, `src/ser/evaluation/authz_analysis.py`, `tools/run_authzgym_static.py`, `tools/verify_authzgym_static.py`
-- **Evidence refs:** `experiments/authzgym_static_v1/FIRST_RUN_FAILURE.json`, `experiments/authzgym_static_v1/IMPLEMENTATION_NOTES.md`, `experiments/authzgym_static_v1_1/PREREGISTRATION.md`, `experiments/authzgym_static_v1_1/validation.json`, `experiments/authzgym_static_v1_1/INTERPRETATION.md`
+- **Implementation refs:** `src/ser/authzgym`, `src/ser/authzgym/realmodel.py`, `src/ser/authzgym/real_runner.py`, `src/ser/evaluation/authz_artifacts.py`, `src/ser/evaluation/authz_analysis.py`, `src/ser/evaluation/authz_real_analysis.py`, `tools/run_authzgym_static.py`, `tools/verify_authzgym_static.py`, `tools/run_authzgym_realmodel.py`, `tools/verify_authzgym_realmodel.py`
+- **Evidence refs:** `experiments/authzgym_static_v1/FIRST_RUN_FAILURE.json`, `experiments/authzgym_static_v1/IMPLEMENTATION_NOTES.md`, `experiments/authzgym_static_v1_1/PREREGISTRATION.md`, `experiments/authzgym_static_v1_1/validation.json`, `experiments/authzgym_static_v1_1/INTERPRETATION.md`, `experiments/authzgym_static_realmodel_v1/PREREGISTRATION.md`, `experiments/authzgym_static_realmodel_v1/validation.json`, `experiments/authzgym_static_realmodel_v1/summary.json`, `experiments/authzgym_static_realmodel_v1/INTERPRETATION.md`
 - **Origin:** Phase 5A benchmark construction and calibration, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Protocol v1 is preserved as an invalid calibration because its degraded mock keyed omissions to opaque IDs. Protocol 1.1 corrects only that test-double defect and passes all 11 safeguards. Both are benchmark construction records, not empirical semantic-model evidence; no E-* entry follows.
+- **Notes:** Protocol v1 is preserved as an invalid mock calibration because its degraded mock keyed omissions to opaque IDs. Protocol 1.1 corrects that defect and passes all 11 benchmark safeguards. Real-model v1 then preserved a separate invalid empirical run: population, access, hashes, and budget passed, but provider/schema validity did not. The benchmark remains working; no AuthzGym E-* entry follows and the next run requires a new preregistered protocol.
 
 ## Empirical findings (3)
 
@@ -917,7 +917,7 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** `CHARTER.md`, `theory/CONTROL_PROBLEM.md`, `theory/DOMAIN_INSTANTIATIONS.md`, `experiments/microgym_v1/INTERPRETATION.md`, `experiments/microgym_routing_v1/PREREGISTRATION.md`, `experiments/microgym_routing_v1/INTERPRETATION.md`, `experiments/authzgym_static_v1_1/PREREGISTRATION.md`, `experiments/authzgym_static_v1_1/validation.json`, `experiments/authzgym_static_v1_1/INTERPRETATION.md`
+- **Evidence refs:** `CHARTER.md`, `theory/CONTROL_PROBLEM.md`, `theory/DOMAIN_INSTANTIATIONS.md`, `experiments/microgym_v1/INTERPRETATION.md`, `experiments/microgym_routing_v1/PREREGISTRATION.md`, `experiments/microgym_routing_v1/INTERPRETATION.md`, `experiments/authzgym_static_v1_1/PREREGISTRATION.md`, `experiments/authzgym_static_v1_1/validation.json`, `experiments/authzgym_static_v1_1/INTERPRETATION.md`, `experiments/authzgym_static_realmodel_v1/PREREGISTRATION.md`, `experiments/authzgym_static_realmodel_v1/validation.json`, `experiments/authzgym_static_realmodel_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** MicroGym v1 exposed an admission-rule defect by permitting a positive label without observed adaptive behavior. Routing-v1 corrected this prospectively: its frozen classifier required positive oracle VOA, actual branching, oracle consistency, exact value over same-model open-loop, no STOP, zero-VOA restraint, and invariance checks. Static Semantic AuthzGym v1 then exposed identifier-sensitive mock degradation; the failed calibration was preserved and protocol 1.1 was versioned before any real-model outcome. This calibration discipline adds no empirical finding. Broader promotion still requires actual semantic, multi-stage, resource-accounted, and independently confirmed evidence.
+- **Notes:** MicroGym v1 exposed an admission-rule defect; routing-v1 corrected it prospectively. Static AuthzGym v1 then exposed identifier-sensitive mock degradation, which protocol 1.1 corrected before any actual-model result. Real-model v1 subsequently completed every scheduled condition but its frozen classifier returned invalid because response/run validity failed. Preserving all three failures prevents partial diagnostics from becoming promotion evidence. Broader promotion still requires a valid semantic, multi-stage, resource-accounted, and independently confirmed result.
