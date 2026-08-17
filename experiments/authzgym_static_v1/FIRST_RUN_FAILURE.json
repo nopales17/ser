@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "benchmark": "authzgym-static-v1",
+  "run_stage": "first frozen mock aggregate",
+  "development_population_hash": "9ee6f1c1299149eaff665baa22f2936c2ef49ee126654ff6e692b7669c2c3779",
+  "evaluation_population_hash": "7a128132541c79eca9fde66b4476884c0cb9e2d12cae9b5a1c4178f0ce84598b",
+  "perturbation_population_hash": "fb5a38d0e13cb04de2660ebd4d79d068feb2e0a42e7a6397a7612007e2ad0c23",
+  "status": "failed_before_artifact_write",
+  "error_type": "ValueError",
+  "error": "mock semantic output exceeds frozen output-token ceiling",
+  "failure_location": "consolidated four-artifact mock semantic call",
+  "aggregate_metrics_emitted": false,
+  "output_artifacts_written": false,
+  "resolution": "Compatibility correction applies the frozen per-artifact output allowance four times to the explicitly bounded four-artifact consolidated call, matching the total allowance of four single-artifact calls.",
+  "unchanged": [
+    "development population",
+    "evaluation population",
+    "perturbation population",
+    "prompt",
+    "model condition file",
+    "semantic parser rules",
+    "policy behavior",
+    "decision thresholds",
+    "real-model classifier thresholds"
+  ]
+}

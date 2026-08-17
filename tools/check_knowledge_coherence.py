@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 from collections import Counter
@@ -783,14 +784,26 @@ def check_phase_progress_status() -> dict[str, object]:
             "Phase 4 done -> Phase 5 active"
         )
     runtime = current.get("runtime", {})
-    if not runtime.get("built") or runtime.get("environments") != 9 or runtime.get("controllers") != 13:
-        errors.append("status does not report the implemented MicroGym runtime accurately")
+    if (
+        not runtime.get("built")
+        or runtime.get("environments") != 13
+        or runtime.get("controllers") != 17
+        or runtime.get("model_integrations") != 0
+        or runtime.get("semantic_interpreters") != 2
+    ):
+        errors.append(
+            "status does not report the implemented MicroGym/AuthzGym instruments accurately"
+        )
     if not current.get("knowledge_architecture", {}).get("phase_3_microgym_complete"):
         errors.append("phase_3_microgym_complete is not true")
     if not current.get("knowledge_architecture", {}).get(
         "phase_4_routing_falsification_complete"
     ):
         errors.append("phase_4_routing_falsification_complete is not true")
+    if not current.get("knowledge_architecture", {}).get(
+        "phase_5a_1_and_5a_2_authzgym_benchmark_complete"
+    ):
+        errors.append("phase_5a_1_and_5a_2_authzgym_benchmark_complete is not true")
     if current.get("evidence", {}).get("ser_experiments") != ["E-002", "E-003"]:
         errors.append("MicroGym evidence index must contain exactly E-002 and E-003")
     experiment_paths = (
@@ -808,16 +821,64 @@ def check_phase_progress_status() -> dict[str, object]:
         "experiments/microgym_routing_v1/summary.json",
         "experiments/microgym_routing_v1/validation.json",
         "experiments/microgym_routing_v1/INTERPRETATION.md",
+        "experiments/authzgym_static_v1/PREREGISTRATION.md",
+        "experiments/authzgym_static_v1/FIRST_RUN_FAILURE.json",
+        "experiments/authzgym_static_v1/IMPLEMENTATION_NOTES.md",
+        "experiments/authzgym_static_v1/validation.json",
+        "experiments/authzgym_static_v1_1/PREREGISTRATION.md",
+        "experiments/authzgym_static_v1_1/REVISION.md",
+        "experiments/authzgym_static_v1_1/development_population.json",
+        "experiments/authzgym_static_v1_1/evaluation_population.json",
+        "experiments/authzgym_static_v1_1/perturbation_population.json",
+        "experiments/authzgym_static_v1_1/runs.jsonl",
+        "experiments/authzgym_static_v1_1/perturbation_runs.jsonl",
+        "experiments/authzgym_static_v1_1/summary.json",
+        "experiments/authzgym_static_v1_1/validation.json",
+        "experiments/authzgym_static_v1_1/INTERPRETATION.md",
     )
     missing_experiment_paths = [path for path in experiment_paths if not (ROOT / path).exists()]
     if missing_experiment_paths:
-        errors.append("missing MicroGym artifacts: " + ", ".join(missing_experiment_paths))
+        errors.append("missing experiment artifacts: " + ", ".join(missing_experiment_paths))
+    if not missing_experiment_paths:
+        authz_v1_validation = json.loads(
+            (ROOT / "experiments/authzgym_static_v1/validation.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        authz_v1_1_validation = json.loads(
+            (ROOT / "experiments/authzgym_static_v1_1/validation.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        authz_v1_1_summary = json.loads(
+            (ROOT / "experiments/authzgym_static_v1_1/summary.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        authz_status = current.get("evidence", {}).get("authzgym_static_v1_1", {})
+        if authz_v1_validation.get("status") != "fail":
+            errors.append("preserved AuthzGym v1 calibration must remain invalid")
+        if authz_v1_1_validation.get("status") != "pass":
+            errors.append("AuthzGym protocol 1.1 validation must pass")
+        if (
+            authz_v1_1_summary.get("classifier", {}).get("classification")
+            != "benchmark_calibration_only"
+            or authz_v1_1_summary.get("classifier", {}).get(
+                "real_model_classifier_status"
+            )
+            != "not_run"
+            or authz_status.get("evidence_status") != "benchmark_calibration_only"
+            or authz_status.get("real_model_classifier_status") != "not_run"
+        ):
+            errors.append(
+                "AuthzGym calibration must remain separate from empirical model evidence"
+            )
     return result(
         "phase_progress_status",
         not errors,
         "errors: " + "; ".join(errors)
         if errors
-        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are recorded narrowly; Phase 5 is the sole active follow-up",
+        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are recorded narrowly; Phase 5A AuthzGym is benchmark calibration only; Phase 5 remains active",
     )
 
 

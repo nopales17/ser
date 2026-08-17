@@ -1,0 +1,56 @@
+{
+  "benchmark": "authzgym-static-v1",
+  "checks": {
+    "bounded repository structure": {
+      "detail": "six files and 100-500 lines per episode; evaluation family counts {'h1': 6, 'h2': 6, 'h3': 6, 'h4': 6}",
+      "status": "pass"
+    },
+    "branch and zero-value controls": {
+      "detail": "evaluation control structure {'eligible_branch': 16, 'zero_value_control': 8}",
+      "status": "pass"
+    },
+    "development and evaluation separation": {
+      "detail": "8 development, 24 primary evaluation, and 24 paired perturbation-audit episodes have distinct manifests",
+      "status": "pass"
+    },
+    "evaluator firewall": {
+      "detail": "policy-visible runs contain no truth roles, useful-action labels, oracle ranks, or conclusions",
+      "status": "pass"
+    },
+    "identifier label and order perturbation": {
+      "detail": "semantic first-route role and correctness preserved in 96/96 routed/ReAct paired runs",
+      "status": "fail"
+    },
+    "matched evidence and declared budgets": {
+      "detail": "fixed, ReAct-like, and SER use four calls/four artifacts; monolithic uses one bounded call over four artifacts",
+      "status": "pass"
+    },
+    "no real-model spending": {
+      "detail": "all calibration records identify deterministic mock conditions and zero declared monetary cost",
+      "status": "pass"
+    },
+    "opaque identifiers and source labels": {
+      "detail": "opaque unit paths contain no mechanism labels, answers, or evaluator-field names",
+      "status": "pass"
+    },
+    "purchased-artifact semantic scope": {
+      "detail": "every semantic call contains exactly the artifact or bounded batch selected by its recorded action",
+      "status": "pass"
+    },
+    "record hashes": {
+      "detail": "verified 384 content-addressed run records",
+      "status": "pass"
+    },
+    "static-only action surface": {
+      "detail": "only bounded artifact inspection exists; no execution, mutation, network, fuzzing, GitLab, or IDS action is present",
+      "status": "pass"
+    }
+  },
+  "population_hashes": {
+    "development": "9ee6f1c1299149eaff665baa22f2936c2ef49ee126654ff6e692b7669c2c3779",
+    "evaluation": "7a128132541c79eca9fde66b4476884c0cb9e2d12cae9b5a1c4178f0ce84598b",
+    "perturbation_audit": "fb5a38d0e13cb04de2660ebd4d79d068feb2e0a42e7a6397a7612007e2ad0c23"
+  },
+  "schema_version": 1,
+  "status": "fail"
+}

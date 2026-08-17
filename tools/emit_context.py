@@ -395,6 +395,8 @@ def render_context_packet(
         "",
         current["evidence"]["summary"],
         "",
+        "Static Semantic AuthzGym protocol 1.1 is frozen with 8 development, 24 primary evaluation, and 24 paired perturbation episodes. Its 384 records use deterministic test doubles; all 11 construction safeguards pass, but the status is `benchmark_calibration_only`, the real-model classifier is `not_run`, and no `E-*` finding was added. The preserved v1 calibration remains invalid because it exposed identifier-dependent mock degradation.",
+        "",
         f"Legacy inventory: **{current['legacy_inventory']['component_count']}** component groups classified at archive commit `{current['legacy_inventory']['archive_head']}`: {current['legacy_inventory']['classification_summary']}. No component is authorized for unchanged reuse.",
         "",
         current["legacy_inventory"]["summary"],
@@ -468,7 +470,7 @@ def render_context_packet(
         if finding["notes"]:
             lines.append(f"  Limitation: {finding['notes']}")
     lines.append(
-        "The IDS finding is historical environment evidence only. MicroGym v1 supports a narrow stopping/cost finding without routing; routing-v1 supports only one-step observation-conditioned routing with supplied likelihoods. Neither synthetic result establishes semantic action-value estimation, scope-aware gating, sparse propagation, compression, learned policy, real-domain transfer, or substrate independence."
+        "The IDS finding is historical environment evidence only. MicroGym v1 supports a narrow stopping/cost finding without routing; routing-v1 supports only one-step observation-conditioned routing with supplied likelihoods. Static Semantic AuthzGym is absent from this finding list because deterministic benchmark calibration is not empirical evidence. None establishes semantic action-value estimation, scope-aware gating, sparse propagation, compression, learned policy, real-domain transfer, or substrate independence."
     )
 
     lines.extend(
@@ -486,7 +488,7 @@ def render_context_packet(
             "",
             current["roadmap"]["immediate_next_task"],
             "",
-            "The IDS archive remains read-only. Active Phase 5 authorizes only the smallest controlled authorization-oriented software experiment needed to test action-value estimation from imperfect evidence: no IDS code/data copy, real GitLab integration, adapter, production runtime, model integration, graph runtime, production fuzzing, or coupling-law implementation.",
+            "The IDS archive remains read-only. Active Phase 5 now authorizes only the separately frozen inexpensive-model evaluation on Static Semantic AuthzGym protocol 1.1. It does not authorize IDS code/data copy, real GitLab integration, an adapter, a production runtime or general model integration, graph runtime, production fuzzing, or coupling-law implementation.",
             "",
             "## 11. Important non-goals",
             "",

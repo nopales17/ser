@@ -275,3 +275,38 @@ a new entry; do not rewrite it.
 - Revisit when: A controlled-environment design cannot isolate action-value
   estimation without a smaller semantic bridge, or evidence shows that routing
   itself still fails outside the exact one-step condition.
+
+## ADR-0015 -- Separate authorization benchmark calibration from model evidence
+
+- Status: accepted
+- Date: 2026-08-17
+- Context: Phase 5A requires a benchmark that separates semantic extraction,
+  epistemic update, action-value estimation, routing, and final authorization
+  diagnosis before any paid or variable model result is observed. The first
+  deterministic calibration of Static Semantic AuthzGym v1 exposed an
+  identifier-dependent omission schedule in a degraded test double, so its
+  perturbation validation correctly failed.
+- Decision: Preserve the failed v1 calibration without rewriting it and freeze
+  protocol 1.1 as a benchmark-integrity correction. Protocol 1.1 changes only
+  the deterministic mock omission key from opaque artifact identity to semantic
+  fact/relation role. Treat both protocols as construction and calibration, not
+  empirical SER evidence. Any actual inexpensive-model evaluation must be a
+  separate frozen experiment using the already frozen population, semantic
+  interface, budgets, baselines, and classifier thresholds, or must declare a
+  new protocol version before observing evaluation outcomes.
+- Why: Failed-run preservation makes the benchmark's contamination history
+  auditable. Versioning prevents an invariance repair from becoming invisible
+  post-result tuning, while the separation between deterministic mocks and an
+  actual semantic model prevents implementation success from promoting a
+  hypothesis.
+- Alternatives rejected: overwriting the invalid v1 artifacts; weakening the
+  perturbation check; treating deterministic rule interpreters as semantic
+  evidence; calling a model before the benchmark and classifier were frozen;
+  advancing directly to active testing or real GitLab.
+- Consequences: Static Semantic AuthzGym protocol 1.1 is ready for a separately
+  recorded inexpensive-model evaluation. Phase 5 remains active, no new
+  empirical finding is admitted, model integrations remain zero, Phase 5B is
+  not ready, real GitLab remains gated, and IDS remains dormant and read-only.
+- Revisit when: The separate model run is complete, or a preregistered integrity
+  failure requires another explicitly versioned correction before interpreting
+  model performance.

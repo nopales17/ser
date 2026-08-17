@@ -97,6 +97,19 @@ Allowed statuses: `planned`, `active`, `done`.
   new explicit decision showing it is a materially cleaner bridge for this
   exact question. Do not add graphs, coupling laws, learned policies, or
   cross-substrate environments.
+- current cursor: Phase 5A.1 construction and Phase 5A.2 freezing are complete;
+  Phase 5A overall is not complete. Static Semantic AuthzGym protocol 1.1
+  freezes 8 development, 24 primary evaluation, and 24
+  paired perturbation episodes; constrained H1-H4 diagnoses; purchased-artifact
+  semantic traces; fixed, ReAct-like, explicit-value, and secondary monolithic
+  architectures; matched budgets; evaluator truth; failure decomposition; and
+  a real-model classifier. Deterministic mock calibration passes all benchmark
+  safeguards but is not empirical evidence. The next step is a separately
+  frozen run with one selected inexpensive semantic model and no post-evaluation
+  prompt, parser, policy, population, budget, or threshold tuning.
+- readiness: Phase 5B is not ready. It requires an actual model to extract
+  useful facts, rank inspections beyond trivial heuristics, route conditionally,
+  and improve matched decision quality or efficiency under the frozen rule.
 - exit: a frozen matched-control experiment determines whether useful action
   values can be estimated without supplied likelihood tables, or records the
   smallest specific estimation/representation failure before any move to real

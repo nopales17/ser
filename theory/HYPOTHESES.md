@@ -12,6 +12,9 @@ The canonical statements, maturity, relations, and falsifiers live in
 - `H-016` is the eventual resource-normalized advantage claim.
 - `H-017` asks whether newly released information should change allocation only
   when it changes the expected value landscape of available epistemic actions.
+- `H-018` asks whether semantic interpretations of only purchased static
+  authorization artifacts can support useful bounded inspection-value estimates
+  without supplied likelihood tables or evaluator labels.
 - `F-004` is the binding methodological constraint: matched simpler baselines
   can falsify architectural value.
 
@@ -56,6 +59,13 @@ candidate branched only when oracle VOA was positive and captured the exact
 closed-loop advantage. This is scoped evidence relevant to `H-017`, not
 promotion of `H-001` or `H-016`; multi-stage, semantic, resource-normalized, and
 real-domain claims remain unsupported.
+
+Phase 5A implements `M-013`, Static Semantic AuthzGym, as the test instrument for
+`H-018`. Protocol 1.1 has a frozen population, matched fixed/ReAct/explicit-value
+architectures, evaluator firewall, failure decomposition, and perturbation
+audit. Its deterministic mock runs are `benchmark_calibration_only`; they do not
+support `H-018`, `H-017`, `H-016`, or any authorization-competence claim. An
+actual semantic-model evaluation remains the next experiment.
 
 The four Phase 2 domain instantiations establish representational coverage only.
 They do not validate allocation value, scope-aware routing, active investigation,

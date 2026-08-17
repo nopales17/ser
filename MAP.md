@@ -29,7 +29,9 @@ is an independent field on concepts and evidence.
 | `experiments/README.md` | evidence index | experiment admission, evidence-record rules, and admitted result index | generalization beyond each frozen protocol |
 | `experiments/microgym_v1/` | evidence artifacts | frozen MicroGym v1 population, traces, validation, numeric summary, adaptivity audit, and scoped interpretation | broad SER, semantic, or real-domain claims |
 | `experiments/microgym_routing_v1/` | evidence artifacts | frozen fixed-horizon routing population, exact open/closed-loop values, candidate traces, branch audit, validation, and scoped interpretation | multi-stage, semantic, software, GitLab, or general SER claims |
-| `src/ser/` | implementation | minimal MicroGym runtime, public policies, evaluator-only oracles, fixed-horizon routing instrumentation, trace/replay, and analysis behavior | theory maturity or empirical validity by itself |
+| `experiments/authzgym_static_v1/` | preserved benchmark-calibration artifacts | frozen population and the complete failed deterministic calibration history, including the identifier-dependent test-double defect | empirical semantic-model or SER evidence |
+| `experiments/authzgym_static_v1_1/` | benchmark-calibration artifacts | corrected frozen Static Semantic AuthzGym population, semantic interface, budgets, baselines, classifier thresholds, deterministic mock traces, validation, and limitations | empirical semantic-model or SER evidence; permission to revise the frozen real-model protocol after observing outcomes |
+| `src/ser/` | implementation | minimal MicroGym and Static Semantic AuthzGym instruments, public policies, evaluator-only truth/oracles, semantic-call tracing, routing instrumentation, trace/replay, and analysis behavior | theory maturity or empirical validity by itself |
 | `tools/` | artifact | executable knowledge-generation and checking behavior | validation of SER theory |
 
 ## Precedence

@@ -2,12 +2,13 @@
   "schema_version": 1,
   "as_of": "2026-08-17",
   "project_name": "SER (provisional)",
-  "project_maturity": "phase_4_routing_complete_scoped_positive_finding",
+  "project_maturity": "phase_5a_static_authzgym_benchmark_ready_no_model_evidence",
   "runtime": {
     "built": true,
-    "controllers": 13,
-    "environments": 9,
-    "model_integrations": 0
+    "controllers": 17,
+    "environments": 13,
+    "model_integrations": 0,
+    "semantic_interpreters": 2
   },
   "knowledge_architecture": {
     "canonical_idea_map": true,
@@ -17,7 +18,8 @@
     "phase_1_legacy_inventory_complete": true,
     "phase_2_formalization_complete": true,
     "phase_3_microgym_complete": true,
-    "phase_4_routing_falsification_complete": true
+    "phase_4_routing_falsification_complete": true,
+    "phase_5a_1_and_5a_2_authzgym_benchmark_complete": true
   },
   "formal_control_problem": {
     "phase_2_complete": true,
@@ -33,7 +35,7 @@
   },
   "evidence": {
     "ser_experiments": ["E-002", "E-003"],
-    "summary": "MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. The separate routing-v1 benchmark then showed that, under one fixed equal-cost acquisition with clean public likelihoods, the unchanged candidate branched at all 6 eligible nodes, matched the closed-loop oracle, captured all exact one-step VOA, and made no spurious branches in 3 zero-VOA controls. No general SER hypothesis was promoted; semantic action-value estimation remains untested.",
+    "summary": "MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. The separate routing-v1 benchmark then showed that, under one fixed equal-cost acquisition with clean public likelihoods, the unchanged candidate branched at all 6 eligible nodes, matched the closed-loop oracle, captured all exact one-step VOA, and made no spurious branches in 3 zero-VOA controls. Static Semantic AuthzGym protocol 1.1 is a frozen, validated benchmark calibration only: no real model was called and no new empirical finding was admitted. No general SER hypothesis was promoted; semantic action-value estimation remains untested.",
     "microgym_v1": {
       "population_hash": "a9234fa60b40d3628f6317284a964c95917bcd7442796d8961f18b14b9958b3d",
       "problem_regimes": 24,
@@ -65,6 +67,21 @@
       "scientific_interpretation": "narrow_one_step_explicit_likelihood_routing_support",
       "summary": "With exactly one equal-cost acquisition and no STOP, the unchanged candidate matched the exact closed-loop cue-conditioned action map and beat the exact same-model open-loop plan in expected loss on every positive-VOA regime."
     },
+    "authzgym_static_v1_1": {
+      "evidence_status": "benchmark_calibration_only",
+      "development_population_hash": "49206443c70e25f29f4276c1f4c4d7c27fcf9d56b5d9ea2b4e6f89980be1534f",
+      "evaluation_population_hash": "cd8339fd3a0973da7135ca252244ce3b71e1ffc33674b5b8d03cad1fde46a2bb",
+      "perturbation_population_hash": "7866ea2c4ea085152a365c32094a8ab1357b6154e0dd424211f3a4c57116fadd",
+      "development_episodes": 8,
+      "evaluation_episodes": 24,
+      "perturbation_episodes": 24,
+      "mock_runs": 192,
+      "perturbation_mock_runs": 192,
+      "validation_checks_passed": 11,
+      "validation_checks_failed": 0,
+      "real_model_classifier_status": "not_run",
+      "summary": "Static-only authored authorization repositories exercise four mechanism families, constrained H1-H4 diagnoses, purchased-artifact semantic interpretation, matched routing architectures, evaluator truth, resource accounting, failure decomposition, and paired invariance audits. Deterministic rule interpreters validate the instrument but provide no semantic-model or SER evidence."
+    },
     "historical_only": [
       "E-001 describes scoped artifacts in the read-only IDS archive; it is not evidence for SER."
     ]
@@ -78,12 +95,12 @@
   "roadmap": {
     "active_phase_id": 5,
     "active_phase_title": "Controlled authorization action-value estimation",
-    "immediate_next_task": "Design the smallest controlled authorization-oriented software environment that tests whether useful epistemic-action values can be estimated from imperfect evidence without supplied likelihood tables, while separating allocation quality from generic software task skill.",
+    "immediate_next_task": "Run one separately frozen inexpensive semantic-model evaluation on Static Semantic AuthzGym protocol 1.1 using the fixed prompts, parser, population, budgets, architectures, and classifier; admit the outcome only after exact validation and without post-evaluation tuning.",
     "research_trunk": "GitLab authorization investigation is the primary practical target. MicroGym is a control validation instrument; IDS is only a possible semantic bridge; controlled software experimentation is trunk-aligned; remote sensing is dormant."
   },
   "non_goals": [
-    "No production SER runtime; the implemented code is a minimal zero-LLM MicroGym validation instrument and small exact/reference controllers.",
-    "No LLM/model integration, TGNN, graph neural network, learned policy, or training infrastructure.",
+    "No production SER runtime; the implemented code consists of MicroGym and Static Semantic AuthzGym benchmark instruments plus small exact, reference, and deterministic mock controllers.",
+    "No real LLM/model integration yet; no general LLM agent, TGNN, graph neural network, learned policy, or training infrastructure.",
     "No coupling-law implementation, universal epistemic graph, production fuzzer, remote-sensing integration, or IDS adapter.",
     "No IDS code or data import, real GitLab integration, or claim that IDS/GitLab validates SER."
   ]

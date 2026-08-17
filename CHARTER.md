@@ -159,15 +159,20 @@ resource budget, SER has not demonstrated architectural value in that scope.
 Phase 3 implemented a minimal zero-LLM MicroGym validation runtime and produced
 a narrow stopping finding. Phase 4 then supported observation-conditioned
 routing only in a frozen explicit-likelihood, fixed-horizon, one-step benchmark.
-Under ADR-0014, active Phase 5 may design only the smallest controlled
-authorization-oriented software experiment needed to test semantic
-epistemic-action value estimation without supplied likelihood tables.
+Under ADR-0014 and ADR-0015, active Phase 5 has frozen Static Semantic AuthzGym
+protocol 1.1 as the smallest controlled authorization-oriented benchmark needed
+to test semantic epistemic-action value estimation without supplied likelihood
+tables. Its deterministic mock calibration is implementation validation, not an
+empirical result. The next authorized work is a separate frozen inexpensive-
+model evaluation; its outcome must not be anticipated from mock behavior.
 
-LLM agents and model APIs, graph neural networks, TGNNs, learned policies,
-coupling laws, semantic compressors, fuzzers, IDS adapters, GitLab integration,
-remote-sensing integrations, epistemic graph runtimes, and training
-infrastructure remain non-goals. Do not import IDS code or datasets. GitLab
-authorization is the primary practical trunk and IDS a possible semantic
-validation instrument under ADR-0013; neither is current evidence. Phase 5 does
-not authorize real GitLab integration, broad vulnerability discovery, or IDS
-import without a later explicit decision.
+General LLM agents, graph neural networks, TGNNs, learned policies, coupling
+laws, semantic compressors, fuzzers, IDS adapters, GitLab integration, remote-
+sensing integrations, epistemic graph runtimes, and training infrastructure
+remain non-goals. Phase 5 authorizes only the preregistered inexpensive semantic
+model evaluation needed for Static Semantic AuthzGym, not a production model runtime.
+Do not import IDS code or datasets. GitLab authorization is the primary
+practical trunk and IDS a possible semantic validation instrument under
+ADR-0013; neither is current evidence. Phase 5 does not authorize real GitLab
+integration, broad vulnerability discovery, or IDS import without a later
+explicit decision.

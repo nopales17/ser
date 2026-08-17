@@ -24,6 +24,9 @@ of each concept live in `theory/IDEA_MAP.yaml`.
 | warm | plan and roadmap cursor | does not own scientific truth |
 | hot-ish | current implementation/evidence state or a generated projection | generated views do not become sources of truth |
 | MicroGym | implemented zero-LLM synthetic control-validation environment family (`M-011`) | scoped benchmark instrument, not the practical research trunk or evidence of semantic/general intelligence |
+| Static Semantic AuthzGym | implemented authored static authorization-code benchmark (`M-013`) | protocol 1.1 mock calibration validates the instrument only; it is not a real-model result, GitLab integration, or evidence for SER |
+| semantic action-value estimate | a policy-visible ranking or score for the expected decision relevance of a remaining inspection, derived from purchased-artifact interpretations (`H-018`) | not evaluator truth, supplied likelihood, an oracle usefulness label, or a universal value function |
+| benchmark calibration only | status for deterministic test-double runs that validate construction, tracing, budgets, and checks | cannot admit an empirical finding or promote a hypothesis even if diagnostic thresholds are crossed |
 | Value of Adaptivity (VOA) | routing-v1's exact open-loop expected loss minus exact closed-loop expected loss | experiment-specific evaluator quantity, not a universal SER objective |
 | Adaptivity Capture | routing-v1's fraction of positive oracle VOA recovered by the candidate relative to exact open- and closed-loop loss | undefined at zero VOA and incomparable across unrelated objectives without justification |
 | oscillation rate | frequency of switching between external acquisition and internal inference (`H-007`) | measured trajectory property, not a constant |

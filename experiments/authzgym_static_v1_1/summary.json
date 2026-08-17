@@ -1,0 +1,570 @@
+{
+  "benchmark": "authzgym-static-v1",
+  "classifier": {
+    "classification": "benchmark_calibration_only",
+    "real_model_classifier_status": "not_run",
+    "reason": "Only deterministic mock interpreters ran. Preview labels are diagnostic pipeline checks and cannot admit an empirical semantic-routing finding.",
+    "thresholds_frozen_for_followup": {
+      "maximum_mean_token_ratio_to_best_control": 1.1,
+      "maximum_ser_mean_normalized_routing_regret": 0.35,
+      "maximum_zero_value_spurious_branch_rate": 0.25,
+      "minimum_accuracy_gain_over_fixed": 0.083333333333,
+      "minimum_accuracy_gain_over_react": 0.041666666667,
+      "minimum_eligible_group_branch_rate": 0.5,
+      "minimum_oracle_consistent_first_branch_rate": 0.6,
+      "minimum_semantic_fact_precision": 0.65,
+      "minimum_semantic_fact_recall": 0.5,
+      "minimum_ser_top1_useful_action_recall": 0.6,
+      "minimum_ser_top2_useful_action_recall": 0.8
+    }
+  },
+  "conditions": {
+    "deterministic_degraded_v1_1": {
+      "architectures": {
+        "fixed_order_semantic": {
+          "accuracy": 0.7916666666666666,
+          "decision_loss": 0.20833333333333337,
+          "failure_layers": {
+            "decision_failure": 5,
+            "semantic_extraction_failure": 10
+          },
+          "first_route_correct_rate": 0.20833333333333334,
+          "first_route_top1_oracle_recall": 0.0,
+          "first_route_top2_oracle_recall": 0.0,
+          "mean_normalized_routing_regret": 0.6583333333333333,
+          "mean_resources": {
+            "artifact_inspections": 4.0,
+            "declared_latency_ms": 4.0,
+            "input_tokens_proxy": 4353.458333333333,
+            "monetary_cost_usd": 0.0,
+            "output_tokens_proxy": 398.625,
+            "semantic_calls": 4.0
+          },
+          "runs": 24,
+          "semantic_fact_precision": 0.6111111111111112,
+          "semantic_fact_recall": 0.4967741935483871,
+          "valid_runs": 24
+        },
+        "monolithic_semantic": {
+          "accuracy": 0.7916666666666666,
+          "decision_loss": 0.20833333333333337,
+          "failure_layers": {
+            "decision_failure": 5,
+            "semantic_extraction_failure": 10
+          },
+          "first_route_correct_rate": 0.0,
+          "first_route_top1_oracle_recall": 0.0,
+          "first_route_top2_oracle_recall": 0.0,
+          "mean_normalized_routing_regret": 0.0,
+          "mean_resources": {
+            "artifact_inspections": 4.0,
+            "declared_latency_ms": 1.0,
+            "input_tokens_proxy": 1548.9583333333333,
+            "monetary_cost_usd": 0.0,
+            "output_tokens_proxy": 262.375,
+            "semantic_calls": 1.0
+          },
+          "runs": 24,
+          "semantic_fact_precision": 0.6111111111111112,
+          "semantic_fact_recall": 0.4967741935483871,
+          "valid_runs": 24
+        },
+        "react_like_semantic": {
+          "accuracy": 1.0,
+          "decision_loss": 0.0,
+          "failure_layers": {
+            "semantic_extraction_failure": 18
+          },
+          "first_route_correct_rate": 0.0,
+          "first_route_top1_oracle_recall": 0.0,
+          "first_route_top2_oracle_recall": 0.0,
+          "mean_normalized_routing_regret": 0.4666666666666666,
+          "mean_resources": {
+            "artifact_inspections": 4.0,
+            "declared_latency_ms": 4.0,
+            "input_tokens_proxy": 4353.0,
+            "monetary_cost_usd": 0.0,
+            "output_tokens_proxy": 383.8333333333333,
+            "semantic_calls": 4.0
+          },
+          "runs": 24,
+          "semantic_fact_precision": 0.5636363636363636,
+          "semantic_fact_recall": 0.3875,
+          "valid_runs": 24
+        },
+        "ser_explicit_value": {
+          "accuracy": 1.0,
+          "decision_loss": 0.0,
+          "failure_layers": {
+            "semantic_extraction_failure": 10
+          },
+          "first_route_correct_rate": 1.0,
+          "first_route_top1_oracle_recall": 1.0,
+          "first_route_top2_oracle_recall": 1.0,
+          "mean_normalized_routing_regret": 0.0,
+          "mean_resources": {
+            "artifact_inspections": 4.0,
+            "declared_latency_ms": 4.0,
+            "input_tokens_proxy": 4352.875,
+            "monetary_cost_usd": 0.0,
+            "output_tokens_proxy": 403.5416666666667,
+            "semantic_calls": 4.0
+          },
+          "runs": 24,
+          "semantic_fact_precision": 0.6528925619834711,
+          "semantic_fact_recall": 0.5163398692810458,
+          "valid_runs": 24
+        }
+      },
+      "real_model_classifier_preview": {
+        "classification": "semantic_estimation_only",
+        "observed": {
+          "accuracy_gain_over_fixed": 0.20833333333333337,
+          "accuracy_gain_over_react": 0.0,
+          "eligible_group_branch_rate": 1.0,
+          "mean_token_ratio_to_best_control": 1.0041342669153093,
+          "oracle_consistent_first_branch_rate": 1.0,
+          "semantic_fact_precision": 0.6528925619834711,
+          "semantic_fact_recall": 0.5163398692810458,
+          "ser_mean_normalized_routing_regret": 0.0,
+          "ser_top1_useful_action_recall": 1.0,
+          "ser_top2_useful_action_recall": 1.0,
+          "zero_value_spurious_branch_rate": 0.0
+        },
+        "thresholds": {
+          "maximum_mean_token_ratio_to_best_control": 1.1,
+          "maximum_ser_mean_normalized_routing_regret": 0.35,
+          "maximum_zero_value_spurious_branch_rate": 0.25,
+          "minimum_accuracy_gain_over_fixed": 0.083333333333,
+          "minimum_accuracy_gain_over_react": 0.041666666667,
+          "minimum_eligible_group_branch_rate": 0.5,
+          "minimum_oracle_consistent_first_branch_rate": 0.6,
+          "minimum_semantic_fact_precision": 0.65,
+          "minimum_semantic_fact_recall": 0.5,
+          "minimum_ser_top1_useful_action_recall": 0.6,
+          "minimum_ser_top2_useful_action_recall": 0.8
+        }
+      },
+      "ser_branch_audit": {
+        "eligible_details": [
+          {
+            "decision_group": "evaluation-eligible-10",
+            "episodes": 4,
+            "oracle_branched": true,
+            "oracle_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ],
+            "policy_branched": true,
+            "selected_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ]
+          },
+          {
+            "decision_group": "evaluation-eligible-11",
+            "episodes": 4,
+            "oracle_branched": true,
+            "oracle_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ],
+            "policy_branched": true,
+            "selected_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ]
+          },
+          {
+            "decision_group": "evaluation-eligible-12",
+            "episodes": 4,
+            "oracle_branched": true,
+            "oracle_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ],
+            "policy_branched": true,
+            "selected_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ]
+          },
+          {
+            "decision_group": "evaluation-eligible-13",
+            "episodes": 4,
+            "oracle_branched": true,
+            "oracle_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ],
+            "policy_branched": true,
+            "selected_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ]
+          }
+        ],
+        "eligible_group_branch_rate": 1.0,
+        "eligible_groups": 4,
+        "eligible_groups_with_policy_branch": 4,
+        "oracle_consistent_first_branch_rate": 1.0,
+        "zero_value_details": [
+          {
+            "decision_group": "evaluation-zero-20",
+            "episodes": 2,
+            "oracle_branched": false,
+            "oracle_roles": [
+              "service",
+              "service"
+            ],
+            "policy_branched": false,
+            "selected_roles": [
+              "service",
+              "service"
+            ]
+          },
+          {
+            "decision_group": "evaluation-zero-21",
+            "episodes": 2,
+            "oracle_branched": false,
+            "oracle_roles": [
+              "resolver",
+              "resolver"
+            ],
+            "policy_branched": false,
+            "selected_roles": [
+              "resolver",
+              "resolver"
+            ]
+          },
+          {
+            "decision_group": "evaluation-zero-22",
+            "episodes": 2,
+            "oracle_branched": false,
+            "oracle_roles": [
+              "policy",
+              "policy"
+            ],
+            "policy_branched": false,
+            "selected_roles": [
+              "policy",
+              "policy"
+            ]
+          },
+          {
+            "decision_group": "evaluation-zero-23",
+            "episodes": 2,
+            "oracle_branched": false,
+            "oracle_roles": [
+              "guard",
+              "guard"
+            ],
+            "policy_branched": false,
+            "selected_roles": [
+              "guard",
+              "guard"
+            ]
+          }
+        ],
+        "zero_value_groups": 4,
+        "zero_value_spurious_branch_groups": 0,
+        "zero_value_spurious_branch_rate": 0.0
+      }
+    },
+    "deterministic_structured_v1_1": {
+      "architectures": {
+        "fixed_order_semantic": {
+          "accuracy": 0.7916666666666666,
+          "decision_loss": 0.20833333333333337,
+          "failure_layers": {
+            "decision_failure": 5,
+            "semantic_extraction_failure": 9
+          },
+          "first_route_correct_rate": 0.20833333333333334,
+          "first_route_top1_oracle_recall": 0.0,
+          "first_route_top2_oracle_recall": 0.0,
+          "mean_normalized_routing_regret": 0.6583333333333333,
+          "mean_resources": {
+            "artifact_inspections": 4.0,
+            "declared_latency_ms": 4.0,
+            "input_tokens_proxy": 4400.791666666667,
+            "monetary_cost_usd": 0.0,
+            "output_tokens_proxy": 423.7083333333333,
+            "semantic_calls": 4.0
+          },
+          "runs": 24,
+          "semantic_fact_precision": 0.5862068965517241,
+          "semantic_fact_recall": 0.5483870967741935,
+          "valid_runs": 24
+        },
+        "monolithic_semantic": {
+          "accuracy": 0.7916666666666666,
+          "decision_loss": 0.20833333333333337,
+          "failure_layers": {
+            "decision_failure": 5,
+            "semantic_extraction_failure": 9
+          },
+          "first_route_correct_rate": 0.0,
+          "first_route_top1_oracle_recall": 0.0,
+          "first_route_top2_oracle_recall": 0.0,
+          "mean_normalized_routing_regret": 0.0,
+          "mean_resources": {
+            "artifact_inspections": 4.0,
+            "declared_latency_ms": 1.0,
+            "input_tokens_proxy": 1548.9583333333333,
+            "monetary_cost_usd": 0.0,
+            "output_tokens_proxy": 278.125,
+            "semantic_calls": 1.0
+          },
+          "runs": 24,
+          "semantic_fact_precision": 0.5862068965517241,
+          "semantic_fact_recall": 0.5483870967741935,
+          "valid_runs": 24
+        },
+        "react_like_semantic": {
+          "accuracy": 1.0,
+          "decision_loss": 0.0,
+          "failure_layers": {
+            "semantic_extraction_failure": 16
+          },
+          "first_route_correct_rate": 0.0,
+          "first_route_top1_oracle_recall": 0.0,
+          "first_route_top2_oracle_recall": 0.0,
+          "mean_normalized_routing_regret": 0.4666666666666666,
+          "mean_resources": {
+            "artifact_inspections": 4.0,
+            "declared_latency_ms": 4.0,
+            "input_tokens_proxy": 4428.25,
+            "monetary_cost_usd": 0.0,
+            "output_tokens_proxy": 416.5833333333333,
+            "semantic_calls": 4.0
+          },
+          "runs": 24,
+          "semantic_fact_precision": 0.5147058823529411,
+          "semantic_fact_recall": 0.4375,
+          "valid_runs": 24
+        },
+        "ser_explicit_value": {
+          "accuracy": 1.0,
+          "decision_loss": 0.0,
+          "failure_layers": {
+            "semantic_extraction_failure": 7
+          },
+          "first_route_correct_rate": 1.0,
+          "first_route_top1_oracle_recall": 1.0,
+          "first_route_top2_oracle_recall": 1.0,
+          "mean_normalized_routing_regret": 0.0,
+          "mean_resources": {
+            "artifact_inspections": 4.0,
+            "declared_latency_ms": 4.0,
+            "input_tokens_proxy": 4385.0,
+            "monetary_cost_usd": 0.0,
+            "output_tokens_proxy": 424.0833333333333,
+            "semantic_calls": 4.0
+          },
+          "runs": 24,
+          "semantic_fact_precision": 0.6099290780141844,
+          "semantic_fact_recall": 0.5733333333333334,
+          "valid_runs": 24
+        }
+      },
+      "real_model_classifier_preview": {
+        "classification": "no_semantic_signal",
+        "observed": {
+          "accuracy_gain_over_fixed": 0.20833333333333337,
+          "accuracy_gain_over_react": 0.0,
+          "eligible_group_branch_rate": 1.0,
+          "mean_token_ratio_to_best_control": 0.9968045047846062,
+          "oracle_consistent_first_branch_rate": 1.0,
+          "semantic_fact_precision": 0.6099290780141844,
+          "semantic_fact_recall": 0.5733333333333334,
+          "ser_mean_normalized_routing_regret": 0.0,
+          "ser_top1_useful_action_recall": 1.0,
+          "ser_top2_useful_action_recall": 1.0,
+          "zero_value_spurious_branch_rate": 0.0
+        },
+        "thresholds": {
+          "maximum_mean_token_ratio_to_best_control": 1.1,
+          "maximum_ser_mean_normalized_routing_regret": 0.35,
+          "maximum_zero_value_spurious_branch_rate": 0.25,
+          "minimum_accuracy_gain_over_fixed": 0.083333333333,
+          "minimum_accuracy_gain_over_react": 0.041666666667,
+          "minimum_eligible_group_branch_rate": 0.5,
+          "minimum_oracle_consistent_first_branch_rate": 0.6,
+          "minimum_semantic_fact_precision": 0.65,
+          "minimum_semantic_fact_recall": 0.5,
+          "minimum_ser_top1_useful_action_recall": 0.6,
+          "minimum_ser_top2_useful_action_recall": 0.8
+        }
+      },
+      "ser_branch_audit": {
+        "eligible_details": [
+          {
+            "decision_group": "evaluation-eligible-10",
+            "episodes": 4,
+            "oracle_branched": true,
+            "oracle_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ],
+            "policy_branched": true,
+            "selected_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ]
+          },
+          {
+            "decision_group": "evaluation-eligible-11",
+            "episodes": 4,
+            "oracle_branched": true,
+            "oracle_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ],
+            "policy_branched": true,
+            "selected_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ]
+          },
+          {
+            "decision_group": "evaluation-eligible-12",
+            "episodes": 4,
+            "oracle_branched": true,
+            "oracle_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ],
+            "policy_branched": true,
+            "selected_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ]
+          },
+          {
+            "decision_group": "evaluation-eligible-13",
+            "episodes": 4,
+            "oracle_branched": true,
+            "oracle_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ],
+            "policy_branched": true,
+            "selected_roles": [
+              "service",
+              "resolver",
+              "policy",
+              "guard"
+            ]
+          }
+        ],
+        "eligible_group_branch_rate": 1.0,
+        "eligible_groups": 4,
+        "eligible_groups_with_policy_branch": 4,
+        "oracle_consistent_first_branch_rate": 1.0,
+        "zero_value_details": [
+          {
+            "decision_group": "evaluation-zero-20",
+            "episodes": 2,
+            "oracle_branched": false,
+            "oracle_roles": [
+              "service",
+              "service"
+            ],
+            "policy_branched": false,
+            "selected_roles": [
+              "service",
+              "service"
+            ]
+          },
+          {
+            "decision_group": "evaluation-zero-21",
+            "episodes": 2,
+            "oracle_branched": false,
+            "oracle_roles": [
+              "resolver",
+              "resolver"
+            ],
+            "policy_branched": false,
+            "selected_roles": [
+              "resolver",
+              "resolver"
+            ]
+          },
+          {
+            "decision_group": "evaluation-zero-22",
+            "episodes": 2,
+            "oracle_branched": false,
+            "oracle_roles": [
+              "policy",
+              "policy"
+            ],
+            "policy_branched": false,
+            "selected_roles": [
+              "policy",
+              "policy"
+            ]
+          },
+          {
+            "decision_group": "evaluation-zero-23",
+            "episodes": 2,
+            "oracle_branched": false,
+            "oracle_roles": [
+              "guard",
+              "guard"
+            ],
+            "policy_branched": false,
+            "selected_roles": [
+              "guard",
+              "guard"
+            ]
+          }
+        ],
+        "zero_value_groups": 4,
+        "zero_value_spurious_branch_groups": 0,
+        "zero_value_spurious_branch_rate": 0.0
+      }
+    }
+  },
+  "population": {
+    "artifacts_per_episode": [
+      6
+    ],
+    "episodes": 24,
+    "mechanism_families": 4,
+    "runs": 192
+  },
+  "population_hash": "cd8339fd3a0973da7135ca252244ce3b71e1ffc33674b5b8d03cad1fde46a2bb",
+  "schema_version": 1,
+  "statistical_treatment": "Frozen finite-population mock calibration only; no sampling significance and no claim about actual model behavior."
+}

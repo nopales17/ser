@@ -18,9 +18,11 @@ and minimal zero-LLM MicroGym validation runtime now exist. MicroGym v1 produced
 a narrow stopping result without conditional routing. The separate frozen
 routing-v1 benchmark then showed that the unchanged myopic candidate can use a
 released cue to choose the exact one-step closed-loop acquisition when clean
-likelihood tables are supplied. No production SER controller, learned policy,
-model integration, semantic action-value estimation, or real-domain evidence
-exists.
+likelihood tables are supplied. Static Semantic AuthzGym protocol 1.1 is now a
+frozen authorization-code benchmark with a validated deterministic mock
+calibration; no real model has run on it. No production SER controller, learned
+policy, model integration, empirical semantic action-value result, or real-
+domain evidence exists.
 
 ## Start here
 
@@ -55,7 +57,8 @@ The architecture separates where knowledge belongs from how mature it is:
   claims.
 - **Evidence:** `experiments/` indexes frozen protocols, traces, validation,
   results, limitations, and admitted findings. MicroGym v1 and routing-v1 are
-  distinct immutable experiments.
+  distinct immutable experiments. AuthzGym v1 and 1.1 are frozen construction-
+  calibration records, explicitly not admitted empirical evidence.
 
 Concept maturity is recorded independently as `seed`, `working`, `accepted`,
 `experimentally_supported`, `rejected`, or `deprecated`. Neither placement in a
@@ -76,11 +79,12 @@ generated files directly.
 
 ## Current non-goals
 
-Active Phase 5 permits only the smallest controlled authorization-oriented
-software experiment needed to test whether useful epistemic-action values can
-be estimated without supplied likelihood tables. It does not authorize real
-GitLab integration, broad vulnerability discovery, LLM agents, graph policies,
-coupling operators, production fuzzers, IDS adapters, remote-sensing
-integrations, or training infrastructure. GitLab authorization is the practical
-research trunk, not current evidence; the completed IDS-to-CVE project remains
-read-only historical input and only a conditional semantic bridge.
+Active Phase 5 permits only the frozen Static Semantic AuthzGym evaluation
+needed to test whether an inexpensive semantic model can support useful
+epistemic-action estimates without supplied likelihood tables. It does not
+authorize real GitLab integration, broad vulnerability discovery, general LLM
+agents, graph policies, coupling operators, production fuzzers, IDS adapters,
+remote-sensing integrations, or training infrastructure. GitLab authorization
+is the practical research trunk, not current evidence; the completed IDS-to-CVE
+project remains read-only historical input and only a conditional semantic
+bridge.

@@ -24,6 +24,22 @@ Results update `evidence_refs` in the canonical idea map. They do not silently
 change concept status. Negative results remain preserved, and an implementation
 failure rejects only the mechanism or scope the protocol can actually test.
 
+## Construction calibrations, not admitted evidence
+
+- `authzgym_static_v1/` preserves the initial frozen Static Semantic AuthzGym
+  population and deterministic calibration. Overall validation failed because
+  the degraded test double's omission schedule depended on opaque artifact IDs;
+  the failure and the preceding output-ceiling correction are preserved.
+- `authzgym_static_v1_1/` freezes the integrity correction that keys mock
+  omissions to semantic roles. It contains 8 development, 24 primary
+  evaluation, and 24 paired perturbation episodes; all 11 validation safeguards
+  pass, including 96/96 routed/ReAct perturbation comparisons. Its 384 records
+  are deterministic mock traces, so its classifier is
+  `benchmark_calibration_only` and it is not an `E-*` finding.
+
+Any actual inexpensive-model evaluation must be a separate frozen experiment.
+Phase 5B and real GitLab remain gated.
+
 ## Admitted evidence
 
 - `E-002` / MicroGym v1: a model-aware myopic stopping policy reduced the frozen

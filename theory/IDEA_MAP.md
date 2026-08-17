@@ -4,7 +4,7 @@
 
 Readable rendering of canonical `theory/IDEA_MAP.yaml`. Status records maturity; this cold location records authority and preservation, not truth.
 
-Schema version: `1`. Total entries: **58**.
+Schema version: `1`. Total entries: **60**.
 
 ID families: `F-*` foundation or methodological constraint; `P-*` candidate primitive; `H-*` hypothesis; `M-*` proposed mechanism; `E-*` empirical finding; `Q-*` open question.
 
@@ -269,7 +269,7 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Last reviewed:** `2026-08-17`
 - **Notes:** Explicitly deferred. No irreducible role was found, no legacy implementation exists, and Signal is not required for Phase 3. Do not implement it merely because the name is preserved.
 
-## Hypotheses (17)
+## Hypotheses (18)
 
 ### `H-001` -- Allocation organization contributes to inference-time intelligence
 
@@ -449,7 +449,7 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Evidence refs:** None recorded.
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Primary practical target and roadmap priority only; GitLab is not evidence for SER. After routing-v1 supported a narrow exact-model routing claim, ADR-0014 selected a minimal controlled authorization environment to test semantic action-value estimation. Real GitLab integration, production fuzzing, and broad vulnerability discovery remain unauthorized.
+- **Notes:** Primary practical target and roadmap priority only; GitLab is not evidence for SER. After routing-v1 supported a narrow exact-model routing claim, ADR-0014 selected a minimal controlled authorization environment to test semantic action-value estimation. Static Semantic AuthzGym now supplies a static-inspection benchmark calibration, but it does not test active evidence generation and does not support this hypothesis. Real GitLab integration, production fuzzing, and broad vulnerability discovery remain unauthorized.
 
 ### `H-013` -- Remote-sensing generalization environment
 
@@ -505,11 +505,11 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Related to:** `Q-009`
 - **Would support:** Preregistered resource-matched evaluations with ablations and independent confirmation.
 - **Would falsify:** Simpler matched strategies consistently match or beat SER across intended environments.
-- **Implementation refs:** `src/ser/policies/adaptive.py`, `src/ser/evaluation/analysis.py`, `src/ser/evaluation/routing.py`, `src/ser/evaluation/routing_analysis.py`
+- **Implementation refs:** `src/ser/policies/adaptive.py`, `src/ser/evaluation/analysis.py`, `src/ser/evaluation/routing.py`, `src/ser/evaluation/routing_analysis.py`, `src/ser/authzgym/policies.py`, `src/ser/evaluation/authz_analysis.py`
 - **Evidence refs:** `experiments/microgym_v1/summary.json`, `experiments/microgym_v1/INTERPRETATION.md`, `experiments/microgym_routing_v1/summary.json`, `experiments/microgym_routing_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** MicroGym v1 was insufficient for promotion because its matched open-loop gap was small, cost-driven, and non-routing. Routing-v1 adds a favorable one-step exact-model routing result under identical fixed resources, but still lacks model-compute accounting, semantic evidence, ordinary-agent comparison, multiple domains, and independent confirmation. The broad resource-normalized claim remains a seed.
+- **Notes:** MicroGym v1 was insufficient for promotion because its matched open-loop gap was small, cost-driven, and non-routing. Routing-v1 adds a favorable one-step exact-model routing result under identical fixed resources, but still lacks model-compute accounting, semantic evidence, ordinary-agent comparison, multiple domains, and independent confirmation. Static Semantic AuthzGym protocol 1.1 freezes matched semantic-routing comparisons, but its deterministic mocks are benchmark calibration only and add no evidence. The broad resource-normalized claim remains a seed.
 
 ### `H-017` -- Decision-value-conditioned epistemic routing
 
@@ -517,16 +517,31 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Statement:** Newly released information should change epistemic resource allocation when it changes the expected value landscape of available actions, rather than merely because posterior belief changed.
 - **Why it matters:** It distinguishes decision-relevant adaptation from arbitrary behavioral responsiveness and directs attention to action-value estimation rather than uncertainty alone.
 - **Depends on:** `P-001`, `P-004`, `H-002`
-- **Related to:** `H-001`, `H-006`, `H-012`, `Q-001`
+- **Related to:** `H-001`, `H-006`, `H-012`, `H-018`, `Q-001`
 - **Would support:** Across preregistered positive- and zero-VOA controls, a matched closed-loop policy branches when action values change, avoids spurious branches when they do not, and improves the relevant outcome over the best open-loop plan.
 - **Would falsify:** The policy branches on belief changes without value, fails to branch when exact action values change, or loses its advantage when action values must be estimated rather than supplied.
-- **Implementation refs:** `src/ser/policies/adaptive.py`, `src/ser/evaluation/routing.py`, `src/ser/evaluation/routing_analysis.py`
+- **Implementation refs:** `src/ser/policies/adaptive.py`, `src/ser/evaluation/routing.py`, `src/ser/evaluation/routing_analysis.py`, `src/ser/authzgym/policies.py`, `src/ser/evaluation/authz_analysis.py`
 - **Evidence refs:** `experiments/microgym_routing_v1/PREREGISTRATION.md`, `experiments/microgym_routing_v1/summary.json`, `experiments/microgym_routing_v1/INTERPRETATION.md`
 - **Origin:** Phase 4 conceptual synthesis and frozen routing-v1 experiment, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Working hypothesis with one narrowly supportive explicit-likelihood, one-step experiment. The zero-VOA controls separate belief change from action-value change. Semantic action-value estimation, model misspecification, multi-stage routing, and real-domain generality remain untested.
+- **Notes:** Working hypothesis with one narrowly supportive explicit-likelihood, one-step experiment. The zero-VOA controls separate belief change from action-value change. Static Semantic AuthzGym protocol 1.1 implements a future semantic test but its deterministic mock calibration is not evidence. Semantic action-value estimation, model misspecification, multi-stage routing, and real-domain generality remain untested.
 
-## Proposed mechanisms (12)
+### `H-018` -- Bounded semantic action-value estimation
+
+- **Status:** `working`
+- **Statement:** Interpretations of only the authorization-code artifacts already purchased by a controller may contain enough decision-relevant structure to estimate which remaining bounded inspection is most useful without supplied likelihood tables or evaluator labels.
+- **Why it matters:** It isolates the estimation step that clean exact-model MicroGym routing assumed and that must work before static semantic routing can claim architectural value.
+- **Depends on:** `P-001`, `P-004`, `P-005`, `H-017`, `F-004`
+- **Related to:** `H-001`, `H-012`, `H-016`, `Q-001`, `Q-009`
+- **Would support:** Under a frozen static authorization benchmark, an actual inexpensive semantic model achieves preregistered fact quality and useful-action ranking, the explicit-value policy routes conditionally, respects zero-value controls, and improves matched decisions or efficiency over fixed and ReAct-like controls.
+- **Would falsify:** Purchased-artifact interpretations do not recover the required authorization relations, useful inspection rankings are no better than simple controls, routing is label-sensitive or oracle-dependent, or any apparent advantage disappears under matched evidence and model budgets.
+- **Implementation refs:** `src/ser/authzgym`, `src/ser/evaluation/authz_artifacts.py`, `src/ser/evaluation/authz_analysis.py`, `tools/run_authzgym_static.py`, `tools/verify_authzgym_static.py`
+- **Evidence refs:** `experiments/authzgym_static_v1_1/PREREGISTRATION.md`
+- **Origin:** Phase 5A Static Semantic AuthzGym design, 2026-08-17
+- **Last reviewed:** `2026-08-17`
+- **Notes:** The hypothesis is formalized and its benchmark is implemented. Protocol 1.1 deterministic interpreters are test doubles, the classifier is benchmark_calibration_only, no real model was called, and no empirical finding is admitted.
+
+## Proposed mechanisms (13)
 
 ### `M-001` -- RES coupling operator
 
@@ -708,6 +723,21 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Last reviewed:** `2026-08-17`
 - **Notes:** The semantic role is formalized, but the name and expansion remain provisional. MicroGym v1 implemented an experimental candidate, not a validated or production SER runtime; no broad mechanism claim was promoted.
 
+### `M-013` -- Static Semantic AuthzGym benchmark
+
+- **Status:** `working`
+- **Statement:** Static Semantic AuthzGym is an authored, static authorization-code benchmark that exposes bounded artifact inspection, purchased-artifact semantic interpretation, epistemic update, explicit inspection-value estimation, routing, final diagnosis, evaluator truth, and raw resource accounting as separately traceable stages.
+- **Why it matters:** It provides the smallest current instrument for testing the semantic estimation gap left by exact-likelihood MicroGym while preserving evaluator and information boundaries.
+- **Depends on:** `F-002`, `F-004`, `F-006`, `H-018`
+- **Related to:** `H-012`, `H-017`, `Q-009`
+- **Would support:** Frozen populations, exact replay, matched budgets, evaluator firewall, purchased-artifact scope, failure decomposition, and identifier/label/order perturbations reproduce before any empirical interpretation.
+- **Would falsify:** The benchmark leaks evaluator truth, confounds artifact identity with usefulness, cannot reproduce traces and budgets, or fails to distinguish semantic extraction from routing and decision failures.
+- **Implementation refs:** `src/ser/authzgym`, `src/ser/evaluation/authz_artifacts.py`, `src/ser/evaluation/authz_analysis.py`, `tools/run_authzgym_static.py`, `tools/verify_authzgym_static.py`
+- **Evidence refs:** `experiments/authzgym_static_v1/FIRST_RUN_FAILURE.json`, `experiments/authzgym_static_v1/IMPLEMENTATION_NOTES.md`, `experiments/authzgym_static_v1_1/PREREGISTRATION.md`, `experiments/authzgym_static_v1_1/validation.json`, `experiments/authzgym_static_v1_1/INTERPRETATION.md`
+- **Origin:** Phase 5A benchmark construction and calibration, 2026-08-17
+- **Last reviewed:** `2026-08-17`
+- **Notes:** Protocol v1 is preserved as an invalid calibration because its degraded mock keyed omissions to opaque IDs. Protocol 1.1 corrects only that test-double defect and passes all 11 safeguards. Both are benchmark construction records, not empirical semantic-model evidence; no E-* entry follows.
+
 ## Empirical findings (3)
 
 ### `E-001` -- Historical IDS archive provides scoped benchmark artifacts
@@ -887,7 +917,7 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** `CHARTER.md`, `theory/CONTROL_PROBLEM.md`, `theory/DOMAIN_INSTANTIATIONS.md`, `experiments/microgym_v1/INTERPRETATION.md`, `experiments/microgym_routing_v1/PREREGISTRATION.md`, `experiments/microgym_routing_v1/INTERPRETATION.md`
+- **Evidence refs:** `CHARTER.md`, `theory/CONTROL_PROBLEM.md`, `theory/DOMAIN_INSTANTIATIONS.md`, `experiments/microgym_v1/INTERPRETATION.md`, `experiments/microgym_routing_v1/PREREGISTRATION.md`, `experiments/microgym_routing_v1/INTERPRETATION.md`, `experiments/authzgym_static_v1_1/PREREGISTRATION.md`, `experiments/authzgym_static_v1_1/validation.json`, `experiments/authzgym_static_v1_1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** MicroGym v1 exposed an admission-rule defect by permitting a positive label without observed adaptive behavior. Routing-v1 corrected this prospectively: its frozen classifier required positive oracle VOA, actual branching, oracle consistency, exact value over same-model open-loop, no STOP, zero-VOA restraint, and invariance checks. That supports E-003 only at benchmark scope; broader promotion still requires semantic, multi-stage, resource-accounted, and independently confirmed evidence.
+- **Notes:** MicroGym v1 exposed an admission-rule defect by permitting a positive label without observed adaptive behavior. Routing-v1 corrected this prospectively: its frozen classifier required positive oracle VOA, actual branching, oracle consistency, exact value over same-model open-loop, no STOP, zero-VOA restraint, and invariance checks. Static Semantic AuthzGym v1 then exposed identifier-sensitive mock degradation; the failed calibration was preserved and protocol 1.1 was versioned before any real-model outcome. This calibration discipline adds no empirical finding. Broader promotion still requires actual semantic, multi-stage, resource-accounted, and independently confirmed evidence.

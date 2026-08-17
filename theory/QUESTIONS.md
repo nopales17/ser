@@ -23,6 +23,9 @@ The canonical entries are `Q-001` through `Q-009` in
 - `Q-009`: what evidence warrants promotion after MicroGym v1 exposed a weak
   classifier and routing-v1 corrected it with positive VOA, verified branching,
   matched open-loop value, zero-VOA restraint, and invariance requirements;
+  Static Semantic AuthzGym v1 additionally exposed identifier-sensitive mock
+  degradation, so the failed calibration was preserved and protocol 1.1 was
+  versioned before any real-model outcome. Its mock pass is not evidence;
   semantic, multi-stage, and real-domain promotion thresholds remain open.
 
 Questions remain in the cold map even after resolution. Resolution updates their

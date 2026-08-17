@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "benchmark": "authzgym-static-v1",
+  "calibration_protocol_revision": "1.1",
+  "real_model_calls_authorized": false,
+  "conditions": [
+    {
+      "condition_id": "deterministic_structured_v1_1",
+      "kind": "mock_rule_interpreter",
+      "drop_modulus": 0,
+      "declared_latency_ms_per_call": 1.0,
+      "monetary_cost_usd_per_call": 0.0,
+      "max_output_tokens": 320
+    },
+    {
+      "condition_id": "deterministic_degraded_v1_1",
+      "kind": "mock_rule_interpreter_with_semantic_role_stable_omissions",
+      "drop_modulus": 4,
+      "declared_latency_ms_per_call": 1.0,
+      "monetary_cost_usd_per_call": 0.0,
+      "max_output_tokens": 320
+    }
+  ],
+  "provider_token_accounting": "not_applicable_mock_calibration",
+  "token_proxy": "deterministic lexical token count; never provider usage",
+  "real_model_followup": "requires a separate frozen experiment commit and named provider/model configuration"
+}
+
