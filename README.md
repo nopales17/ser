@@ -60,8 +60,9 @@ python3 tools/emit_context.py
 python3 tools/check_knowledge_coherence.py
 ```
 
-The generator deterministically renders both `theory/IDEA_MAP.md` and
-`state/CONTEXT_PACKET.md`. Do not edit either generated file directly.
+The generator deterministically renders `theory/IDEA_MAP.md`,
+`state/CONTEXT_PACKET.md`, and `reference/LEGACY_INVENTORY.md`. Do not edit
+generated files directly.
 
 ## Current non-goals
 
@@ -70,4 +71,3 @@ coupling operators, fuzzers, IDS adapters, remote-sensing integrations, or
 training infrastructure. The completed IDS-to-CVE project is read-only
 historical input and a possible future environment; none of its results validate
 SER.
-

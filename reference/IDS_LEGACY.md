@@ -5,9 +5,11 @@
 Historical repository:
 `/Users/paolo/proj/ids-rule-to-cve-inference-archive`
 
-It was inspected read-only on 2026-08-17. It remains a separate, completed
+It was inspected read-only on 2026-08-17 at commit
+`38b661324725c094ffcc820371a836573f4aadc5`. It remains a separate, completed
 internship repository. This document is a scoped reference summary, not an import
-manifest and not SER evidence.
+manifest and not SER evidence. The canonical component judgments are in
+`reference/LEGACY_INVENTORY.yaml`.
 
 ## What the project actually studied
 
@@ -30,29 +32,29 @@ Those findings are scoped to the IDS benchmark, its frozen populations, access
 conditions, models, and metrics. The archive explicitly distinguishes measured
 reconstruction/attribution results from broader transfer or dual-use claims.
 
-## Why it may be useful later
+## Phase 1 finding
 
 As `H-011` states, the archive may offer a future real environment because it has
-partial evidence, known labels, several possible information-acquisition paths,
-frozen artifacts, and explicit controls. Whether it exposes a meaningful
-*sequential allocation* problem is not yet established.
+partial evidence, known labels, frozen artifacts, and explicit controls. Phase 1
+did not establish a meaningful *sequential allocation* problem: the archived task
+is a static candidate-retrieval and attribution instrument.
 
-Potential inventory candidates for Phase 1 include:
+The inventory classified 31 component groups: zero for unchanged reuse, 11 for
+generalization as clean SER-owned patterns, 14 as empirical evidence only, four
+as inspiration only, and two for discard. The strongest surviving patterns are:
 
-- the documentation governance pattern: authority by location, ADRs, generated
-  state, and coherence checking;
 - deterministic construction, hashing, provenance manifests, and trace
   contracts;
-- separation between construction, method-under-test, controls, evidence, and
-  claim limits;
-- staged knowledge-access conditions and matched-baseline discipline;
-- environment-facing data interfaces, scoring functions, and frozen artifacts;
-- scope-aware reporting practices such as explicit populations, task labels, and
-  applicability limits.
+- fail-closed completeness, stage-access, isolation, and secret checks;
+- evaluator/controller information separation, blinding, paired controls, and
+  deterministic replay;
+- append-only preservation of negative, invalid, aborted, and corrected runs.
 
-This list means "inspect," not "reuse." The initial Phase 0 inspection did not
-establish a general interval/scope implementation suitable for `P-003`; any such
-candidate must be found, understood, and classified during Phase 1.
+These are patterns to reimplement after SER contracts exist, not code to copy.
+Deep current-tree and reachable-history inspection found no generic `Scope` or
+`Interval`, no `EpistemicMemoryUnit` or `FlagAttachment`, no relevant generic
+`Signal`, and no executable semantics for the preserved SER coupling-operator
+names. Same-product neighborhoods and APF/APF2 filters are not substitutes.
 
 ## What must not transfer automatically
 
@@ -69,9 +71,11 @@ candidate must be found, understood, and classified during Phase 1.
   status scope defect called out by its README, are cautions against mechanical
   reuse.
 
-## Phase 1 classification rule
+## Phase 1 classification result
 
-Every inspected candidate must receive one classification with rationale:
+Every inspected candidate received one of the required classifications with
+source, assumptions, evidence, confidence, and recommended action recorded in
+the canonical inventory:
 
 1. reuse unchanged;
 2. generalize behind a domain-independent interface;
@@ -79,6 +83,6 @@ Every inspected candidate must receive one classification with rationale:
 4. inspiration only; or
 5. discard.
 
-No classification itself authorizes code or data transfer. A later roadmap step
-and, where architectural, an ADR must authorize implementation.
-
+No classification authorizes code or data transfer. `generalize` means rebuild a
+pattern behind new SER-owned contracts. Environment assets remain in the archive
+unless a later roadmap step and explicit decision authorize ingestion.

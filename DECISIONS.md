@@ -78,3 +78,18 @@ a new entry; do not rewrite it.
 - Alternatives rejected: forking the historical repository as SER; assuming its
   abstractions transfer; importing it during Phase 0.
 
+## ADR-0007 -- Canonical legacy inventory and no-transfer default
+
+- Status: accepted
+- Date: 2026-08-17
+- Decision: `reference/LEGACY_INVENTORY.yaml` is the canonical registry for
+  Phase 1 legacy-component judgments, and `reference/LEGACY_INVENTORY.md` is its
+  generated readable view. Classifications record research recommendations, not
+  import authorization. The default remains no code or data transfer; any future
+  reuse or environment ingestion requires a separate explicit decision.
+- Why: Stable inventory IDs, domain-assumption records, and contamination
+  guardrails make the archaeological result durable without allowing legacy
+  convenience to dictate SER architecture.
+- Alternatives rejected: prose-only notes; copying candidate artifacts while
+  evaluating them; treating `generalize` or `empirical_evidence_only` as implicit
+  permission to import.

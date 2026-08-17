@@ -2,7 +2,7 @@
   "schema_version": 1,
   "as_of": "2026-08-17",
   "project_name": "SER (provisional)",
-  "project_maturity": "phase_1_legacy_inventory_ready",
+  "project_maturity": "phase_2_minimal_control_formalization_ready",
   "runtime": {
     "built": false,
     "controllers": 0,
@@ -13,7 +13,8 @@
     "canonical_idea_map": true,
     "generated_context": true,
     "coherence_checker": true,
-    "phase_0_validation_complete": true
+    "phase_0_validation_complete": true,
+    "phase_1_legacy_inventory_complete": true
   },
   "evidence": {
     "ser_experiments": [],
@@ -22,13 +23,19 @@
       "E-001 describes scoped artifacts in the read-only IDS archive; it is not evidence for SER."
     ]
   },
+  "legacy_inventory": {
+    "archive_head": "38b661324725c094ffcc820371a836573f4aadc5",
+    "component_count": 31,
+    "classification_summary": "0 reuse unchanged, 11 generalize, 14 empirical evidence only, 4 inspiration only, and 2 discard",
+    "summary": "Phase 1 found no legacy code suitable for unchanged reuse. Trace/provenance envelopes, completeness and access-policy checks, hash manifests, evaluator separation, paired controls, blinding, replay, and failed-run preservation survive only as patterns to rebuild behind SER-owned contracts. IDS data and labels are deferred environment/evaluator assets; prompts, rankers, comparators, product neighborhoods, domain schemas, and normalizers remain excluded prior solution logic. No generic Scope, Interval, epistemic-memory, flag, signal, or SER coupling-operator implementation was found in the current archive or reachable history."
+  },
   "roadmap": {
-    "active_phase_id": 1,
-    "active_phase_title": "Legacy component inventory",
-    "immediate_next_task": "Perform a read-only IDS legacy component inventory and classify each candidate as reuse unchanged, generalize, empirical evidence only, inspiration only, or discard, without copying code or data."
+    "active_phase_id": 2,
+    "active_phase_title": "Formalize the minimal control problem",
+    "immediate_next_task": "Specify, without implementation, the minimal domain-neutral contracts for state, observation, epistemic unit or hypothesis, signal, scope, action, action result, transition, environment, policy interface, typed cost, outcome, and experiment/evaluator behavior; name baselines and unresolved choices before MicroGym."
   },
   "non_goals": [
-    "No SER runtime or controller in Phase 0 or Phase 1.",
+    "No SER runtime or controller until Phase 2's conceptual exit criteria are met.",
     "No LLM/model integration, TGNN, graph neural network, learned policy, or training infrastructure.",
     "No coupling-law implementation, fuzzer, remote-sensing integration, or IDS adapter.",
     "No IDS code or data import and no claim that IDS results validate SER."

@@ -47,6 +47,30 @@ REQUIRED_IDEA_FIELDS = {
     "last_reviewed",
     "notes",
 }
+VALID_LEGACY_CLASSIFICATIONS = {
+    "reuse_unchanged",
+    "generalize",
+    "empirical_evidence_only",
+    "inspiration_only",
+    "discard",
+}
+REQUIRED_LEGACY_FIELDS = {
+    "id",
+    "source_path",
+    "component",
+    "classification",
+    "ser_relevance",
+    "related_idea_ids",
+    "what_it_does",
+    "why_it_might_transfer",
+    "why_it_might_not",
+    "dependencies",
+    "ids_specific_assumptions",
+    "tests_or_evidence",
+    "recommended_action",
+    "confidence",
+    "notes",
+}
 REQUIRED_FILES = {
     "README.md",
     "AGENTS.md",
@@ -62,6 +86,9 @@ REQUIRED_FILES = {
     "state/STATUS.yaml",
     "state/CONTEXT_PACKET.md",
     "reference/IDS_LEGACY.md",
+    "reference/IDS_LESSONS.md",
+    "reference/LEGACY_INVENTORY.yaml",
+    "reference/LEGACY_INVENTORY.md",
     "reference/TERMINOLOGY.md",
     "experiments/README.md",
     "tools/emit_context.py",
@@ -188,6 +215,143 @@ def check_statuses() -> dict[str, object]:
     return result("maturity_status", ok, "; ".join(detail))
 
 
+def check_legacy_inventory() -> dict[str, object]:
+    data = emit_context.legacy_inventory()
+    components = data.get("components", [])
+    idea_ids = set(emit_context.idea_index())
+    ids = [item.get("id", "") for item in components]
+    duplicate_ids = sorted(item for item, count in Counter(ids).items() if count > 1)
+    malformed_ids = [item or "<empty>" for item in ids if not re.fullmatch(r"L-\d{3}", item)]
+    missing_fields = []
+    wrong_types = []
+    invalid_classifications = []
+    missing_idea_refs = []
+    invalid_confidence = []
+    for item in components:
+        component_id = item.get("id", "<missing-id>")
+        absent = sorted(REQUIRED_LEGACY_FIELDS - set(item))
+        if absent:
+            missing_fields.append(f"{component_id}: {','.join(absent)}")
+        for field in ("related_idea_ids", "dependencies", "ids_specific_assumptions", "tests_or_evidence"):
+            if field in item and not isinstance(item[field], list):
+                wrong_types.append(f"{component_id}.{field}")
+        if item.get("classification") not in VALID_LEGACY_CLASSIFICATIONS:
+            invalid_classifications.append(f"{component_id}={item.get('classification')}")
+        for idea_id in item.get("related_idea_ids", []):
+            if idea_id not in idea_ids:
+                missing_idea_refs.append(f"{component_id}->{idea_id}")
+        if item.get("confidence") not in {"high", "medium", "low"}:
+            invalid_confidence.append(f"{component_id}={item.get('confidence')}")
+
+    declared = set(data.get("classification_vocabulary", []))
+    counts = Counter(item.get("classification") for item in components)
+    conclusion_count = data.get("phase_1_conclusion", {}).get("reuse_unchanged_count")
+    reuse_count_ok = conclusion_count == counts["reuse_unchanged"]
+    risk_ids = [item.get("id", "") for item in data.get("architectural_contamination_risks", [])]
+    risk_ids_ok = (
+        bool(risk_ids)
+        and len(risk_ids) == len(set(risk_ids))
+        and all(re.fullmatch(r"R-\d{3}", item) for item in risk_ids)
+    )
+    contract_dispositions = {
+        "design_from_scratch",
+        "define_interface_defer_implementations",
+        "generalize_patterns",
+        "reuse_legacy_implementation_later",
+        "intentionally_defer",
+    }
+    contract_errors = []
+    for index, item in enumerate(data.get("phase_2_contract_recommendations", []), start=1):
+        missing = {
+            "contract",
+            "phase_2_disposition",
+            "recommendation",
+            "legacy_influence",
+            "must_not_assume",
+            "related_idea_ids",
+        } - set(item)
+        if missing:
+            contract_errors.append(f"contract {index} missing {','.join(sorted(missing))}")
+            continue
+        if item["phase_2_disposition"] not in contract_dispositions:
+            contract_errors.append(f"{item['contract']} disposition={item['phase_2_disposition']}")
+        for idea_id in item["related_idea_ids"]:
+            if idea_id not in idea_ids:
+                contract_errors.append(f"{item['contract']}->{idea_id}")
+    ok = (
+        bool(components)
+        and declared == VALID_LEGACY_CLASSIFICATIONS
+        and not duplicate_ids
+        and not malformed_ids
+        and not missing_fields
+        and not wrong_types
+        and not invalid_classifications
+        and not missing_idea_refs
+        and not invalid_confidence
+        and reuse_count_ok
+        and risk_ids_ok
+        and bool(data.get("symbol_findings"))
+        and bool(data.get("phase_2_contract_recommendations"))
+        and not contract_errors
+    )
+    details = []
+    if declared != VALID_LEGACY_CLASSIFICATIONS:
+        details.append("classification vocabulary differs from checker")
+    if duplicate_ids:
+        details.append("duplicate IDs: " + ", ".join(duplicate_ids))
+    if malformed_ids:
+        details.append("malformed IDs: " + ", ".join(malformed_ids))
+    if missing_fields:
+        details.append("missing fields: " + "; ".join(missing_fields[:8]))
+    if wrong_types:
+        details.append("wrong types: " + ", ".join(wrong_types[:8]))
+    if invalid_classifications:
+        details.append("invalid classifications: " + ", ".join(invalid_classifications))
+    if missing_idea_refs:
+        details.append("missing idea refs: " + ", ".join(missing_idea_refs[:12]))
+    if invalid_confidence:
+        details.append("invalid confidence: " + ", ".join(invalid_confidence))
+    if not reuse_count_ok:
+        details.append("conclusion reuse count does not match components")
+    if not risk_ids_ok:
+        details.append("contamination-risk IDs are missing, duplicate, or malformed")
+    if not data.get("symbol_findings"):
+        details.append("symbol findings missing")
+    if not data.get("phase_2_contract_recommendations"):
+        details.append("Phase 2 recommendations missing")
+    if contract_errors:
+        details.append("Phase 2 contract errors: " + ", ".join(contract_errors[:12]))
+    if not details:
+        details.append(
+            f"{len(components)} unique component IDs; classifications, idea refs, risks, findings, and conclusion are coherent"
+        )
+    return result("legacy_inventory", ok, "; ".join(details))
+
+
+def check_legacy_source_references() -> dict[str, object]:
+    data = emit_context.legacy_inventory()
+    archive = Path(data["archive"]["path"])
+    missing = []
+    fields = ("source_path", "dependencies", "tests_or_evidence")
+    for item in data["components"]:
+        for field in fields:
+            values = item[field] if isinstance(item[field], list) else [item[field]]
+            for raw in values:
+                if not (archive / raw).exists():
+                    missing.append(f"{item['id']}.{field}->{raw}")
+    for item in data["architectural_contamination_risks"]:
+        for raw in item["source_refs"]:
+            if not (archive / raw).exists():
+                missing.append(f"{item['id']}.source_refs->{raw}")
+    return result(
+        "legacy_source_references",
+        not missing,
+        "missing: " + ", ".join(missing[:12])
+        if missing
+        else f"all inventory paths resolve inside read-only archive `{archive}`",
+    )
+
+
 def check_adrs() -> dict[str, object]:
     text = (ROOT / "DECISIONS.md").read_text(encoding="utf-8")
     heading_ids = re.findall(r"^## (ADR-\d{4}) -- ", text, re.MULTILINE)
@@ -270,7 +434,7 @@ def check_status_cursor() -> dict[str, object]:
 
 def check_generated_markers() -> dict[str, object]:
     bad = []
-    for path in (emit_context.IDEA_OUTPUT, emit_context.CONTEXT_OUTPUT):
+    for path in (emit_context.IDEA_OUTPUT, emit_context.CONTEXT_OUTPUT, emit_context.LEGACY_OUTPUT):
         if not path.exists() or not path.read_text(encoding="utf-8").startswith(emit_context.GENERATED_WARNING):
             bad.append(str(path.relative_to(ROOT)))
     return result(
@@ -316,6 +480,8 @@ CHECKS = [
     check_id_references,
     check_file_references,
     check_statuses,
+    check_legacy_inventory,
+    check_legacy_source_references,
     check_adrs,
     check_roadmap,
     check_status_cursor,

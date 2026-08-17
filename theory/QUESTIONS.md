@@ -6,7 +6,9 @@ The canonical entries are `Q-001` through `Q-009` in
 - `Q-001`: how to combine decision relevance, information gain, heterogeneous
   cost, latency, and risk;
 - `Q-002` and `Q-003`: the minimal explicit state and epistemic-unit schema;
-- `Q-004`: what, if anything, should transfer from the historical IDS project;
+- `Q-004`: Phase 1 found no unchanged reuse and recorded generalization patterns,
+  deferred environment assets, and excluded prior solution logic; any actual
+  future transfer remains an explicit decision;
 - `Q-005`: what a compressor may discard without damaging future decisions;
 - `Q-006`: the exact semantics of the preserved coupling operator names;
 - `Q-007`: how stopping should trade residual uncertainty against cost;
@@ -16,4 +18,3 @@ The canonical entries are `Q-001` through `Q-009` in
 Questions remain in the cold map even after resolution. Resolution updates their
 status and notes, links the evidence or ADR, and preserves the prior conceptual
 history.
-

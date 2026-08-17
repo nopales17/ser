@@ -114,10 +114,10 @@
       "would_support": ["A smaller explicit state is sufficient for near-optimal choices in MicroGym."],
       "would_falsify": ["Explicit state provides no benefit over history-only baselines when resources are matched."],
       "implementation_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": ["reference/LEGACY_INVENTORY.yaml", "reference/IDS_LESSONS.md"],
       "origin": "design synthesis discussion, 2026-08-17",
       "last_reviewed": "2026-08-17",
-      "notes": "The listed fields are candidates, not a frozen schema."
+      "notes": "The listed fields are candidates, not a frozen schema. IDS CDA ledgers are inspiration only: their separation of observations, propositions, alternatives, and unknowns is a Phase 2 test case, not an implementation reference."
     },
     {
       "id": "P-002",
@@ -131,10 +131,10 @@
       "would_support": ["One minimal unit represents observations and claims across multiple environments without lossy special cases."],
       "would_falsify": ["Cross-domain representations require incompatible semantics hidden behind a superficial common schema."],
       "implementation_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": ["reference/LEGACY_INVENTORY.yaml"],
       "origin": "design synthesis discussion, 2026-08-17",
       "last_reviewed": "2026-08-17",
-      "notes": "Do not freeze the schema before Phase 2."
+      "notes": "Do not freeze the schema before Phase 2. Deep archive and history inspection found no EpistemicMemoryUnit, relevant generic Signal, or FlagAttachment model; the CDA ledger remains inspiration only."
     },
     {
       "id": "P-003",
@@ -148,10 +148,10 @@
       "would_support": ["Scope-aware controllers outperform matched scope-blind controls on environments with local relevance."],
       "would_falsify": ["Scope annotations add cost without improving decisions in environments designed to require local applicability."],
       "implementation_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": ["reference/LEGACY_INVENTORY.yaml", "reference/IDS_LESSONS.md"],
       "origin": "design synthesis discussion, 2026-08-17",
       "last_reviewed": "2026-08-17",
-      "notes": "Candidate primitive. Reuse of any IDS interval/scope work is unresolved."
+      "notes": "Candidate primitive. Deep current-tree and reachable-history inspection found no generic Scope or Interval implementation. SameProductNeighborhood and claim-scope labels are IDS-specific evidence, not implementation refs; Phase 2 should specify Scope from scratch."
     },
     {
       "id": "P-004",
@@ -216,10 +216,10 @@
       "would_support": ["Provenance links allow compact state while preserving correction and audit behavior."],
       "would_falsify": ["Maintaining sufficient provenance costs more than any decision benefit it enables in target settings."],
       "implementation_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": ["reference/LEGACY_INVENTORY.yaml", "reference/IDS_LESSONS.md"],
       "origin": "design synthesis discussion, 2026-08-17",
       "last_reviewed": "2026-08-17",
-      "notes": "Raw chat transcript accumulation is not the intended provenance system."
+      "notes": "Raw chat transcript accumulation is not the intended provenance system. Versioned traces, hash manifests, access declarations, and completeness gates generalize as patterns, but no IDS implementation is authorized for reuse."
     },
     {
       "id": "P-008",
@@ -301,10 +301,10 @@
       "would_support": ["Sparse policies retain or improve task outcomes at lower matched cost."],
       "would_falsify": ["Broadcast baselines are consistently more accurate and no less resource efficient."],
       "implementation_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": ["reference/LEGACY_INVENTORY.yaml"],
       "origin": "design synthesis discussion, 2026-08-17",
       "last_reviewed": "2026-08-17",
-      "notes": "No coupling operator has defined semantics or implementation."
+      "notes": "No coupling operator has defined semantics or implementation. Deep archive and reachable-history search found no exact SER operator semantics; APF/APF2 candidate predicates are unrelated prior solution logic."
     },
     {
       "id": "H-005",
@@ -420,10 +420,10 @@
       "would_support": ["A Phase 1 inventory finds reusable, separable environment interfaces without importing IDS-specific theory."],
       "would_falsify": ["The benchmark's task and artifacts cannot expose meaningful sequential epistemic allocation choices."],
       "implementation_refs": [],
-      "evidence_refs": ["reference/IDS_LEGACY.md"],
+      "evidence_refs": ["reference/IDS_LEGACY.md", "reference/LEGACY_INVENTORY.yaml", "reference/IDS_LESSONS.md"],
       "origin": "design synthesis discussion, 2026-08-17",
       "last_reviewed": "2026-08-17",
-      "notes": "Candidate environment/adaptor only; not SER and not yet imported."
+      "notes": "Candidate environment/adaptor only; not SER and not imported. Phase 1 found possible evaluator/environment assets, but the archived task is static and does not yet expose meaningful sequential allocation. All prompts, rankers, comparators, and construction heuristics remain prior solution logic."
     },
     {
       "id": "H-012",
@@ -726,10 +726,10 @@
       "would_support": ["Read-only inventory confirms separable interfaces and reproducible artifacts relevant to an environment adapter."],
       "would_falsify": ["Deeper inventory shows that usable behavior depends inseparably on IDS-specific assumptions or unavailable artifacts."],
       "implementation_refs": [],
-      "evidence_refs": ["reference/IDS_LEGACY.md", "/Users/paolo/proj/ids-rule-to-cve-inference-archive/README.md"],
+      "evidence_refs": ["reference/IDS_LEGACY.md", "reference/LEGACY_INVENTORY.yaml", "reference/IDS_LESSONS.md", "/Users/paolo/proj/ids-rule-to-cve-inference-archive/README.md"],
       "origin": "read-only IDS archive inspection, 2026-08-17",
       "last_reviewed": "2026-08-17",
-      "notes": "Evidence is historical and IDS-scoped. It is not experimental support for any SER hypothesis."
+      "notes": "Evidence is historical and IDS-scoped. Phase 1 confirmed reproducible assets and important negative results, but also product/lexical confounds, population corrections, invalid or unrun evaluations, and no holdout. It is not experimental support for any SER hypothesis."
     },
     {
       "id": "Q-001",
@@ -794,10 +794,10 @@
       "would_support": [],
       "would_falsify": [],
       "implementation_refs": [],
-      "evidence_refs": ["reference/IDS_LEGACY.md"],
+      "evidence_refs": ["reference/IDS_LEGACY.md", "reference/LEGACY_INVENTORY.yaml", "reference/IDS_LESSONS.md"],
       "origin": "design synthesis discussion, 2026-08-17",
       "last_reviewed": "2026-08-17",
-      "notes": "Phase 1 owns the inventory; no transfer decision exists."
+      "notes": "Phase 1 found zero components fit for unchanged reuse. Eleven patterns merit clean SER-owned reimplementation after contracts exist; IDS assets remain deferred environment/evaluator material; prior solution logic and domain schemas stay excluded. Future import still requires an explicit decision."
     },
     {
       "id": "Q-005",
@@ -828,10 +828,10 @@
       "would_support": [],
       "would_falsify": [],
       "implementation_refs": [],
-      "evidence_refs": [],
+      "evidence_refs": ["reference/LEGACY_INVENTORY.yaml"],
       "origin": "design synthesis discussion, 2026-08-17",
       "last_reviewed": "2026-08-17",
-      "notes": "Intentionally cold and unresolved; do not invent semantics to fill the gap."
+      "notes": "Intentionally cold and unresolved. Exact search across the archive's current tree and reachable history found no executable or documented SER operator semantics; APF/APF2 filters must not fill the gap by analogy."
     },
     {
       "id": "Q-007",
@@ -886,4 +886,3 @@
     }
   ]
 }
-

@@ -16,8 +16,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 IDEA_SOURCE = ROOT / "theory" / "IDEA_MAP.yaml"
 STATUS_SOURCE = ROOT / "state" / "STATUS.yaml"
+LEGACY_SOURCE = ROOT / "reference" / "LEGACY_INVENTORY.yaml"
 IDEA_OUTPUT = ROOT / "theory" / "IDEA_MAP.md"
 CONTEXT_OUTPUT = ROOT / "state" / "CONTEXT_PACKET.md"
+LEGACY_OUTPUT = ROOT / "reference" / "LEGACY_INVENTORY.md"
 GENERATED_WARNING = "<!-- GENERATED FILE: DO NOT EDIT. Run `python3 tools/emit_context.py`. -->"
 
 KIND_ORDER = [
@@ -50,6 +52,10 @@ def registry() -> dict:
 
 def status() -> dict:
     return load_json_yaml(STATUS_SOURCE)
+
+
+def legacy_inventory() -> dict:
+    return load_json_yaml(LEGACY_SOURCE)
 
 
 def idea_index(data: dict | None = None) -> dict[str, dict]:
@@ -177,6 +183,139 @@ def render_idea_map(data: dict | None = None) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+def render_legacy_inventory(data: dict | None = None) -> str:
+    data = data or legacy_inventory()
+    components = data["components"]
+    counts = Counter(item["classification"] for item in components)
+    archive = data["archive"]
+    conclusion = data["phase_1_conclusion"]
+    lines = [
+        GENERATED_WARNING,
+        "",
+        "# IDS legacy component inventory",
+        "",
+        f"Canonical source: `reference/LEGACY_INVENTORY.yaml`. Read-only archive: `{archive['path']}` at `{archive['head']}`. Inspection date: `{data['as_of']}`.",
+        "",
+        "The inventory records transfer recommendations, not permission to copy code or data. Historical IDS measurements are not SER evidence.",
+        "",
+        "## Classification summary",
+        "",
+        "| Classification | Count | Meaning |",
+        "| --- | ---: | --- |",
+    ]
+    for classification in data["classification_vocabulary"]:
+        lines.append(
+            f"| `{classification}` | {counts[classification]} | {data['classification_meanings'][classification]} |"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Missing purported legacy implementations",
+            "",
+        ]
+    )
+    for item in data["symbol_findings"]:
+        lines.extend(
+            [
+                f"### {item['query']}",
+                "",
+                item["finding"],
+                "",
+                f"- **Search scope:** {item['search_scope']}",
+                f"- **Recommendation:** {item['recommendation']}",
+                "",
+            ]
+        )
+
+    lines.extend(
+        [
+            "## Compact decision table",
+            "",
+            "| Legacy component | Classification | Why | Phase 2 implication |",
+            "| --- | --- | --- | --- |",
+        ]
+    )
+    for item in components:
+        lines.append(
+            f"| `{item['id']}` {item['component']} | `{item['classification']}` | {item['why_it_might_not']} | {item['recommended_action']} |"
+        )
+
+    lines.extend(["", "## Component records", ""])
+    for item in components:
+        lines.extend(
+            [
+                f"### `{item['id']}` -- {item['component']}",
+                "",
+                f"- **Source path:** `{item['source_path']}`",
+                f"- **Classification:** `{item['classification']}`",
+                f"- **SER relevance:** {item['ser_relevance']}",
+                f"- **Related idea IDs:** {display_list(item['related_idea_ids'])}",
+                f"- **What it does:** {item['what_it_does']}",
+                f"- **Why it might transfer:** {item['why_it_might_transfer']}",
+                f"- **Why it might not:** {item['why_it_might_not']}",
+                f"- **Dependencies:** {display_list(item['dependencies'])}",
+                f"- **IDS-specific assumptions:** {'; '.join(item['ids_specific_assumptions']) if item['ids_specific_assumptions'] else 'None recorded.'}",
+                f"- **Tests or evidence:** {display_list(item['tests_or_evidence'])}",
+                f"- **Recommended action:** {item['recommended_action']}",
+                f"- **Confidence:** `{item['confidence']}`",
+                f"- **Notes:** {item['notes'] or 'None.'}",
+                "",
+            ]
+        )
+
+    lines.extend(["## Architectural Contamination Risks", ""])
+    for item in data["architectural_contamination_risks"]:
+        lines.extend(
+            [
+                f"### `{item['id']}`",
+                "",
+                f"- **Risk:** {item['risk']}",
+                f"- **Guardrail:** {item['guardrail']}",
+                f"- **Archive sources:** {display_list(item['source_refs'])}",
+                f"- **Related idea IDs:** {display_list(item['related_idea_ids'])}",
+                "",
+            ]
+        )
+
+    lines.extend(
+        [
+            "## Phase 2 conceptual contract recommendation",
+            "",
+            "| Contract | Phase 2 disposition | Recommendation | Legacy influence | Must not assume |",
+            "| --- | --- | --- | --- | --- |",
+        ]
+    )
+    for item in data["phase_2_contract_recommendations"]:
+        lines.append(
+            f"| {item['contract']} | `{item['phase_2_disposition']}` | {item['recommendation']} | {item['legacy_influence']} | {'; '.join(item['must_not_assume'])} |"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Phase 1 conclusion",
+            "",
+            f"No component is classified `reuse_unchanged` ({conclusion['reuse_unchanged_count']} total). The patterns worth independently rebuilding are:",
+            "",
+        ]
+    )
+    lines.extend(f"- {item}" for item in conclusion["surviving_patterns"])
+    lines.extend(["", "Rejected as architecture:", ""])
+    lines.extend(f"- {item}" for item in conclusion["rejected_as_architecture"])
+    lines.extend(["", "Deferred environment assets:", ""])
+    lines.extend(f"- {item}" for item in conclusion["deferred_environment_assets"])
+    lines.extend(
+        [
+            "",
+            f"**Phase 2 starting point:** {conclusion['phase_2_starting_point']}",
+            "",
+            "See `reference/IDS_LESSONS.md` for the concise scientific synthesis.",
+        ]
+    )
+    return "\n".join(lines).rstrip() + "\n"
+
+
 def context_bullet(item: dict, include_status: bool = True) -> str:
     status_text = f" (`{item['status']}`)" if include_status else ""
     return f"- `{item['id']}` **{item['title']}**{status_text}: {item['statement']}"
@@ -236,6 +375,10 @@ def render_context_packet(
         f"Project maturity is `{current['project_maturity']}`. The durable knowledge architecture exists: canonical idea data, generated readable/context views, an ADR ledger, a single roadmap cursor, and a lightweight coherence checker. Runtime built: **{str(current['runtime']['built']).lower()}**. Controllers: **{current['runtime']['controllers']}**. Environments: **{current['runtime']['environments']}**. Model integrations: **{current['runtime']['model_integrations']}**.",
         "",
         current["evidence"]["summary"],
+        "",
+        f"Legacy inventory: **{current['legacy_inventory']['component_count']}** component groups classified at archive commit `{current['legacy_inventory']['archive_head']}`: {current['legacy_inventory']['classification_summary']}. No component is authorized for unchanged reuse.",
+        "",
+        current["legacy_inventory"]["summary"],
         "",
         "Do not infer runtime progress from the conceptual inventory. Mechanism entries preserve ideas; they are not code.",
         "",
@@ -322,7 +465,7 @@ def render_context_packet(
             "",
             current["roadmap"]["immediate_next_task"],
             "",
-            "Keep the work read-only with respect to the IDS archive. The next task does not authorize copying code/data or implementing an adapter or controller.",
+            "The IDS archive remains read-only. Phase 2 authorizes conceptual specification only: no code/data copy, adapter, MicroGym, controller, or model integration.",
             "",
             "## 11. Important non-goals",
             "",
@@ -344,6 +487,9 @@ def render_context_packet(
             "- `plan/ROADMAP.md`: the only authoritative phase cursor.",
             "- `state/STATUS.yaml`: current implementation and evidence facts.",
             "- `reference/IDS_LEGACY.md`: disciplined boundary around historical IDS input.",
+            "- `reference/LEGACY_INVENTORY.yaml`: canonical Phase 1 component classifications, contamination risks, and Phase 2 recommendations.",
+            "- `reference/LEGACY_INVENTORY.md`: generated readable inventory view; never edit directly.",
+            "- `reference/IDS_LESSONS.md`: concise evidence and design lessons from the archive.",
             "- `experiments/README.md`: evidence admission rules and current no-experiment state.",
             "",
         ]
@@ -354,9 +500,11 @@ def render_context_packet(
 def generated_outputs() -> dict[Path, str]:
     data = registry()
     current = status()
+    legacy = legacy_inventory()
     return {
         IDEA_OUTPUT: render_idea_map(data),
         CONTEXT_OUTPUT: render_context_packet(data, current),
+        LEGACY_OUTPUT: render_legacy_inventory(legacy),
     }
 
 

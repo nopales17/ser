@@ -47,9 +47,11 @@ before continuing.
 - Vocabulary: edit `reference/TERMINOLOGY.md`.
 - Historical IDS interpretation: edit `reference/IDS_LEGACY.md`, supported by
   read-only inspection of the archive.
+- Legacy component identity, classification, transfer rationale, or
+  contamination risk: edit `reference/LEGACY_INVENTORY.yaml`, then regenerate.
 
-Never hand-edit `theory/IDEA_MAP.md` or `state/CONTEXT_PACKET.md`; both begin
-with a generated-file warning.
+Never hand-edit `theory/IDEA_MAP.md`, `state/CONTEXT_PACKET.md`, or
+`reference/LEGACY_INVENTORY.md`; each begins with a generated-file warning.
 
 ## Boundaries
 
@@ -66,4 +68,3 @@ with a generated-file warning.
 3. Read the resulting context packet for misleading promotions or stale state.
 4. Report changed files, phase/cursor changes, checks run, unresolved questions,
    and `git status`.
-

@@ -30,9 +30,13 @@ The central empirical question is `H-001`: whether allocation organization contr
 
 ## 2. Current maturity / what has actually been built
 
-Project maturity is `phase_1_legacy_inventory_ready`. The durable knowledge architecture exists: canonical idea data, generated readable/context views, an ADR ledger, a single roadmap cursor, and a lightweight coherence checker. Runtime built: **false**. Controllers: **0**. Environments: **0**. Model integrations: **0**.
+Project maturity is `phase_2_minimal_control_formalization_ready`. The durable knowledge architecture exists: canonical idea data, generated readable/context views, an ADR ledger, a single roadmap cursor, and a lightweight coherence checker. Runtime built: **false**. Controllers: **0**. Environments: **0**. Model integrations: **0**.
 
 No SER experiment has run and no SER scientific hypothesis has experimental support.
+
+Legacy inventory: **31** component groups classified at archive commit `38b661324725c094ffcc820371a836573f4aadc5`: 0 reuse unchanged, 11 generalize, 14 empirical evidence only, 4 inspiration only, and 2 discard. No component is authorized for unchanged reuse.
+
+Phase 1 found no legacy code suitable for unchanged reuse. Trace/provenance envelopes, completeness and access-policy checks, hash manifests, evaluator separation, paired controls, blinding, replay, and failed-run preservation survive only as patterns to rebuild behind SER-owned contracts. IDS data and labels are deferred environment/evaluator assets; prompts, rankers, comparators, product neighborhoods, domain schemas, and normalizers remain excluded prior solution logic. No generic Scope, Interval, epistemic-memory, flag, signal, or SER coupling-operator implementation was found in the current archive or reachable history.
 
 Do not infer runtime progress from the conceptual inventory. Mechanism entries preserve ideas; they are not code.
 
@@ -44,6 +48,7 @@ Do not infer runtime progress from the conceptual inventory. Mechanism entries p
 - `ADR-0004` **Deterministic generated context**: `tools/emit_context.py` deterministically renders `theory/IDEA_MAP.md` and `state/CONTEXT_PACKET.md` from canonical sources. Generated files carry a warning and are checked byte-for-byte for freshness.
 - `ADR-0005` **Explicit single phase cursor**: `plan/ROADMAP.md` contains exactly one phase with status `active`. `state/STATUS.yaml` repeats the cursor only as a coherence-checked current-state fact. Phase detail remains coarse until it approaches execution.
 - `ADR-0006` **IDS archive isolation**: Treat `/Users/paolo/proj/ids-rule-to-cve-inference-archive` as read-only historical input. Phase 1 may classify reuse candidates, but copying code, importing data, building an adapter, or claiming transfer requires later explicit decisions and relevant evidence.
+- `ADR-0007` **Canonical legacy inventory and no-transfer default**: `reference/LEGACY_INVENTORY.yaml` is the canonical registry for Phase 1 legacy-component judgments, and `reference/LEGACY_INVENTORY.md` is its generated readable view. Classifications record research recommendations, not import authorization. The default remains no code or data transfer; any future reuse or environment ingestion requires a separate explicit decision.
 
 ## 4. Current high-value primitives
 
@@ -112,26 +117,26 @@ None. The absence of rejected entries reflects project age, not confirmation of 
 
 SER evidence records: **0**.
 - `E-001` **Historical IDS archive provides scoped benchmark artifacts** (`experimentally_supported`): The read-only IDS archive documents a completed, deterministic benchmark separating closed-book vulnerability-shape reconstruction from closed-corpus exact-CVE attribution over frozen artifacts, with explicit negative results and claim limits.
-  Limitation: Evidence is historical and IDS-scoped. It is not experimental support for any SER hypothesis.
+  Limitation: Evidence is historical and IDS-scoped. Phase 1 confirmed reproducible assets and important negative results, but also product/lexical confounds, population corrections, invalid or unrun evaluations, and no holdout. It is not experimental support for any SER hypothesis.
 The IDS finding is historical environment evidence only. It does not support the SER controller, scope-aware gating, sparse propagation, compression, learned policy, or substrate-independence hypotheses.
 
 ## 9. Current roadmap cursor
 
-Active: **Phase 1 -- Legacy component inventory**. Status: `active`.
+Active: **Phase 2 -- Formalize the minimal control problem**. Status: `active`.
 
-Goal: inspect the read-only IDS archive and classify candidates as reuse unchanged, generalize, empirical evidence only, inspiration only, or discard.
+Goal: define the smallest useful state, action, observation, transition, cost, outcome, stopping, and metric formulation.
 
-Exit: a reviewed inventory records each candidate's provenance, domain assumptions, proposed classification, and unresolved transfer risk.
+Exit: a falsifiable specification names baseline policies, resource accounting, and the questions that MicroGym must distinguish.
 
 ## 10. Immediate next task
 
-Perform a read-only IDS legacy component inventory and classify each candidate as reuse unchanged, generalize, empirical evidence only, inspiration only, or discard, without copying code or data.
+Specify, without implementation, the minimal domain-neutral contracts for state, observation, epistemic unit or hypothesis, signal, scope, action, action result, transition, environment, policy interface, typed cost, outcome, and experiment/evaluator behavior; name baselines and unresolved choices before MicroGym.
 
-Keep the work read-only with respect to the IDS archive. The next task does not authorize copying code/data or implementing an adapter or controller.
+The IDS archive remains read-only. Phase 2 authorizes conceptual specification only: no code/data copy, adapter, MicroGym, controller, or model integration.
 
 ## 11. Important non-goals
 
-- No SER runtime or controller in Phase 0 or Phase 1.
+- No SER runtime or controller until Phase 2's conceptual exit criteria are met.
 - No LLM/model integration, TGNN, graph neural network, learned policy, or training infrastructure.
 - No coupling-law implementation, fuzzer, remote-sensing integration, or IDS adapter.
 - No IDS code or data import and no claim that IDS results validate SER.
@@ -148,4 +153,7 @@ Also avoid scientific overclaiming: a cold location is not acceptance, implement
 - `plan/ROADMAP.md`: the only authoritative phase cursor.
 - `state/STATUS.yaml`: current implementation and evidence facts.
 - `reference/IDS_LEGACY.md`: disciplined boundary around historical IDS input.
+- `reference/LEGACY_INVENTORY.yaml`: canonical Phase 1 component classifications, contamination risks, and Phase 2 recommendations.
+- `reference/LEGACY_INVENTORY.md`: generated readable inventory view; never edit directly.
+- `reference/IDS_LESSONS.md`: concise evidence and design lessons from the archive.
 - `experiments/README.md`: evidence admission rules and current no-experiment state.

@@ -99,10 +99,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** A smaller explicit state is sufficient for near-optimal choices in MicroGym.
 - **Would falsify:** Explicit state provides no benefit over history-only baselines when resources are matched.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`, `reference/IDS_LESSONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** The listed fields are candidates, not a frozen schema.
+- **Notes:** The listed fields are candidates, not a frozen schema. IDS CDA ledgers are inspiration only: their separation of observations, propositions, alternatives, and unknowns is a Phase 2 test case, not an implementation reference.
 
 ### `P-002` -- Epistemic unit
 
@@ -114,10 +114,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** One minimal unit represents observations and claims across multiple environments without lossy special cases.
 - **Would falsify:** Cross-domain representations require incompatible semantics hidden behind a superficial common schema.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Do not freeze the schema before Phase 2.
+- **Notes:** Do not freeze the schema before Phase 2. Deep archive and history inspection found no EpistemicMemoryUnit, relevant generic Signal, or FlagAttachment model; the CDA ledger remains inspiration only.
 
 ### `P-003` -- Scope
 
@@ -129,10 +129,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Scope-aware controllers outperform matched scope-blind controls on environments with local relevance.
 - **Would falsify:** Scope annotations add cost without improving decisions in environments designed to require local applicability.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`, `reference/IDS_LESSONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Candidate primitive. Reuse of any IDS interval/scope work is unresolved.
+- **Notes:** Candidate primitive. Deep current-tree and reachable-history inspection found no generic Scope or Interval implementation. SameProductNeighborhood and claim-scope labels are IDS-specific evidence, not implementation refs; Phase 2 should specify Scope from scratch.
 
 ### `P-004` -- Epistemic action
 
@@ -189,10 +189,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Provenance links allow compact state while preserving correction and audit behavior.
 - **Would falsify:** Maintaining sufficient provenance costs more than any decision benefit it enables in target settings.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`, `reference/IDS_LESSONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Raw chat transcript accumulation is not the intended provenance system.
+- **Notes:** Raw chat transcript accumulation is not the intended provenance system. Versioned traces, hash manifests, access declarations, and completeness gates generalize as patterns, but no IDS implementation is authorized for reuse.
 
 ### `P-008` -- Uncertainty and confidence
 
@@ -266,10 +266,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Sparse policies retain or improve task outcomes at lower matched cost.
 - **Would falsify:** Broadcast baselines are consistently more accurate and no less resource efficient.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** No coupling operator has defined semantics or implementation.
+- **Notes:** No coupling operator has defined semantics or implementation. Deep archive and reachable-history search found no exact SER operator semantics; APF/APF2 candidate predicates are unrelated prior solution logic.
 
 ### `H-005` -- Decision-sufficient epistemic compression
 
@@ -371,10 +371,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** A Phase 1 inventory finds reusable, separable environment interfaces without importing IDS-specific theory.
 - **Would falsify:** The benchmark's task and artifacts cannot expose meaningful sequential epistemic allocation choices.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** `reference/IDS_LEGACY.md`
+- **Evidence refs:** `reference/IDS_LEGACY.md`, `reference/LEGACY_INVENTORY.yaml`, `reference/IDS_LESSONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Candidate environment/adaptor only; not SER and not yet imported.
+- **Notes:** Candidate environment/adaptor only; not SER and not imported. Phase 1 found possible evaluator/environment assets, but the archived task is static and does not yet expose meaningful sequential allocation. All prompts, rankers, comparators, and construction heuristics remain prior solution logic.
 
 ### `H-012` -- Software and fuzzing environment
 
@@ -645,10 +645,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Read-only inventory confirms separable interfaces and reproducible artifacts relevant to an environment adapter.
 - **Would falsify:** Deeper inventory shows that usable behavior depends inseparably on IDS-specific assumptions or unavailable artifacts.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** `reference/IDS_LEGACY.md`, `/Users/paolo/proj/ids-rule-to-cve-inference-archive/README.md`
+- **Evidence refs:** `reference/IDS_LEGACY.md`, `reference/LEGACY_INVENTORY.yaml`, `reference/IDS_LESSONS.md`, `/Users/paolo/proj/ids-rule-to-cve-inference-archive/README.md`
 - **Origin:** read-only IDS archive inspection, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Evidence is historical and IDS-scoped. It is not experimental support for any SER hypothesis.
+- **Notes:** Evidence is historical and IDS-scoped. Phase 1 confirmed reproducible assets and important negative results, but also product/lexical confounds, population corrections, invalid or unrun evaluations, and no holdout. It is not experimental support for any SER hypothesis.
 
 ## Open questions (9)
 
@@ -707,10 +707,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** `reference/IDS_LEGACY.md`
+- **Evidence refs:** `reference/IDS_LEGACY.md`, `reference/LEGACY_INVENTORY.yaml`, `reference/IDS_LESSONS.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Phase 1 owns the inventory; no transfer decision exists.
+- **Notes:** Phase 1 found zero components fit for unchanged reuse. Eleven patterns merit clean SER-owned reimplementation after contracts exist; IDS assets remain deferred environment/evaluator material; prior solution logic and domain schemas stay excluded. Future import still requires an explicit decision.
 
 ### `Q-005` -- What can an epistemic compressor discard safely?
 
@@ -737,10 +737,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** None recorded.
+- **Evidence refs:** `reference/LEGACY_INVENTORY.yaml`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Intentionally cold and unresolved; do not invent semantics to fill the gap.
+- **Notes:** Intentionally cold and unresolved. Exact search across the archive's current tree and reachable history found no executable or documented SER operator semantics; APF/APF2 filters must not fill the gap by analogy.
 
 ### `Q-007` -- When should epistemic work stop?
 

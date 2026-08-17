@@ -17,7 +17,7 @@ Allowed statuses: `planned`, `active`, `done`.
 
 ## Phase 1 -- Legacy component inventory
 
-- status: active
+- status: done
 - goal: inspect the read-only IDS archive and classify candidates as reuse
   unchanged, generalize, empirical evidence only, inspiration only, or discard.
 - boundary: no SER runtime, IDS adapter, code copy, or data import.
@@ -26,7 +26,7 @@ Allowed statuses: `planned`, `active`, `done`.
 
 ## Phase 2 -- Formalize the minimal control problem
 
-- status: planned
+- status: active
 - goal: define the smallest useful state, action, observation, transition, cost,
   outcome, stopping, and metric formulation.
 - boundary: do not freeze epistemic-unit or coupling-operator schemas merely to

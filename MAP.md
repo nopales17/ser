@@ -19,6 +19,9 @@ is an independent field on concepts and evidence.
 | `state/CONTEXT_PACKET.md` | generated view | nothing independently; portable synthesis of canonical sources | direct edits |
 | `reference/TERMINOLOGY.md` | reference | preferred vocabulary and usage boundaries | scientific maturity |
 | `reference/IDS_LEGACY.md` | reference | scoped historical interpretation of the read-only IDS archive | SER evidence or automatic reuse decisions |
+| `reference/LEGACY_INVENTORY.yaml` | reference, canonical data | stable legacy component classifications, transfer rationale, contamination risks, and Phase 2 recommendations | permission to copy code/data or evidence for SER hypotheses |
+| `reference/LEGACY_INVENTORY.md` | generated view | nothing independently; readable rendering of the canonical legacy inventory | edits or import authorization |
+| `reference/IDS_LESSONS.md` | reference synthesis | concise evidence-backed lessons and explicit non-claims from the IDS archive | component identity, maturity, or SER validation |
 | `experiments/README.md` | evidence index | experiment admission, evidence-record rules, and current absence of SER results | unrun claims |
 | `tools/` | artifact | executable knowledge-generation and checking behavior | validation of SER theory |
 
@@ -29,4 +32,3 @@ its generated view. An experimental artifact beats a prose summary of the same
 measurement, but it does not automatically outrank the charter's claim boundary.
 Resolve a genuine accepted-design conflict with a new ADR; do not silently edit
 history.
-
