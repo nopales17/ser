@@ -775,16 +775,24 @@ def check_phase_progress_status() -> dict[str, object]:
     if not (
         phases.get(2, {}).get("status") == "done"
         and phases.get(3, {}).get("status") == "done"
-        and phases.get(4, {}).get("status") == "active"
+        and phases.get(4, {}).get("status") == "done"
+        and phases.get(5, {}).get("status") == "active"
     ):
-        errors.append("roadmap does not transition Phase 2 done -> Phase 3 done -> Phase 4 active")
+        errors.append(
+            "roadmap does not transition Phase 2 done -> Phase 3 done -> "
+            "Phase 4 done -> Phase 5 active"
+        )
     runtime = current.get("runtime", {})
-    if not runtime.get("built") or runtime.get("environments") != 6 or runtime.get("controllers") != 11:
+    if not runtime.get("built") or runtime.get("environments") != 9 or runtime.get("controllers") != 13:
         errors.append("status does not report the implemented MicroGym runtime accurately")
     if not current.get("knowledge_architecture", {}).get("phase_3_microgym_complete"):
         errors.append("phase_3_microgym_complete is not true")
-    if current.get("evidence", {}).get("ser_experiments") != ["E-002"]:
-        errors.append("MicroGym evidence index must contain exactly E-002")
+    if not current.get("knowledge_architecture", {}).get(
+        "phase_4_routing_falsification_complete"
+    ):
+        errors.append("phase_4_routing_falsification_complete is not true")
+    if current.get("evidence", {}).get("ser_experiments") != ["E-002", "E-003"]:
+        errors.append("MicroGym evidence index must contain exactly E-002 and E-003")
     experiment_paths = (
         "experiments/microgym_v1/population.json",
         "experiments/microgym_v1/runs.jsonl",
@@ -793,6 +801,13 @@ def check_phase_progress_status() -> dict[str, object]:
         "experiments/microgym_v1/validation.json",
         "experiments/microgym_v1/adaptivity.json",
         "experiments/microgym_v1/INTERPRETATION.md",
+        "experiments/microgym_routing_v1/PREREGISTRATION.md",
+        "experiments/microgym_routing_v1/population.json",
+        "experiments/microgym_routing_v1/runs.jsonl",
+        "experiments/microgym_routing_v1/oracle.jsonl",
+        "experiments/microgym_routing_v1/summary.json",
+        "experiments/microgym_routing_v1/validation.json",
+        "experiments/microgym_routing_v1/INTERPRETATION.md",
     )
     missing_experiment_paths = [path for path in experiment_paths if not (ROOT / path).exists()]
     if missing_experiment_paths:
@@ -802,7 +817,7 @@ def check_phase_progress_status() -> dict[str, object]:
         not errors,
         "errors: " + "; ".join(errors)
         if errors
-        else "Phase 2 counts remain coherent; Phase 3 runtime/evidence are recorded narrowly; Phase 4 is the sole active follow-up",
+        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are recorded narrowly; Phase 5 is the sole active follow-up",
     )
 
 

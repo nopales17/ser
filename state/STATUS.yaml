@@ -2,11 +2,11 @@
   "schema_version": 1,
   "as_of": "2026-08-17",
   "project_name": "SER (provisional)",
-  "project_maturity": "phase_3_microgym_complete_narrow_finding",
+  "project_maturity": "phase_4_routing_complete_scoped_positive_finding",
   "runtime": {
     "built": true,
-    "controllers": 11,
-    "environments": 6,
+    "controllers": 13,
+    "environments": 9,
     "model_integrations": 0
   },
   "knowledge_architecture": {
@@ -16,7 +16,8 @@
     "phase_0_validation_complete": true,
     "phase_1_legacy_inventory_complete": true,
     "phase_2_formalization_complete": true,
-    "phase_3_microgym_complete": true
+    "phase_3_microgym_complete": true,
+    "phase_4_routing_falsification_complete": true
   },
   "formal_control_problem": {
     "phase_2_complete": true,
@@ -28,11 +29,11 @@
     "rejected_from_minimal_core": 1,
     "required_invariants": 12,
     "domain_pressure_tests": 4,
-    "summary": "Phase 2 separates latent world, released observation history, controller epistemic state, policy-neutral legal actions, raw vector resources, first-class stopping, and evaluator-owned outcomes. MicroGym v1 implemented these semantics without a contract correction, but one synthetic implementation does not validate their generality. Observation and optional Hypothesis remain distinct; Scope is optional; Signal and all nine coupling mechanisms remain deferred."
+    "summary": "Phase 2 separates latent world, released observation history, controller epistemic state, policy-neutral legal actions, raw vector resources, first-class stopping, and evaluator-owned outcomes. MicroGym v1 and routing-v1 implemented these semantics without a contract correction, but synthetic implementations do not validate their generality. Observation and optional Hypothesis remain distinct; Scope is optional; Signal and all nine coupling mechanisms remain deferred."
   },
   "evidence": {
-    "ser_experiments": ["E-002"],
-    "summary": "MicroGym v1 is complete and valid, but its admitted finding is narrow: the myopic public-model candidate lowered an experiment-specific combined objective through lower spending and stopping while worsening decision loss and exhibiting no observation-conditioned routing. No general SER hypothesis was promoted.",
+    "ser_experiments": ["E-002", "E-003"],
+    "summary": "MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. The separate routing-v1 benchmark then showed that, under one fixed equal-cost acquisition with clean public likelihoods, the unchanged candidate branched at all 6 eligible nodes, matched the closed-loop oracle, captured all exact one-step VOA, and made no spurious branches in 3 zero-VOA controls. No general SER hypothesis was promoted; semantic action-value estimation remains untested.",
     "microgym_v1": {
       "population_hash": "a9234fa60b40d3628f6317284a964c95917bcd7442796d8961f18b14b9958b3d",
       "problem_regimes": 24,
@@ -45,6 +46,25 @@
       "scientific_interpretation": "narrow_no_observation_conditioned_routing",
       "summary": "Adaptive combined objective was 0.303159 versus 0.311429 for the same-model open-loop control, but adaptive decision loss was worse by 0.017857 and cost lower by 0.300824; 645/728 paired objectives tied and the counterfactual audit found 0/20 branching nodes."
     },
+    "microgym_routing_v1": {
+      "population_hash": "0dc7d82cfcb8ffb1ce186ef90aa040378e62d920b4f9cf4b2af7bf4ba82f3aea",
+      "problem_regimes": 9,
+      "episodes": 1152,
+      "runs": 3456,
+      "valid_runs": 3456,
+      "invalid_runs": 0,
+      "positive_voa_regimes": 6,
+      "zero_voa_regimes": 3,
+      "eligible_branch_nodes": 6,
+      "candidate_branch_nodes": 6,
+      "oracle_consistent_branch_nodes": 6,
+      "zero_voa_spurious_branch_nodes": 0,
+      "voa_range": [0.0, 0.2025],
+      "voa_weighted_adaptivity_capture": 1.0,
+      "preregistered_classifier": "routing_supported",
+      "scientific_interpretation": "narrow_one_step_explicit_likelihood_routing_support",
+      "summary": "With exactly one equal-cost acquisition and no STOP, the unchanged candidate matched the exact closed-loop cue-conditioned action map and beat the exact same-model open-loop plan in expected loss on every positive-VOA regime."
+    },
     "historical_only": [
       "E-001 describes scoped artifacts in the read-only IDS archive; it is not evidence for SER."
     ]
@@ -56,15 +76,15 @@
     "summary": "Phase 1 found no legacy code suitable for unchanged reuse. Trace/provenance envelopes, completeness and access-policy checks, hash manifests, evaluator separation, paired controls, blinding, replay, and failed-run preservation survive only as patterns to rebuild behind SER-owned contracts. IDS data and labels are deferred environment/evaluator assets; prompts, rankers, comparators, product neighborhoods, domain schemas, and normalizers remain excluded prior solution logic. No generic Scope, Interval, epistemic-memory, flag, signal, or SER coupling-operator implementation was found in the current archive or reachable history."
   },
   "roadmap": {
-    "active_phase_id": 4,
-    "active_phase_title": "Adaptive-routing falsification follow-up",
-    "immediate_next_task": "Design the smallest frozen synthetic follow-up whose admission rule requires actual observation-conditioned branching and whose same-model open-loop control isolates routing from stopping, without altering MicroGym v1 or introducing a new domain.",
+    "active_phase_id": 5,
+    "active_phase_title": "Controlled authorization action-value estimation",
+    "immediate_next_task": "Design the smallest controlled authorization-oriented software environment that tests whether useful epistemic-action values can be estimated from imperfect evidence without supplied likelihood tables, while separating allocation quality from generic software task skill.",
     "research_trunk": "GitLab authorization investigation is the primary practical target. MicroGym is a control validation instrument; IDS is only a possible semantic bridge; controlled software experimentation is trunk-aligned; remote sensing is dormant."
   },
   "non_goals": [
-    "No production SER runtime; the implemented code is a minimal zero-LLM MicroGym validation instrument and trivial experimental controllers.",
+    "No production SER runtime; the implemented code is a minimal zero-LLM MicroGym validation instrument and small exact/reference controllers.",
     "No LLM/model integration, TGNN, graph neural network, learned policy, or training infrastructure.",
-    "No coupling-law implementation, universal epistemic graph, fuzzer, remote-sensing integration, or IDS adapter.",
-    "No IDS code or data import and no claim that IDS results validate SER."
+    "No coupling-law implementation, universal epistemic graph, production fuzzer, remote-sensing integration, or IDS adapter.",
+    "No IDS code or data import, real GitLab integration, or claim that IDS/GitLab validates SER."
   ]
 }

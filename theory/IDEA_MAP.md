@@ -4,7 +4,7 @@
 
 Readable rendering of canonical `theory/IDEA_MAP.yaml`. Status records maturity; this cold location records authority and preservation, not truth.
 
-Schema version: `1`. Total entries: **56**.
+Schema version: `1`. Total entries: **58**.
 
 ID families: `F-*` foundation or methodological constraint; `P-*` candidate primitive; `H-*` hypothesis; `M-*` proposed mechanism; `E-*` empirical finding; `Q-*` open question.
 
@@ -269,7 +269,7 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Last reviewed:** `2026-08-17`
 - **Notes:** Explicitly deferred. No irreducible role was found, no legacy implementation exists, and Signal is not required for Phase 3. Do not implement it merely because the name is preserved.
 
-## Hypotheses (16)
+## Hypotheses (17)
 
 ### `H-001` -- Allocation organization contributes to inference-time intelligence
 
@@ -280,11 +280,11 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Related to:** `H-002`, `H-016`, `M-012`
 - **Would support:** A routing controller beats matched-total-compute baselines across preregistered environments.
 - **Would falsify:** Matched simpler strategies consistently equal or beat controlled routing.
-- **Implementation refs:** `src/ser/policies/adaptive.py`
-- **Evidence refs:** `experiments/microgym_v1/INTERPRETATION.md`
+- **Implementation refs:** `src/ser/policies/adaptive.py`, `src/ser/evaluation/routing.py`
+- **Evidence refs:** `experiments/microgym_v1/INTERPRETATION.md`, `experiments/microgym_routing_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** MicroGym v1 did not support the central observation-conditioned routing claim: the candidate had zero counterfactual branching nodes. Its lower experiment-specific combined objective came from lower expenditure and stopping, with worse decision loss. The hypothesis remains working and unsupported.
+- **Notes:** MicroGym v1 did not support observation-conditioned routing. Routing-v1 subsequently supported a narrow one-step explicit-likelihood instance: the unchanged candidate captured exact VOA against a same-model open-loop plan. That favorable synthetic instance is insufficient to promote the broad inference-time intelligence claim, which still lacks multi-stage, semantic, matched-compute, and real-domain evidence.
 
 ### `H-002` -- Decision-relevant information utility objective
 
@@ -296,10 +296,10 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** The objective predicts near-optimal actions in environments with known hidden state and costs.
 - **Would falsify:** Policies optimizing it reduce nominal uncertainty while worsening relevant decisions or violating constraints.
 - **Implementation refs:** `src/ser/policies/adaptive.py`
-- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `experiments/microgym_v1/summary.json`, `experiments/microgym_v1/INTERPRETATION.md`
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `experiments/microgym_v1/summary.json`, `experiments/microgym_v1/INTERPRETATION.md`, `experiments/microgym_routing_v1/summary.json`, `experiments/microgym_routing_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** MicroGym v1 operationalized one experiment-specific myopic Bayes-risk-minus-cost rule. It lowered the scalar combined objective but worsened decision loss, exhibited no conditional routing, and stopped prematurely in 30 episodes. This is evidence about that policy instance, not promotion of a universal objective.
+- **Notes:** MicroGym v1 operationalized one experiment-specific myopic Bayes-risk-minus-cost rule and exposed a stopping/routing interaction. Under routing-v1's fixed one-step equal-cost horizon, the same score matched the exact closed-loop action and captured all available VOA. The objective remains a policy instance, not a universal information utility, and action-value estimation without likelihood tables remains untested.
 
 ### `H-003` -- Scope-aware allocation improves efficiency
 
@@ -355,11 +355,11 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Related to:** `H-001`, `Q-007`
 - **Would support:** Bandit- or search-like analysis predicts useful branch allocation in MicroGym.
 - **Would falsify:** The analogy hides state transitions or information structure essential to performance.
-- **Implementation refs:** `src/ser/microgym/families.py`, `src/ser/policies/adaptive.py`
-- **Evidence refs:** `experiments/microgym_v1/adaptivity.json`, `experiments/microgym_v1/INTERPRETATION.md`
+- **Implementation refs:** `src/ser/microgym/families.py`, `src/ser/microgym/routing.py`, `src/ser/policies/adaptive.py`
+- **Evidence refs:** `experiments/microgym_v1/adaptivity.json`, `experiments/microgym_v1/INTERPRETATION.md`, `experiments/microgym_routing_v1/summary.json`, `experiments/microgym_routing_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** MicroGym v1 included budgeted branch and repeated-evidence families, but the candidate produced zero observation-conditioned branches and always stopped in family E. The exploration-exploitation analogy remains unvalidated.
+- **Notes:** MicroGym v1 included budgeted branch and repeated-evidence families, but the candidate produced zero observation-conditioned branches. Routing-v1 later showed exact one-step branch selection when STOP was removed, but it had no multi-stage depth/breadth tradeoff. The exploration-exploitation analogy remains unvalidated.
 
 ### `H-007` -- Observation-reasoning oscillation
 
@@ -449,7 +449,7 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Evidence refs:** None recorded.
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Primary practical target and roadmap priority only; GitLab is not evidence for SER. No GitLab integration, fuzzer, or software adapter is authorized in Phase 3.
+- **Notes:** Primary practical target and roadmap priority only; GitLab is not evidence for SER. After routing-v1 supported a narrow exact-model routing claim, ADR-0014 selected a minimal controlled authorization environment to test semantic action-value estimation. Real GitLab integration, production fuzzing, and broad vulnerability discovery remain unauthorized.
 
 ### `H-013` -- Remote-sensing generalization environment
 
@@ -505,11 +505,26 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Related to:** `Q-009`
 - **Would support:** Preregistered resource-matched evaluations with ablations and independent confirmation.
 - **Would falsify:** Simpler matched strategies consistently match or beat SER across intended environments.
-- **Implementation refs:** `src/ser/policies/adaptive.py`, `src/ser/evaluation/analysis.py`
-- **Evidence refs:** `experiments/microgym_v1/summary.json`, `experiments/microgym_v1/INTERPRETATION.md`
+- **Implementation refs:** `src/ser/policies/adaptive.py`, `src/ser/evaluation/analysis.py`, `src/ser/evaluation/routing.py`, `src/ser/evaluation/routing_analysis.py`
+- **Evidence refs:** `experiments/microgym_v1/summary.json`, `experiments/microgym_v1/INTERPRETATION.md`, `experiments/microgym_routing_v1/summary.json`, `experiments/microgym_routing_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** MicroGym v1 is relevant but insufficient for promotion. The candidate lowered the experiment-specific combined objective while worsening decision loss and showing no observation-conditioned routing; the matched open-loop gap was small and cost-driven. Real-domain and ordinary-agent comparisons remain absent.
+- **Notes:** MicroGym v1 was insufficient for promotion because its matched open-loop gap was small, cost-driven, and non-routing. Routing-v1 adds a favorable one-step exact-model routing result under identical fixed resources, but still lacks model-compute accounting, semantic evidence, ordinary-agent comparison, multiple domains, and independent confirmation. The broad resource-normalized claim remains a seed.
+
+### `H-017` -- Decision-value-conditioned epistemic routing
+
+- **Status:** `working`
+- **Statement:** Newly released information should change epistemic resource allocation when it changes the expected value landscape of available actions, rather than merely because posterior belief changed.
+- **Why it matters:** It distinguishes decision-relevant adaptation from arbitrary behavioral responsiveness and directs attention to action-value estimation rather than uncertainty alone.
+- **Depends on:** `P-001`, `P-004`, `H-002`
+- **Related to:** `H-001`, `H-006`, `H-012`, `Q-001`
+- **Would support:** Across preregistered positive- and zero-VOA controls, a matched closed-loop policy branches when action values change, avoids spurious branches when they do not, and improves the relevant outcome over the best open-loop plan.
+- **Would falsify:** The policy branches on belief changes without value, fails to branch when exact action values change, or loses its advantage when action values must be estimated rather than supplied.
+- **Implementation refs:** `src/ser/policies/adaptive.py`, `src/ser/evaluation/routing.py`, `src/ser/evaluation/routing_analysis.py`
+- **Evidence refs:** `experiments/microgym_routing_v1/PREREGISTRATION.md`, `experiments/microgym_routing_v1/summary.json`, `experiments/microgym_routing_v1/INTERPRETATION.md`
+- **Origin:** Phase 4 conceptual synthesis and frozen routing-v1 experiment, 2026-08-17
+- **Last reviewed:** `2026-08-17`
+- **Notes:** Working hypothesis with one narrowly supportive explicit-likelihood, one-step experiment. The zero-VOA controls separate belief change from action-value change. Semantic action-value estimation, model misspecification, multi-stage routing, and real-domain generality remain untested.
 
 ## Proposed mechanisms (12)
 
@@ -672,11 +687,11 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Related to:** `H-001`, `H-002`, `H-006`
 - **Would support:** Controllers recover known allocation structure and beat trivial matched baselines.
 - **Would falsify:** The environments cannot distinguish routing quality from task-solving capacity or have no useful baseline oracle.
-- **Implementation refs:** `src/ser/microgym`, `src/ser/evaluation`, `tools/run_microgym.py`
-- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `theory/DOMAIN_INSTANTIATIONS.md`, `experiments/microgym_v1/population.json`, `experiments/microgym_v1/validation.json`, `experiments/microgym_v1/REPORT.md`, `experiments/microgym_v1/INTERPRETATION.md`
+- **Implementation refs:** `src/ser/microgym`, `src/ser/evaluation`, `tools/run_microgym.py`, `tools/run_microgym_routing.py`, `tools/verify_microgym_routing.py`
+- **Evidence refs:** `theory/CONTROL_PROBLEM.md`, `theory/CONTRACTS.yaml`, `theory/DOMAIN_INSTANTIATIONS.md`, `experiments/microgym_v1/population.json`, `experiments/microgym_v1/validation.json`, `experiments/microgym_v1/REPORT.md`, `experiments/microgym_v1/INTERPRETATION.md`, `experiments/microgym_routing_v1/population.json`, `experiments/microgym_routing_v1/validation.json`, `experiments/microgym_routing_v1/REPORT.md`, `experiments/microgym_routing_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** Implemented as the MicroGym v1 control-mechanism validation instrument, not the practical research trunk: six families, 24 regimes, 728 frozen episodes, explicit public/evaluator projections, raw vector costs, STOP, failure, replay, baselines, ablations, and exact oracle. The instrument worked; its candidate policy result was narrow.
+- **Notes:** Implemented as a control-mechanism validation instrument, not the practical research trunk. MicroGym v1 covered stopping, failure, resources, replay, baselines, and exact oracle but showed no conditional routing. The separate immutable routing-v1 benchmark used nine regimes, fixed horizon, exact open/closed values, and zero-VOA controls; it supported only one-step explicit-likelihood routing.
 
 ### `M-012` -- SER controller/runtime
 
@@ -693,7 +708,7 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Last reviewed:** `2026-08-17`
 - **Notes:** The semantic role is formalized, but the name and expansion remain provisional. MicroGym v1 implemented an experimental candidate, not a validated or production SER runtime; no broad mechanism claim was promoted.
 
-## Empirical findings (2)
+## Empirical findings (3)
 
 ### `E-001` -- Historical IDS archive provides scoped benchmark artifacts
 
@@ -724,6 +739,21 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Origin:** frozen MicroGym v1 experiment, 2026-08-17
 - **Last reviewed:** `2026-08-17`
 - **Notes:** Narrow synthetic finding only. The preregistered mechanical classifier said strong_enough_to_continue because it lacked a positive-adaptivity admission requirement; scientific interpretation is narrow. It does not promote H-001, H-016, semantic reasoning, scope, coupling, IDS transfer, software investigation, or GitLab research.
+
+### `E-003` -- MicroGym routing-v1 captures one-step explicit-model adaptivity
+
+- **Status:** `experimentally_supported`
+- **Statement:** On the frozen nine-regime, 1,152-episode MicroGym routing-v1 population, the unchanged public-model candidate branched at all 6 eligible conditional nodes, matched the exact closed-loop route at all 6, made 0 spurious branches across 3 zero-VOA controls, and achieved VOA-weighted Adaptivity Capture 1.0 under a fixed one-acquisition horizon with no STOP.
+- **Why it matters:** It cleanly demonstrates that the existing belief-conditioned action score can use a realized observation to recover exact one-step decision value unavailable to the best same-model open-loop plan when likelihood tables are supplied.
+- **Depends on:** `F-004`, `F-006`, `M-011`
+- **Related to:** `H-001`, `H-002`, `H-006`, `H-017`, `Q-009`
+- **Would support:** The population, exact open/closed calculations, fixed-horizon traces, branch audit, seed/access checks, and invariance tests reproduce from the frozen manifest.
+- **Would falsify:** A replay/hash failure, hidden-information leak, incorrect open-loop commitment, adaptive STOP path, oracle error, or failed label/order invariance invalidates the scoped finding.
+- **Implementation refs:** `src/ser/microgym/routing.py`, `src/ser/evaluation/routing.py`, `src/ser/evaluation/routing_analysis.py`, `tools/run_microgym_routing.py`, `tools/verify_microgym_routing.py`
+- **Evidence refs:** `experiments/microgym_routing_v1/PREREGISTRATION.md`, `experiments/microgym_routing_v1/population.json`, `experiments/microgym_routing_v1/oracle.jsonl`, `experiments/microgym_routing_v1/runs.jsonl`, `experiments/microgym_routing_v1/summary.json`, `experiments/microgym_routing_v1/validation.json`, `experiments/microgym_routing_v1/REPORT.md`, `experiments/microgym_routing_v1/INTERPRETATION.md`, `experiments/microgym_routing_v1/IMPLEMENTATION_NOTES.md`
+- **Origin:** frozen MicroGym routing-v1 experiment, 2026-08-17
+- **Last reviewed:** `2026-08-17`
+- **Notes:** Narrow synthetic finding only. Exact VOA ranged from 0 to 0.2025; candidate expected advantage averaged 0.140083 on positive regimes, and all policies spent the same raw resource vector. The one-step score is aligned with the one-step horizon. The finding does not promote H-001 or H-016 and does not establish semantic value estimation, multi-stage planning, IDS or GitLab transfer, or general SER value.
 
 ## Open questions (9)
 
@@ -857,7 +887,7 @@ Status vocabulary: `seed`, `working`, `accepted`, `experimentally_supported`, `r
 - **Would support:** Not yet specified.
 - **Would falsify:** Not yet specified.
 - **Implementation refs:** None recorded.
-- **Evidence refs:** `CHARTER.md`, `theory/CONTROL_PROBLEM.md`, `theory/DOMAIN_INSTANTIATIONS.md`, `experiments/microgym_v1/INTERPRETATION.md`
+- **Evidence refs:** `CHARTER.md`, `theory/CONTROL_PROBLEM.md`, `theory/DOMAIN_INSTANTIATIONS.md`, `experiments/microgym_v1/INTERPRETATION.md`, `experiments/microgym_routing_v1/PREREGISTRATION.md`, `experiments/microgym_routing_v1/INTERPRETATION.md`
 - **Origin:** design synthesis discussion, 2026-08-17
 - **Last reviewed:** `2026-08-17`
-- **Notes:** MicroGym v1 exposed a concrete admission-rule defect: the preregistered classifier returned strong_enough_to_continue without requiring observed adaptive behavior. The narrow finding was admitted without promoting general hypotheses; Phase 4 must require conditional routing or explicitly test only stopping.
+- **Notes:** MicroGym v1 exposed an admission-rule defect by permitting a positive label without observed adaptive behavior. Routing-v1 corrected this prospectively: its frozen classifier required positive oracle VOA, actual branching, oracle consistency, exact value over same-model open-loop, no STOP, zero-VOA restraint, and invariance checks. That supports E-003 only at benchmark scope; broader promotion still requires semantic, multi-stage, resource-accounted, and independently confirmed evidence.

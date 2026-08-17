@@ -31,15 +31,15 @@ The central empirical question is `H-001`: whether allocation organization contr
 
 ## 2. Current maturity / what has actually been built
 
-Project maturity is `phase_3_microgym_complete_narrow_finding`. The durable knowledge architecture exists: canonical idea data, generated readable/context views, an ADR ledger, a single roadmap cursor, and a lightweight coherence checker. Runtime built: **true**. Controllers: **11**. Environments: **6**. Model integrations: **0**.
+Project maturity is `phase_4_routing_complete_scoped_positive_finding`. The durable knowledge architecture exists: canonical idea data, generated readable/context views, an ADR ledger, a single roadmap cursor, and a lightweight coherence checker. Runtime built: **true**. Controllers: **13**. Environments: **9**. Model integrations: **0**.
 
-MicroGym v1 is complete and valid, but its admitted finding is narrow: the myopic public-model candidate lowered an experiment-specific combined objective through lower spending and stopping while worsening decision loss and exhibiting no observation-conditioned routing. No general SER hypothesis was promoted.
+MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. The separate routing-v1 benchmark then showed that, under one fixed equal-cost acquisition with clean public likelihoods, the unchanged candidate branched at all 6 eligible nodes, matched the closed-loop oracle, captured all exact one-step VOA, and made no spurious branches in 3 zero-VOA controls. No general SER hypothesis was promoted; semantic action-value estimation remains untested.
 
 Legacy inventory: **31** component groups classified at archive commit `38b661324725c094ffcc820371a836573f4aadc5`: 0 reuse unchanged, 11 generalize, 14 empirical evidence only, 4 inspiration only, and 2 discard. No component is authorized for unchanged reuse.
 
 Phase 1 found no legacy code suitable for unchanged reuse. Trace/provenance envelopes, completeness and access-policy checks, hash manifests, evaluator separation, paired controls, blinding, replay, and failed-run preservation survive only as patterns to rebuild behind SER-owned contracts. IDS data and labels are deferred environment/evaluator assets; prompts, rankers, comparators, product neighborhoods, domain schemas, and normalizers remain excluded prior solution logic. No generic Scope, Interval, epistemic-memory, flag, signal, or SER coupling-operator implementation was found in the current archive or reachable history.
 
-Phase 2 formalization: **22** semantic contracts, **12** required invariants, and **4** domain pressure tests. Phase 2 separates latent world, released observation history, controller epistemic state, policy-neutral legal actions, raw vector resources, first-class stopping, and evaluator-owned outcomes. MicroGym v1 implemented these semantics without a contract correction, but one synthetic implementation does not validate their generality. Observation and optional Hypothesis remain distinct; Scope is optional; Signal and all nine coupling mechanisms remain deferred.
+Phase 2 formalization: **22** semantic contracts, **12** required invariants, and **4** domain pressure tests. Phase 2 separates latent world, released observation history, controller epistemic state, policy-neutral legal actions, raw vector resources, first-class stopping, and evaluator-owned outcomes. MicroGym v1 and routing-v1 implemented these semantics without a contract correction, but synthetic implementations do not validate their generality. Observation and optional Hypothesis remain distinct; Scope is optional; Signal and all nine coupling mechanisms remain deferred.
 
 Do not infer runtime progress from the conceptual inventory. Mechanism entries preserve ideas; they are not code.
 
@@ -58,6 +58,7 @@ Do not infer runtime progress from the conceptual inventory. Mechanism entries p
 - `ADR-0011` **First-class STOP and distinct termination causes**: `STOP` is a first-class controller action with a domain submission or abstention. Controller stop, environment termination, and runner/evaluator truncation remain distinct trace events and outcome dimensions.
 - `ADR-0012` **Minimal epistemic ontology and explicit deferral**: Observations are first-class released information; hypotheses are an optional controller representation with no required common semantic supertype. A universal `EpistemicUnit` is rejected from the minimal core. Scope is an optional typed capability with domain-owned semantics. Signal, graph state, coupling operators, learned routing, confidence calculus, and universal information-gain objectives are deferred.
 - `ADR-0013` **Evidence-directed environment selection and software research trunk**: GitLab authorization investigation is the primary practical research trunk. MicroGym is a control-mechanism validation instrument. IDS may be used only as a small semantic bridge if a positive MicroGym result leaves survival under messy semantic evidence unresolved. Controlled software investigation, including chosen tests or fuzzing, is preferred when it can directly and cleanly test the remaining question while advancing authorization research. Remote sensing and other substrates remain dormant falsification candidates, not scheduled phases. A new environment requires a concrete statement of the unresolved architectural claim it can distinguish.
+- `ADR-0014` **Route from synthetic control to controlled authorization evidence**: Complete Phase 4 with a narrowly scoped routing finding and make a minimal controlled authorization-oriented software environment the next validation phase. Its unresolved question is whether a controller can estimate decision-relevant epistemic-action values from imperfect software and authorization evidence when clean likelihood tables are not supplied. Do not begin with real GitLab integration. Do not add an IDS bridge unless a later explicit comparison shows that it is materially cleaner or cheaper for isolating that same question.
 
 ## 4. Current high-value primitives
 
@@ -75,6 +76,7 @@ These are active candidate theoretical primitives. `P-002` is listed separately 
 - `H-001` **Allocation organization contributes to inference-time intelligence** (`working`): Inference-time performance may depend partly on how computation and evidence acquisition are organized, not only on their total amount.
 - `H-006` **Epistemic exploration-exploitation tradeoff** (`working`): Choosing among deepening a hypothesis, gathering more evidence, generating alternatives, and abandoning a branch may be an exploration-exploitation problem.
 - `H-009` **Active observation can manufacture discriminating evidence** (`working`): When a system can choose an action or input before observing the world, active experiments may yield more decision-relevant evidence than passive observation at comparable cost.
+- `H-017` **Decision-value-conditioned epistemic routing** (`working`): Newly released information should change epistemic resource allocation when it changes the expected value landscape of available actions, rather than merely because posterior belief changed.
 
 `working` means specified enough for refinement or test design, not experimentally supported. `H-016` is the eventual resource-normalized advantage claim but remains a `seed`.
 
@@ -122,33 +124,35 @@ These questions are part of the durable conceptual state. Future work should upd
 
 ## 8. Current experimental evidence
 
-SER evidence records: **1**.
+Empirical-finding records: **3**.
 - `E-001` **Historical IDS archive provides scoped benchmark artifacts** (`experimentally_supported`): The read-only IDS archive documents a completed, deterministic benchmark separating closed-book vulnerability-shape reconstruction from closed-corpus exact-CVE attribution over frozen artifacts, with explicit negative results and claim limits.
   Limitation: Evidence is historical and IDS-scoped. Phase 1 confirmed reproducible assets and important negative results, but also product/lexical confounds, population corrections, invalid or unrun evaluations, and no holdout. It is not experimental support for any SER hypothesis.
 - `E-002` **MicroGym v1 stopping efficiency without conditional routing** (`experimentally_supported`): On the frozen 728-episode MicroGym v1 population, the public-model myopic candidate lowered mean experiment-specific combined objective to 0.303159 versus 0.465220-0.481049 for five simple controls and 0.311429 for a matched model-aware open-loop control, but it had worse decision loss than every simple control, gained only 0.008269 against open-loop through lower expenditure, and exhibited zero observation-conditioned branches across 20 eligible counterfactual decision nodes.
   Limitation: Narrow synthetic finding only. The preregistered mechanical classifier said strong_enough_to_continue because it lacked a positive-adaptivity admission requirement; scientific interpretation is narrow. It does not promote H-001, H-016, semantic reasoning, scope, coupling, IDS transfer, software investigation, or GitLab research.
-The IDS finding is historical environment evidence only. The MicroGym finding is narrow stopping/cost evidence and explicitly does not establish observation-conditioned routing. Neither supports scope-aware gating, sparse propagation, compression, learned policy, real-domain transfer, or substrate independence.
+- `E-003` **MicroGym routing-v1 captures one-step explicit-model adaptivity** (`experimentally_supported`): On the frozen nine-regime, 1,152-episode MicroGym routing-v1 population, the unchanged public-model candidate branched at all 6 eligible conditional nodes, matched the exact closed-loop route at all 6, made 0 spurious branches across 3 zero-VOA controls, and achieved VOA-weighted Adaptivity Capture 1.0 under a fixed one-acquisition horizon with no STOP.
+  Limitation: Narrow synthetic finding only. Exact VOA ranged from 0 to 0.2025; candidate expected advantage averaged 0.140083 on positive regimes, and all policies spent the same raw resource vector. The one-step score is aligned with the one-step horizon. The finding does not promote H-001 or H-016 and does not establish semantic value estimation, multi-stage planning, IDS or GitLab transfer, or general SER value.
+The IDS finding is historical environment evidence only. MicroGym v1 supports a narrow stopping/cost finding without routing; routing-v1 supports only one-step observation-conditioned routing with supplied likelihoods. Neither synthetic result establishes semantic action-value estimation, scope-aware gating, sparse propagation, compression, learned policy, real-domain transfer, or substrate independence.
 
 ## 9. Current roadmap cursor
 
-Active: **Phase 4 -- Adaptive-routing falsification follow-up**. Status: `active`.
+Active: **Phase 5 -- Controlled authorization action-value estimation**. Status: `active`.
 
-Goal: determine whether a preregistered public-model policy can exhibit and benefit from genuinely observation-conditioned routing once STOP calibration no longer suppresses the branch choice.
+Goal: determine whether a controller can estimate decision-relevant epistemic-action values from imperfect software and authorization evidence when clean likelihood tables are not supplied. - selection rule: use the smallest controlled authorization-oriented software environment that separates action-value estimation from generic software task skill while advancing the GitLab authorization research trunk.
 
-Exit: a frozen follow-up either demonstrates a paired advantage attributable to realized-observation routing, or records a clean null/negative result and narrows or rejects that mechanism before any semantic/software expansion.
+Exit: a frozen matched-control experiment determines whether useful action values can be estimated without supplied likelihood tables, or records the smallest specific estimation/representation failure before any move to real GitLab research.
 
 ## 10. Immediate next task
 
-Design the smallest frozen synthetic follow-up whose admission rule requires actual observation-conditioned branching and whose same-model open-loop control isolates routing from stopping, without altering MicroGym v1 or introducing a new domain.
+Design the smallest controlled authorization-oriented software environment that tests whether useful epistemic-action values can be estimated from imperfect evidence without supplied likelihood tables, while separating allocation quality from generic software task skill.
 
-The IDS archive remains read-only. Active Phase 4 authorizes only a synthetic adaptive-routing falsification follow-up: no IDS code/data copy, GitLab integration, adapter, production runtime, model integration, graph runtime, fuzzing, or coupling-law implementation.
+The IDS archive remains read-only. Active Phase 5 authorizes only the smallest controlled authorization-oriented software experiment needed to test action-value estimation from imperfect evidence: no IDS code/data copy, real GitLab integration, adapter, production runtime, model integration, graph runtime, production fuzzing, or coupling-law implementation.
 
 ## 11. Important non-goals
 
-- No production SER runtime; the implemented code is a minimal zero-LLM MicroGym validation instrument and trivial experimental controllers.
+- No production SER runtime; the implemented code is a minimal zero-LLM MicroGym validation instrument and small exact/reference controllers.
 - No LLM/model integration, TGNN, graph neural network, learned policy, or training infrastructure.
-- No coupling-law implementation, universal epistemic graph, fuzzer, remote-sensing integration, or IDS adapter.
-- No IDS code or data import and no claim that IDS results validate SER.
+- No coupling-law implementation, universal epistemic graph, production fuzzer, remote-sensing integration, or IDS adapter.
+- No IDS code or data import, real GitLab integration, or claim that IDS/GitLab validates SER.
 
 Also avoid scientific overclaiming: a cold location is not acceptance, implementation is not evidence, a failed mechanism does not erase its conceptual history, and additional model calls are not architectural success.
 

@@ -1,0 +1,72 @@
+{
+  "benchmark": "microgym-routing-v1",
+  "checks": {
+    "action-order coverage": {
+      "detail": "both presentation orders occur in every frozen regime",
+      "status": "pass"
+    },
+    "action-order permutation": {
+      "detail": "value and branching signatures invariant in 9/9 regimes",
+      "status": "pass"
+    },
+    "closed-loop release discipline": {
+      "detail": "candidate action changes, when present, are reconstructed from the released cue only",
+      "status": "pass"
+    },
+    "cost integrity": {
+      "detail": "every policy receives and spends the same one-action raw resource vector",
+      "status": "pass"
+    },
+    "deterministic replay": {
+      "detail": "exact replay reproduced 3456/3456 policy and oracle records",
+      "status": "pass"
+    },
+    "evaluator firewall and future-result blindness": {
+      "detail": "public run projections contain no truth, environment seed, oracle hint, or future result",
+      "status": "pass"
+    },
+    "fixed horizon without STOP": {
+      "detail": "all 3456 runs contain exactly one acquisition and no STOP",
+      "status": "pass"
+    },
+    "hidden-label permutation": {
+      "detail": "permuted hidden-label signatures invariant in 9/9 regimes",
+      "status": "pass"
+    },
+    "identifier and action-label permutation": {
+      "detail": "renamed action/outcome signatures invariant in 9/9 regimes",
+      "status": "pass"
+    },
+    "matched information and opportunity": {
+      "detail": "open-loop and candidate share the public model, costs, budget, identifiers, and horizon",
+      "status": "pass"
+    },
+    "observation provenance": {
+      "detail": "every cue and acquired observation carries release provenance",
+      "status": "pass"
+    },
+    "open-loop commitment invariance": {
+      "detail": "the exact open-loop acquisition is unchanged across all realized cues",
+      "status": "pass"
+    },
+    "oracle VOA bands": {
+      "detail": "every declared zero/low/moderate/high band matches exact open-minus-closed loss",
+      "status": "pass"
+    },
+    "population structure": {
+      "detail": "9 regimes, 1152 episodes, VOA bands ['high', 'high', 'zero', 'zero', 'zero', 'low', 'moderate', 'high', 'high']",
+      "status": "pass"
+    },
+    "record hashes": {
+      "detail": "verified 3465 content-addressed records",
+      "status": "pass"
+    },
+    "seed isolation": {
+      "detail": "policy seeds reproduce from public identity and are independent of restricted observation seeds",
+      "status": "pass"
+    }
+  },
+  "population_hash": "0dc7d82cfcb8ffb1ce186ef90aa040378e62d920b4f9cf4b2af7bf4ba82f3aea",
+  "schema_version": 1,
+  "status": "pass"
+}

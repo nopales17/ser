@@ -462,13 +462,13 @@ def render_context_packet(
         lines.append("None. The absence of rejected entries reflects project age, not confirmation of the seeded ideas.")
 
     lines.extend(["", "## 8. Current experimental evidence", ""])
-    lines.append(f"SER evidence records: **{len(current['evidence']['ser_experiments'])}**.")
+    lines.append(f"Empirical-finding records: **{len(findings)}**.")
     for finding in findings:
         lines.append(context_bullet(finding))
         if finding["notes"]:
             lines.append(f"  Limitation: {finding['notes']}")
     lines.append(
-        "The IDS finding is historical environment evidence only. The MicroGym finding is narrow stopping/cost evidence and explicitly does not establish observation-conditioned routing. Neither supports scope-aware gating, sparse propagation, compression, learned policy, real-domain transfer, or substrate independence."
+        "The IDS finding is historical environment evidence only. MicroGym v1 supports a narrow stopping/cost finding without routing; routing-v1 supports only one-step observation-conditioned routing with supplied likelihoods. Neither synthetic result establishes semantic action-value estimation, scope-aware gating, sparse propagation, compression, learned policy, real-domain transfer, or substrate independence."
     )
 
     lines.extend(
@@ -486,7 +486,7 @@ def render_context_packet(
             "",
             current["roadmap"]["immediate_next_task"],
             "",
-            "The IDS archive remains read-only. Active Phase 4 authorizes only a synthetic adaptive-routing falsification follow-up: no IDS code/data copy, GitLab integration, adapter, production runtime, model integration, graph runtime, fuzzing, or coupling-law implementation.",
+            "The IDS archive remains read-only. Active Phase 5 authorizes only the smallest controlled authorization-oriented software experiment needed to test action-value estimation from imperfect evidence: no IDS code/data copy, real GitLab integration, adapter, production runtime, model integration, graph runtime, production fuzzing, or coupling-law implementation.",
             "",
             "## 11. Important non-goals",
             "",

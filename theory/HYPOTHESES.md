@@ -10,6 +10,8 @@ The canonical statements, maturity, relations, and falsifiers live in
 - `H-002` proposes, without fixing, a policy-level decision-relevant
   information utility. It is not part of the environment contract.
 - `H-016` is the eventual resource-normalized advantage claim.
+- `H-017` asks whether newly released information should change allocation only
+  when it changes the expected value landscape of available epistemic actions.
 - `F-004` is the binding methodological constraint: matched simpler baselines
   can falsify architectural value.
 
@@ -48,10 +50,12 @@ The canonical statements, maturity, relations, and falsifiers live in
 - `H-014` SERT and `H-015` a temporal graph policy/TGNN are late-stage seeds.
   They must not determine the first SER implementation.
 
-MicroGym v1 admitted the narrow finding `E-002`, but no general SER hypothesis
-was promoted. In particular, `H-001` and `H-016` remain unsupported because the
-candidate showed no observation-conditioned routing and its scalar-objective
-advantage traded worse decision loss for lower cost.
+MicroGym v1 admitted the narrow stopping finding `E-002`. Routing-v1 separately
+admitted `E-003`: in a one-step explicit-likelihood setting, the unchanged
+candidate branched only when oracle VOA was positive and captured the exact
+closed-loop advantage. This is scoped evidence relevant to `H-017`, not
+promotion of `H-001` or `H-016`; multi-stage, semantic, resource-normalized, and
+real-domain claims remain unsupported.
 
 The four Phase 2 domain instantiations establish representational coverage only.
 They do not validate allocation value, scope-aware routing, active investigation,

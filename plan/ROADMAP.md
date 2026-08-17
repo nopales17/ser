@@ -63,7 +63,7 @@ Allowed statuses: `planned`, `active`, `done`.
 
 ## Phase 4 -- Adaptive-routing falsification follow-up
 
-- status: active
+- status: done
 - goal: determine whether a preregistered public-model policy can exhibit and
   benefit from genuinely observation-conditioned routing once STOP calibration
   no longer suppresses the branch choice.
@@ -74,17 +74,33 @@ Allowed statuses: `planned`, `active`, `done`.
 - exit: a frozen follow-up either demonstrates a paired advantage attributable
   to realized-observation routing, or records a clean null/negative result and
   narrows or rejects that mechanism before any semantic/software expansion.
+- result: MicroGym routing-v1 froze nine regimes and 1,152 episodes under a
+  one-acquisition horizon with no adaptive STOP. Six regimes had positive exact
+  value of adaptivity and three were zero-VOA controls. The unchanged myopic
+  candidate branched at 6/6 eligible nodes, matched the exact closed-loop route
+  at 6/6, captured all oracle-available one-step adaptivity, and made 0/3
+  spurious zero-VOA branches. This supports only a narrow explicit-likelihood,
+  one-step routing claim; it does not establish semantic action-value estimation
+  or general SER value.
 
-## Phase 5 -- Evidence-directed semantic or controlled-software bridge
+## Phase 5 -- Controlled authorization action-value estimation
 
-- status: planned
-- selection rule: after Phase 4 only, use a small IDS bridge if messy semantic
-  evidence is the named unresolved question; otherwise prefer a minimal
-  authorization-oriented controlled-software environment when it answers the
-  question more directly.
-- boundary: IDS remains an optional validation instrument, not the trunk. A new
-  environment requires one concrete unresolved claim.
-- exit: intentionally coarse until Phase 4 evidence exists.
+- status: active
+- goal: determine whether a controller can estimate decision-relevant
+  epistemic-action values from imperfect software and authorization evidence
+  when clean likelihood tables are not supplied.
+- selection rule: use the smallest controlled authorization-oriented software
+  environment that separates action-value estimation from generic software
+  task skill while advancing the GitLab authorization research trunk.
+- boundary: do not begin with real GitLab integration, a production fuzzer, or
+  broad vulnerability discovery. IDS remains read-only and is used only after a
+  new explicit decision showing it is a materially cleaner bridge for this
+  exact question. Do not add graphs, coupling laws, learned policies, or
+  cross-substrate environments.
+- exit: a frozen matched-control experiment determines whether useful action
+  values can be estimated without supplied likelihood tables, or records the
+  smallest specific estimation/representation failure before any move to real
+  GitLab research.
 
 ## Phase 6 -- Controlled active software and GitLab authorization research
 

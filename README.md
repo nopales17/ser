@@ -14,11 +14,13 @@ controller:
 `state -> choose epistemic action -> obtain result -> update state -> choose again`
 
 The durable knowledge architecture, accepted language-neutral control problem,
-and minimal zero-LLM MicroGym v1 validation runtime now exist. MicroGym produced
-a narrow result: cost-sensitive stopping lowered its experiment-specific
-combined objective, but the candidate showed no observation-conditioned routing.
-No production SER controller, learned policy, model integration, or real-domain
-evidence exists.
+and minimal zero-LLM MicroGym validation runtime now exist. MicroGym v1 produced
+a narrow stopping result without conditional routing. The separate frozen
+routing-v1 benchmark then showed that the unchanged myopic candidate can use a
+released cue to choose the exact one-step closed-loop acquisition when clean
+likelihood tables are supplied. No production SER controller, learned policy,
+model integration, semantic action-value estimation, or real-domain evidence
+exists.
 
 ## Start here
 
@@ -52,7 +54,8 @@ The architecture separates where knowledge belongs from how mature it is:
 - **Reference:** `reference/` owns vocabulary and historical context, not SER
   claims.
 - **Evidence:** `experiments/` indexes frozen protocols, traces, validation,
-  results, limitations, and admitted findings. MicroGym v1 is the first run.
+  results, limitations, and admitted findings. MicroGym v1 and routing-v1 are
+  distinct immutable experiments.
 
 Concept maturity is recorded independently as `seed`, `working`, `accepted`,
 `experimentally_supported`, `rejected`, or `deprecated`. Neither placement in a
@@ -73,10 +76,11 @@ generated files directly.
 
 ## Current non-goals
 
-Active Phase 4 permits only the smallest synthetic adaptive-routing falsification
-follow-up while preserving MicroGym v1. It does not authorize LLM agents, model
-integrations, graph policies, coupling operators, fuzzers, IDS adapters, GitLab
-integration, remote-sensing integrations, or training infrastructure. GitLab
-authorization is the practical research trunk, not current evidence; the
-completed IDS-to-CVE project remains read-only historical input and only a
-possible future semantic bridge.
+Active Phase 5 permits only the smallest controlled authorization-oriented
+software experiment needed to test whether useful epistemic-action values can
+be estimated without supplied likelihood tables. It does not authorize real
+GitLab integration, broad vulnerability discovery, LLM agents, graph policies,
+coupling operators, production fuzzers, IDS adapters, remote-sensing
+integrations, or training infrastructure. GitLab authorization is the practical
+research trunk, not current evidence; the completed IDS-to-CVE project remains
+read-only historical input and only a conditional semantic bridge.

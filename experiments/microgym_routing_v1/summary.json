@@ -1,0 +1,507 @@
+{
+  "benchmark": "microgym-routing-v1",
+  "branch_audit": {
+    "beneficial_branch_nodes": 6,
+    "beneficial_branch_rate": 1.0,
+    "candidate_branch_nodes": 6,
+    "candidate_branch_rate": 1.0,
+    "eligible_nodes": 6,
+    "oracle_consistent_branch_rate": 1.0,
+    "oracle_consistent_nodes": 6,
+    "zero_voa_nodes": 3,
+    "zero_voa_spurious_branch_nodes": 0,
+    "zero_voa_spurious_branch_rate": 0.0
+  },
+  "by_regime": {
+    "ra-r0": {
+      "adaptivity_capture": 1.0,
+      "candidate_actions": {
+        "v0": "a0",
+        "v1": "a1"
+      },
+      "candidate_expected_loss": 0.14500000000000002,
+      "candidate_vs_open_population": {
+        "candidate_losses": 1,
+        "candidate_wins": 25,
+        "mean_candidate_minus_open_loop": -0.1875,
+        "paired_episodes": 128,
+        "ties": 102
+      },
+      "closed_loop_actions": {
+        "v0": "a0",
+        "v1": "a1"
+      },
+      "closed_loop_expected_loss": 0.14500000000000002,
+      "declared_voa_band": "high",
+      "episodes": 128,
+      "family": "RA",
+      "open_loop_expected_loss": 0.34750000000000003,
+      "population_decision_loss": {
+        "adaptive_belief": 0.15625,
+        "exact_closed_loop_oracle": 0.15625,
+        "exact_open_loop": 0.34375
+      },
+      "value_of_adaptivity": 0.2025
+    },
+    "ra-r1": {
+      "adaptivity_capture": 1.0,
+      "candidate_actions": {
+        "v0": "a0",
+        "v1": "a1"
+      },
+      "candidate_expected_loss": 0.265,
+      "candidate_vs_open_population": {
+        "candidate_losses": 0,
+        "candidate_wins": 23,
+        "mean_candidate_minus_open_loop": -0.1796875,
+        "paired_episodes": 128,
+        "ties": 105
+      },
+      "closed_loop_actions": {
+        "v0": "a0",
+        "v1": "a1"
+      },
+      "closed_loop_expected_loss": 0.265,
+      "declared_voa_band": "high",
+      "episodes": 128,
+      "family": "RA",
+      "open_loop_expected_loss": 0.445,
+      "population_decision_loss": {
+        "adaptive_belief": 0.2734375,
+        "exact_closed_loop_oracle": 0.2734375,
+        "exact_open_loop": 0.453125
+      },
+      "value_of_adaptivity": 0.18
+    },
+    "rb-r0": {
+      "adaptivity_capture": null,
+      "candidate_actions": {
+        "v0": "a1",
+        "v1": "a1"
+      },
+      "candidate_expected_loss": 0.22000000000000003,
+      "candidate_vs_open_population": {
+        "candidate_losses": 0,
+        "candidate_wins": 0,
+        "mean_candidate_minus_open_loop": 0.0,
+        "paired_episodes": 128,
+        "ties": 128
+      },
+      "closed_loop_actions": {
+        "v0": "a1",
+        "v1": "a1"
+      },
+      "closed_loop_expected_loss": 0.22000000000000003,
+      "declared_voa_band": "zero",
+      "episodes": 128,
+      "family": "RB",
+      "open_loop_expected_loss": 0.22000000000000003,
+      "population_decision_loss": {
+        "adaptive_belief": 0.25,
+        "exact_closed_loop_oracle": 0.25,
+        "exact_open_loop": 0.25
+      },
+      "value_of_adaptivity": 0.0
+    },
+    "rb-r1": {
+      "adaptivity_capture": null,
+      "candidate_actions": {
+        "v0": "a0",
+        "v1": "a0"
+      },
+      "candidate_expected_loss": 0.1800000000000001,
+      "candidate_vs_open_population": {
+        "candidate_losses": 0,
+        "candidate_wins": 0,
+        "mean_candidate_minus_open_loop": 0.0,
+        "paired_episodes": 128,
+        "ties": 128
+      },
+      "closed_loop_actions": {
+        "v0": "a0",
+        "v1": "a0"
+      },
+      "closed_loop_expected_loss": 0.1800000000000001,
+      "declared_voa_band": "zero",
+      "episodes": 128,
+      "family": "RB",
+      "open_loop_expected_loss": 0.1800000000000001,
+      "population_decision_loss": {
+        "adaptive_belief": 0.203125,
+        "exact_closed_loop_oracle": 0.203125,
+        "exact_open_loop": 0.203125
+      },
+      "value_of_adaptivity": 0.0
+    },
+    "rc-r0": {
+      "adaptivity_capture": null,
+      "candidate_actions": {
+        "v0": "a1",
+        "v1": "a1"
+      },
+      "candidate_expected_loss": 0.55,
+      "candidate_vs_open_population": {
+        "candidate_losses": 0,
+        "candidate_wins": 0,
+        "mean_candidate_minus_open_loop": 0.0,
+        "paired_episodes": 128,
+        "ties": 128
+      },
+      "closed_loop_actions": {
+        "v0": "a1",
+        "v1": "a1"
+      },
+      "closed_loop_expected_loss": 0.55,
+      "declared_voa_band": "zero",
+      "episodes": 128,
+      "family": "RC",
+      "open_loop_expected_loss": 0.55,
+      "population_decision_loss": {
+        "adaptive_belief": 0.53125,
+        "exact_closed_loop_oracle": 0.53125,
+        "exact_open_loop": 0.53125
+      },
+      "value_of_adaptivity": 0.0
+    },
+    "rc-r1": {
+      "adaptivity_capture": 1.0,
+      "candidate_actions": {
+        "v0": "a0",
+        "v1": "a1"
+      },
+      "candidate_expected_loss": 0.532,
+      "candidate_vs_open_population": {
+        "candidate_losses": 20,
+        "candidate_wins": 33,
+        "mean_candidate_minus_open_loop": -0.1015625,
+        "paired_episodes": 128,
+        "ties": 75
+      },
+      "closed_loop_actions": {
+        "v0": "a0",
+        "v1": "a1"
+      },
+      "closed_loop_expected_loss": 0.532,
+      "declared_voa_band": "low",
+      "episodes": 128,
+      "family": "RC",
+      "open_loop_expected_loss": 0.55,
+      "population_decision_loss": {
+        "adaptive_belief": 0.4453125,
+        "exact_closed_loop_oracle": 0.4453125,
+        "exact_open_loop": 0.546875
+      },
+      "value_of_adaptivity": 0.018000000000000016
+    },
+    "rc-r2": {
+      "adaptivity_capture": 1.0,
+      "candidate_actions": {
+        "v0": "a0",
+        "v1": "a1"
+      },
+      "candidate_expected_loss": 0.45999999999999996,
+      "candidate_vs_open_population": {
+        "candidate_losses": 20,
+        "candidate_wins": 31,
+        "mean_candidate_minus_open_loop": -0.0859375,
+        "paired_episodes": 128,
+        "ties": 77
+      },
+      "closed_loop_actions": {
+        "v0": "a0",
+        "v1": "a1"
+      },
+      "closed_loop_expected_loss": 0.45999999999999996,
+      "declared_voa_band": "moderate",
+      "episodes": 128,
+      "family": "RC",
+      "open_loop_expected_loss": 0.5499999999999999,
+      "population_decision_loss": {
+        "adaptive_belief": 0.484375,
+        "exact_closed_loop_oracle": 0.484375,
+        "exact_open_loop": 0.5703125
+      },
+      "value_of_adaptivity": 0.08999999999999997
+    },
+    "rc-r3": {
+      "adaptivity_capture": 1.0,
+      "candidate_actions": {
+        "v0": "a0",
+        "v1": "a1"
+      },
+      "candidate_expected_loss": 0.2799999999999999,
+      "candidate_vs_open_population": {
+        "candidate_losses": 1,
+        "candidate_wins": 27,
+        "mean_candidate_minus_open_loop": -0.203125,
+        "paired_episodes": 128,
+        "ties": 100
+      },
+      "closed_loop_actions": {
+        "v0": "a0",
+        "v1": "a1"
+      },
+      "closed_loop_expected_loss": 0.2799999999999999,
+      "declared_voa_band": "high",
+      "episodes": 128,
+      "family": "RC",
+      "open_loop_expected_loss": 0.43999999999999995,
+      "population_decision_loss": {
+        "adaptive_belief": 0.203125,
+        "exact_closed_loop_oracle": 0.203125,
+        "exact_open_loop": 0.40625
+      },
+      "value_of_adaptivity": 0.16000000000000003
+    },
+    "rc-r4": {
+      "adaptivity_capture": 1.0,
+      "candidate_actions": {
+        "v0": "a0",
+        "v1": "a1"
+      },
+      "candidate_expected_loss": 0.14500000000000002,
+      "candidate_vs_open_population": {
+        "candidate_losses": 0,
+        "candidate_wins": 29,
+        "mean_candidate_minus_open_loop": -0.2265625,
+        "paired_episodes": 128,
+        "ties": 99
+      },
+      "closed_loop_actions": {
+        "v0": "a0",
+        "v1": "a1"
+      },
+      "closed_loop_expected_loss": 0.14500000000000002,
+      "declared_voa_band": "high",
+      "episodes": 128,
+      "family": "RC",
+      "open_loop_expected_loss": 0.335,
+      "population_decision_loss": {
+        "adaptive_belief": 0.078125,
+        "exact_closed_loop_oracle": 0.078125,
+        "exact_open_loop": 0.3046875
+      },
+      "value_of_adaptivity": 0.19
+    }
+  },
+  "by_voa_band": {
+    "high": {
+      "episodes": 512,
+      "mean_adaptivity_capture": 1.0,
+      "mean_candidate_expected_loss": 0.20875,
+      "mean_closed_loop_expected_loss": 0.20875,
+      "mean_open_loop_expected_loss": 0.391875,
+      "mean_voa": 0.183125,
+      "population_candidate_vs_open": {
+        "candidate_losses": 2,
+        "candidate_wins": 104,
+        "mean_candidate_minus_open_loop": -0.19921875,
+        "paired_episodes": 512,
+        "ties": 406
+      },
+      "regimes": 4
+    },
+    "low": {
+      "episodes": 128,
+      "mean_adaptivity_capture": 1.0,
+      "mean_candidate_expected_loss": 0.532,
+      "mean_closed_loop_expected_loss": 0.532,
+      "mean_open_loop_expected_loss": 0.55,
+      "mean_voa": 0.018000000000000016,
+      "population_candidate_vs_open": {
+        "candidate_losses": 20,
+        "candidate_wins": 33,
+        "mean_candidate_minus_open_loop": -0.1015625,
+        "paired_episodes": 128,
+        "ties": 75
+      },
+      "regimes": 1
+    },
+    "moderate": {
+      "episodes": 128,
+      "mean_adaptivity_capture": 1.0,
+      "mean_candidate_expected_loss": 0.45999999999999996,
+      "mean_closed_loop_expected_loss": 0.45999999999999996,
+      "mean_open_loop_expected_loss": 0.5499999999999999,
+      "mean_voa": 0.08999999999999997,
+      "population_candidate_vs_open": {
+        "candidate_losses": 20,
+        "candidate_wins": 31,
+        "mean_candidate_minus_open_loop": -0.0859375,
+        "paired_episodes": 128,
+        "ties": 77
+      },
+      "regimes": 1
+    },
+    "zero": {
+      "episodes": 384,
+      "mean_adaptivity_capture": null,
+      "mean_candidate_expected_loss": 0.3166666666666667,
+      "mean_closed_loop_expected_loss": 0.3166666666666667,
+      "mean_open_loop_expected_loss": 0.3166666666666667,
+      "mean_voa": 0.0,
+      "population_candidate_vs_open": {
+        "candidate_losses": 0,
+        "candidate_wins": 0,
+        "mean_candidate_minus_open_loop": 0.0,
+        "paired_episodes": 384,
+        "ties": 384
+      },
+      "regimes": 3
+    }
+  },
+  "classifier": {
+    "classification": "routing_supported",
+    "observed": {
+      "candidate_beats_open_on_every_positive_regime": true,
+      "fixed_horizon_no_stop_validation": true,
+      "mean_positive_regime_advantage": 0.14008333333333334,
+      "positive_voa_families": 2,
+      "positive_voa_regimes": 6,
+      "voa_weighted_adaptivity_capture": 1.0,
+      "zero_voa_controls": 3
+    },
+    "thresholds": {
+      "maximum_zero_voa_spurious_branch_rate": 0.05,
+      "minimum_candidate_branch_rate": 0.8,
+      "minimum_mean_positive_regime_advantage": 0.005,
+      "minimum_oracle_consistent_branch_rate": 0.9,
+      "minimum_positive_voa_families": 2,
+      "minimum_positive_voa_regimes": 4,
+      "minimum_voa_weighted_adaptivity_capture": 0.75,
+      "minimum_zero_voa_controls": 2
+    }
+  },
+  "failure_taxonomy": {
+    "ra-r0": {
+      "candidate_better_than_open_episodes": 25,
+      "candidate_equal_to_open_episodes": 102,
+      "candidate_worse_than_open_episodes": 1,
+      "noise_wrong_reroute_diagnostic": 1,
+      "structural_flags": []
+    },
+    "ra-r1": {
+      "candidate_better_than_open_episodes": 23,
+      "candidate_equal_to_open_episodes": 105,
+      "candidate_worse_than_open_episodes": 0,
+      "noise_wrong_reroute_diagnostic": 0,
+      "structural_flags": []
+    },
+    "rb-r0": {
+      "candidate_better_than_open_episodes": 0,
+      "candidate_equal_to_open_episodes": 128,
+      "candidate_worse_than_open_episodes": 0,
+      "noise_wrong_reroute_diagnostic": 0,
+      "structural_flags": [
+        "belief_changed_without_action_ranking_change"
+      ]
+    },
+    "rb-r1": {
+      "candidate_better_than_open_episodes": 0,
+      "candidate_equal_to_open_episodes": 128,
+      "candidate_worse_than_open_episodes": 0,
+      "noise_wrong_reroute_diagnostic": 0,
+      "structural_flags": [
+        "belief_changed_without_action_ranking_change"
+      ]
+    },
+    "rc-r0": {
+      "candidate_better_than_open_episodes": 0,
+      "candidate_equal_to_open_episodes": 128,
+      "candidate_worse_than_open_episodes": 0,
+      "noise_wrong_reroute_diagnostic": 0,
+      "structural_flags": []
+    },
+    "rc-r1": {
+      "candidate_better_than_open_episodes": 33,
+      "candidate_equal_to_open_episodes": 75,
+      "candidate_worse_than_open_episodes": 20,
+      "noise_wrong_reroute_diagnostic": 20,
+      "structural_flags": []
+    },
+    "rc-r2": {
+      "candidate_better_than_open_episodes": 31,
+      "candidate_equal_to_open_episodes": 77,
+      "candidate_worse_than_open_episodes": 20,
+      "noise_wrong_reroute_diagnostic": 20,
+      "structural_flags": []
+    },
+    "rc-r3": {
+      "candidate_better_than_open_episodes": 27,
+      "candidate_equal_to_open_episodes": 100,
+      "candidate_worse_than_open_episodes": 1,
+      "noise_wrong_reroute_diagnostic": 1,
+      "structural_flags": []
+    },
+    "rc-r4": {
+      "candidate_better_than_open_episodes": 29,
+      "candidate_equal_to_open_episodes": 99,
+      "candidate_worse_than_open_episodes": 0,
+      "noise_wrong_reroute_diagnostic": 0,
+      "structural_flags": []
+    }
+  },
+  "oracle_voa": {
+    "maximum": 0.2025,
+    "mean": 0.0933888888888889,
+    "minimum": 0.0,
+    "positive_regimes": 6,
+    "zero_regimes": 3
+  },
+  "overall": {
+    "adaptive_belief": {
+      "correct": 0.7083333333333334,
+      "decision_loss": 0.2916666666666667,
+      "latency_steps": 1.0,
+      "runs": 1152,
+      "synthetic_cost_units": 1.0,
+      "tests": 1.0,
+      "valid_runs": 1152
+    },
+    "exact_closed_loop_oracle": {
+      "correct": 0.7083333333333334,
+      "decision_loss": 0.2916666666666667,
+      "latency_steps": 1.0,
+      "runs": 1152,
+      "synthetic_cost_units": 1.0,
+      "tests": 1.0,
+      "valid_runs": 1152
+    },
+    "exact_open_loop": {
+      "correct": 0.5989583333333334,
+      "decision_loss": 0.4010416666666667,
+      "latency_steps": 1.0,
+      "runs": 1152,
+      "synthetic_cost_units": 1.0,
+      "tests": 1.0,
+      "valid_runs": 1152
+    }
+  },
+  "population": {
+    "episodes": 1152,
+    "invalid_runs": 0,
+    "regimes": 9,
+    "runs": 3456,
+    "valid_runs": 3456
+  },
+  "population_hash": "0dc7d82cfcb8ffb1ce186ef90aa040378e62d920b4f9cf4b2af7bf4ba82f3aea",
+  "positive_voa_candidate_vs_open": {
+    "exact_mean_candidate_advantage": 0.14008333333333334,
+    "population_paired": {
+      "candidate_losses": 42,
+      "candidate_wins": 168,
+      "mean_candidate_minus_open_loop": -0.1640625,
+      "paired_episodes": 768,
+      "ties": 558
+    },
+    "voa_weighted_adaptivity_capture": 1.0
+  },
+  "primary_condition": {
+    "adaptive_stop_available": false,
+    "all_acquisition_costs_equal": true,
+    "fixed_acquisition_horizon": 1,
+    "objective": "terminal_decision_loss"
+  },
+  "schema_version": 1,
+  "statistical_treatment": "Exact public-model expectations and frozen finite-population paired differences are reported; no sampling-based significance claim is made."
+}

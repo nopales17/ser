@@ -241,3 +241,37 @@ a new entry; do not rewrite it.
   LLM, or remote-sensing implementation is authorized during Phase 3.
 - Revisit when: Phase 3 or later controlled-software evidence identifies a
   different smallest environment needed to resolve a named uncertainty.
+
+## ADR-0014 -- Route from synthetic control to controlled authorization evidence
+
+- Status: accepted
+- Date: 2026-08-17
+- Context: MicroGym routing-v1 isolated a one-step fixed-horizon condition in
+  which the unchanged public-model candidate used a released cue to select the
+  exact closed-loop acquisition and captured value unavailable to the best
+  same-model open-loop plan. The result depends on clean supplied likelihood
+  tables and does not test semantic action-value estimation.
+- Decision: Complete Phase 4 with a narrowly scoped routing finding and make a
+  minimal controlled authorization-oriented software environment the next
+  validation phase. Its unresolved question is whether a controller can
+  estimate decision-relevant epistemic-action values from imperfect software
+  and authorization evidence when clean likelihood tables are not supplied.
+  Do not begin with real GitLab integration. Do not add an IDS bridge unless a
+  later explicit comparison shows that it is materially cleaner or cheaper for
+  isolating that same question.
+- Why: The synthetic result resolves whether the current candidate can execute
+  observation-conditioned routing in a favorable exact-model setting. A
+  controlled authorization environment tests the newly exposed estimation gap
+  while advancing the practical research trunk established by ADR-0013.
+- Alternatives rejected: treating the one-step synthetic result as general SER
+  validation; moving directly to real GitLab; choosing IDS because artifacts
+  already exist; remaining synthetic without a named remaining routing defect;
+  adding LLM, graph, Scope, coupling, or learned-policy machinery preemptively.
+- Consequences: Phase 5 may design the smallest controlled authorization task
+  that separates semantic action-value estimation from generic software skill.
+  Phase 4 artifacts remain immutable, IDS remains read-only, and no evidence is
+  claimed for GitLab, semantic competence, multi-stage planning, or real-domain
+  value.
+- Revisit when: A controlled-environment design cannot isolate action-value
+  estimation without a smaller semantic bridge, or evidence shows that routing
+  itself still fails outside the exact one-step condition.

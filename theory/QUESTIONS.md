@@ -20,9 +20,10 @@ The canonical entries are `Q-001` through `Q-009` in
   under vector cost after MicroGym v1's myopic rule saved cost but suppressed
   routing and stopped prematurely in 30 episodes;
 - `Q-008`: whether SER and SERT are the right names;
-- `Q-009`: what evidence warrants promotion after MicroGym v1 showed that a
-  scalar-objective classifier can pass without actual adaptive behavior; Phase 4
-  must require observation-conditioned branching or explicitly test only STOP.
+- `Q-009`: what evidence warrants promotion after MicroGym v1 exposed a weak
+  classifier and routing-v1 corrected it with positive VOA, verified branching,
+  matched open-loop value, zero-VOA restraint, and invariance requirements;
+  semantic, multi-stage, and real-domain promotion thresholds remain open.
 
 Questions remain in the cold map even after resolution. Resolution updates their
 status and notes, links the evidence or ADR, and preserves the prior conceptual

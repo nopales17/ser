@@ -5,7 +5,7 @@ of each concept live in `theory/IDEA_MAP.yaml`.
 
 | Term | Preferred meaning | Important boundary |
 | --- | --- | --- |
-| SER | provisional name for the research project and a possible controller that selects, targets, times, and stops resource-consuming epistemic actions (`M-012`) | expansion and name are unresolved (`Q-008`); no runtime exists |
+| SER | provisional name for the research project and a possible controller that selects, targets, times, and stops resource-consuming epistemic actions (`M-012`) | expansion and name are unresolved (`Q-008`); MicroGym policies are experimental instruments, not a production or validated SER runtime |
 | SERT | provisional name for a possible learned routing policy or training regime (`H-014`) | late-stage seed, not implemented |
 | WorldState | environment-owned latent facts and dynamics (`C-001`) | never directly visible to a normal policy |
 | Observation | provenance-bearing information legitimately released to a controller (`C-002`) | not assumed true, textual, current, or equivalent to a hypothesis |
@@ -23,7 +23,9 @@ of each concept live in `theory/IDEA_MAP.yaml`.
 | cold | slow-changing authoritative conceptual storage | does not imply the content is mature |
 | warm | plan and roadmap cursor | does not own scientific truth |
 | hot-ish | current implementation/evidence state or a generated projection | generated views do not become sources of truth |
-| MicroGym | proposed zero-LLM synthetic environment family (`M-011`) | not yet implemented |
+| MicroGym | implemented zero-LLM synthetic control-validation environment family (`M-011`) | scoped benchmark instrument, not the practical research trunk or evidence of semantic/general intelligence |
+| Value of Adaptivity (VOA) | routing-v1's exact open-loop expected loss minus exact closed-loop expected loss | experiment-specific evaluator quantity, not a universal SER objective |
+| Adaptivity Capture | routing-v1's fraction of positive oracle VOA recovered by the candidate relative to exact open- and closed-loop loss | undefined at zero VOA and incomparable across unrelated objectives without justification |
 | oscillation rate | frequency of switching between external acquisition and internal inference (`H-007`) | measured trajectory property, not a constant |
 | oscillation depth | resource spent within a mode before switching (`H-007`) | measured trajectory property, not a constant |
 | active observation | choose an intervention/input, then observe its result (`H-009`) | distinct from passive world-to-observation flow |

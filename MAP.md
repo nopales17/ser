@@ -28,7 +28,8 @@ is an independent field on concepts and evidence.
 | `reference/IDS_LESSONS.md` | reference synthesis | concise evidence-backed lessons and explicit non-claims from the IDS archive | component identity, maturity, or SER validation |
 | `experiments/README.md` | evidence index | experiment admission, evidence-record rules, and admitted result index | generalization beyond each frozen protocol |
 | `experiments/microgym_v1/` | evidence artifacts | frozen MicroGym v1 population, traces, validation, numeric summary, adaptivity audit, and scoped interpretation | broad SER, semantic, or real-domain claims |
-| `src/ser/` | implementation | minimal MicroGym runtime, public policies, evaluator-only oracle, trace/replay, and analysis behavior | theory maturity or empirical validity by itself |
+| `experiments/microgym_routing_v1/` | evidence artifacts | frozen fixed-horizon routing population, exact open/closed-loop values, candidate traces, branch audit, validation, and scoped interpretation | multi-stage, semantic, software, GitLab, or general SER claims |
+| `src/ser/` | implementation | minimal MicroGym runtime, public policies, evaluator-only oracles, fixed-horizon routing instrumentation, trace/replay, and analysis behavior | theory maturity or empirical validity by itself |
 | `tools/` | artifact | executable knowledge-generation and checking behavior | validation of SER theory |
 
 ## Precedence
