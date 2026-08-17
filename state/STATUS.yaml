@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-08-17",
+  "project_name": "SER (provisional)",
+  "project_maturity": "phase_1_legacy_inventory_ready",
+  "runtime": {
+    "built": false,
+    "controllers": 0,
+    "environments": 0,
+    "model_integrations": 0
+  },
+  "knowledge_architecture": {
+    "canonical_idea_map": true,
+    "generated_context": true,
+    "coherence_checker": true,
+    "phase_0_validation_complete": true
+  },
+  "evidence": {
+    "ser_experiments": [],
+    "summary": "No SER experiment has run and no SER scientific hypothesis has experimental support.",
+    "historical_only": [
+      "E-001 describes scoped artifacts in the read-only IDS archive; it is not evidence for SER."
+    ]
+  },
+  "roadmap": {
+    "active_phase_id": 1,
+    "active_phase_title": "Legacy component inventory",
+    "immediate_next_task": "Perform a read-only IDS legacy component inventory and classify each candidate as reuse unchanged, generalize, empirical evidence only, inspiration only, or discard, without copying code or data."
+  },
+  "non_goals": [
+    "No SER runtime or controller in Phase 0 or Phase 1.",
+    "No LLM/model integration, TGNN, graph neural network, learned policy, or training infrastructure.",
+    "No coupling-law implementation, fuzzer, remote-sensing integration, or IDS adapter.",
+    "No IDS code or data import and no claim that IDS results validate SER."
+  ]
+}

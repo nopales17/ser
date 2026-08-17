@@ -1,0 +1,69 @@
+# Agent protocol
+
+Scope: these instructions apply to the SER repository rooted at this file.
+
+## Bootstrap before changing anything
+
+Read in this order:
+
+1. `state/CONTEXT_PACKET.md` -- generated portable project state.
+2. `CHARTER.md` -- research boundary, invariants, and non-goals.
+3. `MAP.md` -- which source is authoritative for each kind of knowledge.
+4. Relevant entries in `theory/IDEA_MAP.yaml` or its generated readable view.
+5. `plan/ROADMAP.md` -- the single active phase and its exit criteria.
+6. Implementation files, only after the conceptual context is understood.
+
+If the generated packet is absent or stale, run `python3 tools/emit_context.py`
+before continuing.
+
+## Required distinctions
+
+- State facts as facts and hypotheses as hypotheses.
+- Use existing stable concept IDs; do not create a synonym for an existing
+  concept merely to avoid reading its entry.
+- Keep foundation, primitive, hypothesis, mechanism, implementation, and
+  empirical evidence distinct. A Python class is not validation of a primitive.
+- A concept's location determines authority; its `status` determines maturity.
+  Cold storage does not mean accepted truth.
+- When a genuinely new architectural idea appears, add a stable entry to
+  `theory/IDEA_MAP.yaml` with conservative status and provenance.
+- Record accepted architectural or governance decisions by appending an ADR to
+  `DECISIONS.md`. Never revise old ADR history silently.
+- Never promote a concept because it was discussed, documented, or implemented.
+  Promotion requires the evidence described in `CHARTER.md`.
+- Preserve rejected and deprecated concepts with their evidence and rationale.
+- Report any implementation behavior that contradicts canonical documentation;
+  do not silently make one conform to the other.
+
+## Edit routing
+
+- Research boundary or invariant: append an ADR, then amend `CHARTER.md`.
+- Concept identity, relationship, maturity, or evidence link: edit
+  `theory/IDEA_MAP.yaml`, then regenerate.
+- Plan or phase cursor: edit `plan/ROADMAP.md` and current facts in
+  `state/STATUS.yaml`, then regenerate.
+- Present implementation/evidence fact: edit `state/STATUS.yaml`, then
+  regenerate.
+- Vocabulary: edit `reference/TERMINOLOGY.md`.
+- Historical IDS interpretation: edit `reference/IDS_LEGACY.md`, supported by
+  read-only inspection of the archive.
+
+Never hand-edit `theory/IDEA_MAP.md` or `state/CONTEXT_PACKET.md`; both begin
+with a generated-file warning.
+
+## Boundaries
+
+- Do not build the SER runtime until the roadmap authorizes implementation.
+- Treat `/Users/paolo/proj/ids-rule-to-cve-inference-archive` as read-only. Do
+  not copy code or data from it without an accepted future decision.
+- Do not treat IDS measurements as SER evidence.
+- Do not commit, create a remote, or push unless explicitly requested.
+
+## Before finishing a change
+
+1. Run `python3 tools/emit_context.py`.
+2. Run `python3 tools/check_knowledge_coherence.py`.
+3. Read the resulting context packet for misleading promotions or stale state.
+4. Report changed files, phase/cursor changes, checks run, unresolved questions,
+   and `git status`.
+
