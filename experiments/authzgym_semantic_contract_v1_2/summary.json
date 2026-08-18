@@ -1,0 +1,149 @@
+{
+  "contract": {
+    "classification": "contract_unstable",
+    "observed": {
+      "finish_reason_length": 0,
+      "first_attempt_schema_valid_rate": 0.0625,
+      "first_attempt_valid": 8,
+      "illegal_artifact_references": 0,
+      "illegal_hypothesis_references": 0,
+      "illegal_relation_references": 0,
+      "incomplete_json": 0,
+      "information_boundary_violations": 0,
+      "manual_repairs": 0,
+      "post_retry_valid": 8,
+      "post_retry_valid_rate": 0.0625,
+      "provider_attempts": 248,
+      "scheduled_calls": 128
+    },
+    "response_error_counts": {
+      "ProviderError:provider transport returned code 28": 37,
+      "ProviderError:provider transport returned code 7": 202,
+      "ProviderError:provider transport returned code 97": 1
+    },
+    "thresholds": {
+      "maximum_finish_reason_length": 0,
+      "maximum_illegal_artifact_references": 0,
+      "maximum_illegal_hypothesis_references": 0,
+      "maximum_illegal_relation_references": 0,
+      "maximum_incomplete_json": 0,
+      "maximum_information_boundary_violations": 0,
+      "maximum_manual_repairs": 0,
+      "minimum_first_attempt_schema_valid_rate": 0.99,
+      "minimum_post_retry_valid_rate": 1.0
+    }
+  },
+  "decision_rule": {
+    "no_hypothesis_promotion": true,
+    "selected_next_experiment": "case_a_new_contract_version"
+  },
+  "downstream_action_value": {
+    "existing_estimator_adequate_under_oracle": true,
+    "model_action_compatible": false,
+    "model_conditioned": {
+      "mean_normalized_regret": 1.0,
+      "observations": 8,
+      "top1": 0.0,
+      "top2": 0.0
+    },
+    "oracle_conditioned": {
+      "canonical_development_episodes": 8,
+      "mean_normalized_regret": 0.0,
+      "top1": 1.0,
+      "top2": 1.0
+    }
+  },
+  "experiment": "authzgym-semantic-contract-v1.2",
+  "population_hash": "2d9eb6a25d17486bb442492d36ca2ea1c988d2d1a66539d8b5dc05542abdbaf7",
+  "provider_accounting": {
+    "cached_input_tokens": 14848,
+    "calls": 248,
+    "input_tokens": 19884,
+    "latency_ms": 613811.6892062826,
+    "output_tokens": 3336,
+    "reasoning_output_tokens": 0,
+    "total_cost_usd": 0.0054741600000000005
+  },
+  "schema_version": 1,
+  "semantics": {
+    "classification": "semantic_signal_weak",
+    "fact_reasonable": false,
+    "facts": {
+      "expected": 16,
+      "precision": 0.2692307692307692,
+      "predicted": 26,
+      "recall": 0.4375,
+      "true_positive": 7
+    },
+    "hypothesis_effects": {
+      "expected": 8,
+      "precision": 0.36363636363636365,
+      "predicted": 22,
+      "recall": 1.0,
+      "true_positive": 8
+    },
+    "implication_reasonable": false,
+    "malformed_run_rate": 0.9375,
+    "thresholds": {
+      "maximum_action_normalized_regret": 0.35,
+      "minimum_action_top1": 0.6,
+      "minimum_action_top2": 0.8,
+      "minimum_effect_precision": 0.6,
+      "minimum_effect_recall": 0.5,
+      "minimum_fact_precision": 0.65,
+      "minimum_fact_recall": 0.5,
+      "minimum_unresolved_precision": 0.6,
+      "minimum_unresolved_recall": 0.5
+    },
+    "unknown_effect_rate": 0.28125,
+    "unresolved_relations": {
+      "expected": 48,
+      "precision": 0.0,
+      "predicted": 0,
+      "recall": 0.0,
+      "true_positive": 0
+    }
+  },
+  "stability": {
+    "by_variant": {
+      "artifact_identifier_variation": {
+        "runs": 16,
+        "valid": 0
+      },
+      "artifact_reordering": {
+        "runs": 16,
+        "valid": 2
+      },
+      "base_entry": {
+        "runs": 16,
+        "valid": 2
+      },
+      "candidate_label_permutation": {
+        "runs": 16,
+        "valid": 0
+      },
+      "combined_permutation": {
+        "runs": 16,
+        "valid": 0
+      },
+      "longest_artifact": {
+        "runs": 16,
+        "valid": 2
+      },
+      "maximal_public_summary": {
+        "runs": 16,
+        "valid": 0
+      },
+      "symbol_renaming": {
+        "runs": 16,
+        "valid": 2
+      }
+    },
+    "repeat_both_valid_rate": 0.0625,
+    "repeat_pairs": 64,
+    "repeat_semantic_exact_rate": 0.0,
+    "semantic_equivalence_both_valid_rate": 0.05,
+    "semantic_equivalence_exact_rate": 0.0,
+    "semantic_equivalence_pairs": 80
+  }
+}

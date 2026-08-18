@@ -789,7 +789,7 @@ def check_phase_progress_status() -> dict[str, object]:
         or runtime.get("environments") != 13
         or runtime.get("controllers") != 17
         or runtime.get("model_integrations") != 1
-        or runtime.get("semantic_interpreters") != 3
+        or runtime.get("semantic_interpreters") != 4
     ):
         errors.append(
             "status does not report the implemented MicroGym/AuthzGym instruments accurately"
@@ -808,6 +808,12 @@ def check_phase_progress_status() -> dict[str, object]:
         "phase_5a_3_realmodel_v1_complete_invalid"
     ):
         errors.append("phase_5a_3_realmodel_v1_complete_invalid is not true")
+    if not current.get("knowledge_architecture", {}).get(
+        "phase_5a_4_semantic_contract_v1_2_complete_unstable"
+    ):
+        errors.append(
+            "phase_5a_4_semantic_contract_v1_2_complete_unstable is not true"
+        )
     if current.get("evidence", {}).get("ser_experiments") != ["E-002", "E-003"]:
         errors.append("MicroGym evidence index must contain exactly E-002 and E-003")
     experiment_paths = (
@@ -852,6 +858,18 @@ def check_phase_progress_status() -> dict[str, object]:
         "experiments/authzgym_static_realmodel_v1/REPORT.md",
         "experiments/authzgym_static_realmodel_v1/INTERPRETATION.md",
         "experiments/authzgym_static_realmodel_v1/IMPLEMENTATION_NOTES.md",
+        "experiments/authzgym_semantic_contract_v1_2/PREREGISTRATION.md",
+        "experiments/authzgym_semantic_contract_v1_2/FROZEN_INPUTS.json",
+        "experiments/authzgym_semantic_contract_v1_2/COST_GATE.json",
+        "experiments/authzgym_semantic_contract_v1_2/OFFLINE_AUTOPSY.json",
+        "experiments/authzgym_semantic_contract_v1_2/STRESS_POPULATION.json",
+        "experiments/authzgym_semantic_contract_v1_2/stress_runs.jsonl",
+        "experiments/authzgym_semantic_contract_v1_2/provider_responses.jsonl",
+        "experiments/authzgym_semantic_contract_v1_2/summary.json",
+        "experiments/authzgym_semantic_contract_v1_2/validation.json",
+        "experiments/authzgym_semantic_contract_v1_2/REPORT.md",
+        "experiments/authzgym_semantic_contract_v1_2/INTERPRETATION.md",
+        "experiments/authzgym_semantic_contract_v1_2/IMPLEMENTATION_NOTES.md",
     )
     missing_experiment_paths = [path for path in experiment_paths if not (ROOT / path).exists()]
     if missing_experiment_paths:
@@ -886,6 +904,19 @@ def check_phase_progress_status() -> dict[str, object]:
         authz_real_status = current.get("evidence", {}).get(
             "authzgym_static_realmodel_v1", {}
         )
+        authz_contract_validation = json.loads(
+            (ROOT / "experiments/authzgym_semantic_contract_v1_2/validation.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        authz_contract_summary = json.loads(
+            (ROOT / "experiments/authzgym_semantic_contract_v1_2/summary.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        authz_contract_status = current.get("evidence", {}).get(
+            "authzgym_semantic_contract_v1_2", {}
+        )
         if authz_v1_validation.get("status") != "fail":
             errors.append("preserved AuthzGym v1 calibration must remain invalid")
         if authz_v1_1_validation.get("status") != "pass":
@@ -915,12 +946,28 @@ def check_phase_progress_status() -> dict[str, object]:
             errors.append(
                 "AuthzGym real-model v1 must remain preserved as invalid without hypothesis admission"
             )
+        if (
+            authz_contract_validation.get("status") != "pass"
+            or authz_contract_summary.get("contract", {}).get("classification")
+            != "contract_unstable"
+            or authz_contract_summary.get("decision_rule", {}).get(
+                "selected_next_experiment"
+            )
+            != "case_a_new_contract_version"
+            or authz_contract_status.get("evidence_status")
+            != "development_contract_stress_transport_unstable_no_hypothesis_admission"
+            or authz_contract_status.get("valid_after_retry") != 8
+            or authz_contract_status.get("scheduled_calls") != 128
+        ):
+            errors.append(
+                "AuthzGym semantic-contract v1.2 must remain preserved as transport-unstable without hypothesis admission"
+            )
     return result(
         "phase_progress_status",
         not errors,
         "errors: " + "; ".join(errors)
         if errors
-        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are recorded narrowly; Phase 5A preserves benchmark calibration and an invalid first real-model run without hypothesis admission; Phase 5 remains active",
+        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are recorded narrowly; Phase 5A preserves benchmark calibration, invalid real-model v1, and transport-unstable semantic-contract v1.2 without hypothesis admission; Phase 5 remains active",
     )
 
 

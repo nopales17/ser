@@ -488,7 +488,7 @@ def render_context_packet(
             "",
             current["roadmap"]["immediate_next_task"],
             "",
-            "The IDS archive remains read-only. Active Phase 5 now authorizes only the separately frozen inexpensive-model evaluation on Static Semantic AuthzGym protocol 1.1. It does not authorize IDS code/data copy, real GitLab integration, an adapter, a production runtime or general model integration, graph runtime, production fuzzing, or coupling-law implementation.",
+            "The IDS archive remains read-only. Active Phase 5 now authorizes only a separately frozen development-only transport-envelope stability protocol retaining semantic-contract v1.2, the nano model, and the eight development source episodes. It does not authorize architecture comparison, a stronger model, IDS code/data copy, real GitLab integration, an adapter, a production runtime or general model integration, graph runtime, production fuzzing, or coupling-law implementation.",
             "",
             "## 11. Important non-goals",
             "",

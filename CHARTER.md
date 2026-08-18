@@ -159,18 +159,25 @@ resource budget, SER has not demonstrated architectural value in that scope.
 Phase 3 implemented a minimal zero-LLM MicroGym validation runtime and produced
 a narrow stopping finding. Phase 4 then supported observation-conditioned
 routing only in a frozen explicit-likelihood, fixed-horizon, one-step benchmark.
-Under ADR-0014 and ADR-0015, active Phase 5 has frozen Static Semantic AuthzGym
+Under ADR-0014 and ADR-0015, active Phase 5 froze Static Semantic AuthzGym
 protocol 1.1 as the smallest controlled authorization-oriented benchmark needed
 to test semantic epistemic-action value estimation without supplied likelihood
 tables. Its deterministic mock calibration is implementation validation, not an
-empirical result. The next authorized work is a separate frozen inexpensive-
-model evaluation; its outcome must not be anticipated from mock behavior.
+empirical result. Real-model v1 was invalid from response truncation and dynamic
+references. Development-only semantic-contract v1.2 then removed those free-
+form channels but was classified `contract_unstable` after its ephemeral egress
+tunnel failed, leaving only 8/128 valid calls. Under ADR-0017, the next
+authorized work is a separately versioned transport-envelope stability study
+that retains the v1.2 semantic schema, prompt, nano model, and development source
+population. Its outcome must not be anticipated from the eight successful
+prefix calls.
 
-General LLM agents, graph neural networks, TGNNs, learned policies, coupling
+Architecture comparison, a stronger model, evaluation-population reruns,
+general LLM agents, graph neural networks, TGNNs, learned policies, coupling
 laws, semantic compressors, fuzzers, IDS adapters, GitLab integration, remote-
 sensing integrations, epistemic graph runtimes, and training infrastructure
 remain non-goals. Phase 5 authorizes only the preregistered inexpensive semantic
-model evaluation needed for Static Semantic AuthzGym, not a production model runtime.
+channel stability work needed for Static Semantic AuthzGym, not a production model runtime.
 Do not import IDS code or datasets. GitLab authorization is the primary
 practical trunk and IDS a possible semantic validation instrument under
 ADR-0013; neither is current evidence. Phase 5 does not authorize real GitLab

@@ -1,0 +1,62 @@
+{
+  "checks": {
+    "complete development stress schedule": {
+      "detail": "records=128/128",
+      "status": "pass"
+    },
+    "development-only source population": {
+      "detail": "source episodes=8; cases=64; no evaluation population loaded",
+      "status": "pass"
+    },
+    "dynamic schema integrity": {
+      "detail": "each response binds the frozen per-call legal target-slot schema",
+      "status": "pass"
+    },
+    "frozen input hashes": {
+      "detail": "preregistration, prompt, vocabulary, schemas, population, autopsy, source development population, and implementation hashes match",
+      "status": "pass"
+    },
+    "hard spend ceiling": {
+      "detail": "accounted spend=$0.005474160 < $1.00",
+      "status": "pass"
+    },
+    "identical bounded retry policy": {
+      "detail": "every retry reused the exact request hash and at most one retry was allowed",
+      "status": "pass"
+    },
+    "information boundary and enum isolation": {
+      "detail": "violations=0; evaluator identifiers never enter model-visible enums",
+      "status": "pass"
+    },
+    "provider response hashes": {
+      "detail": "verified 248 local response attempts",
+      "status": "pass"
+    },
+    "provider token ceilings": {
+      "detail": "max input/output=2502/420 within 4000/1024",
+      "status": "pass"
+    },
+    "secret redaction": {
+      "detail": "configured API credential value is absent from all experiment files",
+      "status": "pass"
+    },
+    "single frozen model": {
+      "detail": "provider model identifiers=['patchersniper_praneeth/gpt-5.4-nano']",
+      "status": "pass"
+    },
+    "static semantic-only action surface": {
+      "detail": "one purchased development artifact per call; no routing, execution, network tool, GitLab, or IDS action",
+      "status": "pass"
+    },
+    "stress run hashes": {
+      "detail": "verified 128 stress records",
+      "status": "pass"
+    }
+  },
+  "counts": {
+    "information_boundary_violations": 0
+  },
+  "experiment": "authzgym-semantic-contract-v1.2",
+  "schema_version": 1,
+  "status": "pass"
+}

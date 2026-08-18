@@ -348,3 +348,43 @@ a new entry; do not rewrite it.
   egress tunnel terminated.
 - Revisit when: A new versioned static protocol passes its own full integrity,
   response-validity, perturbation, and matched architecture gates.
+
+## ADR-0017 -- Preserve semantic-contract v1.2 as transport-unstable
+
+- Status: accepted
+- Date: 2026-08-17
+- Context: The separately frozen development-only semantic-contract v1.2 study
+  removed free-form outputs and model-generated identifiers, raised the
+  per-artifact output safety ceiling to 1,024 tokens, and scheduled 128 calls
+  over only the eight development episodes. The first eight responses were
+  schema-valid with no length termination or illegal reference. The ephemeral
+  wiseau SSH connection then timed out; the remaining 120 calls exhausted their
+  identical retry on transport connection/proxy failures. The complete schedule
+  is integrity-valid but only 8/128 calls are response-valid, so the
+  preregistered classifier is `contract_unstable`.
+- Decision: Preserve the complete v1.2 responses, stress records, hashes,
+  accounting, report, and classifier without rerunning or repairing them in
+  place. Admit no semantic-capability or SER finding and promote no hypothesis.
+  Keep Phase 5 active and Phase 5B blocked. The next admissible work is a new
+  separately versioned development-only transport-envelope stability protocol
+  that retains the v1.2 semantic schema, prompt, model, and development source
+  population while preregistering tunnel-liveness handling and transport
+  failure accounting. Do not proceed to architecture comparison or a stronger
+  model until the complete semantic channel clears its mechanical contract.
+- Why: Interpreting the eight successful responses would confound model
+  capability with temporal position before an exogenous tunnel failure. The
+  zero observed truncations and illegal references are encouraging diagnostics,
+  but eight non-random prefix calls cannot establish response reliability or a
+  capability floor for the full stress population.
+- Alternatives rejected: treating transport failures as missing observations;
+  comparing only the successful prefix; reconnecting and resuming the frozen
+  run under an unregistered transport rule; rewriting v1.2 in place; weakening
+  its 100% post-retry requirement; switching models; rerunning the observed 24
+  evaluation episodes; advancing to executable AuthzGym, GitLab, or IDS.
+- Consequences: The v1.2 oracle-only diagnostic may identify the unchanged
+  deterministic estimator as adequate given perfect development observations,
+  but it is not model evidence. The actual spend of $0.005474160, 248 attempts,
+  240 transport failures, local-only persistence, and terminated tunnel remain
+  implementation facts rather than an empirical SER result.
+- Revisit when: A separately frozen full development stress protocol completes
+  with stable transport and satisfies its response-contract classifier.

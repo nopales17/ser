@@ -40,6 +40,27 @@ failure rejects only the mechanism or scope the protocol can actually test.
 Any actual inexpensive-model evaluation must be a separate frozen experiment.
 Phase 5B and real GitLab remain gated.
 
+## Preserved real-model failures, not admitted evidence
+
+- `authzgym_static_realmodel_v1/` preserves the first complete real-model
+  architecture schedule. Its classifier is `invalid`: 273/609 frozen attempts
+  failed the semantic contract, chiefly from the 320-token output ceiling and
+  unconstrained dynamic identifiers. Its diagnostic semantic and architecture
+  metrics are not admitted findings.
+- `authzgym_semantic_contract_v1_2/` preserves the subsequent development-only
+  interface stress study. It removed prose and generated identifiers, used a
+  1,024-token safety ceiling, and scheduled 128 calls across only the eight
+  development episodes. The egress SSH connection failed after eight valid
+  calls; 240 later attempts had transport failures, so only 8/128 calls were
+  valid and the classifier is `contract_unstable`. Zero observed length or
+  illegal-reference failures in the successful prefix do not establish channel
+  stability or nano capability. The oracle-only estimator diagnostic is not
+  model evidence.
+
+Neither failure creates an `E-*` entry or promotes H-001, H-016, H-017, or
+H-018. ADR-0017 requires another separately versioned development-only transport
+stability protocol before any architecture comparison or stronger-model test.
+
 ## Admitted evidence
 
 - `E-002` / MicroGym v1: a model-aware myopic stopping policy reduced the frozen

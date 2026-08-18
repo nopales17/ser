@@ -1,0 +1,14 @@
+{
+  "cost_basis": "provider-reported usage at frozen listed rates; not a billing statement",
+  "experiment": "authzgym-semantic-contract-v1.2",
+  "frozen_inputs_manifest_hash": "39bcb5d11b223add3cc81909ed45b059072e7691288a56e93737c2ff75595fca",
+  "hard_spend_ceiling_usd": 1.0,
+  "maximum_provider_attempts": 256,
+  "proceed": true,
+  "projected_complete_cost_usd": 0.53248,
+  "projected_output_tokens": 262144,
+  "projected_uncached_input_tokens": 1024000,
+  "record_hash": "c370a3ba27b6f7456dae9038fd30ef20a2a4d0fa12efd6ffde667fcf7ac615f6",
+  "scheduled_semantic_calls": 128,
+  "schema_version": 1
+}

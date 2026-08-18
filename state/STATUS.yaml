@@ -2,13 +2,13 @@
   "schema_version": 1,
   "as_of": "2026-08-17",
   "project_name": "SER (provisional)",
-  "project_maturity": "phase_5a_realmodel_v1_invalid_no_semantic_finding",
+  "project_maturity": "phase_5a_semantic_contract_v1_2_transport_unstable_no_capability_finding",
   "runtime": {
     "built": true,
     "controllers": 17,
     "environments": 13,
     "model_integrations": 1,
-    "semantic_interpreters": 3
+    "semantic_interpreters": 4
   },
   "knowledge_architecture": {
     "canonical_idea_map": true,
@@ -20,7 +20,8 @@
     "phase_3_microgym_complete": true,
     "phase_4_routing_falsification_complete": true,
     "phase_5a_1_and_5a_2_authzgym_benchmark_complete": true,
-    "phase_5a_3_realmodel_v1_complete_invalid": true
+    "phase_5a_3_realmodel_v1_complete_invalid": true,
+    "phase_5a_4_semantic_contract_v1_2_complete_unstable": true
   },
   "formal_control_problem": {
     "phase_2_complete": true,
@@ -36,7 +37,7 @@
   },
   "evidence": {
     "ser_experiments": ["E-002", "E-003"],
-    "summary": "MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. Routing-v1 then supported a narrow one-step routing result under clean supplied likelihoods. Static Semantic AuthzGym protocol 1.1 remains a validated benchmark calibration. Its separately frozen first real-model run completed all scheduled conditions, but the preregistered classifier returned invalid because only 88/192 runs passed the response/resource contract. No AuthzGym E-* finding was admitted, no general SER hypothesis was promoted, and valid semantic action-value estimation remains untested.",
+    "summary": "MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. Routing-v1 then supported a narrow one-step routing result under clean supplied likelihoods. Static Semantic AuthzGym protocol 1.1 remains a validated benchmark calibration. Real-model v1 is preserved as invalid after response-contract failure. Development-only semantic-contract v1.2 is preserved as contract_unstable after the egress tunnel failed: only 8/128 calls were valid. No AuthzGym E-* finding was admitted, no general SER hypothesis was promoted, and a complete stable semantic capability test remains unrun.",
     "microgym_v1": {
       "population_hash": "a9234fa60b40d3628f6317284a964c95917bcd7442796d8961f18b14b9958b3d",
       "problem_regimes": 24,
@@ -100,6 +101,28 @@
       "preregistered_classifier": "invalid",
       "summary": "All frozen populations, architectures, evidence boundaries, hashes, and the $5 ceiling validated, but provider/schema/run validity failed. Output truncation produced 135 length-limited responses and 132 incomplete-JSON contents; dynamic next-artifact/reference constraints rejected additional responses. Diagnostic architecture metrics are not admitted as a matched empirical finding."
     },
+    "authzgym_semantic_contract_v1_2": {
+      "evidence_status": "development_contract_stress_transport_unstable_no_hypothesis_admission",
+      "model_identifier": "patchersniper_praneeth/gpt-5.4-nano",
+      "population_hash": "2d9eb6a25d17486bb442492d36ca2ea1c988d2d1a66539d8b5dc05542abdbaf7",
+      "frozen_inputs_manifest_hash": "39bcb5d11b223add3cc81909ed45b059072e7691288a56e93737c2ff75595fca",
+      "development_source_episodes": 8,
+      "stress_cases": 64,
+      "scheduled_calls": 128,
+      "provider_attempts": 248,
+      "valid_after_retry": 8,
+      "first_attempt_valid_rate": 0.0625,
+      "post_retry_valid_rate": 0.0625,
+      "finish_reason_length": 0,
+      "incomplete_json": 0,
+      "illegal_dynamic_references": 0,
+      "transport_failures": 240,
+      "accounted_total_cost_usd": 0.00547416,
+      "preregistered_contract_classifier": "contract_unstable",
+      "semantic_diagnostic": "semantic_signal_weak_nonrepresentative_prefix_only",
+      "oracle_estimator_diagnostic": "top1_1.0_top2_1.0_normalized_regret_0.0",
+      "summary": "The compact fixed-slot contract eliminated observed truncation and illegal-reference failures in the eight successful prefix calls, but the wiseau SSH connection timed out and 120 later calls exhausted their frozen retry through 240 transport failures. The complete integrity-valid schedule therefore failed the response-reliability thresholds. Prefix semantic metrics are descriptive only; the oracle-conditioned unchanged estimator passed its development diagnostic."
+    },
     "historical_only": [
       "E-001 describes scoped artifacts in the read-only IDS archive; it is not evidence for SER."
     ]
@@ -113,12 +136,12 @@
   "roadmap": {
     "active_phase_id": 5,
     "active_phase_title": "Controlled authorization action-value estimation",
-    "immediate_next_task": "Preregister a new static real-model protocol that first establishes response-contract reliability and a sufficient output ceiling on development episodes, then repeats the complete AuthzGym v1.1 population without tuning on preserved evaluation outputs.",
+    "immediate_next_task": "Preregister a separately versioned development-only transport-envelope stability protocol that retains semantic-contract v1.2, the nano model, and the eight development source episodes; specify tunnel-liveness behavior and complete the same bounded stress question before any architecture comparison or stronger-model test.",
     "research_trunk": "GitLab authorization investigation is the primary practical target. MicroGym is a control validation instrument; IDS is only a possible semantic bridge; controlled software experimentation is trunk-aligned; remote sensing is dormant."
   },
   "non_goals": [
     "No production SER runtime; the implemented code consists of MicroGym and Static Semantic AuthzGym benchmark instruments plus small exact, reference, and deterministic mock controllers.",
-    "One bounded real semantic-model experiment exists, but it is invalid and is not a general LLM agent; no TGNN, graph neural network, learned policy, or training infrastructure.",
+    "Two bounded real semantic-model protocols are preserved: architecture v1 is invalid and development contract v1.2 is transport-unstable; neither is a general LLM agent or admitted model-capability finding.",
     "No coupling-law implementation, universal epistemic graph, production fuzzer, remote-sensing integration, or IDS adapter.",
     "No IDS code or data import, real GitLab integration, or claim that IDS/GitLab validates SER."
   ]
