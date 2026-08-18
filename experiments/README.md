@@ -58,8 +58,30 @@ Phase 5B and real GitLab remain gated.
   model evidence.
 
 Neither failure creates an `E-*` entry or promotes H-001, H-016, H-017, or
-H-018. ADR-0017 requires another separately versioned development-only transport
-stability protocol before any architecture comparison or stronger-model test.
+H-018.
+
+## Development diagnostics, not admitted architecture evidence
+
+- `authzgym_transport_envelope_v1/` retains semantic contract v1.2, the nano
+  model, and the exact 128-call development schedule while adding only local
+  SSH/SOCKS supervision and transport accounting. A preserved zero-inference
+  preflight exposed an unsupported redundant curl option before paid work. The
+  corrected frozen run then obtained 128/128 provider responses through one
+  tunnel with zero transport failures, zero recoveries, successful cleanup, and
+  $0.086505640 accounted spend. All 128 responses were first-attempt schema-
+  valid, so its classifiers are `transport_stable` and `contract_stable`.
+  Nano's semantic diagnostic is `semantic_signal_weak`: fact, implication, and
+  unresolved-relation quality plus repeat/transformation equivalence remained
+  below the frozen thresholds. The oracle-conditioned unchanged estimator
+  reproduced top-1/top-2 1.0 and zero regret.
+
+This result removes transport and wire-contract reliability as confounders only
+for the exact development protocol. It creates no `E-*` finding, promotes no
+hypothesis, and says nothing about SER-vs-ReAct architecture leverage. Under
+ADR-0018 and the preregistered Case C rule, the next experiment retains contract
+v1.2 and separately tests the next stronger inexpensive model with a fresh
+untouched confirmatory population; the old 24 evaluation episodes cannot be
+used as confirmation.
 
 ## Admitted evidence
 

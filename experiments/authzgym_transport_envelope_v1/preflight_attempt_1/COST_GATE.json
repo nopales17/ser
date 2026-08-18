@@ -1,0 +1,17 @@
+{
+  "connectivity_probes_are_paid_inferences": false,
+  "cost_basis": "provider-reported usage at frozen listed rates; not a billing statement",
+  "experiment": "authzgym-transport-envelope-v1",
+  "frozen_inputs_manifest_hash": "19033f0d4264448b5708edc213b0e647e18a56c8d38757c968b7e13d7d387936",
+  "hard_spend_ceiling_usd": 1.0,
+  "maximum_api_submissions": 384,
+  "maximum_semantic_attempts_per_logical_call": 2,
+  "maximum_transport_replays_per_logical_call": 1,
+  "proceed": true,
+  "projected_complete_cost_usd": 0.79872,
+  "projected_output_tokens": 393216,
+  "projected_uncached_input_tokens": 1536000,
+  "record_hash": "ed404ac27288d54300b402ace5869b3a6868d95b7d8d3d7170cb8cae6d277602",
+  "scheduled_logical_calls": 128,
+  "schema_version": 1
+}

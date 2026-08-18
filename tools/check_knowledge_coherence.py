@@ -814,6 +814,10 @@ def check_phase_progress_status() -> dict[str, object]:
         errors.append(
             "phase_5a_4_semantic_contract_v1_2_complete_unstable is not true"
         )
+    if not current.get("knowledge_architecture", {}).get(
+        "phase_5a_5_transport_envelope_complete_stable"
+    ):
+        errors.append("phase_5a_5_transport_envelope_complete_stable is not true")
     if current.get("evidence", {}).get("ser_experiments") != ["E-002", "E-003"]:
         errors.append("MicroGym evidence index must contain exactly E-002 and E-003")
     experiment_paths = (
@@ -870,6 +874,23 @@ def check_phase_progress_status() -> dict[str, object]:
         "experiments/authzgym_semantic_contract_v1_2/REPORT.md",
         "experiments/authzgym_semantic_contract_v1_2/INTERPRETATION.md",
         "experiments/authzgym_semantic_contract_v1_2/IMPLEMENTATION_NOTES.md",
+        "experiments/authzgym_transport_envelope_v1/PREREGISTRATION.md",
+        "experiments/authzgym_transport_envelope_v1/FROZEN_INPUTS.json",
+        "experiments/authzgym_transport_envelope_v1/COST_GATE.json",
+        "experiments/authzgym_transport_envelope_v1/PREFLIGHT_FAILURE.md",
+        "experiments/authzgym_transport_envelope_v1/preflight_attempt_1/FROZEN_INPUTS.json",
+        "experiments/authzgym_transport_envelope_v1/preflight_attempt_1/COST_GATE.json",
+        "experiments/authzgym_transport_envelope_v1/preflight_attempt_1/tunnel_events.jsonl",
+        "experiments/authzgym_transport_envelope_v1/TRANSPORT_AUTOPSY.json",
+        "experiments/authzgym_transport_envelope_v1/transport_attempts.jsonl",
+        "experiments/authzgym_transport_envelope_v1/provider_responses.jsonl",
+        "experiments/authzgym_transport_envelope_v1/tunnel_events.jsonl",
+        "experiments/authzgym_transport_envelope_v1/stress_runs.jsonl",
+        "experiments/authzgym_transport_envelope_v1/summary.json",
+        "experiments/authzgym_transport_envelope_v1/validation.json",
+        "experiments/authzgym_transport_envelope_v1/REPORT.md",
+        "experiments/authzgym_transport_envelope_v1/INTERPRETATION.md",
+        "experiments/authzgym_transport_envelope_v1/IMPLEMENTATION_NOTES.md",
     )
     missing_experiment_paths = [path for path in experiment_paths if not (ROOT / path).exists()]
     if missing_experiment_paths:
@@ -917,6 +938,19 @@ def check_phase_progress_status() -> dict[str, object]:
         authz_contract_status = current.get("evidence", {}).get(
             "authzgym_semantic_contract_v1_2", {}
         )
+        authz_transport_validation = json.loads(
+            (ROOT / "experiments/authzgym_transport_envelope_v1/validation.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        authz_transport_summary = json.loads(
+            (ROOT / "experiments/authzgym_transport_envelope_v1/summary.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        authz_transport_status = current.get("evidence", {}).get(
+            "authzgym_transport_envelope_v1", {}
+        )
         if authz_v1_validation.get("status") != "fail":
             errors.append("preserved AuthzGym v1 calibration must remain invalid")
         if authz_v1_1_validation.get("status") != "pass":
@@ -962,12 +996,36 @@ def check_phase_progress_status() -> dict[str, object]:
             errors.append(
                 "AuthzGym semantic-contract v1.2 must remain preserved as transport-unstable without hypothesis admission"
             )
+        if (
+            authz_transport_validation.get("status") != "pass"
+            or authz_transport_summary.get("transport", {}).get("classification")
+            != "transport_stable"
+            or authz_transport_summary.get("semantic_contract", {}).get(
+                "classification"
+            )
+            != "contract_stable"
+            or authz_transport_summary.get("semantic_signal", {}).get(
+                "classification"
+            )
+            != "semantic_signal_weak"
+            or authz_transport_summary.get("decision_rule", {}).get(
+                "selected_next_experiment"
+            )
+            != "case_c_same_contract_next_stronger_inexpensive_model"
+            or authz_transport_status.get("evidence_status")
+            != "development_transport_and_capability_diagnostic_no_hypothesis_admission"
+            or authz_transport_status.get("provider_responses") != 128
+            or authz_transport_status.get("raw_transport_failures") != 0
+        ):
+            errors.append(
+                "AuthzGym transport-envelope v1 must remain a stable transport/contract and weak-nano development diagnostic without hypothesis admission"
+            )
     return result(
         "phase_progress_status",
         not errors,
         "errors: " + "; ".join(errors)
         if errors
-        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are recorded narrowly; Phase 5A preserves benchmark calibration, invalid real-model v1, and transport-unstable semantic-contract v1.2 without hypothesis admission; Phase 5 remains active",
+        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are recorded narrowly; Phase 5A preserves benchmark calibration and prior failures, then records transport-stable/contract-stable weak-nano development diagnostics without hypothesis admission; Phase 5 remains active",
     )
 
 

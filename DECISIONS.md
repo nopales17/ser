@@ -388,3 +388,55 @@ a new entry; do not rewrite it.
   implementation facts rather than an empirical SER result.
 - Revisit when: A separately frozen full development stress protocol completes
   with stable transport and satisfies its response-contract classifier.
+
+## ADR-0018 -- Admit transport stability and preserve weak nano semantics as a development diagnostic
+
+- Status: accepted
+- Date: 2026-08-17
+- Context: The separately frozen transport-envelope v1 study retained semantic
+  contract v1.2, the nano model, and the exact 128-call development schedule.
+  A zero-inference preflight first exposed an unsupported redundant curl option;
+  that failed preflight, its initial manifest, and cleanup evidence are preserved
+  before the corrected protocol was refrozen. The corrected workload then
+  received provider responses for 128/128 logical calls through one supervised
+  SSH/SOCKS tunnel, with zero raw transport failures, zero reconnects, no
+  permanent losses, successful cleanup, and $0.086505640 accounted spend. All
+  128 responses passed the frozen schema on their first semantic attempt, but
+  semantic precision/recall, action compatibility, repeat exactness, and
+  transformation equivalence remained below the preregistered capability
+  thresholds. The transport and contract classifiers are `transport_stable`
+  and `contract_stable`; the semantic diagnostic is `semantic_signal_weak`.
+- Decision: Treat the local-Mac to supervised SSH SOCKS to wiseau to API
+  transport envelope as stable for this exact development protocol and treat
+  semantic contract v1.2 as mechanically reliable with this model and schedule.
+  Preserve the weak nano semantic result as a development-only capability-floor
+  diagnostic. Create no `E-*` finding, promote no hypothesis, and make no
+  architecture comparison. Keep Phase 5 active and Phase 5B blocked. Under the
+  preregistered Case C rule, the next admissible experiment retains the frozen
+  v1.2 semantic contract and uses the next stronger inexpensive model in a
+  separately versioned, preregistered development/confirmatory design. The 24
+  previously observed evaluation episodes remain recovery/diagnostic material
+  and cannot serve as untouched confirmation.
+- Why: Complete transport and schema validity remove networking and wire-format
+  reliability as confounders for this development schedule, so nano's weak
+  semantic measurements are now interpretable at the declared capability-floor
+  scope. They do not test SER-vs-ReAct, resource-normalized architecture value,
+  or untouched generalization, and therefore cannot support H-001, H-016,
+  H-017, or H-018.
+- Alternatives rejected: tuning the v1.2 prompt or schema after observing the
+  weak metrics; rerunning nano until quality improves; interpreting schema
+  validity as semantic competence; returning to the old 24 evaluation episodes;
+  running SER-vs-ReAct with a weak semantic channel; moving to executable
+  AuthzGym, GitLab, IDS, fuzzing, graphs, coupling laws, or training; silently
+  discarding the zero-inference preflight failure.
+- Consequences: Transport supervision, same-byte replay, scoped insecure TLS,
+  remote SOCKS DNS, local credential delivery, event/hash accounting, and final
+  cleanup are retained as implementation behavior for subsequent static model
+  studies. The unchanged deterministic estimator remains adequate only under
+  perfect evaluator observations on eight development entries. The smallest
+  justified next question is whether a stronger inexpensive model can clear the
+  same frozen semantic thresholds before any architecture experiment is
+  designed.
+- Revisit when: A separately frozen stronger-model semantic study completes, or
+  transport behavior changes enough that the envelope no longer satisfies the
+  recorded stability conditions.

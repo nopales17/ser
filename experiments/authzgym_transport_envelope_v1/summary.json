@@ -1,0 +1,237 @@
+{
+  "decision_rule": {
+    "no_hypothesis_promotion": true,
+    "selected_next_experiment": "case_c_same_contract_next_stronger_inexpensive_model"
+  },
+  "downstream_action_value": {
+    "existing_estimator_adequate_under_oracle": true,
+    "model_action_compatible": false,
+    "model_conditioned": {
+      "mean_normalized_regret": 0.5958333333333333,
+      "observations": 128,
+      "top1": 0.21875,
+      "top2": 0.3828125
+    },
+    "oracle_conditioned": {
+      "canonical_development_episodes": 8,
+      "mean_normalized_regret": 0.0,
+      "top1": 1.0,
+      "top2": 1.0
+    }
+  },
+  "experiment": "authzgym-transport-envelope-v1",
+  "population_hash": "2d9eb6a25d17486bb442492d36ca2ea1c988d2d1a66539d8b5dc05542abdbaf7",
+  "provider_accounting": {
+    "cached_input_tokens": 216832,
+    "calls": 128,
+    "input_tokens": 309002,
+    "latency_ms": 813129.6692502219,
+    "output_tokens": 50988,
+    "reasoning_output_tokens": 0,
+    "total_cost_usd": 0.08650564
+  },
+  "schema_version": 1,
+  "semantic_contract": {
+    "classification": "contract_stable",
+    "observed": {
+      "finish_reason_length": 0,
+      "first_attempt_schema_valid_rate": 1.0,
+      "first_attempt_valid": 128,
+      "illegal_artifact_references": 0,
+      "illegal_hypothesis_references": 0,
+      "illegal_relation_references": 0,
+      "incomplete_json": 0,
+      "information_boundary_violations": 0,
+      "manual_repairs": 0,
+      "post_retry_valid": 128,
+      "post_retry_valid_rate": 1.0,
+      "provider_attempts": 128,
+      "scheduled_calls": 128
+    },
+    "response_error_counts": {},
+    "thresholds": {
+      "maximum_finish_reason_length": 0,
+      "maximum_illegal_artifact_references": 0,
+      "maximum_illegal_hypothesis_references": 0,
+      "maximum_illegal_relation_references": 0,
+      "maximum_incomplete_json": 0,
+      "maximum_information_boundary_violations": 0,
+      "maximum_manual_repairs": 0,
+      "minimum_first_attempt_schema_valid_rate": 0.99,
+      "minimum_post_retry_valid_rate": 1.0
+    }
+  },
+  "semantic_signal": {
+    "classification": "semantic_signal_weak",
+    "fact_reasonable": false,
+    "facts": {
+      "expected": 272,
+      "precision": 0.16666666666666666,
+      "predicted": 156,
+      "recall": 0.09558823529411764,
+      "true_positive": 26
+    },
+    "hypothesis_effects": {
+      "expected": 128,
+      "precision": 0.3106060606060606,
+      "predicted": 132,
+      "recall": 0.3203125,
+      "true_positive": 41
+    },
+    "implication_reasonable": false,
+    "malformed_run_rate": 0.0,
+    "thresholds": {
+      "maximum_action_normalized_regret": 0.35,
+      "minimum_action_top1": 0.6,
+      "minimum_action_top2": 0.8,
+      "minimum_effect_precision": 0.6,
+      "minimum_effect_recall": 0.5,
+      "minimum_fact_precision": 0.65,
+      "minimum_fact_recall": 0.5,
+      "minimum_unresolved_precision": 0.6,
+      "minimum_unresolved_recall": 0.5
+    },
+    "unknown_effect_rate": 0.59375,
+    "unresolved_relations": {
+      "expected": 528,
+      "precision": 0.017241379310344827,
+      "predicted": 58,
+      "recall": 0.001893939393939394,
+      "true_positive": 1
+    }
+  },
+  "stability": {
+    "by_variant": {
+      "artifact_identifier_variation": {
+        "runs": 16,
+        "valid": 16
+      },
+      "artifact_reordering": {
+        "runs": 16,
+        "valid": 16
+      },
+      "base_entry": {
+        "runs": 16,
+        "valid": 16
+      },
+      "candidate_label_permutation": {
+        "runs": 16,
+        "valid": 16
+      },
+      "combined_permutation": {
+        "runs": 16,
+        "valid": 16
+      },
+      "longest_artifact": {
+        "runs": 16,
+        "valid": 16
+      },
+      "maximal_public_summary": {
+        "runs": 16,
+        "valid": 16
+      },
+      "symbol_renaming": {
+        "runs": 16,
+        "valid": 16
+      }
+    },
+    "repeat_both_valid_rate": 1.0,
+    "repeat_pairs": 64,
+    "repeat_semantic_exact_rate": 0.296875,
+    "repeat_stability_by_variant": {
+      "artifact_identifier_variation": {
+        "both_schema_valid_rate": 1.0,
+        "pairs": 8,
+        "semantic_exact_rate": 0.25
+      },
+      "artifact_reordering": {
+        "both_schema_valid_rate": 1.0,
+        "pairs": 8,
+        "semantic_exact_rate": 0.25
+      },
+      "base_entry": {
+        "both_schema_valid_rate": 1.0,
+        "pairs": 8,
+        "semantic_exact_rate": 0.375
+      },
+      "candidate_label_permutation": {
+        "both_schema_valid_rate": 1.0,
+        "pairs": 8,
+        "semantic_exact_rate": 0.25
+      },
+      "combined_permutation": {
+        "both_schema_valid_rate": 1.0,
+        "pairs": 8,
+        "semantic_exact_rate": 0.125
+      },
+      "longest_artifact": {
+        "both_schema_valid_rate": 1.0,
+        "pairs": 8,
+        "semantic_exact_rate": 0.375
+      },
+      "maximal_public_summary": {
+        "both_schema_valid_rate": 1.0,
+        "pairs": 8,
+        "semantic_exact_rate": 0.375
+      },
+      "symbol_renaming": {
+        "both_schema_valid_rate": 1.0,
+        "pairs": 8,
+        "semantic_exact_rate": 0.375
+      }
+    },
+    "semantic_equivalence_both_valid_rate": 1.0,
+    "semantic_equivalence_by_transformation": {
+      "artifact_identifier_variation": {
+        "both_schema_valid_rate": 1.0,
+        "pairs": 16,
+        "semantic_exact_rate": 0.0
+      },
+      "artifact_reordering": {
+        "both_schema_valid_rate": 1.0,
+        "pairs": 16,
+        "semantic_exact_rate": 0.25
+      },
+      "candidate_label_permutation": {
+        "both_schema_valid_rate": 1.0,
+        "pairs": 16,
+        "semantic_exact_rate": 0.0
+      },
+      "combined_permutation": {
+        "both_schema_valid_rate": 1.0,
+        "pairs": 16,
+        "semantic_exact_rate": 0.0625
+      },
+      "symbol_renaming": {
+        "both_schema_valid_rate": 1.0,
+        "pairs": 16,
+        "semantic_exact_rate": 0.125
+      }
+    },
+    "semantic_equivalence_exact_rate": 0.0875,
+    "semantic_equivalence_pairs": 80
+  },
+  "transport": {
+    "classification": "transport_stable",
+    "cleanup_process_exited_and_listener_closed": true,
+    "failed_tunnel_start_attempts": 0,
+    "logical_calls_with_provider_response": 128,
+    "longest_successful_sequence": 128,
+    "permanently_failed_logical_calls": 0,
+    "precall_liveness_reconnects": 0,
+    "provider_response_latency_across_generation_changes": [],
+    "provider_response_latency_by_tunnel_generation": {
+      "1": {
+        "maximum_latency_ms": 42579.52899998054,
+        "mean_latency_ms": 6352.575541017359,
+        "provider_responses": 128
+      }
+    },
+    "raw_transport_failures": 0,
+    "reconnect_requests": 0,
+    "request_failure_reconnects": 0,
+    "scheduled_logical_calls": 128,
+    "successful_tunnel_recoveries": 0,
+    "tunnel_generations": 1
+  }
+}

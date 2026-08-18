@@ -1,0 +1,111 @@
+{
+  "curl_returncode_counts": {
+    "0": 8,
+    "28": 37,
+    "7": 202,
+    "97": 1
+  },
+  "curl_returncode_meanings": {
+    "0": "curl completed and a provider response was recorded",
+    "28": "curl timed out",
+    "7": "curl could not connect to the configured proxy/host",
+    "97": "curl reported a proxy-handshake error"
+  },
+  "empty_response_bodies_on_failed_attempts": 240,
+  "first_failed_attempt_ordinal": 9,
+  "latency_by_returncode": {
+    "0": {
+      "count": 8,
+      "maximum_seconds": 7.112457124982029,
+      "mean_seconds": 6.005905833240831,
+      "minimum_seconds": 5.135013790917583,
+      "total_seconds": 48.04724666592665
+    },
+    "28": {
+      "count": 37,
+      "maximum_seconds": 15.052049916936085,
+      "mean_seconds": 15.026510085677728,
+      "minimum_seconds": 15.017535999999382,
+      "total_seconds": 555.9808731700759
+    },
+    "7": {
+      "count": 202,
+      "maximum_seconds": 0.021040874999017,
+      "mean_seconds": 0.009930981823363065,
+      "minimum_seconds": 0.007774582947604,
+      "total_seconds": 2.006058328319339
+    },
+    "97": {
+      "count": 1,
+      "maximum_seconds": 7.777511041960679,
+      "mean_seconds": 7.777511041960679,
+      "minimum_seconds": 7.777511041960679,
+      "total_seconds": 7.777511041960679
+    }
+  },
+  "most_supported_failure_cause": "The long-lived SSH/SOCKS forwarding path stopped completing new connections and later ceased accepting local proxy connections.",
+  "not_established": [
+    "The exact attempt at which the SSH process exited.",
+    "Whether the listener remained present during the 37 connect timeouts.",
+    "Whether remote SOCKS DNS, wiseau egress routing, or the API endpoint caused the initial timeouts.",
+    "Whether authentication or endpoint health changed after call eight.",
+    "The exact curl connection phase because stderr and write-out timing fields were not retained."
+  ],
+  "preserved_ssh_evidence": {
+    "curl_stderr_recorded": false,
+    "http_status_or_curl_phase_recorded_on_failure": false,
+    "implementation_notes_state": "the egress SSH connection timed out and was explicitly terminated after the run",
+    "per_attempt_listener_state_recorded": false,
+    "per_attempt_ssh_process_state_recorded": false
+  },
+  "record_hash": "5591bc9d010c69a68974dbef519c477fda1086f2f76d51a2cac109abc26d6a40",
+  "recorded_transport_attempts": 248,
+  "request_process_model": {
+    "curl_process_per_attempt": true,
+    "persistent_component": "one externally managed SSH SOCKS process",
+    "shared_curl_session": false,
+    "shared_http_connection_pool": false
+  },
+  "scheduled_logical_calls": 128,
+  "schema_version": 1,
+  "sequence_segments": [
+    {
+      "curl_returncode": 0,
+      "first_attempt_ordinal": 1,
+      "last_attempt_ordinal": 8
+    },
+    {
+      "curl_returncode": 28,
+      "first_attempt_ordinal": 9,
+      "last_attempt_ordinal": 45
+    },
+    {
+      "curl_returncode": 97,
+      "first_attempt_ordinal": 46,
+      "last_attempt_ordinal": 46
+    },
+    {
+      "curl_returncode": 7,
+      "first_attempt_ordinal": 47,
+      "last_attempt_ordinal": 248
+    }
+  ],
+  "source_experiment": "authzgym-semantic-contract-v1.2",
+  "source_files": {
+    "IMPLEMENTATION_NOTES.md": "aa79e4f3d899631a9f9c5aa82ab761751e61ea1c711f937425e6f7a6ea96b9c5",
+    "provider_responses.jsonl": "d6fca2991e68787544cf61cd291097459679a6955cea60b917ffc16c6b988d6a",
+    "stress_runs.jsonl": "b246524b22e38edbfb0c97f66249bb0fa5becf0f053acf8f6763eb2b78be903e"
+  },
+  "successful_prefix_attempts": 8,
+  "successful_prefix_elapsed_seconds": 48.04724666592665,
+  "successful_provider_responses": 8,
+  "supported_inferences": [
+    "The failure began after eight completed provider responses rather than at startup.",
+    "Thirty-seven failures lasted approximately the frozen 15-second connect timeout and returned no provider body.",
+    "One subsequent proxy-handshake error marks a transition in SOCKS behavior.",
+    "The final 202 failures were immediate curl code 7 failures, consistent with the local SOCKS listener no longer accepting connections.",
+    "Fresh curl processes rule out a shared curl connection pool or stale cross-call HTTP keep-alive session.",
+    "No provider response after the eighth call contained an authentication or API error."
+  ],
+  "total_recorded_transport_seconds": 613.8116892062826
+}

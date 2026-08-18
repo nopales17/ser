@@ -2,7 +2,7 @@
   "schema_version": 1,
   "as_of": "2026-08-17",
   "project_name": "SER (provisional)",
-  "project_maturity": "phase_5a_semantic_contract_v1_2_transport_unstable_no_capability_finding",
+  "project_maturity": "phase_5a_transport_and_contract_stable_nano_semantics_weak",
   "runtime": {
     "built": true,
     "controllers": 17,
@@ -21,7 +21,8 @@
     "phase_4_routing_falsification_complete": true,
     "phase_5a_1_and_5a_2_authzgym_benchmark_complete": true,
     "phase_5a_3_realmodel_v1_complete_invalid": true,
-    "phase_5a_4_semantic_contract_v1_2_complete_unstable": true
+    "phase_5a_4_semantic_contract_v1_2_complete_unstable": true,
+    "phase_5a_5_transport_envelope_complete_stable": true
   },
   "formal_control_problem": {
     "phase_2_complete": true,
@@ -37,7 +38,7 @@
   },
   "evidence": {
     "ser_experiments": ["E-002", "E-003"],
-    "summary": "MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. Routing-v1 then supported a narrow one-step routing result under clean supplied likelihoods. Static Semantic AuthzGym protocol 1.1 remains a validated benchmark calibration. Real-model v1 is preserved as invalid after response-contract failure. Development-only semantic-contract v1.2 is preserved as contract_unstable after the egress tunnel failed: only 8/128 calls were valid. No AuthzGym E-* finding was admitted, no general SER hypothesis was promoted, and a complete stable semantic capability test remains unrun.",
+    "summary": "MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. Routing-v1 then supported a narrow one-step routing result under clean supplied likelihoods. Static Semantic AuthzGym protocol 1.1 remains a validated benchmark calibration. Real-model v1 is preserved as invalid and semantic-contract v1.2 as transport-unstable. The separate transport-envelope v1 run completed 128/128 provider calls, established transport_stable and contract_stable for the exact development protocol, and measured nano semantic_signal_weak. No AuthzGym E-* finding or architecture claim was admitted, and no general SER hypothesis was promoted.",
     "microgym_v1": {
       "population_hash": "a9234fa60b40d3628f6317284a964c95917bcd7442796d8961f18b14b9958b3d",
       "problem_regimes": 24,
@@ -123,6 +124,41 @@
       "oracle_estimator_diagnostic": "top1_1.0_top2_1.0_normalized_regret_0.0",
       "summary": "The compact fixed-slot contract eliminated observed truncation and illegal-reference failures in the eight successful prefix calls, but the wiseau SSH connection timed out and 120 later calls exhausted their frozen retry through 240 transport failures. The complete integrity-valid schedule therefore failed the response-reliability thresholds. Prefix semantic metrics are descriptive only; the oracle-conditioned unchanged estimator passed its development diagnostic."
     },
+    "authzgym_transport_envelope_v1": {
+      "evidence_status": "development_transport_and_capability_diagnostic_no_hypothesis_admission",
+      "model_identifier": "patchersniper_praneeth/gpt-5.4-nano",
+      "population_hash": "2d9eb6a25d17486bb442492d36ca2ea1c988d2d1a66539d8b5dc05542abdbaf7",
+      "frozen_inputs_manifest_hash": "e3dbeec53f6e082bd1a970e9e67acf4af91c0988167305ee84a3a476aab586f8",
+      "preserved_initial_preflight_manifest_hash": "19033f0d4264448b5708edc213b0e647e18a56c8d38757c968b7e13d7d387936",
+      "development_source_episodes": 8,
+      "stress_cases": 64,
+      "scheduled_logical_calls": 128,
+      "api_submissions": 128,
+      "provider_responses": 128,
+      "raw_transport_failures": 0,
+      "successful_transport_recoveries": 0,
+      "permanent_transport_losses": 0,
+      "tunnel_generations": 1,
+      "longest_successful_sequence": 128,
+      "cleanup_confirmed": true,
+      "first_attempt_schema_valid_rate": 1.0,
+      "post_retry_schema_valid_rate": 1.0,
+      "finish_reason_length": 0,
+      "incomplete_json": 0,
+      "illegal_dynamic_references": 0,
+      "fact_precision_recall": [0.16666666666666666, 0.09558823529411764],
+      "hypothesis_effect_precision_recall": [0.3106060606060606, 0.3203125],
+      "unresolved_relation_precision_recall": [0.017241379310344827, 0.001893939393939394],
+      "repeat_semantic_exact_rate": 0.296875,
+      "transformation_semantic_equivalence_exact_rate": 0.0875,
+      "oracle_estimator_diagnostic": "top1_1.0_top2_1.0_normalized_regret_0.0",
+      "accounted_total_cost_usd": 0.08650564,
+      "transport_classifier": "transport_stable",
+      "contract_classifier": "contract_stable",
+      "semantic_diagnostic": "semantic_signal_weak",
+      "next_experiment": "case_c_same_contract_next_stronger_inexpensive_model",
+      "summary": "The exact frozen v1.2 semantic workload completed on one supervised tunnel with 128/128 provider responses, no transport failures or retries, and full cleanup. All responses were first-attempt schema-valid, removing transport and wire-contract reliability as confounders for this development schedule. Nano semantic quality and invariance remained below the frozen thresholds, while the oracle-conditioned unchanged estimator reproduced 1.0/1.0/0.0. This is a capability-floor diagnostic, not architecture evidence or an E-* finding."
+    },
     "historical_only": [
       "E-001 describes scoped artifacts in the read-only IDS archive; it is not evidence for SER."
     ]
@@ -136,12 +172,12 @@
   "roadmap": {
     "active_phase_id": 5,
     "active_phase_title": "Controlled authorization action-value estimation",
-    "immediate_next_task": "Preregister a separately versioned development-only transport-envelope stability protocol that retains semantic-contract v1.2, the nano model, and the eight development source episodes; specify tunnel-liveness behavior and complete the same bounded stress question before any architecture comparison or stronger-model test.",
+    "immediate_next_task": "Preregister a separately versioned semantic-capability study that retains contract v1.2, tests the next stronger inexpensive model, remains separate from architecture comparison, and defines a fresh untouched confirmatory population because the old 24 evaluation episodes are no longer confirmatory.",
     "research_trunk": "GitLab authorization investigation is the primary practical target. MicroGym is a control validation instrument; IDS is only a possible semantic bridge; controlled software experimentation is trunk-aligned; remote sensing is dormant."
   },
   "non_goals": [
     "No production SER runtime; the implemented code consists of MicroGym and Static Semantic AuthzGym benchmark instruments plus small exact, reference, and deterministic mock controllers.",
-    "Two bounded real semantic-model protocols are preserved: architecture v1 is invalid and development contract v1.2 is transport-unstable; neither is a general LLM agent or admitted model-capability finding.",
+    "Three bounded real semantic-model protocols are preserved: architecture v1 is invalid, development contract v1.2 is transport-unstable, and transport-envelope v1 is a transport-stable weak-nano development diagnostic; none is a general LLM agent or an admitted architecture finding.",
     "No coupling-law implementation, universal epistemic graph, production fuzzer, remote-sensing integration, or IDS adapter.",
     "No IDS code or data import, real GitLab integration, or claim that IDS/GitLab validates SER."
   ]

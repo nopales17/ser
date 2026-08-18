@@ -98,19 +98,22 @@ Allowed statuses: `planned`, `active`, `done`.
   exact question. Do not add graphs, coupling laws, learned policies, or
   cross-substrate environments.
 - current cursor: Phase 5A.1 construction, Phase 5A.2 benchmark freezing,
-  Phase 5A.3 first real-model evaluation, and Phase 5A.4 semantic-contract
-  stability diagnosis are complete; Phase 5A overall is not complete.
-  Real-model v1 remains `invalid` with only 88/192 valid architecture-runs.
-  Development-only semantic-contract v1.2 then structurally removed free-form
-  prose and generated identifiers and raised the output ceiling, but its
-  preregistered classifier was `contract_unstable`: the first eight calls were
-  schema-valid, the wiseau egress connection timed out, and only 8/128 calls
-  were valid after the frozen retry. No model-capability or architecture finding
-  is admitted. Under ADR-0017, the next step is a separately versioned
-  development-only transport-envelope stability protocol retaining the v1.2
-  semantic schema, prompt, model, and source population. It must preregister
-  tunnel-liveness behavior and may not tune semantic accuracy, switch models,
-  or use the observed evaluation population.
+  Phase 5A.3 first real-model evaluation, Phase 5A.4 semantic-contract
+  diagnosis, and Phase 5A.5 transport-envelope stability are complete; Phase
+  5A overall is not complete. Real-model v1 remains `invalid`, and semantic-
+  contract v1.2 remains preserved as transport-unstable. The separate Phase
+  5A.5 protocol retained v1.2 exactly and completed 128/128 logical calls on one
+  supervised tunnel with zero transport failures, zero retries, successful
+  cleanup, and `transport_stable`. All 128 responses were first-attempt schema-
+  valid (`contract_stable`), but nano's semantic diagnostic was
+  `semantic_signal_weak`: fact, effect, and unresolved-relation quality plus
+  model-conditioned action value were below threshold. No architecture or
+  general SER finding is admitted. Under ADR-0018 and the frozen Case C rule,
+  the next step is a separately versioned, preregistered study that retains
+  semantic contract v1.2 and tests the next stronger inexpensive model. It must
+  remain development/confirmatory semantic-capability work, create a fresh
+  untouched confirmatory population before confirmation, and must not reuse the
+  already observed 24 evaluation episodes or run an architecture comparison.
 - readiness: Phase 5B is not ready. It requires a valid actual-model run to extract
   useful facts, rank inspections beyond trivial heuristics, route conditionally,
   and improve matched decision quality or efficiency under the frozen rule.

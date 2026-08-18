@@ -1,0 +1,37 @@
+{
+  "protocol_id": "authzgym-transport-envelope-v1",
+  "ssh_binary": "ssh",
+  "remote_host": "nopales17@wiseau.seclab.cs.ucsb.edu",
+  "local_bind_host": "127.0.0.1",
+  "preferred_local_port": 47819,
+  "exit_on_forward_failure": true,
+  "keepalive": {
+    "server_alive_interval_seconds": 15,
+    "server_alive_count_max": 2,
+    "ssh_connect_timeout_seconds": 15
+  },
+  "startup": {
+    "timeout_seconds": 20,
+    "listener_poll_interval_seconds": 0.1,
+    "listener_connect_timeout_seconds": 0.2,
+    "attempts": 2
+  },
+  "recovery": {
+    "backoff_seconds": 1.0,
+    "maximum_reconnections_per_logical_call": 1,
+    "maximum_api_submissions": 384
+  },
+  "connectivity_probe": {
+    "path": "/models",
+    "connect_timeout_seconds": 15,
+    "timeout_seconds": 30,
+    "paid_inference": false
+  },
+  "http_connection_strategy": "fresh_curl_process_per_api_submission_no_shared_pool",
+  "proxy_dns_mode": "socks5h_remote_resolution",
+  "tls_verification": false,
+  "stripped_ssh_environment_names": [
+    "OPENAI_API_KEY",
+    "OPENAI_BASE_URL"
+  ]
+}
