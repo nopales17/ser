@@ -64,8 +64,22 @@ Phase 5A implements `M-013`, Static Semantic AuthzGym, as the test instrument fo
 `H-018`. Protocol 1.1 has a frozen population, matched fixed/ReAct/explicit-value
 architectures, evaluator firewall, failure decomposition, and perturbation
 audit. Its deterministic mock runs are `benchmark_calibration_only`; they do not
-support `H-018`, `H-017`, `H-016`, or any authorization-competence claim. An
-actual semantic-model evaluation remains the next experiment.
+support `H-018`, `H-017`, `H-016`, or any authorization-competence claim. The
+first real-model architecture run was invalid because response/semantic-contract
+failures prevented architecture inference. Semantic contract v1.2 repaired the
+response-schema design by removing free-form and dynamic-reference output
+channels, but its first development stress run was transport-unstable. A
+separate transport-envelope study retained v1.2 and completed 128/128
+`gpt-5.4-nano` calls with `transport_stable` and `contract_stable` for that exact
+development protocol; nano's semantic signal was weak. These capability-floor
+diagnostics admit no `E-*` finding and do not promote `H-018`, `H-017`, `H-001`,
+or `H-016`; `H-018` remains `working`.
+
+The next experiment is a separately versioned, preregistered semantic-capability
+study using the next stronger inexpensive model under the unchanged v1.2
+contract. Only if semantic capability clears the frozen thresholds may fresh
+untouched confirmation and a later architecture comparison proceed; the already
+observed 24 evaluation episodes remain recovery/diagnostic material only.
 
 The four Phase 2 domain instantiations establish representational coverage only.
 They do not validate allocation value, scope-aware routing, active investigation,

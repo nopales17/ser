@@ -20,9 +20,17 @@ routing-v1 benchmark then showed that the unchanged myopic candidate can use a
 released cue to choose the exact one-step closed-loop acquisition when clean
 likelihood tables are supplied. Static Semantic AuthzGym protocol 1.1 is now a
 frozen authorization-code benchmark with a validated deterministic mock
-calibration; no real model has run on it. No production SER controller, learned
-policy, model integration, empirical semantic action-value result, or real-
-domain evidence exists.
+calibration. Real-model integration has since been exercised, but the first
+real-model architecture run was invalid because its response/semantic contract
+was not mechanically reliable enough for architecture inference. Semantic
+contract v1.2 repaired the response-schema design by removing free-form and
+dynamic-reference output channels; its first development stress run was
+transport-unstable, while the subsequent transport-envelope study completed
+128/128 `gpt-5.4-nano` calls with `transport_stable` and `contract_stable` for
+that exact development protocol. Nano's semantic signal was weak. These are
+capability-floor diagnostics, not admitted SER architecture findings: semantic
+action-value estimation and advantage over ReAct or an ordinary agent remain
+unproved.
 
 ## Start here
 
@@ -79,12 +87,14 @@ generated files directly.
 
 ## Current non-goals
 
-Active Phase 5 permits only the frozen Static Semantic AuthzGym evaluation
-needed to test whether an inexpensive semantic model can support useful
-epistemic-action estimates without supplied likelihood tables. It does not
-authorize real GitLab integration, broad vulnerability discovery, general LLM
-agents, graph policies, coupling operators, production fuzzers, IDS adapters,
-remote-sensing integrations, or training infrastructure. GitLab authorization
-is the practical research trunk, not current evidence; the completed IDS-to-CVE
-project remains read-only historical input and only a conditional semantic
-bridge.
+Active Phase 5 permits only a separately versioned, preregistered semantic-
+capability study using the next stronger inexpensive model under the unchanged
+v1.2 semantic contract and existing thresholds. It must remain separate from
+architecture comparison, perform development work before fresh untouched
+confirmation, and treat the previously observed 24 evaluation episodes only as
+recovery/diagnostic material. Phase 5 does not authorize real GitLab integration,
+broad vulnerability discovery, general LLM agents, graph policies, coupling
+operators, production fuzzers, IDS adapters, remote-sensing integrations, or
+training infrastructure. GitLab authorization is the practical research trunk,
+not current evidence; the completed IDS-to-CVE project remains read-only
+historical input and only a conditional semantic bridge.
