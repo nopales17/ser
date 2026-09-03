@@ -1,0 +1,143 @@
+{
+  "completed_logical_calls": 16,
+  "cumulative_cost_usd": 0.06607275,
+  "development_checkpoint_bounds": [
+    {
+      "actions": {
+        "maximum_final_top1": 0.75,
+        "maximum_final_top2": 0.8125,
+        "minimum_final_mean_normalized_regret": 0.19791666666666666
+      },
+      "completed_calls": 8,
+      "contract": {
+        "maximum_final_first_attempt_valid_rate": 1.0,
+        "maximum_final_post_retry_valid_rate": 1.0
+      },
+      "futile": false,
+      "layers": {
+        "effects": {
+          "maximum_final_precision": 0.7714285714285715,
+          "maximum_final_recall": 0.84375,
+          "precision_threshold": 0.6,
+          "recall_threshold": 0.5
+        },
+        "facts": {
+          "maximum_final_precision": 0.8059701492537313,
+          "maximum_final_recall": 0.8059701492537313,
+          "precision_threshold": 0.65,
+          "recall_threshold": 0.5
+        },
+        "unresolved": {
+          "maximum_final_precision": 1.0,
+          "maximum_final_recall": 0.7954545454545454,
+          "precision_threshold": 0.6,
+          "recall_threshold": 0.5
+        }
+      },
+      "reasons": [],
+      "remaining_calls": 24
+    },
+    {
+      "actions": {
+        "maximum_final_top1": 0.5,
+        "maximum_final_top2": 0.59375,
+        "minimum_final_mean_normalized_regret": 0.39791666666666664
+      },
+      "completed_calls": 16,
+      "contract": {
+        "maximum_final_first_attempt_valid_rate": 1.0,
+        "maximum_final_post_retry_valid_rate": 1.0
+      },
+      "futile": true,
+      "layers": {
+        "effects": {
+          "maximum_final_precision": 0.5434782608695652,
+          "maximum_final_recall": 0.78125,
+          "precision_threshold": 0.6,
+          "recall_threshold": 0.5
+        },
+        "facts": {
+          "maximum_final_precision": 0.5604395604395604,
+          "maximum_final_recall": 0.7611940298507462,
+          "precision_threshold": 0.65,
+          "recall_threshold": 0.5
+        },
+        "unresolved": {
+          "maximum_final_precision": 1.0,
+          "maximum_final_recall": 0.48484848484848486,
+          "precision_threshold": 0.6,
+          "recall_threshold": 0.5
+        }
+      },
+      "reasons": [
+        "facts_precision_mathematically_unreachable",
+        "effects_precision_mathematically_unreachable",
+        "unresolved_recall_mathematically_unreachable",
+        "action_top1_mathematically_unreachable",
+        "action_top2_mathematically_unreachable",
+        "action_regret_mathematically_unreachable"
+      ],
+      "remaining_calls": 16
+    }
+  ],
+  "early_stop": {
+    "actions": {
+      "maximum_final_top1": 0.5,
+      "maximum_final_top2": 0.59375,
+      "minimum_final_mean_normalized_regret": 0.39791666666666664
+    },
+    "completed_calls": 16,
+    "contract": {
+      "maximum_final_first_attempt_valid_rate": 1.0,
+      "maximum_final_post_retry_valid_rate": 1.0
+    },
+    "futile": true,
+    "layers": {
+      "effects": {
+        "maximum_final_precision": 0.5434782608695652,
+        "maximum_final_recall": 0.78125,
+        "precision_threshold": 0.6,
+        "recall_threshold": 0.5
+      },
+      "facts": {
+        "maximum_final_precision": 0.5604395604395604,
+        "maximum_final_recall": 0.7611940298507462,
+        "precision_threshold": 0.65,
+        "recall_threshold": 0.5
+      },
+      "unresolved": {
+        "maximum_final_precision": 1.0,
+        "maximum_final_recall": 0.48484848484848486,
+        "precision_threshold": 0.6,
+        "recall_threshold": 0.5
+      }
+    },
+    "reasons": [
+      "facts_precision_mathematically_unreachable",
+      "effects_precision_mathematically_unreachable",
+      "unresolved_recall_mathematically_unreachable",
+      "action_top1_mathematically_unreachable",
+      "action_top2_mathematically_unreachable",
+      "action_regret_mathematically_unreachable"
+    ],
+    "remaining_calls": 16
+  },
+  "experiment": "authzgym-stronger-model-v1",
+  "frozen_inputs_manifest_hash": "5e2c1b9695bc63b9d806c259e7aac206a9258294dbb680df57e76d8d78ff88f4",
+  "invalid_logical_responses": 0,
+  "permanent_transport_failures": 0,
+  "population_hash": "070d083ef23906f95a348fcb7f359a17593cc08225ec4ae074e2380ad80bef71",
+  "provider_attempts": 16,
+  "provider_responses": 16,
+  "raw_transport_failures": 0,
+  "record_hash": "c74e5d4eda35621172b6426e6b5396968f2d74146398f3da01d310a9c54c9509",
+  "scheduled_logical_calls": 32,
+  "schema_version": 1,
+  "semantic_retries": 0,
+  "stage": "development",
+  "stage_cost_usd": 0.04506555,
+  "stage_wall_clock_ms": 47379.79804095812,
+  "startup_error": null,
+  "transport_recoveries": 0,
+  "valid_logical_responses": 16
+}

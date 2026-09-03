@@ -1,0 +1,17 @@
+{
+  "cost_basis": "official list pricing applied to provider-reported usage; not an institutional billing statement",
+  "experiment": "authzgym-stronger-model-v1",
+  "frozen_inputs_manifest_hash": "525b2377d3ac71bb05c6ded88977a8d08a51a1f4577a685e57396a87b1b59ac6",
+  "hard_spend_ceiling_usd": 2.5,
+  "maximum_api_submissions": 300,
+  "maximum_semantic_attempts_per_logical_call": 2,
+  "maximum_transport_replays_per_logical_call": 1,
+  "proceed": true,
+  "projected_complete_cost_usd": 2.2824,
+  "projected_output_tokens": 307200,
+  "projected_uncached_input_tokens": 1200000,
+  "record_hash": "eb5631a62b9fb716d01924f43923b22e8345afe64734c698ad79fd1b2ffc7b29",
+  "scheduled_logical_calls": 100,
+  "schema_version": 1,
+  "user_approved_ceiling_date": "2026-09-03"
+}

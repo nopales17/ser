@@ -75,11 +75,16 @@ development protocol; nano's semantic signal was weak. These capability-floor
 diagnostics admit no `E-*` finding and do not promote `H-018`, `H-017`, `H-001`,
 or `H-016`; `H-018` remains `working`.
 
-The next experiment is a separately versioned, preregistered semantic-capability
-study using the next stronger inexpensive model under the unchanged v1.2
-contract. Only if semantic capability clears the frozen thresholds may fresh
-untouched confirmation and a later architecture comparison proceed; the already
-observed 24 evaluation episodes remain recovery/diagnostic material only.
+The separately versioned stronger-model study is now complete with
+`semantic_capability_below_threshold`. `gpt-5.4-mini` produced structurally valid
+development responses, but the frozen futility rule stopped at 16/32 because
+multiple semantic and model-conditioned action-value thresholds were no longer
+reachable. The fresh confirmation population was not run. Evaluator-oracle v1.2
+content continued to yield top-1 1.0, top-2 1.0, and regret 0.0, so this valid
+development result localizes the measured bottleneck upstream of the existing
+deterministic estimator but does not distinguish model inability from systematic
+interface omission or task ambiguity. It admits no `E-*` finding and does not
+promote `H-018`, `H-017`, `H-001`, or `H-016`.
 
 The four Phase 2 domain instantiations establish representational coverage only.
 They do not validate allocation value, scope-aware routing, active investigation,

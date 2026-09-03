@@ -77,11 +77,24 @@ H-018.
 
 This result removes transport and wire-contract reliability as confounders only
 for the exact development protocol. It creates no `E-*` finding, promotes no
-hypothesis, and says nothing about SER-vs-ReAct architecture leverage. Under
-ADR-0018 and the preregistered Case C rule, the next experiment retains contract
-v1.2 and separately tests the next stronger inexpensive model with a fresh
-untouched confirmatory population; the old 24 evaluation episodes cannot be
-used as confirmation.
+hypothesis, and says nothing about SER-vs-ReAct architecture leverage.
+
+- `authzgym_stronger_model_v1/` retains contract v1.2 and changes only the model
+  to `patchersniper_praneeth/gpt-5.4-mini`. Its corrected smoke and 16 executed
+  development calls were all first-attempt schema-valid with zero transport
+  failures or retries. The frozen optimistic rule stopped development at 16/32:
+  fact precision, effect precision, unresolved-relation recall, action top-1,
+  action top-2, and regret could no longer all pass even if the remaining calls
+  were perfect. The fresh 64-call confirmation population was generated and
+  hash-frozen but never queried. Evaluator-oracle observations reproduced
+  top-1/top-2 1.0 and zero regret on both development and fresh canonical
+  entries. The valid classifier is `semantic_capability_below_threshold`.
+
+The stronger-model result is a development capability-floor failure, not an
+`E-*` finding or architecture result. The next experiment must separately
+diagnose model inability, systematic semantic-interface omission, and task
+ambiguity without changing v1.2 in place or beginning an architecture
+comparison.
 
 ## Admitted evidence
 

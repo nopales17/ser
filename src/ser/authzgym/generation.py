@@ -381,6 +381,31 @@ def build_evaluation_episodes() -> tuple[AuthzEpisode, ...]:
     return tuple(episodes)
 
 
+def build_confirmation_episodes() -> tuple[AuthzEpisode, ...]:
+    """Build the fresh Phase 5 semantic-capability confirmation source set.
+
+    The construction deliberately reuses the Static Semantic AuthzGym v1
+    authoring method while assigning previously unused split/layout inputs.
+    It contains two layouts for each existing mechanism family and no new
+    mechanism, control type, or difficulty treatment.
+    """
+
+    episodes = []
+    for layout_index in range(30, 32):
+        group = f"confirmation-eligible-{layout_index}"
+        for mechanism in MECHANISMS:
+            episodes.append(
+                _episode(
+                    "confirmation",
+                    layout_index,
+                    mechanism,
+                    decision_group=group,
+                    control_type="eligible_branch",
+                )
+            )
+    return tuple(episodes)
+
+
 def permuted_episode(episode: AuthzEpisode) -> AuthzEpisode:
     """Return a semantically equivalent identifier/order perturbation for tests."""
 

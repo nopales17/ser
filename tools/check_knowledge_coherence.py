@@ -891,6 +891,20 @@ def check_phase_progress_status() -> dict[str, object]:
         "experiments/authzgym_transport_envelope_v1/REPORT.md",
         "experiments/authzgym_transport_envelope_v1/INTERPRETATION.md",
         "experiments/authzgym_transport_envelope_v1/IMPLEMENTATION_NOTES.md",
+        "experiments/authzgym_stronger_model_v1/PREREGISTRATION.md",
+        "experiments/authzgym_stronger_model_v1/FROZEN_INPUTS.json",
+        "experiments/authzgym_stronger_model_v1/COST_GATE.json",
+        "experiments/authzgym_stronger_model_v1/MODEL_SELECTION.json",
+        "experiments/authzgym_stronger_model_v1/PREFLIGHT_FAILURE.md",
+        "experiments/authzgym_stronger_model_v1/DEVELOPMENT_POPULATION.json",
+        "experiments/authzgym_stronger_model_v1/CONFIRMATORY_POPULATION.json",
+        "experiments/authzgym_stronger_model_v1/smoke/execution.json",
+        "experiments/authzgym_stronger_model_v1/development/execution.json",
+        "experiments/authzgym_stronger_model_v1/summary.json",
+        "experiments/authzgym_stronger_model_v1/validation.json",
+        "experiments/authzgym_stronger_model_v1/REPORT.md",
+        "experiments/authzgym_stronger_model_v1/INTERPRETATION.md",
+        "experiments/authzgym_stronger_model_v1/IMPLEMENTATION_NOTES.md",
     )
     missing_experiment_paths = [path for path in experiment_paths if not (ROOT / path).exists()]
     if missing_experiment_paths:
@@ -950,6 +964,19 @@ def check_phase_progress_status() -> dict[str, object]:
         )
         authz_transport_status = current.get("evidence", {}).get(
             "authzgym_transport_envelope_v1", {}
+        )
+        authz_stronger_validation = json.loads(
+            (ROOT / "experiments/authzgym_stronger_model_v1/validation.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        authz_stronger_summary = json.loads(
+            (ROOT / "experiments/authzgym_stronger_model_v1/summary.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        authz_stronger_status = current.get("evidence", {}).get(
+            "authzgym_stronger_model_v1", {}
         )
         if authz_v1_validation.get("status") != "fail":
             errors.append("preserved AuthzGym v1 calibration must remain invalid")
@@ -1020,12 +1047,32 @@ def check_phase_progress_status() -> dict[str, object]:
             errors.append(
                 "AuthzGym transport-envelope v1 must remain a stable transport/contract and weak-nano development diagnostic without hypothesis admission"
             )
+        if (
+            authz_stronger_validation.get("status") != "pass"
+            or authz_stronger_summary.get("classification")
+            != "semantic_capability_below_threshold"
+            or authz_stronger_summary.get("development_gate_passed") is not False
+            or authz_stronger_summary.get("confirmation_executed") is not False
+            or authz_stronger_summary.get("fresh_oracle", {}).get("top1") != 1.0
+            or authz_stronger_summary.get("fresh_oracle", {}).get("top2") != 1.0
+            or authz_stronger_summary.get("fresh_oracle", {}).get(
+                "mean_normalized_regret"
+            ) != 0.0
+            or authz_stronger_status.get("evidence_status")
+            != "development_semantic_capability_below_threshold_no_confirmation_no_hypothesis_admission"
+            or authz_stronger_status.get("executed_confirmatory_calls") != 0
+            or authz_stronger_status.get("preregistered_classifier")
+            != "semantic_capability_below_threshold"
+        ):
+            errors.append(
+                "AuthzGym stronger-model v1 must remain a valid development capability-floor failure with confirmation untouched and no hypothesis admission"
+            )
     return result(
         "phase_progress_status",
         not errors,
         "errors: " + "; ".join(errors)
         if errors
-        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are recorded narrowly; Phase 5A preserves benchmark calibration and prior failures, then records transport-stable/contract-stable weak-nano development diagnostics without hypothesis admission; Phase 5 remains active",
+        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are recorded narrowly; Phase 5A preserves benchmark calibration and prior failures, records transport-stable/contract-stable weak-nano diagnostics, and preserves the stronger-model development capability-floor failure with confirmation untouched and no hypothesis admission; Phase 5 remains active",
     )
 
 

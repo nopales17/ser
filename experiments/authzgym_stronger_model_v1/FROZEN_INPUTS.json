@@ -1,0 +1,498 @@
+{
+  "confirmation_requires_development_pass": true,
+  "confirmation_scored_only_after_complete_freeze": true,
+  "contract_thresholds": {
+    "maximum_finish_reason_length": 0,
+    "maximum_illegal_artifact_references": 0,
+    "maximum_illegal_hypothesis_references": 0,
+    "maximum_illegal_relation_references": 0,
+    "maximum_incomplete_json": 0,
+    "maximum_information_boundary_violations": 0,
+    "maximum_manual_repairs": 0,
+    "minimum_first_attempt_schema_valid_rate": 0.99,
+    "minimum_post_retry_valid_rate": 1.0
+  },
+  "development_early_stop_checkpoints": [
+    8,
+    16,
+    24
+  ],
+  "experiment": "authzgym-stronger-model-v1",
+  "files": {
+    "CONFIRMATORY_POPULATION.json": "cf6eefbdb3b3e771f04d788463d4fbf57fae8353a7dd8baefef78f86e50d65ed",
+    "DEVELOPMENT_POPULATION.json": "6e6d8cf229bc3f0c105f6d674736aeeea0f4db358953f9eda5d92d83fa5bbd86",
+    "MODEL_SELECTION.json": "a1ac691a88499eaade8a37b6bc7841acb0ba02fb7cdfa18bb4a98c9d257abcbb",
+    "PREFLIGHT_FAILURE.md": "b4c5c7be9c22c28f4bdd3fdc3e209808ad0fa510b8885146e1bdcb66157fb00c",
+    "PREREGISTRATION.md": "87526badb32c02513aca90e27ab1a413d28075ebf030f141acc7f9a3e0d2e5d9",
+    "SMOKE_POPULATION.json": "a7603f2e8689d88118a55daaec73092c1ed7af2acaca9e5340db99ea05314f42",
+    "confirmatory_source_population.json": "3672824f28e7df76dec11a3795d6f2f4a0bc58be3d8314c733a9cccacbf497fc",
+    "implementation/src/ser/authzgym/generation.py": "03bfe556091e8da118c1c27058a8edaa393473c17c4fa45645837b08b7163461",
+    "implementation/src/ser/authzgym/semantic_contract.py": "4074d5643c8b8957ee5cfb425074f06b757be4d581620f70b20f944b32a19da9",
+    "implementation/src/ser/authzgym/semantic_transport.py": "38862ab122acf5cc59ad4588ace10d81587031ff8bcde5e9fe4c28a7f2a12a86",
+    "implementation/src/ser/authzgym/supervised_transport.py": "68bdaba16e3646b53378acf83d6409957272426fe5cccee80f21a8b60d86fa95",
+    "implementation/src/ser/authzgym/tunnel_supervisor.py": "08e2477c655ed38876369c9362da2402413690e7114b4af7379a73182a2c8ea2",
+    "implementation/src/ser/evaluation/authz_contract_analysis.py": "d4f80b4252c9b285dc14fc200839b71ab3605da93cf7faef9e440d58e7ceec16",
+    "implementation/tools/run_authzgym_stronger_model.py": "7bb670c799c0ff979493c37c759cd35a3a61e1982dae5286901a46e14652dbbd",
+    "implementation/tools/verify_authzgym_stronger_model.py": "14d0a235b72ac9c0585c61b1998c0f7f2166013ba7208ec9b3ef095ff8e80fd3",
+    "model_config.json": "3d38e962f524b3e3452bc58c3daf1bf41da42f7b002f09fa329e20c4a8e80e99",
+    "preflight_attempt_1/COST_GATE.json": "2cf50dd3a940579681b38b36d6565f6a7921645c1f0ba8abd5bfeea83e68cf91",
+    "preflight_attempt_1/FROZEN_INPUTS.json": "4e78c257840daee32bdab93a769995a518e887535139d84ac50bd0050b2cfa1e",
+    "preflight_attempt_1/smoke/execution.json": "4798b9e510285f1a112515d8aeefb6f99cf5f70ff45687ef34b56933e9855906",
+    "preflight_attempt_1/smoke/provider_responses.jsonl": "8e3a47731a3c2d3ad48a76f2bab3eb2e17ca6eab388c415b6d3e0063d641b27f",
+    "preflight_attempt_1/smoke/runs.jsonl": "7ad6708053c76fd0d7a0b667ff4bcfded772108a06b7e642dadad52439a320a4",
+    "preflight_attempt_1/smoke/transport_attempts.jsonl": "d2233a5f8cb69e4b70d142138cf363b25ac3e03953bea6755a3d094cfe534c6f",
+    "preflight_attempt_1/smoke/tunnel_events.jsonl": "9d20a14d7faac6427423cf6f3635c890930f58ed5f6b8cba4650f468cf9a721b",
+    "semantic_contract/FROZEN_INPUTS.json": "ffab6b94a2d46bed2981df70436a83c3f029aff02265a717cf680644aefcbc0b",
+    "semantic_contract/STRESS_POPULATION.json": "004e9e84f45aecffb2b59a06cd2168a197b87a3ee3ef5bb606fd0c244863257f",
+    "semantic_contract/prompt.txt": "420e5e5b9129c53e0fe54b278b9bc22e0deae5c7a7914e5baef5d5c144e2b9db",
+    "semantic_contract/vocabulary.json": "db1e46ced39bcde71250dd02ed68b238e39718b711e94f2b294feb83d00ab4b5",
+    "source/development_population.json": "47ea8f0d20f5cdbf9b9f55ccf301a77fa742131d2b182a19ab29972b9102eb16",
+    "source/evaluation_population.json": "2b31c0830bde29c79bd815b4c33cb79071bae236d01ef53fc1ae7a7fb21f2a42",
+    "source/perturbation_population.json": "92410b13f08081343fb52e99e72fc138a590e4d0429a33763c8c73965c65e32b",
+    "tests/test_authzgym_stronger_model.py": "662be7f4a4d8511f33f76954860b6014c74bb3b8113553458fab80b0e482d52c",
+    "transport/transport_config.json": "912012c3dcf3b4e967d10830ec5624b58984195b7e70176f21b78239458a6f30"
+  },
+  "frozen_before_authzgym_inference": true,
+  "manifest_hash": "5e2c1b9695bc63b9d806c259e7aac206a9258294dbb680df57e76d8d78ff88f4",
+  "population_hashes": {
+    "confirmation": "6f1dcf63e4bd738193c3d2ec1e1018fb00906288385cec67231cac8c8c4fc6fa",
+    "development": "070d083ef23906f95a348fcb7f359a17593cc08225ec4ae074e2380ad80bef71",
+    "smoke": "9c64104b4257319debc7762db5e7d53b20b297c4ec0a5ccb5fd6d4e43b257549"
+  },
+  "preserved_nonsemantic_preflight": {
+    "cached_input_tokens": 3840,
+    "cost_usd": 0.012317999999999999,
+    "input_tokens": 9896,
+    "latency_ms": 12703.497542184778,
+    "manifest_hash": "525b2377d3ac71bb05c6ded88977a8d08a51a1f4577a685e57396a87b1b59ac6",
+    "output_tokens": 1664,
+    "provider_attempts": 4,
+    "provider_responses": 4,
+    "reasoning_output_tokens": 0,
+    "runner_sha256": "d90706df5e864511ac57d91cf347edbbfe21080b1d977c9e96f2609168e0133c",
+    "transport_failures": 0,
+    "valid_logical_responses": 4
+  },
+  "run_schedules": {
+    "confirmation": [
+      {
+        "case_id": "asv1-c-c97e41b94cef--base_entry--8c273abdc6",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-41f98a22be39--base_entry--e6e3cc6f8b",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-b5c89a97dec2--base_entry--f3577c17d6",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c265f62d861b--base_entry--27e4ba7c2d",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-df52f3a3113c--base_entry--37bcab17f6",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c10c38e91fc4--base_entry--1c052804bb",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-3e46cf9649c6--base_entry--8a35b29a25",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-8768649373d9--base_entry--eb9c2a8796",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c97e41b94cef--longest_artifact--8c273abdc6",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-41f98a22be39--longest_artifact--927d4a9340",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-b5c89a97dec2--longest_artifact--f6e154ffaf",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c265f62d861b--longest_artifact--d1656ae4ff",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-df52f3a3113c--longest_artifact--37bcab17f6",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c10c38e91fc4--longest_artifact--eb43d3ffe0",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-3e46cf9649c6--longest_artifact--d0078c9434",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-8768649373d9--longest_artifact--c282c07196",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c97e41b94cef--artifact_reordering--3a8867e18d",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-41f98a22be39--artifact_reordering--c7b4f256fc",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-b5c89a97dec2--artifact_reordering--4d31709b0b",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c265f62d861b--artifact_reordering--947b3b92e7",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-df52f3a3113c--artifact_reordering--b45e5fe0d0",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c10c38e91fc4--artifact_reordering--0db0d44ecb",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-3e46cf9649c6--artifact_reordering--fb90210b89",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-8768649373d9--artifact_reordering--335db6e556",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c97e41b94cef--symbol_renaming--ba6740caaa",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-41f98a22be39--symbol_renaming--3c0168c440",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-b5c89a97dec2--symbol_renaming--8b9ff577be",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c265f62d861b--symbol_renaming--dc1faf34cc",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-df52f3a3113c--symbol_renaming--bf6ecd87c2",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c10c38e91fc4--symbol_renaming--dbffd63778",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-3e46cf9649c6--symbol_renaming--48bf5a3d9d",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-8768649373d9--symbol_renaming--b302314b25",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c97e41b94cef--candidate_label_permutation--c277a00cbb",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-41f98a22be39--candidate_label_permutation--226a91328d",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-b5c89a97dec2--candidate_label_permutation--0ad96465d2",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c265f62d861b--candidate_label_permutation--fe4ae33f28",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-df52f3a3113c--candidate_label_permutation--fc104934b9",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c10c38e91fc4--candidate_label_permutation--dab7d8b017",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-3e46cf9649c6--candidate_label_permutation--8306fa0583",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-8768649373d9--candidate_label_permutation--82c509915f",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c97e41b94cef--artifact_identifier_variation--056e17f9fb",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-41f98a22be39--artifact_identifier_variation--1acdcc007b",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-b5c89a97dec2--artifact_identifier_variation--cb538eccf1",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c265f62d861b--artifact_identifier_variation--802cbe1e54",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-df52f3a3113c--artifact_identifier_variation--630fb4c52a",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c10c38e91fc4--artifact_identifier_variation--41fcc3434b",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-3e46cf9649c6--artifact_identifier_variation--c1009f9d62",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-8768649373d9--artifact_identifier_variation--b6c2be4f80",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c97e41b94cef--maximal_public_summary--57c67c4c69",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-41f98a22be39--maximal_public_summary--ab99733195",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-b5c89a97dec2--maximal_public_summary--a4bd1fb355",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c265f62d861b--maximal_public_summary--b3d4071a7a",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-df52f3a3113c--maximal_public_summary--044a5d3109",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c10c38e91fc4--maximal_public_summary--1a85fde213",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-3e46cf9649c6--maximal_public_summary--de400a385d",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-8768649373d9--maximal_public_summary--34b0f40e3d",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c97e41b94cef--combined_permutation--998dc9f87c",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-41f98a22be39--combined_permutation--6fea75ca8d",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-b5c89a97dec2--combined_permutation--cfbbf3670a",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c265f62d861b--combined_permutation--5c42ced826",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-df52f3a3113c--combined_permutation--dfaf1e11c3",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-c10c38e91fc4--combined_permutation--279dafd8f6",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-3e46cf9649c6--combined_permutation--eba17e7948",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-c-8768649373d9--combined_permutation--341c41c388",
+        "repeat": 1
+      }
+    ],
+    "development": [
+      {
+        "case_id": "asv1-d-5e6417ce899f--base_entry--71eb766486",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-4579914d0fa5--base_entry--a4d4153f39",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-96ebfd30761f--base_entry--f63dbfc3ca",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-f5f54c9c8670--base_entry--0dd132fa21",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-5e6417ce899f--longest_artifact--71eb766486",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-4579914d0fa5--longest_artifact--c05031377c",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-96ebfd30761f--longest_artifact--4dd3815ead",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-f5f54c9c8670--longest_artifact--ef8a3ccc1b",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-5e6417ce899f--artifact_reordering--0e8b205ac2",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-4579914d0fa5--artifact_reordering--93c22d1dae",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-96ebfd30761f--artifact_reordering--62c5378d4d",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-f5f54c9c8670--artifact_reordering--fbd1de3a37",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-5e6417ce899f--symbol_renaming--edd0973f00",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-4579914d0fa5--symbol_renaming--0f44dfe662",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-96ebfd30761f--symbol_renaming--3993ffee84",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-f5f54c9c8670--symbol_renaming--0992065820",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-5e6417ce899f--candidate_label_permutation--b98c4fa39d",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-4579914d0fa5--candidate_label_permutation--c3ee76a5bb",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-96ebfd30761f--candidate_label_permutation--8b827f1adf",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-f5f54c9c8670--candidate_label_permutation--690a6bdb10",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-5e6417ce899f--artifact_identifier_variation--00624bf0cf",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-4579914d0fa5--artifact_identifier_variation--09d17bb5de",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-96ebfd30761f--artifact_identifier_variation--74135f4909",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-f5f54c9c8670--artifact_identifier_variation--0477737d55",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-5e6417ce899f--maximal_public_summary--13ccf56f6a",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-4579914d0fa5--maximal_public_summary--9d6dcb7677",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-96ebfd30761f--maximal_public_summary--d2bf91fa97",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-f5f54c9c8670--maximal_public_summary--ca2bb866c3",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-5e6417ce899f--combined_permutation--4762e88c17",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-4579914d0fa5--combined_permutation--78266bde6e",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-96ebfd30761f--combined_permutation--ea202029af",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-f5f54c9c8670--combined_permutation--4d4c2f1dad",
+        "repeat": 1
+      }
+    ],
+    "smoke": [
+      {
+        "case_id": "asv1-d-5e6417ce899f--base_entry--71eb766486",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-4579914d0fa5--base_entry--a4d4153f39",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-96ebfd30761f--base_entry--f63dbfc3ca",
+        "repeat": 1
+      },
+      {
+        "case_id": "asv1-d-f5f54c9c8670--base_entry--0dd132fa21",
+        "repeat": 1
+      }
+    ]
+  },
+  "schema_version": 1,
+  "selected_model": "patchersniper_praneeth/gpt-5.4-mini",
+  "semantic_contract_version": "v1.2",
+  "semantic_thresholds": {
+    "maximum_action_normalized_regret": 0.35,
+    "minimum_action_top1": 0.6,
+    "minimum_action_top2": 0.8,
+    "minimum_effect_precision": 0.6,
+    "minimum_effect_recall": 0.5,
+    "minimum_fact_precision": 0.65,
+    "minimum_fact_recall": 0.5,
+    "minimum_unresolved_precision": 0.6,
+    "minimum_unresolved_recall": 0.5
+  }
+}

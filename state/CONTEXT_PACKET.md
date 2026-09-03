@@ -2,7 +2,7 @@
 
 # SER context packet
 
-Canonical sources reviewed through `2026-08-17`. This is a portable projection, not a source of truth.
+Canonical sources reviewed through `2026-09-03`. This is a portable projection, not a source of truth.
 
 ## 1. What SER is trying to investigate
 
@@ -31,9 +31,9 @@ The central empirical question is `H-001`: whether allocation organization contr
 
 ## 2. Current maturity / what has actually been built
 
-Project maturity is `phase_5a_transport_and_contract_stable_nano_semantics_weak`. The durable knowledge architecture exists: canonical idea data, generated readable/context views, an ADR ledger, a single roadmap cursor, and a lightweight coherence checker. Runtime built: **true**. Controllers: **17**. Environments: **13**. Model integrations: **1**.
+Project maturity is `phase_5a_stronger_model_below_semantic_capability_threshold`. The durable knowledge architecture exists: canonical idea data, generated readable/context views, an ADR ledger, a single roadmap cursor, and a lightweight coherence checker. Runtime built: **true**. Controllers: **17**. Environments: **13**. Model integrations: **1**.
 
-MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. Routing-v1 then supported a narrow one-step routing result under clean supplied likelihoods. Static Semantic AuthzGym protocol 1.1 remains a validated benchmark calibration. Real-model v1 is preserved as invalid and semantic-contract v1.2 as transport-unstable. The separate transport-envelope v1 run completed 128/128 provider calls, established transport_stable and contract_stable for the exact development protocol, and measured nano semantic_signal_weak. No AuthzGym E-* finding or architecture claim was admitted, and no general SER hypothesis was promoted.
+MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. Routing-v1 then supported a narrow one-step routing result under clean supplied likelihoods. Static Semantic AuthzGym protocol 1.1 remains a validated benchmark calibration. Real-model v1 is preserved as invalid and semantic-contract v1.2 as transport-unstable. The separate transport-envelope v1 run established transport_stable and contract_stable for the exact nano development protocol. The subsequent stronger-model study retained v1.2, passed transport/schema smoke, and stopped at the frozen 16/32 development futility boundary because multiple semantic and downstream thresholds were mathematically unreachable even under perfect remaining calls. Confirmation was not run. No AuthzGym E-* finding or architecture claim was admitted, and no general SER hypothesis was promoted.
 
 Static Semantic AuthzGym protocol 1.1 is frozen with 8 development, 24 primary evaluation, and 24 paired perturbation episodes. Its 384 records use deterministic test doubles; all 11 construction safeguards pass, but the status is `benchmark_calibration_only`, the real-model classifier is `not_run`, and no `E-*` finding was added. The preserved v1 calibration remains invalid because it exposed identifier-dependent mock degradation.
 
@@ -151,14 +151,14 @@ Exit: a frozen matched-control experiment determines whether useful action value
 
 ## 10. Immediate next task
 
-Preregister a separately versioned semantic-capability study that retains contract v1.2, tests the next stronger inexpensive model, remains separate from architecture comparison, and defines a fresh untouched confirmatory population because the old 24 evaluation episodes are no longer confirmatory.
+Preregister a bounded semantic-representation diagnosis that uses the valid stronger-model development failures and evaluator-oracle intervention to distinguish model inability, systematic interface omission, and task ambiguity without changing v1.2 in place or beginning an architecture comparison.
 
-The IDS archive remains read-only. Active Phase 5 now authorizes only a separately frozen semantic-capability study retaining contract v1.2 with the next stronger inexpensive model and a fresh untouched confirmatory population. It does not authorize architecture comparison, reuse of the observed 24 evaluation episodes as confirmation, IDS code/data copy, real GitLab integration, an adapter, a production runtime or general model integration, graph runtime, production fuzzing, or coupling-law implementation.
+The IDS archive remains read-only. Active Phase 5 now authorizes only a separately preregistered bounded diagnosis of the valid stronger-model development failure, distinguishing model inability, systematic v1.2 interface omission, and task ambiguity without changing v1.2 in place. It does not authorize architecture comparison, use of the untouched confirmation population for tuning, IDS code/data copy, real GitLab integration, an adapter, a production runtime or general model integration, graph runtime, production fuzzing, or coupling-law implementation.
 
 ## 11. Important non-goals
 
 - No production SER runtime; the implemented code consists of MicroGym and Static Semantic AuthzGym benchmark instruments plus small exact, reference, and deterministic mock controllers.
-- Three bounded real semantic-model protocols are preserved: architecture v1 is invalid, development contract v1.2 is transport-unstable, and transport-envelope v1 is a transport-stable weak-nano development diagnostic; none is a general LLM agent or an admitted architecture finding.
+- Four bounded real semantic-model protocols are preserved: architecture v1 is invalid, development contract v1.2 is transport-unstable, transport-envelope v1 is a transport-stable weak-nano development diagnostic, and stronger-model v1 is a valid development capability-floor failure with confirmation not run; none is a general LLM agent or an admitted architecture finding.
 - No coupling-law implementation, universal epistemic graph, production fuzzer, remote-sensing integration, or IDS adapter.
 - No IDS code or data import, real GitLab integration, or claim that IDS/GitLab validates SER.
 

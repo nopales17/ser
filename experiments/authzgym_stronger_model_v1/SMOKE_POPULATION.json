@@ -1,0 +1,3921 @@
+{
+  "cases": [
+    {
+      "case_id": "asv1-d-5e6417ce899f--base_entry--71eb766486",
+      "episode": {
+        "artifacts": [
+          {
+            "descriptor": {
+              "artifact_id": "a-fac94207",
+              "exported_symbols": [
+                "handle_request"
+              ],
+              "line_count": 27,
+              "path": "unit_c94207.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.4,
+              "expected_fact_keys": [
+                "alternate-entry",
+                "cross-layer-relationship"
+              ],
+              "logical_role": "entry",
+              "visibility": "evaluator_only"
+            },
+            "source": "def handle_request(actor, item, request):\n    test_view = fn_6d5342e0a(actor, item, request)\n    owner_view = fn_2ae556977(actor, item)\n    if request.channel == \"alternate\":\n        return fn_2ae556977(actor, item)\n    membership_view = fn_f72483101(actor, item.group_id, include_inherited=True)\n    role_view = fn_1d79911a2(actor.role)\n    context_view = fn_38faee818(actor, item, token_scope=request.token.scope, feature_context=request.flags)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-38faee81",
+              "exported_symbols": [
+                "fn_38faee818"
+              ],
+              "line_count": 19,
+              "path": "unit_faee81.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.25,
+              "expected_fact_keys": [
+                "token-scope-forwarded",
+                "feature-context-forwarded"
+              ],
+              "logical_role": "guard",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_38faee818(actor, item, token_scope, feature_context):\n    policy_result = authorize(actor, item, token_scope=token_scope, feature_context=feature_context)\n    return bool(policy_result)\n\n\ndef normalize_guard(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_guard(left, right):\n    normalized_left = normalize_guard(left)\n    normalized_right = normalize_guard(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_guard(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-f7248310",
+              "exported_symbols": [
+                "fn_f72483101"
+              ],
+              "line_count": 19,
+              "path": "unit_248310.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.25,
+              "expected_fact_keys": [
+                "inherited-membership-included"
+              ],
+              "logical_role": "resolver",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_f72483101(actor, group_id, **options):\n    records = membership_store.lookup(actor.id, group_id, include_inherited=True)\n    return strongest_role(records)\n\n\ndef normalize_resolver(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_resolver(left, right):\n    normalized_left = normalize_resolver(left)\n    normalized_right = normalize_resolver(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_resolver(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-1d79911a",
+              "exported_symbols": [
+                "fn_1d79911a2"
+              ],
+              "line_count": 19,
+              "path": "unit_79911a.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.25,
+              "expected_fact_keys": [
+                "role-preserved"
+              ],
+              "logical_role": "policy",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_1d79911a2(source_role, fallback_role=\"reader\"):\n    propagated_role = source_role\n    return propagated_role in {\"editor\", \"manager\"}\n\n\ndef normalize_policy(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_policy(left, right):\n    normalized_left = normalize_policy(left)\n    normalized_right = normalize_policy(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_policy(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-2ae55697",
+              "exported_symbols": [
+                "fn_2ae556977"
+              ],
+              "line_count": 18,
+              "path": "unit_e55697.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 1.0,
+              "expected_fact_keys": [
+                "sensitive-without-owner-check",
+                "alternate-entry-bypass"
+              ],
+              "logical_role": "service",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_2ae556977(actor, item, owner_id=None):\n    return apply_change(actor, item)\n\n\ndef normalize_service(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_service(left, right):\n    normalized_left = normalize_service(left)\n    normalized_right = normalize_service(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_service(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-6d5342e0",
+              "exported_symbols": [
+                "fn_6d5342e0a"
+              ],
+              "line_count": 26,
+              "path": "unit_5342e0.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.65,
+              "expected_fact_keys": [
+                "h1-behavioral-expectation",
+                "test-implementation-relationship"
+              ],
+              "logical_role": "tests",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_6d5342e0a(actor, item, request):\n    alternate_result = request.channel == \"alternate\"\n    standard_result = request.channel == \"standard\"\n    inherited_result = getattr(actor, \"inherited_role\", None)\n    direct_result = getattr(actor, \"direct_role\", None)\n    propagated_role = getattr(actor, \"propagated_role\", None)\n    source_role = getattr(actor, \"role\", None)\n    scoped_result = getattr(request.token, \"scope\", None)\n    contextual_result = getattr(request, \"flags\", None)\n    return alternate_result == standard_result\n\n\ndef normalize_tests(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_tests(left, right):\n    normalized_left = normalize_tests(left)\n    normalized_right = normalize_tests(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_tests(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          }
+        ],
+        "public": {
+          "artifact_inventory": [
+            {
+              "artifact_id": "a-fac94207",
+              "exported_symbols": [
+                "handle_request"
+              ],
+              "line_count": 27,
+              "path": "unit_c94207.py"
+            },
+            {
+              "artifact_id": "a-6d5342e0",
+              "exported_symbols": [
+                "fn_6d5342e0a"
+              ],
+              "line_count": 26,
+              "path": "unit_5342e0.py"
+            },
+            {
+              "artifact_id": "a-38faee81",
+              "exported_symbols": [
+                "fn_38faee818"
+              ],
+              "line_count": 19,
+              "path": "unit_faee81.py"
+            },
+            {
+              "artifact_id": "a-f7248310",
+              "exported_symbols": [
+                "fn_f72483101"
+              ],
+              "line_count": 19,
+              "path": "unit_248310.py"
+            },
+            {
+              "artifact_id": "a-1d79911a",
+              "exported_symbols": [
+                "fn_1d79911a2"
+              ],
+              "line_count": 19,
+              "path": "unit_79911a.py"
+            },
+            {
+              "artifact_id": "a-2ae55697",
+              "exported_symbols": [
+                "fn_2ae556977"
+              ],
+              "line_count": 18,
+              "path": "unit_e55697.py"
+            }
+          ],
+          "benchmark": "authzgym-static-v1",
+          "candidate_hypotheses": [
+            {
+              "description": "An ownership assumption differs between authorization layers or entry paths.",
+              "hypothesis_id": "h1",
+              "relation_tags": [
+                "ownership_path",
+                "alternate_entry"
+              ]
+            },
+            {
+              "description": "Direct and inherited membership are treated inconsistently.",
+              "hypothesis_id": "h2",
+              "relation_tags": [
+                "membership_path",
+                "membership_inheritance"
+              ]
+            },
+            {
+              "description": "A propagated or transformed role differs between layers.",
+              "hypothesis_id": "h3",
+              "relation_tags": [
+                "role_path",
+                "role_propagation"
+              ]
+            },
+            {
+              "description": "Token scope or request context is lost or checked inconsistently.",
+              "hypothesis_id": "h4",
+              "relation_tags": [
+                "context_path",
+                "token_scope"
+              ]
+            }
+          ],
+          "entry_artifact_id": "a-fac94207",
+          "episode_id": "asv1-d-5e6417ce899f",
+          "max_inspections": 4,
+          "resource_limits": {
+            "artifact_inspections": 4.0,
+            "input_tokens_proxy": 6000.0,
+            "output_tokens_proxy": 2000.0,
+            "semantic_calls": 4.0
+          },
+          "split": "development",
+          "task": "Inspect at most four purchased artifacts and select the candidate hypothesis that best explains the authorization discrepancy."
+        },
+        "restricted_truth": {
+          "control_type": "eligible_branch",
+          "correct_conclusion": "h1",
+          "decision_group": "development-eligible-0",
+          "discriminating_artifact_role": "service",
+          "evidence_relationships": [
+            "entry delegates to service",
+            "standard ownership guard is bypassed"
+          ],
+          "explanation": "An alternate entry reaches the sensitive service without preserving the ownership check used by the standard path.",
+          "mechanism_id": "h1",
+          "relevant_artifact_roles": [
+            "entry",
+            "service",
+            "tests"
+          ],
+          "relevant_functions": [
+            "fn_2ae556977",
+            "handle_request"
+          ],
+          "visibility": "evaluator_only"
+        },
+        "runner_control": {
+          "authoring_seed": 6801587513075945142
+        }
+      },
+      "evaluator_only": {
+        "expected_content": {
+          "facts": {
+            "f0": true,
+            "f1": false,
+            "f10": false,
+            "f11": false,
+            "f12": false,
+            "f13": false,
+            "f14": false,
+            "f15": false,
+            "f16": true,
+            "f17": false,
+            "f18": false,
+            "f19": false,
+            "f2": false,
+            "f20": false,
+            "f21": false,
+            "f22": false,
+            "f23": false,
+            "f24": false,
+            "f3": false,
+            "f4": false,
+            "f5": false,
+            "f6": false,
+            "f7": false,
+            "f8": false,
+            "f9": false
+          },
+          "hypothesis_effects": {
+            "c0": "support",
+            "c1": "unknown",
+            "c2": "unknown",
+            "c3": "unknown"
+          },
+          "unresolved_targets": {
+            "t1": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": true
+            },
+            "t2": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": true,
+              "r7": false,
+              "r8": false
+            },
+            "t3": {
+              "r0": false,
+              "r1": false,
+              "r2": true,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t4": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": true,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t5": {
+              "r0": true,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": true
+            }
+          }
+        },
+        "logical_roles_by_slot": {
+          "t0": "entry",
+          "t1": "tests",
+          "t2": "guard",
+          "t3": "resolver",
+          "t4": "policy",
+          "t5": "service"
+        },
+        "mechanism_family": "h1",
+        "usefulness_by_slot": {
+          "t0": 0.4,
+          "t1": 0.65,
+          "t2": 0.25,
+          "t3": 0.25,
+          "t4": 0.25,
+          "t5": 1.0
+        },
+        "visibility": "evaluator_only"
+      },
+      "model_visible_input": {
+        "candidate_hypotheses": [
+          {
+            "description": "An ownership assumption differs between authorization layers or entry paths.",
+            "public_label": "h1",
+            "relation_tags": [
+              "ownership_path",
+              "alternate_entry"
+            ],
+            "slot": "c0"
+          },
+          {
+            "description": "Direct and inherited membership are treated inconsistently.",
+            "public_label": "h2",
+            "relation_tags": [
+              "membership_path",
+              "membership_inheritance"
+            ],
+            "slot": "c1"
+          },
+          {
+            "description": "A propagated or transformed role differs between layers.",
+            "public_label": "h3",
+            "relation_tags": [
+              "role_path",
+              "role_propagation"
+            ],
+            "slot": "c2"
+          },
+          {
+            "description": "Token scope or request context is lost or checked inconsistently.",
+            "public_label": "h4",
+            "relation_tags": [
+              "context_path",
+              "token_scope"
+            ],
+            "slot": "c3"
+          }
+        ],
+        "current_artifact": {
+          "path": "unit_c94207.py",
+          "public_id": "a-fac94207",
+          "slot": 0,
+          "source": "def handle_request(actor, item, request):\n    test_view = fn_6d5342e0a(actor, item, request)\n    owner_view = fn_2ae556977(actor, item)\n    if request.channel == \"alternate\":\n        return fn_2ae556977(actor, item)\n    membership_view = fn_f72483101(actor, item.group_id, include_inherited=True)\n    role_view = fn_1d79911a2(actor.role)\n    context_view = fn_38faee818(actor, item, token_scope=request.token.scope, feature_context=request.flags)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        "current_epistemic_summary": {
+          "candidate_support": {
+            "c0": 0.0,
+            "c1": 0.0,
+            "c2": 0.0,
+            "c3": 0.0
+          },
+          "facts_seen": {
+            "f0": false,
+            "f1": false,
+            "f10": false,
+            "f11": false,
+            "f12": false,
+            "f13": false,
+            "f14": false,
+            "f15": false,
+            "f16": false,
+            "f17": false,
+            "f18": false,
+            "f19": false,
+            "f2": false,
+            "f20": false,
+            "f21": false,
+            "f22": false,
+            "f23": false,
+            "f24": false,
+            "f3": false,
+            "f4": false,
+            "f5": false,
+            "f6": false,
+            "f7": false,
+            "f8": false,
+            "f9": false
+          },
+          "inspected_artifact_slots": [],
+          "unresolved_targets": {
+            "t1": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t2": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t3": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t4": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t5": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            }
+          }
+        },
+        "instruction_scope": "current_artifact_only",
+        "public_artifact_inventory": [
+          {
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 27,
+            "path": "unit_c94207.py",
+            "public_id": "a-fac94207",
+            "slot": 0
+          },
+          {
+            "exported_symbols": [
+              "fn_6d5342e0a"
+            ],
+            "line_count": 26,
+            "path": "unit_5342e0.py",
+            "public_id": "a-6d5342e0",
+            "slot": 1
+          },
+          {
+            "exported_symbols": [
+              "fn_38faee818"
+            ],
+            "line_count": 19,
+            "path": "unit_faee81.py",
+            "public_id": "a-38faee81",
+            "slot": 2
+          },
+          {
+            "exported_symbols": [
+              "fn_f72483101"
+            ],
+            "line_count": 19,
+            "path": "unit_248310.py",
+            "public_id": "a-f7248310",
+            "slot": 3
+          },
+          {
+            "exported_symbols": [
+              "fn_1d79911a2"
+            ],
+            "line_count": 19,
+            "path": "unit_79911a.py",
+            "public_id": "a-1d79911a",
+            "slot": 4
+          },
+          {
+            "exported_symbols": [
+              "fn_2ae556977"
+            ],
+            "line_count": 18,
+            "path": "unit_e55697.py",
+            "public_id": "a-2ae55697",
+            "slot": 5
+          }
+        ],
+        "semantic_interface": "authzgym_semantic_observation_v1_2"
+      },
+      "response_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "facts": {
+            "additionalProperties": false,
+            "properties": {
+              "f0": {
+                "type": "boolean"
+              },
+              "f1": {
+                "type": "boolean"
+              },
+              "f10": {
+                "type": "boolean"
+              },
+              "f11": {
+                "type": "boolean"
+              },
+              "f12": {
+                "type": "boolean"
+              },
+              "f13": {
+                "type": "boolean"
+              },
+              "f14": {
+                "type": "boolean"
+              },
+              "f15": {
+                "type": "boolean"
+              },
+              "f16": {
+                "type": "boolean"
+              },
+              "f17": {
+                "type": "boolean"
+              },
+              "f18": {
+                "type": "boolean"
+              },
+              "f19": {
+                "type": "boolean"
+              },
+              "f2": {
+                "type": "boolean"
+              },
+              "f20": {
+                "type": "boolean"
+              },
+              "f21": {
+                "type": "boolean"
+              },
+              "f22": {
+                "type": "boolean"
+              },
+              "f23": {
+                "type": "boolean"
+              },
+              "f24": {
+                "type": "boolean"
+              },
+              "f3": {
+                "type": "boolean"
+              },
+              "f4": {
+                "type": "boolean"
+              },
+              "f5": {
+                "type": "boolean"
+              },
+              "f6": {
+                "type": "boolean"
+              },
+              "f7": {
+                "type": "boolean"
+              },
+              "f8": {
+                "type": "boolean"
+              },
+              "f9": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "f0",
+              "f1",
+              "f2",
+              "f3",
+              "f4",
+              "f5",
+              "f6",
+              "f7",
+              "f8",
+              "f9",
+              "f10",
+              "f11",
+              "f12",
+              "f13",
+              "f14",
+              "f15",
+              "f16",
+              "f17",
+              "f18",
+              "f19",
+              "f20",
+              "f21",
+              "f22",
+              "f23",
+              "f24"
+            ],
+            "type": "object"
+          },
+          "hypothesis_effects": {
+            "additionalProperties": false,
+            "properties": {
+              "c0": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "c1": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "c2": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "c3": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "c0",
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "type": "object"
+          },
+          "unresolved_targets": {
+            "additionalProperties": false,
+            "properties": {
+              "t1": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t2": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t3": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t4": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t5": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "t1",
+              "t2",
+              "t3",
+              "t4",
+              "t5"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "facts",
+          "hypothesis_effects",
+          "unresolved_targets"
+        ],
+        "type": "object"
+      },
+      "runner_control": {
+        "current_artifact_slot": 0,
+        "legal_target_slots": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "prior_artifact_slots": [],
+        "schema_sha256": "f723c7ef480e79907f4dcfe70c4dea39924b1991615edcaf66cc04b58b460ad4"
+      },
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "variant": "base_entry"
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--base_entry--a4d4153f39",
+      "episode": {
+        "artifacts": [
+          {
+            "descriptor": {
+              "artifact_id": "a-f4a5838b",
+              "exported_symbols": [
+                "handle_request"
+              ],
+              "line_count": 25,
+              "path": "unit_a5838b.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.4,
+              "expected_fact_keys": [
+                "direct-only-membership",
+                "cross-layer-relationship"
+              ],
+              "logical_role": "entry",
+              "visibility": "evaluator_only"
+            },
+            "source": "def handle_request(actor, item, request):\n    test_view = fn_e1cf687e6(actor, item, request)\n    membership_view = fn_19f67ae64(actor, item.group_id, direct_only=True)\n    owner_view = fn_0c2d822d5(actor, item, owner_id=item.owner_id)\n    role_view = fn_298dc5afd(actor.role)\n    context_view = fn_c4c926bd9(actor, item, token_scope=request.token.scope, feature_context=request.flags)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-c4c926bd",
+              "exported_symbols": [
+                "fn_c4c926bd9"
+              ],
+              "line_count": 19,
+              "path": "unit_c926bd.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.25,
+              "expected_fact_keys": [
+                "token-scope-forwarded",
+                "feature-context-forwarded"
+              ],
+              "logical_role": "guard",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_c4c926bd9(actor, item, token_scope, feature_context):\n    policy_result = authorize(actor, item, token_scope=token_scope, feature_context=feature_context)\n    return bool(policy_result)\n\n\ndef normalize_guard(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_guard(left, right):\n    normalized_left = normalize_guard(left)\n    normalized_right = normalize_guard(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_guard(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-19f67ae6",
+              "exported_symbols": [
+                "fn_19f67ae64"
+              ],
+              "line_count": 19,
+              "path": "unit_f67ae6.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 1.0,
+              "expected_fact_keys": [
+                "direct-only-membership",
+                "inherited-membership-omitted"
+              ],
+              "logical_role": "resolver",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_19f67ae64(actor, group_id, **options):\n    records = membership_store.lookup(actor.id, group_id, direct_only=True)\n    return strongest_role(records)\n\n\ndef normalize_resolver(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_resolver(left, right):\n    normalized_left = normalize_resolver(left)\n    normalized_right = normalize_resolver(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_resolver(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-298dc5af",
+              "exported_symbols": [
+                "fn_298dc5afd"
+              ],
+              "line_count": 19,
+              "path": "unit_8dc5af.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.25,
+              "expected_fact_keys": [
+                "role-preserved"
+              ],
+              "logical_role": "policy",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_298dc5afd(source_role, fallback_role=\"reader\"):\n    propagated_role = source_role\n    return propagated_role in {\"editor\", \"manager\"}\n\n\ndef normalize_policy(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_policy(left, right):\n    normalized_left = normalize_policy(left)\n    normalized_right = normalize_policy(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_policy(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-0c2d822d",
+              "exported_symbols": [
+                "fn_0c2d822d5"
+              ],
+              "line_count": 20,
+              "path": "unit_2d822d.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.25,
+              "expected_fact_keys": [
+                "ownership-compared"
+              ],
+              "logical_role": "service",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_0c2d822d5(actor, item, owner_id=None):\n    if actor.owner_id == item.owner_id:\n        return apply_change(actor, item)\n    return False\n\n\ndef normalize_service(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_service(left, right):\n    normalized_left = normalize_service(left)\n    normalized_right = normalize_service(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_service(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-e1cf687e",
+              "exported_symbols": [
+                "fn_e1cf687e6"
+              ],
+              "line_count": 26,
+              "path": "unit_cf687e.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.65,
+              "expected_fact_keys": [
+                "h2-behavioral-expectation",
+                "test-implementation-relationship"
+              ],
+              "logical_role": "tests",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_e1cf687e6(actor, item, request):\n    alternate_result = request.channel == \"alternate\"\n    standard_result = request.channel == \"standard\"\n    inherited_result = getattr(actor, \"inherited_role\", None)\n    direct_result = getattr(actor, \"direct_role\", None)\n    propagated_role = getattr(actor, \"propagated_role\", None)\n    source_role = getattr(actor, \"role\", None)\n    scoped_result = getattr(request.token, \"scope\", None)\n    contextual_result = getattr(request, \"flags\", None)\n    return inherited_result == direct_result\n\n\ndef normalize_tests(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_tests(left, right):\n    normalized_left = normalize_tests(left)\n    normalized_right = normalize_tests(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_tests(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          }
+        ],
+        "public": {
+          "artifact_inventory": [
+            {
+              "artifact_id": "a-f4a5838b",
+              "exported_symbols": [
+                "handle_request"
+              ],
+              "line_count": 25,
+              "path": "unit_a5838b.py"
+            },
+            {
+              "artifact_id": "a-19f67ae6",
+              "exported_symbols": [
+                "fn_19f67ae64"
+              ],
+              "line_count": 19,
+              "path": "unit_f67ae6.py"
+            },
+            {
+              "artifact_id": "a-c4c926bd",
+              "exported_symbols": [
+                "fn_c4c926bd9"
+              ],
+              "line_count": 19,
+              "path": "unit_c926bd.py"
+            },
+            {
+              "artifact_id": "a-298dc5af",
+              "exported_symbols": [
+                "fn_298dc5afd"
+              ],
+              "line_count": 19,
+              "path": "unit_8dc5af.py"
+            },
+            {
+              "artifact_id": "a-0c2d822d",
+              "exported_symbols": [
+                "fn_0c2d822d5"
+              ],
+              "line_count": 20,
+              "path": "unit_2d822d.py"
+            },
+            {
+              "artifact_id": "a-e1cf687e",
+              "exported_symbols": [
+                "fn_e1cf687e6"
+              ],
+              "line_count": 26,
+              "path": "unit_cf687e.py"
+            }
+          ],
+          "benchmark": "authzgym-static-v1",
+          "candidate_hypotheses": [
+            {
+              "description": "An ownership assumption differs between authorization layers or entry paths.",
+              "hypothesis_id": "h1",
+              "relation_tags": [
+                "ownership_path",
+                "alternate_entry"
+              ]
+            },
+            {
+              "description": "Direct and inherited membership are treated inconsistently.",
+              "hypothesis_id": "h2",
+              "relation_tags": [
+                "membership_path",
+                "membership_inheritance"
+              ]
+            },
+            {
+              "description": "A propagated or transformed role differs between layers.",
+              "hypothesis_id": "h3",
+              "relation_tags": [
+                "role_path",
+                "role_propagation"
+              ]
+            },
+            {
+              "description": "Token scope or request context is lost or checked inconsistently.",
+              "hypothesis_id": "h4",
+              "relation_tags": [
+                "context_path",
+                "token_scope"
+              ]
+            }
+          ],
+          "entry_artifact_id": "a-f4a5838b",
+          "episode_id": "asv1-d-4579914d0fa5",
+          "max_inspections": 4,
+          "resource_limits": {
+            "artifact_inspections": 4.0,
+            "input_tokens_proxy": 6000.0,
+            "output_tokens_proxy": 2000.0,
+            "semantic_calls": 4.0
+          },
+          "split": "development",
+          "task": "Inspect at most four purchased artifacts and select the candidate hypothesis that best explains the authorization discrepancy."
+        },
+        "restricted_truth": {
+          "control_type": "eligible_branch",
+          "correct_conclusion": "h2",
+          "decision_group": "development-eligible-1",
+          "discriminating_artifact_role": "resolver",
+          "evidence_relationships": [
+            "entry requests membership",
+            "resolver excludes inherited records"
+          ],
+          "explanation": "Membership resolution requests direct records and omits inherited membership used elsewhere.",
+          "mechanism_id": "h2",
+          "relevant_artifact_roles": [
+            "entry",
+            "resolver",
+            "tests"
+          ],
+          "relevant_functions": [
+            "fn_19f67ae64",
+            "handle_request"
+          ],
+          "visibility": "evaluator_only"
+        },
+        "runner_control": {
+          "authoring_seed": 5006192220960057409
+        }
+      },
+      "evaluator_only": {
+        "expected_content": {
+          "facts": {
+            "f0": false,
+            "f1": true,
+            "f10": false,
+            "f11": false,
+            "f12": false,
+            "f13": false,
+            "f14": false,
+            "f15": false,
+            "f16": true,
+            "f17": false,
+            "f18": false,
+            "f19": false,
+            "f2": false,
+            "f20": false,
+            "f21": false,
+            "f22": false,
+            "f23": false,
+            "f24": false,
+            "f3": false,
+            "f4": false,
+            "f5": false,
+            "f6": false,
+            "f7": false,
+            "f8": false,
+            "f9": false
+          },
+          "hypothesis_effects": {
+            "c0": "unknown",
+            "c1": "support",
+            "c2": "unknown",
+            "c3": "unknown"
+          },
+          "unresolved_targets": {
+            "t1": {
+              "r0": false,
+              "r1": false,
+              "r2": true,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t2": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": true,
+              "r7": false,
+              "r8": false
+            },
+            "t3": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": true,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t4": {
+              "r0": true,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t5": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": true
+            }
+          }
+        },
+        "logical_roles_by_slot": {
+          "t0": "entry",
+          "t1": "resolver",
+          "t2": "guard",
+          "t3": "policy",
+          "t4": "service",
+          "t5": "tests"
+        },
+        "mechanism_family": "h2",
+        "usefulness_by_slot": {
+          "t0": 0.4,
+          "t1": 1.0,
+          "t2": 0.25,
+          "t3": 0.25,
+          "t4": 0.25,
+          "t5": 0.65
+        },
+        "visibility": "evaluator_only"
+      },
+      "model_visible_input": {
+        "candidate_hypotheses": [
+          {
+            "description": "An ownership assumption differs between authorization layers or entry paths.",
+            "public_label": "h1",
+            "relation_tags": [
+              "ownership_path",
+              "alternate_entry"
+            ],
+            "slot": "c0"
+          },
+          {
+            "description": "Direct and inherited membership are treated inconsistently.",
+            "public_label": "h2",
+            "relation_tags": [
+              "membership_path",
+              "membership_inheritance"
+            ],
+            "slot": "c1"
+          },
+          {
+            "description": "A propagated or transformed role differs between layers.",
+            "public_label": "h3",
+            "relation_tags": [
+              "role_path",
+              "role_propagation"
+            ],
+            "slot": "c2"
+          },
+          {
+            "description": "Token scope or request context is lost or checked inconsistently.",
+            "public_label": "h4",
+            "relation_tags": [
+              "context_path",
+              "token_scope"
+            ],
+            "slot": "c3"
+          }
+        ],
+        "current_artifact": {
+          "path": "unit_a5838b.py",
+          "public_id": "a-f4a5838b",
+          "slot": 0,
+          "source": "def handle_request(actor, item, request):\n    test_view = fn_e1cf687e6(actor, item, request)\n    membership_view = fn_19f67ae64(actor, item.group_id, direct_only=True)\n    owner_view = fn_0c2d822d5(actor, item, owner_id=item.owner_id)\n    role_view = fn_298dc5afd(actor.role)\n    context_view = fn_c4c926bd9(actor, item, token_scope=request.token.scope, feature_context=request.flags)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        "current_epistemic_summary": {
+          "candidate_support": {
+            "c0": 0.0,
+            "c1": 0.0,
+            "c2": 0.0,
+            "c3": 0.0
+          },
+          "facts_seen": {
+            "f0": false,
+            "f1": false,
+            "f10": false,
+            "f11": false,
+            "f12": false,
+            "f13": false,
+            "f14": false,
+            "f15": false,
+            "f16": false,
+            "f17": false,
+            "f18": false,
+            "f19": false,
+            "f2": false,
+            "f20": false,
+            "f21": false,
+            "f22": false,
+            "f23": false,
+            "f24": false,
+            "f3": false,
+            "f4": false,
+            "f5": false,
+            "f6": false,
+            "f7": false,
+            "f8": false,
+            "f9": false
+          },
+          "inspected_artifact_slots": [],
+          "unresolved_targets": {
+            "t1": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t2": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t3": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t4": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t5": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            }
+          }
+        },
+        "instruction_scope": "current_artifact_only",
+        "public_artifact_inventory": [
+          {
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_a5838b.py",
+            "public_id": "a-f4a5838b",
+            "slot": 0
+          },
+          {
+            "exported_symbols": [
+              "fn_19f67ae64"
+            ],
+            "line_count": 19,
+            "path": "unit_f67ae6.py",
+            "public_id": "a-19f67ae6",
+            "slot": 1
+          },
+          {
+            "exported_symbols": [
+              "fn_c4c926bd9"
+            ],
+            "line_count": 19,
+            "path": "unit_c926bd.py",
+            "public_id": "a-c4c926bd",
+            "slot": 2
+          },
+          {
+            "exported_symbols": [
+              "fn_298dc5afd"
+            ],
+            "line_count": 19,
+            "path": "unit_8dc5af.py",
+            "public_id": "a-298dc5af",
+            "slot": 3
+          },
+          {
+            "exported_symbols": [
+              "fn_0c2d822d5"
+            ],
+            "line_count": 20,
+            "path": "unit_2d822d.py",
+            "public_id": "a-0c2d822d",
+            "slot": 4
+          },
+          {
+            "exported_symbols": [
+              "fn_e1cf687e6"
+            ],
+            "line_count": 26,
+            "path": "unit_cf687e.py",
+            "public_id": "a-e1cf687e",
+            "slot": 5
+          }
+        ],
+        "semantic_interface": "authzgym_semantic_observation_v1_2"
+      },
+      "response_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "facts": {
+            "additionalProperties": false,
+            "properties": {
+              "f0": {
+                "type": "boolean"
+              },
+              "f1": {
+                "type": "boolean"
+              },
+              "f10": {
+                "type": "boolean"
+              },
+              "f11": {
+                "type": "boolean"
+              },
+              "f12": {
+                "type": "boolean"
+              },
+              "f13": {
+                "type": "boolean"
+              },
+              "f14": {
+                "type": "boolean"
+              },
+              "f15": {
+                "type": "boolean"
+              },
+              "f16": {
+                "type": "boolean"
+              },
+              "f17": {
+                "type": "boolean"
+              },
+              "f18": {
+                "type": "boolean"
+              },
+              "f19": {
+                "type": "boolean"
+              },
+              "f2": {
+                "type": "boolean"
+              },
+              "f20": {
+                "type": "boolean"
+              },
+              "f21": {
+                "type": "boolean"
+              },
+              "f22": {
+                "type": "boolean"
+              },
+              "f23": {
+                "type": "boolean"
+              },
+              "f24": {
+                "type": "boolean"
+              },
+              "f3": {
+                "type": "boolean"
+              },
+              "f4": {
+                "type": "boolean"
+              },
+              "f5": {
+                "type": "boolean"
+              },
+              "f6": {
+                "type": "boolean"
+              },
+              "f7": {
+                "type": "boolean"
+              },
+              "f8": {
+                "type": "boolean"
+              },
+              "f9": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "f0",
+              "f1",
+              "f2",
+              "f3",
+              "f4",
+              "f5",
+              "f6",
+              "f7",
+              "f8",
+              "f9",
+              "f10",
+              "f11",
+              "f12",
+              "f13",
+              "f14",
+              "f15",
+              "f16",
+              "f17",
+              "f18",
+              "f19",
+              "f20",
+              "f21",
+              "f22",
+              "f23",
+              "f24"
+            ],
+            "type": "object"
+          },
+          "hypothesis_effects": {
+            "additionalProperties": false,
+            "properties": {
+              "c0": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "c1": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "c2": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "c3": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "c0",
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "type": "object"
+          },
+          "unresolved_targets": {
+            "additionalProperties": false,
+            "properties": {
+              "t1": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t2": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t3": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t4": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t5": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "t1",
+              "t2",
+              "t3",
+              "t4",
+              "t5"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "facts",
+          "hypothesis_effects",
+          "unresolved_targets"
+        ],
+        "type": "object"
+      },
+      "runner_control": {
+        "current_artifact_slot": 0,
+        "legal_target_slots": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "prior_artifact_slots": [],
+        "schema_sha256": "f723c7ef480e79907f4dcfe70c4dea39924b1991615edcaf66cc04b58b460ad4"
+      },
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-4579914d0fa5",
+      "variant": "base_entry"
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--base_entry--f63dbfc3ca",
+      "episode": {
+        "artifacts": [
+          {
+            "descriptor": {
+              "artifact_id": "a-fac94207",
+              "exported_symbols": [
+                "handle_request"
+              ],
+              "line_count": 25,
+              "path": "unit_c94207.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.4,
+              "expected_fact_keys": [
+                "role-fallback",
+                "cross-layer-relationship"
+              ],
+              "logical_role": "entry",
+              "visibility": "evaluator_only"
+            },
+            "source": "def handle_request(actor, item, request):\n    test_view = fn_6d5342e0a(actor, item, request)\n    role_view = fn_1d79911a2(actor.role, fallback_role=\"reader\")\n    owner_view = fn_2ae556977(actor, item, owner_id=item.owner_id)\n    membership_view = fn_f72483101(actor, item.group_id, include_inherited=True)\n    context_view = fn_38faee818(actor, item, token_scope=request.token.scope, feature_context=request.flags)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-38faee81",
+              "exported_symbols": [
+                "fn_38faee818"
+              ],
+              "line_count": 19,
+              "path": "unit_faee81.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.25,
+              "expected_fact_keys": [
+                "token-scope-forwarded",
+                "feature-context-forwarded"
+              ],
+              "logical_role": "guard",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_38faee818(actor, item, token_scope, feature_context):\n    policy_result = authorize(actor, item, token_scope=token_scope, feature_context=feature_context)\n    return bool(policy_result)\n\n\ndef normalize_guard(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_guard(left, right):\n    normalized_left = normalize_guard(left)\n    normalized_right = normalize_guard(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_guard(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-f7248310",
+              "exported_symbols": [
+                "fn_f72483101"
+              ],
+              "line_count": 19,
+              "path": "unit_248310.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.25,
+              "expected_fact_keys": [
+                "inherited-membership-included"
+              ],
+              "logical_role": "resolver",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_f72483101(actor, group_id, **options):\n    records = membership_store.lookup(actor.id, group_id, include_inherited=True)\n    return strongest_role(records)\n\n\ndef normalize_resolver(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_resolver(left, right):\n    normalized_left = normalize_resolver(left)\n    normalized_right = normalize_resolver(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_resolver(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-1d79911a",
+              "exported_symbols": [
+                "fn_1d79911a2"
+              ],
+              "line_count": 19,
+              "path": "unit_79911a.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 1.0,
+              "expected_fact_keys": [
+                "role-map-transform",
+                "role-fallback"
+              ],
+              "logical_role": "policy",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_1d79911a2(source_role, fallback_role=\"reader\"):\n    propagated_role = role_map.get(source_role, fallback_role)\n    return propagated_role in {\"editor\", \"manager\"}\n\n\ndef normalize_policy(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_policy(left, right):\n    normalized_left = normalize_policy(left)\n    normalized_right = normalize_policy(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_policy(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-2ae55697",
+              "exported_symbols": [
+                "fn_2ae556977"
+              ],
+              "line_count": 20,
+              "path": "unit_e55697.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.25,
+              "expected_fact_keys": [
+                "ownership-compared"
+              ],
+              "logical_role": "service",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_2ae556977(actor, item, owner_id=None):\n    if actor.owner_id == item.owner_id:\n        return apply_change(actor, item)\n    return False\n\n\ndef normalize_service(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_service(left, right):\n    normalized_left = normalize_service(left)\n    normalized_right = normalize_service(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_service(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-6d5342e0",
+              "exported_symbols": [
+                "fn_6d5342e0a"
+              ],
+              "line_count": 26,
+              "path": "unit_5342e0.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.65,
+              "expected_fact_keys": [
+                "h3-behavioral-expectation",
+                "test-implementation-relationship"
+              ],
+              "logical_role": "tests",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_6d5342e0a(actor, item, request):\n    alternate_result = request.channel == \"alternate\"\n    standard_result = request.channel == \"standard\"\n    inherited_result = getattr(actor, \"inherited_role\", None)\n    direct_result = getattr(actor, \"direct_role\", None)\n    propagated_role = getattr(actor, \"propagated_role\", None)\n    source_role = getattr(actor, \"role\", None)\n    scoped_result = getattr(request.token, \"scope\", None)\n    contextual_result = getattr(request, \"flags\", None)\n    return propagated_role == source_role\n\n\ndef normalize_tests(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_tests(left, right):\n    normalized_left = normalize_tests(left)\n    normalized_right = normalize_tests(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_tests(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          }
+        ],
+        "public": {
+          "artifact_inventory": [
+            {
+              "artifact_id": "a-fac94207",
+              "exported_symbols": [
+                "handle_request"
+              ],
+              "line_count": 25,
+              "path": "unit_c94207.py"
+            },
+            {
+              "artifact_id": "a-1d79911a",
+              "exported_symbols": [
+                "fn_1d79911a2"
+              ],
+              "line_count": 19,
+              "path": "unit_79911a.py"
+            },
+            {
+              "artifact_id": "a-6d5342e0",
+              "exported_symbols": [
+                "fn_6d5342e0a"
+              ],
+              "line_count": 26,
+              "path": "unit_5342e0.py"
+            },
+            {
+              "artifact_id": "a-38faee81",
+              "exported_symbols": [
+                "fn_38faee818"
+              ],
+              "line_count": 19,
+              "path": "unit_faee81.py"
+            },
+            {
+              "artifact_id": "a-f7248310",
+              "exported_symbols": [
+                "fn_f72483101"
+              ],
+              "line_count": 19,
+              "path": "unit_248310.py"
+            },
+            {
+              "artifact_id": "a-2ae55697",
+              "exported_symbols": [
+                "fn_2ae556977"
+              ],
+              "line_count": 20,
+              "path": "unit_e55697.py"
+            }
+          ],
+          "benchmark": "authzgym-static-v1",
+          "candidate_hypotheses": [
+            {
+              "description": "An ownership assumption differs between authorization layers or entry paths.",
+              "hypothesis_id": "h1",
+              "relation_tags": [
+                "ownership_path",
+                "alternate_entry"
+              ]
+            },
+            {
+              "description": "Direct and inherited membership are treated inconsistently.",
+              "hypothesis_id": "h2",
+              "relation_tags": [
+                "membership_path",
+                "membership_inheritance"
+              ]
+            },
+            {
+              "description": "A propagated or transformed role differs between layers.",
+              "hypothesis_id": "h3",
+              "relation_tags": [
+                "role_path",
+                "role_propagation"
+              ]
+            },
+            {
+              "description": "Token scope or request context is lost or checked inconsistently.",
+              "hypothesis_id": "h4",
+              "relation_tags": [
+                "context_path",
+                "token_scope"
+              ]
+            }
+          ],
+          "entry_artifact_id": "a-fac94207",
+          "episode_id": "asv1-d-96ebfd30761f",
+          "max_inspections": 4,
+          "resource_limits": {
+            "artifact_inspections": 4.0,
+            "input_tokens_proxy": 6000.0,
+            "output_tokens_proxy": 2000.0,
+            "semantic_calls": 4.0
+          },
+          "split": "development",
+          "task": "Inspect at most four purchased artifacts and select the candidate hypothesis that best explains the authorization discrepancy."
+        },
+        "restricted_truth": {
+          "control_type": "eligible_branch",
+          "correct_conclusion": "h3",
+          "decision_group": "development-eligible-0",
+          "discriminating_artifact_role": "policy",
+          "evidence_relationships": [
+            "entry supplies source role",
+            "policy transforms role with a fallback"
+          ],
+          "explanation": "A fallback role transformation changes the effective role before the policy decision.",
+          "mechanism_id": "h3",
+          "relevant_artifact_roles": [
+            "entry",
+            "policy",
+            "tests"
+          ],
+          "relevant_functions": [
+            "fn_1d79911a2",
+            "handle_request"
+          ],
+          "visibility": "evaluator_only"
+        },
+        "runner_control": {
+          "authoring_seed": 10875064109798229941
+        }
+      },
+      "evaluator_only": {
+        "expected_content": {
+          "facts": {
+            "f0": false,
+            "f1": false,
+            "f10": false,
+            "f11": false,
+            "f12": false,
+            "f13": false,
+            "f14": false,
+            "f15": false,
+            "f16": true,
+            "f17": false,
+            "f18": false,
+            "f19": false,
+            "f2": false,
+            "f20": false,
+            "f21": false,
+            "f22": false,
+            "f23": false,
+            "f24": false,
+            "f3": true,
+            "f4": false,
+            "f5": false,
+            "f6": false,
+            "f7": false,
+            "f8": false,
+            "f9": false
+          },
+          "hypothesis_effects": {
+            "c0": "unknown",
+            "c1": "unknown",
+            "c2": "support",
+            "c3": "unknown"
+          },
+          "unresolved_targets": {
+            "t1": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": true,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t2": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": true
+            },
+            "t3": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": true,
+              "r7": false,
+              "r8": false
+            },
+            "t4": {
+              "r0": false,
+              "r1": false,
+              "r2": true,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t5": {
+              "r0": true,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            }
+          }
+        },
+        "logical_roles_by_slot": {
+          "t0": "entry",
+          "t1": "policy",
+          "t2": "tests",
+          "t3": "guard",
+          "t4": "resolver",
+          "t5": "service"
+        },
+        "mechanism_family": "h3",
+        "usefulness_by_slot": {
+          "t0": 0.4,
+          "t1": 1.0,
+          "t2": 0.65,
+          "t3": 0.25,
+          "t4": 0.25,
+          "t5": 0.25
+        },
+        "visibility": "evaluator_only"
+      },
+      "model_visible_input": {
+        "candidate_hypotheses": [
+          {
+            "description": "An ownership assumption differs between authorization layers or entry paths.",
+            "public_label": "h1",
+            "relation_tags": [
+              "ownership_path",
+              "alternate_entry"
+            ],
+            "slot": "c0"
+          },
+          {
+            "description": "Direct and inherited membership are treated inconsistently.",
+            "public_label": "h2",
+            "relation_tags": [
+              "membership_path",
+              "membership_inheritance"
+            ],
+            "slot": "c1"
+          },
+          {
+            "description": "A propagated or transformed role differs between layers.",
+            "public_label": "h3",
+            "relation_tags": [
+              "role_path",
+              "role_propagation"
+            ],
+            "slot": "c2"
+          },
+          {
+            "description": "Token scope or request context is lost or checked inconsistently.",
+            "public_label": "h4",
+            "relation_tags": [
+              "context_path",
+              "token_scope"
+            ],
+            "slot": "c3"
+          }
+        ],
+        "current_artifact": {
+          "path": "unit_c94207.py",
+          "public_id": "a-fac94207",
+          "slot": 0,
+          "source": "def handle_request(actor, item, request):\n    test_view = fn_6d5342e0a(actor, item, request)\n    role_view = fn_1d79911a2(actor.role, fallback_role=\"reader\")\n    owner_view = fn_2ae556977(actor, item, owner_id=item.owner_id)\n    membership_view = fn_f72483101(actor, item.group_id, include_inherited=True)\n    context_view = fn_38faee818(actor, item, token_scope=request.token.scope, feature_context=request.flags)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        "current_epistemic_summary": {
+          "candidate_support": {
+            "c0": 0.0,
+            "c1": 0.0,
+            "c2": 0.0,
+            "c3": 0.0
+          },
+          "facts_seen": {
+            "f0": false,
+            "f1": false,
+            "f10": false,
+            "f11": false,
+            "f12": false,
+            "f13": false,
+            "f14": false,
+            "f15": false,
+            "f16": false,
+            "f17": false,
+            "f18": false,
+            "f19": false,
+            "f2": false,
+            "f20": false,
+            "f21": false,
+            "f22": false,
+            "f23": false,
+            "f24": false,
+            "f3": false,
+            "f4": false,
+            "f5": false,
+            "f6": false,
+            "f7": false,
+            "f8": false,
+            "f9": false
+          },
+          "inspected_artifact_slots": [],
+          "unresolved_targets": {
+            "t1": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t2": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t3": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t4": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t5": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            }
+          }
+        },
+        "instruction_scope": "current_artifact_only",
+        "public_artifact_inventory": [
+          {
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_c94207.py",
+            "public_id": "a-fac94207",
+            "slot": 0
+          },
+          {
+            "exported_symbols": [
+              "fn_1d79911a2"
+            ],
+            "line_count": 19,
+            "path": "unit_79911a.py",
+            "public_id": "a-1d79911a",
+            "slot": 1
+          },
+          {
+            "exported_symbols": [
+              "fn_6d5342e0a"
+            ],
+            "line_count": 26,
+            "path": "unit_5342e0.py",
+            "public_id": "a-6d5342e0",
+            "slot": 2
+          },
+          {
+            "exported_symbols": [
+              "fn_38faee818"
+            ],
+            "line_count": 19,
+            "path": "unit_faee81.py",
+            "public_id": "a-38faee81",
+            "slot": 3
+          },
+          {
+            "exported_symbols": [
+              "fn_f72483101"
+            ],
+            "line_count": 19,
+            "path": "unit_248310.py",
+            "public_id": "a-f7248310",
+            "slot": 4
+          },
+          {
+            "exported_symbols": [
+              "fn_2ae556977"
+            ],
+            "line_count": 20,
+            "path": "unit_e55697.py",
+            "public_id": "a-2ae55697",
+            "slot": 5
+          }
+        ],
+        "semantic_interface": "authzgym_semantic_observation_v1_2"
+      },
+      "response_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "facts": {
+            "additionalProperties": false,
+            "properties": {
+              "f0": {
+                "type": "boolean"
+              },
+              "f1": {
+                "type": "boolean"
+              },
+              "f10": {
+                "type": "boolean"
+              },
+              "f11": {
+                "type": "boolean"
+              },
+              "f12": {
+                "type": "boolean"
+              },
+              "f13": {
+                "type": "boolean"
+              },
+              "f14": {
+                "type": "boolean"
+              },
+              "f15": {
+                "type": "boolean"
+              },
+              "f16": {
+                "type": "boolean"
+              },
+              "f17": {
+                "type": "boolean"
+              },
+              "f18": {
+                "type": "boolean"
+              },
+              "f19": {
+                "type": "boolean"
+              },
+              "f2": {
+                "type": "boolean"
+              },
+              "f20": {
+                "type": "boolean"
+              },
+              "f21": {
+                "type": "boolean"
+              },
+              "f22": {
+                "type": "boolean"
+              },
+              "f23": {
+                "type": "boolean"
+              },
+              "f24": {
+                "type": "boolean"
+              },
+              "f3": {
+                "type": "boolean"
+              },
+              "f4": {
+                "type": "boolean"
+              },
+              "f5": {
+                "type": "boolean"
+              },
+              "f6": {
+                "type": "boolean"
+              },
+              "f7": {
+                "type": "boolean"
+              },
+              "f8": {
+                "type": "boolean"
+              },
+              "f9": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "f0",
+              "f1",
+              "f2",
+              "f3",
+              "f4",
+              "f5",
+              "f6",
+              "f7",
+              "f8",
+              "f9",
+              "f10",
+              "f11",
+              "f12",
+              "f13",
+              "f14",
+              "f15",
+              "f16",
+              "f17",
+              "f18",
+              "f19",
+              "f20",
+              "f21",
+              "f22",
+              "f23",
+              "f24"
+            ],
+            "type": "object"
+          },
+          "hypothesis_effects": {
+            "additionalProperties": false,
+            "properties": {
+              "c0": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "c1": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "c2": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "c3": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "c0",
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "type": "object"
+          },
+          "unresolved_targets": {
+            "additionalProperties": false,
+            "properties": {
+              "t1": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t2": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t3": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t4": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t5": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "t1",
+              "t2",
+              "t3",
+              "t4",
+              "t5"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "facts",
+          "hypothesis_effects",
+          "unresolved_targets"
+        ],
+        "type": "object"
+      },
+      "runner_control": {
+        "current_artifact_slot": 0,
+        "legal_target_slots": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "prior_artifact_slots": [],
+        "schema_sha256": "f723c7ef480e79907f4dcfe70c4dea39924b1991615edcaf66cc04b58b460ad4"
+      },
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-96ebfd30761f",
+      "variant": "base_entry"
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--base_entry--0dd132fa21",
+      "episode": {
+        "artifacts": [
+          {
+            "descriptor": {
+              "artifact_id": "a-f4a5838b",
+              "exported_symbols": [
+                "handle_request"
+              ],
+              "line_count": 25,
+              "path": "unit_a5838b.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.4,
+              "expected_fact_keys": [
+                "missing-token-scope",
+                "missing-feature-context",
+                "cross-layer-relationship"
+              ],
+              "logical_role": "entry",
+              "visibility": "evaluator_only"
+            },
+            "source": "def handle_request(actor, item, request):\n    test_view = fn_e1cf687e6(actor, item, request)\n    context_view = fn_c4c926bd9(actor, item, token_scope=None, feature_context={})\n    owner_view = fn_0c2d822d5(actor, item, owner_id=item.owner_id)\n    membership_view = fn_19f67ae64(actor, item.group_id, include_inherited=True)\n    role_view = fn_298dc5afd(actor.role)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-c4c926bd",
+              "exported_symbols": [
+                "fn_c4c926bd9"
+              ],
+              "line_count": 19,
+              "path": "unit_c926bd.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 1.0,
+              "expected_fact_keys": [
+                "missing-token-scope",
+                "missing-feature-context",
+                "guard-context-loss"
+              ],
+              "logical_role": "guard",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_c4c926bd9(actor, item, token_scope, feature_context):\n    policy_result = authorize(actor, item, token_scope=None, feature_context={})\n    return bool(policy_result)\n\n\ndef normalize_guard(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_guard(left, right):\n    normalized_left = normalize_guard(left)\n    normalized_right = normalize_guard(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_guard(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-19f67ae6",
+              "exported_symbols": [
+                "fn_19f67ae64"
+              ],
+              "line_count": 19,
+              "path": "unit_f67ae6.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.25,
+              "expected_fact_keys": [
+                "inherited-membership-included"
+              ],
+              "logical_role": "resolver",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_19f67ae64(actor, group_id, **options):\n    records = membership_store.lookup(actor.id, group_id, include_inherited=True)\n    return strongest_role(records)\n\n\ndef normalize_resolver(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_resolver(left, right):\n    normalized_left = normalize_resolver(left)\n    normalized_right = normalize_resolver(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_resolver(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-298dc5af",
+              "exported_symbols": [
+                "fn_298dc5afd"
+              ],
+              "line_count": 19,
+              "path": "unit_8dc5af.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.25,
+              "expected_fact_keys": [
+                "role-preserved"
+              ],
+              "logical_role": "policy",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_298dc5afd(source_role, fallback_role=\"reader\"):\n    propagated_role = source_role\n    return propagated_role in {\"editor\", \"manager\"}\n\n\ndef normalize_policy(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_policy(left, right):\n    normalized_left = normalize_policy(left)\n    normalized_right = normalize_policy(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_policy(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-0c2d822d",
+              "exported_symbols": [
+                "fn_0c2d822d5"
+              ],
+              "line_count": 20,
+              "path": "unit_2d822d.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.25,
+              "expected_fact_keys": [
+                "ownership-compared"
+              ],
+              "logical_role": "service",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_0c2d822d5(actor, item, owner_id=None):\n    if actor.owner_id == item.owner_id:\n        return apply_change(actor, item)\n    return False\n\n\ndef normalize_service(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_service(left, right):\n    normalized_left = normalize_service(left)\n    normalized_right = normalize_service(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_service(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          },
+          {
+            "descriptor": {
+              "artifact_id": "a-e1cf687e",
+              "exported_symbols": [
+                "fn_e1cf687e6"
+              ],
+              "line_count": 26,
+              "path": "unit_cf687e.py"
+            },
+            "restricted_truth": {
+              "evaluator_usefulness": 0.65,
+              "expected_fact_keys": [
+                "h4-behavioral-expectation",
+                "test-implementation-relationship"
+              ],
+              "logical_role": "tests",
+              "visibility": "evaluator_only"
+            },
+            "source": "def fn_e1cf687e6(actor, item, request):\n    alternate_result = request.channel == \"alternate\"\n    standard_result = request.channel == \"standard\"\n    inherited_result = getattr(actor, \"inherited_role\", None)\n    direct_result = getattr(actor, \"direct_role\", None)\n    propagated_role = getattr(actor, \"propagated_role\", None)\n    source_role = getattr(actor, \"role\", None)\n    scoped_result = getattr(request.token, \"scope\", None)\n    contextual_result = getattr(request, \"flags\", None)\n    return scoped_result == contextual_result\n\n\ndef normalize_tests(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_tests(left, right):\n    normalized_left = normalize_tests(left)\n    normalized_right = normalize_tests(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_tests(items):\n    return tuple(sorted(str(item) for item in items))\n"
+          }
+        ],
+        "public": {
+          "artifact_inventory": [
+            {
+              "artifact_id": "a-f4a5838b",
+              "exported_symbols": [
+                "handle_request"
+              ],
+              "line_count": 25,
+              "path": "unit_a5838b.py"
+            },
+            {
+              "artifact_id": "a-298dc5af",
+              "exported_symbols": [
+                "fn_298dc5afd"
+              ],
+              "line_count": 19,
+              "path": "unit_8dc5af.py"
+            },
+            {
+              "artifact_id": "a-0c2d822d",
+              "exported_symbols": [
+                "fn_0c2d822d5"
+              ],
+              "line_count": 20,
+              "path": "unit_2d822d.py"
+            },
+            {
+              "artifact_id": "a-19f67ae6",
+              "exported_symbols": [
+                "fn_19f67ae64"
+              ],
+              "line_count": 19,
+              "path": "unit_f67ae6.py"
+            },
+            {
+              "artifact_id": "a-e1cf687e",
+              "exported_symbols": [
+                "fn_e1cf687e6"
+              ],
+              "line_count": 26,
+              "path": "unit_cf687e.py"
+            },
+            {
+              "artifact_id": "a-c4c926bd",
+              "exported_symbols": [
+                "fn_c4c926bd9"
+              ],
+              "line_count": 19,
+              "path": "unit_c926bd.py"
+            }
+          ],
+          "benchmark": "authzgym-static-v1",
+          "candidate_hypotheses": [
+            {
+              "description": "An ownership assumption differs between authorization layers or entry paths.",
+              "hypothesis_id": "h1",
+              "relation_tags": [
+                "ownership_path",
+                "alternate_entry"
+              ]
+            },
+            {
+              "description": "Direct and inherited membership are treated inconsistently.",
+              "hypothesis_id": "h2",
+              "relation_tags": [
+                "membership_path",
+                "membership_inheritance"
+              ]
+            },
+            {
+              "description": "A propagated or transformed role differs between layers.",
+              "hypothesis_id": "h3",
+              "relation_tags": [
+                "role_path",
+                "role_propagation"
+              ]
+            },
+            {
+              "description": "Token scope or request context is lost or checked inconsistently.",
+              "hypothesis_id": "h4",
+              "relation_tags": [
+                "context_path",
+                "token_scope"
+              ]
+            }
+          ],
+          "entry_artifact_id": "a-f4a5838b",
+          "episode_id": "asv1-d-f5f54c9c8670",
+          "max_inspections": 4,
+          "resource_limits": {
+            "artifact_inspections": 4.0,
+            "input_tokens_proxy": 6000.0,
+            "output_tokens_proxy": 2000.0,
+            "semantic_calls": 4.0
+          },
+          "split": "development",
+          "task": "Inspect at most four purchased artifacts and select the candidate hypothesis that best explains the authorization discrepancy."
+        },
+        "restricted_truth": {
+          "control_type": "eligible_branch",
+          "correct_conclusion": "h4",
+          "decision_group": "development-eligible-1",
+          "discriminating_artifact_role": "guard",
+          "evidence_relationships": [
+            "entry receives token/context",
+            "guard drops both before authorization"
+          ],
+          "explanation": "The guard invokes authorization without forwarding token scope and request feature context.",
+          "mechanism_id": "h4",
+          "relevant_artifact_roles": [
+            "entry",
+            "guard",
+            "tests"
+          ],
+          "relevant_functions": [
+            "fn_c4c926bd9",
+            "handle_request"
+          ],
+          "visibility": "evaluator_only"
+        },
+        "runner_control": {
+          "authoring_seed": 17723156143740609111
+        }
+      },
+      "evaluator_only": {
+        "expected_content": {
+          "facts": {
+            "f0": false,
+            "f1": false,
+            "f10": false,
+            "f11": false,
+            "f12": false,
+            "f13": false,
+            "f14": false,
+            "f15": false,
+            "f16": true,
+            "f17": false,
+            "f18": false,
+            "f19": false,
+            "f2": false,
+            "f20": false,
+            "f21": false,
+            "f22": false,
+            "f23": false,
+            "f24": false,
+            "f3": false,
+            "f4": false,
+            "f5": false,
+            "f6": true,
+            "f7": true,
+            "f8": false,
+            "f9": false
+          },
+          "hypothesis_effects": {
+            "c0": "unknown",
+            "c1": "unknown",
+            "c2": "unknown",
+            "c3": "support"
+          },
+          "unresolved_targets": {
+            "t1": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": true,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t2": {
+              "r0": true,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t3": {
+              "r0": false,
+              "r1": false,
+              "r2": true,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t4": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": true
+            },
+            "t5": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": true,
+              "r7": false,
+              "r8": false
+            }
+          }
+        },
+        "logical_roles_by_slot": {
+          "t0": "entry",
+          "t1": "policy",
+          "t2": "service",
+          "t3": "resolver",
+          "t4": "tests",
+          "t5": "guard"
+        },
+        "mechanism_family": "h4",
+        "usefulness_by_slot": {
+          "t0": 0.4,
+          "t1": 0.25,
+          "t2": 0.25,
+          "t3": 0.25,
+          "t4": 0.65,
+          "t5": 1.0
+        },
+        "visibility": "evaluator_only"
+      },
+      "model_visible_input": {
+        "candidate_hypotheses": [
+          {
+            "description": "An ownership assumption differs between authorization layers or entry paths.",
+            "public_label": "h1",
+            "relation_tags": [
+              "ownership_path",
+              "alternate_entry"
+            ],
+            "slot": "c0"
+          },
+          {
+            "description": "Direct and inherited membership are treated inconsistently.",
+            "public_label": "h2",
+            "relation_tags": [
+              "membership_path",
+              "membership_inheritance"
+            ],
+            "slot": "c1"
+          },
+          {
+            "description": "A propagated or transformed role differs between layers.",
+            "public_label": "h3",
+            "relation_tags": [
+              "role_path",
+              "role_propagation"
+            ],
+            "slot": "c2"
+          },
+          {
+            "description": "Token scope or request context is lost or checked inconsistently.",
+            "public_label": "h4",
+            "relation_tags": [
+              "context_path",
+              "token_scope"
+            ],
+            "slot": "c3"
+          }
+        ],
+        "current_artifact": {
+          "path": "unit_a5838b.py",
+          "public_id": "a-f4a5838b",
+          "slot": 0,
+          "source": "def handle_request(actor, item, request):\n    test_view = fn_e1cf687e6(actor, item, request)\n    context_view = fn_c4c926bd9(actor, item, token_scope=None, feature_context={})\n    owner_view = fn_0c2d822d5(actor, item, owner_id=item.owner_id)\n    membership_view = fn_19f67ae64(actor, item.group_id, include_inherited=True)\n    role_view = fn_298dc5afd(actor.role)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        "current_epistemic_summary": {
+          "candidate_support": {
+            "c0": 0.0,
+            "c1": 0.0,
+            "c2": 0.0,
+            "c3": 0.0
+          },
+          "facts_seen": {
+            "f0": false,
+            "f1": false,
+            "f10": false,
+            "f11": false,
+            "f12": false,
+            "f13": false,
+            "f14": false,
+            "f15": false,
+            "f16": false,
+            "f17": false,
+            "f18": false,
+            "f19": false,
+            "f2": false,
+            "f20": false,
+            "f21": false,
+            "f22": false,
+            "f23": false,
+            "f24": false,
+            "f3": false,
+            "f4": false,
+            "f5": false,
+            "f6": false,
+            "f7": false,
+            "f8": false,
+            "f9": false
+          },
+          "inspected_artifact_slots": [],
+          "unresolved_targets": {
+            "t1": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t2": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t3": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t4": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            },
+            "t5": {
+              "r0": false,
+              "r1": false,
+              "r2": false,
+              "r3": false,
+              "r4": false,
+              "r5": false,
+              "r6": false,
+              "r7": false,
+              "r8": false
+            }
+          }
+        },
+        "instruction_scope": "current_artifact_only",
+        "public_artifact_inventory": [
+          {
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_a5838b.py",
+            "public_id": "a-f4a5838b",
+            "slot": 0
+          },
+          {
+            "exported_symbols": [
+              "fn_298dc5afd"
+            ],
+            "line_count": 19,
+            "path": "unit_8dc5af.py",
+            "public_id": "a-298dc5af",
+            "slot": 1
+          },
+          {
+            "exported_symbols": [
+              "fn_0c2d822d5"
+            ],
+            "line_count": 20,
+            "path": "unit_2d822d.py",
+            "public_id": "a-0c2d822d",
+            "slot": 2
+          },
+          {
+            "exported_symbols": [
+              "fn_19f67ae64"
+            ],
+            "line_count": 19,
+            "path": "unit_f67ae6.py",
+            "public_id": "a-19f67ae6",
+            "slot": 3
+          },
+          {
+            "exported_symbols": [
+              "fn_e1cf687e6"
+            ],
+            "line_count": 26,
+            "path": "unit_cf687e.py",
+            "public_id": "a-e1cf687e",
+            "slot": 4
+          },
+          {
+            "exported_symbols": [
+              "fn_c4c926bd9"
+            ],
+            "line_count": 19,
+            "path": "unit_c926bd.py",
+            "public_id": "a-c4c926bd",
+            "slot": 5
+          }
+        ],
+        "semantic_interface": "authzgym_semantic_observation_v1_2"
+      },
+      "response_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "facts": {
+            "additionalProperties": false,
+            "properties": {
+              "f0": {
+                "type": "boolean"
+              },
+              "f1": {
+                "type": "boolean"
+              },
+              "f10": {
+                "type": "boolean"
+              },
+              "f11": {
+                "type": "boolean"
+              },
+              "f12": {
+                "type": "boolean"
+              },
+              "f13": {
+                "type": "boolean"
+              },
+              "f14": {
+                "type": "boolean"
+              },
+              "f15": {
+                "type": "boolean"
+              },
+              "f16": {
+                "type": "boolean"
+              },
+              "f17": {
+                "type": "boolean"
+              },
+              "f18": {
+                "type": "boolean"
+              },
+              "f19": {
+                "type": "boolean"
+              },
+              "f2": {
+                "type": "boolean"
+              },
+              "f20": {
+                "type": "boolean"
+              },
+              "f21": {
+                "type": "boolean"
+              },
+              "f22": {
+                "type": "boolean"
+              },
+              "f23": {
+                "type": "boolean"
+              },
+              "f24": {
+                "type": "boolean"
+              },
+              "f3": {
+                "type": "boolean"
+              },
+              "f4": {
+                "type": "boolean"
+              },
+              "f5": {
+                "type": "boolean"
+              },
+              "f6": {
+                "type": "boolean"
+              },
+              "f7": {
+                "type": "boolean"
+              },
+              "f8": {
+                "type": "boolean"
+              },
+              "f9": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "f0",
+              "f1",
+              "f2",
+              "f3",
+              "f4",
+              "f5",
+              "f6",
+              "f7",
+              "f8",
+              "f9",
+              "f10",
+              "f11",
+              "f12",
+              "f13",
+              "f14",
+              "f15",
+              "f16",
+              "f17",
+              "f18",
+              "f19",
+              "f20",
+              "f21",
+              "f22",
+              "f23",
+              "f24"
+            ],
+            "type": "object"
+          },
+          "hypothesis_effects": {
+            "additionalProperties": false,
+            "properties": {
+              "c0": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "c1": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "c2": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              },
+              "c3": {
+                "enum": [
+                  "support",
+                  "contradict",
+                  "neutral",
+                  "unknown"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "c0",
+              "c1",
+              "c2",
+              "c3"
+            ],
+            "type": "object"
+          },
+          "unresolved_targets": {
+            "additionalProperties": false,
+            "properties": {
+              "t1": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t2": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t3": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t4": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              },
+              "t5": {
+                "additionalProperties": false,
+                "properties": {
+                  "r0": {
+                    "type": "boolean"
+                  },
+                  "r1": {
+                    "type": "boolean"
+                  },
+                  "r2": {
+                    "type": "boolean"
+                  },
+                  "r3": {
+                    "type": "boolean"
+                  },
+                  "r4": {
+                    "type": "boolean"
+                  },
+                  "r5": {
+                    "type": "boolean"
+                  },
+                  "r6": {
+                    "type": "boolean"
+                  },
+                  "r7": {
+                    "type": "boolean"
+                  },
+                  "r8": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "r0",
+                  "r1",
+                  "r2",
+                  "r3",
+                  "r4",
+                  "r5",
+                  "r6",
+                  "r7",
+                  "r8"
+                ],
+                "type": "object"
+              }
+            },
+            "required": [
+              "t1",
+              "t2",
+              "t3",
+              "t4",
+              "t5"
+            ],
+            "type": "object"
+          }
+        },
+        "required": [
+          "facts",
+          "hypothesis_effects",
+          "unresolved_targets"
+        ],
+        "type": "object"
+      },
+      "runner_control": {
+        "current_artifact_slot": 0,
+        "legal_target_slots": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "prior_artifact_slots": [],
+        "schema_sha256": "f723c7ef480e79907f4dcfe70c4dea39924b1991615edcaf66cc04b58b460ad4"
+      },
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "variant": "base_entry"
+    }
+  ],
+  "experiment": "authzgym-stronger-model-v1",
+  "exposed_before_experiment": true,
+  "population_hash": "9c64104b4257319debc7762db5e7d53b20b297c4ec0a5ccb5fd6d4e43b257549",
+  "repeats_per_case": 1,
+  "schedule": [
+    {
+      "case_id": "asv1-d-5e6417ce899f--base_entry--71eb766486",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--base_entry--a4d4153f39",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--base_entry--f63dbfc3ca",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--base_entry--0dd132fa21",
+      "repeat": 1
+    }
+  ],
+  "schema_version": 1,
+  "semantic_contract_version": "v1.2",
+  "source_episode_count": 4,
+  "source_population_hash": "49206443c70e25f29f4276c1f4c4d7c27fcf9d56b5d9ea2b4e6f89980be1534f",
+  "stage": "smoke",
+  "variant_count_per_episode": 1
+}

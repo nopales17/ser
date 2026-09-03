@@ -1,0 +1,2006 @@
+{
+  "authoring_seed": 271828182,
+  "benchmark": "authzgym-static-v1",
+  "benchmark_construction_is_empirical_support": false,
+  "episodes": [
+    {
+      "artifacts": [
+        {
+          "descriptor": {
+            "artifact_id": "a-97139283",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 27,
+            "path": "unit_139283.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.4,
+            "expected_fact_keys": [
+              "alternate-entry",
+              "cross-layer-relationship"
+            ],
+            "logical_role": "entry",
+            "visibility": "evaluator_only"
+          },
+          "source": "def handle_request(actor, item, request):\n    test_view = fn_86200c07f(actor, item, request)\n    owner_view = fn_4e089b466(actor, item)\n    if request.channel == \"alternate\":\n        return fn_4e089b466(actor, item)\n    membership_view = fn_02014c1f7(actor, item.group_id, include_inherited=True)\n    role_view = fn_8c8e0d6b7(actor.role)\n    context_view = fn_67934f972(actor, item, token_scope=request.token.scope, feature_context=request.flags)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-67934f97",
+            "exported_symbols": [
+              "fn_67934f972"
+            ],
+            "line_count": 19,
+            "path": "unit_934f97.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "token-scope-forwarded",
+              "feature-context-forwarded"
+            ],
+            "logical_role": "guard",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_67934f972(actor, item, token_scope, feature_context):\n    policy_result = authorize(actor, item, token_scope=token_scope, feature_context=feature_context)\n    return bool(policy_result)\n\n\ndef normalize_guard(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_guard(left, right):\n    normalized_left = normalize_guard(left)\n    normalized_right = normalize_guard(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_guard(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-02014c1f",
+            "exported_symbols": [
+              "fn_02014c1f7"
+            ],
+            "line_count": 19,
+            "path": "unit_014c1f.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "inherited-membership-included"
+            ],
+            "logical_role": "resolver",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_02014c1f7(actor, group_id, **options):\n    records = membership_store.lookup(actor.id, group_id, include_inherited=True)\n    return strongest_role(records)\n\n\ndef normalize_resolver(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_resolver(left, right):\n    normalized_left = normalize_resolver(left)\n    normalized_right = normalize_resolver(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_resolver(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-8c8e0d6b",
+            "exported_symbols": [
+              "fn_8c8e0d6b7"
+            ],
+            "line_count": 19,
+            "path": "unit_8e0d6b.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "role-preserved"
+            ],
+            "logical_role": "policy",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_8c8e0d6b7(source_role, fallback_role=\"reader\"):\n    propagated_role = source_role\n    return propagated_role in {\"editor\", \"manager\"}\n\n\ndef normalize_policy(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_policy(left, right):\n    normalized_left = normalize_policy(left)\n    normalized_right = normalize_policy(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_policy(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-4e089b46",
+            "exported_symbols": [
+              "fn_4e089b466"
+            ],
+            "line_count": 18,
+            "path": "unit_089b46.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 1.0,
+            "expected_fact_keys": [
+              "sensitive-without-owner-check",
+              "alternate-entry-bypass"
+            ],
+            "logical_role": "service",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_4e089b466(actor, item, owner_id=None):\n    return apply_change(actor, item)\n\n\ndef normalize_service(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_service(left, right):\n    normalized_left = normalize_service(left)\n    normalized_right = normalize_service(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_service(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-86200c07",
+            "exported_symbols": [
+              "fn_86200c07f"
+            ],
+            "line_count": 26,
+            "path": "unit_200c07.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.65,
+            "expected_fact_keys": [
+              "h1-behavioral-expectation",
+              "test-implementation-relationship"
+            ],
+            "logical_role": "tests",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_86200c07f(actor, item, request):\n    alternate_result = request.channel == \"alternate\"\n    standard_result = request.channel == \"standard\"\n    inherited_result = getattr(actor, \"inherited_role\", None)\n    direct_result = getattr(actor, \"direct_role\", None)\n    propagated_role = getattr(actor, \"propagated_role\", None)\n    source_role = getattr(actor, \"role\", None)\n    scoped_result = getattr(request.token, \"scope\", None)\n    contextual_result = getattr(request, \"flags\", None)\n    return alternate_result == standard_result\n\n\ndef normalize_tests(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_tests(left, right):\n    normalized_left = normalize_tests(left)\n    normalized_right = normalize_tests(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_tests(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        }
+      ],
+      "public": {
+        "artifact_inventory": [
+          {
+            "artifact_id": "a-97139283",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 27,
+            "path": "unit_139283.py"
+          },
+          {
+            "artifact_id": "a-8c8e0d6b",
+            "exported_symbols": [
+              "fn_8c8e0d6b7"
+            ],
+            "line_count": 19,
+            "path": "unit_8e0d6b.py"
+          },
+          {
+            "artifact_id": "a-02014c1f",
+            "exported_symbols": [
+              "fn_02014c1f7"
+            ],
+            "line_count": 19,
+            "path": "unit_014c1f.py"
+          },
+          {
+            "artifact_id": "a-67934f97",
+            "exported_symbols": [
+              "fn_67934f972"
+            ],
+            "line_count": 19,
+            "path": "unit_934f97.py"
+          },
+          {
+            "artifact_id": "a-4e089b46",
+            "exported_symbols": [
+              "fn_4e089b466"
+            ],
+            "line_count": 18,
+            "path": "unit_089b46.py"
+          },
+          {
+            "artifact_id": "a-86200c07",
+            "exported_symbols": [
+              "fn_86200c07f"
+            ],
+            "line_count": 26,
+            "path": "unit_200c07.py"
+          }
+        ],
+        "benchmark": "authzgym-static-v1",
+        "candidate_hypotheses": [
+          {
+            "description": "An ownership assumption differs between authorization layers or entry paths.",
+            "hypothesis_id": "h1",
+            "relation_tags": [
+              "ownership_path",
+              "alternate_entry"
+            ]
+          },
+          {
+            "description": "Direct and inherited membership are treated inconsistently.",
+            "hypothesis_id": "h2",
+            "relation_tags": [
+              "membership_path",
+              "membership_inheritance"
+            ]
+          },
+          {
+            "description": "A propagated or transformed role differs between layers.",
+            "hypothesis_id": "h3",
+            "relation_tags": [
+              "role_path",
+              "role_propagation"
+            ]
+          },
+          {
+            "description": "Token scope or request context is lost or checked inconsistently.",
+            "hypothesis_id": "h4",
+            "relation_tags": [
+              "context_path",
+              "token_scope"
+            ]
+          }
+        ],
+        "entry_artifact_id": "a-97139283",
+        "episode_id": "asv1-c-c97e41b94cef",
+        "max_inspections": 4,
+        "resource_limits": {
+          "artifact_inspections": 4.0,
+          "input_tokens_proxy": 6000.0,
+          "output_tokens_proxy": 2000.0,
+          "semantic_calls": 4.0
+        },
+        "split": "confirmation",
+        "task": "Inspect at most four purchased artifacts and select the candidate hypothesis that best explains the authorization discrepancy."
+      },
+      "restricted_truth": {
+        "control_type": "eligible_branch",
+        "correct_conclusion": "h1",
+        "decision_group": "confirmation-eligible-30",
+        "discriminating_artifact_role": "service",
+        "evidence_relationships": [
+          "entry delegates to service",
+          "standard ownership guard is bypassed"
+        ],
+        "explanation": "An alternate entry reaches the sensitive service without preserving the ownership check used by the standard path.",
+        "mechanism_id": "h1",
+        "relevant_artifact_roles": [
+          "entry",
+          "service",
+          "tests"
+        ],
+        "relevant_functions": [
+          "fn_4e089b466",
+          "handle_request"
+        ],
+        "visibility": "evaluator_only"
+      },
+      "runner_control": {
+        "authoring_seed": 14519114512804576941
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "descriptor": {
+            "artifact_id": "a-97139283",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_139283.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.4,
+            "expected_fact_keys": [
+              "direct-only-membership",
+              "cross-layer-relationship"
+            ],
+            "logical_role": "entry",
+            "visibility": "evaluator_only"
+          },
+          "source": "def handle_request(actor, item, request):\n    test_view = fn_86200c07f(actor, item, request)\n    membership_view = fn_02014c1f7(actor, item.group_id, direct_only=True)\n    owner_view = fn_4e089b466(actor, item, owner_id=item.owner_id)\n    role_view = fn_8c8e0d6b7(actor.role)\n    context_view = fn_67934f972(actor, item, token_scope=request.token.scope, feature_context=request.flags)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-67934f97",
+            "exported_symbols": [
+              "fn_67934f972"
+            ],
+            "line_count": 19,
+            "path": "unit_934f97.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "token-scope-forwarded",
+              "feature-context-forwarded"
+            ],
+            "logical_role": "guard",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_67934f972(actor, item, token_scope, feature_context):\n    policy_result = authorize(actor, item, token_scope=token_scope, feature_context=feature_context)\n    return bool(policy_result)\n\n\ndef normalize_guard(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_guard(left, right):\n    normalized_left = normalize_guard(left)\n    normalized_right = normalize_guard(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_guard(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-02014c1f",
+            "exported_symbols": [
+              "fn_02014c1f7"
+            ],
+            "line_count": 19,
+            "path": "unit_014c1f.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 1.0,
+            "expected_fact_keys": [
+              "direct-only-membership",
+              "inherited-membership-omitted"
+            ],
+            "logical_role": "resolver",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_02014c1f7(actor, group_id, **options):\n    records = membership_store.lookup(actor.id, group_id, direct_only=True)\n    return strongest_role(records)\n\n\ndef normalize_resolver(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_resolver(left, right):\n    normalized_left = normalize_resolver(left)\n    normalized_right = normalize_resolver(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_resolver(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-8c8e0d6b",
+            "exported_symbols": [
+              "fn_8c8e0d6b7"
+            ],
+            "line_count": 19,
+            "path": "unit_8e0d6b.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "role-preserved"
+            ],
+            "logical_role": "policy",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_8c8e0d6b7(source_role, fallback_role=\"reader\"):\n    propagated_role = source_role\n    return propagated_role in {\"editor\", \"manager\"}\n\n\ndef normalize_policy(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_policy(left, right):\n    normalized_left = normalize_policy(left)\n    normalized_right = normalize_policy(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_policy(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-4e089b46",
+            "exported_symbols": [
+              "fn_4e089b466"
+            ],
+            "line_count": 20,
+            "path": "unit_089b46.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "ownership-compared"
+            ],
+            "logical_role": "service",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_4e089b466(actor, item, owner_id=None):\n    if actor.owner_id == item.owner_id:\n        return apply_change(actor, item)\n    return False\n\n\ndef normalize_service(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_service(left, right):\n    normalized_left = normalize_service(left)\n    normalized_right = normalize_service(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_service(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-86200c07",
+            "exported_symbols": [
+              "fn_86200c07f"
+            ],
+            "line_count": 26,
+            "path": "unit_200c07.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.65,
+            "expected_fact_keys": [
+              "h2-behavioral-expectation",
+              "test-implementation-relationship"
+            ],
+            "logical_role": "tests",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_86200c07f(actor, item, request):\n    alternate_result = request.channel == \"alternate\"\n    standard_result = request.channel == \"standard\"\n    inherited_result = getattr(actor, \"inherited_role\", None)\n    direct_result = getattr(actor, \"direct_role\", None)\n    propagated_role = getattr(actor, \"propagated_role\", None)\n    source_role = getattr(actor, \"role\", None)\n    scoped_result = getattr(request.token, \"scope\", None)\n    contextual_result = getattr(request, \"flags\", None)\n    return inherited_result == direct_result\n\n\ndef normalize_tests(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_tests(left, right):\n    normalized_left = normalize_tests(left)\n    normalized_right = normalize_tests(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_tests(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        }
+      ],
+      "public": {
+        "artifact_inventory": [
+          {
+            "artifact_id": "a-97139283",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_139283.py"
+          },
+          {
+            "artifact_id": "a-02014c1f",
+            "exported_symbols": [
+              "fn_02014c1f7"
+            ],
+            "line_count": 19,
+            "path": "unit_014c1f.py"
+          },
+          {
+            "artifact_id": "a-67934f97",
+            "exported_symbols": [
+              "fn_67934f972"
+            ],
+            "line_count": 19,
+            "path": "unit_934f97.py"
+          },
+          {
+            "artifact_id": "a-8c8e0d6b",
+            "exported_symbols": [
+              "fn_8c8e0d6b7"
+            ],
+            "line_count": 19,
+            "path": "unit_8e0d6b.py"
+          },
+          {
+            "artifact_id": "a-86200c07",
+            "exported_symbols": [
+              "fn_86200c07f"
+            ],
+            "line_count": 26,
+            "path": "unit_200c07.py"
+          },
+          {
+            "artifact_id": "a-4e089b46",
+            "exported_symbols": [
+              "fn_4e089b466"
+            ],
+            "line_count": 20,
+            "path": "unit_089b46.py"
+          }
+        ],
+        "benchmark": "authzgym-static-v1",
+        "candidate_hypotheses": [
+          {
+            "description": "An ownership assumption differs between authorization layers or entry paths.",
+            "hypothesis_id": "h1",
+            "relation_tags": [
+              "ownership_path",
+              "alternate_entry"
+            ]
+          },
+          {
+            "description": "Direct and inherited membership are treated inconsistently.",
+            "hypothesis_id": "h2",
+            "relation_tags": [
+              "membership_path",
+              "membership_inheritance"
+            ]
+          },
+          {
+            "description": "A propagated or transformed role differs between layers.",
+            "hypothesis_id": "h3",
+            "relation_tags": [
+              "role_path",
+              "role_propagation"
+            ]
+          },
+          {
+            "description": "Token scope or request context is lost or checked inconsistently.",
+            "hypothesis_id": "h4",
+            "relation_tags": [
+              "context_path",
+              "token_scope"
+            ]
+          }
+        ],
+        "entry_artifact_id": "a-97139283",
+        "episode_id": "asv1-c-41f98a22be39",
+        "max_inspections": 4,
+        "resource_limits": {
+          "artifact_inspections": 4.0,
+          "input_tokens_proxy": 6000.0,
+          "output_tokens_proxy": 2000.0,
+          "semantic_calls": 4.0
+        },
+        "split": "confirmation",
+        "task": "Inspect at most four purchased artifacts and select the candidate hypothesis that best explains the authorization discrepancy."
+      },
+      "restricted_truth": {
+        "control_type": "eligible_branch",
+        "correct_conclusion": "h2",
+        "decision_group": "confirmation-eligible-30",
+        "discriminating_artifact_role": "resolver",
+        "evidence_relationships": [
+          "entry requests membership",
+          "resolver excludes inherited records"
+        ],
+        "explanation": "Membership resolution requests direct records and omits inherited membership used elsewhere.",
+        "mechanism_id": "h2",
+        "relevant_artifact_roles": [
+          "entry",
+          "resolver",
+          "tests"
+        ],
+        "relevant_functions": [
+          "fn_02014c1f7",
+          "handle_request"
+        ],
+        "visibility": "evaluator_only"
+      },
+      "runner_control": {
+        "authoring_seed": 4753982763491201871
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "descriptor": {
+            "artifact_id": "a-97139283",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_139283.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.4,
+            "expected_fact_keys": [
+              "role-fallback",
+              "cross-layer-relationship"
+            ],
+            "logical_role": "entry",
+            "visibility": "evaluator_only"
+          },
+          "source": "def handle_request(actor, item, request):\n    test_view = fn_86200c07f(actor, item, request)\n    role_view = fn_8c8e0d6b7(actor.role, fallback_role=\"reader\")\n    owner_view = fn_4e089b466(actor, item, owner_id=item.owner_id)\n    membership_view = fn_02014c1f7(actor, item.group_id, include_inherited=True)\n    context_view = fn_67934f972(actor, item, token_scope=request.token.scope, feature_context=request.flags)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-67934f97",
+            "exported_symbols": [
+              "fn_67934f972"
+            ],
+            "line_count": 19,
+            "path": "unit_934f97.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "token-scope-forwarded",
+              "feature-context-forwarded"
+            ],
+            "logical_role": "guard",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_67934f972(actor, item, token_scope, feature_context):\n    policy_result = authorize(actor, item, token_scope=token_scope, feature_context=feature_context)\n    return bool(policy_result)\n\n\ndef normalize_guard(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_guard(left, right):\n    normalized_left = normalize_guard(left)\n    normalized_right = normalize_guard(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_guard(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-02014c1f",
+            "exported_symbols": [
+              "fn_02014c1f7"
+            ],
+            "line_count": 19,
+            "path": "unit_014c1f.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "inherited-membership-included"
+            ],
+            "logical_role": "resolver",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_02014c1f7(actor, group_id, **options):\n    records = membership_store.lookup(actor.id, group_id, include_inherited=True)\n    return strongest_role(records)\n\n\ndef normalize_resolver(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_resolver(left, right):\n    normalized_left = normalize_resolver(left)\n    normalized_right = normalize_resolver(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_resolver(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-8c8e0d6b",
+            "exported_symbols": [
+              "fn_8c8e0d6b7"
+            ],
+            "line_count": 19,
+            "path": "unit_8e0d6b.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 1.0,
+            "expected_fact_keys": [
+              "role-map-transform",
+              "role-fallback"
+            ],
+            "logical_role": "policy",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_8c8e0d6b7(source_role, fallback_role=\"reader\"):\n    propagated_role = role_map.get(source_role, fallback_role)\n    return propagated_role in {\"editor\", \"manager\"}\n\n\ndef normalize_policy(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_policy(left, right):\n    normalized_left = normalize_policy(left)\n    normalized_right = normalize_policy(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_policy(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-4e089b46",
+            "exported_symbols": [
+              "fn_4e089b466"
+            ],
+            "line_count": 20,
+            "path": "unit_089b46.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "ownership-compared"
+            ],
+            "logical_role": "service",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_4e089b466(actor, item, owner_id=None):\n    if actor.owner_id == item.owner_id:\n        return apply_change(actor, item)\n    return False\n\n\ndef normalize_service(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_service(left, right):\n    normalized_left = normalize_service(left)\n    normalized_right = normalize_service(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_service(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-86200c07",
+            "exported_symbols": [
+              "fn_86200c07f"
+            ],
+            "line_count": 26,
+            "path": "unit_200c07.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.65,
+            "expected_fact_keys": [
+              "h3-behavioral-expectation",
+              "test-implementation-relationship"
+            ],
+            "logical_role": "tests",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_86200c07f(actor, item, request):\n    alternate_result = request.channel == \"alternate\"\n    standard_result = request.channel == \"standard\"\n    inherited_result = getattr(actor, \"inherited_role\", None)\n    direct_result = getattr(actor, \"direct_role\", None)\n    propagated_role = getattr(actor, \"propagated_role\", None)\n    source_role = getattr(actor, \"role\", None)\n    scoped_result = getattr(request.token, \"scope\", None)\n    contextual_result = getattr(request, \"flags\", None)\n    return propagated_role == source_role\n\n\ndef normalize_tests(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_tests(left, right):\n    normalized_left = normalize_tests(left)\n    normalized_right = normalize_tests(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_tests(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        }
+      ],
+      "public": {
+        "artifact_inventory": [
+          {
+            "artifact_id": "a-97139283",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_139283.py"
+          },
+          {
+            "artifact_id": "a-86200c07",
+            "exported_symbols": [
+              "fn_86200c07f"
+            ],
+            "line_count": 26,
+            "path": "unit_200c07.py"
+          },
+          {
+            "artifact_id": "a-4e089b46",
+            "exported_symbols": [
+              "fn_4e089b466"
+            ],
+            "line_count": 20,
+            "path": "unit_089b46.py"
+          },
+          {
+            "artifact_id": "a-8c8e0d6b",
+            "exported_symbols": [
+              "fn_8c8e0d6b7"
+            ],
+            "line_count": 19,
+            "path": "unit_8e0d6b.py"
+          },
+          {
+            "artifact_id": "a-02014c1f",
+            "exported_symbols": [
+              "fn_02014c1f7"
+            ],
+            "line_count": 19,
+            "path": "unit_014c1f.py"
+          },
+          {
+            "artifact_id": "a-67934f97",
+            "exported_symbols": [
+              "fn_67934f972"
+            ],
+            "line_count": 19,
+            "path": "unit_934f97.py"
+          }
+        ],
+        "benchmark": "authzgym-static-v1",
+        "candidate_hypotheses": [
+          {
+            "description": "An ownership assumption differs between authorization layers or entry paths.",
+            "hypothesis_id": "h1",
+            "relation_tags": [
+              "ownership_path",
+              "alternate_entry"
+            ]
+          },
+          {
+            "description": "Direct and inherited membership are treated inconsistently.",
+            "hypothesis_id": "h2",
+            "relation_tags": [
+              "membership_path",
+              "membership_inheritance"
+            ]
+          },
+          {
+            "description": "A propagated or transformed role differs between layers.",
+            "hypothesis_id": "h3",
+            "relation_tags": [
+              "role_path",
+              "role_propagation"
+            ]
+          },
+          {
+            "description": "Token scope or request context is lost or checked inconsistently.",
+            "hypothesis_id": "h4",
+            "relation_tags": [
+              "context_path",
+              "token_scope"
+            ]
+          }
+        ],
+        "entry_artifact_id": "a-97139283",
+        "episode_id": "asv1-c-b5c89a97dec2",
+        "max_inspections": 4,
+        "resource_limits": {
+          "artifact_inspections": 4.0,
+          "input_tokens_proxy": 6000.0,
+          "output_tokens_proxy": 2000.0,
+          "semantic_calls": 4.0
+        },
+        "split": "confirmation",
+        "task": "Inspect at most four purchased artifacts and select the candidate hypothesis that best explains the authorization discrepancy."
+      },
+      "restricted_truth": {
+        "control_type": "eligible_branch",
+        "correct_conclusion": "h3",
+        "decision_group": "confirmation-eligible-30",
+        "discriminating_artifact_role": "policy",
+        "evidence_relationships": [
+          "entry supplies source role",
+          "policy transforms role with a fallback"
+        ],
+        "explanation": "A fallback role transformation changes the effective role before the policy decision.",
+        "mechanism_id": "h3",
+        "relevant_artifact_roles": [
+          "entry",
+          "policy",
+          "tests"
+        ],
+        "relevant_functions": [
+          "fn_8c8e0d6b7",
+          "handle_request"
+        ],
+        "visibility": "evaluator_only"
+      },
+      "runner_control": {
+        "authoring_seed": 13098889493275109449
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "descriptor": {
+            "artifact_id": "a-97139283",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_139283.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.4,
+            "expected_fact_keys": [
+              "missing-token-scope",
+              "missing-feature-context",
+              "cross-layer-relationship"
+            ],
+            "logical_role": "entry",
+            "visibility": "evaluator_only"
+          },
+          "source": "def handle_request(actor, item, request):\n    test_view = fn_86200c07f(actor, item, request)\n    context_view = fn_67934f972(actor, item, token_scope=None, feature_context={})\n    owner_view = fn_4e089b466(actor, item, owner_id=item.owner_id)\n    membership_view = fn_02014c1f7(actor, item.group_id, include_inherited=True)\n    role_view = fn_8c8e0d6b7(actor.role)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-67934f97",
+            "exported_symbols": [
+              "fn_67934f972"
+            ],
+            "line_count": 19,
+            "path": "unit_934f97.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 1.0,
+            "expected_fact_keys": [
+              "missing-token-scope",
+              "missing-feature-context",
+              "guard-context-loss"
+            ],
+            "logical_role": "guard",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_67934f972(actor, item, token_scope, feature_context):\n    policy_result = authorize(actor, item, token_scope=None, feature_context={})\n    return bool(policy_result)\n\n\ndef normalize_guard(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_guard(left, right):\n    normalized_left = normalize_guard(left)\n    normalized_right = normalize_guard(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_guard(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-02014c1f",
+            "exported_symbols": [
+              "fn_02014c1f7"
+            ],
+            "line_count": 19,
+            "path": "unit_014c1f.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "inherited-membership-included"
+            ],
+            "logical_role": "resolver",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_02014c1f7(actor, group_id, **options):\n    records = membership_store.lookup(actor.id, group_id, include_inherited=True)\n    return strongest_role(records)\n\n\ndef normalize_resolver(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_resolver(left, right):\n    normalized_left = normalize_resolver(left)\n    normalized_right = normalize_resolver(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_resolver(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-8c8e0d6b",
+            "exported_symbols": [
+              "fn_8c8e0d6b7"
+            ],
+            "line_count": 19,
+            "path": "unit_8e0d6b.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "role-preserved"
+            ],
+            "logical_role": "policy",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_8c8e0d6b7(source_role, fallback_role=\"reader\"):\n    propagated_role = source_role\n    return propagated_role in {\"editor\", \"manager\"}\n\n\ndef normalize_policy(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_policy(left, right):\n    normalized_left = normalize_policy(left)\n    normalized_right = normalize_policy(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_policy(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-4e089b46",
+            "exported_symbols": [
+              "fn_4e089b466"
+            ],
+            "line_count": 20,
+            "path": "unit_089b46.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "ownership-compared"
+            ],
+            "logical_role": "service",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_4e089b466(actor, item, owner_id=None):\n    if actor.owner_id == item.owner_id:\n        return apply_change(actor, item)\n    return False\n\n\ndef normalize_service(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_service(left, right):\n    normalized_left = normalize_service(left)\n    normalized_right = normalize_service(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_service(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-86200c07",
+            "exported_symbols": [
+              "fn_86200c07f"
+            ],
+            "line_count": 26,
+            "path": "unit_200c07.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.65,
+            "expected_fact_keys": [
+              "h4-behavioral-expectation",
+              "test-implementation-relationship"
+            ],
+            "logical_role": "tests",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_86200c07f(actor, item, request):\n    alternate_result = request.channel == \"alternate\"\n    standard_result = request.channel == \"standard\"\n    inherited_result = getattr(actor, \"inherited_role\", None)\n    direct_result = getattr(actor, \"direct_role\", None)\n    propagated_role = getattr(actor, \"propagated_role\", None)\n    source_role = getattr(actor, \"role\", None)\n    scoped_result = getattr(request.token, \"scope\", None)\n    contextual_result = getattr(request, \"flags\", None)\n    return scoped_result == contextual_result\n\n\ndef normalize_tests(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_tests(left, right):\n    normalized_left = normalize_tests(left)\n    normalized_right = normalize_tests(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_tests(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        }
+      ],
+      "public": {
+        "artifact_inventory": [
+          {
+            "artifact_id": "a-97139283",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_139283.py"
+          },
+          {
+            "artifact_id": "a-4e089b46",
+            "exported_symbols": [
+              "fn_4e089b466"
+            ],
+            "line_count": 20,
+            "path": "unit_089b46.py"
+          },
+          {
+            "artifact_id": "a-67934f97",
+            "exported_symbols": [
+              "fn_67934f972"
+            ],
+            "line_count": 19,
+            "path": "unit_934f97.py"
+          },
+          {
+            "artifact_id": "a-02014c1f",
+            "exported_symbols": [
+              "fn_02014c1f7"
+            ],
+            "line_count": 19,
+            "path": "unit_014c1f.py"
+          },
+          {
+            "artifact_id": "a-8c8e0d6b",
+            "exported_symbols": [
+              "fn_8c8e0d6b7"
+            ],
+            "line_count": 19,
+            "path": "unit_8e0d6b.py"
+          },
+          {
+            "artifact_id": "a-86200c07",
+            "exported_symbols": [
+              "fn_86200c07f"
+            ],
+            "line_count": 26,
+            "path": "unit_200c07.py"
+          }
+        ],
+        "benchmark": "authzgym-static-v1",
+        "candidate_hypotheses": [
+          {
+            "description": "An ownership assumption differs between authorization layers or entry paths.",
+            "hypothesis_id": "h1",
+            "relation_tags": [
+              "ownership_path",
+              "alternate_entry"
+            ]
+          },
+          {
+            "description": "Direct and inherited membership are treated inconsistently.",
+            "hypothesis_id": "h2",
+            "relation_tags": [
+              "membership_path",
+              "membership_inheritance"
+            ]
+          },
+          {
+            "description": "A propagated or transformed role differs between layers.",
+            "hypothesis_id": "h3",
+            "relation_tags": [
+              "role_path",
+              "role_propagation"
+            ]
+          },
+          {
+            "description": "Token scope or request context is lost or checked inconsistently.",
+            "hypothesis_id": "h4",
+            "relation_tags": [
+              "context_path",
+              "token_scope"
+            ]
+          }
+        ],
+        "entry_artifact_id": "a-97139283",
+        "episode_id": "asv1-c-c265f62d861b",
+        "max_inspections": 4,
+        "resource_limits": {
+          "artifact_inspections": 4.0,
+          "input_tokens_proxy": 6000.0,
+          "output_tokens_proxy": 2000.0,
+          "semantic_calls": 4.0
+        },
+        "split": "confirmation",
+        "task": "Inspect at most four purchased artifacts and select the candidate hypothesis that best explains the authorization discrepancy."
+      },
+      "restricted_truth": {
+        "control_type": "eligible_branch",
+        "correct_conclusion": "h4",
+        "decision_group": "confirmation-eligible-30",
+        "discriminating_artifact_role": "guard",
+        "evidence_relationships": [
+          "entry receives token/context",
+          "guard drops both before authorization"
+        ],
+        "explanation": "The guard invokes authorization without forwarding token scope and request feature context.",
+        "mechanism_id": "h4",
+        "relevant_artifact_roles": [
+          "entry",
+          "guard",
+          "tests"
+        ],
+        "relevant_functions": [
+          "fn_67934f972",
+          "handle_request"
+        ],
+        "visibility": "evaluator_only"
+      },
+      "runner_control": {
+        "authoring_seed": 14007872891389687282
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "descriptor": {
+            "artifact_id": "a-c8170025",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 27,
+            "path": "unit_170025.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.4,
+            "expected_fact_keys": [
+              "alternate-entry",
+              "cross-layer-relationship"
+            ],
+            "logical_role": "entry",
+            "visibility": "evaluator_only"
+          },
+          "source": "def handle_request(actor, item, request):\n    test_view = fn_4b2feda7f(actor, item, request)\n    owner_view = fn_9452b89bf(actor, item)\n    if request.channel == \"alternate\":\n        return fn_9452b89bf(actor, item)\n    membership_view = fn_8fbd29cf6(actor, item.group_id, include_inherited=True)\n    role_view = fn_3784af86c(actor.role)\n    context_view = fn_6d877f012(actor, item, token_scope=request.token.scope, feature_context=request.flags)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-6d877f01",
+            "exported_symbols": [
+              "fn_6d877f012"
+            ],
+            "line_count": 19,
+            "path": "unit_877f01.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "token-scope-forwarded",
+              "feature-context-forwarded"
+            ],
+            "logical_role": "guard",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_6d877f012(actor, item, token_scope, feature_context):\n    policy_result = authorize(actor, item, token_scope=token_scope, feature_context=feature_context)\n    return bool(policy_result)\n\n\ndef normalize_guard(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_guard(left, right):\n    normalized_left = normalize_guard(left)\n    normalized_right = normalize_guard(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_guard(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-8fbd29cf",
+            "exported_symbols": [
+              "fn_8fbd29cf6"
+            ],
+            "line_count": 19,
+            "path": "unit_bd29cf.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "inherited-membership-included"
+            ],
+            "logical_role": "resolver",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_8fbd29cf6(actor, group_id, **options):\n    records = membership_store.lookup(actor.id, group_id, include_inherited=True)\n    return strongest_role(records)\n\n\ndef normalize_resolver(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_resolver(left, right):\n    normalized_left = normalize_resolver(left)\n    normalized_right = normalize_resolver(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_resolver(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-3784af86",
+            "exported_symbols": [
+              "fn_3784af86c"
+            ],
+            "line_count": 19,
+            "path": "unit_84af86.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "role-preserved"
+            ],
+            "logical_role": "policy",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_3784af86c(source_role, fallback_role=\"reader\"):\n    propagated_role = source_role\n    return propagated_role in {\"editor\", \"manager\"}\n\n\ndef normalize_policy(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_policy(left, right):\n    normalized_left = normalize_policy(left)\n    normalized_right = normalize_policy(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_policy(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-9452b89b",
+            "exported_symbols": [
+              "fn_9452b89bf"
+            ],
+            "line_count": 18,
+            "path": "unit_52b89b.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 1.0,
+            "expected_fact_keys": [
+              "sensitive-without-owner-check",
+              "alternate-entry-bypass"
+            ],
+            "logical_role": "service",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_9452b89bf(actor, item, owner_id=None):\n    return apply_change(actor, item)\n\n\ndef normalize_service(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_service(left, right):\n    normalized_left = normalize_service(left)\n    normalized_right = normalize_service(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_service(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-4b2feda7",
+            "exported_symbols": [
+              "fn_4b2feda7f"
+            ],
+            "line_count": 26,
+            "path": "unit_2feda7.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.65,
+            "expected_fact_keys": [
+              "h1-behavioral-expectation",
+              "test-implementation-relationship"
+            ],
+            "logical_role": "tests",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_4b2feda7f(actor, item, request):\n    alternate_result = request.channel == \"alternate\"\n    standard_result = request.channel == \"standard\"\n    inherited_result = getattr(actor, \"inherited_role\", None)\n    direct_result = getattr(actor, \"direct_role\", None)\n    propagated_role = getattr(actor, \"propagated_role\", None)\n    source_role = getattr(actor, \"role\", None)\n    scoped_result = getattr(request.token, \"scope\", None)\n    contextual_result = getattr(request, \"flags\", None)\n    return alternate_result == standard_result\n\n\ndef normalize_tests(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_tests(left, right):\n    normalized_left = normalize_tests(left)\n    normalized_right = normalize_tests(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_tests(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        }
+      ],
+      "public": {
+        "artifact_inventory": [
+          {
+            "artifact_id": "a-c8170025",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 27,
+            "path": "unit_170025.py"
+          },
+          {
+            "artifact_id": "a-6d877f01",
+            "exported_symbols": [
+              "fn_6d877f012"
+            ],
+            "line_count": 19,
+            "path": "unit_877f01.py"
+          },
+          {
+            "artifact_id": "a-4b2feda7",
+            "exported_symbols": [
+              "fn_4b2feda7f"
+            ],
+            "line_count": 26,
+            "path": "unit_2feda7.py"
+          },
+          {
+            "artifact_id": "a-9452b89b",
+            "exported_symbols": [
+              "fn_9452b89bf"
+            ],
+            "line_count": 18,
+            "path": "unit_52b89b.py"
+          },
+          {
+            "artifact_id": "a-3784af86",
+            "exported_symbols": [
+              "fn_3784af86c"
+            ],
+            "line_count": 19,
+            "path": "unit_84af86.py"
+          },
+          {
+            "artifact_id": "a-8fbd29cf",
+            "exported_symbols": [
+              "fn_8fbd29cf6"
+            ],
+            "line_count": 19,
+            "path": "unit_bd29cf.py"
+          }
+        ],
+        "benchmark": "authzgym-static-v1",
+        "candidate_hypotheses": [
+          {
+            "description": "An ownership assumption differs between authorization layers or entry paths.",
+            "hypothesis_id": "h1",
+            "relation_tags": [
+              "ownership_path",
+              "alternate_entry"
+            ]
+          },
+          {
+            "description": "Direct and inherited membership are treated inconsistently.",
+            "hypothesis_id": "h2",
+            "relation_tags": [
+              "membership_path",
+              "membership_inheritance"
+            ]
+          },
+          {
+            "description": "A propagated or transformed role differs between layers.",
+            "hypothesis_id": "h3",
+            "relation_tags": [
+              "role_path",
+              "role_propagation"
+            ]
+          },
+          {
+            "description": "Token scope or request context is lost or checked inconsistently.",
+            "hypothesis_id": "h4",
+            "relation_tags": [
+              "context_path",
+              "token_scope"
+            ]
+          }
+        ],
+        "entry_artifact_id": "a-c8170025",
+        "episode_id": "asv1-c-df52f3a3113c",
+        "max_inspections": 4,
+        "resource_limits": {
+          "artifact_inspections": 4.0,
+          "input_tokens_proxy": 6000.0,
+          "output_tokens_proxy": 2000.0,
+          "semantic_calls": 4.0
+        },
+        "split": "confirmation",
+        "task": "Inspect at most four purchased artifacts and select the candidate hypothesis that best explains the authorization discrepancy."
+      },
+      "restricted_truth": {
+        "control_type": "eligible_branch",
+        "correct_conclusion": "h1",
+        "decision_group": "confirmation-eligible-31",
+        "discriminating_artifact_role": "service",
+        "evidence_relationships": [
+          "entry delegates to service",
+          "standard ownership guard is bypassed"
+        ],
+        "explanation": "An alternate entry reaches the sensitive service without preserving the ownership check used by the standard path.",
+        "mechanism_id": "h1",
+        "relevant_artifact_roles": [
+          "entry",
+          "service",
+          "tests"
+        ],
+        "relevant_functions": [
+          "fn_9452b89bf",
+          "handle_request"
+        ],
+        "visibility": "evaluator_only"
+      },
+      "runner_control": {
+        "authoring_seed": 16092192300242569736
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "descriptor": {
+            "artifact_id": "a-c8170025",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_170025.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.4,
+            "expected_fact_keys": [
+              "direct-only-membership",
+              "cross-layer-relationship"
+            ],
+            "logical_role": "entry",
+            "visibility": "evaluator_only"
+          },
+          "source": "def handle_request(actor, item, request):\n    test_view = fn_4b2feda7f(actor, item, request)\n    membership_view = fn_8fbd29cf6(actor, item.group_id, direct_only=True)\n    owner_view = fn_9452b89bf(actor, item, owner_id=item.owner_id)\n    role_view = fn_3784af86c(actor.role)\n    context_view = fn_6d877f012(actor, item, token_scope=request.token.scope, feature_context=request.flags)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-6d877f01",
+            "exported_symbols": [
+              "fn_6d877f012"
+            ],
+            "line_count": 19,
+            "path": "unit_877f01.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "token-scope-forwarded",
+              "feature-context-forwarded"
+            ],
+            "logical_role": "guard",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_6d877f012(actor, item, token_scope, feature_context):\n    policy_result = authorize(actor, item, token_scope=token_scope, feature_context=feature_context)\n    return bool(policy_result)\n\n\ndef normalize_guard(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_guard(left, right):\n    normalized_left = normalize_guard(left)\n    normalized_right = normalize_guard(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_guard(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-8fbd29cf",
+            "exported_symbols": [
+              "fn_8fbd29cf6"
+            ],
+            "line_count": 19,
+            "path": "unit_bd29cf.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 1.0,
+            "expected_fact_keys": [
+              "direct-only-membership",
+              "inherited-membership-omitted"
+            ],
+            "logical_role": "resolver",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_8fbd29cf6(actor, group_id, **options):\n    records = membership_store.lookup(actor.id, group_id, direct_only=True)\n    return strongest_role(records)\n\n\ndef normalize_resolver(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_resolver(left, right):\n    normalized_left = normalize_resolver(left)\n    normalized_right = normalize_resolver(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_resolver(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-3784af86",
+            "exported_symbols": [
+              "fn_3784af86c"
+            ],
+            "line_count": 19,
+            "path": "unit_84af86.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "role-preserved"
+            ],
+            "logical_role": "policy",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_3784af86c(source_role, fallback_role=\"reader\"):\n    propagated_role = source_role\n    return propagated_role in {\"editor\", \"manager\"}\n\n\ndef normalize_policy(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_policy(left, right):\n    normalized_left = normalize_policy(left)\n    normalized_right = normalize_policy(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_policy(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-9452b89b",
+            "exported_symbols": [
+              "fn_9452b89bf"
+            ],
+            "line_count": 20,
+            "path": "unit_52b89b.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "ownership-compared"
+            ],
+            "logical_role": "service",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_9452b89bf(actor, item, owner_id=None):\n    if actor.owner_id == item.owner_id:\n        return apply_change(actor, item)\n    return False\n\n\ndef normalize_service(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_service(left, right):\n    normalized_left = normalize_service(left)\n    normalized_right = normalize_service(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_service(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-4b2feda7",
+            "exported_symbols": [
+              "fn_4b2feda7f"
+            ],
+            "line_count": 26,
+            "path": "unit_2feda7.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.65,
+            "expected_fact_keys": [
+              "h2-behavioral-expectation",
+              "test-implementation-relationship"
+            ],
+            "logical_role": "tests",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_4b2feda7f(actor, item, request):\n    alternate_result = request.channel == \"alternate\"\n    standard_result = request.channel == \"standard\"\n    inherited_result = getattr(actor, \"inherited_role\", None)\n    direct_result = getattr(actor, \"direct_role\", None)\n    propagated_role = getattr(actor, \"propagated_role\", None)\n    source_role = getattr(actor, \"role\", None)\n    scoped_result = getattr(request.token, \"scope\", None)\n    contextual_result = getattr(request, \"flags\", None)\n    return inherited_result == direct_result\n\n\ndef normalize_tests(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_tests(left, right):\n    normalized_left = normalize_tests(left)\n    normalized_right = normalize_tests(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_tests(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        }
+      ],
+      "public": {
+        "artifact_inventory": [
+          {
+            "artifact_id": "a-c8170025",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_170025.py"
+          },
+          {
+            "artifact_id": "a-6d877f01",
+            "exported_symbols": [
+              "fn_6d877f012"
+            ],
+            "line_count": 19,
+            "path": "unit_877f01.py"
+          },
+          {
+            "artifact_id": "a-4b2feda7",
+            "exported_symbols": [
+              "fn_4b2feda7f"
+            ],
+            "line_count": 26,
+            "path": "unit_2feda7.py"
+          },
+          {
+            "artifact_id": "a-9452b89b",
+            "exported_symbols": [
+              "fn_9452b89bf"
+            ],
+            "line_count": 20,
+            "path": "unit_52b89b.py"
+          },
+          {
+            "artifact_id": "a-8fbd29cf",
+            "exported_symbols": [
+              "fn_8fbd29cf6"
+            ],
+            "line_count": 19,
+            "path": "unit_bd29cf.py"
+          },
+          {
+            "artifact_id": "a-3784af86",
+            "exported_symbols": [
+              "fn_3784af86c"
+            ],
+            "line_count": 19,
+            "path": "unit_84af86.py"
+          }
+        ],
+        "benchmark": "authzgym-static-v1",
+        "candidate_hypotheses": [
+          {
+            "description": "An ownership assumption differs between authorization layers or entry paths.",
+            "hypothesis_id": "h1",
+            "relation_tags": [
+              "ownership_path",
+              "alternate_entry"
+            ]
+          },
+          {
+            "description": "Direct and inherited membership are treated inconsistently.",
+            "hypothesis_id": "h2",
+            "relation_tags": [
+              "membership_path",
+              "membership_inheritance"
+            ]
+          },
+          {
+            "description": "A propagated or transformed role differs between layers.",
+            "hypothesis_id": "h3",
+            "relation_tags": [
+              "role_path",
+              "role_propagation"
+            ]
+          },
+          {
+            "description": "Token scope or request context is lost or checked inconsistently.",
+            "hypothesis_id": "h4",
+            "relation_tags": [
+              "context_path",
+              "token_scope"
+            ]
+          }
+        ],
+        "entry_artifact_id": "a-c8170025",
+        "episode_id": "asv1-c-c10c38e91fc4",
+        "max_inspections": 4,
+        "resource_limits": {
+          "artifact_inspections": 4.0,
+          "input_tokens_proxy": 6000.0,
+          "output_tokens_proxy": 2000.0,
+          "semantic_calls": 4.0
+        },
+        "split": "confirmation",
+        "task": "Inspect at most four purchased artifacts and select the candidate hypothesis that best explains the authorization discrepancy."
+      },
+      "restricted_truth": {
+        "control_type": "eligible_branch",
+        "correct_conclusion": "h2",
+        "decision_group": "confirmation-eligible-31",
+        "discriminating_artifact_role": "resolver",
+        "evidence_relationships": [
+          "entry requests membership",
+          "resolver excludes inherited records"
+        ],
+        "explanation": "Membership resolution requests direct records and omits inherited membership used elsewhere.",
+        "mechanism_id": "h2",
+        "relevant_artifact_roles": [
+          "entry",
+          "resolver",
+          "tests"
+        ],
+        "relevant_functions": [
+          "fn_8fbd29cf6",
+          "handle_request"
+        ],
+        "visibility": "evaluator_only"
+      },
+      "runner_control": {
+        "authoring_seed": 13910555922952121170
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "descriptor": {
+            "artifact_id": "a-c8170025",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_170025.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.4,
+            "expected_fact_keys": [
+              "role-fallback",
+              "cross-layer-relationship"
+            ],
+            "logical_role": "entry",
+            "visibility": "evaluator_only"
+          },
+          "source": "def handle_request(actor, item, request):\n    test_view = fn_4b2feda7f(actor, item, request)\n    role_view = fn_3784af86c(actor.role, fallback_role=\"reader\")\n    owner_view = fn_9452b89bf(actor, item, owner_id=item.owner_id)\n    membership_view = fn_8fbd29cf6(actor, item.group_id, include_inherited=True)\n    context_view = fn_6d877f012(actor, item, token_scope=request.token.scope, feature_context=request.flags)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-6d877f01",
+            "exported_symbols": [
+              "fn_6d877f012"
+            ],
+            "line_count": 19,
+            "path": "unit_877f01.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "token-scope-forwarded",
+              "feature-context-forwarded"
+            ],
+            "logical_role": "guard",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_6d877f012(actor, item, token_scope, feature_context):\n    policy_result = authorize(actor, item, token_scope=token_scope, feature_context=feature_context)\n    return bool(policy_result)\n\n\ndef normalize_guard(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_guard(left, right):\n    normalized_left = normalize_guard(left)\n    normalized_right = normalize_guard(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_guard(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-8fbd29cf",
+            "exported_symbols": [
+              "fn_8fbd29cf6"
+            ],
+            "line_count": 19,
+            "path": "unit_bd29cf.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "inherited-membership-included"
+            ],
+            "logical_role": "resolver",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_8fbd29cf6(actor, group_id, **options):\n    records = membership_store.lookup(actor.id, group_id, include_inherited=True)\n    return strongest_role(records)\n\n\ndef normalize_resolver(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_resolver(left, right):\n    normalized_left = normalize_resolver(left)\n    normalized_right = normalize_resolver(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_resolver(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-3784af86",
+            "exported_symbols": [
+              "fn_3784af86c"
+            ],
+            "line_count": 19,
+            "path": "unit_84af86.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 1.0,
+            "expected_fact_keys": [
+              "role-map-transform",
+              "role-fallback"
+            ],
+            "logical_role": "policy",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_3784af86c(source_role, fallback_role=\"reader\"):\n    propagated_role = role_map.get(source_role, fallback_role)\n    return propagated_role in {\"editor\", \"manager\"}\n\n\ndef normalize_policy(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_policy(left, right):\n    normalized_left = normalize_policy(left)\n    normalized_right = normalize_policy(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_policy(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-9452b89b",
+            "exported_symbols": [
+              "fn_9452b89bf"
+            ],
+            "line_count": 20,
+            "path": "unit_52b89b.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "ownership-compared"
+            ],
+            "logical_role": "service",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_9452b89bf(actor, item, owner_id=None):\n    if actor.owner_id == item.owner_id:\n        return apply_change(actor, item)\n    return False\n\n\ndef normalize_service(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_service(left, right):\n    normalized_left = normalize_service(left)\n    normalized_right = normalize_service(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_service(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-4b2feda7",
+            "exported_symbols": [
+              "fn_4b2feda7f"
+            ],
+            "line_count": 26,
+            "path": "unit_2feda7.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.65,
+            "expected_fact_keys": [
+              "h3-behavioral-expectation",
+              "test-implementation-relationship"
+            ],
+            "logical_role": "tests",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_4b2feda7f(actor, item, request):\n    alternate_result = request.channel == \"alternate\"\n    standard_result = request.channel == \"standard\"\n    inherited_result = getattr(actor, \"inherited_role\", None)\n    direct_result = getattr(actor, \"direct_role\", None)\n    propagated_role = getattr(actor, \"propagated_role\", None)\n    source_role = getattr(actor, \"role\", None)\n    scoped_result = getattr(request.token, \"scope\", None)\n    contextual_result = getattr(request, \"flags\", None)\n    return propagated_role == source_role\n\n\ndef normalize_tests(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_tests(left, right):\n    normalized_left = normalize_tests(left)\n    normalized_right = normalize_tests(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_tests(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        }
+      ],
+      "public": {
+        "artifact_inventory": [
+          {
+            "artifact_id": "a-c8170025",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_170025.py"
+          },
+          {
+            "artifact_id": "a-9452b89b",
+            "exported_symbols": [
+              "fn_9452b89bf"
+            ],
+            "line_count": 20,
+            "path": "unit_52b89b.py"
+          },
+          {
+            "artifact_id": "a-8fbd29cf",
+            "exported_symbols": [
+              "fn_8fbd29cf6"
+            ],
+            "line_count": 19,
+            "path": "unit_bd29cf.py"
+          },
+          {
+            "artifact_id": "a-3784af86",
+            "exported_symbols": [
+              "fn_3784af86c"
+            ],
+            "line_count": 19,
+            "path": "unit_84af86.py"
+          },
+          {
+            "artifact_id": "a-6d877f01",
+            "exported_symbols": [
+              "fn_6d877f012"
+            ],
+            "line_count": 19,
+            "path": "unit_877f01.py"
+          },
+          {
+            "artifact_id": "a-4b2feda7",
+            "exported_symbols": [
+              "fn_4b2feda7f"
+            ],
+            "line_count": 26,
+            "path": "unit_2feda7.py"
+          }
+        ],
+        "benchmark": "authzgym-static-v1",
+        "candidate_hypotheses": [
+          {
+            "description": "An ownership assumption differs between authorization layers or entry paths.",
+            "hypothesis_id": "h1",
+            "relation_tags": [
+              "ownership_path",
+              "alternate_entry"
+            ]
+          },
+          {
+            "description": "Direct and inherited membership are treated inconsistently.",
+            "hypothesis_id": "h2",
+            "relation_tags": [
+              "membership_path",
+              "membership_inheritance"
+            ]
+          },
+          {
+            "description": "A propagated or transformed role differs between layers.",
+            "hypothesis_id": "h3",
+            "relation_tags": [
+              "role_path",
+              "role_propagation"
+            ]
+          },
+          {
+            "description": "Token scope or request context is lost or checked inconsistently.",
+            "hypothesis_id": "h4",
+            "relation_tags": [
+              "context_path",
+              "token_scope"
+            ]
+          }
+        ],
+        "entry_artifact_id": "a-c8170025",
+        "episode_id": "asv1-c-3e46cf9649c6",
+        "max_inspections": 4,
+        "resource_limits": {
+          "artifact_inspections": 4.0,
+          "input_tokens_proxy": 6000.0,
+          "output_tokens_proxy": 2000.0,
+          "semantic_calls": 4.0
+        },
+        "split": "confirmation",
+        "task": "Inspect at most four purchased artifacts and select the candidate hypothesis that best explains the authorization discrepancy."
+      },
+      "restricted_truth": {
+        "control_type": "eligible_branch",
+        "correct_conclusion": "h3",
+        "decision_group": "confirmation-eligible-31",
+        "discriminating_artifact_role": "policy",
+        "evidence_relationships": [
+          "entry supplies source role",
+          "policy transforms role with a fallback"
+        ],
+        "explanation": "A fallback role transformation changes the effective role before the policy decision.",
+        "mechanism_id": "h3",
+        "relevant_artifact_roles": [
+          "entry",
+          "policy",
+          "tests"
+        ],
+        "relevant_functions": [
+          "fn_3784af86c",
+          "handle_request"
+        ],
+        "visibility": "evaluator_only"
+      },
+      "runner_control": {
+        "authoring_seed": 4487502323111050645
+      }
+    },
+    {
+      "artifacts": [
+        {
+          "descriptor": {
+            "artifact_id": "a-c8170025",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_170025.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.4,
+            "expected_fact_keys": [
+              "missing-token-scope",
+              "missing-feature-context",
+              "cross-layer-relationship"
+            ],
+            "logical_role": "entry",
+            "visibility": "evaluator_only"
+          },
+          "source": "def handle_request(actor, item, request):\n    test_view = fn_4b2feda7f(actor, item, request)\n    context_view = fn_6d877f012(actor, item, token_scope=None, feature_context={})\n    owner_view = fn_9452b89bf(actor, item, owner_id=item.owner_id)\n    membership_view = fn_8fbd29cf6(actor, item.group_id, include_inherited=True)\n    role_view = fn_3784af86c(actor.role)\n    audit_record = (\"request\", request.channel)\n    decision = (locals().get(\"owner_view\"), locals().get(\"membership_view\"), locals().get(\"role_view\"), locals().get(\"context_view\"))\n    return decision if test_view else None\n\n\ndef normalize_entry(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_entry(left, right):\n    normalized_left = normalize_entry(left)\n    normalized_right = normalize_entry(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_entry(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-6d877f01",
+            "exported_symbols": [
+              "fn_6d877f012"
+            ],
+            "line_count": 19,
+            "path": "unit_877f01.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 1.0,
+            "expected_fact_keys": [
+              "missing-token-scope",
+              "missing-feature-context",
+              "guard-context-loss"
+            ],
+            "logical_role": "guard",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_6d877f012(actor, item, token_scope, feature_context):\n    policy_result = authorize(actor, item, token_scope=None, feature_context={})\n    return bool(policy_result)\n\n\ndef normalize_guard(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_guard(left, right):\n    normalized_left = normalize_guard(left)\n    normalized_right = normalize_guard(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_guard(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-8fbd29cf",
+            "exported_symbols": [
+              "fn_8fbd29cf6"
+            ],
+            "line_count": 19,
+            "path": "unit_bd29cf.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "inherited-membership-included"
+            ],
+            "logical_role": "resolver",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_8fbd29cf6(actor, group_id, **options):\n    records = membership_store.lookup(actor.id, group_id, include_inherited=True)\n    return strongest_role(records)\n\n\ndef normalize_resolver(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_resolver(left, right):\n    normalized_left = normalize_resolver(left)\n    normalized_right = normalize_resolver(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_resolver(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-3784af86",
+            "exported_symbols": [
+              "fn_3784af86c"
+            ],
+            "line_count": 19,
+            "path": "unit_84af86.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "role-preserved"
+            ],
+            "logical_role": "policy",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_3784af86c(source_role, fallback_role=\"reader\"):\n    propagated_role = source_role\n    return propagated_role in {\"editor\", \"manager\"}\n\n\ndef normalize_policy(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_policy(left, right):\n    normalized_left = normalize_policy(left)\n    normalized_right = normalize_policy(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_policy(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-9452b89b",
+            "exported_symbols": [
+              "fn_9452b89bf"
+            ],
+            "line_count": 20,
+            "path": "unit_52b89b.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.25,
+            "expected_fact_keys": [
+              "ownership-compared"
+            ],
+            "logical_role": "service",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_9452b89bf(actor, item, owner_id=None):\n    if actor.owner_id == item.owner_id:\n        return apply_change(actor, item)\n    return False\n\n\ndef normalize_service(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_service(left, right):\n    normalized_left = normalize_service(left)\n    normalized_right = normalize_service(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_service(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        },
+        {
+          "descriptor": {
+            "artifact_id": "a-4b2feda7",
+            "exported_symbols": [
+              "fn_4b2feda7f"
+            ],
+            "line_count": 26,
+            "path": "unit_2feda7.py"
+          },
+          "restricted_truth": {
+            "evaluator_usefulness": 0.65,
+            "expected_fact_keys": [
+              "h4-behavioral-expectation",
+              "test-implementation-relationship"
+            ],
+            "logical_role": "tests",
+            "visibility": "evaluator_only"
+          },
+          "source": "def fn_4b2feda7f(actor, item, request):\n    alternate_result = request.channel == \"alternate\"\n    standard_result = request.channel == \"standard\"\n    inherited_result = getattr(actor, \"inherited_role\", None)\n    direct_result = getattr(actor, \"direct_role\", None)\n    propagated_role = getattr(actor, \"propagated_role\", None)\n    source_role = getattr(actor, \"role\", None)\n    scoped_result = getattr(request.token, \"scope\", None)\n    contextual_result = getattr(request, \"flags\", None)\n    return scoped_result == contextual_result\n\n\ndef normalize_tests(value):\n    if value is None:\n        return \"unset\"\n    return str(value).strip().lower()\n\n\ndef combine_tests(left, right):\n    normalized_left = normalize_tests(left)\n    normalized_right = normalize_tests(right)\n    return (normalized_left, normalized_right)\n\n\ndef stable_tests(items):\n    return tuple(sorted(str(item) for item in items))\n"
+        }
+      ],
+      "public": {
+        "artifact_inventory": [
+          {
+            "artifact_id": "a-c8170025",
+            "exported_symbols": [
+              "handle_request"
+            ],
+            "line_count": 25,
+            "path": "unit_170025.py"
+          },
+          {
+            "artifact_id": "a-6d877f01",
+            "exported_symbols": [
+              "fn_6d877f012"
+            ],
+            "line_count": 19,
+            "path": "unit_877f01.py"
+          },
+          {
+            "artifact_id": "a-4b2feda7",
+            "exported_symbols": [
+              "fn_4b2feda7f"
+            ],
+            "line_count": 26,
+            "path": "unit_2feda7.py"
+          },
+          {
+            "artifact_id": "a-3784af86",
+            "exported_symbols": [
+              "fn_3784af86c"
+            ],
+            "line_count": 19,
+            "path": "unit_84af86.py"
+          },
+          {
+            "artifact_id": "a-8fbd29cf",
+            "exported_symbols": [
+              "fn_8fbd29cf6"
+            ],
+            "line_count": 19,
+            "path": "unit_bd29cf.py"
+          },
+          {
+            "artifact_id": "a-9452b89b",
+            "exported_symbols": [
+              "fn_9452b89bf"
+            ],
+            "line_count": 20,
+            "path": "unit_52b89b.py"
+          }
+        ],
+        "benchmark": "authzgym-static-v1",
+        "candidate_hypotheses": [
+          {
+            "description": "An ownership assumption differs between authorization layers or entry paths.",
+            "hypothesis_id": "h1",
+            "relation_tags": [
+              "ownership_path",
+              "alternate_entry"
+            ]
+          },
+          {
+            "description": "Direct and inherited membership are treated inconsistently.",
+            "hypothesis_id": "h2",
+            "relation_tags": [
+              "membership_path",
+              "membership_inheritance"
+            ]
+          },
+          {
+            "description": "A propagated or transformed role differs between layers.",
+            "hypothesis_id": "h3",
+            "relation_tags": [
+              "role_path",
+              "role_propagation"
+            ]
+          },
+          {
+            "description": "Token scope or request context is lost or checked inconsistently.",
+            "hypothesis_id": "h4",
+            "relation_tags": [
+              "context_path",
+              "token_scope"
+            ]
+          }
+        ],
+        "entry_artifact_id": "a-c8170025",
+        "episode_id": "asv1-c-8768649373d9",
+        "max_inspections": 4,
+        "resource_limits": {
+          "artifact_inspections": 4.0,
+          "input_tokens_proxy": 6000.0,
+          "output_tokens_proxy": 2000.0,
+          "semantic_calls": 4.0
+        },
+        "split": "confirmation",
+        "task": "Inspect at most four purchased artifacts and select the candidate hypothesis that best explains the authorization discrepancy."
+      },
+      "restricted_truth": {
+        "control_type": "eligible_branch",
+        "correct_conclusion": "h4",
+        "decision_group": "confirmation-eligible-31",
+        "discriminating_artifact_role": "guard",
+        "evidence_relationships": [
+          "entry receives token/context",
+          "guard drops both before authorization"
+        ],
+        "explanation": "The guard invokes authorization without forwarding token scope and request feature context.",
+        "mechanism_id": "h4",
+        "relevant_artifact_roles": [
+          "entry",
+          "guard",
+          "tests"
+        ],
+        "relevant_functions": [
+          "fn_6d877f012",
+          "handle_request"
+        ],
+        "visibility": "evaluator_only"
+      },
+      "runner_control": {
+        "authoring_seed": 9757159177164757558
+      }
+    }
+  ],
+  "frozen_before_aggregate_evaluation": true,
+  "model_config_sha256": "3d38e962f524b3e3452bc58c3daf1bf41da42f7b002f09fa329e20c4a8e80e99",
+  "population_hash": "c661941856fcc27cbbe1bdef4527defef96ecee006200fe9f4e0c17bf24a9891",
+  "preregistration_sha256": "87526badb32c02513aca90e27ab1a413d28075ebf030f141acc7f9a3e0d2e5d9",
+  "prompt_hashes": {
+    "semantic_observation_v1_2.txt": "420e5e5b9129c53e0fe54b278b9bc22e0deae5c7a7914e5baef5d5c144e2b9db"
+  },
+  "real_model_calls_authorized": false,
+  "resource_schema": [
+    {
+      "name": "artifact_inspections",
+      "unit": "count"
+    },
+    {
+      "name": "semantic_calls",
+      "unit": "count"
+    },
+    {
+      "name": "input_tokens_proxy",
+      "unit": "deterministic_lexical_tokens"
+    },
+    {
+      "name": "output_tokens_proxy",
+      "unit": "deterministic_lexical_tokens"
+    },
+    {
+      "name": "declared_latency_ms",
+      "unit": "milliseconds"
+    },
+    {
+      "name": "monetary_cost_usd",
+      "unit": "USD"
+    }
+  ],
+  "schema_version": 1,
+  "split": "confirmation",
+  "visibility": "evaluator_only_experiment_definition"
+}

@@ -1,0 +1,37 @@
+{
+  "checks": {
+    "complete_terminal_result": true,
+    "credential_absent_from_artifacts": true,
+    "frozen_input_hashes": true,
+    "global_cost_and_call_ceiling": {
+      "hard_spend_ceiling_usd": 2.5,
+      "maximum_provider_attempts": 304,
+      "pass": true,
+      "provider_attempts": 24,
+      "total_cost_usd": 0.06607275
+    },
+    "population_and_nonoverlap": {
+      "confirmation_case_ids_disjoint_from_exposed_v1_2": true,
+      "confirmation_generated_paths_and_noninvariant_symbols_disjoint_from_all_exposed": true,
+      "confirmation_model_visible_hashes_disjoint_from_exposed_v1_2": true,
+      "confirmation_source_ids_disjoint_from_all_exposed": true,
+      "confirmation_source_population_hash": "c661941856fcc27cbbe1bdef4527defef96ecee006200fe9f4e0c17bf24a9891",
+      "expected_counts_valid": true,
+      "fresh_oracle": {
+        "canonical_episodes": 8,
+        "mean_normalized_regret": 0.0,
+        "passes": true,
+        "top1": 1.0,
+        "top2": 1.0
+      },
+      "information_boundary_violations": 0,
+      "population_hashes_valid": true,
+      "status": "pass"
+    },
+    "stage_integrity": true,
+    "stage_sequencing": true
+  },
+  "experiment": "authzgym-stronger-model-v1",
+  "schema_version": 1,
+  "status": "pass"
+}

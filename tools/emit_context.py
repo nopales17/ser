@@ -488,7 +488,7 @@ def render_context_packet(
             "",
             current["roadmap"]["immediate_next_task"],
             "",
-            "The IDS archive remains read-only. Active Phase 5 now authorizes only a separately frozen semantic-capability study retaining contract v1.2 with the next stronger inexpensive model and a fresh untouched confirmatory population. It does not authorize architecture comparison, reuse of the observed 24 evaluation episodes as confirmation, IDS code/data copy, real GitLab integration, an adapter, a production runtime or general model integration, graph runtime, production fuzzing, or coupling-law implementation.",
+            "The IDS archive remains read-only. Active Phase 5 now authorizes only a separately preregistered bounded diagnosis of the valid stronger-model development failure, distinguishing model inability, systematic v1.2 interface omission, and task ambiguity without changing v1.2 in place. It does not authorize architecture comparison, use of the untouched confirmation population for tuning, IDS code/data copy, real GitLab integration, an adapter, a production runtime or general model integration, graph runtime, production fuzzing, or coupling-law implementation.",
             "",
             "## 11. Important non-goals",
             "",

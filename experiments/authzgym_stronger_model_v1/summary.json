@@ -1,0 +1,490 @@
+{
+  "classification": "semantic_capability_below_threshold",
+  "confirmation_executed": false,
+  "confirmation_gate_passed": false,
+  "development_gate_passed": false,
+  "experiment": "authzgym-stronger-model-v1",
+  "failure_taxonomy": {
+    "benchmark_failure": false,
+    "downstream_estimator_failure": false,
+    "permanent_transport_failures": 0,
+    "response_contract_failures": 0,
+    "semantic_failure": true,
+    "transport_failures": 0
+  },
+  "fresh_oracle": {
+    "canonical_episodes": 8,
+    "mean_normalized_regret": 0.0,
+    "passes": true,
+    "top1": 1.0,
+    "top2": 1.0
+  },
+  "frozen_inputs_manifest_hash": "5e2c1b9695bc63b9d806c259e7aac206a9258294dbb680df57e76d8d78ff88f4",
+  "next_empirical_decision": "investigate_semantic_representation_failure",
+  "no_hypothesis_or_evidence_promotion": true,
+  "preserved_nonsemantic_preflight": {
+    "cached_input_tokens": 3840,
+    "cost_usd": 0.012317999999999999,
+    "input_tokens": 9896,
+    "latency_ms": 12703.497542184778,
+    "manifest_hash": "525b2377d3ac71bb05c6ded88977a8d08a51a1f4577a685e57396a87b1b59ac6",
+    "output_tokens": 1664,
+    "provider_attempts": 4,
+    "provider_responses": 4,
+    "reasoning_output_tokens": 0,
+    "runner_sha256": "d90706df5e864511ac57d91cf347edbbfe21080b1d977c9e96f2609168e0133c",
+    "transport_failures": 0,
+    "valid_logical_responses": 4
+  },
+  "resources": {
+    "aggregate_request_latency_ms": 71111.54717125464,
+    "cached_input_tokens": 34560,
+    "input_tokens": 59297,
+    "invalid_responses": 0,
+    "logical_calls": 24,
+    "output_tokens": 9984,
+    "per_logical_call_cost_usd": {
+      "development": {
+        "maximum": 0.00372675,
+        "mean": 0.002816596875,
+        "minimum": 0.00216855
+      },
+      "smoke": {
+        "maximum": 0.0021768,
+        "mean": 0.0021723,
+        "minimum": 0.00216855
+      }
+    },
+    "preserved_nonsemantic_preflight": {
+      "cached_input_tokens": 3840,
+      "cost_usd": 0.012317999999999999,
+      "input_tokens": 9896,
+      "latency_ms": 12703.497542184778,
+      "manifest_hash": "525b2377d3ac71bb05c6ded88977a8d08a51a1f4577a685e57396a87b1b59ac6",
+      "output_tokens": 1664,
+      "provider_attempts": 4,
+      "provider_responses": 4,
+      "reasoning_output_tokens": 0,
+      "runner_sha256": "d90706df5e864511ac57d91cf347edbbfe21080b1d977c9e96f2609168e0133c",
+      "transport_failures": 0,
+      "valid_logical_responses": 4
+    },
+    "provider_attempts": 24,
+    "provider_responses": 24,
+    "reasoning_output_tokens": 0,
+    "semantic_retries": 0,
+    "stage_wall_clock_ms": {
+      "development": 47379.79804095812,
+      "smoke": 13323.866875027306
+    },
+    "total_cost_usd": 0.06607275,
+    "valid_responses": 24
+  },
+  "schema_version": 1,
+  "selected_model": "patchersniper_praneeth/gpt-5.4-mini",
+  "semantic_contract_version": "v1.2",
+  "stages": {
+    "development": {
+      "contract": {
+        "classification": "contract_stable",
+        "observed": {
+          "finish_reason_length": 0,
+          "first_attempt_schema_valid_rate": 1.0,
+          "first_attempt_valid": 16,
+          "illegal_artifact_references": 0,
+          "illegal_hypothesis_references": 0,
+          "illegal_relation_references": 0,
+          "incomplete_json": 0,
+          "information_boundary_violations": 0,
+          "manual_repairs": 0,
+          "post_retry_valid": 16,
+          "post_retry_valid_rate": 1.0,
+          "provider_attempts": 16,
+          "scheduled_calls": 16
+        },
+        "response_error_counts": {},
+        "thresholds": {
+          "maximum_finish_reason_length": 0,
+          "maximum_illegal_artifact_references": 0,
+          "maximum_illegal_hypothesis_references": 0,
+          "maximum_illegal_relation_references": 0,
+          "maximum_incomplete_json": 0,
+          "maximum_information_boundary_violations": 0,
+          "maximum_manual_repairs": 0,
+          "minimum_first_attempt_schema_valid_rate": 0.99,
+          "minimum_post_retry_valid_rate": 1.0
+        }
+      },
+      "downstream_action_value": {
+        "existing_estimator_adequate_under_oracle": true,
+        "model_action_compatible": false,
+        "model_conditioned": {
+          "mean_normalized_regret": 0.7958333333333333,
+          "observations": 16,
+          "top1": 0.0,
+          "top2": 0.1875
+        },
+        "oracle_conditioned": {
+          "canonical_episodes": 4,
+          "mean_normalized_regret": 0.0,
+          "passes": true,
+          "top1": 1.0,
+          "top2": 1.0
+        }
+      },
+      "execution": {
+        "completed_logical_calls": 16,
+        "cumulative_cost_usd": 0.06607275,
+        "development_checkpoint_bounds": [
+          {
+            "actions": {
+              "maximum_final_top1": 0.75,
+              "maximum_final_top2": 0.8125,
+              "minimum_final_mean_normalized_regret": 0.19791666666666666
+            },
+            "completed_calls": 8,
+            "contract": {
+              "maximum_final_first_attempt_valid_rate": 1.0,
+              "maximum_final_post_retry_valid_rate": 1.0
+            },
+            "futile": false,
+            "layers": {
+              "effects": {
+                "maximum_final_precision": 0.7714285714285715,
+                "maximum_final_recall": 0.84375,
+                "precision_threshold": 0.6,
+                "recall_threshold": 0.5
+              },
+              "facts": {
+                "maximum_final_precision": 0.8059701492537313,
+                "maximum_final_recall": 0.8059701492537313,
+                "precision_threshold": 0.65,
+                "recall_threshold": 0.5
+              },
+              "unresolved": {
+                "maximum_final_precision": 1.0,
+                "maximum_final_recall": 0.7954545454545454,
+                "precision_threshold": 0.6,
+                "recall_threshold": 0.5
+              }
+            },
+            "reasons": [],
+            "remaining_calls": 24
+          },
+          {
+            "actions": {
+              "maximum_final_top1": 0.5,
+              "maximum_final_top2": 0.59375,
+              "minimum_final_mean_normalized_regret": 0.39791666666666664
+            },
+            "completed_calls": 16,
+            "contract": {
+              "maximum_final_first_attempt_valid_rate": 1.0,
+              "maximum_final_post_retry_valid_rate": 1.0
+            },
+            "futile": true,
+            "layers": {
+              "effects": {
+                "maximum_final_precision": 0.5434782608695652,
+                "maximum_final_recall": 0.78125,
+                "precision_threshold": 0.6,
+                "recall_threshold": 0.5
+              },
+              "facts": {
+                "maximum_final_precision": 0.5604395604395604,
+                "maximum_final_recall": 0.7611940298507462,
+                "precision_threshold": 0.65,
+                "recall_threshold": 0.5
+              },
+              "unresolved": {
+                "maximum_final_precision": 1.0,
+                "maximum_final_recall": 0.48484848484848486,
+                "precision_threshold": 0.6,
+                "recall_threshold": 0.5
+              }
+            },
+            "reasons": [
+              "facts_precision_mathematically_unreachable",
+              "effects_precision_mathematically_unreachable",
+              "unresolved_recall_mathematically_unreachable",
+              "action_top1_mathematically_unreachable",
+              "action_top2_mathematically_unreachable",
+              "action_regret_mathematically_unreachable"
+            ],
+            "remaining_calls": 16
+          }
+        ],
+        "early_stop": {
+          "actions": {
+            "maximum_final_top1": 0.5,
+            "maximum_final_top2": 0.59375,
+            "minimum_final_mean_normalized_regret": 0.39791666666666664
+          },
+          "completed_calls": 16,
+          "contract": {
+            "maximum_final_first_attempt_valid_rate": 1.0,
+            "maximum_final_post_retry_valid_rate": 1.0
+          },
+          "futile": true,
+          "layers": {
+            "effects": {
+              "maximum_final_precision": 0.5434782608695652,
+              "maximum_final_recall": 0.78125,
+              "precision_threshold": 0.6,
+              "recall_threshold": 0.5
+            },
+            "facts": {
+              "maximum_final_precision": 0.5604395604395604,
+              "maximum_final_recall": 0.7611940298507462,
+              "precision_threshold": 0.65,
+              "recall_threshold": 0.5
+            },
+            "unresolved": {
+              "maximum_final_precision": 1.0,
+              "maximum_final_recall": 0.48484848484848486,
+              "precision_threshold": 0.6,
+              "recall_threshold": 0.5
+            }
+          },
+          "reasons": [
+            "facts_precision_mathematically_unreachable",
+            "effects_precision_mathematically_unreachable",
+            "unresolved_recall_mathematically_unreachable",
+            "action_top1_mathematically_unreachable",
+            "action_top2_mathematically_unreachable",
+            "action_regret_mathematically_unreachable"
+          ],
+          "remaining_calls": 16
+        },
+        "experiment": "authzgym-stronger-model-v1",
+        "frozen_inputs_manifest_hash": "5e2c1b9695bc63b9d806c259e7aac206a9258294dbb680df57e76d8d78ff88f4",
+        "invalid_logical_responses": 0,
+        "permanent_transport_failures": 0,
+        "population_hash": "070d083ef23906f95a348fcb7f359a17593cc08225ec4ae074e2380ad80bef71",
+        "provider_attempts": 16,
+        "provider_responses": 16,
+        "raw_transport_failures": 0,
+        "record_hash": "c74e5d4eda35621172b6426e6b5396968f2d74146398f3da01d310a9c54c9509",
+        "scheduled_logical_calls": 32,
+        "schema_version": 1,
+        "semantic_retries": 0,
+        "stage": "development",
+        "stage_cost_usd": 0.04506555,
+        "stage_wall_clock_ms": 47379.79804095812,
+        "startup_error": null,
+        "transport_recoveries": 0,
+        "valid_logical_responses": 16
+      },
+      "exposed_before_experiment": true,
+      "integrity": {
+        "accounting_valid": true,
+        "cleanup_valid": true,
+        "cross_record_links_valid": true,
+        "dedicated_transport_scope_valid": true,
+        "exact_frozen_model": true,
+        "provider_models": [
+          "patchersniper_praneeth/gpt-5.4-mini"
+        ],
+        "provider_token_ceilings_valid": true,
+        "record_hashes_valid": true,
+        "schedule_valid": true,
+        "status": "pass"
+      },
+      "population_hash": "070d083ef23906f95a348fcb7f359a17593cc08225ec4ae074e2380ad80bef71",
+      "resources": {
+        "cached_input_tokens": 21504,
+        "calls": 16,
+        "input_tokens": 39505,
+        "latency_ms": 46393.43496109359,
+        "output_tokens": 6656,
+        "provider_attempts": 16,
+        "provider_responses": 16,
+        "reasoning_output_tokens": 0,
+        "semantic_retries": 0,
+        "total_cost_usd": 0.04506555,
+        "transport_failures": 0,
+        "wall_clock_ms": 47379.79804095812
+      },
+      "semantics": {
+        "classification": "semantic_signal_weak",
+        "fact_reasonable": false,
+        "facts": {
+          "expected": 35,
+          "precision": 0.3220338983050847,
+          "predicted": 59,
+          "recall": 0.5428571428571428,
+          "true_positive": 19
+        },
+        "hypothesis_effects": {
+          "expected": 16,
+          "precision": 0.3,
+          "predicted": 30,
+          "recall": 0.5625,
+          "true_positive": 9
+        },
+        "implication_reasonable": false,
+        "malformed_run_rate": 0.0,
+        "thresholds": {
+          "maximum_action_normalized_regret": 0.35,
+          "minimum_action_top1": 0.6,
+          "minimum_action_top2": 0.8,
+          "minimum_effect_precision": 0.6,
+          "minimum_effect_recall": 0.5,
+          "minimum_fact_precision": 0.65,
+          "minimum_fact_recall": 0.5,
+          "minimum_unresolved_precision": 0.6,
+          "minimum_unresolved_recall": 0.5
+        },
+        "unknown_effect_rate": 0.40625,
+        "unresolved_relations": {
+          "expected": 69,
+          "precision": 1.0,
+          "predicted": 1,
+          "recall": 0.014492753623188406,
+          "true_positive": 1
+        }
+      },
+      "stability": {
+        "repeat_pairs": 0,
+        "repeat_semantic_exact_rate": null,
+        "repeat_status": "not_scheduled_under_cost_ceiling",
+        "semantic_equivalence_exact_rate": 0.0,
+        "semantic_equivalence_pairs": 8
+      },
+      "stage": "development",
+      "transport": {
+        "classification": "transport_stable",
+        "completed_logical_calls": 16,
+        "permanent_transport_failures": 0,
+        "provider_attempts": 16,
+        "provider_responses": 16,
+        "raw_transport_failures": 0,
+        "scheduled_logical_calls": 32,
+        "transport_recoveries": 0
+      }
+    },
+    "smoke": {
+      "contract": {
+        "classification": "contract_stable",
+        "observed": {
+          "finish_reason_length": 0,
+          "first_attempt_schema_valid_rate": 1.0,
+          "first_attempt_valid": 4,
+          "illegal_artifact_references": 0,
+          "illegal_hypothesis_references": 0,
+          "illegal_relation_references": 0,
+          "incomplete_json": 0,
+          "information_boundary_violations": 0,
+          "manual_repairs": 0,
+          "post_retry_valid": 4,
+          "post_retry_valid_rate": 1.0,
+          "provider_attempts": 4,
+          "scheduled_calls": 4
+        },
+        "response_error_counts": {},
+        "thresholds": {
+          "maximum_finish_reason_length": 0,
+          "maximum_illegal_artifact_references": 0,
+          "maximum_illegal_hypothesis_references": 0,
+          "maximum_illegal_relation_references": 0,
+          "maximum_incomplete_json": 0,
+          "maximum_information_boundary_violations": 0,
+          "maximum_manual_repairs": 0,
+          "minimum_first_attempt_schema_valid_rate": 0.99,
+          "minimum_post_retry_valid_rate": 1.0
+        }
+      },
+      "downstream_action_value": {
+        "existing_estimator_adequate_under_oracle": null,
+        "model_action_compatible": null,
+        "model_conditioned": null,
+        "oracle_conditioned": null
+      },
+      "execution": {
+        "completed_logical_calls": 4,
+        "cumulative_cost_usd": 0.021007199999999997,
+        "development_checkpoint_bounds": [],
+        "early_stop": null,
+        "experiment": "authzgym-stronger-model-v1",
+        "frozen_inputs_manifest_hash": "5e2c1b9695bc63b9d806c259e7aac206a9258294dbb680df57e76d8d78ff88f4",
+        "invalid_logical_responses": 0,
+        "permanent_transport_failures": 0,
+        "population_hash": "9c64104b4257319debc7762db5e7d53b20b297c4ec0a5ccb5fd6d4e43b257549",
+        "provider_attempts": 4,
+        "provider_responses": 4,
+        "raw_transport_failures": 0,
+        "record_hash": "04d9e494f2661641e95d72ab86bf58aaba953585f04d6bb4a014af65197d4a43",
+        "scheduled_logical_calls": 4,
+        "schema_version": 1,
+        "semantic_retries": 0,
+        "stage": "smoke",
+        "stage_cost_usd": 0.008689199999999998,
+        "stage_wall_clock_ms": 13323.866875027306,
+        "startup_error": null,
+        "transport_recoveries": 0,
+        "valid_logical_responses": 4
+      },
+      "exposed_before_experiment": true,
+      "integrity": {
+        "accounting_valid": true,
+        "cleanup_valid": true,
+        "cross_record_links_valid": true,
+        "dedicated_transport_scope_valid": true,
+        "exact_frozen_model": true,
+        "provider_models": [
+          "patchersniper_praneeth/gpt-5.4-mini"
+        ],
+        "provider_token_ceilings_valid": true,
+        "record_hashes_valid": true,
+        "schedule_valid": true,
+        "status": "pass"
+      },
+      "population_hash": "9c64104b4257319debc7762db5e7d53b20b297c4ec0a5ccb5fd6d4e43b257549",
+      "resources": {
+        "cached_input_tokens": 9216,
+        "calls": 4,
+        "input_tokens": 9896,
+        "latency_ms": 12014.614667976273,
+        "output_tokens": 1664,
+        "provider_attempts": 4,
+        "provider_responses": 4,
+        "reasoning_output_tokens": 0,
+        "semantic_retries": 0,
+        "total_cost_usd": 0.0086892,
+        "transport_failures": 0,
+        "wall_clock_ms": 13323.866875027306
+      },
+      "semantics": {
+        "classification": "not_scored_smoke"
+      },
+      "stability": {
+        "repeat_pairs": 0,
+        "repeat_semantic_exact_rate": null,
+        "repeat_status": "not_scheduled_under_cost_ceiling",
+        "semantic_equivalence_exact_rate": null,
+        "semantic_equivalence_pairs": 0
+      },
+      "stage": "smoke",
+      "transport": {
+        "classification": "transport_stable",
+        "completed_logical_calls": 4,
+        "permanent_transport_failures": 0,
+        "provider_attempts": 4,
+        "provider_responses": 4,
+        "raw_transport_failures": 0,
+        "scheduled_logical_calls": 4,
+        "transport_recoveries": 0
+      }
+    }
+  },
+  "what_was_established": "The frozen semantic channel did not establish confirmatory semantic capability.",
+  "what_was_not_established": [
+    "SER architecture advantage",
+    "H-001",
+    "H-016",
+    "H-017",
+    "H-018",
+    "real-software authorization competence",
+    "bug-finding capability"
+  ]
+}

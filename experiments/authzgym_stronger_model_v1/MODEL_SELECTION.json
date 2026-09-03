@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "catalog_observed_date": "2026-09-03",
+  "catalog_endpoint": "configured OPENAI_BASE_URL /models through the approved UCSB SSH/SOCKS hop",
+  "catalog_request_paid_inference": false,
+  "catalog_total_models": 44,
+  "catalog_fields_used": [
+    "id",
+    "owned_by"
+  ],
+  "plausible_available_models": [
+    {
+      "id": "patchersniper_praneeth/gpt-5.4-mini",
+      "selection_relevance": "selected: immediate stronger tier in the same model family and provider route"
+    },
+    {
+      "id": "patchersniper_praneeth/gpt-5.4",
+      "selection_relevance": "excluded: flagship tier is materially more expensive than the immediate mini intervention"
+    },
+    {
+      "id": "patchersniper_praneeth/gpt-5.5",
+      "selection_relevance": "excluded: changes both generation tier and model generation, weakening the minimal intervention"
+    },
+    {
+      "id": "ctfbench_saastha/gpt-5.4-mini",
+      "selection_relevance": "excluded: same nominal model through a different provider route"
+    },
+    {
+      "id": "azure_jazzy_suraj/gpt-5.4-mini",
+      "selection_relevance": "excluded: same nominal model through a different provider route"
+    },
+    {
+      "id": "patchersniper_praneeth/claude-haiku-4-5",
+      "selection_relevance": "excluded: cross-family intervention with endpoint-specific structured-output behavior not established by the catalog"
+    },
+    {
+      "id": "patchersniper_praneeth/DeepSeek-V4-Flash",
+      "selection_relevance": "excluded: free/open-family point is deferred until a semantic-capable reference is established"
+    }
+  ],
+  "selected_model": "patchersniper_praneeth/gpt-5.4-mini",
+  "selection_rule": "Among catalog-listed models, choose the immediate capability tier above gpt-5.4-nano on the same patchersniper_praneeth route and in the same GPT-5.4 family, provided official documentation lists Chat Completions, structured outputs, reasoning effort none, and a conservative complete experiment below the user-set spend ceiling.",
+  "selection_made_before_authzgym_inference": true,
+  "official_model_id": "gpt-5.4-mini",
+  "official_documentation": "https://developers.openai.com/api/docs/models/gpt-5.4-mini",
+  "official_capability_record": {
+    "chat_completions": true,
+    "structured_outputs": true,
+    "reasoning_effort_none": true
+  },
+  "official_pricing_per_million_tokens_usd": {
+    "input": 0.75,
+    "cached_input": 0.075,
+    "output": 4.5
+  },
+  "pricing_caveat": "Official OpenAI list pricing is used for conservative local accounting; the institutional endpoint's actual billing is not established by its model catalog.",
+  "tls_exception": "The user explicitly approved the existing endpoint-scoped insecure/no-certificate-verification flag on 2026-09-03; credentials remain in an anonymous local curl configuration pipe."
+}

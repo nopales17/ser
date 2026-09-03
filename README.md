@@ -27,10 +27,14 @@ contract v1.2 repaired the response-schema design by removing free-form and
 dynamic-reference output channels; its first development stress run was
 transport-unstable, while the subsequent transport-envelope study completed
 128/128 `gpt-5.4-nano` calls with `transport_stable` and `contract_stable` for
-that exact development protocol. Nano's semantic signal was weak. These are
-capability-floor diagnostics, not admitted SER architecture findings: semantic
-action-value estimation and advantage over ReAct or an ordinary agent remain
-unproved.
+that exact development protocol. Nano's semantic signal was weak. A subsequent
+preregistered `gpt-5.4-mini` study retained v1.2 and again found stable transport
+and schema behavior, but stopped at its frozen 16/32 development futility
+boundary because six semantic/downstream requirements were mathematically
+unreachable. Its untouched confirmation population was not run; oracle semantic
+state still repaired action ranking completely. These are capability-floor
+diagnostics, not admitted SER architecture findings: semantic action-value
+estimation and advantage over ReAct or an ordinary agent remain unproved.
 
 ## Start here
 
@@ -87,12 +91,12 @@ generated files directly.
 
 ## Current non-goals
 
-Active Phase 5 permits only a separately versioned, preregistered semantic-
-capability study using the next stronger inexpensive model under the unchanged
-v1.2 semantic contract and existing thresholds. It must remain separate from
-architecture comparison, perform development work before fresh untouched
-confirmation, and treat the previously observed 24 evaluation episodes only as
-recovery/diagnostic material. Phase 5 does not authorize real GitLab integration,
+Active Phase 5 next permits only a separately preregistered, bounded diagnosis
+of the valid stronger-model development failure under semantic contract v1.2.
+That work must distinguish model inability, systematic interface omission, and
+task ambiguity without changing v1.2 in place or beginning an architecture
+comparison. The frozen untouched confirmation population remains unqueried.
+Phase 5 does not authorize real GitLab integration,
 broad vulnerability discovery, general LLM agents, graph policies, coupling
 operators, production fuzzers, IDS adapters, remote-sensing integrations, or
 training infrastructure. GitLab authorization is the practical research trunk,

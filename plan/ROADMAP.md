@@ -97,23 +97,24 @@ Allowed statuses: `planned`, `active`, `done`.
   new explicit decision showing it is a materially cleaner bridge for this
   exact question. Do not add graphs, coupling laws, learned policies, or
   cross-substrate environments.
-- current cursor: Phase 5A.1 construction, Phase 5A.2 benchmark freezing,
-  Phase 5A.3 first real-model evaluation, Phase 5A.4 semantic-contract
-  diagnosis, and Phase 5A.5 transport-envelope stability are complete; Phase
-  5A overall is not complete. Real-model v1 remains `invalid`, and semantic-
-  contract v1.2 remains preserved as transport-unstable. The separate Phase
-  5A.5 protocol retained v1.2 exactly and completed 128/128 logical calls on one
-  supervised tunnel with zero transport failures, zero retries, successful
-  cleanup, and `transport_stable`. All 128 responses were first-attempt schema-
-  valid (`contract_stable`), but nano's semantic diagnostic was
-  `semantic_signal_weak`: fact, effect, and unresolved-relation quality plus
-  model-conditioned action value were below threshold. No architecture or
-  general SER finding is admitted. Under ADR-0018 and the frozen Case C rule,
-  the next step is a separately versioned, preregistered study that retains
-  semantic contract v1.2 and tests the next stronger inexpensive model. It must
-  remain development/confirmatory semantic-capability work, create a fresh
-  untouched confirmatory population before confirmation, and must not reuse the
-  already observed 24 evaluation episodes or run an architecture comparison.
+- current cursor: Phase 5A.1 through Phase 5A.6 are complete; Phase 5A overall
+  is not complete. Real-model v1 remains `invalid`, semantic-contract v1.2
+  remains preserved as transport-unstable, and transport-envelope v1 remains
+  the transport/contract-stable weak-nano diagnostic. Phase 5A.6 changed only
+  the model to `patchersniper_praneeth/gpt-5.4-mini` under unchanged v1.2. Its
+  smoke and 16 executed development calls were all first-attempt schema-valid
+  with zero transport failures or retries, but the frozen early-stop rule fired
+  at 16/32 because even perfect remaining calls could not repair fact precision,
+  effect precision, unresolved-relation recall, action top-1/top-2, or regret.
+  The untouched 64-call confirmatory population was not run. Evaluator-oracle
+  v1.2 content retained top-1 1.0, top-2 1.0, and regret 0.0 on both development
+  and fresh canonical entries, so the deterministic estimator and population
+  remain adequate under that diagnostic. The valid classification is
+  `semantic_capability_below_threshold`; it admits no architecture or E-* finding.
+  The next step is a separately preregistered, bounded semantic-representation
+  diagnosis that distinguishes model inability, systematic interface omission,
+  and task ambiguity. It must not alter v1.2 in place or begin an architecture
+  comparison.
 - readiness: Phase 5B is not ready. It requires a valid actual-model run to extract
   useful facts, rank inspections beyond trivial heuristics, route conditionally,
   and improve matched decision quality or efficiency under the frozen rule.
