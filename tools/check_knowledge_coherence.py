@@ -818,6 +818,18 @@ def check_phase_progress_status() -> dict[str, object]:
         "phase_5a_5_transport_envelope_complete_stable"
     ):
         errors.append("phase_5a_5_transport_envelope_complete_stable is not true")
+    if not current.get("knowledge_architecture", {}).get(
+        "phase_5a_6_stronger_model_capability_complete_below_threshold"
+    ):
+        errors.append(
+            "phase_5a_6_stronger_model_capability_complete_below_threshold is not true"
+        )
+    if not current.get("knowledge_architecture", {}).get(
+        "phase_5a_7_semantic_bottleneck_localization_complete"
+    ):
+        errors.append(
+            "phase_5a_7_semantic_bottleneck_localization_complete is not true"
+        )
     if current.get("evidence", {}).get("ser_experiments") != ["E-002", "E-003"]:
         errors.append("MicroGym evidence index must contain exactly E-002 and E-003")
     experiment_paths = (
@@ -905,6 +917,19 @@ def check_phase_progress_status() -> dict[str, object]:
         "experiments/authzgym_stronger_model_v1/REPORT.md",
         "experiments/authzgym_stronger_model_v1/INTERPRETATION.md",
         "experiments/authzgym_stronger_model_v1/IMPLEMENTATION_NOTES.md",
+        "experiments/authzgym_semantic_bottleneck_v1/PREREGISTRATION.md",
+        "experiments/authzgym_semantic_bottleneck_v1/OFFLINE_FAILURE_TAXONOMY.json",
+        "experiments/authzgym_semantic_bottleneck_v1/FROZEN_CASE_SELECTION.json",
+        "experiments/authzgym_semantic_bottleneck_v1/SOURCE_ARTIFACTS.json",
+        "experiments/authzgym_semantic_bottleneck_v1/MODEL_CONFIGS.json",
+        "experiments/authzgym_semantic_bottleneck_v1/COST_ACCOUNTING.json",
+        "experiments/authzgym_semantic_bottleneck_v1/FROZEN_INPUTS.json",
+        "experiments/authzgym_semantic_bottleneck_v1/DIAGNOSTIC_MATRIX.json",
+        "experiments/authzgym_semantic_bottleneck_v1/summary.json",
+        "experiments/authzgym_semantic_bottleneck_v1/validation.json",
+        "experiments/authzgym_semantic_bottleneck_v1/REPORT.md",
+        "experiments/authzgym_semantic_bottleneck_v1/INTERPRETATION.md",
+        "experiments/authzgym_semantic_bottleneck_v1/IMPLEMENTATION_NOTES.md",
     )
     missing_experiment_paths = [path for path in experiment_paths if not (ROOT / path).exists()]
     if missing_experiment_paths:
@@ -977,6 +1002,20 @@ def check_phase_progress_status() -> dict[str, object]:
         )
         authz_stronger_status = current.get("evidence", {}).get(
             "authzgym_stronger_model_v1", {}
+        )
+        authz_bottleneck_validation = json.loads(
+            (
+                ROOT
+                / "experiments/authzgym_semantic_bottleneck_v1/validation.json"
+            ).read_text(encoding="utf-8")
+        )
+        authz_bottleneck_summary = json.loads(
+            (
+                ROOT / "experiments/authzgym_semantic_bottleneck_v1/summary.json"
+            ).read_text(encoding="utf-8")
+        )
+        authz_bottleneck_status = current.get("evidence", {}).get(
+            "authzgym_semantic_bottleneck_v1", {}
         )
         if authz_v1_validation.get("status") != "fail":
             errors.append("preserved AuthzGym v1 calibration must remain invalid")
@@ -1067,12 +1106,39 @@ def check_phase_progress_status() -> dict[str, object]:
             errors.append(
                 "AuthzGym stronger-model v1 must remain a valid development capability-floor failure with confirmation untouched and no hypothesis admission"
             )
+        if (
+            authz_bottleneck_validation.get("status") != "pass"
+            or authz_bottleneck_summary.get("classification")
+            != "benchmark_ambiguity_detected"
+            or authz_bottleneck_summary.get("confirmation_untouched") is not True
+            or authz_bottleneck_summary.get("resources", {}).get(
+                "total_incremental_cost"
+            )
+            != 0.0
+            or authz_bottleneck_summary.get("conditions", {}).get(
+                "b_mini_decomposed"
+            )
+            != "not_run_answerability_stop"
+            or authz_bottleneck_summary.get("conditions", {}).get(
+                "c_stronger_v1_2"
+            )
+            != "not_run_answerability_stop"
+            or authz_bottleneck_status.get("evidence_status")
+            != "offline_benchmark_answerability_diagnostic_no_hypothesis_admission"
+            or authz_bottleneck_status.get("preregistered_classifier")
+            != "benchmark_ambiguity_detected"
+            or authz_bottleneck_status.get("stronger_model_calls") != 0
+            or authz_bottleneck_status.get("confirmation_status") != "untouched"
+        ):
+            errors.append(
+                "AuthzGym semantic-bottleneck v1 must remain a zero-call benchmark-answerability diagnostic with confirmation untouched and no hypothesis admission"
+            )
     return result(
         "phase_progress_status",
         not errors,
         "errors: " + "; ".join(errors)
         if errors
-        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are recorded narrowly; Phase 5A preserves benchmark calibration and prior failures, records transport-stable/contract-stable weak-nano diagnostics, and preserves the stronger-model development capability-floor failure with confirmation untouched and no hypothesis admission; Phase 5 remains active",
+        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are recorded narrowly; Phase 5A preserves benchmark calibration and prior failures, records transport-stable/contract-stable weak-nano diagnostics, preserves the stronger-model development failure with confirmation untouched, and records the zero-call benchmark-answerability localization without hypothesis admission; Phase 5 remains active",
     )
 
 

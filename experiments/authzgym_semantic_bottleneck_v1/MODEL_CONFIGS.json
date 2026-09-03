@@ -1,0 +1,54 @@
+{
+  "condition_a": {
+    "incremental_calls": 0,
+    "model": "patchersniper_praneeth/gpt-5.4-mini",
+    "semantic_contract": "v1.2",
+    "source_config_sha256": "3d38e962f524b3e3452bc58c3daf1bf41da42f7b002f09fa329e20c4a8e80e99",
+    "source_configuration": {
+      "api_key_env": "OPENAI_API_KEY",
+      "api_style": "openai_chat_completions_json_schema",
+      "base_url_env": "OPENAI_BASE_URL",
+      "condition_id": "patchersniper_gpt_5_4_mini_semantic_contract_v1_2",
+      "connect_timeout_seconds": 15,
+      "endpoint_label": "configured OpenAI-compatible institutional endpoint via UCSB egress",
+      "hard_spend_ceiling_usd": 2.5,
+      "max_output_tokens_per_artifact": 1024,
+      "maximum_attempts_per_semantic_call": 2,
+      "model_identifier": "patchersniper_praneeth/gpt-5.4-mini",
+      "pricing": {
+        "cached_input_per_million_tokens_usd": 0.075,
+        "input_per_million_tokens_usd": 0.75,
+        "output_per_million_tokens_usd": 4.5
+      },
+      "proxy_kind": "ephemeral_local_socks5h",
+      "reasoning_effort": "none",
+      "request_timeout_seconds": 90,
+      "resource_ceilings": {
+        "input_tokens_per_monolithic_run": 12000,
+        "input_tokens_per_sequential_run": 4000,
+        "output_tokens_per_monolithic_run": 4096,
+        "output_tokens_per_sequential_run": 1024
+      },
+      "runtime_version": "Python 3.14.6",
+      "temperature": null,
+      "tls_verification": false,
+      "transport_client": "system-curl",
+      "transport_client_version": "curl 8.7.1 (x86_64-apple-darwin25.0)"
+    },
+    "status": "reused_stored_outputs"
+  },
+  "condition_b": {
+    "incremental_calls": 0,
+    "model": "patchersniper_praneeth/gpt-5.4-mini",
+    "purpose": "decomposed interrogation",
+    "status": "not_frozen_or_executed_after_answerability_stop"
+  },
+  "condition_c": {
+    "incremental_calls": 0,
+    "purpose": "stronger-model unchanged-v1.2 probe",
+    "status": "not_selected_or_executed_after_answerability_stop"
+  },
+  "experiment": "authzgym-semantic-bottleneck-v1",
+  "insecure_tls_used_for_new_calls": false,
+  "schema_version": 1
+}

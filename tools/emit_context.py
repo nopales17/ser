@@ -488,7 +488,7 @@ def render_context_packet(
             "",
             current["roadmap"]["immediate_next_task"],
             "",
-            "The IDS archive remains read-only. Active Phase 5 now authorizes only a separately preregistered bounded diagnosis of the valid stronger-model development failure, distinguishing model inability, systematic v1.2 interface omission, and task ambiguity without changing v1.2 in place. It does not authorize architecture comparison, use of the untouched confirmation population for tuning, IDS code/data copy, real GitLab integration, an adapter, a production runtime or general model integration, graph runtime, production fuzzing, or coupling-law implementation.",
+            "The IDS archive remains read-only. Active Phase 5 now authorizes only separately versioned AuthzGym benchmark/task-definition repair after the zero-call localization found v1.2 answerability defects. The repair must preserve v1.2 and prior results, restore model-visible label answerability, and revalidate the evaluator firewall and oracle before model escalation. It does not authorize architecture comparison, use of the untouched confirmation population for tuning, representation expansion, IDS code/data copy, real GitLab integration, an adapter, a production runtime or general model integration, graph runtime, production fuzzing, or coupling-law implementation.",
             "",
             "## 11. Important non-goals",
             "",

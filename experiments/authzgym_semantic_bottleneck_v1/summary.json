@@ -1,0 +1,84 @@
+{
+  "classification": "benchmark_ambiguity_detected",
+  "conditions": {
+    "a_stored_v1_2_baseline": "available",
+    "b_mini_decomposed": "not_run_answerability_stop",
+    "c_stronger_v1_2": "not_run_answerability_stop"
+  },
+  "confirmation_untouched": true,
+  "diagnostic_matrix": {
+    "elicitation_interface_weakness": {
+      "evidence": "weak evidence",
+      "limitation": "decomposed interrogation was correctly not run after the answerability stop",
+      "support": "one-shot output spans 25 facts, four effects, and many relation booleans, and equivalent forms were unstable"
+    },
+    "model_weakness": {
+      "evidence": "moderate evidence",
+      "limitation": "fact/effect aggregate scoring is contaminated by evaluator-label mismatch",
+      "support": "answerable context-loss facts and 68/69 visible unresolved relations were missed; all eight equivalent pairs were unstable"
+    },
+    "representational_insufficiency": {
+      "evidence": "no evidence",
+      "limitation": "this does not prove v1.2 sufficient after benchmark repair",
+      "support": "v1.2 already has unknown effects and explicit unresolved-relation slots; no correct distinction was shown to be unencodable"
+    },
+    "task_ambiguity": {
+      "evidence": "strong evidence",
+      "limitation": "the defect is scoped to the audited v1.2 development labels",
+      "support": "source-direct facts are scored false and test-role labels require evaluator-only role identity"
+    }
+  },
+  "evidence_ids_added": [],
+  "exact_next_empirical_decision": "benchmark_task_definition_repair",
+  "experiment": "authzgym-semantic-bottleneck-v1",
+  "frozen_case_selection": {
+    "answerability_stop_triggered": true,
+    "equivalent_pair_count": 2,
+    "selected_case_count": 4
+  },
+  "hypotheses_promoted": [],
+  "offline_audit": {
+    "asserted_nonunknown_effects": 30,
+    "cases_with_invalid_evaluator_answerability": 16,
+    "cases_with_reproducible_unresolved_labels": 16,
+    "discrepancy_categories": {
+      "artifact_insufficiency_or_label_ambiguity": 24,
+      "evaluator_label_mismatch": 28,
+      "false_negative_fact_model_omission": 10,
+      "false_negative_unresolved_relation": 68,
+      "false_positive_effect_model_overcommit": 13,
+      "false_positive_fact_model_overcommit": 8,
+      "incorrect_or_missed_effect": 7
+    },
+    "missed_unresolved_relations": 68,
+    "transformation_exact": 0,
+    "transformation_pairs": 8
+  },
+  "previous_result_localization": {
+    "downstream_estimator_adequate_under_perfect_v1_2": true,
+    "model_inability_vs_interface_vs_task_previously_unresolved": true,
+    "upstream_semantic_failure_observed": true
+  },
+  "resources": {
+    "cached_input_tokens": 0,
+    "currency": "USD",
+    "expected_incremental_cost_before_stop": 0.0,
+    "experiment": "authzgym-semantic-bottleneck-v1",
+    "hard_incremental_ceiling": 0.25,
+    "input_tokens": 0,
+    "logical_calls": 0,
+    "output_tokens": 0,
+    "percentage_of_budget_consumed": 0.0,
+    "provider_responses": 0,
+    "provider_submissions": 0,
+    "reasoning_output_tokens": 0,
+    "schema_version": 1,
+    "semantic_retries": 0,
+    "stop_reason": "benchmark answerability invalid before any new inference",
+    "total_incremental_cost": 0.0,
+    "transport_failures": 0,
+    "worst_case_authorized_cost_after_stop": 0.0
+  },
+  "schema_version": 1,
+  "validation": "pass"
+}

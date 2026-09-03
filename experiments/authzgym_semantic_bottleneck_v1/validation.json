@@ -1,0 +1,24 @@
+{
+  "checks": {
+    "all_transformation_pairs_audited": true,
+    "all_transformation_pairs_failed_exactness": true,
+    "answerability_stop_triggered": true,
+    "classification_narrow": true,
+    "conditions_b_and_c_not_executed": true,
+    "confirmation_execution_absent": true,
+    "confirmation_not_loaded_or_called": true,
+    "frozen_file_hashes_valid": true,
+    "frozen_manifest_hash_valid": true,
+    "no_hypothesis_or_evidence_promotion": true,
+    "no_new_calls_or_tokens": true,
+    "no_new_inference_authorized": true,
+    "selected_case_count_in_range": true,
+    "single_next_decision": true,
+    "source_development_cases_audited": true,
+    "spend_below_ceiling": true,
+    "two_complete_equivalent_pairs_selected": true
+  },
+  "experiment": "authzgym-semantic-bottleneck-v1",
+  "schema_version": 1,
+  "status": "pass"
+}

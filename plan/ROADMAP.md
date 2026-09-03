@@ -97,7 +97,7 @@ Allowed statuses: `planned`, `active`, `done`.
   new explicit decision showing it is a materially cleaner bridge for this
   exact question. Do not add graphs, coupling laws, learned policies, or
   cross-substrate environments.
-- current cursor: Phase 5A.1 through Phase 5A.6 are complete; Phase 5A overall
+- current cursor: Phase 5A.1 through Phase 5A.7 are complete; Phase 5A overall
   is not complete. Real-model v1 remains `invalid`, semantic-contract v1.2
   remains preserved as transport-unstable, and transport-envelope v1 remains
   the transport/contract-stable weak-nano diagnostic. Phase 5A.6 changed only
@@ -111,10 +111,16 @@ Allowed statuses: `planned`, `active`, `done`.
   and fresh canonical entries, so the deterministic estimator and population
   remain adequate under that diagnostic. The valid classification is
   `semantic_capability_below_threshold`; it admits no architecture or E-* finding.
-  The next step is a separately preregistered, bounded semantic-representation
-  diagnosis that distinguishes model inability, systematic interface omission,
-  and task ambiguity. It must not alter v1.2 in place or begin an architecture
-  comparison.
+  Phase 5A.7 then audited all 16 exposed development cases offline. The audit
+  found that the v1.2 evaluator omits source-direct facts required by the public
+  prompt and that test-specific labels require evaluator-only logical roles.
+  All four frozen diagnostic cases failed the preregistered answerability gate,
+  so decomposed Mini and stronger-model probes were not run; incremental cost
+  was zero and confirmation remained untouched. The valid localization is
+  `benchmark_ambiguity_detected`. The next step is separately versioned
+  benchmark/task-definition repair that preserves v1.2 and the prior result,
+  re-establishes answerability and the evaluator firewall, and precedes any
+  model escalation, representation intervention, or architecture comparison.
 - readiness: Phase 5B is not ready. It requires a valid actual-model run to extract
   useful facts, rank inspections beyond trivial heuristics, route conditionally,
   and improve matched decision quality or efficiency under the frozen rule.

@@ -1,0 +1,42 @@
+{
+  "classification": "benchmark_ambiguity_detected",
+  "dimensions": {
+    "elicitation_interface_weakness": {
+      "evidence": "weak evidence",
+      "limitation": "The decomposed Mini condition was not run because the answerability stop took precedence.",
+      "support": [
+        "The one-shot response requires 25 fact decisions, four candidate effects, and up to 45 unresolved-relation booleans.",
+        "All eight executed semantic-equivalence pairs changed at least one normalized semantic layer."
+      ]
+    },
+    "model_weakness": {
+      "evidence": "moderate evidence",
+      "limitation": "Original fact/effect aggregate rates are contaminated by evaluator-label mismatch and cannot cleanly quantify capability.",
+      "support": [
+        "The model omitted 10 facts whose positive labels remain directly inferable under the prompt-grounded audit.",
+        "The model missed 68 of 69 unresolved relations that are reproducible from visible calls and public inventory.",
+        "All eight executed equivalent pairs were semantically unstable."
+      ]
+    },
+    "representational_insufficiency": {
+      "evidence": "no evidence",
+      "limitation": "No evidence here proves v1.2 sufficient after benchmark repair.",
+      "support": [
+        "v1.2 already exposes an unknown candidate-effect value and explicit target/relation booleans.",
+        "No stored output explicitly states a correct distinction that v1.2 cannot encode."
+      ]
+    },
+    "task_ambiguity": {
+      "evidence": "strong evidence",
+      "limitation": "The finding is scoped to the audited v1.2 development labels and prompt.",
+      "support": [
+        "All 16 executed development cases contain at least one evaluator label that is unavailable or inconsistent with the model-visible task.",
+        "Twenty-eight model fact disagreements classified as evaluator-label mismatches: the model matched direct prompt semantics while the evaluator scored the slot false.",
+        "Test-specific fact labels require the evaluator-only logical role even though public paths and symbols are deliberately opaque."
+      ]
+    }
+  },
+  "exact_next_empirical_decision": "benchmark_task_definition_repair",
+  "experiment": "authzgym-semantic-bottleneck-v1",
+  "schema_version": 1
+}

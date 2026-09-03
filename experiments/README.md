@@ -96,6 +96,21 @@ diagnose model inability, systematic semantic-interface omission, and task
 ambiguity without changing v1.2 in place or beginning an architecture
 comparison.
 
+- `authzgym_semantic_bottleneck_v1/` performs that diagnosis offline on all 16
+  executed Mini development cases. Its prompt-grounded answerability audit found
+  that source-direct facts are scored false and that test-specific labels require
+  evaluator-only logical roles. All four frozen challenge cases therefore
+  failed the answerability gate, so decomposed Mini and stronger-model probes
+  were not run. The classifier is `benchmark_ambiguity_detected`; incremental
+  calls and spend are zero, and the stronger-model confirmation remains
+  untouched.
+
+This localization result preserves genuine Mini unresolved-relation misses and
+transformation instability as diagnostics, but the contaminated fact/effect
+aggregate cannot attribute a capability floor. It creates no `E-*` finding,
+promotes no hypothesis, and permits only separately versioned benchmark/task-
+definition repair next.
+
 ## Admitted evidence
 
 - `E-002` / MicroGym v1: a model-aware myopic stopping policy reduced the frozen

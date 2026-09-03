@@ -2,7 +2,7 @@
   "schema_version": 1,
   "as_of": "2026-09-03",
   "project_name": "SER (provisional)",
-  "project_maturity": "phase_5a_stronger_model_below_semantic_capability_threshold",
+  "project_maturity": "phase_5a_benchmark_answerability_repair_required",
   "runtime": {
     "built": true,
     "controllers": 17,
@@ -23,7 +23,8 @@
     "phase_5a_3_realmodel_v1_complete_invalid": true,
     "phase_5a_4_semantic_contract_v1_2_complete_unstable": true,
     "phase_5a_5_transport_envelope_complete_stable": true,
-    "phase_5a_6_stronger_model_capability_complete_below_threshold": true
+    "phase_5a_6_stronger_model_capability_complete_below_threshold": true,
+    "phase_5a_7_semantic_bottleneck_localization_complete": true
   },
   "formal_control_problem": {
     "phase_2_complete": true,
@@ -39,7 +40,7 @@
   },
   "evidence": {
     "ser_experiments": ["E-002", "E-003"],
-    "summary": "MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. Routing-v1 then supported a narrow one-step routing result under clean supplied likelihoods. Static Semantic AuthzGym protocol 1.1 remains a validated benchmark calibration. Real-model v1 is preserved as invalid and semantic-contract v1.2 as transport-unstable. The separate transport-envelope v1 run established transport_stable and contract_stable for the exact nano development protocol. The subsequent stronger-model study retained v1.2, passed transport/schema smoke, and stopped at the frozen 16/32 development futility boundary because multiple semantic and downstream thresholds were mathematically unreachable even under perfect remaining calls. Confirmation was not run. No AuthzGym E-* finding or architecture claim was admitted, and no general SER hypothesis was promoted.",
+    "summary": "MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. Routing-v1 then supported a narrow one-step routing result under clean supplied likelihoods. Static Semantic AuthzGym protocol 1.1 remains a validated benchmark calibration. Real-model v1 is preserved as invalid and semantic-contract v1.2 as transport-unstable. The separate transport-envelope v1 run established transport_stable and contract_stable for the exact nano development protocol. The subsequent stronger-model study retained v1.2, passed transport/schema smoke, and stopped at the frozen 16/32 development futility boundary because multiple semantic and downstream thresholds were mathematically unreachable even under perfect remaining calls. The next offline localization found that v1.2 fact/effect labels are not fully answerable from the model-visible contract, stopped all new inference at zero incremental cost, and left confirmation untouched. No AuthzGym E-* finding or architecture claim was admitted, and no general SER hypothesis was promoted.",
     "microgym_v1": {
       "population_hash": "a9234fa60b40d3628f6317284a964c95917bcd7442796d8961f18b14b9958b3d",
       "problem_regimes": 24,
@@ -202,6 +203,29 @@
       "next_experiment": "investigate_semantic_representation_failure",
       "summary": "The exact stronger mini model produced 20/20 contract-valid first-attempt responses across corrected smoke and the executed development prefix, with zero transport failures or retries. At the balanced 16-call checkpoint the frozen optimistic bound showed fact precision, effect precision, unresolved-relation recall, action top-1/top-2, and regret could not all reach threshold even if every remaining call were perfect, so development stopped and the fresh population remained untouched. Oracle v1.2 content gave 1.0/1.0/0.0 on both development and fresh canonical entries, preserving downstream-estimator and benchmark adequacy while localizing the measured failure upstream. The result is development-only capability-floor evidence, not SER architecture evidence or an E-* finding."
     },
+    "authzgym_semantic_bottleneck_v1": {
+      "evidence_status": "offline_benchmark_answerability_diagnostic_no_hypothesis_admission",
+      "source_experiment": "authzgym_stronger_model_v1",
+      "development_cases_audited": 16,
+      "frozen_diagnostic_cases": 4,
+      "frozen_equivalent_pairs": 2,
+      "all_executed_equivalence_pairs": 8,
+      "exact_executed_equivalence_pairs": 0,
+      "cases_with_invalid_evaluator_answerability": 16,
+      "evaluator_label_mismatch_discrepancies": 28,
+      "artifact_insufficiency_or_label_ambiguity_discrepancies": 24,
+      "answerable_fact_omissions": 10,
+      "answerable_unresolved_relations_missed": 68,
+      "asserted_nonunknown_effects": 30,
+      "decomposed_mini_calls": 0,
+      "stronger_model_calls": 0,
+      "incremental_cost_usd": 0.0,
+      "hard_incremental_ceiling_usd": 0.25,
+      "confirmation_status": "untouched",
+      "preregistered_classifier": "benchmark_ambiguity_detected",
+      "next_experiment": "benchmark_task_definition_repair",
+      "summary": "The complete exposed-development offline audit found that the v1.2 prompt requests every source-direct fact while evaluator expected_content retains only curated artifact mechanism tags, and that test-specific labels require evaluator-only logical roles. All four frozen diagnostic cases failed the answerability gate, so the decomposed Mini and stronger-model conditions were not run. Genuine Mini unresolved-relation misses and transformation instability remain descriptive, but the contaminated fact/effect aggregate cannot localize a clean model capability floor. Confirmation remained untouched; no E-* item or hypothesis promotion followed."
+    },
     "historical_only": [
       "E-001 describes scoped artifacts in the read-only IDS archive; it is not evidence for SER."
     ]
@@ -215,12 +239,12 @@
   "roadmap": {
     "active_phase_id": 5,
     "active_phase_title": "Controlled authorization action-value estimation",
-    "immediate_next_task": "Preregister a bounded semantic-representation diagnosis that uses the valid stronger-model development failures and evaluator-oracle intervention to distinguish model inability, systematic interface omission, and task ambiguity without changing v1.2 in place or beginning an architecture comparison.",
+    "immediate_next_task": "Define and preregister a separately versioned AuthzGym benchmark/task repair that aligns evaluator facts and effects with the public semantic-slot definitions or exposes the minimum role information needed for answerability, then revalidate the evaluator firewall and oracle before any model or representation escalation.",
     "research_trunk": "GitLab authorization investigation is the primary practical target. MicroGym is a control validation instrument; IDS is only a possible semantic bridge; controlled software experimentation is trunk-aligned; remote sensing is dormant."
   },
   "non_goals": [
     "No production SER runtime; the implemented code consists of MicroGym and Static Semantic AuthzGym benchmark instruments plus small exact, reference, and deterministic mock controllers.",
-    "Four bounded real semantic-model protocols are preserved: architecture v1 is invalid, development contract v1.2 is transport-unstable, transport-envelope v1 is a transport-stable weak-nano development diagnostic, and stronger-model v1 is a valid development capability-floor failure with confirmation not run; none is a general LLM agent or an admitted architecture finding.",
+    "Four bounded real semantic-model protocols are preserved: architecture v1 is invalid, development contract v1.2 is transport-unstable, transport-envelope v1 is a transport-stable weak-nano development diagnostic, and stronger-model v1 is a valid development failure whose full fact/effect capability attribution is now blocked by benchmark answerability; its confirmation remains unqueried. The subsequent zero-call localization is an offline diagnostic, not a fifth model protocol. None is a general LLM agent or an admitted architecture finding.",
     "No coupling-law implementation, universal epistemic graph, production fuzzer, remote-sensing integration, or IDS adapter.",
     "No IDS code or data import, real GitLab integration, or claim that IDS/GitLab validates SER."
   ]

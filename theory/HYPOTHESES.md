@@ -86,6 +86,18 @@ deterministic estimator but does not distinguish model inability from systematic
 interface omission or task ambiguity. It admits no `E-*` finding and does not
 promote `H-018`, `H-017`, `H-001`, or `H-016`.
 
+The subsequent zero-call semantic-bottleneck localization audited every exposed
+Mini development error before attempting a decomposed prompt or stronger model.
+It found `benchmark_ambiguity_detected`: the v1.2 public prompt requests all
+source-direct facts while evaluator labels retain only curated mechanism facts,
+and several test-specific labels require evaluator-only logical-role knowledge.
+All four frozen diagnostic cases failed the answerability gate, so paid
+conditions were left null and confirmation remained untouched. Answerable Mini
+unresolved-relation omissions and transformation instability remain descriptive
+weaknesses, but the contaminated fact/effect aggregate cannot support a clean
+model-capability attribution. No hypothesis is promoted or rejected; H-018,
+H-017, H-001, and H-016 retain their existing statuses.
+
 The four Phase 2 domain instantiations establish representational coverage only.
 They do not validate allocation value, scope-aware routing, active investigation,
 or cross-domain generalization.

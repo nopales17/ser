@@ -1,0 +1,37 @@
+{
+  "experiment": "authzgym-semantic-bottleneck-v1",
+  "files": {
+    "cost_accounting": {
+      "path": "experiments/authzgym_semantic_bottleneck_v1/COST_ACCOUNTING.json",
+      "sha256": "cf6f1906190eda480b06a3587dd5e9217b99d7bdf1171f6c896faad3e9a2aa42"
+    },
+    "frozen_case_selection": {
+      "path": "experiments/authzgym_semantic_bottleneck_v1/FROZEN_CASE_SELECTION.json",
+      "sha256": "0b9b805e9248870fe9ab2843f5999de3872d58e3d985a60e8f4d62efb98475f2"
+    },
+    "implementation": {
+      "path": "tools/run_authzgym_semantic_bottleneck.py",
+      "sha256": "fdd61c3dafbb91f0fb9de60ed704ed6260bb71c3943400ffd2679eb5e273ba08"
+    },
+    "model_configs": {
+      "path": "experiments/authzgym_semantic_bottleneck_v1/MODEL_CONFIGS.json",
+      "sha256": "5fc4a9af9b218ce481fe0edda808282dc8041ab974de783dcd33ae285300322e"
+    },
+    "offline_failure_taxonomy": {
+      "path": "experiments/authzgym_semantic_bottleneck_v1/OFFLINE_FAILURE_TAXONOMY.json",
+      "sha256": "6cfe02f355080541dda1cbf06716ad5f88269e1cc76d462f0cf67e62498cca70"
+    },
+    "preregistration": {
+      "path": "experiments/authzgym_semantic_bottleneck_v1/PREREGISTRATION.md",
+      "sha256": "e472f992ac42284836bc618df79b452ab70069125e2922f1bfe5bf50d7756397"
+    },
+    "source_artifacts": {
+      "path": "experiments/authzgym_semantic_bottleneck_v1/SOURCE_ARTIFACTS.json",
+      "sha256": "1764ea49b586bf3f1f2ac1ff0eb1ce9a0eb122db48149c551a61aebddf2a298a"
+    }
+  },
+  "frozen_before_new_inference": true,
+  "manifest_hash": "78fb863b150b1594cd046319e08db5eb42e84853a96310efc9ef438ef0bf1bfb",
+  "new_inference_authorized": false,
+  "schema_version": 1
+}

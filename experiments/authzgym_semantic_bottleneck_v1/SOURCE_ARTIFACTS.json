@@ -1,0 +1,41 @@
+{
+  "confirmation_preservation": {
+    "confirmation_execution_directory_absent": true,
+    "confirmation_model_inference_calls": 0,
+    "confirmation_population_not_loaded_by_this_tool": true,
+    "source_classification": "semantic_capability_below_threshold",
+    "source_confirmation_executed": false
+  },
+  "experiment": "authzgym-semantic-bottleneck-v1",
+  "files": {
+    "development_population": {
+      "path": "experiments/authzgym_stronger_model_v1/DEVELOPMENT_POPULATION.json",
+      "sha256": "6e6d8cf229bc3f0c105f6d674736aeeea0f4db358953f9eda5d92d83fa5bbd86"
+    },
+    "development_provider_responses": {
+      "path": "experiments/authzgym_stronger_model_v1/development/provider_responses.jsonl",
+      "sha256": "bcf4979248969b4d8ea27a0cdf74b54f79705a25e88a617138cae5774f63a1cb"
+    },
+    "development_runs": {
+      "path": "experiments/authzgym_stronger_model_v1/development/runs.jsonl",
+      "sha256": "528fa3622207777a8ffded6efe5ed499336a23809f122425f4b706ba7208447a"
+    },
+    "source_summary": {
+      "path": "experiments/authzgym_stronger_model_v1/summary.json",
+      "sha256": "2e31dd2ca05fa5a64da5408ee7a74ab97498c425ae43e6e24cf52196ee2a7c2c"
+    },
+    "source_validation": {
+      "path": "experiments/authzgym_stronger_model_v1/validation.json",
+      "sha256": "7ff8b7a9918c8644af72f67eff6e9e3aabb5e0fec6fc01ef46428dff7f948f0c"
+    },
+    "v1_2_prompt": {
+      "path": "experiments/authzgym_semantic_contract_v1_2/prompts/semantic_observation_v1_2.txt",
+      "sha256": "420e5e5b9129c53e0fe54b278b9bc22e0deae5c7a7914e5baef5d5c144e2b9db"
+    },
+    "v1_2_vocabulary": {
+      "path": "experiments/authzgym_semantic_contract_v1_2/schemas/semantic_vocabulary_v1_2.json",
+      "sha256": "db1e46ced39bcde71250dd02ed68b238e39718b711e94f2b294feb83d00ab4b5"
+    }
+  },
+  "schema_version": 1
+}

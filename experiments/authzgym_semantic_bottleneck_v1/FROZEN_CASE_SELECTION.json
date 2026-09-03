@@ -1,0 +1,88 @@
+{
+  "equivalent_pairs": [
+    [
+      "asv1-d-5e6417ce899f--base_entry--71eb766486",
+      "asv1-d-5e6417ce899f--artifact_reordering--0e8b205ac2"
+    ],
+    [
+      "asv1-d-f5f54c9c8670--base_entry--0dd132fa21",
+      "asv1-d-f5f54c9c8670--artifact_reordering--fbd1de3a37"
+    ]
+  ],
+  "experiment": "authzgym-semantic-bottleneck-v1",
+  "schema_version": 1,
+  "selected_case_count": 4,
+  "selected_cases": [
+    {
+      "answerability_valid": false,
+      "case_id": "asv1-d-5e6417ce899f--base_entry--71eb766486",
+      "mechanism_family": "h1",
+      "rationale": "h1 base: fact/effect overcommit, missed facts, and missed unresolved relations",
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "unavailable_or_misaligned_effect_labels": [
+        "c1",
+        "c3"
+      ],
+      "unavailable_or_misaligned_fact_labels": [
+        "f2",
+        "f8",
+        "f9"
+      ],
+      "variant": "base_entry"
+    },
+    {
+      "answerability_valid": false,
+      "case_id": "asv1-d-5e6417ce899f--artifact_reordering--0e8b205ac2",
+      "mechanism_family": "h1",
+      "rationale": "h1 order-equivalent peer: isolates ordering sensitivity",
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "unavailable_or_misaligned_effect_labels": [
+        "c1",
+        "c3"
+      ],
+      "unavailable_or_misaligned_fact_labels": [
+        "f2",
+        "f8",
+        "f9"
+      ],
+      "variant": "artifact_reordering"
+    },
+    {
+      "answerability_valid": false,
+      "case_id": "asv1-d-f5f54c9c8670--base_entry--0dd132fa21",
+      "mechanism_family": "h4",
+      "rationale": "h4 base: clean conservative omission of answerable context-loss facts",
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "unavailable_or_misaligned_effect_labels": [
+        "c1"
+      ],
+      "unavailable_or_misaligned_fact_labels": [
+        "f2",
+        "f19"
+      ],
+      "variant": "base_entry"
+    },
+    {
+      "answerability_valid": false,
+      "case_id": "asv1-d-f5f54c9c8670--artifact_reordering--fbd1de3a37",
+      "mechanism_family": "h4",
+      "rationale": "h4 order-equivalent relative control: recovers all authored-positive facts but adds unsupported assertions",
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "unavailable_or_misaligned_effect_labels": [
+        "c1"
+      ],
+      "unavailable_or_misaligned_fact_labels": [
+        "f2",
+        "f19"
+      ],
+      "variant": "artifact_reordering"
+    }
+  ],
+  "selection_rule": "two complete base/order-equivalent pairs covering h1 and h4, chosen from the already exposed executed development prefix",
+  "selection_status": "frozen_then_paid_inference_prohibited_by_answerability_gate",
+  "stop_gate": {
+    "new_model_inference_authorized": false,
+    "reason": "every selected case has evaluator labels that are unavailable or inconsistent with the model-visible prompt/source",
+    "triggered": true
+  }
+}

@@ -1,0 +1,3453 @@
+{
+  "audit_scope": {
+    "confirmation_cases_loaded": 0,
+    "development_cases_audited": 16,
+    "new_model_calls": 0,
+    "smoke_cases_used_as_semantic_evidence": 0
+  },
+  "cases": [
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+              "status": "inferable",
+              "value": "contradict"
+            },
+            "slot": "c1"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+              "status": "inferable",
+              "value": "contradict"
+            },
+            "slot": "c3"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "inherited-membership-included",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f2"
+          },
+          {
+            "evaluator": false,
+            "meaning": "token-scope-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f8"
+          },
+          {
+            "evaluator": false,
+            "meaning": "feature-context-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f9"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-5e6417ce899f--base_entry--71eb766486",
+      "counts": {
+        "asserted_nonunknown_effects": 3,
+        "false_negative_facts_against_evaluator": 2,
+        "false_positive_facts_against_evaluator": 3,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 2,
+        "missed_unresolved_relations": 6
+      },
+      "effect_discrepancies": [
+        {
+          "category": "false_positive_effect_model_overcommit",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "contradict"
+          },
+          "slot": "c1"
+        },
+        {
+          "category": "false_positive_effect_model_overcommit",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "contradict"
+          },
+          "slot": "c3"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "false_negative_fact_model_omission",
+          "evaluator": true,
+          "meaning": "alternate-entry",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f0"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "token-scope-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f8"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "feature-context-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f9"
+        },
+        {
+          "category": "false_negative_fact_model_omission",
+          "evaluator": true,
+          "meaning": "cross-layer-relationship",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f16"
+        },
+        {
+          "category": "false_positive_fact_model_overcommit",
+          "evaluator": false,
+          "meaning": "alternate-entry-bypass",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": false
+          },
+          "slot": "f17"
+        }
+      ],
+      "mechanism_family": "h1",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "unresolved_discrepancies": [
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t1",
+          "target_role": "tests"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r6",
+          "relation_meaning": "context_path",
+          "target": "t2",
+          "target_role": "guard"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r2",
+          "relation_meaning": "membership_path",
+          "target": "t3",
+          "target_role": "resolver"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r4",
+          "relation_meaning": "role_path",
+          "target": "t4",
+          "target_role": "policy"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r0",
+          "relation_meaning": "ownership_path",
+          "target": "t5",
+          "target_role": "service"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t5",
+          "target_role": "service"
+        }
+      ],
+      "variant": "base_entry"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+              "status": "inferable",
+              "value": "contradict"
+            },
+            "slot": "c3"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "token-scope-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f8"
+          },
+          {
+            "evaluator": false,
+            "meaning": "feature-context-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f9"
+          },
+          {
+            "evaluator": false,
+            "meaning": "inherited-membership-omitted",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f18"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-4579914d0fa5--base_entry--a4d4153f39",
+      "counts": {
+        "asserted_nonunknown_effects": 4,
+        "false_negative_facts_against_evaluator": 0,
+        "false_positive_facts_against_evaluator": 2,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 3,
+        "missed_unresolved_relations": 5
+      },
+      "effect_discrepancies": [
+        {
+          "category": "false_positive_effect_model_overcommit",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "unknown"
+          },
+          "slot": "c0"
+        },
+        {
+          "category": "false_positive_effect_model_overcommit",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "unknown"
+          },
+          "slot": "c2"
+        },
+        {
+          "category": "false_positive_effect_model_overcommit",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "contradict"
+          },
+          "slot": "c3"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "token-scope-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f8"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "feature-context-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f9"
+        }
+      ],
+      "mechanism_family": "h2",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-4579914d0fa5",
+      "unresolved_discrepancies": [
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r2",
+          "relation_meaning": "membership_path",
+          "target": "t1",
+          "target_role": "resolver"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r6",
+          "relation_meaning": "context_path",
+          "target": "t2",
+          "target_role": "guard"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r4",
+          "relation_meaning": "role_path",
+          "target": "t3",
+          "target_role": "policy"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r0",
+          "relation_meaning": "ownership_path",
+          "target": "t4",
+          "target_role": "service"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t5",
+          "target_role": "tests"
+        }
+      ],
+      "variant": "base_entry"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+              "status": "inferable",
+              "value": "contradict"
+            },
+            "slot": "c1"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+              "status": "inferable",
+              "value": "contradict"
+            },
+            "slot": "c3"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "inherited-membership-included",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f2"
+          },
+          {
+            "evaluator": false,
+            "meaning": "token-scope-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f8"
+          },
+          {
+            "evaluator": false,
+            "meaning": "feature-context-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f9"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-96ebfd30761f--base_entry--f63dbfc3ca",
+      "counts": {
+        "asserted_nonunknown_effects": 0,
+        "false_negative_facts_against_evaluator": 0,
+        "false_positive_facts_against_evaluator": 4,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 1,
+        "missed_unresolved_relations": 5
+      },
+      "effect_discrepancies": [
+        {
+          "category": "incorrect_or_missed_effect",
+          "evaluator": "support",
+          "model": "unknown",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "support"
+          },
+          "slot": "c2"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "inherited-membership-included",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f2"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "token-scope-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f8"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "feature-context-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f9"
+        },
+        {
+          "category": "false_positive_fact_model_overcommit",
+          "evaluator": false,
+          "meaning": "weak-ownership-audit",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": false
+          },
+          "slot": "f12"
+        }
+      ],
+      "mechanism_family": "h3",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-96ebfd30761f",
+      "unresolved_discrepancies": [
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r4",
+          "relation_meaning": "role_path",
+          "target": "t1",
+          "target_role": "policy"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t2",
+          "target_role": "tests"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r6",
+          "relation_meaning": "context_path",
+          "target": "t3",
+          "target_role": "guard"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r2",
+          "relation_meaning": "membership_path",
+          "target": "t4",
+          "target_role": "resolver"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r0",
+          "relation_meaning": "ownership_path",
+          "target": "t5",
+          "target_role": "service"
+        }
+      ],
+      "variant": "base_entry"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+              "status": "inferable",
+              "value": "contradict"
+            },
+            "slot": "c1"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "inherited-membership-included",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f2"
+          },
+          {
+            "evaluator": false,
+            "meaning": "guard-context-loss",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque callee is the guard; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f19"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-f5f54c9c8670--base_entry--0dd132fa21",
+      "counts": {
+        "asserted_nonunknown_effects": 0,
+        "false_negative_facts_against_evaluator": 3,
+        "false_positive_facts_against_evaluator": 0,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 1,
+        "missed_unresolved_relations": 5
+      },
+      "effect_discrepancies": [
+        {
+          "category": "incorrect_or_missed_effect",
+          "evaluator": "support",
+          "model": "unknown",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "support"
+          },
+          "slot": "c3"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "false_negative_fact_model_omission",
+          "evaluator": true,
+          "meaning": "missing-token-scope",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f6"
+        },
+        {
+          "category": "false_negative_fact_model_omission",
+          "evaluator": true,
+          "meaning": "missing-feature-context",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f7"
+        },
+        {
+          "category": "false_negative_fact_model_omission",
+          "evaluator": true,
+          "meaning": "cross-layer-relationship",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f16"
+        }
+      ],
+      "mechanism_family": "h4",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "unresolved_discrepancies": [
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r4",
+          "relation_meaning": "role_path",
+          "target": "t1",
+          "target_role": "policy"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r0",
+          "relation_meaning": "ownership_path",
+          "target": "t2",
+          "target_role": "service"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r2",
+          "relation_meaning": "membership_path",
+          "target": "t3",
+          "target_role": "resolver"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t4",
+          "target_role": "tests"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r6",
+          "relation_meaning": "context_path",
+          "target": "t5",
+          "target_role": "guard"
+        }
+      ],
+      "variant": "base_entry"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+              "status": "inferable",
+              "value": "contradict"
+            },
+            "slot": "c1"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+              "status": "inferable",
+              "value": "contradict"
+            },
+            "slot": "c3"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "inherited-membership-included",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f2"
+          },
+          {
+            "evaluator": false,
+            "meaning": "token-scope-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f8"
+          },
+          {
+            "evaluator": false,
+            "meaning": "feature-context-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f9"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-5e6417ce899f--longest_artifact--71eb766486",
+      "counts": {
+        "asserted_nonunknown_effects": 4,
+        "false_negative_facts_against_evaluator": 2,
+        "false_positive_facts_against_evaluator": 4,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 3,
+        "missed_unresolved_relations": 6
+      },
+      "effect_discrepancies": [
+        {
+          "category": "false_positive_effect_model_overcommit",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "contradict"
+          },
+          "slot": "c1"
+        },
+        {
+          "category": "false_positive_effect_model_overcommit",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "unknown"
+          },
+          "slot": "c2"
+        },
+        {
+          "category": "false_positive_effect_model_overcommit",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "contradict"
+          },
+          "slot": "c3"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "false_negative_fact_model_omission",
+          "evaluator": true,
+          "meaning": "alternate-entry",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f0"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "inherited-membership-included",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f2"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "token-scope-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f8"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "feature-context-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f9"
+        },
+        {
+          "category": "false_negative_fact_model_omission",
+          "evaluator": true,
+          "meaning": "cross-layer-relationship",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f16"
+        },
+        {
+          "category": "false_positive_fact_model_overcommit",
+          "evaluator": false,
+          "meaning": "alternate-entry-bypass",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": false
+          },
+          "slot": "f17"
+        }
+      ],
+      "mechanism_family": "h1",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "unresolved_discrepancies": [
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t1",
+          "target_role": "tests"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r6",
+          "relation_meaning": "context_path",
+          "target": "t2",
+          "target_role": "guard"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r2",
+          "relation_meaning": "membership_path",
+          "target": "t3",
+          "target_role": "resolver"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r4",
+          "relation_meaning": "role_path",
+          "target": "t4",
+          "target_role": "policy"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r0",
+          "relation_meaning": "ownership_path",
+          "target": "t5",
+          "target_role": "service"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t5",
+          "target_role": "service"
+        }
+      ],
+      "variant": "longest_artifact"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c0"
+          },
+          {
+            "evaluator": "support",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c1"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c2"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c3"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "alternate-entry",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f0"
+          },
+          {
+            "evaluator": true,
+            "meaning": "test-implementation-relationship",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f20"
+          },
+          {
+            "evaluator": false,
+            "meaning": "ownership-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f21"
+          },
+          {
+            "evaluator": true,
+            "meaning": "membership-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f22"
+          },
+          {
+            "evaluator": false,
+            "meaning": "role-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f23"
+          },
+          {
+            "evaluator": false,
+            "meaning": "context-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f24"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-4579914d0fa5--longest_artifact--c05031377c",
+      "counts": {
+        "asserted_nonunknown_effects": 0,
+        "false_negative_facts_against_evaluator": 2,
+        "false_positive_facts_against_evaluator": 0,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 4,
+        "missed_unresolved_relations": 0
+      },
+      "effect_discrepancies": [
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": "unknown",
+          "model": "neutral",
+          "prompt_grounded": {
+            "basis": "candidate effect depends on evaluator-only test-role labels",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "c0"
+        },
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": "support",
+          "model": "neutral",
+          "prompt_grounded": {
+            "basis": "candidate effect depends on evaluator-only test-role labels",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "c1"
+        },
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": "unknown",
+          "model": "neutral",
+          "prompt_grounded": {
+            "basis": "candidate effect depends on evaluator-only test-role labels",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "c2"
+        },
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": "unknown",
+          "model": "neutral",
+          "prompt_grounded": {
+            "basis": "candidate effect depends on evaluator-only test-role labels",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "c3"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": true,
+          "meaning": "test-implementation-relationship",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "f20"
+        },
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": true,
+          "meaning": "membership-behavioral-expectation",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "f22"
+        }
+      ],
+      "mechanism_family": "h2",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-4579914d0fa5",
+      "unresolved_discrepancies": [],
+      "variant": "longest_artifact"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c0"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c1"
+          },
+          {
+            "evaluator": "support",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c2"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c3"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "alternate-entry",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f0"
+          },
+          {
+            "evaluator": true,
+            "meaning": "test-implementation-relationship",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f20"
+          },
+          {
+            "evaluator": false,
+            "meaning": "ownership-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f21"
+          },
+          {
+            "evaluator": false,
+            "meaning": "membership-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f22"
+          },
+          {
+            "evaluator": true,
+            "meaning": "role-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f23"
+          },
+          {
+            "evaluator": false,
+            "meaning": "context-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f24"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-96ebfd30761f--longest_artifact--4dd3815ead",
+      "counts": {
+        "asserted_nonunknown_effects": 0,
+        "false_negative_facts_against_evaluator": 2,
+        "false_positive_facts_against_evaluator": 0,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 1,
+        "missed_unresolved_relations": 0
+      },
+      "effect_discrepancies": [
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": "support",
+          "model": "unknown",
+          "prompt_grounded": {
+            "basis": "candidate effect depends on evaluator-only test-role labels",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "c2"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": true,
+          "meaning": "test-implementation-relationship",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "f20"
+        },
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": true,
+          "meaning": "role-behavioral-expectation",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "f23"
+        }
+      ],
+      "mechanism_family": "h3",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-96ebfd30761f",
+      "unresolved_discrepancies": [],
+      "variant": "longest_artifact"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c0"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c1"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c2"
+          },
+          {
+            "evaluator": "support",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c3"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "alternate-entry",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f0"
+          },
+          {
+            "evaluator": true,
+            "meaning": "test-implementation-relationship",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f20"
+          },
+          {
+            "evaluator": false,
+            "meaning": "ownership-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f21"
+          },
+          {
+            "evaluator": false,
+            "meaning": "membership-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f22"
+          },
+          {
+            "evaluator": false,
+            "meaning": "role-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f23"
+          },
+          {
+            "evaluator": true,
+            "meaning": "context-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f24"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-f5f54c9c8670--longest_artifact--ef8a3ccc1b",
+      "counts": {
+        "asserted_nonunknown_effects": 0,
+        "false_negative_facts_against_evaluator": 2,
+        "false_positive_facts_against_evaluator": 0,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 1,
+        "missed_unresolved_relations": 0
+      },
+      "effect_discrepancies": [
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": "support",
+          "model": "unknown",
+          "prompt_grounded": {
+            "basis": "candidate effect depends on evaluator-only test-role labels",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "c3"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": true,
+          "meaning": "test-implementation-relationship",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "f20"
+        },
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": true,
+          "meaning": "context-behavioral-expectation",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "f24"
+        }
+      ],
+      "mechanism_family": "h4",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "unresolved_discrepancies": [],
+      "variant": "longest_artifact"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+              "status": "inferable",
+              "value": "contradict"
+            },
+            "slot": "c1"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+              "status": "inferable",
+              "value": "contradict"
+            },
+            "slot": "c3"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "inherited-membership-included",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f2"
+          },
+          {
+            "evaluator": false,
+            "meaning": "token-scope-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f8"
+          },
+          {
+            "evaluator": false,
+            "meaning": "feature-context-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f9"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-5e6417ce899f--artifact_reordering--0e8b205ac2",
+      "counts": {
+        "asserted_nonunknown_effects": 3,
+        "false_negative_facts_against_evaluator": 1,
+        "false_positive_facts_against_evaluator": 4,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 2,
+        "missed_unresolved_relations": 6
+      },
+      "effect_discrepancies": [
+        {
+          "category": "false_positive_effect_model_overcommit",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "contradict"
+          },
+          "slot": "c1"
+        },
+        {
+          "category": "false_positive_effect_model_overcommit",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "contradict"
+          },
+          "slot": "c3"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "false_negative_fact_model_omission",
+          "evaluator": true,
+          "meaning": "alternate-entry",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f0"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "inherited-membership-included",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f2"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "token-scope-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f8"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "feature-context-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f9"
+        },
+        {
+          "category": "false_positive_fact_model_overcommit",
+          "evaluator": false,
+          "meaning": "alternate-entry-bypass",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": false
+          },
+          "slot": "f17"
+        }
+      ],
+      "mechanism_family": "h1",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "unresolved_discrepancies": [
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r0",
+          "relation_meaning": "ownership_path",
+          "target": "t1",
+          "target_role": "service"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t1",
+          "target_role": "service"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r4",
+          "relation_meaning": "role_path",
+          "target": "t2",
+          "target_role": "policy"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r2",
+          "relation_meaning": "membership_path",
+          "target": "t3",
+          "target_role": "resolver"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r6",
+          "relation_meaning": "context_path",
+          "target": "t4",
+          "target_role": "guard"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t5",
+          "target_role": "tests"
+        }
+      ],
+      "variant": "artifact_reordering"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+              "status": "inferable",
+              "value": "contradict"
+            },
+            "slot": "c3"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "token-scope-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f8"
+          },
+          {
+            "evaluator": false,
+            "meaning": "feature-context-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f9"
+          },
+          {
+            "evaluator": false,
+            "meaning": "inherited-membership-omitted",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f18"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-4579914d0fa5--artifact_reordering--93c22d1dae",
+      "counts": {
+        "asserted_nonunknown_effects": 0,
+        "false_negative_facts_against_evaluator": 0,
+        "false_positive_facts_against_evaluator": 2,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 4,
+        "missed_unresolved_relations": 5
+      },
+      "effect_discrepancies": [
+        {
+          "category": "incorrect_or_missed_effect",
+          "evaluator": "unknown",
+          "model": "neutral",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "unknown"
+          },
+          "slot": "c0"
+        },
+        {
+          "category": "incorrect_or_missed_effect",
+          "evaluator": "support",
+          "model": "neutral",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "support"
+          },
+          "slot": "c1"
+        },
+        {
+          "category": "incorrect_or_missed_effect",
+          "evaluator": "unknown",
+          "model": "neutral",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "unknown"
+          },
+          "slot": "c2"
+        },
+        {
+          "category": "incorrect_or_missed_effect",
+          "evaluator": "unknown",
+          "model": "neutral",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "contradict"
+          },
+          "slot": "c3"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "token-scope-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f8"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "feature-context-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f9"
+        }
+      ],
+      "mechanism_family": "h2",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-4579914d0fa5",
+      "unresolved_discrepancies": [
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t1",
+          "target_role": "tests"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r0",
+          "relation_meaning": "ownership_path",
+          "target": "t2",
+          "target_role": "service"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r4",
+          "relation_meaning": "role_path",
+          "target": "t3",
+          "target_role": "policy"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r6",
+          "relation_meaning": "context_path",
+          "target": "t4",
+          "target_role": "guard"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r2",
+          "relation_meaning": "membership_path",
+          "target": "t5",
+          "target_role": "resolver"
+        }
+      ],
+      "variant": "artifact_reordering"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+              "status": "inferable",
+              "value": "contradict"
+            },
+            "slot": "c1"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+              "status": "inferable",
+              "value": "contradict"
+            },
+            "slot": "c3"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "inherited-membership-included",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f2"
+          },
+          {
+            "evaluator": false,
+            "meaning": "token-scope-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f8"
+          },
+          {
+            "evaluator": false,
+            "meaning": "feature-context-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f9"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-96ebfd30761f--artifact_reordering--62c5378d4d",
+      "counts": {
+        "asserted_nonunknown_effects": 0,
+        "false_negative_facts_against_evaluator": 0,
+        "false_positive_facts_against_evaluator": 4,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 1,
+        "missed_unresolved_relations": 5
+      },
+      "effect_discrepancies": [
+        {
+          "category": "incorrect_or_missed_effect",
+          "evaluator": "support",
+          "model": "unknown",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "support"
+          },
+          "slot": "c2"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "inherited-membership-included",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f2"
+        },
+        {
+          "category": "false_positive_fact_model_overcommit",
+          "evaluator": false,
+          "meaning": "role-preserved",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": false
+          },
+          "slot": "f5"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "token-scope-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f8"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "feature-context-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f9"
+        }
+      ],
+      "mechanism_family": "h3",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-96ebfd30761f",
+      "unresolved_discrepancies": [
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r0",
+          "relation_meaning": "ownership_path",
+          "target": "t1",
+          "target_role": "service"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r2",
+          "relation_meaning": "membership_path",
+          "target": "t2",
+          "target_role": "resolver"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r6",
+          "relation_meaning": "context_path",
+          "target": "t3",
+          "target_role": "guard"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t4",
+          "target_role": "tests"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r4",
+          "relation_meaning": "role_path",
+          "target": "t5",
+          "target_role": "policy"
+        }
+      ],
+      "variant": "artifact_reordering"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+              "status": "inferable",
+              "value": "contradict"
+            },
+            "slot": "c1"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "inherited-membership-included",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f2"
+          },
+          {
+            "evaluator": false,
+            "meaning": "guard-context-loss",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque callee is the guard; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f19"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-f5f54c9c8670--artifact_reordering--fbd1de3a37",
+      "counts": {
+        "asserted_nonunknown_effects": 4,
+        "false_negative_facts_against_evaluator": 0,
+        "false_positive_facts_against_evaluator": 2,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 3,
+        "missed_unresolved_relations": 5
+      },
+      "effect_discrepancies": [
+        {
+          "category": "false_positive_effect_model_overcommit",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "unknown"
+          },
+          "slot": "c0"
+        },
+        {
+          "category": "false_positive_effect_model_overcommit",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "contradict"
+          },
+          "slot": "c1"
+        },
+        {
+          "category": "false_positive_effect_model_overcommit",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "frozen v1.2 fact-to-candidate relation directions applied to source-direct facts",
+            "status": "inferable",
+            "value": "unknown"
+          },
+          "slot": "c2"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "inherited-membership-included",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f2"
+        },
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": false,
+          "meaning": "guard-context-loss",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "the slot requires knowing that the opaque callee is the guard; logical roles are evaluator-only",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "f19"
+        }
+      ],
+      "mechanism_family": "h4",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "unresolved_discrepancies": [
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r6",
+          "relation_meaning": "context_path",
+          "target": "t1",
+          "target_role": "guard"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t2",
+          "target_role": "tests"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r2",
+          "relation_meaning": "membership_path",
+          "target": "t3",
+          "target_role": "resolver"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r0",
+          "relation_meaning": "ownership_path",
+          "target": "t4",
+          "target_role": "service"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r4",
+          "relation_meaning": "role_path",
+          "target": "t5",
+          "target_role": "policy"
+        }
+      ],
+      "variant": "artifact_reordering"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "support",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c0"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c1"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c2"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c3"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "inherited-membership-included",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f2"
+          },
+          {
+            "evaluator": false,
+            "meaning": "token-scope-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f8"
+          },
+          {
+            "evaluator": false,
+            "meaning": "feature-context-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f9"
+          },
+          {
+            "evaluator": false,
+            "meaning": "test-implementation-relationship",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f20"
+          },
+          {
+            "evaluator": false,
+            "meaning": "ownership-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f21"
+          },
+          {
+            "evaluator": false,
+            "meaning": "membership-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f22"
+          },
+          {
+            "evaluator": false,
+            "meaning": "role-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f23"
+          },
+          {
+            "evaluator": false,
+            "meaning": "context-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f24"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-5e6417ce899f--symbol_renaming--edd0973f00",
+      "counts": {
+        "asserted_nonunknown_effects": 4,
+        "false_negative_facts_against_evaluator": 1,
+        "false_positive_facts_against_evaluator": 6,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 3,
+        "missed_unresolved_relations": 6
+      },
+      "effect_discrepancies": [
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "candidate effect depends on evaluator-only test-role labels",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "c1"
+        },
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "candidate effect depends on evaluator-only test-role labels",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "c2"
+        },
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "candidate effect depends on evaluator-only test-role labels",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "c3"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "false_negative_fact_model_omission",
+          "evaluator": true,
+          "meaning": "alternate-entry",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f0"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "inherited-membership-included",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f2"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "token-scope-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f8"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "feature-context-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f9"
+        },
+        {
+          "category": "false_positive_fact_model_overcommit",
+          "evaluator": false,
+          "meaning": "weak-ownership-audit",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": false
+          },
+          "slot": "f12"
+        },
+        {
+          "category": "false_positive_fact_model_overcommit",
+          "evaluator": false,
+          "meaning": "weak-context-audit",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": false
+          },
+          "slot": "f15"
+        },
+        {
+          "category": "false_positive_fact_model_overcommit",
+          "evaluator": false,
+          "meaning": "alternate-entry-bypass",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": false
+          },
+          "slot": "f17"
+        }
+      ],
+      "mechanism_family": "h1",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "unresolved_discrepancies": [
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t1",
+          "target_role": "tests"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r6",
+          "relation_meaning": "context_path",
+          "target": "t2",
+          "target_role": "guard"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r2",
+          "relation_meaning": "membership_path",
+          "target": "t3",
+          "target_role": "resolver"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r4",
+          "relation_meaning": "role_path",
+          "target": "t4",
+          "target_role": "policy"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r0",
+          "relation_meaning": "ownership_path",
+          "target": "t5",
+          "target_role": "service"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t5",
+          "target_role": "service"
+        }
+      ],
+      "variant": "symbol_renaming"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c0"
+          },
+          {
+            "evaluator": "support",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c1"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c2"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c3"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "token-scope-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f8"
+          },
+          {
+            "evaluator": false,
+            "meaning": "feature-context-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f9"
+          },
+          {
+            "evaluator": false,
+            "meaning": "inherited-membership-omitted",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f18"
+          },
+          {
+            "evaluator": false,
+            "meaning": "test-implementation-relationship",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f20"
+          },
+          {
+            "evaluator": false,
+            "meaning": "ownership-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f21"
+          },
+          {
+            "evaluator": false,
+            "meaning": "membership-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f22"
+          },
+          {
+            "evaluator": false,
+            "meaning": "role-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f23"
+          },
+          {
+            "evaluator": false,
+            "meaning": "context-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f24"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-4579914d0fa5--symbol_renaming--0f44dfe662",
+      "counts": {
+        "asserted_nonunknown_effects": 3,
+        "false_negative_facts_against_evaluator": 0,
+        "false_positive_facts_against_evaluator": 2,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 2,
+        "missed_unresolved_relations": 5
+      },
+      "effect_discrepancies": [
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "candidate effect depends on evaluator-only test-role labels",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "c0"
+        },
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "candidate effect depends on evaluator-only test-role labels",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "c3"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "token-scope-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f8"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "feature-context-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f9"
+        }
+      ],
+      "mechanism_family": "h2",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-4579914d0fa5",
+      "unresolved_discrepancies": [
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r2",
+          "relation_meaning": "membership_path",
+          "target": "t1",
+          "target_role": "resolver"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r6",
+          "relation_meaning": "context_path",
+          "target": "t2",
+          "target_role": "guard"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r4",
+          "relation_meaning": "role_path",
+          "target": "t3",
+          "target_role": "policy"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r0",
+          "relation_meaning": "ownership_path",
+          "target": "t4",
+          "target_role": "service"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t5",
+          "target_role": "tests"
+        }
+      ],
+      "variant": "symbol_renaming"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c0"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c1"
+          },
+          {
+            "evaluator": "support",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c2"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c3"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "inherited-membership-included",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f2"
+          },
+          {
+            "evaluator": false,
+            "meaning": "token-scope-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f8"
+          },
+          {
+            "evaluator": false,
+            "meaning": "feature-context-forwarded",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f9"
+          },
+          {
+            "evaluator": false,
+            "meaning": "test-implementation-relationship",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f20"
+          },
+          {
+            "evaluator": false,
+            "meaning": "ownership-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f21"
+          },
+          {
+            "evaluator": false,
+            "meaning": "membership-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f22"
+          },
+          {
+            "evaluator": false,
+            "meaning": "role-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f23"
+          },
+          {
+            "evaluator": false,
+            "meaning": "context-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f24"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-96ebfd30761f--symbol_renaming--3993ffee84",
+      "counts": {
+        "asserted_nonunknown_effects": 3,
+        "false_negative_facts_against_evaluator": 0,
+        "false_positive_facts_against_evaluator": 3,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 2,
+        "missed_unresolved_relations": 5
+      },
+      "effect_discrepancies": [
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "candidate effect depends on evaluator-only test-role labels",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "c1"
+        },
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "candidate effect depends on evaluator-only test-role labels",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "c3"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "inherited-membership-included",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f2"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "token-scope-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f8"
+        },
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "feature-context-forwarded",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f9"
+        }
+      ],
+      "mechanism_family": "h3",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-96ebfd30761f",
+      "unresolved_discrepancies": [
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r4",
+          "relation_meaning": "role_path",
+          "target": "t1",
+          "target_role": "policy"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t2",
+          "target_role": "tests"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r6",
+          "relation_meaning": "context_path",
+          "target": "t3",
+          "target_role": "guard"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r2",
+          "relation_meaning": "membership_path",
+          "target": "t4",
+          "target_role": "resolver"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r0",
+          "relation_meaning": "ownership_path",
+          "target": "t5",
+          "target_role": "service"
+        }
+      ],
+      "variant": "symbol_renaming"
+    },
+    {
+      "answerability": {
+        "evaluator_effect_mismatches": [
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c0"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c1"
+          },
+          {
+            "evaluator": "unknown",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c2"
+          },
+          {
+            "evaluator": "support",
+            "prompt_grounded": {
+              "basis": "candidate effect depends on evaluator-only test-role labels",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "c3"
+          }
+        ],
+        "evaluator_fact_mismatches": [
+          {
+            "evaluator": false,
+            "meaning": "inherited-membership-included",
+            "prompt_grounded": {
+              "basis": "literal frozen-slot definition applied to current visible source",
+              "status": "inferable",
+              "value": true
+            },
+            "slot": "f2"
+          },
+          {
+            "evaluator": false,
+            "meaning": "guard-context-loss",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque callee is the guard; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f19"
+          },
+          {
+            "evaluator": false,
+            "meaning": "test-implementation-relationship",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f20"
+          },
+          {
+            "evaluator": false,
+            "meaning": "ownership-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f21"
+          },
+          {
+            "evaluator": false,
+            "meaning": "membership-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f22"
+          },
+          {
+            "evaluator": false,
+            "meaning": "role-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f23"
+          },
+          {
+            "evaluator": false,
+            "meaning": "context-behavioral-expectation",
+            "prompt_grounded": {
+              "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+              "status": "unavailable",
+              "value": null
+            },
+            "slot": "f24"
+          }
+        ],
+        "unresolved_labels_reproducible_from_visible_input": true,
+        "valid": false
+      },
+      "case_id": "asv1-d-f5f54c9c8670--symbol_renaming--0992065820",
+      "counts": {
+        "asserted_nonunknown_effects": 2,
+        "false_negative_facts_against_evaluator": 1,
+        "false_positive_facts_against_evaluator": 4,
+        "false_positive_unresolved_relations": 0,
+        "incorrect_effects_against_evaluator": 1,
+        "missed_unresolved_relations": 4
+      },
+      "effect_discrepancies": [
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": "unknown",
+          "model": "support",
+          "prompt_grounded": {
+            "basis": "candidate effect depends on evaluator-only test-role labels",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "c1"
+        }
+      ],
+      "fact_discrepancies": [
+        {
+          "category": "evaluator_label_mismatch",
+          "evaluator": false,
+          "meaning": "inherited-membership-included",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f2"
+        },
+        {
+          "category": "false_negative_fact_model_omission",
+          "evaluator": true,
+          "meaning": "cross-layer-relationship",
+          "model": false,
+          "prompt_grounded": {
+            "basis": "literal frozen-slot definition applied to current visible source",
+            "status": "inferable",
+            "value": true
+          },
+          "slot": "f16"
+        },
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": false,
+          "meaning": "guard-context-loss",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "the slot requires knowing that the opaque callee is the guard; logical roles are evaluator-only",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "f19"
+        },
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": false,
+          "meaning": "membership-behavioral-expectation",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "f22"
+        },
+        {
+          "category": "artifact_insufficiency_or_label_ambiguity",
+          "evaluator": false,
+          "meaning": "context-behavioral-expectation",
+          "model": true,
+          "prompt_grounded": {
+            "basis": "the slot requires knowing that the opaque current artifact is test code; logical roles are evaluator-only",
+            "status": "unavailable",
+            "value": null
+          },
+          "slot": "f24"
+        }
+      ],
+      "mechanism_family": "h4",
+      "run_valid": true,
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "unresolved_discrepancies": [
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r4",
+          "relation_meaning": "role_path",
+          "target": "t1",
+          "target_role": "policy"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r0",
+          "relation_meaning": "ownership_path",
+          "target": "t2",
+          "target_role": "service"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r8",
+          "relation_meaning": "general_dependency",
+          "target": "t4",
+          "target_role": "tests"
+        },
+        {
+          "answerability": "inferable_from_visible_call_and_public_inventory",
+          "category": "false_negative_unresolved_relation",
+          "evaluator": true,
+          "model": false,
+          "relation": "r6",
+          "relation_meaning": "context_path",
+          "target": "t5",
+          "target_role": "guard"
+        }
+      ],
+      "variant": "symbol_renaming"
+    }
+  ],
+  "experiment": "authzgym-semantic-bottleneck-v1",
+  "overcommit_hypothesis": {
+    "asserted_nonunknown_effects": 30,
+    "hidden_reasoning_inferred": false,
+    "missed_unresolved_relations": 68,
+    "observable_basis": "The model asserted many non-unknown candidate effects while almost never using the available unresolved-relation channel; evaluator-label mismatches prevent a clean causal attribution.",
+    "status": "moderate_descriptive_support_but_benchmark_contaminated"
+  },
+  "schema_version": 1,
+  "source_experiment": "authzgym-stronger-model-v1",
+  "summary": {
+    "asserted_nonunknown_effects": 30,
+    "cases_with_invalid_evaluator_answerability": 16,
+    "cases_with_reproducible_unresolved_labels": 16,
+    "discrepancy_categories": {
+      "artifact_insufficiency_or_label_ambiguity": 24,
+      "evaluator_label_mismatch": 28,
+      "false_negative_fact_model_omission": 10,
+      "false_negative_unresolved_relation": 68,
+      "false_positive_effect_model_overcommit": 13,
+      "false_positive_fact_model_overcommit": 8,
+      "incorrect_or_missed_effect": 7
+    },
+    "missed_unresolved_relations": 68,
+    "transformation_exact": 0,
+    "transformation_pairs": 8
+  },
+  "transformation_pairs": [
+    {
+      "base_case_id": "asv1-d-4579914d0fa5--base_entry--a4d4153f39",
+      "category": "artifact_order_sensitivity",
+      "changed_layers": [
+        "effects"
+      ],
+      "evaluator_ambiguity_for_equivalence": false,
+      "mechanism_family": "h2",
+      "peer_case_id": "asv1-d-4579914d0fa5--artifact_reordering--93c22d1dae",
+      "semantic_exact": false,
+      "source_episode_id": "asv1-d-4579914d0fa5",
+      "variant": "artifact_reordering"
+    },
+    {
+      "base_case_id": "asv1-d-4579914d0fa5--base_entry--a4d4153f39",
+      "category": "symbol_renaming_sensitivity",
+      "changed_layers": [
+        "effects"
+      ],
+      "evaluator_ambiguity_for_equivalence": false,
+      "mechanism_family": "h2",
+      "peer_case_id": "asv1-d-4579914d0fa5--symbol_renaming--0f44dfe662",
+      "semantic_exact": false,
+      "source_episode_id": "asv1-d-4579914d0fa5",
+      "variant": "symbol_renaming"
+    },
+    {
+      "base_case_id": "asv1-d-5e6417ce899f--base_entry--71eb766486",
+      "category": "artifact_order_sensitivity",
+      "changed_layers": [
+        "facts"
+      ],
+      "evaluator_ambiguity_for_equivalence": false,
+      "mechanism_family": "h1",
+      "peer_case_id": "asv1-d-5e6417ce899f--artifact_reordering--0e8b205ac2",
+      "semantic_exact": false,
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "variant": "artifact_reordering"
+    },
+    {
+      "base_case_id": "asv1-d-5e6417ce899f--base_entry--71eb766486",
+      "category": "symbol_renaming_sensitivity",
+      "changed_layers": [
+        "facts",
+        "effects"
+      ],
+      "evaluator_ambiguity_for_equivalence": false,
+      "mechanism_family": "h1",
+      "peer_case_id": "asv1-d-5e6417ce899f--symbol_renaming--edd0973f00",
+      "semantic_exact": false,
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "variant": "symbol_renaming"
+    },
+    {
+      "base_case_id": "asv1-d-96ebfd30761f--base_entry--f63dbfc3ca",
+      "category": "artifact_order_sensitivity",
+      "changed_layers": [
+        "facts"
+      ],
+      "evaluator_ambiguity_for_equivalence": false,
+      "mechanism_family": "h3",
+      "peer_case_id": "asv1-d-96ebfd30761f--artifact_reordering--62c5378d4d",
+      "semantic_exact": false,
+      "source_episode_id": "asv1-d-96ebfd30761f",
+      "variant": "artifact_reordering"
+    },
+    {
+      "base_case_id": "asv1-d-96ebfd30761f--base_entry--f63dbfc3ca",
+      "category": "symbol_renaming_sensitivity",
+      "changed_layers": [
+        "facts",
+        "effects"
+      ],
+      "evaluator_ambiguity_for_equivalence": false,
+      "mechanism_family": "h3",
+      "peer_case_id": "asv1-d-96ebfd30761f--symbol_renaming--3993ffee84",
+      "semantic_exact": false,
+      "source_episode_id": "asv1-d-96ebfd30761f",
+      "variant": "symbol_renaming"
+    },
+    {
+      "base_case_id": "asv1-d-f5f54c9c8670--base_entry--0dd132fa21",
+      "category": "artifact_order_sensitivity",
+      "changed_layers": [
+        "facts",
+        "effects"
+      ],
+      "evaluator_ambiguity_for_equivalence": false,
+      "mechanism_family": "h4",
+      "peer_case_id": "asv1-d-f5f54c9c8670--artifact_reordering--fbd1de3a37",
+      "semantic_exact": false,
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "variant": "artifact_reordering"
+    },
+    {
+      "base_case_id": "asv1-d-f5f54c9c8670--base_entry--0dd132fa21",
+      "category": "symbol_renaming_sensitivity",
+      "changed_layers": [
+        "facts",
+        "effects",
+        "unresolved"
+      ],
+      "evaluator_ambiguity_for_equivalence": false,
+      "mechanism_family": "h4",
+      "peer_case_id": "asv1-d-f5f54c9c8670--symbol_renaming--0992065820",
+      "semantic_exact": false,
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "variant": "symbol_renaming"
+    }
+  ]
+}
