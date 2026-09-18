@@ -765,3 +765,147 @@ a new entry; do not rewrite it.
   gate fires a blocker. Any component other than the exact frozen B-1 requires
   its own development study, its own decision, and its own new untouched
   population.
+
+## ADR-0023 -- Accept the AuthzGym model-semantic condition `model-semantic-v1.3.1-N1` and authorize zero-inference implementation only
+
+- Status: accepted
+- Date: 2026-09-18
+- Context: The controlled chain now supports four things. V1.3 source-local
+  semantics are answerable under the bounded fixture grammar. Perfect v1.3
+  semantics can drive a frozen downstream component to useful inspection
+  rankings. `est-repair-v1.3.1-B-1` passed one-shot untouched successor
+  confirmation on the sealed `confirmation_v1_3_1` population (top-1 `0.875`,
+  top-2 `1.0`, regret `0.058333`, zero provider calls, seal `463d208f...`).
+  Actual model production of the v1.3 semantic state and closed-loop routing
+  remain untested. The accepted external research design, the
+  choice-set-primary clarification, the three supplied advancement thresholds,
+  and Astra's S-7 adjudication are translated normatively in
+  `experiments/authzgym_model_semantic_v1_3_1/PREREGISTRATION.md`, with the
+  reconstructed cursor and four verified repository contradictions recorded in
+  `REPOSITORY_CONTRADICTIONS.md` in the same directory.
+- Decision: Accept the finalized model-semantic study package in
+  `experiments/authzgym_model_semantic_v1_3_1/` as repository authority for
+  condition `model-semantic-v1.3.1-N1`, and authorize **only zero-inference
+  mechanical implementation** of that package and its development harness, up
+  to and stopping at the preregistered pre-inference freeze boundary. The
+  primary endpoint is choice-set preservation: for canonical source `i`, with
+  `G_i` the legal targets tied for maximum B-1 value under certified gold
+  semantics and `M_i` the same under the actual model response, the decision is
+  preserved when `M_i` is non-empty and `M_i` is a subset of `G_i`, at `>= 7/8`
+  canonical sources and, in development, separately on each repeat. The
+  evaluator canonical ordinal stays evaluator-only and never enters the
+  scientific definition of preservation. Effect self-consistency (S-7) is
+  adjudicated `diagnostic_only`. No unresolved research-semantic decision
+  remains in the package.
+- S-7 adjudication: Effect self-consistency remains a mandatory measured and
+  reported semantic/interface diagnostic, but has no independent advancement
+  threshold and no veto power over development eligibility or
+  untouched-confirmation success. It is computed exactly from the model's
+  submitted facts and submitted effects using the frozen public v1.3 effect
+  truth table and the public candidate family; `C_response` and `C_field` are
+  both reported, development and confirmation separately and each development
+  repeat separately; every violation is enumerated; invalid and missing
+  responses are kept separate and never imputed consistent. It sits outside the
+  validity-precedence chain and can never constitute the semantic/interface
+  failure that blocks later layers. No response repair and no semantic retry are
+  permitted. B-1 consumes the model's actual submitted effect values. Diagnostic
+  substitutions never satisfy a gate, and the `D0`/`D3` pair is retained to
+  localize the contribution of inconsistencies. An S-7 violation remains a
+  semantic error and is preserved in every outcome label, but by itself cannot
+  produce `semantic_screen_below_threshold`, suppress the primary or downstream
+  result, block `development_eligible`, or block
+  `bounded_model_semantic_compatibility_confirmed`. Every other semantic,
+  decision, degradation, invariance, mechanical and firewall gate remains
+  unchanged, including the directional-effect-versus-gold gate and the
+  directional-effect continuity gate.
+- Authorized scope: the zero-inference model-condition verification of
+  preregistration section 9; construction of the condition's runner, audited
+  reader, sealed-input wiring, scorer wiring, error-propagation classification
+  and tests; the gold-adequacy computation on the existing development
+  population; and the writing of `RESTATED_HASHES.json`,
+  `INTEGRITY_BASELINE.json`, `MODEL_CATALOG_SNAPSHOT.json`,
+  `MODEL_CONDITION_VERIFICATION.json`, `MODEL_CONDITION.json`,
+  `COST_GATE.json`, `GOLD_ADEQUACY_DEVELOPMENT.json`,
+  `FROZEN_INPUTS_MODEL_V1_3_1.json` and `FREEZE_CHECKLIST.md`. Implementation
+  stops at the freeze boundary.
+- Not authorized: model or provider inference of any kind; the 112 development
+  calls; confirmation generation, access or inference; any change to AuthzGym
+  v1.3 semantics, prompt, schemas, populations or scoring; any change to
+  `est-repair-v1.3.1-B-1`; any change to a threshold, denominator or endpoint;
+  model substitution or escalation; prompt tuning; retry-policy changes; Jev;
+  and closed-loop execution or architecture work. Development inference requires
+  a further decision after the freeze checklist passes; confirmation requires
+  the separate post-development authorization of preregistration section 14.2
+  naming the frozen implementation, development report, model configuration and
+  manifest hashes.
+- Why: Every link in the controlled chain except one has been exercised under a
+  frozen protocol, and the unexercised link is the one the project's central
+  question depends on. Changing exactly that link, against an instrument whose
+  answerability and firewall pass and a component that has already passed an
+  untouched confirmation, is the smallest experiment that can produce
+  information about it. Making choice-set preservation primary removes the
+  evaluator-only ordinal from the definition of success, so the endpoint
+  measures what the model's semantic state does to the decision rather than what
+  a private tie-break does to the measurement. Separating acceptance of the
+  specification from authorization to call a model keeps the freeze prospective:
+  every threshold, denominator and stopping rule is fixed before any response
+  exists. Adjudicating S-7 as `diagnostic_only` resolves a real conflict in the
+  accepted design, since a zero-tolerance gate on a channel the same design
+  declares non-independent could terminate a condition whose primary endpoint
+  passed, and the no-semantic-retry rule made such a failure unrecoverable by
+  construction.
+- Alternatives rejected: authorizing development calls in the same decision that
+  accepts the specification; using evaluator-selected-target agreement as the
+  primary endpoint; exposing the canonical ordinal to the model or the
+  component; gating on effect self-consistency, or giving it a tolerance below
+  `1.00`, or dropping its measurement entirely; excluding, repairing or
+  retrying a response because it is effect-inconsistent; passing B-1 a
+  truth-table-corrected effect vector; claiming or engineering a retroactive
+  pass of AuthzGym v1.3 section 16; creating historical v1.3 freeze artifacts
+  after the fact or modifying any historical report; reinterpreting,
+  superseding or averaging away the historical estimator's preserved
+  fresh-confirmation failure; reusing `confirmation_v1_3` or
+  `confirmation_v1_3_1` as a model population; running more than one model
+  configuration or escalating after failure; reducing the frozen schedule to fit
+  the spend ceiling; inventing a statistical null threshold for choice-set
+  preservation; reporting any advancement screen as a population estimate;
+  rewriting historical seals or access ledgers to match the new hashing and
+  logging conventions; and adding closed-loop routing, Jev, representation
+  intervention or architecture comparison to this condition.
+- Consequences: `experiments/authzgym_model_semantic_v1_3_1/` becomes accepted
+  repository authority. The living cursor becomes "model-semantic study
+  accepted; zero-inference implementation pending". The already-executed, sealed
+  B-1 successor confirmation is recorded in living state as what it is -- a
+  separately versioned component/instrument compatibility confirmation -- and
+  never as a pass of AuthzGym v1.3 section 16, which was never satisfied and is
+  not claimed to have been. For new artifacts, raw-file SHA-256 is the
+  authoritative frozen-artifact byte hash; a canonicalized JSON digest, where
+  useful, is recorded separately as `canonical_json_sha256`; and multiple digest
+  types are never called simply `population_hash`. File-open-granularity access
+  logging is required for this condition. Historical ledgers, seals, reports,
+  responses, hashes and classifiers are not rewritten. A future pass would
+  establish only bounded compatibility of `source artifact -> this
+  model/configuration -> v1.3 semantics -> frozen B-1` inside this controlled
+  generator; it would not establish authorization competence, general code
+  understanding, closed-loop routing, adaptive-routing advantage, SER
+  architecture superiority, GitLab transfer or real-world action value, and it
+  promotes no concept and creates no `E-*` record. Phase 5 remains active and
+  Phase 5B remains blocked.
+- Preserved under this decision: `src/ser/authzgym/policies.py`
+  (`092a7a87...`), `src/ser/evaluation/authz_v1_3.py` (`60b1cb5d...`),
+  `src/ser/authzgym/policies_v1_3_1.py` (`f9c92317...`),
+  `src/ser/authzgym/generation.py` (`03bfe556...`),
+  `src/ser/authzgym/v1_3_population.py` (`ac4b8d47...`), every artifact under
+  `experiments/authzgym_semantic_contract_v1_3/`,
+  `experiments/authzgym_estimator_repair_v1_3_1/` and
+  `experiments/authzgym_confirmation_v1_3_1/`, and every earlier experiment
+  directory. The spent `confirmation_v1_3` population stays unopened. ADR-0019
+  and the v1.3 preregistration remain the semantic authority, unchanged and
+  unreinterpreted.
+- Revisit when: The zero-inference implementation reaches the freeze boundary
+  with a complete freeze checklist and a matched manifest, at which point a
+  further decision is required before the 112 development calls; or the
+  model-condition verification, the cost gate, the gold-adequacy gate, the
+  integrity baseline or the access-logging validation fires a blocker; or an
+  implementation contradiction appears that this decision and the accepted
+  preregistration do not resolve.

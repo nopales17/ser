@@ -522,7 +522,7 @@ def render_context_packet(
             "",
             current["roadmap"]["immediate_next_task"],
             "",
-            "The IDS archive remains read-only. Phase 5 authorizes offline v1.3 implementation, answerability/firewall/oracle validation, population freezing, and the ADR-0020 est-repair-v1.3.1 study. It preserves v1.2 and forbids inference, confirmation tuning, representation changes, Jev, IDS transfer, GitLab integration, and runtime work until the accepted gates pass.",
+            "The IDS archive remains read-only. Phase 5 authorizes offline v1.3 implementation, answerability/firewall/oracle validation, population freezing, the ADR-0020 est-repair-v1.3.1 study, and, under ADR-0023, zero-inference mechanical implementation of the accepted model-semantic condition through its pre-inference freeze boundary. It preserves v1.2 and forbids inference, development and confirmation calls, confirmation tuning, representation changes, Jev, IDS transfer, GitLab integration, and runtime work until the accepted gates pass and a further decision is recorded.",
             "",
             "## 11. Important non-goals",
             "",

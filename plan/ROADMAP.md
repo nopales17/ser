@@ -203,6 +203,42 @@ Allowed statuses: `planned`, `active`, `done`.
   candidate development, spent-confirmation reuse, case replacement, threshold or
   benchmark changes, inference, Jev, adaptive-routing experiments, and
   architecture comparison all remain unauthorized.
+- successor confirmation result: the ADR-0022 one-shot successor confirmation
+  executed and passed. `confirmation_v1_3_1` was generated and frozen at layouts
+  42/43, certified and validated in the section-8.7 isolation order
+  (answerability pass, firewall pass), and evaluated exactly once: canonical
+  top-1 `0.875`, top-2 `1.0`, mean normalized regret `0.058333`, zero illegal
+  targets, own-selection equivariance `40/40`, section-14 equivalence `40/40`,
+  ND-1/ND-2/ND-3 true as reported-only diagnostics, zero failing
+  leave-one-source-out folds, and **zero provider calls**. The population is
+  sealed at `463d208f...` and is spent. This confirms compatibility of the
+  frozen `est-repair-v1.3.1-B-1` component with the fixed v1.3 instrument under
+  the preregistered controlled condition. It is not authorization reasoning,
+  adaptive routing, architecture, transfer, model capability, instrument
+  validation, a diagnosis of the preserved historical-estimator confirmation
+  failure, or a pass of AuthzGym v1.3 preregistration section 16, which was
+  never satisfied and is not claimed to have been.
+- accepted next condition: ADR-0023 accepts
+  `experiments/authzgym_model_semantic_v1_3_1/PREREGISTRATION.md` as repository
+  authority for `model-semantic-v1.3.1-N1` and authorizes **only zero-inference
+  mechanical implementation** of that package and its development harness,
+  stopping at the preregistered pre-inference freeze boundary. The experiment
+  changes exactly one link, `gold semantic response -> actual model semantic
+  response`, leaving v1.3 semantics, `est-repair-v1.3.1-B-1`, thresholds,
+  endpoints, populations, retry policy and the closed-loop boundary frozen. The
+  primary endpoint is choice-set preservation -- `M_i` non-empty and a subset of
+  `G_i` -- at `>= 7/8` canonical sources, separately on each development repeat,
+  computed without the evaluator canonical ordinal. Effect self-consistency is
+  adjudicated `diagnostic_only`: mandatory to compute, enumerate and report,
+  outside validity precedence, with no advancement threshold and no veto over
+  development eligibility or untouched-confirmation success. No unresolved
+  research-semantic decision remains in the package. Model or provider
+  inference, the 112 development calls, confirmation generation or access,
+  model substitution or escalation, prompt tuning, retry-policy changes, Jev,
+  and closed-loop execution or architecture work all remain unauthorized; each
+  requires its own later decision.
+- current cursor: model-semantic study accepted; zero-inference implementation
+  pending.
 - readiness: Phase 5B is not ready. It requires a valid actual-model run to extract
   useful facts, rank inspections beyond trivial heuristics, route conditionally,
   and improve matched decision quality or efficiency under the frozen rule.

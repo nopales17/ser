@@ -134,6 +134,37 @@ definition repair next.
 No model/provider inference, architecture comparison, representation
 intervention, or Jev condition is authorized by these documents.
 
+## Sealed component/instrument confirmation, not admitted evidence
+
+- `authzgym_confirmation_v1_3_1/` preserves the ADR-0022 one-shot successor
+  confirmation of the frozen `est-repair-v1.3.1-B-1` component. A new untouched
+  population was generated and frozen at layouts 42/43, certified and validated
+  in the preregistered isolation order, and evaluated exactly once: canonical
+  top-1 `0.875`, top-2 `1.0`, regret `0.058333`, zero illegal targets,
+  own-selection equivariance `40/40`, section-14 equivalence `40/40`, and **zero
+  provider calls**. Its classifier is confirmed component/instrument
+  compatibility. It is not authorization reasoning, adaptive routing,
+  architecture, transfer, model capability, instrument validation, a diagnosis
+  of the preserved historical-estimator confirmation failure, or a pass of
+  AuthzGym v1.3 preregistration section 16, which was never satisfied and is not
+  claimed to have been. It creates no `E-*` entry and promotes no hypothesis.
+
+## Accepted specification, not a run
+
+- `authzgym_model_semantic_v1_3_1/` holds the ADR-0023-accepted condition
+  `model-semantic-v1.3.1-N1`: the normative preregistration, the decision text,
+  the mechanical implementation handoff, the adjudicated research-decision
+  record, and the reconstructed-cursor and contradiction record. The condition
+  changes exactly one link in the controlled chain, `gold semantic response ->
+  actual model semantic response`, with v1.3 semantics, `est-repair-v1.3.1-B-1`,
+  thresholds, endpoints, populations and retry policy frozen. Its primary
+  endpoint is choice-set preservation at `>= 7/8` canonical sources, computed
+  without the evaluator canonical ordinal. Effect self-consistency is
+  `diagnostic_only`. ADR-0023 authorizes only zero-inference mechanical
+  implementation through the pre-inference freeze boundary. No model or provider
+  call, no development call, and no confirmation generation or access is
+  authorized; there is no result here yet and no `E-*` entry.
+
 ## Admitted evidence
 
 - `E-002` / MicroGym v1: a model-aware myopic stopping policy reduced the frozen
