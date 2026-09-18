@@ -16,12 +16,26 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 IDEA_SOURCE = ROOT / "theory" / "IDEA_MAP.yaml"
 STATUS_SOURCE = ROOT / "state" / "STATUS.yaml"
+ROADMAP_SOURCE = ROOT / "plan" / "ROADMAP.md"
 LEGACY_SOURCE = ROOT / "reference" / "LEGACY_INVENTORY.yaml"
 CONTRACT_SOURCE = ROOT / "theory" / "CONTRACTS.yaml"
 IDEA_OUTPUT = ROOT / "theory" / "IDEA_MAP.md"
 CONTEXT_OUTPUT = ROOT / "state" / "CONTEXT_PACKET.md"
 LEGACY_OUTPUT = ROOT / "reference" / "LEGACY_INVENTORY.md"
 GENERATED_WARNING = "<!-- GENERATED FILE: DO NOT EDIT. Run `python3 tools/emit_context.py`. -->"
+
+# The portable context packet is a projection, not the decision ledger. Rendering
+# every accepted ADR's full Decision text made the packet grow without bound and
+# pushed it past the 4,000-word guardrail. The packet therefore renders the
+# newest decisions in full, plus any older decision the active state or roadmap
+# explicitly cites, and indexes the rest. `DECISIONS.md` remains the full history.
+NEWEST_ADR_FULL_TEXT = 4
+ADR_HISTORY_POINTER = (
+    f"The newest {NEWEST_ADR_FULL_TEXT} decisions are rendered in full, together "
+    "with any older decision the current state or roadmap cites; every other "
+    "decision is listed as an index entry only. `DECISIONS.md` is the full "
+    "append-only history."
+)
 
 KIND_ORDER = [
     "foundation",
@@ -118,6 +132,17 @@ def parse_decisions() -> list[dict[str, str]]:
             )
         decisions.append(fields)
     return decisions
+
+
+def adrs_rendered_in_full(accepted_ids: list[str]) -> set[str]:
+    """Newest decisions, plus any older decision the live state or roadmap cites."""
+
+    full = set(accepted_ids[-NEWEST_ADR_FULL_TEXT:])
+    cited = ""
+    for source in (STATUS_SOURCE, ROADMAP_SOURCE):
+        cited += source.read_text(encoding="utf-8")
+    full.update(re.findall(r"\bADR-\d{4}\b", cited))
+    return full & set(accepted_ids)
 
 
 def parse_roadmap() -> list[dict[str, str | int]]:
@@ -408,8 +433,17 @@ def render_context_packet(
         "## 3. Settled architectural decisions",
         "",
     ]
+    rendered_in_full = adrs_rendered_in_full(
+        [item["id"] for item in accepted_decisions]
+    )
+    lines.append(ADR_HISTORY_POINTER)
     for decision in accepted_decisions:
-        lines.append(f"- `{decision['id']}` **{decision['title']}**: {decision['decision']}")
+        if decision["id"] in rendered_in_full:
+            lines.append(
+                f"- `{decision['id']}` **{decision['title']}**: {decision['decision']}"
+            )
+        else:
+            lines.append(f"- `{decision['id']}` — {decision['title']}")
 
     lines.extend(["", "## 4. Current high-value primitives", ""])
     lines.extend(context_bullet(item) for item in primitives)
