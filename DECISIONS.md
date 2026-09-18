@@ -580,3 +580,81 @@ a new entry; do not rewrite it.
   appears that the accepted preregistration does not resolve. If a passing
   component exists, the successor decision must name its source hash and the
   development-report hash before section-8 confirmation work begins.
+
+## ADR-0021 -- Correct the `est-repair-v1.3.1` step-1 specification defects and resume the authorized study
+
+- Status: accepted
+- Date: 2026-09-18
+- Context: Under ADR-0020 the `est-repair-v1.3.1` development study executed
+  handoff step 1 and stopped at its specified stop condition. Five of the six
+  recorded B0 figures reproduced exactly, but the recorded `longest_artifact`
+  regret did not: the specification text records `0.7833333333333333`, while the
+  authorized development split yields `0.6583333333333333`. The recorded value is
+  the confirmation-split figure from the `confirmation` block of
+  `experiments/authzgym_semantic_contract_v1_3/ORACLE_VALIDATION.json`, which the
+  preregistration itself lists as forbidden exposure, so the recorded figure could
+  not be reproduced without reading a prohibited channel. The same stop surfaced
+  two further defects: preregistration section 2.6 and handoff step 5 state the
+  own-ranking invariance obligation in two non-equivalent readings, only one of
+  which reproduces the recorded B0 36/40 fixture; and handoff step 0's instruction
+  to hash everything under the v1.3 directory contradicted the study's prohibition
+  on opening the spent confirmation population, so the step-0 integrity pass
+  hashed 16 confirmation-named files. The worker asserted the recorded figures
+  verbatim, refused to substitute a value or to read the confirmation channel,
+  disclosed the step-0 access, and stopped without creating a candidate or
+  consuming budget.
+- Decision: Accept
+  `experiments/authzgym_estimator_repair_v1_3_1/CORRIGENDUM.md` as an
+  append-only correction governing `est-repair-v1.3.1` prospectively, with its
+  three sections normative: the recorded `longest_artifact` regret is a
+  transcription error and step-1 reproduction is authorized against the
+  development value `0.6583333333333333`, with the confirmation-split read-out
+  recorded as further already-exposed spent-confirmation information; the
+  own-ranking obligation is resolved as own-selection-decision equivariance,
+  B0 at 36/40, candidates at 40/40, full-order invariance descriptive only; and
+  the step-0 confirmation-path hashing is a procedural deviation, not
+  retroactively authorized, which on the verified facts does not invalidate the
+  study, with the integrity procedure amended so the development harness opens
+  or hashes no confirmation path. No gate, threshold, budget, arm order,
+  stopping rule, non-degeneracy requirement, input allowlist, firewall
+  requirement, or claim boundary changes; ADR-0020 resumes unchanged and the
+  study resumes at handoff step 1.
+- Why: A measurement instrument and its downstream study are only as trustworthy
+  as the provenance of every recorded figure. A specification figure taken from a
+  split the study is forbidden to read is a defect in the specification, not a
+  finding, and correcting it in an append-only record preserves both the accepted
+  text and the correction. Resolving the invariance obligation toward the
+  selection reading keeps the obligation aligned with the property that actually
+  failed for the preserved baseline, while refusing to require an ordering the
+  authorized public state does not support. Recording rather than excusing the
+  hashing deviation keeps the access ledger honest, and amending the procedure
+  prevents the same instruction conflict from reaching a successor population,
+  where an equivalent access would be a blocking violation.
+- Alternatives rejected: editing the accepted preregistration or the
+  implementation handoff in place to match the observed figures; adjusting the
+  harness until the recorded `0.783` reproduced; reading the confirmation split
+  to satisfy a recorded figure; treating the discrepancy as an experimental
+  result, a regression, or evidence about either split; discarding the step-1
+  artifacts or forfeiting budget over the hashing deviation; retroactively
+  authorizing that access or omitting it from the record; adopting the full-order
+  reading of the invariance obligation, which contradicts the recorded 36/40
+  fixture and would demand an ordering the public state does not support;
+  adopting the argmax-set reading, which would make the recorded fixture
+  unattainable as a failure; weakening ND-1, ND-2, or ND-3 to accommodate
+  declared ties; and re-opening ADR-0020's scope, budget, arm order, stopping
+  rule, or claim boundary.
+- Consequences: `est-repair-v1.3.1` resumes at handoff step 1 under the
+  corrigendum and proceeds in order, with the Tier-1 ceiling still a blocking
+  gate preceding all candidate work. No gate, threshold, budget, arm order,
+  stopping rule, non-degeneracy requirement, input allowlist, firewall
+  requirement, or claim boundary changes. The accepted preregistration, the
+  implementation handoff, ADR-0019, ADR-0020, every AuthzGym v1.3 artifact, the
+  historical estimator at SHA-256 `092a7a87...`, and the fixed adapter remain
+  byte-unchanged. Successor confirmation generation, freezing and execution,
+  model/provider inference, spent-confirmation access including hashing, v1.3
+  semantic changes, threshold changes, Jev, and architecture comparison all
+  remain unauthorized. Phase 5 remains active and Phase 5B remains blocked.
+- Revisit when: The development study terminates with a preregistered outcome
+  label and a frozen development report, or a further implementation
+  contradiction appears that neither the accepted preregistration nor this
+  corrigendum resolves.

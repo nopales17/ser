@@ -2,7 +2,7 @@
   "schema_version": 1,
   "as_of": "2026-09-18",
   "project_name": "SER (provisional)",
-  "project_maturity": "phase_5a_v1_3_implementation_complete_confirmation_oracle_blocked_estimator_repair_authorized_inference_unauthorized",
+  "project_maturity": "phase_5a_v1_3_confirmation_oracle_blocked_estimator_repair_authorized_corrected_resumed_inference_unauthorized",
   "runtime": {
     "built": true,
     "controllers": 17,
@@ -275,8 +275,24 @@
     },
     "authzgym_estimator_repair_v1_3_1": {
       "preregistration": "experiments/authzgym_estimator_repair_v1_3_1/REPAIR_STUDY_PREREGISTRATION.md",
+      "corrigendum": "experiments/authzgym_estimator_repair_v1_3_1/CORRIGENDUM.md",
+      "step1_blocker_record": "experiments/authzgym_estimator_repair_v1_3_1/STUDY_BLOCKER.md",
       "implementation_handoff": "experiments/authzgym_estimator_repair_v1_3_1/IMPLEMENTATION_HANDOFF.md",
       "authorizing_adr": "ADR-0020",
+      "corrigendum_adr": "ADR-0021",
+      "study_state": "stopped_at_step_1_corrected_and_resumed_under_ADR-0021",
+      "candidates_created": 0,
+      "candidate_budget_consumed": 0,
+      "authorized_longest_artifact_regret_development": 0.6583333333333333,
+      "longest_artifact_reported_only_non_selecting": true,
+      "own_ranking_gate_reading": "own_selection_decision_equivariance",
+      "own_ranking_b0_fixture": "36/40",
+      "own_ranking_candidate_requirement": "40/40",
+      "own_ranking_full_order_descriptive_only": "25/40",
+      "nondegeneracy_requirements_unchanged": true,
+      "step0_confirmation_hashing_deviation_recorded": true,
+      "step0_deviation_retroactively_authorized": false,
+      "step0_deviation_invalidates_study": false,
       "evidence_status": "authorized_development_only_bounded_component_existence_study",
       "candidate_budget_max_total": 10,
       "candidate_budget_by_arm": {"A": 4, "B": 4, "C": 2},
@@ -294,7 +310,7 @@
       "architecture_comparison_authorized": false,
       "semantic_change_authorized": false,
       "hypothesis_promotion_authorized": false,
-      "summary": "ADR-0020 accepts the est-repair-v1.3.1 development-only preregistration and authorizes offline component repair under the fixed A then B then C order within at most 10 attempts. The Tier-1 authorized-information ceiling precedes any candidate, B0/B1/B2/B3 and the B2-derived ND-3 floor are frozen before any candidate evaluation, and ND-1/ND-2/ND-3, own-ranking invariance, input allowlisting, and the expanded component firewall are enforced as specified. The study stops at the first admissible pass and never evaluates a second passing candidate. It is an existence/sufficiency study, not an attribution of the preserved confirmation failure. No confirmation generation or execution, model inference, gate reinterpretation, semantic change, Jev, architecture comparison, or hypothesis promotion is authorized."
+      "summary": "ADR-0020 accepts the est-repair-v1.3.1 development-only preregistration: offline component repair in the fixed A/B/C order within at most 10 attempts, the Tier-1 ceiling before any candidate, B0-B3 and the B2-derived ND-3 floor frozen before any candidate evaluation, ND-1/ND-2/ND-3, own-ranking invariance, input allowlisting and the expanded component firewall enforced as specified, stopping at the first admissible pass. It is an existence/sufficiency study, not an attribution of the preserved confirmation failure. The study stopped at handoff step 1 and ADR-0021 accepted CORRIGENDUM.md: the recorded longest_artifact regret 0.783 was a transcription of the confirmation split, so step-1 reproduction is authorized against the development value 0.6583333333333333 with no gating metric or threshold changed; the own-ranking obligation is resolved as own-selection-decision equivariance, B0 at 36/40, candidates required to reach 40/40, full-order invariance descriptive only; and the step-0 hashing of confirmation-named files is an unauthorized procedural deviation that does not invalidate the study. No candidate was created and no budget was consumed. ADR-0020 resumes unchanged from step 1. No confirmation generation or execution, inference, gate reinterpretation, semantic change, Jev, architecture comparison, or hypothesis promotion is authorized."
     },
     "historical_only": [
       "E-001 describes scoped artifacts in the read-only IDS archive; it is not evidence for SER."
@@ -309,7 +325,7 @@
   "roadmap": {
     "active_phase_id": 5,
     "active_phase_title": "Controlled authorization action-value estimation",
-    "immediate_next_task": "Execute the ADR-0020-authorized est-repair-v1.3.1 development study as preregistered: ceiling, baselines, then A/B/C candidates stopping at the first admissible pass. Leave inference, the spent confirmation population, and section-8 confirmation unauthorized.",
+    "immediate_next_task": "Resume est-repair-v1.3.1 at handoff step 1 under ADR-0021 and its corrigendum: reproduce the corrected development baseline (longest_artifact regret 0.6583333333333333), then continue in order through the blocking Tier-1 ceiling, the frozen baselines and ND-3 floor, and the component firewall before any candidate. Open or hash no confirmation path; inference, successor confirmation, semantic and threshold changes, Jev, and architecture comparison stay unauthorized.",
     "research_trunk": "GitLab authorization investigation is the primary practical target. MicroGym is a control validation instrument; IDS is only a possible semantic bridge; controlled software experimentation is trunk-aligned; remote sensing is dormant."
   },
   "non_goals": [

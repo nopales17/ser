@@ -161,13 +161,29 @@ Allowed statuses: `planned`, `active`, `done`.
   all v1.3 semantics, populations, thresholds, usefulness targets, prior
   results, and protected artifacts stay byte-unchanged, and model/provider
   inference remains unauthorized.
-- current cursor: execution of the authorized `est-repair-v1.3.1` development
-  study is the active Phase 5 work item under ADR-0020. Its outcome, whatever
-  the label, is expected to be reported back to the deciding authority with the
-  ceiling result, the frozen baselines, the candidate ledger, the firewall scope
-  statement, and the unresolved questions; canonical state documents and
-  generated views are updated only by the acceptance workflow, not by the study
-  steps themselves.
+- accepted correction: ADR-0021 accepts
+  `experiments/authzgym_estimator_repair_v1_3_1/CORRIGENDUM.md` after the study
+  stopped at handoff step 1. The recorded `longest_artifact` regret `0.783` was a
+  transcription of the confirmation split; step-1 reproduction is authorized
+  against the development value `0.6583333333333333`, with no gating metric or
+  threshold changed and `longest_artifact` still reported-only and
+  non-selecting. The own-ranking obligation is resolved prospectively as
+  own-selection-decision equivariance: mapped value-vector equivalence still
+  required, B0 still 36/40, a candidate must reach 40/40, no arbitrary order
+  among tied or equivalent targets is required, and full-order invariance is
+  descriptive only. ND-1, ND-2, and ND-3 are unchanged. The step-0 hashing of
+  confirmation-named files is a procedural deviation that is not retroactively
+  authorized; on the verified facts that no candidate existed, no budget was
+  consumed, no confirmation content was parsed or used, the population was
+  already spent, and no successor population existed, it does not invalidate the
+  study, and the integrity procedure is amended so the development harness opens
+  or hashes no confirmation path.
+- current cursor: `est-repair-v1.3.1` is the active Phase 5 work item, resumed at
+  handoff step 1 under ADR-0020 as corrected by ADR-0021. Its outcome, whatever
+  the label, is reported back to the deciding authority with the ceiling result,
+  the frozen baselines, the candidate ledger, the firewall scope statement, and
+  the unresolved questions; canonical state documents and generated views are
+  updated only by the acceptance workflow, not by the study steps themselves.
 - readiness: Phase 5B is not ready. It requires a valid actual-model run to extract
   useful facts, rank inspections beyond trivial heuristics, route conditionally,
   and improve matched decision quality or efficiency under the frozen rule.
