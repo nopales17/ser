@@ -2,7 +2,7 @@
   "schema_version": 1,
   "as_of": "2026-09-18",
   "project_name": "SER (provisional)",
-  "project_maturity": "phase_5a_v1_3_implementation_complete_confirmation_oracle_blocked_inference_unauthorized",
+  "project_maturity": "phase_5a_v1_3_implementation_complete_confirmation_oracle_blocked_estimator_repair_authorized_inference_unauthorized",
   "runtime": {
     "built": true,
     "controllers": 17,
@@ -29,7 +29,8 @@
     "authzgym_v1_3_implemented": true,
     "authzgym_v1_3_frozen_no_inference": false,
     "authzgym_v1_3_oracle_blocked": true,
-    "authzgym_v1_3_inference_authorized": false
+    "authzgym_v1_3_inference_authorized": false,
+    "phase_5a_9_estimator_repair_v1_3_1_authorized": true
   },
   "formal_control_problem": {
     "phase_2_complete": true,
@@ -41,11 +42,11 @@
     "rejected_from_minimal_core": 1,
     "required_invariants": 12,
     "domain_pressure_tests": 4,
-    "summary": "Phase 2 separates latent world, released observation history, controller epistemic state, policy-neutral legal actions, raw vector resources, first-class stopping, and evaluator-owned outcomes. MicroGym v1 and routing-v1 implemented these semantics without a contract correction, but synthetic implementations do not validate their generality. Observation and optional Hypothesis remain distinct; Scope is optional; Signal and all nine coupling mechanisms remain deferred."
+    "summary": "Phase 2 separates latent world, released observations, controller epistemic state, policy-neutral legal actions, vector resources, first-class stopping, and evaluator-owned outcomes. MicroGym v1 and routing-v1 instantiated these semantics without correction, but synthetic implementations do not validate generality. Observation and optional Hypothesis stay distinct, Scope is optional, and Signal with the nine coupling mechanisms remains deferred."
   },
   "evidence": {
     "ser_experiments": ["E-002", "E-003"],
-    "summary": "MicroGym v1 admitted narrow stopping/cost support and routing-v1 narrow one-step exact-likelihood routing. AuthzGym 1.1 remains benchmark calibration; real-model v1 is invalid; v1.2 is transport-unstable; and the Nano envelope established scoped transport/wire reliability. Mini stopped under the frozen v1.2 futility rule, after which a zero-call audit found unanswerable labels and blocked capability attribution. ADR-0019 defines v1.3; implementation, answerability, and firewall pass, but the confirmation oracle blocks freeze and inference. No AuthzGym E-* or architecture finding was admitted.",
+    "summary": "MicroGym v1 supports narrow stopping/cost results and routing-v1 one-step exact-likelihood routing. AuthzGym 1.1 stays calibration; real-model v1 invalid; v1.2 transport-unstable; Mini stopped futility after a zero-call audit found unanswerable labels. ADR-0019's v1.3 passes implementation, answerability, and firewall checks, but its oracle blocks freeze and inference. No E-* or architecture finding was admitted.",
     "microgym_v1": {
       "population_hash": "a9234fa60b40d3628f6317284a964c95917bcd7442796d8961f18b14b9958b3d",
       "problem_regimes": 24,
@@ -272,6 +273,29 @@
       },
       "summary": "ADR-0019 defines v1.3 as a new source-grounded instrument. Offline implementation, 56-case development and fresh-confirmation populations, certificates, the public-only answerability checker, and the firewall suite pass. The unchanged estimator passes the development canonical oracle gate but fails the fresh-confirmation canonical top-2 gate, 0.75 versus >= 0.80. ORACLE_BLOCKER.md records the blocker. Estimator tuning, population substitution, freeze, inference, and E-* claims remain unauthorized."
     },
+    "authzgym_estimator_repair_v1_3_1": {
+      "preregistration": "experiments/authzgym_estimator_repair_v1_3_1/REPAIR_STUDY_PREREGISTRATION.md",
+      "implementation_handoff": "experiments/authzgym_estimator_repair_v1_3_1/IMPLEMENTATION_HANDOFF.md",
+      "authorizing_adr": "ADR-0020",
+      "evidence_status": "authorized_development_only_bounded_component_existence_study",
+      "candidate_budget_max_total": 10,
+      "candidate_budget_by_arm": {"A": 4, "B": 4, "C": 2},
+      "arm_order": ["A", "B", "C"],
+      "study_question": "existence_and_sufficiency_not_causal_attribution",
+      "stopping_rule": "stop_the_entire_development_study_at_the_first_admissible_passing_candidate",
+      "second_passing_candidate_evaluation": false,
+      "tier1_ceiling_before_any_candidate": true,
+      "baselines_frozen_before_candidate_evaluation": true,
+      "inference_authorized": false,
+      "confirmation_generation_authorized": false,
+      "confirmation_execution_authorized": false,
+      "spent_confirmation_population_reuse_authorized": false,
+      "jev_authorized": false,
+      "architecture_comparison_authorized": false,
+      "semantic_change_authorized": false,
+      "hypothesis_promotion_authorized": false,
+      "summary": "ADR-0020 accepts the est-repair-v1.3.1 development-only preregistration and authorizes offline component repair under the fixed A then B then C order within at most 10 attempts. The Tier-1 authorized-information ceiling precedes any candidate, B0/B1/B2/B3 and the B2-derived ND-3 floor are frozen before any candidate evaluation, and ND-1/ND-2/ND-3, own-ranking invariance, input allowlisting, and the expanded component firewall are enforced as specified. The study stops at the first admissible pass and never evaluates a second passing candidate. It is an existence/sufficiency study, not an attribution of the preserved confirmation failure. No confirmation generation or execution, model inference, gate reinterpretation, semantic change, Jev, architecture comparison, or hypothesis promotion is authorized."
+    },
     "historical_only": [
       "E-001 describes scoped artifacts in the read-only IDS archive; it is not evidence for SER."
     ]
@@ -280,17 +304,17 @@
     "archive_head": "38b661324725c094ffcc820371a836573f4aadc5",
     "component_count": 31,
     "classification_summary": "0 reuse unchanged, 11 generalize, 14 empirical evidence only, 4 inspiration only, and 2 discard",
-    "summary": "Phase 1 found no legacy code suitable for unchanged reuse. Trace/provenance envelopes, completeness and access-policy checks, hash manifests, evaluator separation, paired controls, blinding, replay, and failed-run preservation survive only as patterns to rebuild behind SER-owned contracts. IDS data and labels are deferred environment/evaluator assets; prompts, rankers, comparators, product neighborhoods, domain schemas, and normalizers remain excluded prior solution logic. No generic Scope, Interval, epistemic-memory, flag, signal, or SER coupling-operator implementation was found in the current archive or reachable history."
+    "summary": "Phase 1 found no legacy code suitable for unchanged reuse. Trace/provenance envelopes, completeness and access-policy checks, hash manifests, evaluator separation, paired controls, blinding, replay, and failed-run preservation survive as patterns to rebuild behind SER-owned contracts. IDS data and labels stay deferred evaluator assets; prompts, rankers, comparators, neighborhoods, schemas, and normalizers remain excluded. No generic Scope, Interval, memory, flag, signal, or coupling operator exists."
   },
   "roadmap": {
     "active_phase_id": 5,
     "active_phase_title": "Controlled authorization action-value estimation",
-    "immediate_next_task": "Do not run inference. A separate Sol/Astra decision must resolve the v1.3 confirmation oracle blocker by authorizing either a separately versioned estimator/adapter change or a newly accepted oracle/confirmation interpretation. Until that decision, preserve the frozen semantics, populations, estimator hash, blocker artifacts, and inference prohibition.",
+    "immediate_next_task": "Execute the ADR-0020-authorized est-repair-v1.3.1 development study as preregistered: ceiling, baselines, then A/B/C candidates stopping at the first admissible pass. Leave inference, the spent confirmation population, and section-8 confirmation unauthorized.",
     "research_trunk": "GitLab authorization investigation is the primary practical target. MicroGym is a control validation instrument; IDS is only a possible semantic bridge; controlled software experimentation is trunk-aligned; remote sensing is dormant."
   },
   "non_goals": [
     "No production SER runtime; the implemented code consists of MicroGym and Static Semantic AuthzGym benchmark instruments plus small exact, reference, and deterministic mock controllers.",
-    "Four bounded real semantic-model protocols are preserved: architecture v1 is invalid, development contract v1.2 is transport-unstable, transport-envelope v1 is a transport-stable wire/response diagnostic, and stronger-model v1 is a mechanically valid development result whose fact/effect capability attribution is blocked by benchmark answerability; its confirmation remains model-unqueried. The subsequent zero-call localization and accepted v1.3 specification are offline work, not additional model protocols. None is a general LLM agent or an admitted architecture finding.",
+    "Four bounded real semantic-model protocols are preserved: architecture v1 invalid, contract v1.2 transport-unstable, transport-envelope v1 a transport-stable wire/response diagnostic, and stronger-model v1 a mechanically valid development result below threshold with capability attribution blocked by benchmark answerability. None is a general LLM agent or an admitted architecture finding; the zero-call localization and v1.3 specification are offline work.",
     "No coupling-law implementation, universal epistemic graph, production fuzzer, remote-sensing integration, IDS adapter, Jev condition, representation intervention, or new routing architecture.",
     "No IDS code or data import, real GitLab integration, or claim that IDS/GitLab validates SER."
   ]

@@ -183,6 +183,23 @@ AuthzGym v1.3 specification. V1.3 is a new instrument with source-grounded
 f0--f16 facts, public deterministic local-cue effects, five public visible-call
 categories, no hidden-role targets, and no normal summary condition. No new
 model/provider inference is authorized until its full freeze checklist passes.
+ADR-0020 additionally authorizes `est-repair-v1.3.1`, a bounded
+development-only existence study of a separately versioned estimator/adapter
+component under
+`experiments/authzgym_estimator_repair_v1_3_1/REPAIR_STUDY_PREREGISTRATION.md`:
+at most 10 attempts in the fixed A then B then C order, the Tier-1
+authorized-information ceiling computed before any candidate, B0--B3 and the
+B2-derived ND-3 floor frozen before any candidate evaluation, and the
+non-degeneracy, own-ranking invariance, input-allowlist, and expanded component
+firewall gates enforced exactly as specified. That study stops at the first
+admissible passing candidate, never evaluates a second one, and is an
+existence/sufficiency study rather than a causal attribution of the preserved
+confirmation failure. It authorizes no successor confirmation generation or
+execution: a later decision must name the frozen component hash and the frozen
+development-report hash first. No model/provider inference, no reuse of the
+spent `confirmation_v1_3` population, no gate weakening or reinterpretation, no
+semantic change, no Jev condition, no architecture comparison, and no
+hypothesis promotion is authorized by it.
 
 Architecture comparison, evaluation-population reruns, model escalation,
 general LLM agents, graph neural networks, TGNNs, learned policies, coupling

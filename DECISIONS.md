@@ -508,3 +508,75 @@ a new entry; do not rewrite it.
   contradiction makes the accepted contract impossible to implement. A future
   Jev study requires its own decision after v1.3 validation and may not alter
   this instrument to facilitate that comparison.
+
+## ADR-0020 -- Authorize the bounded development-only estimator repair `est-repair-v1.3.1`
+
+- Status: accepted
+- Date: 2026-09-18
+- Context: The unchanged v1.3 estimator passed the development canonical oracle
+  gate (top-1 0.625, top-2 0.875, mean normalized regret 0.175, zero illegal
+  targets, 40/40 transformation equivalence) but failed the sealed
+  fresh-confirmation canonical top-2 gate at 0.750 against the frozen `>= 0.80`
+  requirement. `experiments/authzgym_semantic_contract_v1_3/ORACLE_BLOCKER.md`
+  records the blocker, and an accepted external adjudication selected the
+  smallest repair: a prospective, separately versioned estimator/adapter change
+  with its own preregistration and evidence boundary. That repair is specified
+  normatively in
+  `experiments/authzgym_estimator_repair_v1_3_1/REPAIR_STUDY_PREREGISTRATION.md`
+  with a mechanical implementation plan in the same directory.
+- Decision: Accept
+  `experiments/authzgym_estimator_repair_v1_3_1/REPAIR_STUDY_PREREGISTRATION.md`
+  as the governing preregistration for `est-repair-v1.3.1` and authorize its
+  bounded offline development-only existence study in the fixed A then B then C
+  order within a total budget of at most 10 attempts (`<= 10`), under every
+  ceiling, baseline-freeze, non-degeneracy, own-ranking invariance, input
+  allowlist, component firewall, and stopping rule that preregistration
+  specifies. Section 8 successor confirmation generation, freezing, and
+  execution are **not** authorized.
+- Why: A measurement instrument whose scored answers are already known to be
+  misaligned with the unchanged downstream component cannot support a clean
+  component finding. The accepted v1.3 semantics are sound and frozen; the open
+  question is only whether some admissible, bounded-complexity,
+  invariance-certified component of the authorized public state can meet the
+  existing engineering gate, and whether the defect is confined to one
+  component boundary. Bounding the work to a bounded offline existence study,
+  with the ceiling and baselines frozen before any candidate exists and with a
+  single admissible pass ending the search, prevents the repair from becoming a
+  tuning exercise against a spent confirmation population.
+- Alternatives rejected: editing or retuning `src/ser/authzgym/policies.py` in
+  place to make the preserved confirmation gate pass; weakening, re-deriving, or
+  reinterpreting the top-2 `>= 0.80`, top-1 `>= 0.60`, or regret `<= 0.35`
+  thresholds; reusing, resampling, or characterizing the spent
+  `confirmation_v1_3` population; reinterpreting the preserved
+  fresh-confirmation failure; scoring candidates beyond the first admissible
+  pass or ranking passing candidates; authorizing section-8 confirmation
+  generation or execution at the same time as development; deriving gold from
+  hidden logical roles or evaluator-only channels; adding Jev, a representation
+  intervention, or an architecture comparison to the repair; and treating an
+  oracle or validator failure as permission to tune the estimator.
+- Consequences: Condition `est-repair-v1.3.1` becomes an authorized
+  development-only study whose artifacts live under
+  `experiments/authzgym_estimator_repair_v1_3_1/` and whose revised components,
+  if any, are new modules rather than edits to preserved baselines. Historical
+  v1.2 and v1.3 artifacts, responses, reports, hashes, classifiers, and blockers
+  remain immutable. Phase 5 remains active and Phase 5B remains blocked. A
+  passing development candidate yields at most a
+  `development_component_compatibility_diagnostic`; it is not an `E-*` evidence
+  record, promotes no hypothesis, and establishes no capability, architecture,
+  transfer, or model claim. Model/provider inference remains unauthorized, and a
+  later separate decision naming the frozen component hash and the frozen
+  development-report hash is required before any new confirmation population is
+  generated, frozen, or accessed.
+- Preserved under this decision: `src/ser/authzgym/policies.py` (SHA-256
+  `092a7a87...`), `src/ser/evaluation/authz_v1_3.py`, every AuthzGym v1.3
+  semantic rule, prompt, schema, population, threshold, usefulness target, prior
+  result, and protected artifact stay byte-unchanged, and the spent
+  `confirmation_v1_3` population is not opened, counted, sampled, or
+  characterized. Reusing it, weakening or reinterpreting any gate, Jev,
+  architecture comparison, semantic change, and hypothesis promotion all remain
+  unauthorized.
+- Revisit when: The development study terminates with a preregistered outcome
+  label and a frozen development report, or an implementation contradiction
+  appears that the accepted preregistration does not resolve. If a passing
+  component exists, the successor decision must name its source hash and the
+  development-report hash before section-8 confirmation work begins.

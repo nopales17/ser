@@ -143,6 +143,31 @@ Allowed statuses: `planned`, `active`, `done`.
   on a versioned estimator/adapter change or a new accepted oracle/confirmation
   interpretation. An oracle or validator failure is not permission to tune
   semantics or the estimator.
+- accepted repair authorization: ADR-0020 accepts
+  `experiments/authzgym_estimator_repair_v1_3_1/REPAIR_STUDY_PREREGISTRATION.md`
+  as the governing preregistration for `est-repair-v1.3.1` and authorizes
+  bounded offline development under the fixed A then B then C order, with a
+  total budget of at most 10 attempts (`<= 10`). The Tier-1
+  authorized-information ceiling is computed before any candidate; B0, B1, B2,
+  B3 and the B2-derived ND-3 floor are frozen before any candidate evaluation;
+  ND-1, ND-2, ND-3, own-ranking invariance, the section-2 input allowlist, and
+  the expanded section-9 component firewall are enforced exactly as specified.
+  The study is an existence/sufficiency study: it stops the whole development
+  study at the first admissible passing candidate, never evaluates a second one,
+  and preserves every refused or failing attempt in `CANDIDATE_LEDGER.jsonl`.
+  Section-8 successor confirmation generation and execution are not authorized;
+  a later decision must name the frozen component hash and the frozen
+  development-report hash first. The historical estimator, the fixed adapter,
+  all v1.3 semantics, populations, thresholds, usefulness targets, prior
+  results, and protected artifacts stay byte-unchanged, and model/provider
+  inference remains unauthorized.
+- current cursor: execution of the authorized `est-repair-v1.3.1` development
+  study is the active Phase 5 work item under ADR-0020. Its outcome, whatever
+  the label, is expected to be reported back to the deciding authority with the
+  ceiling result, the frozen baselines, the candidate ledger, the firewall scope
+  statement, and the unresolved questions; canonical state documents and
+  generated views are updated only by the acceptance workflow, not by the study
+  steps themselves.
 - readiness: Phase 5B is not ready. It requires a valid actual-model run to extract
   useful facts, rank inspections beyond trivial heuristics, route conditionally,
   and improve matched decision quality or efficiency under the frozen rule.
