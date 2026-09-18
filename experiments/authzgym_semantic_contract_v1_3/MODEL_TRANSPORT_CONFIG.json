@@ -1,0 +1,19 @@
+{
+  "confirmation_planned_calls": 56,
+  "development_planned_calls": 112,
+  "inference_authorized": false,
+  "limits": {
+    "hard_spend_ceiling_usd": 2.5,
+    "maximum_input_tokens": 4000,
+    "maximum_output_tokens": 1024
+  },
+  "model_identifier": "unassigned_until_separate_inference_authorization",
+  "provider_calls_authorized": 0,
+  "provider_response_artifacts": [],
+  "retry_policy": {
+    "identical_request_bytes_required": true,
+    "semantic_retries": 1,
+    "transport_replays": 1
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,21 @@
+{
+  "decision": "fresh_confirmation_v1_3_layouts_40_41",
+  "fallback_layout_indices": [
+    40,
+    41
+  ],
+  "fallback_split": "confirmation_v1_3",
+  "implementation_freeze_hashes": {
+    "annotation_code_sha256": "ca13215247297cd090ce7c6b23b94246295d94b260d78925233babdfa50c32ef",
+    "answerability_checker_sha256": "be7003ba946e79993778ae727cd5eab7cdee3e58baedb71b5d44ed03da814aa0",
+    "contract_code_sha256": "3a30d384a9c2337e8f002b9af8606c2800791daf5eff68af0f248bfb0e6ac8ee",
+    "population_code_sha256": "ac4b8d47bd1369a16f4fed0d80abe7e0943c90317c0037bb6c8715882f470fca"
+  },
+  "permitted_metadata_only": true,
+  "prior_confirmation_case_content_inspected": false,
+  "prohibited_fields_exposed": [],
+  "reason": "The required chronological repair ledger, signed declarations, and complete pre-freeze proof are absent. The fixed fresh fallback is mandatory.",
+  "reuse_allowed": false,
+  "schema_version": 1,
+  "selected_before_generated_content_inspection": true
+}

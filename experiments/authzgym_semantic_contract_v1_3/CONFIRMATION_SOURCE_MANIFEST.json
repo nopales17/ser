@@ -1,0 +1,14 @@
+{
+  "cases": 56,
+  "generation": "unchanged_frozen_authoring_method",
+  "layout_indices": [
+    40,
+    41
+  ],
+  "population_hash": "ec4d05d89b03d483a61d4098e9ff0c61712c86a7ef85e799fde4faf229f1b313",
+  "scheduled_calls": 56,
+  "schema_version": 1,
+  "source_episodes": 8,
+  "split": "confirmation_v1_3",
+  "variants_per_source": 7
+}

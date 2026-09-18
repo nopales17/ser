@@ -1,0 +1,40 @@
+{
+  "all_case_diagnostic_hash": "4d63eba1e9ba658eec03dba71f1ef297a8219b005e7d812fe8d99c2f5ef6cd4c",
+  "canonical_observed": {
+    "case_count": 8,
+    "discriminating_case_count": 8,
+    "illegal_target_count": 0,
+    "mean_normalized_regret": 0.24166666666666664,
+    "nondiscriminating_case_count": 0,
+    "top1": 0.625,
+    "top2": 0.75
+  },
+  "canonical_variants": [
+    "base_entry"
+  ],
+  "equivalence_failures": [],
+  "equivalence_pair_count": 40,
+  "estimator_hash_matches": true,
+  "estimator_source_sha256": "092a7a87d1227c1a1c85ac46c7122e38ac1b6b24d7aaa90abee05abfe4167393",
+  "experiment": "authzgym-semantic-contract-v1.3-oracle",
+  "frozen_estimator_sha256": "092a7a87d1227c1a1c85ac46c7122e38ac1b6b24d7aaa90abee05abfe4167393",
+  "gates": {
+    "illegal_targets_zero": true,
+    "regret": true,
+    "top1": true,
+    "top2": false
+  },
+  "inference_authorized": false,
+  "longest_artifact_noncanonical_observed": {
+    "case_count": 8,
+    "discriminating_case_count": 8,
+    "illegal_target_count": 0,
+    "mean_normalized_regret": 0.7833333333333333,
+    "nondiscriminating_case_count": 0,
+    "top1": 0.0,
+    "top2": 0.25
+  },
+  "schema_version": 1,
+  "split": "confirmation_v1_3",
+  "status": "blocked"
+}

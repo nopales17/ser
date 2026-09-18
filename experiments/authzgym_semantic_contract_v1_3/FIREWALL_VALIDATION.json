@@ -1,0 +1,43 @@
+{
+  "case_count": 56,
+  "checks": {
+    "normal fields have public provenance": {
+      "leaks": [],
+      "provenance_failures": [],
+      "status": "pass"
+    },
+    "normal initial state empty": {
+      "state": {
+        "candidate_effects": {},
+        "facts": {},
+        "oracle_derived_prior": false,
+        "response_sha256": "",
+        "unresolved_targets": {}
+      },
+      "status": "pass"
+    },
+    "normal module import isolation": {
+      "forbidden_imports": [],
+      "status": "pass"
+    },
+    "oracle and normal channels separated": {
+      "status": "pass"
+    },
+    "public-only replay": {
+      "byte_identical": true,
+      "evaluation_importable": false,
+      "restricted_files_absent": true,
+      "status": "pass"
+    },
+    "restricted-field mutation byte equality": {
+      "cases": 56,
+      "failures": [],
+      "status": "pass"
+    }
+  },
+  "experiment": "authzgym-semantic-contract-v1.3-firewall",
+  "normal_request_replay_hash": "24658f051481dbe3ee4129e478bc91863a4c3860511cea394b24075092dd5037",
+  "public_contract_hash": "66a28911db5134653c846de7d70400bfbebf5c36cb918760029d7f436943c7ce",
+  "schema_version": 1,
+  "status": "pass"
+}

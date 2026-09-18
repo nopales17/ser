@@ -73,6 +73,37 @@ Never hand-edit `theory/IDEA_MAP.md`, `state/CONTEXT_PACKET.md`, or
 - Do not treat IDS measurements as SER evidence.
 - Do not commit, create a remote, or push unless explicitly requested.
 
+## AuthzGym v1.3 workflow gate
+
+- Read ADR-0019 and
+  `experiments/authzgym_semantic_contract_v1_3/PREREGISTRATION.md` before any
+  AuthzGym semantic-contract work. Treat its label, population, scoring,
+  confirmation, and validity rules as frozen research semantics.
+- Follow
+  `experiments/authzgym_semantic_contract_v1_3/IMPLEMENTATION_PLAN.md` in order.
+  If implementation would require choosing a new label meaning, syntax rule,
+  transformation, threshold, population rule, or access condition, stop and
+  surface the contradiction. Do not assign the choice to an implementation
+  agent.
+- Never edit a historical AuthzGym experiment artifact or old ADR to apply the
+  v1.3 correction. Current interpretation belongs in the v1.3 corrigendum and
+  living state documents.
+- The independent answerability checker must consume a public-only bundle and
+  must not import or reuse label-producing code, gold arrays, expected tags,
+  scorer helpers, oracle helpers, logical roles, usefulness, or conclusions.
+- Normal input/state code must not import evaluator/oracle modules. Run
+  restricted-field mutation and public-only replay tests; field-name scanning
+  alone is insufficient firewall evidence.
+- Before the confirmation eligibility decision, inspect only the content-blind
+  metadata explicitly allowed by the preregistration. If no-case-specific-
+  influence cannot be demonstrated, use the fixed fresh confirmation fallback.
+- Do not run a model/provider call for v1.3 until every freeze-checklist item is
+  complete, the final manifest verifies from a clean checkout, and a separate
+  inference authorization names that manifest. Oracle failure is a blocker, not
+  permission to tune the estimator.
+- Jev remains deferred and must not influence v1.3 semantics, code paths,
+  populations, or acceptance tests.
+
 ## Before finishing a change
 
 1. Run `python3 tools/emit_context.py`.

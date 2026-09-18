@@ -1,0 +1,14 @@
+{
+  "files": {
+    "CONFIRMATION_PUBLIC_POPULATION.json": "0e20284be388131d451f5befc22a048b3badba87a338168d8f7865bfbc9bd28f",
+    "CONFIRMATION_SCHEDULE.json": "337b83d3decd3c47db593e8ffa5606a26581279ac26a75d3dac76ecd54025a48",
+    "DEVELOPMENT_PUBLIC_POPULATION.json": "dda4e0c08a9c29a58a912fdcb5268ddf602aac79c47f6dd3fb94102b5dc8c365",
+    "DEVELOPMENT_SCHEDULE.json": "6e8c4e80fe9df0ae58dd87d5131411c97663f369fce2bdbafee779ce1fa65224",
+    "PUBLIC_CONTRACT.json": "95df3f56cfabadd3aefa50e7fd5a3e6d77b7625c7db0860649a92ff4f213bb26",
+    "semantic_observation_v1_3.txt": "6921e45042f5f34f3fcb25ba1d2732e3bcbc89a8ae12f1f2cb867520534dff9e",
+    "semantic_vocabulary_v1_3.json": "06dea1e26856b216e5476803f3db9a4dd299f61f9a7927481d78db0da62c56c0"
+  },
+  "manifest_hash": "bb0237fb519f319b6e93d301297f017464bf8bbf4f5de2e84612ba81c9121ac4",
+  "schema_version": 1,
+  "split": "both"
+}

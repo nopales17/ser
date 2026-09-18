@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "as_of": "2026-09-03",
+  "as_of": "2026-09-18",
   "project_name": "SER (provisional)",
-  "project_maturity": "phase_5a_benchmark_answerability_repair_required",
+  "project_maturity": "phase_5a_v1_3_implementation_complete_confirmation_oracle_blocked_inference_unauthorized",
   "runtime": {
     "built": true,
     "controllers": 17,
@@ -24,7 +24,12 @@
     "phase_5a_4_semantic_contract_v1_2_complete_unstable": true,
     "phase_5a_5_transport_envelope_complete_stable": true,
     "phase_5a_6_stronger_model_capability_complete_below_threshold": true,
-    "phase_5a_7_semantic_bottleneck_localization_complete": true
+    "phase_5a_7_semantic_bottleneck_localization_complete": true,
+    "phase_5a_8_authzgym_v1_3_semantics_preregistered": true,
+    "authzgym_v1_3_implemented": true,
+    "authzgym_v1_3_frozen_no_inference": false,
+    "authzgym_v1_3_oracle_blocked": true,
+    "authzgym_v1_3_inference_authorized": false
   },
   "formal_control_problem": {
     "phase_2_complete": true,
@@ -40,7 +45,7 @@
   },
   "evidence": {
     "ser_experiments": ["E-002", "E-003"],
-    "summary": "MicroGym v1 admitted a narrow stopping/cost finding without conditional routing. Routing-v1 then supported a narrow one-step routing result under clean supplied likelihoods. Static Semantic AuthzGym protocol 1.1 remains a validated benchmark calibration. Real-model v1 is preserved as invalid and semantic-contract v1.2 as transport-unstable. The separate transport-envelope v1 run established transport_stable and contract_stable for the exact nano development protocol. The subsequent stronger-model study retained v1.2, passed transport/schema smoke, and stopped at the frozen 16/32 development futility boundary because multiple semantic and downstream thresholds were mathematically unreachable even under perfect remaining calls. The next offline localization found that v1.2 fact/effect labels are not fully answerable from the model-visible contract, stopped all new inference at zero incremental cost, and left confirmation untouched. No AuthzGym E-* finding or architecture claim was admitted, and no general SER hypothesis was promoted.",
+    "summary": "MicroGym v1 admitted narrow stopping/cost support and routing-v1 narrow one-step exact-likelihood routing. AuthzGym 1.1 remains benchmark calibration; real-model v1 is invalid; v1.2 is transport-unstable; and the Nano envelope established scoped transport/wire reliability. Mini stopped under the frozen v1.2 futility rule, after which a zero-call audit found unanswerable labels and blocked capability attribution. ADR-0019 defines v1.3; implementation, answerability, and firewall pass, but the confirmation oracle blocks freeze and inference. No AuthzGym E-* or architecture finding was admitted.",
     "microgym_v1": {
       "population_hash": "a9234fa60b40d3628f6317284a964c95917bcd7442796d8961f18b14b9958b3d",
       "problem_regimes": 24,
@@ -159,7 +164,7 @@
       "contract_classifier": "contract_stable",
       "semantic_diagnostic": "semantic_signal_weak",
       "next_experiment": "case_c_same_contract_next_stronger_inexpensive_model",
-      "summary": "The exact frozen v1.2 semantic workload completed on one supervised tunnel with 128/128 provider responses, no transport failures or retries, and full cleanup. All responses were first-attempt schema-valid, removing transport and wire-contract reliability as confounders for this development schedule. Nano semantic quality and invariance remained below the frozen thresholds, while the oracle-conditioned unchanged estimator reproduced 1.0/1.0/0.0. This is a capability-floor diagnostic, not architecture evidence or an E-* finding."
+      "summary": "The exact frozen v1.2 semantic workload completed on one supervised tunnel with 128/128 provider responses, no transport failures or retries, and full cleanup. All responses were first-attempt schema-valid, establishing scoped transport and wire-schema reliability. Under ADR-0019, semantic quality and oracle-conditioned action metrics are conditional on the defective v1.2 scorer, and the 16 non-empty summary calls were privileged-input exposures. This is not a clean capability-floor diagnostic, architecture evidence, or an E-* finding."
     },
     "authzgym_stronger_model_v1": {
       "evidence_status": "development_semantic_capability_below_threshold_no_confirmation_no_hypothesis_admission",
@@ -201,7 +206,7 @@
       "preregistered_classifier": "semantic_capability_below_threshold",
       "confirmation_status": "not_run_by_preregistered_development_gate",
       "next_experiment": "investigate_semantic_representation_failure",
-      "summary": "The exact stronger mini model produced 20/20 contract-valid first-attempt responses across corrected smoke and the executed development prefix, with zero transport failures or retries. At the balanced 16-call checkpoint the frozen optimistic bound showed fact precision, effect precision, unresolved-relation recall, action top-1/top-2, and regret could not all reach threshold even if every remaining call were perfect, so development stopped and the fresh population remained untouched. Oracle v1.2 content gave 1.0/1.0/0.0 on both development and fresh canonical entries, preserving downstream-estimator and benchmark adequacy while localizing the measured failure upstream. The result is development-only capability-floor evidence, not SER architecture evidence or an E-* finding."
+      "summary": "The exact stronger mini model produced 20/20 contract-valid first-attempt responses across corrected smoke and the executed development prefix, with zero transport failures or retries. At the balanced 16-call checkpoint the frozen v1.2 optimistic bound could no longer reach all thresholds, so provider confirmation calls remained zero. Under ADR-0019, the semantic metrics and futility conclusion are descriptive relative to the defective v1.2 scorer. The aggregate oracle result shows compatibility with curated evaluator observations and authored usefulness, not benchmark adequacy or a clean capability floor. This is not SER architecture evidence or an E-* finding."
     },
     "authzgym_semantic_bottleneck_v1": {
       "evidence_status": "offline_benchmark_answerability_diagnostic_no_hypothesis_admission",
@@ -224,7 +229,48 @@
       "confirmation_status": "untouched",
       "preregistered_classifier": "benchmark_ambiguity_detected",
       "next_experiment": "benchmark_task_definition_repair",
-      "summary": "The complete exposed-development offline audit found that the v1.2 prompt requests every source-direct fact while evaluator expected_content retains only curated artifact mechanism tags, and that test-specific labels require evaluator-only logical roles. All four frozen diagnostic cases failed the answerability gate, so the decomposed Mini and stronger-model conditions were not run. Genuine Mini unresolved-relation misses and transformation instability remain descriptive, but the contaminated fact/effect aggregate cannot localize a clean model capability floor. Confirmation remained untouched; no E-* item or hypothesis promotion followed."
+      "summary": "The complete exposed-development offline audit found that the v1.2 prompt requests every source-direct fact while evaluator expected_content retains only curated artifact mechanism tags, and that test-specific labels require evaluator-only logical roles. All four frozen diagnostic cases failed the answerability gate, so the decomposed Mini and stronger-model conditions were not run. Genuine Mini unresolved-relation misses and transformation instability remain descriptive, but the contaminated fact/effect aggregate cannot localize a clean model capability floor. Confirmation remained model-unqueried, although an earlier evaluator-oracle aggregate had already been computed; no E-* item or hypothesis promotion followed."
+    },
+    "authzgym_semantic_contract_v1_3": {
+      "evidence_status": "offline_implementation_complete_confirmation_oracle_blocked_no_inference",
+      "decision": "ADR-0019",
+      "preregistration": "experiments/authzgym_semantic_contract_v1_3/PREREGISTRATION.md",
+      "implementation_plan": "experiments/authzgym_semantic_contract_v1_3/IMPLEMENTATION_PLAN.md",
+      "prior_result_corrigendum": "experiments/authzgym_semantic_contract_v1_3/PRIOR_RESULT_CORRIGENDUM.md",
+      "retained_fact_slots": 17,
+      "retired_fact_slots": 8,
+      "effect_families": 4,
+      "relation_categories": 5,
+      "development_source_instances_planned": 8,
+      "development_variants_per_source_planned": 7,
+      "development_cases_planned": 56,
+      "development_calls_planned": 112,
+      "confirmation_source_instances_planned": 8,
+      "confirmation_cases_planned": 56,
+      "confirmation_calls_planned": 56,
+      "implementation_complete": true,
+      "answerability_validation_complete": true,
+      "firewall_validation_complete": true,
+      "oracle_validation_complete": false,
+      "population_frozen": false,
+      "inference_authorized": false,
+      "oracle_blocker": "experiments/authzgym_semantic_contract_v1_3/ORACLE_BLOCKER.md",
+      "development_oracle": {
+        "canonical_cases": 8,
+        "top1": 0.625,
+        "top2": 0.875,
+        "mean_normalized_regret": 0.175,
+        "status": "pass"
+      },
+      "confirmation_oracle": {
+        "canonical_cases": 8,
+        "top1": 0.625,
+        "top2": 0.75,
+        "mean_normalized_regret": 0.24166666666666664,
+        "status": "blocked",
+        "failed_gate": "top2 >= 0.80"
+      },
+      "summary": "ADR-0019 defines v1.3 as a new source-grounded instrument. Offline implementation, 56-case development and fresh-confirmation populations, certificates, the public-only answerability checker, and the firewall suite pass. The unchanged estimator passes the development canonical oracle gate but fails the fresh-confirmation canonical top-2 gate, 0.75 versus >= 0.80. ORACLE_BLOCKER.md records the blocker. Estimator tuning, population substitution, freeze, inference, and E-* claims remain unauthorized."
     },
     "historical_only": [
       "E-001 describes scoped artifacts in the read-only IDS archive; it is not evidence for SER."
@@ -239,13 +285,13 @@
   "roadmap": {
     "active_phase_id": 5,
     "active_phase_title": "Controlled authorization action-value estimation",
-    "immediate_next_task": "Define and preregister a separately versioned AuthzGym benchmark/task repair that aligns evaluator facts and effects with the public semantic-slot definitions or exposes the minimum role information needed for answerability, then revalidate the evaluator firewall and oracle before any model or representation escalation.",
+    "immediate_next_task": "Do not run inference. A separate Sol/Astra decision must resolve the v1.3 confirmation oracle blocker by authorizing either a separately versioned estimator/adapter change or a newly accepted oracle/confirmation interpretation. Until that decision, preserve the frozen semantics, populations, estimator hash, blocker artifacts, and inference prohibition.",
     "research_trunk": "GitLab authorization investigation is the primary practical target. MicroGym is a control validation instrument; IDS is only a possible semantic bridge; controlled software experimentation is trunk-aligned; remote sensing is dormant."
   },
   "non_goals": [
     "No production SER runtime; the implemented code consists of MicroGym and Static Semantic AuthzGym benchmark instruments plus small exact, reference, and deterministic mock controllers.",
-    "Four bounded real semantic-model protocols are preserved: architecture v1 is invalid, development contract v1.2 is transport-unstable, transport-envelope v1 is a transport-stable weak-nano development diagnostic, and stronger-model v1 is a valid development failure whose full fact/effect capability attribution is now blocked by benchmark answerability; its confirmation remains unqueried. The subsequent zero-call localization is an offline diagnostic, not a fifth model protocol. None is a general LLM agent or an admitted architecture finding.",
-    "No coupling-law implementation, universal epistemic graph, production fuzzer, remote-sensing integration, or IDS adapter.",
+    "Four bounded real semantic-model protocols are preserved: architecture v1 is invalid, development contract v1.2 is transport-unstable, transport-envelope v1 is a transport-stable wire/response diagnostic, and stronger-model v1 is a mechanically valid development result whose fact/effect capability attribution is blocked by benchmark answerability; its confirmation remains model-unqueried. The subsequent zero-call localization and accepted v1.3 specification are offline work, not additional model protocols. None is a general LLM agent or an admitted architecture finding.",
+    "No coupling-law implementation, universal epistemic graph, production fuzzer, remote-sensing integration, IDS adapter, Jev condition, representation intervention, or new routing architecture.",
     "No IDS code or data import, real GitLab integration, or claim that IDS/GitLab validates SER."
   ]
 }

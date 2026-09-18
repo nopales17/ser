@@ -1,0 +1,48 @@
+{
+  "candidate_slots": [
+    "c0",
+    "c1",
+    "c2",
+    "c3"
+  ],
+  "effect_values": [
+    "support",
+    "contradict",
+    "neutral",
+    "unknown"
+  ],
+  "fact_slots": {
+    "f0": "alternate-entry",
+    "f1": "direct-only-membership",
+    "f2": "inherited-membership-included",
+    "f3": "role-fallback",
+    "f4": "role-map-transform",
+    "f5": "role-preserved",
+    "f6": "missing-token-scope",
+    "f7": "missing-feature-context",
+    "f8": "token-scope-forwarded",
+    "f9": "feature-context-forwarded",
+    "f10": "sensitive-without-owner-check",
+    "f11": "ownership-compared",
+    "f12": "weak-ownership-audit",
+    "f13": "weak-membership-audit",
+    "f14": "weak-role-audit",
+    "f15": "weak-context-audit",
+    "f16": "cross-artifact-call"
+  },
+  "normal_summary_fields": [],
+  "relation_slots": {
+    "r0": "ownership",
+    "r1": "membership",
+    "r2": "role",
+    "r3": "context",
+    "r4": "general_dependency"
+  },
+  "response_top_level_keys": [
+    "facts",
+    "candidate_effects",
+    "unresolved_targets"
+  ],
+  "schema_version": 1,
+  "semantic_interface": "authzgym_semantic_observation_v1_3"
+}

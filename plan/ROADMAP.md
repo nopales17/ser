@@ -100,7 +100,8 @@ Allowed statuses: `planned`, `active`, `done`.
 - current cursor: Phase 5A.1 through Phase 5A.7 are complete; Phase 5A overall
   is not complete. Real-model v1 remains `invalid`, semantic-contract v1.2
   remains preserved as transport-unstable, and transport-envelope v1 remains
-  the transport/contract-stable weak-nano diagnostic. Phase 5A.6 changed only
+  the transport/contract-stable Nano wire diagnostic; ADR-0019 withdraws its
+  clean semantic capability-floor interpretation. Phase 5A.6 changed only
   the model to `patchersniper_praneeth/gpt-5.4-mini` under unchanged v1.2. Its
   smoke and 16 executed development calls were all first-attempt schema-valid
   with zero transport failures or retries, but the frozen early-stop rule fired
@@ -121,6 +122,27 @@ Allowed statuses: `planned`, `active`, `done`.
   benchmark/task-definition repair that preserves v1.2 and the prior result,
   re-establishes answerability and the evaluator firewall, and precedes any
   model escalation, representation intervention, or architecture comparison.
+- accepted repair specification: ADR-0019 freezes AuthzGym v1.3 as a new
+  measurement instrument rather than a v1.2 rewrite. The accepted public task
+  retains f0--f16, four mechanism families, seven non-summary variants, public
+  deterministic local-cue effects, and five visible-call categories; it retires
+  f17--f24, excludes hidden logical roles and `maximal_public_summary`, and
+  prohibits evaluator-derived normal state. The exact preregistration and
+  mechanical implementation handoff live in
+  `experiments/authzgym_semantic_contract_v1_3/`. Historical v1.2 artifacts and
+  results remain immutable and are qualified only through the separate living
+  corrigendum.
+- current cursor: v1.3 offline implementation is complete through the
+  development and fresh-confirmation populations, independent certificates,
+  public-only answerability checker, restricted-field firewall suite, scoring
+  fixtures, and the fixed estimator adapter. The unchanged historical estimator
+  passes the development canonical oracle gate but the sealed fresh-confirmation
+  canonical top-2 gate fails at 0.75 versus the frozen `>= 0.80` requirement.
+  `ORACLE_BLOCKER.md` records the blocker. Population freeze and all inference
+  remain unauthorized; the next admissible step is a separate Sol/Astra decision
+  on a versioned estimator/adapter change or a new accepted oracle/confirmation
+  interpretation. An oracle or validator failure is not permission to tune
+  semantics or the estimator.
 - readiness: Phase 5B is not ready. It requires a valid actual-model run to extract
   useful facts, rank inspections beyond trivial heuristics, route conditionally,
   and improve matched decision quality or efficiency under the frozen rule.

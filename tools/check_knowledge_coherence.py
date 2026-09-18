@@ -930,6 +930,9 @@ def check_phase_progress_status() -> dict[str, object]:
         "experiments/authzgym_semantic_bottleneck_v1/REPORT.md",
         "experiments/authzgym_semantic_bottleneck_v1/INTERPRETATION.md",
         "experiments/authzgym_semantic_bottleneck_v1/IMPLEMENTATION_NOTES.md",
+        "experiments/authzgym_semantic_contract_v1_3/PREREGISTRATION.md",
+        "experiments/authzgym_semantic_contract_v1_3/IMPLEMENTATION_PLAN.md",
+        "experiments/authzgym_semantic_contract_v1_3/PRIOR_RESULT_CORRIGENDUM.md",
     )
     missing_experiment_paths = [path for path in experiment_paths if not (ROOT / path).exists()]
     if missing_experiment_paths:
@@ -1017,6 +1020,9 @@ def check_phase_progress_status() -> dict[str, object]:
         authz_bottleneck_status = current.get("evidence", {}).get(
             "authzgym_semantic_bottleneck_v1", {}
         )
+        authz_v1_3_status = current.get("evidence", {}).get(
+            "authzgym_semantic_contract_v1_3", {}
+        )
         if authz_v1_validation.get("status") != "fail":
             errors.append("preserved AuthzGym v1 calibration must remain invalid")
         if authz_v1_1_validation.get("status") != "pass":
@@ -1084,7 +1090,7 @@ def check_phase_progress_status() -> dict[str, object]:
             or authz_transport_status.get("raw_transport_failures") != 0
         ):
             errors.append(
-                "AuthzGym transport-envelope v1 must remain a stable transport/contract and weak-nano development diagnostic without hypothesis admission"
+                "AuthzGym transport-envelope v1 historical transport/wire facts and classifiers must remain preserved without hypothesis admission"
             )
         if (
             authz_stronger_validation.get("status") != "pass"
@@ -1104,7 +1110,7 @@ def check_phase_progress_status() -> dict[str, object]:
             != "semantic_capability_below_threshold"
         ):
             errors.append(
-                "AuthzGym stronger-model v1 must remain a valid development capability-floor failure with confirmation untouched and no hypothesis admission"
+                "AuthzGym stronger-model v1 historical classifier, zero provider confirmation calls, and no-hypothesis boundary must remain preserved"
             )
         if (
             authz_bottleneck_validation.get("status") != "pass"
@@ -1131,14 +1137,32 @@ def check_phase_progress_status() -> dict[str, object]:
             or authz_bottleneck_status.get("confirmation_status") != "untouched"
         ):
             errors.append(
-                "AuthzGym semantic-bottleneck v1 must remain a zero-call benchmark-answerability diagnostic with confirmation untouched and no hypothesis admission"
+                "AuthzGym semantic-bottleneck v1 must remain a zero-call benchmark-answerability diagnostic without hypothesis admission"
+            )
+        if (
+            authz_v1_3_status.get("evidence_status")
+            != "offline_implementation_complete_confirmation_oracle_blocked_no_inference"
+            or authz_v1_3_status.get("implementation_complete") is not True
+            or authz_v1_3_status.get("answerability_validation_complete") is not True
+            or authz_v1_3_status.get("firewall_validation_complete") is not True
+            or authz_v1_3_status.get("oracle_validation_complete") is not False
+            or authz_v1_3_status.get("population_frozen") is not False
+            or authz_v1_3_status.get("inference_authorized") is not False
+            or authz_v1_3_status.get("retained_fact_slots") != 17
+            or authz_v1_3_status.get("retired_fact_slots") != 8
+            or authz_v1_3_status.get("relation_categories") != 5
+            or authz_v1_3_status.get("development_cases_planned") != 56
+            or authz_v1_3_status.get("development_calls_planned") != 112
+        ):
+            errors.append(
+                "AuthzGym v1.3 must remain offline-implemented with answerability and firewall validation recorded, a preserved confirmation-oracle blocker, no population freeze, no inference authorization, and unchanged preregistered dimensions"
             )
     return result(
         "phase_progress_status",
         not errors,
         "errors: " + "; ".join(errors)
         if errors
-        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are recorded narrowly; Phase 5A preserves benchmark calibration and prior failures, records transport-stable/contract-stable weak-nano diagnostics, preserves the stronger-model development failure with confirmation untouched, and records the zero-call benchmark-answerability localization without hypothesis admission; Phase 5 remains active",
+        else "Phase 2 counts remain coherent; Phase 3 and Phase 4 evidence are narrow; Phase 5A preserves historical AuthzGym classifiers and zero-call localization, v1.3 implementation and its development answerability/firewall checks are recorded, and its confirmation oracle blocker leaves freeze and inference blocked; Phase 5 remains active",
     )
 
 

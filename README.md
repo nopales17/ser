@@ -30,11 +30,15 @@ transport-unstable, while the subsequent transport-envelope study completed
 that exact development protocol. Nano's semantic signal was weak. A subsequent
 preregistered `gpt-5.4-mini` study retained v1.2 and again found stable transport
 and schema behavior, but stopped at its frozen 16/32 development futility
-boundary because six semantic/downstream requirements were mathematically
-unreachable. Its untouched confirmation population was not run; oracle semantic
-state still repaired action ranking completely. These are capability-floor
-diagnostics, not admitted SER architecture findings: semantic action-value
-estimation and advantage over ReAct or an ordinary agent remain unproved.
+boundary. A later zero-call audit found that v1.2's scorer did not match its
+public source-direct task and that one Nano summary condition exposed
+oracle-derived prior state. ADR-0019 therefore preserves v1.2 but withdraws a
+clean fact/effect capability-floor interpretation. AuthzGym v1.3 is now the
+accepted new instrument specification: it uses source-grounded f0--f16 labels,
+public deterministic local-cue effects, five visible-call categories, no hidden
+roles, and no summary condition. It has not been implemented or run. Semantic
+action-value estimation and advantage over ReAct or an ordinary agent remain
+unproved.
 
 ## Start here
 
@@ -91,14 +95,17 @@ generated files directly.
 
 ## Current non-goals
 
-Active Phase 5 next permits only a separately preregistered, bounded diagnosis
-of the valid stronger-model development failure under semantic contract v1.2.
-That work must distinguish model inability, systematic interface omission, and
-task ambiguity without changing v1.2 in place or beginning an architecture
-comparison. The frozen untouched confirmation population remains unqueried.
-Phase 5 does not authorize real GitLab integration,
+Active Phase 5 permits only offline implementation and validation of the exact
+AuthzGym v1.3 preregistration under ADR-0019. The instrument, independent
+answerability certificates/checker, firewall suite, unchanged-estimator oracle
+validation, development and confirmation populations, manifests, and freeze
+record must all pass before any new model/provider inference. The old v1.2
+confirmation protocol is not resumed; underlying unqueried source instances are
+reusable only under the recorded no-influence proof, otherwise the preregistered
+fresh fallback is mandatory. Phase 5 does not authorize real GitLab integration,
 broad vulnerability discovery, general LLM agents, graph policies, coupling
 operators, production fuzzers, IDS adapters, remote-sensing integrations, or
-training infrastructure. GitLab authorization is the practical research trunk,
+training infrastructure, and it does not authorize Jev, model escalation,
+representation intervention, or architecture comparison. GitLab authorization is the practical research trunk,
 not current evidence; the completed IDS-to-CVE project remains read-only
 historical input and only a conditional semantic bridge.

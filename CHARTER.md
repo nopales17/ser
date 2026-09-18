@@ -166,23 +166,31 @@ tables. Its deterministic mock calibration is implementation validation, not an
 empirical result. Real-model v1 was invalid from response truncation and dynamic
 references. Development-only semantic-contract v1.2 then removed those free-
 form channels but was classified `contract_unstable` after its ephemeral egress
-tunnel failed, leaving only 8/128 valid calls. Transport-envelope v1 then
-retained the exact semantic contract and completed 128/128 provider calls with
-zero transport failures; all 128 were first-attempt schema-valid, while the
-nano semantic signal remained weak. Under ADR-0018, transport stability and
-mechanical contract reliability are accepted only for that development
-protocol. The weak nano measurements are capability-floor diagnostics, not SER
-evidence. The next authorized empirical work is a separately versioned,
-preregistered stronger-inexpensive-model semantic study retaining contract v1.2
-and using a fresh confirmatory design before any architecture claim.
+tunnel failed, leaving only 8/128 valid calls. Transport-envelope v1 retained
+the exact semantic contract and completed 128/128 provider calls with zero
+transport failures; all 128 were first-attempt schema-valid. A later Mini study
+stopped under its frozen v1.2 futility rule, and the zero-call localization then
+found that v1.2 fact/effect labels were not fully answerable from public input.
+It also exposed an evaluator-derived normal summary path in the Nano stress
+population. Under ADR-0019, v1.2 remains historical and its transport/wire facts
+remain scoped implementation observations, while clean semantic capability
+interpretations are withdrawn or made conditional by the separate corrigendum.
 
-Architecture comparison, evaluation-population reruns, general LLM agents,
-graph neural networks, TGNNs, learned policies, coupling
+The only currently authorized Phase 5 work is offline implementation,
+independent answerability validation, firewall validation, unchanged-estimator
+oracle validation, population construction, and complete freezing of the exact
+AuthzGym v1.3 specification. V1.3 is a new instrument with source-grounded
+f0--f16 facts, public deterministic local-cue effects, five public visible-call
+categories, no hidden-role targets, and no normal summary condition. No new
+model/provider inference is authorized until its full freeze checklist passes.
+
+Architecture comparison, evaluation-population reruns, model escalation,
+general LLM agents, graph neural networks, TGNNs, learned policies, coupling
 laws, semantic compressors, fuzzers, IDS adapters, GitLab integration, remote-
-sensing integrations, epistemic graph runtimes, and training infrastructure
-remain non-goals. Phase 5 authorizes only the next preregistered inexpensive
-semantic capability study needed for Static Semantic AuthzGym, not a production
-model runtime or an architecture comparison.
+sensing integrations, epistemic graph runtimes, Jev, and training infrastructure
+remain non-goals. Phase 5 currently authorizes an offline measurement-instrument
+repair, not a production model runtime, semantic capability run, or architecture
+comparison.
 Do not import IDS code or datasets. GitLab authorization is the primary
 practical trunk and IDS a possible semantic validation instrument under
 ADR-0013; neither is current evidence. Phase 5 does not authorize real GitLab

@@ -71,20 +71,24 @@ response-schema design by removing free-form and dynamic-reference output
 channels, but its first development stress run was transport-unstable. A
 separate transport-envelope study retained v1.2 and completed 128/128
 `gpt-5.4-nano` calls with `transport_stable` and `contract_stable` for that exact
-development protocol; nano's semantic signal was weak. These capability-floor
-diagnostics admit no `E-*` finding and do not promote `H-018`, `H-017`, `H-001`,
-or `H-016`; `H-018` remains `working`.
+development protocol. Under ADR-0019 and the v1.2 corrigendum,
+`contract_stable` denotes transport/wire-schema reliability only. The semantic
+aggregates are conditional on a defective scorer, and the non-empty summary
+condition used oracle-derived normal state. They do not establish a clean Nano
+capability floor, admit no `E-*` finding, and do not promote `H-018`, `H-017`,
+`H-001`, or `H-016`; `H-018` remains `working`.
 
 The separately versioned stronger-model study is now complete with
 `semantic_capability_below_threshold`. `gpt-5.4-mini` produced structurally valid
 development responses, but the frozen futility rule stopped at 16/32 because
 multiple semantic and model-conditioned action-value thresholds were no longer
 reachable. The fresh confirmation population was not run. Evaluator-oracle v1.2
-content continued to yield top-1 1.0, top-2 1.0, and regret 0.0, so this valid
-development result localizes the measured bottleneck upstream of the existing
-deterministic estimator but does not distinguish model inability from systematic
-interface omission or task ambiguity. It admits no `E-*` finding and does not
-promote `H-018`, `H-017`, `H-001`, or `H-016`.
+content yielded top-1 1.0, top-2 1.0, and regret 0.0, but that shows only
+compatibility between curated evaluator observations, authored usefulness, and
+the existing estimator. The model metrics and futility result remain
+descriptive relative to v1.2 and do not distinguish model inability from
+systematic interface omission or task ambiguity. They admit no `E-*` finding
+and do not promote `H-018`, `H-017`, `H-001`, or `H-016`.
 
 The subsequent zero-call semantic-bottleneck localization audited every exposed
 Mini development error before attempting a decomposed prompt or stronger model.
@@ -97,6 +101,12 @@ unresolved-relation omissions and transformation instability remain descriptive
 weaknesses, but the contaminated fact/effect aggregate cannot support a clean
 model-capability attribution. No hypothesis is promoted or rejected; H-018,
 H-017, H-001, and H-016 retain their existing statuses.
+
+ADR-0019 now accepts a separately versioned AuthzGym v1.3 specification. It is
+source-grounded, removes hidden-role and oracle-summary targets, and requires
+independent answerability, firewall, and unchanged-estimator oracle validation
+before any inference. This is an instrument-design decision, not evidence for
+H-018. V1.3 is not yet implemented or run.
 
 The four Phase 2 domain instantiations establish representational coverage only.
 They do not validate allocation value, scope-aware routing, active investigation,

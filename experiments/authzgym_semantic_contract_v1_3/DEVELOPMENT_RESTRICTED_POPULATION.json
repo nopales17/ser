@@ -1,0 +1,6218 @@
+{
+  "cases": [
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-5e6417ce899f--base_entry--435260e32a",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "435260e32aa4fb2f19b810308185bb2f92c059ac96cd67088db669e0e61a8541",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "source_family": "ownership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-1d79911a",
+          "a-2ae55697"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 4,
+          "a-2ae55697": 5,
+          "a-38faee81": 2,
+          "a-6d5342e0": 1,
+          "a-f7248310": 3,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-1d79911a",
+          "a-2ae55697"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t4",
+          "a-2ae55697": "t5",
+          "a-38faee81": "t2",
+          "a-6d5342e0": "t1",
+          "a-f7248310": "t3"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.65,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 1.0
+      },
+      "variant": "base_entry"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-5e6417ce899f--longest_artifact--435260e32a",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "435260e32aa4fb2f19b810308185bb2f92c059ac96cd67088db669e0e61a8541",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "source_family": "ownership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-1d79911a",
+          "a-2ae55697"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 4,
+          "a-2ae55697": 5,
+          "a-38faee81": 2,
+          "a-6d5342e0": 1,
+          "a-f7248310": 3,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-1d79911a",
+          "a-2ae55697"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t4",
+          "a-2ae55697": "t5",
+          "a-38faee81": "t2",
+          "a-6d5342e0": "t1",
+          "a-f7248310": "t3"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.65,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 1.0
+      },
+      "variant": "longest_artifact"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-5e6417ce899f--artifact_reordering--bdffd7b848",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "bdffd7b8486d8a33c772c8e015fc11a39be712becbfe7ba02131e8b099574ca7",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "source_family": "ownership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-1d79911a",
+          "a-2ae55697"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 4,
+          "a-2ae55697": 5,
+          "a-38faee81": 2,
+          "a-6d5342e0": 1,
+          "a-f7248310": 3,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-2ae55697",
+          "a-1d79911a",
+          "a-f7248310",
+          "a-38faee81",
+          "a-6d5342e0"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t2",
+          "a-2ae55697": "t1",
+          "a-38faee81": "t4",
+          "a-6d5342e0": "t5",
+          "a-f7248310": "t3"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.65
+      },
+      "variant": "artifact_reordering"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-5e6417ce899f--symbol_renaming--1be61813a0",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "1be61813a0ddf4f8916d9ea1904f1c9e26d168d312746893019a46cbe317eb17",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "source_family": "ownership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-1d79911a",
+          "a-2ae55697"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 4,
+          "a-2ae55697": 5,
+          "a-38faee81": 2,
+          "a-6d5342e0": 1,
+          "a-f7248310": 3,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {
+          "fn_1d79911a2": "sym_c5c9a60d3a1c",
+          "fn_2ae556977": "sym_fee61b4e1ff3",
+          "fn_38faee818": "sym_3e9ffdf27768",
+          "fn_6d5342e0a": "sym_0a36281341b7",
+          "fn_f72483101": "sym_f5a7cbc79fc1",
+          "handle_request": "sym_bff4f910132f"
+        },
+        "symbol_inverse": {
+          "sym_0a36281341b7": "fn_6d5342e0a",
+          "sym_3e9ffdf27768": "fn_38faee818",
+          "sym_bff4f910132f": "handle_request",
+          "sym_c5c9a60d3a1c": "fn_1d79911a2",
+          "sym_f5a7cbc79fc1": "fn_f72483101",
+          "sym_fee61b4e1ff3": "fn_2ae556977"
+        },
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-1d79911a",
+          "a-2ae55697"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t4",
+          "a-2ae55697": "t5",
+          "a-38faee81": "t2",
+          "a-6d5342e0": "t1",
+          "a-f7248310": "t3"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.65,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 1.0
+      },
+      "variant": "symbol_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-5e6417ce899f--candidate_label_renaming--f3ea21c809",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "f3ea21c809cae1b25b3c1ba1bbb5f66381ba1161b2a621c93ec4f7c9f66e96e4",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "source_family": "ownership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-1d79911a",
+          "a-2ae55697"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {
+          "label-598abe35b330": "label-90ba4687eef4",
+          "label-b40b7b45a00d": "label-e3289d8d7620",
+          "label-f34179f684d5": "label-65f4ff6795f7",
+          "label-fb8235184c31": "label-3fa51e5e4d2d"
+        },
+        "candidate_label_inverse": {
+          "label-3fa51e5e4d2d": "label-fb8235184c31",
+          "label-65f4ff6795f7": "label-f34179f684d5",
+          "label-90ba4687eef4": "label-598abe35b330",
+          "label-e3289d8d7620": "label-b40b7b45a00d"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 4,
+          "a-2ae55697": 5,
+          "a-38faee81": 2,
+          "a-6d5342e0": 1,
+          "a-f7248310": 3,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-1d79911a",
+          "a-2ae55697"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t4",
+          "a-2ae55697": "t5",
+          "a-38faee81": "t2",
+          "a-6d5342e0": "t1",
+          "a-f7248310": "t3"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.65,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 1.0
+      },
+      "variant": "candidate_label_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-5e6417ce899f--artifact_identifier_variation--d1785e46ce",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "aid-331deb873df6",
+        "a-2ae55697": "aid-c1313782fabd",
+        "a-38faee81": "aid-c1452ddd4229",
+        "a-6d5342e0": "aid-34b0b5df4752",
+        "a-f7248310": "aid-66c6d3f373e2",
+        "a-fac94207": "aid-742f2421dfa3"
+      },
+      "public_input_sha256": "d1785e46ce92a20cb9f50e1d33d94e2349a989a44149f1bfef8c2e87233c4698",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "source_family": "ownership",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-1d79911a": "aid-331deb873df6",
+          "a-2ae55697": "aid-c1313782fabd",
+          "a-38faee81": "aid-c1452ddd4229",
+          "a-6d5342e0": "aid-34b0b5df4752",
+          "a-f7248310": "aid-66c6d3f373e2",
+          "a-fac94207": "aid-742f2421dfa3"
+        },
+        "artifact_id_inverse": {
+          "aid-331deb873df6": "a-1d79911a",
+          "aid-34b0b5df4752": "a-6d5342e0",
+          "aid-66c6d3f373e2": "a-f7248310",
+          "aid-742f2421dfa3": "a-fac94207",
+          "aid-c1313782fabd": "a-2ae55697",
+          "aid-c1452ddd4229": "a-38faee81"
+        },
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-1d79911a",
+          "a-2ae55697"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-331deb873df6": 4,
+          "aid-34b0b5df4752": 1,
+          "aid-66c6d3f373e2": 3,
+          "aid-742f2421dfa3": 0,
+          "aid-c1313782fabd": 5,
+          "aid-c1452ddd4229": 2
+        },
+        "path_forward": {
+          "unit_248310.py": "path-473ba9113562",
+          "unit_5342e0.py": "path-ff3900c799dc",
+          "unit_79911a.py": "path-00943b98b972",
+          "unit_c94207.py": "path-c509d052cfb6",
+          "unit_e55697.py": "path-6c382228e1b3",
+          "unit_faee81.py": "path-a427e5ce5471"
+        },
+        "path_inverse": {
+          "path-00943b98b972": "unit_79911a.py",
+          "path-473ba9113562": "unit_248310.py",
+          "path-6c382228e1b3": "unit_e55697.py",
+          "path-a427e5ce5471": "unit_faee81.py",
+          "path-c509d052cfb6": "unit_c94207.py",
+          "path-ff3900c799dc": "unit_5342e0.py"
+        },
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "aid-742f2421dfa3",
+          "aid-34b0b5df4752",
+          "aid-c1452ddd4229",
+          "aid-66c6d3f373e2",
+          "aid-331deb873df6",
+          "aid-c1313782fabd"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t4",
+          "a-2ae55697": "t5",
+          "a-38faee81": "t2",
+          "a-6d5342e0": "t1",
+          "a-f7248310": "t3"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.65,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 1.0
+      },
+      "variant": "artifact_identifier_variation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "context",
+        "c1": "role",
+        "c2": "membership",
+        "c3": "ownership"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c0",
+        "membership": "c2",
+        "ownership": "c3",
+        "role": "c1"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-5e6417ce899f--combined_permutation--d52cbdf282",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "aid-6649476fa19b",
+        "a-2ae55697": "aid-7c5c0a26ff39",
+        "a-38faee81": "aid-b8c37fbc8198",
+        "a-6d5342e0": "aid-d445203ba86c",
+        "a-f7248310": "aid-c92068c8dc4e",
+        "a-fac94207": "aid-6a977fdc7864"
+      },
+      "public_input_sha256": "d52cbdf282a861311168a31bd4d1f192285f0d9b6396884c4e8a249801bcdfc5",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-5e6417ce899f",
+      "source_family": "ownership",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-1d79911a": "aid-6649476fa19b",
+          "a-2ae55697": "aid-7c5c0a26ff39",
+          "a-38faee81": "aid-b8c37fbc8198",
+          "a-6d5342e0": "aid-d445203ba86c",
+          "a-f7248310": "aid-c92068c8dc4e",
+          "a-fac94207": "aid-6a977fdc7864"
+        },
+        "artifact_id_inverse": {
+          "aid-6649476fa19b": "a-1d79911a",
+          "aid-6a977fdc7864": "a-fac94207",
+          "aid-7c5c0a26ff39": "a-2ae55697",
+          "aid-b8c37fbc8198": "a-38faee81",
+          "aid-c92068c8dc4e": "a-f7248310",
+          "aid-d445203ba86c": "a-6d5342e0"
+        },
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-1d79911a",
+          "a-2ae55697"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "context",
+          "c1": "role",
+          "c2": "membership",
+          "c3": "ownership"
+        },
+        "candidate_label_forward": {
+          "label-598abe35b330": "label-3262ede305d9",
+          "label-b40b7b45a00d": "label-6076b41648cf",
+          "label-f34179f684d5": "label-936243e8e6e2",
+          "label-fb8235184c31": "label-8063c36d286d"
+        },
+        "candidate_label_inverse": {
+          "label-3262ede305d9": "label-598abe35b330",
+          "label-6076b41648cf": "label-b40b7b45a00d",
+          "label-8063c36d286d": "label-fb8235184c31",
+          "label-936243e8e6e2": "label-f34179f684d5"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c3",
+          "c1": "c2",
+          "c2": "c1",
+          "c3": "c0"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-6649476fa19b": 4,
+          "aid-6a977fdc7864": 0,
+          "aid-7c5c0a26ff39": 5,
+          "aid-b8c37fbc8198": 2,
+          "aid-c92068c8dc4e": 3,
+          "aid-d445203ba86c": 1
+        },
+        "path_forward": {
+          "unit_248310.py": "path-9be47c188e37",
+          "unit_5342e0.py": "path-fff0066d1a4b",
+          "unit_79911a.py": "path-c617eb1028b9",
+          "unit_c94207.py": "path-ef22d6bcb95b",
+          "unit_e55697.py": "path-4e75cac960fc",
+          "unit_faee81.py": "path-0e06fab3e63e"
+        },
+        "path_inverse": {
+          "path-0e06fab3e63e": "unit_faee81.py",
+          "path-4e75cac960fc": "unit_e55697.py",
+          "path-9be47c188e37": "unit_248310.py",
+          "path-c617eb1028b9": "unit_79911a.py",
+          "path-ef22d6bcb95b": "unit_c94207.py",
+          "path-fff0066d1a4b": "unit_5342e0.py"
+        },
+        "symbol_forward": {
+          "fn_1d79911a2": "sym_cbfe75f33b32",
+          "fn_2ae556977": "sym_60a6f0d73563",
+          "fn_38faee818": "sym_ca3cbf55ad18",
+          "fn_6d5342e0a": "sym_a405a49b3912",
+          "fn_f72483101": "sym_35b5bb3c21af",
+          "handle_request": "sym_bccf32fb910a"
+        },
+        "symbol_inverse": {
+          "sym_35b5bb3c21af": "fn_f72483101",
+          "sym_60a6f0d73563": "fn_2ae556977",
+          "sym_a405a49b3912": "fn_6d5342e0a",
+          "sym_bccf32fb910a": "handle_request",
+          "sym_ca3cbf55ad18": "fn_38faee818",
+          "sym_cbfe75f33b32": "fn_1d79911a2"
+        },
+        "variant_artifact_order": [
+          "aid-6a977fdc7864",
+          "aid-7c5c0a26ff39",
+          "aid-6649476fa19b",
+          "aid-c92068c8dc4e",
+          "aid-b8c37fbc8198",
+          "aid-d445203ba86c"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t2",
+          "a-2ae55697": "t1",
+          "a-38faee81": "t4",
+          "a-6d5342e0": "t5",
+          "a-f7248310": "t3"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.65
+      },
+      "variant": "combined_permutation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-3a6b906af392--base_entry--4078dd725c",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "4078dd725cbef5857c024c36dd973ca4690e69c92e4f3260a864732cc1d796df",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-3a6b906af392",
+      "source_family": "membership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-f7248310",
+          "a-38faee81",
+          "a-2ae55697",
+          "a-6d5342e0"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 1,
+          "a-2ae55697": 4,
+          "a-38faee81": 3,
+          "a-6d5342e0": 5,
+          "a-f7248310": 2,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-f7248310",
+          "a-38faee81",
+          "a-2ae55697",
+          "a-6d5342e0"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t1",
+          "a-2ae55697": "t4",
+          "a-38faee81": "t3",
+          "a-6d5342e0": "t5",
+          "a-f7248310": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 1.0,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.65
+      },
+      "variant": "base_entry"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-6d5342e0",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t0": 0,
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4
+      },
+      "case_id": "asv1-d-3a6b906af392--longest_artifact--aa186c0b2c",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "aa186c0b2c4ea42d0ef684d27d335e9df84704ee4ca20606723e2479ee7124f9",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-3a6b906af392",
+      "source_family": "membership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-f7248310",
+          "a-38faee81",
+          "a-2ae55697",
+          "a-6d5342e0"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 1,
+          "a-2ae55697": 4,
+          "a-38faee81": 3,
+          "a-6d5342e0": 5,
+          "a-f7248310": 2,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-f7248310",
+          "a-38faee81",
+          "a-2ae55697",
+          "a-6d5342e0"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t1",
+          "a-2ae55697": "t4",
+          "a-38faee81": "t3",
+          "a-f7248310": "t2",
+          "a-fac94207": "t0"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t0": 0.4,
+        "t1": 0.25,
+        "t2": 1.0,
+        "t3": 0.25,
+        "t4": 0.25
+      },
+      "variant": "longest_artifact"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-3a6b906af392--artifact_reordering--795a9a7039",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "795a9a7039d6f636a50160246397f8ae59ddb9283358b843f47702efd543f1c8",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-3a6b906af392",
+      "source_family": "membership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-f7248310",
+          "a-38faee81",
+          "a-2ae55697",
+          "a-6d5342e0"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 1,
+          "a-2ae55697": 4,
+          "a-38faee81": 3,
+          "a-6d5342e0": 5,
+          "a-f7248310": 2,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-6d5342e0",
+          "a-2ae55697",
+          "a-38faee81",
+          "a-f7248310",
+          "a-1d79911a"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t5",
+          "a-2ae55697": "t2",
+          "a-38faee81": "t3",
+          "a-6d5342e0": "t1",
+          "a-f7248310": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.65,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 1.0,
+        "t5": 0.25
+      },
+      "variant": "artifact_reordering"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-3a6b906af392--symbol_renaming--b1e72faabc",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "b1e72faabc78048266c9a64de952b8be97094a21da0a8cda119b40787a10ee4f",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-3a6b906af392",
+      "source_family": "membership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-f7248310",
+          "a-38faee81",
+          "a-2ae55697",
+          "a-6d5342e0"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 1,
+          "a-2ae55697": 4,
+          "a-38faee81": 3,
+          "a-6d5342e0": 5,
+          "a-f7248310": 2,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {
+          "fn_1d79911a2": "sym_27b4af923726",
+          "fn_2ae556977": "sym_63da7a6547e8",
+          "fn_38faee818": "sym_2871b81e6d62",
+          "fn_6d5342e0a": "sym_8d73da047221",
+          "fn_f72483101": "sym_8dcd40dfabeb",
+          "handle_request": "sym_afe689396521"
+        },
+        "symbol_inverse": {
+          "sym_27b4af923726": "fn_1d79911a2",
+          "sym_2871b81e6d62": "fn_38faee818",
+          "sym_63da7a6547e8": "fn_2ae556977",
+          "sym_8d73da047221": "fn_6d5342e0a",
+          "sym_8dcd40dfabeb": "fn_f72483101",
+          "sym_afe689396521": "handle_request"
+        },
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-f7248310",
+          "a-38faee81",
+          "a-2ae55697",
+          "a-6d5342e0"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t1",
+          "a-2ae55697": "t4",
+          "a-38faee81": "t3",
+          "a-6d5342e0": "t5",
+          "a-f7248310": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 1.0,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.65
+      },
+      "variant": "symbol_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-3a6b906af392--candidate_label_renaming--df2c79b91e",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "df2c79b91e099fa58df4c518b49db1ae1ca40be6d187ced3c6ebd2dd7f742179",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-3a6b906af392",
+      "source_family": "membership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-f7248310",
+          "a-38faee81",
+          "a-2ae55697",
+          "a-6d5342e0"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {
+          "label-87de2229c829": "label-a1bd3ca29c99",
+          "label-ad6733ec435d": "label-50e51f61299c",
+          "label-ba531498f03c": "label-a6cd624310c6",
+          "label-f758e27af9f2": "label-61bea80d0471"
+        },
+        "candidate_label_inverse": {
+          "label-50e51f61299c": "label-ad6733ec435d",
+          "label-61bea80d0471": "label-f758e27af9f2",
+          "label-a1bd3ca29c99": "label-87de2229c829",
+          "label-a6cd624310c6": "label-ba531498f03c"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 1,
+          "a-2ae55697": 4,
+          "a-38faee81": 3,
+          "a-6d5342e0": 5,
+          "a-f7248310": 2,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-f7248310",
+          "a-38faee81",
+          "a-2ae55697",
+          "a-6d5342e0"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t1",
+          "a-2ae55697": "t4",
+          "a-38faee81": "t3",
+          "a-6d5342e0": "t5",
+          "a-f7248310": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 1.0,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.65
+      },
+      "variant": "candidate_label_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-3a6b906af392--artifact_identifier_variation--28f9a33eb9",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "aid-a7ea6211590e",
+        "a-2ae55697": "aid-108e2df57a5a",
+        "a-38faee81": "aid-0846b7120b96",
+        "a-6d5342e0": "aid-3c79c58a00be",
+        "a-f7248310": "aid-09abdd147135",
+        "a-fac94207": "aid-0b9cb2562555"
+      },
+      "public_input_sha256": "28f9a33eb96512c890f95346ab453db6db428cc8b1fea2394abe18d2fd081341",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-3a6b906af392",
+      "source_family": "membership",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-1d79911a": "aid-a7ea6211590e",
+          "a-2ae55697": "aid-108e2df57a5a",
+          "a-38faee81": "aid-0846b7120b96",
+          "a-6d5342e0": "aid-3c79c58a00be",
+          "a-f7248310": "aid-09abdd147135",
+          "a-fac94207": "aid-0b9cb2562555"
+        },
+        "artifact_id_inverse": {
+          "aid-0846b7120b96": "a-38faee81",
+          "aid-09abdd147135": "a-f7248310",
+          "aid-0b9cb2562555": "a-fac94207",
+          "aid-108e2df57a5a": "a-2ae55697",
+          "aid-3c79c58a00be": "a-6d5342e0",
+          "aid-a7ea6211590e": "a-1d79911a"
+        },
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-f7248310",
+          "a-38faee81",
+          "a-2ae55697",
+          "a-6d5342e0"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-0846b7120b96": 3,
+          "aid-09abdd147135": 2,
+          "aid-0b9cb2562555": 0,
+          "aid-108e2df57a5a": 4,
+          "aid-3c79c58a00be": 5,
+          "aid-a7ea6211590e": 1
+        },
+        "path_forward": {
+          "unit_248310.py": "path-608463c5fd6f",
+          "unit_5342e0.py": "path-96d3e7b3cfec",
+          "unit_79911a.py": "path-e87434bc730f",
+          "unit_c94207.py": "path-7290f42edf32",
+          "unit_e55697.py": "path-1e36a4ac5dda",
+          "unit_faee81.py": "path-80c38798fb50"
+        },
+        "path_inverse": {
+          "path-1e36a4ac5dda": "unit_e55697.py",
+          "path-608463c5fd6f": "unit_248310.py",
+          "path-7290f42edf32": "unit_c94207.py",
+          "path-80c38798fb50": "unit_faee81.py",
+          "path-96d3e7b3cfec": "unit_5342e0.py",
+          "path-e87434bc730f": "unit_79911a.py"
+        },
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "aid-0b9cb2562555",
+          "aid-a7ea6211590e",
+          "aid-09abdd147135",
+          "aid-0846b7120b96",
+          "aid-108e2df57a5a",
+          "aid-3c79c58a00be"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t1",
+          "a-2ae55697": "t4",
+          "a-38faee81": "t3",
+          "a-6d5342e0": "t5",
+          "a-f7248310": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 1.0,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.65
+      },
+      "variant": "artifact_identifier_variation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "context",
+        "c1": "role",
+        "c2": "membership",
+        "c3": "ownership"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c0",
+        "membership": "c2",
+        "ownership": "c3",
+        "role": "c1"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-3a6b906af392--combined_permutation--4e82e7667c",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "aid-11f732aa96a5",
+        "a-2ae55697": "aid-8fa668cd1252",
+        "a-38faee81": "aid-87077ac30dae",
+        "a-6d5342e0": "aid-a9f79b46fd28",
+        "a-f7248310": "aid-1200f66e3893",
+        "a-fac94207": "aid-a2c50a9d64c3"
+      },
+      "public_input_sha256": "4e82e7667c278e68736ec7ec5498964c0ea4c124551eb4c46f9086bb1634cc06",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-3a6b906af392",
+      "source_family": "membership",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-1d79911a": "aid-11f732aa96a5",
+          "a-2ae55697": "aid-8fa668cd1252",
+          "a-38faee81": "aid-87077ac30dae",
+          "a-6d5342e0": "aid-a9f79b46fd28",
+          "a-f7248310": "aid-1200f66e3893",
+          "a-fac94207": "aid-a2c50a9d64c3"
+        },
+        "artifact_id_inverse": {
+          "aid-11f732aa96a5": "a-1d79911a",
+          "aid-1200f66e3893": "a-f7248310",
+          "aid-87077ac30dae": "a-38faee81",
+          "aid-8fa668cd1252": "a-2ae55697",
+          "aid-a2c50a9d64c3": "a-fac94207",
+          "aid-a9f79b46fd28": "a-6d5342e0"
+        },
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-f7248310",
+          "a-38faee81",
+          "a-2ae55697",
+          "a-6d5342e0"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "context",
+          "c1": "role",
+          "c2": "membership",
+          "c3": "ownership"
+        },
+        "candidate_label_forward": {
+          "label-87de2229c829": "label-dab144f8f157",
+          "label-ad6733ec435d": "label-f8e4e984a21c",
+          "label-ba531498f03c": "label-1d0dfa7f3e77",
+          "label-f758e27af9f2": "label-b8abf84f78ea"
+        },
+        "candidate_label_inverse": {
+          "label-1d0dfa7f3e77": "label-ba531498f03c",
+          "label-b8abf84f78ea": "label-f758e27af9f2",
+          "label-dab144f8f157": "label-87de2229c829",
+          "label-f8e4e984a21c": "label-ad6733ec435d"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c3",
+          "c1": "c2",
+          "c2": "c1",
+          "c3": "c0"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-11f732aa96a5": 1,
+          "aid-1200f66e3893": 2,
+          "aid-87077ac30dae": 3,
+          "aid-8fa668cd1252": 4,
+          "aid-a2c50a9d64c3": 0,
+          "aid-a9f79b46fd28": 5
+        },
+        "path_forward": {
+          "unit_248310.py": "path-5f771983d632",
+          "unit_5342e0.py": "path-afd061fe2a4a",
+          "unit_79911a.py": "path-9144aad3e130",
+          "unit_c94207.py": "path-48239888d2e0",
+          "unit_e55697.py": "path-0f683adb654c",
+          "unit_faee81.py": "path-aa202a8a8a18"
+        },
+        "path_inverse": {
+          "path-0f683adb654c": "unit_e55697.py",
+          "path-48239888d2e0": "unit_c94207.py",
+          "path-5f771983d632": "unit_248310.py",
+          "path-9144aad3e130": "unit_79911a.py",
+          "path-aa202a8a8a18": "unit_faee81.py",
+          "path-afd061fe2a4a": "unit_5342e0.py"
+        },
+        "symbol_forward": {
+          "fn_1d79911a2": "sym_0f6605c451f4",
+          "fn_2ae556977": "sym_1f6bca2da4ba",
+          "fn_38faee818": "sym_445598764d9c",
+          "fn_6d5342e0a": "sym_b04b95beaf7d",
+          "fn_f72483101": "sym_2cc26ac7eb2b",
+          "handle_request": "sym_a8a01a626216"
+        },
+        "symbol_inverse": {
+          "sym_0f6605c451f4": "fn_1d79911a2",
+          "sym_1f6bca2da4ba": "fn_2ae556977",
+          "sym_2cc26ac7eb2b": "fn_f72483101",
+          "sym_445598764d9c": "fn_38faee818",
+          "sym_a8a01a626216": "handle_request",
+          "sym_b04b95beaf7d": "fn_6d5342e0a"
+        },
+        "variant_artifact_order": [
+          "aid-a2c50a9d64c3",
+          "aid-a9f79b46fd28",
+          "aid-8fa668cd1252",
+          "aid-87077ac30dae",
+          "aid-1200f66e3893",
+          "aid-11f732aa96a5"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t5",
+          "a-2ae55697": "t2",
+          "a-38faee81": "t3",
+          "a-6d5342e0": "t1",
+          "a-f7248310": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.65,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 1.0,
+        "t5": 0.25
+      },
+      "variant": "combined_permutation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-96ebfd30761f--base_entry--b8ee841a9a",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "b8ee841a9a3f43efa99d45626e9be04a70e6f88ad2b5aada192dda59b7c62c50",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-96ebfd30761f",
+      "source_family": "role",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-2ae55697"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 1,
+          "a-2ae55697": 5,
+          "a-38faee81": 3,
+          "a-6d5342e0": 2,
+          "a-f7248310": 4,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-2ae55697"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t1",
+          "a-2ae55697": "t5",
+          "a-38faee81": "t3",
+          "a-6d5342e0": "t2",
+          "a-f7248310": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.65,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "base_entry"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-6d5342e0",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t0": 0,
+        "t1": 1,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-96ebfd30761f--longest_artifact--f65e0d327d",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "f65e0d327dd3cd29cea28acff6416b2fe08a4b0ddc9192cf64bd9a43788388f4",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-96ebfd30761f",
+      "source_family": "role",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-2ae55697"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 1,
+          "a-2ae55697": 5,
+          "a-38faee81": 3,
+          "a-6d5342e0": 2,
+          "a-f7248310": 4,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-2ae55697"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t1",
+          "a-2ae55697": "t5",
+          "a-38faee81": "t3",
+          "a-f7248310": "t4",
+          "a-fac94207": "t0"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t0": 0.4,
+        "t1": 1.0,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "longest_artifact"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-96ebfd30761f--artifact_reordering--4fa894e796",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "4fa894e79611c6933855ef0eae8af55dac1c03a0632773db9c7f3e41703bf903",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-96ebfd30761f",
+      "source_family": "role",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-2ae55697"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 1,
+          "a-2ae55697": 5,
+          "a-38faee81": 3,
+          "a-6d5342e0": 2,
+          "a-f7248310": 4,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-2ae55697",
+          "a-f7248310",
+          "a-38faee81",
+          "a-6d5342e0",
+          "a-1d79911a"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t5",
+          "a-2ae55697": "t1",
+          "a-38faee81": "t3",
+          "a-6d5342e0": "t4",
+          "a-f7248310": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.65,
+        "t5": 1.0
+      },
+      "variant": "artifact_reordering"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-96ebfd30761f--symbol_renaming--d7ecd9d0ab",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "d7ecd9d0ab58036a93382bd5b1dcf614006cdc71dddbc37a8dc8d58af5b556c4",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-96ebfd30761f",
+      "source_family": "role",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-2ae55697"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 1,
+          "a-2ae55697": 5,
+          "a-38faee81": 3,
+          "a-6d5342e0": 2,
+          "a-f7248310": 4,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {
+          "fn_1d79911a2": "sym_be0760823ef2",
+          "fn_2ae556977": "sym_c8e00449f833",
+          "fn_38faee818": "sym_a6a624add4d8",
+          "fn_6d5342e0a": "sym_d7bb21ff86e1",
+          "fn_f72483101": "sym_b836fa254da5",
+          "handle_request": "sym_2ba4ee998584"
+        },
+        "symbol_inverse": {
+          "sym_2ba4ee998584": "handle_request",
+          "sym_a6a624add4d8": "fn_38faee818",
+          "sym_b836fa254da5": "fn_f72483101",
+          "sym_be0760823ef2": "fn_1d79911a2",
+          "sym_c8e00449f833": "fn_2ae556977",
+          "sym_d7bb21ff86e1": "fn_6d5342e0a"
+        },
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-2ae55697"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t1",
+          "a-2ae55697": "t5",
+          "a-38faee81": "t3",
+          "a-6d5342e0": "t2",
+          "a-f7248310": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.65,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "symbol_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-96ebfd30761f--candidate_label_renaming--d265f52d9b",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "d265f52d9ba737f0674b4cdc832521c3d79a0b992492af67c314a9a55d501cfc",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-96ebfd30761f",
+      "source_family": "role",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-2ae55697"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {
+          "label-6c091aec1e03": "label-60ed13103c12",
+          "label-942f363dd201": "label-35fe1b6b63af",
+          "label-bd09dc86d76c": "label-b008490eef97",
+          "label-e245022c6df2": "label-6c438b13173f"
+        },
+        "candidate_label_inverse": {
+          "label-35fe1b6b63af": "label-942f363dd201",
+          "label-60ed13103c12": "label-6c091aec1e03",
+          "label-6c438b13173f": "label-e245022c6df2",
+          "label-b008490eef97": "label-bd09dc86d76c"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 1,
+          "a-2ae55697": 5,
+          "a-38faee81": 3,
+          "a-6d5342e0": 2,
+          "a-f7248310": 4,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-2ae55697"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t1",
+          "a-2ae55697": "t5",
+          "a-38faee81": "t3",
+          "a-6d5342e0": "t2",
+          "a-f7248310": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.65,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "candidate_label_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-96ebfd30761f--artifact_identifier_variation--82d06cef2e",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "aid-b233f581d7fa",
+        "a-2ae55697": "aid-e94ec9280f2d",
+        "a-38faee81": "aid-51326d6b5371",
+        "a-6d5342e0": "aid-6b9c74c73ac9",
+        "a-f7248310": "aid-6ff05645efd5",
+        "a-fac94207": "aid-9c391ce4e3dc"
+      },
+      "public_input_sha256": "82d06cef2e157582379a41d97ec3dde2ce5e9a0b36ec35e77f0d535395e5d717",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-96ebfd30761f",
+      "source_family": "role",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-1d79911a": "aid-b233f581d7fa",
+          "a-2ae55697": "aid-e94ec9280f2d",
+          "a-38faee81": "aid-51326d6b5371",
+          "a-6d5342e0": "aid-6b9c74c73ac9",
+          "a-f7248310": "aid-6ff05645efd5",
+          "a-fac94207": "aid-9c391ce4e3dc"
+        },
+        "artifact_id_inverse": {
+          "aid-51326d6b5371": "a-38faee81",
+          "aid-6b9c74c73ac9": "a-6d5342e0",
+          "aid-6ff05645efd5": "a-f7248310",
+          "aid-9c391ce4e3dc": "a-fac94207",
+          "aid-b233f581d7fa": "a-1d79911a",
+          "aid-e94ec9280f2d": "a-2ae55697"
+        },
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-2ae55697"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-51326d6b5371": 3,
+          "aid-6b9c74c73ac9": 2,
+          "aid-6ff05645efd5": 4,
+          "aid-9c391ce4e3dc": 0,
+          "aid-b233f581d7fa": 1,
+          "aid-e94ec9280f2d": 5
+        },
+        "path_forward": {
+          "unit_248310.py": "path-16a7e879c895",
+          "unit_5342e0.py": "path-5a8353a3ae24",
+          "unit_79911a.py": "path-2c50ae954d1e",
+          "unit_c94207.py": "path-3c5cb4051358",
+          "unit_e55697.py": "path-6425a46f0716",
+          "unit_faee81.py": "path-99d45d8fcc3e"
+        },
+        "path_inverse": {
+          "path-16a7e879c895": "unit_248310.py",
+          "path-2c50ae954d1e": "unit_79911a.py",
+          "path-3c5cb4051358": "unit_c94207.py",
+          "path-5a8353a3ae24": "unit_5342e0.py",
+          "path-6425a46f0716": "unit_e55697.py",
+          "path-99d45d8fcc3e": "unit_faee81.py"
+        },
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "aid-9c391ce4e3dc",
+          "aid-b233f581d7fa",
+          "aid-6b9c74c73ac9",
+          "aid-51326d6b5371",
+          "aid-6ff05645efd5",
+          "aid-e94ec9280f2d"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t1",
+          "a-2ae55697": "t5",
+          "a-38faee81": "t3",
+          "a-6d5342e0": "t2",
+          "a-f7248310": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.65,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "artifact_identifier_variation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "context",
+        "c1": "role",
+        "c2": "membership",
+        "c3": "ownership"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c0",
+        "membership": "c2",
+        "ownership": "c3",
+        "role": "c1"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-96ebfd30761f--combined_permutation--96dbc398de",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "aid-7c8d7370b607",
+        "a-2ae55697": "aid-4a58a8e59eb3",
+        "a-38faee81": "aid-a01f9a60f6b1",
+        "a-6d5342e0": "aid-c44c02cf9d5f",
+        "a-f7248310": "aid-5fe8ea87090d",
+        "a-fac94207": "aid-bfabffcd92d0"
+      },
+      "public_input_sha256": "96dbc398ded3a495c5b8242315fd13381accc1c79f524689b398bb820687b752",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-96ebfd30761f",
+      "source_family": "role",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-1d79911a": "aid-7c8d7370b607",
+          "a-2ae55697": "aid-4a58a8e59eb3",
+          "a-38faee81": "aid-a01f9a60f6b1",
+          "a-6d5342e0": "aid-c44c02cf9d5f",
+          "a-f7248310": "aid-5fe8ea87090d",
+          "a-fac94207": "aid-bfabffcd92d0"
+        },
+        "artifact_id_inverse": {
+          "aid-4a58a8e59eb3": "a-2ae55697",
+          "aid-5fe8ea87090d": "a-f7248310",
+          "aid-7c8d7370b607": "a-1d79911a",
+          "aid-a01f9a60f6b1": "a-38faee81",
+          "aid-bfabffcd92d0": "a-fac94207",
+          "aid-c44c02cf9d5f": "a-6d5342e0"
+        },
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-f7248310",
+          "a-2ae55697"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "context",
+          "c1": "role",
+          "c2": "membership",
+          "c3": "ownership"
+        },
+        "candidate_label_forward": {
+          "label-6c091aec1e03": "label-fed186719cb5",
+          "label-942f363dd201": "label-7cf0effc4a54",
+          "label-bd09dc86d76c": "label-537d3c1ebef0",
+          "label-e245022c6df2": "label-05e433064ea9"
+        },
+        "candidate_label_inverse": {
+          "label-05e433064ea9": "label-e245022c6df2",
+          "label-537d3c1ebef0": "label-bd09dc86d76c",
+          "label-7cf0effc4a54": "label-942f363dd201",
+          "label-fed186719cb5": "label-6c091aec1e03"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c3",
+          "c1": "c2",
+          "c2": "c1",
+          "c3": "c0"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-4a58a8e59eb3": 5,
+          "aid-5fe8ea87090d": 4,
+          "aid-7c8d7370b607": 1,
+          "aid-a01f9a60f6b1": 3,
+          "aid-bfabffcd92d0": 0,
+          "aid-c44c02cf9d5f": 2
+        },
+        "path_forward": {
+          "unit_248310.py": "path-587233397c92",
+          "unit_5342e0.py": "path-36871c6498d6",
+          "unit_79911a.py": "path-e2293f257a69",
+          "unit_c94207.py": "path-db333851717c",
+          "unit_e55697.py": "path-e3395faf9cca",
+          "unit_faee81.py": "path-c4cf1caf712a"
+        },
+        "path_inverse": {
+          "path-36871c6498d6": "unit_5342e0.py",
+          "path-587233397c92": "unit_248310.py",
+          "path-c4cf1caf712a": "unit_faee81.py",
+          "path-db333851717c": "unit_c94207.py",
+          "path-e2293f257a69": "unit_79911a.py",
+          "path-e3395faf9cca": "unit_e55697.py"
+        },
+        "symbol_forward": {
+          "fn_1d79911a2": "sym_b4617878ab0f",
+          "fn_2ae556977": "sym_de672b79fe81",
+          "fn_38faee818": "sym_c69f5102ed34",
+          "fn_6d5342e0a": "sym_d72eb4c17ec1",
+          "fn_f72483101": "sym_efbbc9174dad",
+          "handle_request": "sym_3df503920c4b"
+        },
+        "symbol_inverse": {
+          "sym_3df503920c4b": "handle_request",
+          "sym_b4617878ab0f": "fn_1d79911a2",
+          "sym_c69f5102ed34": "fn_38faee818",
+          "sym_d72eb4c17ec1": "fn_6d5342e0a",
+          "sym_de672b79fe81": "fn_2ae556977",
+          "sym_efbbc9174dad": "fn_f72483101"
+        },
+        "variant_artifact_order": [
+          "aid-bfabffcd92d0",
+          "aid-4a58a8e59eb3",
+          "aid-5fe8ea87090d",
+          "aid-a01f9a60f6b1",
+          "aid-c44c02cf9d5f",
+          "aid-7c8d7370b607"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t5",
+          "a-2ae55697": "t1",
+          "a-38faee81": "t3",
+          "a-6d5342e0": "t4",
+          "a-f7248310": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.65,
+        "t5": 1.0
+      },
+      "variant": "combined_permutation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-2b1117581d19--base_entry--594c384449",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "594c3844498dd208c053c9e1215e2e27d78badf349d178217e0596d39d47f6db",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-2b1117581d19",
+      "source_family": "context",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-f7248310",
+          "a-2ae55697",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-1d79911a"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 5,
+          "a-2ae55697": 2,
+          "a-38faee81": 4,
+          "a-6d5342e0": 3,
+          "a-f7248310": 1,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-f7248310",
+          "a-2ae55697",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-1d79911a"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t5",
+          "a-2ae55697": "t2",
+          "a-38faee81": "t4",
+          "a-6d5342e0": "t3",
+          "a-f7248310": "t1"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 0.65,
+        "t4": 1.0,
+        "t5": 0.25
+      },
+      "variant": "base_entry"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-6d5342e0",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t0": 0,
+        "t1": 1,
+        "t2": 2,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-2b1117581d19--longest_artifact--0cc7dde814",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "0cc7dde814652074c60cdc2ebe8e18e72e1b42efec1125b25968136ba66bf013",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-2b1117581d19",
+      "source_family": "context",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-f7248310",
+          "a-2ae55697",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-1d79911a"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 5,
+          "a-2ae55697": 2,
+          "a-38faee81": 4,
+          "a-6d5342e0": 3,
+          "a-f7248310": 1,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-f7248310",
+          "a-2ae55697",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-1d79911a"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t5",
+          "a-2ae55697": "t2",
+          "a-38faee81": "t4",
+          "a-f7248310": "t1",
+          "a-fac94207": "t0"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t0": 0.4,
+        "t1": 0.25,
+        "t2": 0.25,
+        "t4": 1.0,
+        "t5": 0.25
+      },
+      "variant": "longest_artifact"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-2b1117581d19--artifact_reordering--368e679f3c",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "368e679f3c6e204304e5a157641441f8f09e4513d491e32c94e2c02a835e27b9",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-2b1117581d19",
+      "source_family": "context",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-f7248310",
+          "a-2ae55697",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-1d79911a"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 5,
+          "a-2ae55697": 2,
+          "a-38faee81": 4,
+          "a-6d5342e0": 3,
+          "a-f7248310": 1,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-1d79911a",
+          "a-38faee81",
+          "a-6d5342e0",
+          "a-2ae55697",
+          "a-f7248310"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t1",
+          "a-2ae55697": "t4",
+          "a-38faee81": "t2",
+          "a-6d5342e0": "t3",
+          "a-f7248310": "t5"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 1.0,
+        "t3": 0.65,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "artifact_reordering"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-2b1117581d19--symbol_renaming--90ba0cb97f",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "90ba0cb97f6a97d1593c75d39bda111b05062f4244287eeb3d46200b6db43287",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-2b1117581d19",
+      "source_family": "context",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-f7248310",
+          "a-2ae55697",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-1d79911a"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 5,
+          "a-2ae55697": 2,
+          "a-38faee81": 4,
+          "a-6d5342e0": 3,
+          "a-f7248310": 1,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {
+          "fn_1d79911a2": "sym_55af614e7af1",
+          "fn_2ae556977": "sym_818970494f90",
+          "fn_38faee818": "sym_58bbf46f0000",
+          "fn_6d5342e0a": "sym_1dceda932c81",
+          "fn_f72483101": "sym_5a5af4fbe7df",
+          "handle_request": "sym_6b977f66c7db"
+        },
+        "symbol_inverse": {
+          "sym_1dceda932c81": "fn_6d5342e0a",
+          "sym_55af614e7af1": "fn_1d79911a2",
+          "sym_58bbf46f0000": "fn_38faee818",
+          "sym_5a5af4fbe7df": "fn_f72483101",
+          "sym_6b977f66c7db": "handle_request",
+          "sym_818970494f90": "fn_2ae556977"
+        },
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-f7248310",
+          "a-2ae55697",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-1d79911a"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t5",
+          "a-2ae55697": "t2",
+          "a-38faee81": "t4",
+          "a-6d5342e0": "t3",
+          "a-f7248310": "t1"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 0.65,
+        "t4": 1.0,
+        "t5": 0.25
+      },
+      "variant": "symbol_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-2b1117581d19--candidate_label_renaming--3053a50da0",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "a-1d79911a",
+        "a-2ae55697": "a-2ae55697",
+        "a-38faee81": "a-38faee81",
+        "a-6d5342e0": "a-6d5342e0",
+        "a-f7248310": "a-f7248310",
+        "a-fac94207": "a-fac94207"
+      },
+      "public_input_sha256": "3053a50da088af5b6a5c7a3a1bb32ef45e14068cd656ee6853379e79bbb351ae",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-2b1117581d19",
+      "source_family": "context",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-f7248310",
+          "a-2ae55697",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-1d79911a"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {
+          "label-0b7408546372": "label-12f8f45f8e97",
+          "label-851d490cf504": "label-e628dc57949f",
+          "label-a29f06ed2323": "label-e7e4eff88c0e",
+          "label-a74a348c605e": "label-bd3d236ed00c"
+        },
+        "candidate_label_inverse": {
+          "label-12f8f45f8e97": "label-0b7408546372",
+          "label-bd3d236ed00c": "label-a74a348c605e",
+          "label-e628dc57949f": "label-851d490cf504",
+          "label-e7e4eff88c0e": "label-a29f06ed2323"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-1d79911a": 5,
+          "a-2ae55697": 2,
+          "a-38faee81": 4,
+          "a-6d5342e0": 3,
+          "a-f7248310": 1,
+          "a-fac94207": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-fac94207",
+          "a-f7248310",
+          "a-2ae55697",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-1d79911a"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t5",
+          "a-2ae55697": "t2",
+          "a-38faee81": "t4",
+          "a-6d5342e0": "t3",
+          "a-f7248310": "t1"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 0.65,
+        "t4": 1.0,
+        "t5": 0.25
+      },
+      "variant": "candidate_label_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-2b1117581d19--artifact_identifier_variation--d944857249",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "aid-d0960fd817c2",
+        "a-2ae55697": "aid-33a5bf0e9268",
+        "a-38faee81": "aid-4e04841d780e",
+        "a-6d5342e0": "aid-fbe6c0e0eb60",
+        "a-f7248310": "aid-7936dd14ff19",
+        "a-fac94207": "aid-a0e3c556142c"
+      },
+      "public_input_sha256": "d944857249acbd60de9ff3c9f39a611dfed1f2fc285bed83024e8060bc42013c",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-2b1117581d19",
+      "source_family": "context",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-1d79911a": "aid-d0960fd817c2",
+          "a-2ae55697": "aid-33a5bf0e9268",
+          "a-38faee81": "aid-4e04841d780e",
+          "a-6d5342e0": "aid-fbe6c0e0eb60",
+          "a-f7248310": "aid-7936dd14ff19",
+          "a-fac94207": "aid-a0e3c556142c"
+        },
+        "artifact_id_inverse": {
+          "aid-33a5bf0e9268": "a-2ae55697",
+          "aid-4e04841d780e": "a-38faee81",
+          "aid-7936dd14ff19": "a-f7248310",
+          "aid-a0e3c556142c": "a-fac94207",
+          "aid-d0960fd817c2": "a-1d79911a",
+          "aid-fbe6c0e0eb60": "a-6d5342e0"
+        },
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-f7248310",
+          "a-2ae55697",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-1d79911a"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-33a5bf0e9268": 2,
+          "aid-4e04841d780e": 4,
+          "aid-7936dd14ff19": 1,
+          "aid-a0e3c556142c": 0,
+          "aid-d0960fd817c2": 5,
+          "aid-fbe6c0e0eb60": 3
+        },
+        "path_forward": {
+          "unit_248310.py": "path-1146a3705a77",
+          "unit_5342e0.py": "path-7db6f537aeeb",
+          "unit_79911a.py": "path-93316047a324",
+          "unit_c94207.py": "path-3e1543dc7d03",
+          "unit_e55697.py": "path-00e6d057687f",
+          "unit_faee81.py": "path-88d8dd36603c"
+        },
+        "path_inverse": {
+          "path-00e6d057687f": "unit_e55697.py",
+          "path-1146a3705a77": "unit_248310.py",
+          "path-3e1543dc7d03": "unit_c94207.py",
+          "path-7db6f537aeeb": "unit_5342e0.py",
+          "path-88d8dd36603c": "unit_faee81.py",
+          "path-93316047a324": "unit_79911a.py"
+        },
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "aid-a0e3c556142c",
+          "aid-7936dd14ff19",
+          "aid-33a5bf0e9268",
+          "aid-fbe6c0e0eb60",
+          "aid-4e04841d780e",
+          "aid-d0960fd817c2"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t5",
+          "a-2ae55697": "t2",
+          "a-38faee81": "t4",
+          "a-6d5342e0": "t3",
+          "a-f7248310": "t1"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 0.65,
+        "t4": 1.0,
+        "t5": 0.25
+      },
+      "variant": "artifact_identifier_variation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "context",
+        "c1": "role",
+        "c2": "membership",
+        "c3": "ownership"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c0",
+        "membership": "c2",
+        "ownership": "c3",
+        "role": "c1"
+      },
+      "canonical_current_artifact_id": "a-fac94207",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-2b1117581d19--combined_permutation--a8a6ea3437",
+      "public_id_by_canonical_artifact_id": {
+        "a-1d79911a": "aid-f87211c6b430",
+        "a-2ae55697": "aid-07553f37878b",
+        "a-38faee81": "aid-2572bfd60951",
+        "a-6d5342e0": "aid-73625590d8f6",
+        "a-f7248310": "aid-55aa743ce7a3",
+        "a-fac94207": "aid-8b09e0b08f38"
+      },
+      "public_input_sha256": "a8a6ea34379d79e9abc8b8b1ca097bf2a694b357e20acc3f4e5e8672a936d8b5",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-2b1117581d19",
+      "source_family": "context",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-1d79911a": "aid-f87211c6b430",
+          "a-2ae55697": "aid-07553f37878b",
+          "a-38faee81": "aid-2572bfd60951",
+          "a-6d5342e0": "aid-73625590d8f6",
+          "a-f7248310": "aid-55aa743ce7a3",
+          "a-fac94207": "aid-8b09e0b08f38"
+        },
+        "artifact_id_inverse": {
+          "aid-07553f37878b": "a-2ae55697",
+          "aid-2572bfd60951": "a-38faee81",
+          "aid-55aa743ce7a3": "a-f7248310",
+          "aid-73625590d8f6": "a-6d5342e0",
+          "aid-8b09e0b08f38": "a-fac94207",
+          "aid-f87211c6b430": "a-1d79911a"
+        },
+        "base_artifact_order": [
+          "a-fac94207",
+          "a-f7248310",
+          "a-2ae55697",
+          "a-6d5342e0",
+          "a-38faee81",
+          "a-1d79911a"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "context",
+          "c1": "role",
+          "c2": "membership",
+          "c3": "ownership"
+        },
+        "candidate_label_forward": {
+          "label-0b7408546372": "label-f45ecca33eed",
+          "label-851d490cf504": "label-c1e08ffea0cf",
+          "label-a29f06ed2323": "label-b79ff2cc5a5f",
+          "label-a74a348c605e": "label-bec3c31361de"
+        },
+        "candidate_label_inverse": {
+          "label-b79ff2cc5a5f": "label-a29f06ed2323",
+          "label-bec3c31361de": "label-a74a348c605e",
+          "label-c1e08ffea0cf": "label-851d490cf504",
+          "label-f45ecca33eed": "label-0b7408546372"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c3",
+          "c1": "c2",
+          "c2": "c1",
+          "c3": "c0"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-07553f37878b": 2,
+          "aid-2572bfd60951": 4,
+          "aid-55aa743ce7a3": 1,
+          "aid-73625590d8f6": 3,
+          "aid-8b09e0b08f38": 0,
+          "aid-f87211c6b430": 5
+        },
+        "path_forward": {
+          "unit_248310.py": "path-82d1b59ada7b",
+          "unit_5342e0.py": "path-bb0298c14bb9",
+          "unit_79911a.py": "path-a85a63e3ebc2",
+          "unit_c94207.py": "path-7b13b70eee87",
+          "unit_e55697.py": "path-c8bf8991ba12",
+          "unit_faee81.py": "path-0ce5feecee83"
+        },
+        "path_inverse": {
+          "path-0ce5feecee83": "unit_faee81.py",
+          "path-7b13b70eee87": "unit_c94207.py",
+          "path-82d1b59ada7b": "unit_248310.py",
+          "path-a85a63e3ebc2": "unit_79911a.py",
+          "path-bb0298c14bb9": "unit_5342e0.py",
+          "path-c8bf8991ba12": "unit_e55697.py"
+        },
+        "symbol_forward": {
+          "fn_1d79911a2": "sym_0565e95c9536",
+          "fn_2ae556977": "sym_79d05708d4ea",
+          "fn_38faee818": "sym_5d6f63e610a4",
+          "fn_6d5342e0a": "sym_0ee4ba75404c",
+          "fn_f72483101": "sym_80968084275b",
+          "handle_request": "sym_7daab088f274"
+        },
+        "symbol_inverse": {
+          "sym_0565e95c9536": "fn_1d79911a2",
+          "sym_0ee4ba75404c": "fn_6d5342e0a",
+          "sym_5d6f63e610a4": "fn_38faee818",
+          "sym_79d05708d4ea": "fn_2ae556977",
+          "sym_7daab088f274": "handle_request",
+          "sym_80968084275b": "fn_f72483101"
+        },
+        "variant_artifact_order": [
+          "aid-8b09e0b08f38",
+          "aid-f87211c6b430",
+          "aid-2572bfd60951",
+          "aid-73625590d8f6",
+          "aid-07553f37878b",
+          "aid-55aa743ce7a3"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-1d79911a": "t1",
+          "a-2ae55697": "t4",
+          "a-38faee81": "t2",
+          "a-6d5342e0": "t3",
+          "a-f7248310": "t5"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 1.0,
+        "t3": 0.65,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "combined_permutation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-8883a56f6778--base_entry--1d3d70ec34",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "1d3d70ec343b650f6181cc7dabe1c8817c13e03adb27c42a2b012979f802ecb4",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-8883a56f6778",
+      "source_family": "ownership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-0c2d822d",
+          "a-e1cf687e",
+          "a-19f67ae6",
+          "a-298dc5af",
+          "a-c4c926bd"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 1,
+          "a-19f67ae6": 3,
+          "a-298dc5af": 4,
+          "a-c4c926bd": 5,
+          "a-e1cf687e": 2,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-0c2d822d",
+          "a-e1cf687e",
+          "a-19f67ae6",
+          "a-298dc5af",
+          "a-c4c926bd"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t1",
+          "a-19f67ae6": "t3",
+          "a-298dc5af": "t4",
+          "a-c4c926bd": "t5",
+          "a-e1cf687e": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.65,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "base_entry"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-8883a56f6778--longest_artifact--1d3d70ec34",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "1d3d70ec343b650f6181cc7dabe1c8817c13e03adb27c42a2b012979f802ecb4",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-8883a56f6778",
+      "source_family": "ownership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-0c2d822d",
+          "a-e1cf687e",
+          "a-19f67ae6",
+          "a-298dc5af",
+          "a-c4c926bd"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 1,
+          "a-19f67ae6": 3,
+          "a-298dc5af": 4,
+          "a-c4c926bd": 5,
+          "a-e1cf687e": 2,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-0c2d822d",
+          "a-e1cf687e",
+          "a-19f67ae6",
+          "a-298dc5af",
+          "a-c4c926bd"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t1",
+          "a-19f67ae6": "t3",
+          "a-298dc5af": "t4",
+          "a-c4c926bd": "t5",
+          "a-e1cf687e": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.65,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "longest_artifact"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-8883a56f6778--artifact_reordering--03789a6b2e",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "03789a6b2e25565d890ec96fe98da351bf6de5d81706d536f4bba06d73b4182b",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-8883a56f6778",
+      "source_family": "ownership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-0c2d822d",
+          "a-e1cf687e",
+          "a-19f67ae6",
+          "a-298dc5af",
+          "a-c4c926bd"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 1,
+          "a-19f67ae6": 3,
+          "a-298dc5af": 4,
+          "a-c4c926bd": 5,
+          "a-e1cf687e": 2,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-19f67ae6",
+          "a-e1cf687e",
+          "a-0c2d822d"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t5",
+          "a-19f67ae6": "t3",
+          "a-298dc5af": "t2",
+          "a-c4c926bd": "t1",
+          "a-e1cf687e": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.65,
+        "t5": 1.0
+      },
+      "variant": "artifact_reordering"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-8883a56f6778--symbol_renaming--b8190410f5",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "b8190410f52bf28e957bdf00b8373a16ca4ae6355e3375934667988609003cb7",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-8883a56f6778",
+      "source_family": "ownership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-0c2d822d",
+          "a-e1cf687e",
+          "a-19f67ae6",
+          "a-298dc5af",
+          "a-c4c926bd"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 1,
+          "a-19f67ae6": 3,
+          "a-298dc5af": 4,
+          "a-c4c926bd": 5,
+          "a-e1cf687e": 2,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {
+          "fn_0c2d822d5": "sym_494b224a78b0",
+          "fn_19f67ae64": "sym_f1147e518788",
+          "fn_298dc5afd": "sym_ef4b6f80f73d",
+          "fn_c4c926bd9": "sym_b29cf22bc8c7",
+          "fn_e1cf687e6": "sym_8292d9a114e0",
+          "handle_request": "sym_b4737077bcac"
+        },
+        "symbol_inverse": {
+          "sym_494b224a78b0": "fn_0c2d822d5",
+          "sym_8292d9a114e0": "fn_e1cf687e6",
+          "sym_b29cf22bc8c7": "fn_c4c926bd9",
+          "sym_b4737077bcac": "handle_request",
+          "sym_ef4b6f80f73d": "fn_298dc5afd",
+          "sym_f1147e518788": "fn_19f67ae64"
+        },
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-0c2d822d",
+          "a-e1cf687e",
+          "a-19f67ae6",
+          "a-298dc5af",
+          "a-c4c926bd"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t1",
+          "a-19f67ae6": "t3",
+          "a-298dc5af": "t4",
+          "a-c4c926bd": "t5",
+          "a-e1cf687e": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.65,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "symbol_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-8883a56f6778--candidate_label_renaming--64eae28f58",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "64eae28f5815539dda3b3045d0eb9b2bee2b9524884a4b2ec6d411eebf65f891",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-8883a56f6778",
+      "source_family": "ownership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-0c2d822d",
+          "a-e1cf687e",
+          "a-19f67ae6",
+          "a-298dc5af",
+          "a-c4c926bd"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {
+          "label-16265686152d": "label-190ec1198f1c",
+          "label-1bf83d695f12": "label-97043e789445",
+          "label-5294408bbac2": "label-5c9c51f04626",
+          "label-c9a4e23e8994": "label-9e16d594ff6c"
+        },
+        "candidate_label_inverse": {
+          "label-190ec1198f1c": "label-16265686152d",
+          "label-5c9c51f04626": "label-5294408bbac2",
+          "label-97043e789445": "label-1bf83d695f12",
+          "label-9e16d594ff6c": "label-c9a4e23e8994"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 1,
+          "a-19f67ae6": 3,
+          "a-298dc5af": 4,
+          "a-c4c926bd": 5,
+          "a-e1cf687e": 2,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-0c2d822d",
+          "a-e1cf687e",
+          "a-19f67ae6",
+          "a-298dc5af",
+          "a-c4c926bd"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t1",
+          "a-19f67ae6": "t3",
+          "a-298dc5af": "t4",
+          "a-c4c926bd": "t5",
+          "a-e1cf687e": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.65,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "candidate_label_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-8883a56f6778--artifact_identifier_variation--f7b3cd4d1d",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "aid-3d721f6b8e70",
+        "a-19f67ae6": "aid-bda106d2de91",
+        "a-298dc5af": "aid-2ac8d2931755",
+        "a-c4c926bd": "aid-1873d46f6cdf",
+        "a-e1cf687e": "aid-28396c4cc22e",
+        "a-f4a5838b": "aid-cc5ccf33714b"
+      },
+      "public_input_sha256": "f7b3cd4d1d2a02ee235d6f41db2405d7d51e718e190243d2bb5eb45b69fc11f3",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-8883a56f6778",
+      "source_family": "ownership",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-0c2d822d": "aid-3d721f6b8e70",
+          "a-19f67ae6": "aid-bda106d2de91",
+          "a-298dc5af": "aid-2ac8d2931755",
+          "a-c4c926bd": "aid-1873d46f6cdf",
+          "a-e1cf687e": "aid-28396c4cc22e",
+          "a-f4a5838b": "aid-cc5ccf33714b"
+        },
+        "artifact_id_inverse": {
+          "aid-1873d46f6cdf": "a-c4c926bd",
+          "aid-28396c4cc22e": "a-e1cf687e",
+          "aid-2ac8d2931755": "a-298dc5af",
+          "aid-3d721f6b8e70": "a-0c2d822d",
+          "aid-bda106d2de91": "a-19f67ae6",
+          "aid-cc5ccf33714b": "a-f4a5838b"
+        },
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-0c2d822d",
+          "a-e1cf687e",
+          "a-19f67ae6",
+          "a-298dc5af",
+          "a-c4c926bd"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-1873d46f6cdf": 5,
+          "aid-28396c4cc22e": 2,
+          "aid-2ac8d2931755": 4,
+          "aid-3d721f6b8e70": 1,
+          "aid-bda106d2de91": 3,
+          "aid-cc5ccf33714b": 0
+        },
+        "path_forward": {
+          "unit_2d822d.py": "path-2c382ca8f4ff",
+          "unit_8dc5af.py": "path-54917a4ae5ca",
+          "unit_a5838b.py": "path-dc9532fa8a35",
+          "unit_c926bd.py": "path-2a40546fbfbb",
+          "unit_cf687e.py": "path-de3562c1c762",
+          "unit_f67ae6.py": "path-6d7ae05de783"
+        },
+        "path_inverse": {
+          "path-2a40546fbfbb": "unit_c926bd.py",
+          "path-2c382ca8f4ff": "unit_2d822d.py",
+          "path-54917a4ae5ca": "unit_8dc5af.py",
+          "path-6d7ae05de783": "unit_f67ae6.py",
+          "path-dc9532fa8a35": "unit_a5838b.py",
+          "path-de3562c1c762": "unit_cf687e.py"
+        },
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "aid-cc5ccf33714b",
+          "aid-3d721f6b8e70",
+          "aid-28396c4cc22e",
+          "aid-bda106d2de91",
+          "aid-2ac8d2931755",
+          "aid-1873d46f6cdf"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t1",
+          "a-19f67ae6": "t3",
+          "a-298dc5af": "t4",
+          "a-c4c926bd": "t5",
+          "a-e1cf687e": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.65,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "artifact_identifier_variation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "context",
+        "c1": "role",
+        "c2": "membership",
+        "c3": "ownership"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c0",
+        "membership": "c2",
+        "ownership": "c3",
+        "role": "c1"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-8883a56f6778--combined_permutation--0b07b3f675",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "aid-c671adb866ed",
+        "a-19f67ae6": "aid-5859dd187429",
+        "a-298dc5af": "aid-2f6fcfa97c60",
+        "a-c4c926bd": "aid-079fdd94f7f1",
+        "a-e1cf687e": "aid-9a833a0e80ba",
+        "a-f4a5838b": "aid-5146075448fe"
+      },
+      "public_input_sha256": "0b07b3f6750f363ec053d3fff1fd0bd503abddb4fcf331c9cb64407b8506b460",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-8883a56f6778",
+      "source_family": "ownership",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-0c2d822d": "aid-c671adb866ed",
+          "a-19f67ae6": "aid-5859dd187429",
+          "a-298dc5af": "aid-2f6fcfa97c60",
+          "a-c4c926bd": "aid-079fdd94f7f1",
+          "a-e1cf687e": "aid-9a833a0e80ba",
+          "a-f4a5838b": "aid-5146075448fe"
+        },
+        "artifact_id_inverse": {
+          "aid-079fdd94f7f1": "a-c4c926bd",
+          "aid-2f6fcfa97c60": "a-298dc5af",
+          "aid-5146075448fe": "a-f4a5838b",
+          "aid-5859dd187429": "a-19f67ae6",
+          "aid-9a833a0e80ba": "a-e1cf687e",
+          "aid-c671adb866ed": "a-0c2d822d"
+        },
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-0c2d822d",
+          "a-e1cf687e",
+          "a-19f67ae6",
+          "a-298dc5af",
+          "a-c4c926bd"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "context",
+          "c1": "role",
+          "c2": "membership",
+          "c3": "ownership"
+        },
+        "candidate_label_forward": {
+          "label-16265686152d": "label-1811ef2fe99a",
+          "label-1bf83d695f12": "label-d092a9d042c6",
+          "label-5294408bbac2": "label-8d60e2377a62",
+          "label-c9a4e23e8994": "label-9c316f24e11b"
+        },
+        "candidate_label_inverse": {
+          "label-1811ef2fe99a": "label-16265686152d",
+          "label-8d60e2377a62": "label-5294408bbac2",
+          "label-9c316f24e11b": "label-c9a4e23e8994",
+          "label-d092a9d042c6": "label-1bf83d695f12"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c3",
+          "c1": "c2",
+          "c2": "c1",
+          "c3": "c0"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-079fdd94f7f1": 5,
+          "aid-2f6fcfa97c60": 4,
+          "aid-5146075448fe": 0,
+          "aid-5859dd187429": 3,
+          "aid-9a833a0e80ba": 2,
+          "aid-c671adb866ed": 1
+        },
+        "path_forward": {
+          "unit_2d822d.py": "path-a04f27c0280c",
+          "unit_8dc5af.py": "path-d23e59821024",
+          "unit_a5838b.py": "path-93b1b2b35325",
+          "unit_c926bd.py": "path-a4a3e82a2fac",
+          "unit_cf687e.py": "path-53ed22b847f5",
+          "unit_f67ae6.py": "path-52389dc62af0"
+        },
+        "path_inverse": {
+          "path-52389dc62af0": "unit_f67ae6.py",
+          "path-53ed22b847f5": "unit_cf687e.py",
+          "path-93b1b2b35325": "unit_a5838b.py",
+          "path-a04f27c0280c": "unit_2d822d.py",
+          "path-a4a3e82a2fac": "unit_c926bd.py",
+          "path-d23e59821024": "unit_8dc5af.py"
+        },
+        "symbol_forward": {
+          "fn_0c2d822d5": "sym_8e7f5cee04e7",
+          "fn_19f67ae64": "sym_1deb89c795c9",
+          "fn_298dc5afd": "sym_39d80268838a",
+          "fn_c4c926bd9": "sym_977b81cbe238",
+          "fn_e1cf687e6": "sym_c5bfd844d0a0",
+          "handle_request": "sym_8659c4e50b9e"
+        },
+        "symbol_inverse": {
+          "sym_1deb89c795c9": "fn_19f67ae64",
+          "sym_39d80268838a": "fn_298dc5afd",
+          "sym_8659c4e50b9e": "handle_request",
+          "sym_8e7f5cee04e7": "fn_0c2d822d5",
+          "sym_977b81cbe238": "fn_c4c926bd9",
+          "sym_c5bfd844d0a0": "fn_e1cf687e6"
+        },
+        "variant_artifact_order": [
+          "aid-5146075448fe",
+          "aid-079fdd94f7f1",
+          "aid-2f6fcfa97c60",
+          "aid-5859dd187429",
+          "aid-9a833a0e80ba",
+          "aid-c671adb866ed"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t5",
+          "a-19f67ae6": "t3",
+          "a-298dc5af": "t2",
+          "a-c4c926bd": "t1",
+          "a-e1cf687e": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.65,
+        "t5": 1.0
+      },
+      "variant": "combined_permutation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-4579914d0fa5--base_entry--9ba29e87ed",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "9ba29e87edc73df6bd8ccaee3848191e8ee1e305c5031904879e3f9baeee736d",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-4579914d0fa5",
+      "source_family": "membership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-e1cf687e"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 4,
+          "a-19f67ae6": 1,
+          "a-298dc5af": 3,
+          "a-c4c926bd": 2,
+          "a-e1cf687e": 5,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-e1cf687e"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t4",
+          "a-19f67ae6": "t1",
+          "a-298dc5af": "t3",
+          "a-c4c926bd": "t2",
+          "a-e1cf687e": "t5"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.65
+      },
+      "variant": "base_entry"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-e1cf687e",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t0": 0,
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4
+      },
+      "case_id": "asv1-d-4579914d0fa5--longest_artifact--a4e8429522",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "a4e8429522cef1142baca6d627959ae3625755ee7531c647c02cbcb6a4028d1c",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-4579914d0fa5",
+      "source_family": "membership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-e1cf687e"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 4,
+          "a-19f67ae6": 1,
+          "a-298dc5af": 3,
+          "a-c4c926bd": 2,
+          "a-e1cf687e": 5,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-e1cf687e"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t4",
+          "a-19f67ae6": "t1",
+          "a-298dc5af": "t3",
+          "a-c4c926bd": "t2",
+          "a-f4a5838b": "t0"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t0": 0.4,
+        "t1": 1.0,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.25
+      },
+      "variant": "longest_artifact"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-4579914d0fa5--artifact_reordering--8a3d44442e",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "8a3d44442e92f090587b61d6b4b6c76fff81495843e76e50564ed2276d50272e",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-4579914d0fa5",
+      "source_family": "membership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-e1cf687e"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 4,
+          "a-19f67ae6": 1,
+          "a-298dc5af": 3,
+          "a-c4c926bd": 2,
+          "a-e1cf687e": 5,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-e1cf687e",
+          "a-0c2d822d",
+          "a-298dc5af",
+          "a-c4c926bd",
+          "a-19f67ae6"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t2",
+          "a-19f67ae6": "t5",
+          "a-298dc5af": "t3",
+          "a-c4c926bd": "t4",
+          "a-e1cf687e": "t1"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.65,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 1.0
+      },
+      "variant": "artifact_reordering"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-4579914d0fa5--symbol_renaming--ceeffb2bd3",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "ceeffb2bd33ca71332303252fc2056051fa28f9f6913934ebedab13df6dd60a7",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-4579914d0fa5",
+      "source_family": "membership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-e1cf687e"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 4,
+          "a-19f67ae6": 1,
+          "a-298dc5af": 3,
+          "a-c4c926bd": 2,
+          "a-e1cf687e": 5,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {
+          "fn_0c2d822d5": "sym_329d399e2745",
+          "fn_19f67ae64": "sym_5a72267fda66",
+          "fn_298dc5afd": "sym_0638bb6a2fda",
+          "fn_c4c926bd9": "sym_d6254b780053",
+          "fn_e1cf687e6": "sym_6fcdf5c63fb1",
+          "handle_request": "sym_73e13a525f87"
+        },
+        "symbol_inverse": {
+          "sym_0638bb6a2fda": "fn_298dc5afd",
+          "sym_329d399e2745": "fn_0c2d822d5",
+          "sym_5a72267fda66": "fn_19f67ae64",
+          "sym_6fcdf5c63fb1": "fn_e1cf687e6",
+          "sym_73e13a525f87": "handle_request",
+          "sym_d6254b780053": "fn_c4c926bd9"
+        },
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-e1cf687e"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t4",
+          "a-19f67ae6": "t1",
+          "a-298dc5af": "t3",
+          "a-c4c926bd": "t2",
+          "a-e1cf687e": "t5"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.65
+      },
+      "variant": "symbol_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-4579914d0fa5--candidate_label_renaming--8ddc84736f",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "8ddc84736f35a722bedfac7706cf65e517530c84a9b4e00dbfde2e690feb12ea",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-4579914d0fa5",
+      "source_family": "membership",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-e1cf687e"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {
+          "label-05247f7c7f00": "label-519e96f918aa",
+          "label-053ceaf8213d": "label-029bca98d995",
+          "label-3c5c558d7a4e": "label-4007b845ece1",
+          "label-ed43fdb7ebc7": "label-00eac3bd6a28"
+        },
+        "candidate_label_inverse": {
+          "label-00eac3bd6a28": "label-ed43fdb7ebc7",
+          "label-029bca98d995": "label-053ceaf8213d",
+          "label-4007b845ece1": "label-3c5c558d7a4e",
+          "label-519e96f918aa": "label-05247f7c7f00"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 4,
+          "a-19f67ae6": 1,
+          "a-298dc5af": 3,
+          "a-c4c926bd": 2,
+          "a-e1cf687e": 5,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-e1cf687e"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t4",
+          "a-19f67ae6": "t1",
+          "a-298dc5af": "t3",
+          "a-c4c926bd": "t2",
+          "a-e1cf687e": "t5"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.65
+      },
+      "variant": "candidate_label_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-4579914d0fa5--artifact_identifier_variation--78c73c8b43",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "aid-23cc4aa6dac7",
+        "a-19f67ae6": "aid-71e9335813a7",
+        "a-298dc5af": "aid-efcdb7f19f3a",
+        "a-c4c926bd": "aid-3cbe08c6806b",
+        "a-e1cf687e": "aid-94359ae0fff4",
+        "a-f4a5838b": "aid-449bfa71508d"
+      },
+      "public_input_sha256": "78c73c8b437e9b3a82b33e1b070c64a41130e51a8070c6c559b82f9fd5ef4587",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-4579914d0fa5",
+      "source_family": "membership",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-0c2d822d": "aid-23cc4aa6dac7",
+          "a-19f67ae6": "aid-71e9335813a7",
+          "a-298dc5af": "aid-efcdb7f19f3a",
+          "a-c4c926bd": "aid-3cbe08c6806b",
+          "a-e1cf687e": "aid-94359ae0fff4",
+          "a-f4a5838b": "aid-449bfa71508d"
+        },
+        "artifact_id_inverse": {
+          "aid-23cc4aa6dac7": "a-0c2d822d",
+          "aid-3cbe08c6806b": "a-c4c926bd",
+          "aid-449bfa71508d": "a-f4a5838b",
+          "aid-71e9335813a7": "a-19f67ae6",
+          "aid-94359ae0fff4": "a-e1cf687e",
+          "aid-efcdb7f19f3a": "a-298dc5af"
+        },
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-e1cf687e"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-23cc4aa6dac7": 4,
+          "aid-3cbe08c6806b": 2,
+          "aid-449bfa71508d": 0,
+          "aid-71e9335813a7": 1,
+          "aid-94359ae0fff4": 5,
+          "aid-efcdb7f19f3a": 3
+        },
+        "path_forward": {
+          "unit_2d822d.py": "path-c4e55123338a",
+          "unit_8dc5af.py": "path-30660124c9b5",
+          "unit_a5838b.py": "path-e8beab0aedf5",
+          "unit_c926bd.py": "path-5a182bcddd0f",
+          "unit_cf687e.py": "path-06e522af3a84",
+          "unit_f67ae6.py": "path-4308d76d8960"
+        },
+        "path_inverse": {
+          "path-06e522af3a84": "unit_cf687e.py",
+          "path-30660124c9b5": "unit_8dc5af.py",
+          "path-4308d76d8960": "unit_f67ae6.py",
+          "path-5a182bcddd0f": "unit_c926bd.py",
+          "path-c4e55123338a": "unit_2d822d.py",
+          "path-e8beab0aedf5": "unit_a5838b.py"
+        },
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "aid-449bfa71508d",
+          "aid-71e9335813a7",
+          "aid-3cbe08c6806b",
+          "aid-efcdb7f19f3a",
+          "aid-23cc4aa6dac7",
+          "aid-94359ae0fff4"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t4",
+          "a-19f67ae6": "t1",
+          "a-298dc5af": "t3",
+          "a-c4c926bd": "t2",
+          "a-e1cf687e": "t5"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.65
+      },
+      "variant": "artifact_identifier_variation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "context",
+        "c1": "role",
+        "c2": "membership",
+        "c3": "ownership"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c0",
+        "membership": "c2",
+        "ownership": "c3",
+        "role": "c1"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-4579914d0fa5--combined_permutation--18352af2dc",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "aid-cc9ac271c7a2",
+        "a-19f67ae6": "aid-e8dcb60f8ebc",
+        "a-298dc5af": "aid-cb4c9caa2a6d",
+        "a-c4c926bd": "aid-90feb0700086",
+        "a-e1cf687e": "aid-538ed0f2c2ab",
+        "a-f4a5838b": "aid-ba3e3bdd0a1a"
+      },
+      "public_input_sha256": "18352af2dc2599a8cbc8599ae4506653228262b46f3f3e0413a19a58ef4b1cf6",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-4579914d0fa5",
+      "source_family": "membership",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-0c2d822d": "aid-cc9ac271c7a2",
+          "a-19f67ae6": "aid-e8dcb60f8ebc",
+          "a-298dc5af": "aid-cb4c9caa2a6d",
+          "a-c4c926bd": "aid-90feb0700086",
+          "a-e1cf687e": "aid-538ed0f2c2ab",
+          "a-f4a5838b": "aid-ba3e3bdd0a1a"
+        },
+        "artifact_id_inverse": {
+          "aid-538ed0f2c2ab": "a-e1cf687e",
+          "aid-90feb0700086": "a-c4c926bd",
+          "aid-ba3e3bdd0a1a": "a-f4a5838b",
+          "aid-cb4c9caa2a6d": "a-298dc5af",
+          "aid-cc9ac271c7a2": "a-0c2d822d",
+          "aid-e8dcb60f8ebc": "a-19f67ae6"
+        },
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-e1cf687e"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "context",
+          "c1": "role",
+          "c2": "membership",
+          "c3": "ownership"
+        },
+        "candidate_label_forward": {
+          "label-05247f7c7f00": "label-bd7166fdec6d",
+          "label-053ceaf8213d": "label-1b40b2135ffd",
+          "label-3c5c558d7a4e": "label-48561e677ce2",
+          "label-ed43fdb7ebc7": "label-b714d666995b"
+        },
+        "candidate_label_inverse": {
+          "label-1b40b2135ffd": "label-053ceaf8213d",
+          "label-48561e677ce2": "label-3c5c558d7a4e",
+          "label-b714d666995b": "label-ed43fdb7ebc7",
+          "label-bd7166fdec6d": "label-05247f7c7f00"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c3",
+          "c1": "c2",
+          "c2": "c1",
+          "c3": "c0"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-538ed0f2c2ab": 5,
+          "aid-90feb0700086": 2,
+          "aid-ba3e3bdd0a1a": 0,
+          "aid-cb4c9caa2a6d": 3,
+          "aid-cc9ac271c7a2": 4,
+          "aid-e8dcb60f8ebc": 1
+        },
+        "path_forward": {
+          "unit_2d822d.py": "path-479ef446ae88",
+          "unit_8dc5af.py": "path-df82f60b77bd",
+          "unit_a5838b.py": "path-ce84c09102d6",
+          "unit_c926bd.py": "path-6ceb4669bb0c",
+          "unit_cf687e.py": "path-2cb083093bcf",
+          "unit_f67ae6.py": "path-25e50bd0a527"
+        },
+        "path_inverse": {
+          "path-25e50bd0a527": "unit_f67ae6.py",
+          "path-2cb083093bcf": "unit_cf687e.py",
+          "path-479ef446ae88": "unit_2d822d.py",
+          "path-6ceb4669bb0c": "unit_c926bd.py",
+          "path-ce84c09102d6": "unit_a5838b.py",
+          "path-df82f60b77bd": "unit_8dc5af.py"
+        },
+        "symbol_forward": {
+          "fn_0c2d822d5": "sym_5aa840367495",
+          "fn_19f67ae64": "sym_2a897286f4b8",
+          "fn_298dc5afd": "sym_517b80f0ac9f",
+          "fn_c4c926bd9": "sym_42f045001ed0",
+          "fn_e1cf687e6": "sym_d8650b21ddbf",
+          "handle_request": "sym_c03d52a011a5"
+        },
+        "symbol_inverse": {
+          "sym_2a897286f4b8": "fn_19f67ae64",
+          "sym_42f045001ed0": "fn_c4c926bd9",
+          "sym_517b80f0ac9f": "fn_298dc5afd",
+          "sym_5aa840367495": "fn_0c2d822d5",
+          "sym_c03d52a011a5": "handle_request",
+          "sym_d8650b21ddbf": "fn_e1cf687e6"
+        },
+        "variant_artifact_order": [
+          "aid-ba3e3bdd0a1a",
+          "aid-538ed0f2c2ab",
+          "aid-cc9ac271c7a2",
+          "aid-cb4c9caa2a6d",
+          "aid-90feb0700086",
+          "aid-e8dcb60f8ebc"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t2",
+          "a-19f67ae6": "t5",
+          "a-298dc5af": "t3",
+          "a-c4c926bd": "t4",
+          "a-e1cf687e": "t1"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.65,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 1.0
+      },
+      "variant": "combined_permutation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-fd4ff6d021dc--base_entry--369b6a44e8",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "369b6a44e87962ecdf24d1628c2f0efc6eb3a3b7370fd3a1e5c175c1d47d10aa",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-fd4ff6d021dc",
+      "source_family": "role",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-e1cf687e",
+          "a-0c2d822d"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 5,
+          "a-19f67ae6": 1,
+          "a-298dc5af": 3,
+          "a-c4c926bd": 2,
+          "a-e1cf687e": 4,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-e1cf687e",
+          "a-0c2d822d"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t5",
+          "a-19f67ae6": "t1",
+          "a-298dc5af": "t3",
+          "a-c4c926bd": "t2",
+          "a-e1cf687e": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 1.0,
+        "t4": 0.65,
+        "t5": 0.25
+      },
+      "variant": "base_entry"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-e1cf687e",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t0": 0,
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t5": 5
+      },
+      "case_id": "asv1-d-fd4ff6d021dc--longest_artifact--4f31ba75a2",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "4f31ba75a21a8dc3aa1404785dbd6face7b3a8cf586a0f825cfdfa2ab02c2689",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-fd4ff6d021dc",
+      "source_family": "role",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-e1cf687e",
+          "a-0c2d822d"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 5,
+          "a-19f67ae6": 1,
+          "a-298dc5af": 3,
+          "a-c4c926bd": 2,
+          "a-e1cf687e": 4,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-e1cf687e",
+          "a-0c2d822d"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t5",
+          "a-19f67ae6": "t1",
+          "a-298dc5af": "t3",
+          "a-c4c926bd": "t2",
+          "a-f4a5838b": "t0"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t0": 0.4,
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 1.0,
+        "t5": 0.25
+      },
+      "variant": "longest_artifact"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-fd4ff6d021dc--artifact_reordering--abff715525",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "abff715525b7f46f4a35a1e0109bbcef45cacbcc3742bcf3754678004ea7fea7",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-fd4ff6d021dc",
+      "source_family": "role",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-e1cf687e",
+          "a-0c2d822d"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 5,
+          "a-19f67ae6": 1,
+          "a-298dc5af": 3,
+          "a-c4c926bd": 2,
+          "a-e1cf687e": 4,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-0c2d822d",
+          "a-e1cf687e",
+          "a-298dc5af",
+          "a-c4c926bd",
+          "a-19f67ae6"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t1",
+          "a-19f67ae6": "t5",
+          "a-298dc5af": "t3",
+          "a-c4c926bd": "t4",
+          "a-e1cf687e": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.65,
+        "t3": 1.0,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "artifact_reordering"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-fd4ff6d021dc--symbol_renaming--1887e7a38e",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "1887e7a38e70f631f60decca5bb90b0df70c83e210180702f9661c4049107b92",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-fd4ff6d021dc",
+      "source_family": "role",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-e1cf687e",
+          "a-0c2d822d"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 5,
+          "a-19f67ae6": 1,
+          "a-298dc5af": 3,
+          "a-c4c926bd": 2,
+          "a-e1cf687e": 4,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {
+          "fn_0c2d822d5": "sym_86e400d128f4",
+          "fn_19f67ae64": "sym_4653a312d385",
+          "fn_298dc5afd": "sym_fa37d0621553",
+          "fn_c4c926bd9": "sym_3cb9a4d4f992",
+          "fn_e1cf687e6": "sym_6d7eefe3e997",
+          "handle_request": "sym_b77957615578"
+        },
+        "symbol_inverse": {
+          "sym_3cb9a4d4f992": "fn_c4c926bd9",
+          "sym_4653a312d385": "fn_19f67ae64",
+          "sym_6d7eefe3e997": "fn_e1cf687e6",
+          "sym_86e400d128f4": "fn_0c2d822d5",
+          "sym_b77957615578": "handle_request",
+          "sym_fa37d0621553": "fn_298dc5afd"
+        },
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-e1cf687e",
+          "a-0c2d822d"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t5",
+          "a-19f67ae6": "t1",
+          "a-298dc5af": "t3",
+          "a-c4c926bd": "t2",
+          "a-e1cf687e": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 1.0,
+        "t4": 0.65,
+        "t5": 0.25
+      },
+      "variant": "symbol_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-fd4ff6d021dc--candidate_label_renaming--40b1313da3",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "40b1313da3d7d88c5972ca8ebad0566ae896505a7ecfc7ea7e7a301630426888",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-fd4ff6d021dc",
+      "source_family": "role",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-e1cf687e",
+          "a-0c2d822d"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {
+          "label-1b50857fd0b7": "label-51cb73078dcb",
+          "label-6a6431e83cb0": "label-5463fdc04f8c",
+          "label-8cadd26e7b4d": "label-56bd1d2a44e9",
+          "label-f5fdca555cae": "label-517edbfa601b"
+        },
+        "candidate_label_inverse": {
+          "label-517edbfa601b": "label-f5fdca555cae",
+          "label-51cb73078dcb": "label-1b50857fd0b7",
+          "label-5463fdc04f8c": "label-6a6431e83cb0",
+          "label-56bd1d2a44e9": "label-8cadd26e7b4d"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 5,
+          "a-19f67ae6": 1,
+          "a-298dc5af": 3,
+          "a-c4c926bd": 2,
+          "a-e1cf687e": 4,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-e1cf687e",
+          "a-0c2d822d"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t5",
+          "a-19f67ae6": "t1",
+          "a-298dc5af": "t3",
+          "a-c4c926bd": "t2",
+          "a-e1cf687e": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 1.0,
+        "t4": 0.65,
+        "t5": 0.25
+      },
+      "variant": "candidate_label_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-fd4ff6d021dc--artifact_identifier_variation--7f52eb64e6",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "aid-09223650ea70",
+        "a-19f67ae6": "aid-dffe5ea39ae8",
+        "a-298dc5af": "aid-d35b6b584066",
+        "a-c4c926bd": "aid-384fdc611c82",
+        "a-e1cf687e": "aid-2014add8e923",
+        "a-f4a5838b": "aid-2fe44ab24af2"
+      },
+      "public_input_sha256": "7f52eb64e6efe1257768674cf0c6ec84771f889b90324ab9462f1940c19ea464",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-fd4ff6d021dc",
+      "source_family": "role",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-0c2d822d": "aid-09223650ea70",
+          "a-19f67ae6": "aid-dffe5ea39ae8",
+          "a-298dc5af": "aid-d35b6b584066",
+          "a-c4c926bd": "aid-384fdc611c82",
+          "a-e1cf687e": "aid-2014add8e923",
+          "a-f4a5838b": "aid-2fe44ab24af2"
+        },
+        "artifact_id_inverse": {
+          "aid-09223650ea70": "a-0c2d822d",
+          "aid-2014add8e923": "a-e1cf687e",
+          "aid-2fe44ab24af2": "a-f4a5838b",
+          "aid-384fdc611c82": "a-c4c926bd",
+          "aid-d35b6b584066": "a-298dc5af",
+          "aid-dffe5ea39ae8": "a-19f67ae6"
+        },
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-e1cf687e",
+          "a-0c2d822d"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-09223650ea70": 5,
+          "aid-2014add8e923": 4,
+          "aid-2fe44ab24af2": 0,
+          "aid-384fdc611c82": 2,
+          "aid-d35b6b584066": 3,
+          "aid-dffe5ea39ae8": 1
+        },
+        "path_forward": {
+          "unit_2d822d.py": "path-b0c6c05807c9",
+          "unit_8dc5af.py": "path-ac2d13deef9a",
+          "unit_a5838b.py": "path-9fae85019444",
+          "unit_c926bd.py": "path-fc0c9d29798d",
+          "unit_cf687e.py": "path-a59aa1a6e038",
+          "unit_f67ae6.py": "path-3d2209bf6f17"
+        },
+        "path_inverse": {
+          "path-3d2209bf6f17": "unit_f67ae6.py",
+          "path-9fae85019444": "unit_a5838b.py",
+          "path-a59aa1a6e038": "unit_cf687e.py",
+          "path-ac2d13deef9a": "unit_8dc5af.py",
+          "path-b0c6c05807c9": "unit_2d822d.py",
+          "path-fc0c9d29798d": "unit_c926bd.py"
+        },
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "aid-2fe44ab24af2",
+          "aid-dffe5ea39ae8",
+          "aid-384fdc611c82",
+          "aid-d35b6b584066",
+          "aid-2014add8e923",
+          "aid-09223650ea70"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t5",
+          "a-19f67ae6": "t1",
+          "a-298dc5af": "t3",
+          "a-c4c926bd": "t2",
+          "a-e1cf687e": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 1.0,
+        "t4": 0.65,
+        "t5": 0.25
+      },
+      "variant": "artifact_identifier_variation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "context",
+        "c1": "role",
+        "c2": "membership",
+        "c3": "ownership"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c0",
+        "membership": "c2",
+        "ownership": "c3",
+        "role": "c1"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-fd4ff6d021dc--combined_permutation--7f4af6c84b",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "aid-fa44c95b8b85",
+        "a-19f67ae6": "aid-ef059a68b1d6",
+        "a-298dc5af": "aid-a5c34e84b194",
+        "a-c4c926bd": "aid-845338ac6bd7",
+        "a-e1cf687e": "aid-ca1c4510f638",
+        "a-f4a5838b": "aid-e151b2e19c3b"
+      },
+      "public_input_sha256": "7f4af6c84bbe39d8bd7c5045f14c8d165fb7c1be20c2492ec73f51ae2dd50606",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-fd4ff6d021dc",
+      "source_family": "role",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-0c2d822d": "aid-fa44c95b8b85",
+          "a-19f67ae6": "aid-ef059a68b1d6",
+          "a-298dc5af": "aid-a5c34e84b194",
+          "a-c4c926bd": "aid-845338ac6bd7",
+          "a-e1cf687e": "aid-ca1c4510f638",
+          "a-f4a5838b": "aid-e151b2e19c3b"
+        },
+        "artifact_id_inverse": {
+          "aid-845338ac6bd7": "a-c4c926bd",
+          "aid-a5c34e84b194": "a-298dc5af",
+          "aid-ca1c4510f638": "a-e1cf687e",
+          "aid-e151b2e19c3b": "a-f4a5838b",
+          "aid-ef059a68b1d6": "a-19f67ae6",
+          "aid-fa44c95b8b85": "a-0c2d822d"
+        },
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-19f67ae6",
+          "a-c4c926bd",
+          "a-298dc5af",
+          "a-e1cf687e",
+          "a-0c2d822d"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "context",
+          "c1": "role",
+          "c2": "membership",
+          "c3": "ownership"
+        },
+        "candidate_label_forward": {
+          "label-1b50857fd0b7": "label-1a258064bba1",
+          "label-6a6431e83cb0": "label-a606228c35a6",
+          "label-8cadd26e7b4d": "label-655a56e76c65",
+          "label-f5fdca555cae": "label-c3bc799d5afd"
+        },
+        "candidate_label_inverse": {
+          "label-1a258064bba1": "label-1b50857fd0b7",
+          "label-655a56e76c65": "label-8cadd26e7b4d",
+          "label-a606228c35a6": "label-6a6431e83cb0",
+          "label-c3bc799d5afd": "label-f5fdca555cae"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c3",
+          "c1": "c2",
+          "c2": "c1",
+          "c3": "c0"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-845338ac6bd7": 2,
+          "aid-a5c34e84b194": 3,
+          "aid-ca1c4510f638": 4,
+          "aid-e151b2e19c3b": 0,
+          "aid-ef059a68b1d6": 1,
+          "aid-fa44c95b8b85": 5
+        },
+        "path_forward": {
+          "unit_2d822d.py": "path-0fbe1609e7cc",
+          "unit_8dc5af.py": "path-e98d5b718a29",
+          "unit_a5838b.py": "path-820e8d741231",
+          "unit_c926bd.py": "path-1a2790d05d9a",
+          "unit_cf687e.py": "path-07f29c1e782b",
+          "unit_f67ae6.py": "path-41e36094e1c4"
+        },
+        "path_inverse": {
+          "path-07f29c1e782b": "unit_cf687e.py",
+          "path-0fbe1609e7cc": "unit_2d822d.py",
+          "path-1a2790d05d9a": "unit_c926bd.py",
+          "path-41e36094e1c4": "unit_f67ae6.py",
+          "path-820e8d741231": "unit_a5838b.py",
+          "path-e98d5b718a29": "unit_8dc5af.py"
+        },
+        "symbol_forward": {
+          "fn_0c2d822d5": "sym_72e2199d2ff2",
+          "fn_19f67ae64": "sym_f985b6d763ec",
+          "fn_298dc5afd": "sym_584499b317b7",
+          "fn_c4c926bd9": "sym_dc3bf3162b66",
+          "fn_e1cf687e6": "sym_a3e131460e70",
+          "handle_request": "sym_f0a37f095a82"
+        },
+        "symbol_inverse": {
+          "sym_584499b317b7": "fn_298dc5afd",
+          "sym_72e2199d2ff2": "fn_0c2d822d5",
+          "sym_a3e131460e70": "fn_e1cf687e6",
+          "sym_dc3bf3162b66": "fn_c4c926bd9",
+          "sym_f0a37f095a82": "handle_request",
+          "sym_f985b6d763ec": "fn_19f67ae64"
+        },
+        "variant_artifact_order": [
+          "aid-e151b2e19c3b",
+          "aid-fa44c95b8b85",
+          "aid-ca1c4510f638",
+          "aid-a5c34e84b194",
+          "aid-845338ac6bd7",
+          "aid-ef059a68b1d6"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t1",
+          "a-19f67ae6": "t5",
+          "a-298dc5af": "t3",
+          "a-c4c926bd": "t4",
+          "a-e1cf687e": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.65,
+        "t3": 1.0,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "combined_permutation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-f5f54c9c8670--base_entry--5788f5bc53",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "5788f5bc538cb592600c29ba16c97c09f38952cd4edcac7cad6af0706dd7ed30",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "source_family": "context",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-19f67ae6",
+          "a-e1cf687e",
+          "a-c4c926bd"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 2,
+          "a-19f67ae6": 3,
+          "a-298dc5af": 1,
+          "a-c4c926bd": 5,
+          "a-e1cf687e": 4,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-19f67ae6",
+          "a-e1cf687e",
+          "a-c4c926bd"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t2",
+          "a-19f67ae6": "t3",
+          "a-298dc5af": "t1",
+          "a-c4c926bd": "t5",
+          "a-e1cf687e": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.65,
+        "t5": 1.0
+      },
+      "variant": "base_entry"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-e1cf687e",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t0": 0,
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t5": 5
+      },
+      "case_id": "asv1-d-f5f54c9c8670--longest_artifact--1f1ba3951c",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "1f1ba3951c299a586fd2c323c1d3fe05d53e6f33f5ce69125bca9edf19f1fb1f",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "source_family": "context",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-19f67ae6",
+          "a-e1cf687e",
+          "a-c4c926bd"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 2,
+          "a-19f67ae6": 3,
+          "a-298dc5af": 1,
+          "a-c4c926bd": 5,
+          "a-e1cf687e": 4,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-19f67ae6",
+          "a-e1cf687e",
+          "a-c4c926bd"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t2",
+          "a-19f67ae6": "t3",
+          "a-298dc5af": "t1",
+          "a-c4c926bd": "t5",
+          "a-f4a5838b": "t0"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t0": 0.4,
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t5": 1.0
+      },
+      "variant": "longest_artifact"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-f5f54c9c8670--artifact_reordering--d153e679fc",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "d153e679fcadb59160d10abdbe6ca0813bd867f566626a252e6593dfcb2092a9",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "source_family": "context",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-19f67ae6",
+          "a-e1cf687e",
+          "a-c4c926bd"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 2,
+          "a-19f67ae6": 3,
+          "a-298dc5af": 1,
+          "a-c4c926bd": 5,
+          "a-e1cf687e": 4,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-c4c926bd",
+          "a-e1cf687e",
+          "a-19f67ae6",
+          "a-0c2d822d",
+          "a-298dc5af"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t4",
+          "a-19f67ae6": "t3",
+          "a-298dc5af": "t5",
+          "a-c4c926bd": "t1",
+          "a-e1cf687e": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.65,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "artifact_reordering"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-f5f54c9c8670--symbol_renaming--2c7255242c",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "2c7255242c231ffc6833b0e0e7840b2aa5fabec32e6566185d4c529638dc2038",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "source_family": "context",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-19f67ae6",
+          "a-e1cf687e",
+          "a-c4c926bd"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 2,
+          "a-19f67ae6": 3,
+          "a-298dc5af": 1,
+          "a-c4c926bd": 5,
+          "a-e1cf687e": 4,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {
+          "fn_0c2d822d5": "sym_e9c89f41d7c6",
+          "fn_19f67ae64": "sym_e90613c6639e",
+          "fn_298dc5afd": "sym_2095704a8949",
+          "fn_c4c926bd9": "sym_040dc968e7d9",
+          "fn_e1cf687e6": "sym_48dfa7f0f927",
+          "handle_request": "sym_d62c8ff13093"
+        },
+        "symbol_inverse": {
+          "sym_040dc968e7d9": "fn_c4c926bd9",
+          "sym_2095704a8949": "fn_298dc5afd",
+          "sym_48dfa7f0f927": "fn_e1cf687e6",
+          "sym_d62c8ff13093": "handle_request",
+          "sym_e90613c6639e": "fn_19f67ae64",
+          "sym_e9c89f41d7c6": "fn_0c2d822d5"
+        },
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-19f67ae6",
+          "a-e1cf687e",
+          "a-c4c926bd"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t2",
+          "a-19f67ae6": "t3",
+          "a-298dc5af": "t1",
+          "a-c4c926bd": "t5",
+          "a-e1cf687e": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.65,
+        "t5": 1.0
+      },
+      "variant": "symbol_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-f5f54c9c8670--candidate_label_renaming--c337292924",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "a-0c2d822d",
+        "a-19f67ae6": "a-19f67ae6",
+        "a-298dc5af": "a-298dc5af",
+        "a-c4c926bd": "a-c4c926bd",
+        "a-e1cf687e": "a-e1cf687e",
+        "a-f4a5838b": "a-f4a5838b"
+      },
+      "public_input_sha256": "c3372929249201ccb0012d01ba10f096dbab046b82eefe7f4c11af7d4f9d1b15",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "source_family": "context",
+      "transformation_maps": {
+        "artifact_id_forward": {},
+        "artifact_id_inverse": {},
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-19f67ae6",
+          "a-e1cf687e",
+          "a-c4c926bd"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {
+          "label-07e1b773c2ac": "label-cae5c36b9f5a",
+          "label-0bd3272f9296": "label-a9ed5072e560",
+          "label-c8bca1bbf2fc": "label-0211061e3579",
+          "label-d39fa8c9c313": "label-836f54d69ce0"
+        },
+        "candidate_label_inverse": {
+          "label-0211061e3579": "label-c8bca1bbf2fc",
+          "label-836f54d69ce0": "label-d39fa8c9c313",
+          "label-a9ed5072e560": "label-0bd3272f9296",
+          "label-cae5c36b9f5a": "label-07e1b773c2ac"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "a-0c2d822d": 2,
+          "a-19f67ae6": 3,
+          "a-298dc5af": 1,
+          "a-c4c926bd": 5,
+          "a-e1cf687e": 4,
+          "a-f4a5838b": 0
+        },
+        "path_forward": {},
+        "path_inverse": {},
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "a-f4a5838b",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-19f67ae6",
+          "a-e1cf687e",
+          "a-c4c926bd"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t2",
+          "a-19f67ae6": "t3",
+          "a-298dc5af": "t1",
+          "a-c4c926bd": "t5",
+          "a-e1cf687e": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.65,
+        "t5": 1.0
+      },
+      "variant": "candidate_label_renaming"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "ownership",
+        "c1": "membership",
+        "c2": "role",
+        "c3": "context"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c3",
+        "membership": "c1",
+        "ownership": "c0",
+        "role": "c2"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 1,
+        "t2": 2,
+        "t3": 3,
+        "t4": 4,
+        "t5": 5
+      },
+      "case_id": "asv1-d-f5f54c9c8670--artifact_identifier_variation--558fcd5852",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "aid-62f446ddea96",
+        "a-19f67ae6": "aid-13e8d56297ec",
+        "a-298dc5af": "aid-dc511645ffac",
+        "a-c4c926bd": "aid-2ab25eac5f98",
+        "a-e1cf687e": "aid-a0675f09f8cf",
+        "a-f4a5838b": "aid-7d5e918417ab"
+      },
+      "public_input_sha256": "558fcd5852a8549f892a3a35f9e82b97ed3d5b9f8a14eddb43314f3ba78245ab",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "source_family": "context",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-0c2d822d": "aid-62f446ddea96",
+          "a-19f67ae6": "aid-13e8d56297ec",
+          "a-298dc5af": "aid-dc511645ffac",
+          "a-c4c926bd": "aid-2ab25eac5f98",
+          "a-e1cf687e": "aid-a0675f09f8cf",
+          "a-f4a5838b": "aid-7d5e918417ab"
+        },
+        "artifact_id_inverse": {
+          "aid-13e8d56297ec": "a-19f67ae6",
+          "aid-2ab25eac5f98": "a-c4c926bd",
+          "aid-62f446ddea96": "a-0c2d822d",
+          "aid-7d5e918417ab": "a-f4a5838b",
+          "aid-a0675f09f8cf": "a-e1cf687e",
+          "aid-dc511645ffac": "a-298dc5af"
+        },
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-19f67ae6",
+          "a-e1cf687e",
+          "a-c4c926bd"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "ownership",
+          "c1": "membership",
+          "c2": "role",
+          "c3": "context"
+        },
+        "candidate_label_forward": {},
+        "candidate_label_inverse": {},
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c0",
+          "c1": "c1",
+          "c2": "c2",
+          "c3": "c3"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-13e8d56297ec": 3,
+          "aid-2ab25eac5f98": 5,
+          "aid-62f446ddea96": 2,
+          "aid-7d5e918417ab": 0,
+          "aid-a0675f09f8cf": 4,
+          "aid-dc511645ffac": 1
+        },
+        "path_forward": {
+          "unit_2d822d.py": "path-dbc0dfada7de",
+          "unit_8dc5af.py": "path-a7710c3ae34e",
+          "unit_a5838b.py": "path-81927cc48cff",
+          "unit_c926bd.py": "path-60d4b792adf9",
+          "unit_cf687e.py": "path-e4b08355473d",
+          "unit_f67ae6.py": "path-3e514acb7689"
+        },
+        "path_inverse": {
+          "path-3e514acb7689": "unit_f67ae6.py",
+          "path-60d4b792adf9": "unit_c926bd.py",
+          "path-81927cc48cff": "unit_a5838b.py",
+          "path-a7710c3ae34e": "unit_8dc5af.py",
+          "path-dbc0dfada7de": "unit_2d822d.py",
+          "path-e4b08355473d": "unit_cf687e.py"
+        },
+        "symbol_forward": {},
+        "symbol_inverse": {},
+        "variant_artifact_order": [
+          "aid-7d5e918417ab",
+          "aid-dc511645ffac",
+          "aid-62f446ddea96",
+          "aid-13e8d56297ec",
+          "aid-a0675f09f8cf",
+          "aid-2ab25eac5f98"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t2",
+          "a-19f67ae6": "t3",
+          "a-298dc5af": "t1",
+          "a-c4c926bd": "t5",
+          "a-e1cf687e": "t4"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 0.25,
+        "t2": 0.25,
+        "t3": 0.25,
+        "t4": 0.65,
+        "t5": 1.0
+      },
+      "variant": "artifact_identifier_variation"
+    },
+    {
+      "candidate_family_by_slot": {
+        "c0": "context",
+        "c1": "role",
+        "c2": "membership",
+        "c3": "ownership"
+      },
+      "candidate_slot_by_effect_family": {
+        "context": "c0",
+        "membership": "c2",
+        "ownership": "c3",
+        "role": "c1"
+      },
+      "canonical_current_artifact_id": "a-f4a5838b",
+      "canonical_source_ordinal_by_variant_slot": {
+        "t1": 5,
+        "t2": 4,
+        "t3": 3,
+        "t4": 2,
+        "t5": 1
+      },
+      "case_id": "asv1-d-f5f54c9c8670--combined_permutation--1a90b90d19",
+      "public_id_by_canonical_artifact_id": {
+        "a-0c2d822d": "aid-34c585320b03",
+        "a-19f67ae6": "aid-699109f66391",
+        "a-298dc5af": "aid-bc13ef71083d",
+        "a-c4c926bd": "aid-0aa77f75ecd4",
+        "a-e1cf687e": "aid-bd3f4c6ea8cd",
+        "a-f4a5838b": "aid-a342d1f282a1"
+      },
+      "public_input_sha256": "1a90b90d19bd223e91f1770a71b1cff82ecc6b65bc34a8d235e1842e9d5ed6b3",
+      "schema_version": 1,
+      "source_episode_id": "asv1-d-f5f54c9c8670",
+      "source_family": "context",
+      "transformation_maps": {
+        "artifact_id_forward": {
+          "a-0c2d822d": "aid-34c585320b03",
+          "a-19f67ae6": "aid-699109f66391",
+          "a-298dc5af": "aid-bc13ef71083d",
+          "a-c4c926bd": "aid-0aa77f75ecd4",
+          "a-e1cf687e": "aid-bd3f4c6ea8cd",
+          "a-f4a5838b": "aid-a342d1f282a1"
+        },
+        "artifact_id_inverse": {
+          "aid-0aa77f75ecd4": "a-c4c926bd",
+          "aid-34c585320b03": "a-0c2d822d",
+          "aid-699109f66391": "a-19f67ae6",
+          "aid-a342d1f282a1": "a-f4a5838b",
+          "aid-bc13ef71083d": "a-298dc5af",
+          "aid-bd3f4c6ea8cd": "a-e1cf687e"
+        },
+        "base_artifact_order": [
+          "a-f4a5838b",
+          "a-298dc5af",
+          "a-0c2d822d",
+          "a-19f67ae6",
+          "a-e1cf687e",
+          "a-c4c926bd"
+        ],
+        "candidate_family_by_slot": {
+          "c0": "context",
+          "c1": "role",
+          "c2": "membership",
+          "c3": "ownership"
+        },
+        "candidate_label_forward": {
+          "label-07e1b773c2ac": "label-2c74dd52e02c",
+          "label-0bd3272f9296": "label-18699b6e1568",
+          "label-c8bca1bbf2fc": "label-8c93c49c01c5",
+          "label-d39fa8c9c313": "label-3e00de255b47"
+        },
+        "candidate_label_inverse": {
+          "label-18699b6e1568": "label-0bd3272f9296",
+          "label-2c74dd52e02c": "label-07e1b773c2ac",
+          "label-3e00de255b47": "label-d39fa8c9c313",
+          "label-8c93c49c01c5": "label-c8bca1bbf2fc"
+        },
+        "canonical_base_slot_by_variant_slot": {
+          "c0": "c3",
+          "c1": "c2",
+          "c2": "c1",
+          "c3": "c0"
+        },
+        "canonical_ordinal_by_variant_public_id": {
+          "aid-0aa77f75ecd4": 5,
+          "aid-34c585320b03": 2,
+          "aid-699109f66391": 3,
+          "aid-a342d1f282a1": 0,
+          "aid-bc13ef71083d": 1,
+          "aid-bd3f4c6ea8cd": 4
+        },
+        "path_forward": {
+          "unit_2d822d.py": "path-d74d65c7f35b",
+          "unit_8dc5af.py": "path-be4c5b35feee",
+          "unit_a5838b.py": "path-84c55b99c6f4",
+          "unit_c926bd.py": "path-3e52325e0c90",
+          "unit_cf687e.py": "path-deb5bee7759f",
+          "unit_f67ae6.py": "path-260f14d0b475"
+        },
+        "path_inverse": {
+          "path-260f14d0b475": "unit_f67ae6.py",
+          "path-3e52325e0c90": "unit_c926bd.py",
+          "path-84c55b99c6f4": "unit_a5838b.py",
+          "path-be4c5b35feee": "unit_8dc5af.py",
+          "path-d74d65c7f35b": "unit_2d822d.py",
+          "path-deb5bee7759f": "unit_cf687e.py"
+        },
+        "symbol_forward": {
+          "fn_0c2d822d5": "sym_5ecb8f425bc6",
+          "fn_19f67ae64": "sym_24d376a48972",
+          "fn_298dc5afd": "sym_da9b07b9ee65",
+          "fn_c4c926bd9": "sym_e7508557a4d4",
+          "fn_e1cf687e6": "sym_776b74b75d39",
+          "handle_request": "sym_a95d7bdf177a"
+        },
+        "symbol_inverse": {
+          "sym_24d376a48972": "fn_19f67ae64",
+          "sym_5ecb8f425bc6": "fn_0c2d822d5",
+          "sym_776b74b75d39": "fn_e1cf687e6",
+          "sym_a95d7bdf177a": "handle_request",
+          "sym_da9b07b9ee65": "fn_298dc5afd",
+          "sym_e7508557a4d4": "fn_c4c926bd9"
+        },
+        "variant_artifact_order": [
+          "aid-a342d1f282a1",
+          "aid-0aa77f75ecd4",
+          "aid-bd3f4c6ea8cd",
+          "aid-699109f66391",
+          "aid-34c585320b03",
+          "aid-bc13ef71083d"
+        ],
+        "variant_target_slot_by_canonical_artifact_id": {
+          "a-0c2d822d": "t4",
+          "a-19f67ae6": "t3",
+          "a-298dc5af": "t5",
+          "a-c4c926bd": "t1",
+          "a-e1cf687e": "t2"
+        }
+      },
+      "usefulness_by_variant_target_slot": {
+        "t1": 1.0,
+        "t2": 0.65,
+        "t3": 0.25,
+        "t4": 0.25,
+        "t5": 0.25
+      },
+      "variant": "combined_permutation"
+    }
+  ],
+  "experiment": "authzgym-semantic-contract-v1.3-development",
+  "restricted_hash": "8baac7958de73173071fcfbd406895fe720c2e13dc972f57e1a6881db1271d7f",
+  "schema_version": 1,
+  "source_path": "/Users/paolo/proj/ser/experiments/authzgym_static_v1_1/development_population.json",
+  "source_population_hash": "49206443c70e25f29f4276c1f4c4d7c27fcf9d56b5d9ea2b4e6f89980be1534f",
+  "split": "development"
+}

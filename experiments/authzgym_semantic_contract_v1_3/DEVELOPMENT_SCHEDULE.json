@@ -1,0 +1,456 @@
+{
+  "repeats_per_case": 2,
+  "schedule": [
+    {
+      "case_id": "asv1-d-5e6417ce899f--base_entry--435260e32a",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-5e6417ce899f--base_entry--435260e32a",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-5e6417ce899f--longest_artifact--435260e32a",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-5e6417ce899f--longest_artifact--435260e32a",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-5e6417ce899f--artifact_reordering--bdffd7b848",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-5e6417ce899f--artifact_reordering--bdffd7b848",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-5e6417ce899f--symbol_renaming--1be61813a0",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-5e6417ce899f--symbol_renaming--1be61813a0",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-5e6417ce899f--candidate_label_renaming--f3ea21c809",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-5e6417ce899f--candidate_label_renaming--f3ea21c809",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-5e6417ce899f--artifact_identifier_variation--d1785e46ce",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-5e6417ce899f--artifact_identifier_variation--d1785e46ce",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-5e6417ce899f--combined_permutation--d52cbdf282",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-5e6417ce899f--combined_permutation--d52cbdf282",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-3a6b906af392--base_entry--4078dd725c",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-3a6b906af392--base_entry--4078dd725c",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-3a6b906af392--longest_artifact--aa186c0b2c",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-3a6b906af392--longest_artifact--aa186c0b2c",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-3a6b906af392--artifact_reordering--795a9a7039",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-3a6b906af392--artifact_reordering--795a9a7039",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-3a6b906af392--symbol_renaming--b1e72faabc",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-3a6b906af392--symbol_renaming--b1e72faabc",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-3a6b906af392--candidate_label_renaming--df2c79b91e",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-3a6b906af392--candidate_label_renaming--df2c79b91e",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-3a6b906af392--artifact_identifier_variation--28f9a33eb9",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-3a6b906af392--artifact_identifier_variation--28f9a33eb9",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-3a6b906af392--combined_permutation--4e82e7667c",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-3a6b906af392--combined_permutation--4e82e7667c",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--base_entry--b8ee841a9a",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--base_entry--b8ee841a9a",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--longest_artifact--f65e0d327d",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--longest_artifact--f65e0d327d",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--artifact_reordering--4fa894e796",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--artifact_reordering--4fa894e796",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--symbol_renaming--d7ecd9d0ab",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--symbol_renaming--d7ecd9d0ab",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--candidate_label_renaming--d265f52d9b",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--candidate_label_renaming--d265f52d9b",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--artifact_identifier_variation--82d06cef2e",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--artifact_identifier_variation--82d06cef2e",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--combined_permutation--96dbc398de",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-96ebfd30761f--combined_permutation--96dbc398de",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-2b1117581d19--base_entry--594c384449",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-2b1117581d19--base_entry--594c384449",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-2b1117581d19--longest_artifact--0cc7dde814",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-2b1117581d19--longest_artifact--0cc7dde814",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-2b1117581d19--artifact_reordering--368e679f3c",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-2b1117581d19--artifact_reordering--368e679f3c",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-2b1117581d19--symbol_renaming--90ba0cb97f",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-2b1117581d19--symbol_renaming--90ba0cb97f",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-2b1117581d19--candidate_label_renaming--3053a50da0",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-2b1117581d19--candidate_label_renaming--3053a50da0",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-2b1117581d19--artifact_identifier_variation--d944857249",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-2b1117581d19--artifact_identifier_variation--d944857249",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-2b1117581d19--combined_permutation--a8a6ea3437",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-2b1117581d19--combined_permutation--a8a6ea3437",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-8883a56f6778--base_entry--1d3d70ec34",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-8883a56f6778--base_entry--1d3d70ec34",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-8883a56f6778--longest_artifact--1d3d70ec34",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-8883a56f6778--longest_artifact--1d3d70ec34",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-8883a56f6778--artifact_reordering--03789a6b2e",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-8883a56f6778--artifact_reordering--03789a6b2e",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-8883a56f6778--symbol_renaming--b8190410f5",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-8883a56f6778--symbol_renaming--b8190410f5",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-8883a56f6778--candidate_label_renaming--64eae28f58",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-8883a56f6778--candidate_label_renaming--64eae28f58",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-8883a56f6778--artifact_identifier_variation--f7b3cd4d1d",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-8883a56f6778--artifact_identifier_variation--f7b3cd4d1d",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-8883a56f6778--combined_permutation--0b07b3f675",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-8883a56f6778--combined_permutation--0b07b3f675",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--base_entry--9ba29e87ed",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--base_entry--9ba29e87ed",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--longest_artifact--a4e8429522",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--longest_artifact--a4e8429522",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--artifact_reordering--8a3d44442e",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--artifact_reordering--8a3d44442e",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--symbol_renaming--ceeffb2bd3",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--symbol_renaming--ceeffb2bd3",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--candidate_label_renaming--8ddc84736f",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--candidate_label_renaming--8ddc84736f",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--artifact_identifier_variation--78c73c8b43",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--artifact_identifier_variation--78c73c8b43",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--combined_permutation--18352af2dc",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-4579914d0fa5--combined_permutation--18352af2dc",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-fd4ff6d021dc--base_entry--369b6a44e8",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-fd4ff6d021dc--base_entry--369b6a44e8",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-fd4ff6d021dc--longest_artifact--4f31ba75a2",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-fd4ff6d021dc--longest_artifact--4f31ba75a2",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-fd4ff6d021dc--artifact_reordering--abff715525",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-fd4ff6d021dc--artifact_reordering--abff715525",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-fd4ff6d021dc--symbol_renaming--1887e7a38e",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-fd4ff6d021dc--symbol_renaming--1887e7a38e",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-fd4ff6d021dc--candidate_label_renaming--40b1313da3",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-fd4ff6d021dc--candidate_label_renaming--40b1313da3",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-fd4ff6d021dc--artifact_identifier_variation--7f52eb64e6",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-fd4ff6d021dc--artifact_identifier_variation--7f52eb64e6",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-fd4ff6d021dc--combined_permutation--7f4af6c84b",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-fd4ff6d021dc--combined_permutation--7f4af6c84b",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--base_entry--5788f5bc53",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--base_entry--5788f5bc53",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--longest_artifact--1f1ba3951c",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--longest_artifact--1f1ba3951c",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--artifact_reordering--d153e679fc",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--artifact_reordering--d153e679fc",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--symbol_renaming--2c7255242c",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--symbol_renaming--2c7255242c",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--candidate_label_renaming--c337292924",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--candidate_label_renaming--c337292924",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--artifact_identifier_variation--558fcd5852",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--artifact_identifier_variation--558fcd5852",
+      "repeat": 2
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--combined_permutation--1a90b90d19",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-d-f5f54c9c8670--combined_permutation--1a90b90d19",
+      "repeat": 2
+    }
+  ],
+  "schedule_hash": "231a74126e8adfae5a91583638c68dfcd6682dbf94fc56957927d4b60b28d3f8",
+  "schema_version": 1,
+  "split": "development"
+}

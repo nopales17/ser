@@ -1,0 +1,232 @@
+{
+  "repeats_per_case": 1,
+  "schedule": [
+    {
+      "case_id": "asv1-c-6a0fa7f8c72e--base_entry--dc54771469",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-6a0fa7f8c72e--longest_artifact--dc54771469",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-6a0fa7f8c72e--artifact_reordering--bccb4cae38",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-6a0fa7f8c72e--symbol_renaming--8147dc67af",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-6a0fa7f8c72e--candidate_label_renaming--61272a9872",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-6a0fa7f8c72e--artifact_identifier_variation--6558052c82",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-6a0fa7f8c72e--combined_permutation--5a58c0832d",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8df36811fd98--base_entry--def188561e",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8df36811fd98--longest_artifact--53b68f9ad1",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8df36811fd98--artifact_reordering--4ddd04e836",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8df36811fd98--symbol_renaming--763d60cff6",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8df36811fd98--candidate_label_renaming--dd0a849472",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8df36811fd98--artifact_identifier_variation--88d02648cc",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8df36811fd98--combined_permutation--d05c58f716",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8ba336176d48--base_entry--5f70c33cea",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8ba336176d48--longest_artifact--3b1e83dd7a",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8ba336176d48--artifact_reordering--2bc3c49873",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8ba336176d48--symbol_renaming--e59cd47364",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8ba336176d48--candidate_label_renaming--dba1849106",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8ba336176d48--artifact_identifier_variation--4111e00cb9",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8ba336176d48--combined_permutation--e5f37a6daf",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-2786e4bf2ee6--base_entry--35c57b2b33",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-2786e4bf2ee6--longest_artifact--a21bb309ec",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-2786e4bf2ee6--artifact_reordering--d0c8912f5b",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-2786e4bf2ee6--symbol_renaming--1eef8be49d",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-2786e4bf2ee6--candidate_label_renaming--9408879120",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-2786e4bf2ee6--artifact_identifier_variation--9b76a89b42",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-2786e4bf2ee6--combined_permutation--1bb8433403",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8639453ac5a2--base_entry--4583b5243e",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8639453ac5a2--longest_artifact--4583b5243e",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8639453ac5a2--artifact_reordering--1f13d4f909",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8639453ac5a2--symbol_renaming--15541d6385",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8639453ac5a2--candidate_label_renaming--77dec37282",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8639453ac5a2--artifact_identifier_variation--cd19e8f408",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-8639453ac5a2--combined_permutation--b1c36bd531",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-d84784dcfd98--base_entry--ea2edb5604",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-d84784dcfd98--longest_artifact--14d3e1a350",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-d84784dcfd98--artifact_reordering--9ddb8d5b7d",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-d84784dcfd98--symbol_renaming--ea9a2a0888",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-d84784dcfd98--candidate_label_renaming--e8f9fe16fb",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-d84784dcfd98--artifact_identifier_variation--d98ced9af7",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-d84784dcfd98--combined_permutation--907bd2286e",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-1d929b1205b8--base_entry--990922865b",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-1d929b1205b8--longest_artifact--af33d8b880",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-1d929b1205b8--artifact_reordering--2ad4c86a7e",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-1d929b1205b8--symbol_renaming--e17ba73c12",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-1d929b1205b8--candidate_label_renaming--9f001c7917",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-1d929b1205b8--artifact_identifier_variation--a187984ac9",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-1d929b1205b8--combined_permutation--39dc9c73a7",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-978a23b9155e--base_entry--fc3128dc29",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-978a23b9155e--longest_artifact--47795f1612",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-978a23b9155e--artifact_reordering--6981baddff",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-978a23b9155e--symbol_renaming--e0e2519226",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-978a23b9155e--candidate_label_renaming--c19147d5b3",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-978a23b9155e--artifact_identifier_variation--3824596eee",
+      "repeat": 1
+    },
+    {
+      "case_id": "asv1-c-978a23b9155e--combined_permutation--64c547e1a0",
+      "repeat": 1
+    }
+  ],
+  "schedule_hash": "4560e1d4826c2ab21f2135cadbfec56dd298f3b67d28438b7bd38302fd39f78e",
+  "schema_version": 1,
+  "split": "confirmation_v1_3"
+}

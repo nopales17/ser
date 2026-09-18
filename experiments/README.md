@@ -90,11 +90,10 @@ hypothesis, and says nothing about SER-vs-ReAct architecture leverage.
   top-1/top-2 1.0 and zero regret on both development and fresh canonical
   entries. The valid classifier is `semantic_capability_below_threshold`.
 
-The stronger-model result is a development capability-floor failure, not an
-`E-*` finding or architecture result. The next experiment must separately
-diagnose model inability, systematic semantic-interface omission, and task
-ambiguity without changing v1.2 in place or beginning an architecture
-comparison.
+The frozen stronger-model classifier and stop remain historical facts, but
+ADR-0019 withdraws a clean capability-floor interpretation because the
+underlying v1.2 semantic target was defective. It is not an `E-*` finding or
+architecture result.
 
 - `authzgym_semantic_bottleneck_v1/` performs that diagnosis offline on all 16
   executed Mini development cases. Its prompt-grounded answerability audit found
@@ -110,6 +109,30 @@ transformation instability as diagnostics, but the contaminated fact/effect
 aggregate cannot attribute a capability floor. It creates no `E-*` finding,
 promotes no hypothesis, and permits only separately versioned benchmark/task-
 definition repair next.
+
+## Accepted v1.3 specification, not yet an implemented or run experiment
+
+- `authzgym_semantic_contract_v1_3/PREREGISTRATION.md` is the normative new
+  instrument specification accepted by ADR-0019. It retains source-grounded
+  f0--f16 facts, four mechanism families, seven non-summary variants, public
+  deterministic local-cue effects, and five visible-call categories. It retires
+  f17--f24, excludes hidden logical roles and the maximal-summary condition, and
+  requires independent answerability, firewall, and unchanged-estimator oracle
+  validation before inference.
+- `authzgym_semantic_contract_v1_3/IMPLEMENTATION_PLAN.md` is the ordered
+  mechanical handoff and complete freeze checklist. Its existence is not proof
+  that the instrument, population, or checks have been implemented or frozen.
+- `authzgym_semantic_contract_v1_3/PRIOR_RESULT_CORRIGENDUM.md` supplies the
+  current append-only interpretation correction for v1.2. Historical files are
+  not rewritten. Transport, wire/schema, accounting, cleanup, and stopping facts
+  remain scoped observations. V1.2 semantic aggregates and futility results are
+  conditional on the defective scorer; clean fact/effect capability-floor
+  claims are withdrawn. The historical `contract_stable` classification now
+  means wire reliability only, not a firewall-valid and answerable ordinary
+  semantic condition.
+
+No model/provider inference, architecture comparison, representation
+intervention, or Jev condition is authorized by these documents.
 
 ## Admitted evidence
 

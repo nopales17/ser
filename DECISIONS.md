@@ -440,3 +440,71 @@ a new entry; do not rewrite it.
 - Revisit when: A separately frozen stronger-model semantic study completes, or
   transport behavior changes enough that the envelope no longer satisfies the
   recorded stability conditions.
+
+## ADR-0019 -- Replace AuthzGym v1.2 semantics with a separately versioned, answerable v1.3 instrument
+
+- Status: accepted
+- Date: 2026-09-18
+- Context: The preserved v1.2 semantic studies established useful transport and
+  wire-format facts, but the later zero-call audit found that their public task
+  and evaluator did not define the same semantic target. Curated per-artifact
+  tags omitted source-direct facts requested by the prompt, some test labels
+  depended on hidden logical roles, candidate effects used an unpublished
+  evaluator mapping, and the `maximal_public_summary` condition constructed
+  normal model-visible prior state from oracle content. These defects prevent
+  clean fact/effect capability attribution and violate the declared normal-input
+  firewall for the affected summary cases. The accepted external
+  research-validity adjudication selected the smallest repair and is translated
+  normatively in
+  `experiments/authzgym_semantic_contract_v1_3/PREREGISTRATION.md`.
+- Decision: Create v1.3 as a new instrument under the exact normative
+  preregistration; do not repair v1.2 in place. Retain four mechanism families,
+  f0--f16, and seven non-summary variants; retire f17--f24. Derive gold from
+  published source-local rules, keep roles hidden, make effects public
+  deterministic fact-derived diagnostics, and restrict relations to five
+  visible-call categories. Exclude `maximal_public_summary` and all
+  evaluator-derived normal state. Independent public-only answerability,
+  firewall, unchanged-estimator oracle, population, manifest, and freeze gates
+  must pass before inference.
+- Confirmation decision: The old Mini confirmation protocol is not resumed.
+  Its underlying model-unqueried source instances may be converted
+  deterministically into a new v1.3 confirmation freeze only if an auditable
+  record demonstrates that no case-specific confirmation content influenced
+  the repair. Content-blind metadata inspection alone is permitted before the
+  semantic and implementation freeze. If the non-influence record is incomplete
+  or any case-specific source, gold, ordering, identifier, usefulness, or
+  certificate influenced repair choices, generate a fresh confirmation source
+  population under the preregistered fallback instead.
+- Interpretation: v1.3 model scores will not be directly numerically comparable
+  with v1.2 scores. Historical thresholds may be reused only as prospective
+  engineering screening floors. Effect metrics do not constitute a second
+  semantic-capability signal. Stored v1.2 responses may be rescored only as an
+  explicitly labeled offline diagnostic over propositions with demonstrably
+  unchanged meanings; such results are not v1.3 performance.
+- Why: A measurement instrument cannot distinguish model error from benchmark
+  error unless every scored answer is uniquely determined by the authorized
+  public input and published rules. Separating normal and evaluator channels is
+  an already accepted project invariant, not an optional benchmark feature.
+  The narrower repair removes unanswerable labels and privileged assistance
+  without introducing a model, representation, routing architecture, or new
+  mechanism family.
+- Alternatives rejected: exposing hidden logical roles; preserving all 25 facts
+  for dimensional continuity; independently authoring candidate-effect labels;
+  relabeling oracle summaries as public; weakening answerability to agreement
+  with the current scorer; modifying the estimator to rescue oracle performance;
+  overwriting prior reports; treating an unqueried confirmation manifest as
+  automatically reusable after task semantics change; adding Jev or another
+  architecture to the repair.
+- Consequences: Historical model responses, reports, hashes, and classifiers
+  remain immutable. A separate corrigendum qualifies their interpretation.
+  Phase 5 remains active and Phase 5B remains blocked. The next authorized work
+  is offline implementation and validation of the exact v1.3 instrument. No
+  model/provider inference is authorized until every item in the v1.3 freeze
+  checklist passes. An oracle failure is a separately recorded blocker and does
+  not authorize silent estimator tuning.
+- Revisit when: The v1.3 public contract, independent answerability validator,
+  firewall suite, source populations, manifests, unchanged-estimator oracle
+  validation, and final preregistration have all been frozen, or an internal
+  contradiction makes the accepted contract impossible to implement. A future
+  Jev study requires its own decision after v1.3 validation and may not alter
+  this instrument to facilitate that comparison.

@@ -1,0 +1,152 @@
+{
+  "candidate_descriptions": {
+    "context": "Token scope or request context is lost or checked inconsistently.",
+    "membership": "Direct and inherited membership are treated inconsistently.",
+    "ownership": "An ownership assumption differs between authorization layers or entry paths.",
+    "role": "A propagated or transformed role differs between layers."
+  },
+  "candidate_slots": [
+    "c0",
+    "c1",
+    "c2",
+    "c3"
+  ],
+  "effect_counter_cues": {
+    "context": [
+      "f8",
+      "f9"
+    ],
+    "membership": [
+      "f2"
+    ],
+    "ownership": [
+      "f11"
+    ],
+    "role": [
+      "f5"
+    ]
+  },
+  "effect_families": [
+    "ownership",
+    "membership",
+    "role",
+    "context"
+  ],
+  "effect_support_cues": {
+    "context": [
+      "f6",
+      "f7"
+    ],
+    "membership": [
+      "f1"
+    ],
+    "ownership": [
+      "f10"
+    ],
+    "role": [
+      "f3",
+      "f4"
+    ]
+  },
+  "effect_values": [
+    "support",
+    "contradict",
+    "neutral",
+    "unknown"
+  ],
+  "fact_slots": {
+    "f0": "alternate-entry",
+    "f1": "direct-only-membership",
+    "f2": "inherited-membership-included",
+    "f3": "role-fallback",
+    "f4": "role-map-transform",
+    "f5": "role-preserved",
+    "f6": "missing-token-scope",
+    "f7": "missing-feature-context",
+    "f8": "token-scope-forwarded",
+    "f9": "feature-context-forwarded",
+    "f10": "sensitive-without-owner-check",
+    "f11": "ownership-compared",
+    "f12": "weak-ownership-audit",
+    "f13": "weak-membership-audit",
+    "f14": "weak-role-audit",
+    "f15": "weak-context-audit",
+    "f16": "cross-artifact-call"
+  },
+  "instruction_scope": "current_artifact_only",
+  "normal_summary_fields": [],
+  "relation_precedence": [
+    {
+      "category": "ownership",
+      "contains": [
+        "owner",
+        "alternate"
+      ]
+    },
+    {
+      "category": "membership",
+      "contains": [
+        "member",
+        "group",
+        "inherited"
+      ],
+      "equals": [
+        "direct_only",
+        "include_inherited"
+      ]
+    },
+    {
+      "category": "role",
+      "contains": [
+        "role"
+      ]
+    },
+    {
+      "category": "context",
+      "contains": [
+        "token",
+        "context",
+        "flags",
+        "request"
+      ]
+    },
+    {
+      "category": "general_dependency",
+      "contains": []
+    }
+  ],
+  "relation_slots": {
+    "r0": "ownership",
+    "r1": "membership",
+    "r2": "role",
+    "r3": "context",
+    "r4": "general_dependency"
+  },
+  "response_top_level_keys": [
+    "facts",
+    "candidate_effects",
+    "unresolved_targets"
+  ],
+  "retired_fact_slots": [
+    "f17",
+    "f18",
+    "f19",
+    "f20",
+    "f21",
+    "f22",
+    "f23",
+    "f24"
+  ],
+  "schema_version": 1,
+  "semantic_interface": "authzgym_semantic_observation_v1_3",
+  "transformation_bijection": {
+    "algorithm": "sha256(canonical_json({\"namespace\": namespace, \"original_token\": original_token, \"source_episode_id\": source_episode_id, \"variant_id\": variant_id}))",
+    "hex_prefix_length": 12,
+    "prefixes": {
+      "artifact_id": "aid-",
+      "artifact_path": "path-",
+      "artifact_symbol": "sym_",
+      "candidate_public_label": "label-"
+    }
+  }
+}

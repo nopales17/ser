@@ -1,0 +1,10 @@
+{
+  "cases": 56,
+  "scheduled_calls": 112,
+  "schema_version": 1,
+  "source": "experiments/authzgym_static_v1_1/development_population.json",
+  "source_episodes": 8,
+  "source_population_hash": "471c233d9c79ef61fe11bea070049d4fd62c8b03d2e697618b627a05da7dbdcf",
+  "source_sha256": "47ea8f0d20f5cdbf9b9f55ccf301a77fa742131d2b182a19ab29972b9102eb16",
+  "variants_per_source": 7
+}
