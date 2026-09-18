@@ -1,0 +1,9 @@
+{
+  "files": {
+    "CONFIRMATION_PUBLIC_POPULATION.json": "1321bcd190c2bfbef884aac55421669401fe321797345ad54556d0f55251787c",
+    "CONFIRMATION_SCHEDULE.json": "df338466cf85e88df5a28149357cc6bcdd0df9bb28e780bbd51684e5463c1d7b",
+    "PUBLIC_CONTRACT.json": "95df3f56cfabadd3aefa50e7fd5a3e6d77b7625c7db0860649a92ff4f213bb26"
+  },
+  "manifest_sha256": "d2cb6fab9ee3a1f4d46920917bb81ca7716ad461841ca6b1e3adbdfbc6396414",
+  "schema_version": 1
+}

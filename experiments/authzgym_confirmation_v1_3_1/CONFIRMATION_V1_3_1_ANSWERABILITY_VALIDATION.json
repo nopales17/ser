@@ -1,0 +1,25 @@
+{
+  "case_count": 56,
+  "certificate_sha256": "9bef13556e10e63eb751f9d52745bf81051cbf1873d603cf52fc0c0d5c86a75c",
+  "checker_sha256": "be7003ba946e79993778ae727cd5eab7cdee3e58baedb71b5d44ed03da814aa0",
+  "checker_version": "authzgym-v1-3-public-checker-1",
+  "deterministic_replay": true,
+  "errors": [],
+  "hidden_data_invariance": true,
+  "label_agreement": true,
+  "label_count": 2576,
+  "public_only": true,
+  "public_population_sha256": "1321bcd190c2bfbef884aac55421669401fe321797345ad54556d0f55251787c",
+  "reviewed_population": "confirmation_v1_3_1",
+  "schema_version": 1,
+  "split": "confirmation_v1_3_1",
+  "staged_file_names": [
+    "PUBLIC_CONTRACT.json",
+    "CONFIRMATION_PUBLIC_POPULATION.json"
+  ],
+  "status": "pass",
+  "transformation_checks": 40,
+  "transformation_consistency": true,
+  "unsupported_forms_zero": true,
+  "unsupported_or_ambiguous": 0
+}

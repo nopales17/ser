@@ -1,0 +1,161 @@
+{
+  "authorizing_adr": "ADR-0022",
+  "canonical_aggregate": {
+    "case_count": 8,
+    "discriminating_case_count": 8,
+    "illegal_target_count": 0,
+    "mean_normalized_regret": 0.05833333333333333,
+    "nondiscriminating_case_count": 0,
+    "top1": 0.875,
+    "top2": 1.0
+  },
+  "canonical_case_count": 8,
+  "component": {
+    "candidate_id": "est-repair-v1.3.1-B-1",
+    "class_sha256": "88b77c5f343117b354b5039d571bf03bf8867fcd7fb4f8fc91c1e1aefca7a048",
+    "module_sha256": "f9c92317abc562ac5175f90074238c666de55d557b02e0de368841676f4d910d"
+  },
+  "condition_id": "est-repair-v1.3.1-B-1",
+  "evaluations_run": 1,
+  "gate_checks": {
+    "canonical_top1": true,
+    "canonical_top2": true,
+    "illegal_target_count": true,
+    "mean_normalized_regret": true,
+    "own_selection_equivalence": true,
+    "section_14_equivalence": true
+  },
+  "gate_definition": {
+    "canonical_top1": ">= 0.60",
+    "canonical_top2": ">= 0.80",
+    "illegal_target_count": "= 0",
+    "mean_normalized_regret": "<= 0.35",
+    "own_selection_equivalence": "40/40 after ordinal mapping",
+    "section_14_equivalence": "40/40 within 1e-12"
+  },
+  "leave_one_source_out_descriptive_only": {
+    "failing_fold_count": 0,
+    "failing_folds": [],
+    "folds": {
+      "asv1-c-0b7b40acc9db--base_entry--74f7e9e34f": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.06666666666666667,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.8571428571428571,
+        "top2": 1.0
+      },
+      "asv1-c-12f33a386ba2--base_entry--7cb1a35212": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.06666666666666667,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.8571428571428571,
+        "top2": 1.0
+      },
+      "asv1-c-2eaa8f132b59--base_entry--08be0d61c6": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.06666666666666667,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.8571428571428571,
+        "top2": 1.0
+      },
+      "asv1-c-4707ae8fd754--base_entry--bb9894eacc": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.06666666666666667,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.8571428571428571,
+        "top2": 1.0
+      },
+      "asv1-c-8abfacdaa728--base_entry--6d2161ba52": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.06666666666666667,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.8571428571428571,
+        "top2": 1.0
+      },
+      "asv1-c-9f01d15a5efe--base_entry--0edcf24ffe": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.06666666666666667,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.8571428571428571,
+        "top2": 1.0
+      },
+      "asv1-c-a6cbbc06eb22--base_entry--ef956176d1": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.0,
+        "nondiscriminating_case_count": 0,
+        "top1": 1.0,
+        "top2": 1.0
+      },
+      "asv1-c-fb8a15c7b4ef--base_entry--3edee5ede7": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.06666666666666667,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.8571428571428571,
+        "top2": 1.0
+      }
+    },
+    "fragile": false,
+    "is_gate": false
+  },
+  "longest_artifact_descriptive_only": {
+    "case_count": 8,
+    "discriminating_case_count": 8,
+    "illegal_target_count": 0,
+    "mean_normalized_regret": 0.6,
+    "nondiscriminating_case_count": 0,
+    "top1": 0.25,
+    "top2": 0.25
+  },
+  "model_or_provider_calls": 0,
+  "non_degeneracy_descriptive_only": {
+    "nd1_failures": [],
+    "nd1_pass": true,
+    "nd2_failures": [],
+    "nd2_pass": true,
+    "nd3_floor_from_b2": 4,
+    "nd3_pass": true,
+    "nd3_strict_unique_maximum_count": 6,
+    "pass": true
+  },
+  "one_shot": true,
+  "own_selection_equivalence": {
+    "authority": "experiments/authzgym_estimator_repair_v1_3_1/CORRIGENDUM.md section 2.3 (ADR-0021)",
+    "candidate_requirement": "40/40",
+    "definition": "own-selection-decision equivariance: the target the component's own selection rule returns, mapped through canonical_ordinal_by_variant_public_id, must agree with base_entry; a declared top tie delegated to the frozen canonical-ordinal rule is admissible (CORRIGENDUM.md section 2.3; recorded B0 value 36/40)",
+    "full_order_failures": [],
+    "full_order_is_descriptive_only": true,
+    "full_order_not_a_gate": true,
+    "full_order_pass": 40,
+    "full_order_total": 40,
+    "gate_metric": "selection",
+    "recorded_b0_fixture": "36/40",
+    "selection_failures": [],
+    "selection_pass": 40,
+    "selection_total": 40
+  },
+  "population_file_sha256": "1321bcd190c2bfbef884aac55421669401fe321797345ad54556d0f55251787c",
+  "population_split": "confirmation_v1_3_1",
+  "schema_version": 1,
+  "section_14_equivalence": {
+    "failures": [],
+    "pair_count": 40
+  },
+  "stage": "8.7.4 one-shot oracle evaluation",
+  "status": "pass"
+}

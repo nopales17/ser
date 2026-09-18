@@ -1,0 +1,332 @@
+{
+  "admissible": true,
+  "arm": "A",
+  "attempt_index": 1,
+  "candidate_id": "est-repair-v1.3.1-A-1",
+  "canonical_aggregate": {
+    "case_count": 8,
+    "discriminating_case_count": 8,
+    "illegal_target_count": 0,
+    "mean_normalized_regret": 0.175,
+    "nondiscriminating_case_count": 0,
+    "top1": 0.625,
+    "top2": 0.875
+  },
+  "complexity": 2,
+  "complexity_components": {
+    "family_branches": 1
+  },
+  "component_class_sha256": "0ae12ae1118ec8e216c0d6037b2ce73869f42ddb5554ec81968ff40db64da73f",
+  "component_module_sha256": "dc5ed6c6b1654fbd5716b3f9f8abe3638bf3e68dce22a10d6eae8515980703fe",
+  "disposition": "failing_gate",
+  "family_macro": {
+    "context": {
+      "case_count": 2,
+      "discriminating_case_count": 2,
+      "illegal_target_count": 0,
+      "mean_normalized_regret": 0.4666666666666666,
+      "nondiscriminating_case_count": 0,
+      "top1": 0.0,
+      "top2": 1.0
+    },
+    "membership": {
+      "case_count": 2,
+      "discriminating_case_count": 2,
+      "illegal_target_count": 0,
+      "mean_normalized_regret": 0.0,
+      "nondiscriminating_case_count": 0,
+      "top1": 1.0,
+      "top2": 1.0
+    },
+    "ownership": {
+      "case_count": 2,
+      "discriminating_case_count": 2,
+      "illegal_target_count": 0,
+      "mean_normalized_regret": 0.2333333333333333,
+      "nondiscriminating_case_count": 0,
+      "top1": 0.5,
+      "top2": 0.5
+    },
+    "role": {
+      "case_count": 2,
+      "discriminating_case_count": 2,
+      "illegal_target_count": 0,
+      "mean_normalized_regret": 0.0,
+      "nondiscriminating_case_count": 0,
+      "top1": 1.0,
+      "top2": 1.0
+    }
+  },
+  "feature_map": "supporting_families",
+  "firewall": {
+    "check1_static_and_dynamic_allowlist": {
+      "parts": {
+        "dynamic_sealed_input": {
+          "accessed_items": [],
+          "passed": true,
+          "violations": []
+        },
+        "static_import_closure": {
+          "checked_modules": [
+            "/Users/paolo/proj/ser/src/ser/authzgym/model.py",
+            "/Users/paolo/proj/ser/src/ser/authzgym/policies.py",
+            "/Users/paolo/proj/ser/src/ser/core/types.py",
+            "src/ser/evaluation/authz_v1_3_1_adapter.py"
+          ],
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    "check2_restricted_field_mutation": {
+      "digest": "36c87eed7e16d9773deeea36d0484e28a361e79bb2d167ac993779d5921e6e77",
+      "failing_mutations": [],
+      "injected_fields": [
+        "certificate",
+        "confirmation_identifiers",
+        "discriminating_role",
+        "gold_annotations",
+        "logical_role_index",
+        "logical_roles",
+        "mechanism_identifiers",
+        "retired_v1_2_expected_tags"
+      ],
+      "mutated_fields": [
+        "usefulness_by_variant_target_slot",
+        "canonical_source_ordinal_by_variant_slot",
+        "transformation_maps",
+        "source_family",
+        "canonical_current_artifact_id",
+        "public_id_by_canonical_artifact_id",
+        "candidate_family_by_slot",
+        "candidate_slot_by_effect_family"
+      ],
+      "passed": true
+    },
+    "check3_public_only_replay": {
+      "blocked_module_scope": "In-harness baselines remove the restricted-data modules from the process path; the preserved adapter module stays importable because B0's preserved component identity includes it. Candidate modules additionally have ser.evaluation.authz_v1_3 removed, matching the static closure rule.",
+      "blocked_modules": [
+        "ser.authzgym.v1_3_annotation_builder",
+        "ser.authzgym.generation",
+        "ser.authzgym.v1_3_population",
+        "ser.evaluation.authz_v1_3"
+      ],
+      "passed": true,
+      "public_only_digest": "6d3a854035d5f5e4b7895a2ec20fdbdb8262761b6bf100f45f69b322544c0084",
+      "reference_digest": "6d3a854035d5f5e4b7895a2ec20fdbdb8262761b6bf100f45f69b322544c0084"
+    },
+    "check4_ordinal_non_consumption": {
+      "ordinal_permutation_stable": true,
+      "passed": true,
+      "static_violations": []
+    },
+    "check5_surface_statistic_non_consumption": {
+      "failing_modes": [],
+      "passed": true,
+      "perturbed": [
+        "line_count",
+        "inventory_order",
+        "public_id",
+        "path",
+        "exported_symbols",
+        "candidate_public_label"
+      ]
+    },
+    "check6_determinism_and_replay": {
+      "first": "6d3a854035d5f5e4b7895a2ec20fdbdb8262761b6bf100f45f69b322544c0084",
+      "passed": true,
+      "second": "6d3a854035d5f5e4b7895a2ec20fdbdb8262761b6bf100f45f69b322544c0084"
+    },
+    "check7_no_writable_shared_state": {
+      "forbidden_helpers_called": [],
+      "passed": true,
+      "static_findings": []
+    },
+    "check8_error_channel_audit": {
+      "observed_channels": [
+        "no-error"
+      ],
+      "passed": true
+    }
+  },
+  "firewall_passed": true,
+  "gate_checks": {
+    "canonical_top1": true,
+    "canonical_top2": true,
+    "illegal_target_count": true,
+    "mean_normalized_regret": true,
+    "nd1": false,
+    "nd2": false,
+    "nd3": true,
+    "own_selection_equivariance": true,
+    "section_14_equivalence": true
+  },
+  "gate_passes": false,
+  "leave_one_source_out": {
+    "failing_fold_count": 5,
+    "failing_folds": [
+      "asv1-d-3a6b906af392--base_entry--4078dd725c",
+      "asv1-d-4579914d0fa5--base_entry--9ba29e87ed",
+      "asv1-d-8883a56f6778--base_entry--1d3d70ec34",
+      "asv1-d-96ebfd30761f--base_entry--b8ee841a9a",
+      "asv1-d-fd4ff6d021dc--base_entry--369b6a44e8"
+    ],
+    "folds": {
+      "asv1-d-2b1117581d19--base_entry--594c384449": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.13333333333333333,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.7142857142857143,
+        "top2": 0.8571428571428571
+      },
+      "asv1-d-3a6b906af392--base_entry--4078dd725c": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.19999999999999998,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.5714285714285714,
+        "top2": 0.8571428571428571
+      },
+      "asv1-d-4579914d0fa5--base_entry--9ba29e87ed": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.19999999999999998,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.5714285714285714,
+        "top2": 0.8571428571428571
+      },
+      "asv1-d-5e6417ce899f--base_entry--435260e32a": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.13333333333333333,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.7142857142857143,
+        "top2": 1.0
+      },
+      "asv1-d-8883a56f6778--base_entry--1d3d70ec34": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.19999999999999998,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.5714285714285714,
+        "top2": 0.8571428571428571
+      },
+      "asv1-d-96ebfd30761f--base_entry--b8ee841a9a": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.19999999999999998,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.5714285714285714,
+        "top2": 0.8571428571428571
+      },
+      "asv1-d-f5f54c9c8670--base_entry--5788f5bc53": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.13333333333333333,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.7142857142857143,
+        "top2": 0.8571428571428571
+      },
+      "asv1-d-fd4ff6d021dc--base_entry--369b6a44e8": {
+        "case_count": 7,
+        "discriminating_case_count": 7,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.19999999999999998,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.5714285714285714,
+        "top2": 0.8571428571428571
+      }
+    },
+    "fragile": true,
+    "is_gate": false
+  },
+  "longest_artifact_aggregate": {
+    "case_count": 8,
+    "discriminating_case_count": 8,
+    "illegal_target_count": 0,
+    "mean_normalized_regret": 0.6583333333333333,
+    "nondiscriminating_case_count": 0,
+    "top1": 0.125,
+    "top2": 0.375
+  },
+  "non_degeneracy": {
+    "nd1_failures": [
+      "asv1-d-5e6417ce899f--base_entry--435260e32a",
+      "asv1-d-8883a56f6778--base_entry--1d3d70ec34"
+    ],
+    "nd1_pass": false,
+    "nd2_failures": [
+      "asv1-d-5e6417ce899f--base_entry--435260e32a",
+      "asv1-d-8883a56f6778--base_entry--1d3d70ec34"
+    ],
+    "nd2_pass": false,
+    "nd3_floor_from_b2": 4,
+    "nd3_pass": true,
+    "nd3_strict_unique_maximum_count": 4,
+    "pass": false
+  },
+  "own_selection_equivariance": {
+    "authority": "experiments/authzgym_estimator_repair_v1_3_1/CORRIGENDUM.md section 2.3 (ADR-0021)",
+    "candidate_requirement": "40/40",
+    "definition": "own-selection-decision equivariance: the target the component's own selection rule returns, mapped through canonical_ordinal_by_variant_public_id, must agree with base_entry; a declared top tie delegated to the frozen canonical-ordinal rule is admissible (CORRIGENDUM.md section 2.3; recorded B0 value 36/40)",
+    "full_order_failures": [],
+    "full_order_is_descriptive_only": true,
+    "full_order_not_a_gate": true,
+    "full_order_pass": 40,
+    "full_order_total": 40,
+    "gate_metric": "selection",
+    "recorded_b0_fixture": "36/40",
+    "selection_failures": [],
+    "selection_pass": 40,
+    "selection_total": 40
+  },
+  "protected_components_unchanged": true,
+  "record": "candidate_result",
+  "schema_version": 1,
+  "section_14_equivalence": {
+    "failures": [],
+    "pair_count": 40
+  },
+  "static_checker": {
+    "allowlisted_items": [
+      "facts",
+      "candidate_effects",
+      "unresolved_targets",
+      "candidate_hypotheses",
+      "contract_constants",
+      "legal_target_slots",
+      "current_artifact_slot"
+    ],
+    "checked_modules": [
+      "/Users/paolo/proj/ser/src/ser/authzgym/model.py",
+      "/Users/paolo/proj/ser/src/ser/authzgym/policies.py",
+      "/Users/paolo/proj/ser/src/ser/core/types.py",
+      "src/ser/evaluation/authz_v1_3_1_adapter.py"
+    ],
+    "module": "src/ser/evaluation/authz_v1_3_1_adapter.py",
+    "violations": []
+  },
+  "tie_dependence": {
+    "tie_dependent_case_count": 4,
+    "tie_dependent_cases": [
+      "asv1-d-5e6417ce899f--base_entry--435260e32a",
+      "asv1-d-2b1117581d19--base_entry--594c384449",
+      "asv1-d-8883a56f6778--base_entry--1d3d70ec34",
+      "asv1-d-f5f54c9c8670--base_entry--5788f5bc53"
+    ]
+  },
+  "tier2_ceiling": {
+    "case_count": 8,
+    "signature_group_count": 8,
+    "tier2_top1_ceiling": 0.75,
+    "tier2_top2_ceiling": 1.0
+  }
+}

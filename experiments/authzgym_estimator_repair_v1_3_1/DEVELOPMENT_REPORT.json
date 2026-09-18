@@ -1,18 +1,6 @@
 {
-  "acceptance_figures": [
-    "canonical_top1",
-    "canonical_top2",
-    "canonical_regret",
-    "illegal_target_count",
-    "equivalence_pairs"
-  ],
+  "artifact_classifier": "development_component_compatibility_diagnostic",
   "authorizing_adr": "ADR-0020",
-  "baseline_ids": [
-    "B0",
-    "B1",
-    "B2",
-    "B3"
-  ],
   "baselines": {
     "B0": {
       "acceptance_figures": [
@@ -952,29 +940,677 @@
       "upper_bound_only": true
     }
   },
+  "candidate_ledger": {
+    "arm_c_not_opened": true,
+    "arm_c_reason": "the study stopped at the first admissible pass in Arm B, so the joint condition was never authorized to open and Arms C is untested rather than falsified",
+    "arms_attempted": [
+      "A",
+      "B"
+    ],
+    "attempt_records": 10,
+    "attempts_in_scope": [
+      "est-repair-v1.3.1-A-1",
+      "est-repair-v1.3.1-A-2",
+      "est-repair-v1.3.1-B-1"
+    ],
+    "attempts_used": 3,
+    "candidate_budget_max": 10,
+    "distinct_candidates_evaluated": 3,
+    "order": [
+      "est-repair-v1.3.1-A-1",
+      "est-repair-v1.3.1-A-2",
+      "est-repair-v1.3.1-B-1",
+      "est-repair-v1.3.1-A-1",
+      "est-repair-v1.3.1-A-2",
+      "est-repair-v1.3.1-B-1"
+    ],
+    "result_records": 6
+  },
+  "claim_boundary": {
+    "artifact_classifier": "development_component_compatibility_diagnostic",
+    "is_e_star_record": false,
+    "section_10_1_verbatim": "Under the fixed, frozen AuthzGym v1.3 instrument -- its authored usefulness labels, its five-category adapter surface, its equal-weight canonical scoring, its frozen tie rule, and its preregistered engineering screen -- there exists a deterministic, case-independent, invariance-certified component of bounded complexity whose inspection-target ordering meets the existing engineering gate, and the section-4.2.1 non-degeneracy requirement, on the eight canonical development source instances, using only authorized public semantic outputs and no privileged information.",
+    "section_10_2_verbatim": "What a pass must never be described as: general authorization reasoning or evidence about authorization competence; adaptive routing success, conditional routing, or action selection working; SER architecture superiority or any comparison against ReAct, fixed-order, monolithic, or ordinary-agent baselines; realistic GitLab transfer or transfer to any real repository; real-world action-value validity or evidence that these values mean anything outside this fixture family; model or provider capability, since no inference is run at any point; validation of the usefulness target, the instrument, or the benchmark; a diagnosis of the cause of the preserved fresh-confirmation failure or an attribution of that failure to the estimator, to the adapter, or to either component family; the best, smallest, or only admissible repair; and grounds to promote H-001, H-016, H-017, H-018, or M-013, or to change any concept maturity."
+  },
   "condition_id": "est-repair-v1.3.1",
-  "confirmation_authorized": false,
+  "confirms_nothing": true,
   "correcting_adr": "ADR-0021",
   "corrigendum": "experiments/authzgym_estimator_repair_v1_3_1/CORRIGENDUM.md",
-  "development_population_content_hash": "f7e83485fbb8927b3ab3c5b68a20a33180d3a57438f18b08d7499815de855735",
-  "development_population_file_sha256": "dda4e0c08a9c29a58a912fdcb5268ddf602aac79c47f6dd3fb94102b5dc8c365",
-  "frozen_nd3_floor_from_b2": 4,
-  "inference_authorized": false,
-  "recorded_expectation": {
-    "canonical_regret": 0.175,
-    "canonical_top1": 0.625,
-    "canonical_top2": 0.875,
-    "equivalence_pairs": 40,
-    "illegal_target_count": 0,
-    "longest_artifact_regret": 0.6583333333333333,
-    "longest_artifact_top1": 0.125,
-    "longest_artifact_top2": 0.375,
-    "own_ranking_invariance": "36/40"
+  "development_only": true,
+  "firewall_all_baselines_pass": true,
+  "firewall_scope_statement": "This validation demonstrates isolation of the action-value path for the 56 development cases and the specific component(s) named here, and nothing broader. It does not supersede, extend, or re-run experiments/authzgym_semantic_contract_v1_3/FIREWALL_VALIDATION.json, which remains byte-frozen with its own recorded scope. No confirmation path was opened, read, or hashed.",
+  "fixed_inheritance": [
+    "v1.3 source-local answerability passed on development (certificate d308e68b...) and on the fresh confirmation population (5887f8cb...).",
+    "The unchanged historical estimator passed the development canonical oracle gate (top-1 0.625, top-2 0.875, regret 0.175, 0 illegal, 40/40 equivalence).",
+    "The same unchanged estimator failed the preregistered fresh-confirmation canonical top-2 gate at 0.750 against >= 0.80; that result is preserved without reinterpretation.",
+    "The top-2 >= 0.80, top-1 >= 0.60 and regret <= 0.35 thresholds are unchanged, as are the v1.3 semantics, prompt, schemas, scoring, usefulness target, tie rules and transformations.",
+    "The historical estimator (SHA-256 092a7a87...) and the fixed section-13 adapter remain byte-preserved baselines.",
+    "The spent confirmation_v1_3 population was not opened, read, hashed, counted, sampled, or characterized by any step of this study after ADR-0021.",
+    "Model and provider inference remains unauthorized and none was run."
+  ],
+  "freeze": {
+    "fragile_label": null,
+    "loso_failing_fold_count": 0,
+    "report_json_sha256": "444c76c08fb3ec903e03dd6e1adb6be58f2d8401e766db9093407428c9e019f5",
+    "report_markdown_sha256": "f0629d3b78ba35258cc6d439e4b731c3682b76fa08e4155efbdad7cd0df18638",
+    "selected_component_class_sha256": "88b77c5f343117b354b5039d571bf03bf8867fcd7fb4f8fc91c1e1aefca7a048",
+    "selected_component_module_sha256": "f9c92317abc562ac5175f90074238c666de55d557b02e0de368841676f4d910d"
   },
-  "recorded_expectation_authority": {
-    "longest_artifact_regret": "experiments/authzgym_estimator_repair_v1_3_1/CORRIGENDUM.md section 1.3 (ADR-0021); the preregistration and handoff recorded the confirmation-split value, which is forbidden development information",
-    "own_ranking_invariance": "experiments/authzgym_estimator_repair_v1_3_1/CORRIGENDUM.md section 2.3 (ADR-0021); own-selection equivariance with the recorded B0 36/40 fixture"
+  "frozen_nd3_floor_from_b2": 4,
+  "h_r3_ceiling_finding": {
+    "statement": "H-R3 predicted that no function of the authorized semantic state could attain the criterion. The Tier-1 ceiling is above the criterion, so H-R3 is not confirmed: the authorized public state can order the legal targets well enough for some case-specific rule to reach the gate, and the achieved top-1 equals that ceiling while top-2 equals the ceiling exactly.",
+    "status": "not_confirmed",
+    "tier1_top1_ceiling": 0.75,
+    "tier1_top2_ceiling": 1.0
+  },
+  "h_r4_interpretation": {
+    "kind": "interpretation_with_evidence_and_residual_uncertainty",
+    "residual_uncertainty": "With eight development instances the study cannot separate a genuine structural rule from a coincidence of this fixture family, and no untouched confirmation population was consulted or generated. The interpretation is recorded as a judgement with its evidence, not as a proven causal diagnosis.",
+    "statement": "The usefulness target is authored from a hidden logical role and hidden mechanism family that the public channel does not carry. The selected component's mechanism cites a published structural gap (the published general-dependency category is never attached to a candidate, so r4 references can never link) and a published cue mapping. Its fallback clause -- when no candidate family carries a directional support cue, treat the general-dependency fallback category as the most informative target -- is calibrated to a development-observed structural regularity, not to a published rule stating that the fallback category is inspection-worthy: in both ownership-family development cases the maximum-usefulness target is exactly the r4 target. Read plainly, the fallback clause is a public-surface correlate of the hidden authored role. The pass is therefore compatibility with a target authored from hidden roles and is not evidence of authorization reasoning.",
+    "supporting_evidence": [
+      "preregistration section 1.2 L1 records that r4 references can never link to a candidate under the fixed adapter",
+      "preregistration section 1.2 records that both ownership-family development cases have their maximum-usefulness target at the r4 target",
+      "preregistration section 1.2 H-R4 records that usefulness is a pure function of the hidden role and hidden mechanism family",
+      "the passing component attains exactly the Tier-1 ceiling (top-1 0.75, top-2 1.0) and its own Tier-2 ceiling"
+    ]
+  },
+  "motivation": "motivated by the observed fresh-confirmation top-2 failure recorded in experiments/authzgym_semantic_contract_v1_3/ORACLE_BLOCKER.md",
+  "non_independence_note": "Directional effect metrics, where reported, are derived interface diagnostics from fact semantics and are not a second independent capability signal. This report renders no directional-effect table.",
+  "passing_candidate": {
+    "_superseded": false,
+    "admissible": true,
+    "arm": "B",
+    "attempt_index": 3,
+    "candidate_id": "est-repair-v1.3.1-B-1",
+    "canonical_aggregate": {
+      "case_count": 8,
+      "discriminating_case_count": 8,
+      "illegal_target_count": 0,
+      "mean_normalized_regret": 0.11666666666666665,
+      "nondiscriminating_case_count": 0,
+      "top1": 0.75,
+      "top2": 1.0
+    },
+    "complexity": 3,
+    "complexity_components": {
+      "relation_category_branches": 1
+    },
+    "component_class_sha256": "88b77c5f343117b354b5039d571bf03bf8867fcd7fb4f8fc91c1e1aefca7a048",
+    "component_module_sha256": "f9c92317abc562ac5175f90074238c666de55d557b02e0de368841676f4d910d",
+    "disposition": "admissible_pass",
+    "family_macro": {
+      "context": {
+        "case_count": 2,
+        "discriminating_case_count": 2,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.4666666666666666,
+        "nondiscriminating_case_count": 0,
+        "top1": 0.0,
+        "top2": 1.0
+      },
+      "membership": {
+        "case_count": 2,
+        "discriminating_case_count": 2,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.0,
+        "nondiscriminating_case_count": 0,
+        "top1": 1.0,
+        "top2": 1.0
+      },
+      "ownership": {
+        "case_count": 2,
+        "discriminating_case_count": 2,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.0,
+        "nondiscriminating_case_count": 0,
+        "top1": 1.0,
+        "top2": 1.0
+      },
+      "role": {
+        "case_count": 2,
+        "discriminating_case_count": 2,
+        "illegal_target_count": 0,
+        "mean_normalized_regret": 0.0,
+        "nondiscriminating_case_count": 0,
+        "top1": 1.0,
+        "top2": 1.0
+      }
+    },
+    "feature_map": "salient_category",
+    "firewall": {
+      "check1_static_and_dynamic_allowlist": {
+        "parts": {
+          "dynamic_sealed_input": {
+            "accessed_items": [],
+            "passed": true,
+            "violations": []
+          },
+          "static_import_closure": {
+            "checked_modules": [
+              "src/ser/authzgym/policies_v1_3_1.py"
+            ],
+            "passed": true
+          }
+        },
+        "passed": true
+      },
+      "check2_restricted_field_mutation": {
+        "digest": "9daf7e41a5a23af20e87e6026e4d0fdb3e2c61512784b2010291d84019db35ef",
+        "failing_mutations": [],
+        "injected_fields": [
+          "certificate",
+          "confirmation_identifiers",
+          "discriminating_role",
+          "gold_annotations",
+          "logical_role_index",
+          "logical_roles",
+          "mechanism_identifiers",
+          "retired_v1_2_expected_tags"
+        ],
+        "mutated_fields": [
+          "usefulness_by_variant_target_slot",
+          "canonical_source_ordinal_by_variant_slot",
+          "transformation_maps",
+          "source_family",
+          "canonical_current_artifact_id",
+          "public_id_by_canonical_artifact_id",
+          "candidate_family_by_slot",
+          "candidate_slot_by_effect_family"
+        ],
+        "passed": true
+      },
+      "check3_public_only_replay": {
+        "blocked_module_scope": "In-harness baselines remove the restricted-data modules from the process path; the preserved adapter module stays importable because B0's preserved component identity includes it. Candidate modules additionally have ser.evaluation.authz_v1_3 removed, matching the static closure rule.",
+        "blocked_modules": [
+          "ser.authzgym.v1_3_annotation_builder",
+          "ser.authzgym.generation",
+          "ser.authzgym.v1_3_population",
+          "ser.evaluation.authz_v1_3"
+        ],
+        "passed": true,
+        "public_only_digest": "4c4e1779ac4babd268c58308d024f9a1693c6f4568328d7ca7774222cadf36ab",
+        "reference_digest": "4c4e1779ac4babd268c58308d024f9a1693c6f4568328d7ca7774222cadf36ab"
+      },
+      "check4_ordinal_non_consumption": {
+        "ordinal_permutation_stable": true,
+        "passed": true,
+        "static_violations": []
+      },
+      "check5_surface_statistic_non_consumption": {
+        "failing_modes": [],
+        "passed": true,
+        "perturbed": [
+          "line_count",
+          "inventory_order",
+          "public_id",
+          "path",
+          "exported_symbols",
+          "candidate_public_label"
+        ]
+      },
+      "check6_determinism_and_replay": {
+        "first": "4c4e1779ac4babd268c58308d024f9a1693c6f4568328d7ca7774222cadf36ab",
+        "passed": true,
+        "second": "4c4e1779ac4babd268c58308d024f9a1693c6f4568328d7ca7774222cadf36ab"
+      },
+      "check7_no_writable_shared_state": {
+        "forbidden_helpers_called": [],
+        "passed": true,
+        "static_findings": []
+      },
+      "check8_error_channel_audit": {
+        "observed_channels": [
+          "no-error"
+        ],
+        "passed": true
+      }
+    },
+    "firewall_passed": true,
+    "gate_checks": {
+      "canonical_top1": true,
+      "canonical_top2": true,
+      "illegal_target_count": true,
+      "mean_normalized_regret": true,
+      "nd1": true,
+      "nd2": true,
+      "nd3": true,
+      "own_selection_equivariance": true,
+      "section_14_equivalence": true
+    },
+    "gate_passes": true,
+    "leave_one_source_out": {
+      "failing_fold_count": 0,
+      "failing_folds": [],
+      "folds": {
+        "asv1-d-2b1117581d19--base_entry--594c384449": {
+          "case_count": 7,
+          "discriminating_case_count": 7,
+          "illegal_target_count": 0,
+          "mean_normalized_regret": 0.06666666666666667,
+          "nondiscriminating_case_count": 0,
+          "top1": 0.8571428571428571,
+          "top2": 1.0
+        },
+        "asv1-d-3a6b906af392--base_entry--4078dd725c": {
+          "case_count": 7,
+          "discriminating_case_count": 7,
+          "illegal_target_count": 0,
+          "mean_normalized_regret": 0.13333333333333333,
+          "nondiscriminating_case_count": 0,
+          "top1": 0.7142857142857143,
+          "top2": 1.0
+        },
+        "asv1-d-4579914d0fa5--base_entry--9ba29e87ed": {
+          "case_count": 7,
+          "discriminating_case_count": 7,
+          "illegal_target_count": 0,
+          "mean_normalized_regret": 0.13333333333333333,
+          "nondiscriminating_case_count": 0,
+          "top1": 0.7142857142857143,
+          "top2": 1.0
+        },
+        "asv1-d-5e6417ce899f--base_entry--435260e32a": {
+          "case_count": 7,
+          "discriminating_case_count": 7,
+          "illegal_target_count": 0,
+          "mean_normalized_regret": 0.13333333333333333,
+          "nondiscriminating_case_count": 0,
+          "top1": 0.7142857142857143,
+          "top2": 1.0
+        },
+        "asv1-d-8883a56f6778--base_entry--1d3d70ec34": {
+          "case_count": 7,
+          "discriminating_case_count": 7,
+          "illegal_target_count": 0,
+          "mean_normalized_regret": 0.13333333333333333,
+          "nondiscriminating_case_count": 0,
+          "top1": 0.7142857142857143,
+          "top2": 1.0
+        },
+        "asv1-d-96ebfd30761f--base_entry--b8ee841a9a": {
+          "case_count": 7,
+          "discriminating_case_count": 7,
+          "illegal_target_count": 0,
+          "mean_normalized_regret": 0.13333333333333333,
+          "nondiscriminating_case_count": 0,
+          "top1": 0.7142857142857143,
+          "top2": 1.0
+        },
+        "asv1-d-f5f54c9c8670--base_entry--5788f5bc53": {
+          "case_count": 7,
+          "discriminating_case_count": 7,
+          "illegal_target_count": 0,
+          "mean_normalized_regret": 0.06666666666666667,
+          "nondiscriminating_case_count": 0,
+          "top1": 0.8571428571428571,
+          "top2": 1.0
+        },
+        "asv1-d-fd4ff6d021dc--base_entry--369b6a44e8": {
+          "case_count": 7,
+          "discriminating_case_count": 7,
+          "illegal_target_count": 0,
+          "mean_normalized_regret": 0.13333333333333333,
+          "nondiscriminating_case_count": 0,
+          "top1": 0.7142857142857143,
+          "top2": 1.0
+        }
+      },
+      "fragile": false,
+      "is_gate": false
+    },
+    "longest_artifact_aggregate": {
+      "case_count": 8,
+      "discriminating_case_count": 8,
+      "illegal_target_count": 0,
+      "mean_normalized_regret": 0.6,
+      "nondiscriminating_case_count": 0,
+      "top1": 0.25,
+      "top2": 0.5
+    },
+    "non_degeneracy": {
+      "nd1_failures": [],
+      "nd1_pass": true,
+      "nd2_failures": [],
+      "nd2_pass": true,
+      "nd3_floor_from_b2": 4,
+      "nd3_pass": true,
+      "nd3_strict_unique_maximum_count": 6,
+      "pass": true
+    },
+    "own_selection_equivariance": {
+      "authority": "experiments/authzgym_estimator_repair_v1_3_1/CORRIGENDUM.md section 2.3 (ADR-0021)",
+      "candidate_requirement": "40/40",
+      "definition": "own-selection-decision equivariance: the target the component's own selection rule returns, mapped through canonical_ordinal_by_variant_public_id, must agree with base_entry; a declared top tie delegated to the frozen canonical-ordinal rule is admissible (CORRIGENDUM.md section 2.3; recorded B0 value 36/40)",
+      "full_order_failures": [],
+      "full_order_is_descriptive_only": true,
+      "full_order_not_a_gate": true,
+      "full_order_pass": 40,
+      "full_order_total": 40,
+      "gate_metric": "selection",
+      "recorded_b0_fixture": "36/40",
+      "selection_failures": [],
+      "selection_pass": 40,
+      "selection_total": 40
+    },
+    "protected_components_unchanged": true,
+    "record": "candidate_result",
+    "schema_version": 1,
+    "section_14_equivalence": {
+      "failures": [],
+      "pair_count": 40
+    },
+    "static_checker": {
+      "allowlisted_items": [
+        "facts",
+        "candidate_effects",
+        "unresolved_targets",
+        "candidate_hypotheses",
+        "contract_constants",
+        "legal_target_slots",
+        "current_artifact_slot"
+      ],
+      "checked_modules": [
+        "src/ser/authzgym/policies_v1_3_1.py"
+      ],
+      "module": "src/ser/authzgym/policies_v1_3_1.py",
+      "violations": []
+    },
+    "tie_dependence": {
+      "tie_dependent_case_count": 2,
+      "tie_dependent_cases": [
+        "asv1-d-2b1117581d19--base_entry--594c384449",
+        "asv1-d-f5f54c9c8670--base_entry--5788f5bc53"
+      ]
+    },
+    "tier2_ceiling": {
+      "case_count": 8,
+      "signature_group_count": 8,
+      "tier2_top1_ceiling": 0.75,
+      "tier2_top2_ceiling": 1.0
+    }
+  },
+  "protected_files": {
+    "confirmation_paths_opened_or_hashed_by_this_stage": 0,
+    "fixed_adapter_path": "src/ser/evaluation/authz_v1_3.py",
+    "historical_estimator_sha256": "092a7a87d1227c1a1c85ac46c7122e38ac1b6b24d7aaa90abee05abfe4167393",
+    "v13_non_confirmation_files_verified": 27
   },
   "schema_version": 1,
-  "stage": "step1_baseline_reproduction"
+  "stage": "step10_development_report",
+  "sufficiency_label": "estimator-only-change-sufficient",
+  "sufficiency_qualification": "Sufficiency, not superiority: a pass establishes that changing this one component is sufficient. The untested arm is untested, not falsified. No claim of optimality, minimality, or uniqueness is made, and the study does not attribute the preserved fresh-confirmation failure to the estimator, to the adapter, or to either component family.",
+  "tier1_ceiling": {
+    "case_count": 8,
+    "per_case": [
+      {
+        "attainable_top1": true,
+        "attainable_top2": true,
+        "case_id": "asv1-d-5e6417ce899f--base_entry--435260e32a",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "5": 1
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1,
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-5e6417ce899f",
+        "source_family": "ownership"
+      },
+      {
+        "attainable_top1": true,
+        "attainable_top2": true,
+        "case_id": "asv1-d-3a6b906af392--base_entry--4078dd725c",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "2": 1
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-3a6b906af392",
+        "source_family": "membership"
+      },
+      {
+        "attainable_top1": true,
+        "attainable_top2": true,
+        "case_id": "asv1-d-96ebfd30761f--base_entry--b8ee841a9a",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "1": 1
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-96ebfd30761f",
+        "source_family": "role"
+      },
+      {
+        "attainable_top1": false,
+        "attainable_top2": true,
+        "case_id": "asv1-d-2b1117581d19--base_entry--594c384449",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "4": 2
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-2b1117581d19",
+        "source_family": "context"
+      },
+      {
+        "attainable_top1": true,
+        "attainable_top2": true,
+        "case_id": "asv1-d-8883a56f6778--base_entry--1d3d70ec34",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "1": 1
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-8883a56f6778",
+        "source_family": "ownership"
+      },
+      {
+        "attainable_top1": true,
+        "attainable_top2": true,
+        "case_id": "asv1-d-4579914d0fa5--base_entry--9ba29e87ed",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "1": 1
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-4579914d0fa5",
+        "source_family": "membership"
+      },
+      {
+        "attainable_top1": true,
+        "attainable_top2": true,
+        "case_id": "asv1-d-fd4ff6d021dc--base_entry--369b6a44e8",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "3": 1
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3
+          ],
+          [
+            5
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-fd4ff6d021dc",
+        "source_family": "role"
+      },
+      {
+        "attainable_top1": false,
+        "attainable_top2": true,
+        "case_id": "asv1-d-f5f54c9c8670--base_entry--5788f5bc53",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "5": 2
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-f5f54c9c8670",
+        "source_family": "context"
+      }
+    ],
+    "required_top1": 0.6,
+    "required_top2": 0.8,
+    "tier1_top1_ceiling": 0.75,
+    "tier1_top2_ceiling": 1.0
+  },
+  "tier1_sufficient": true
 }

@@ -1,0 +1,53 @@
+{
+  "authorizing_adr": "ADR-0022",
+  "condition_id": "est-repair-v1.3.1-B-1",
+  "development_report_sha256": "f0629d3b78ba35258cc6d439e4b731c3682b76fa08e4155efbdad7cd0df18638",
+  "duplicate_reference_hashes": {
+    "development_public_population_file_sha256": "dda4e0c08a9c29a58a912fdcb5268ddf602aac79c47f6dd3fb94102b5dc8c365",
+    "spent_confirmation_public_population_file_sha256": "0e20284be388131d451f5befc22a048b3badba87a338168d8f7865bfbc9bd28f",
+    "spent_population_opened": false
+  },
+  "governing_preregistration": "experiments/authzgym_estimator_repair_v1_3_1/REPAIR_STUDY_PREREGISTRATION.md section 8",
+  "population": {
+    "converter": "src/ser/authzgym/v1_3_population.py (byte-unchanged)",
+    "expected_cases": 56,
+    "expected_scheduled_calls": 56,
+    "generator": "src/ser/authzgym/generation.py (byte-unchanged)",
+    "layout_indices": [
+      42,
+      43
+    ],
+    "no_model_or_provider_call": true,
+    "repeats_per_case": 1,
+    "reserved_fallback_pairs": [
+      [
+        44,
+        45
+      ],
+      [
+        46,
+        47
+      ]
+    ],
+    "selection_rule": "next unused layout indices in ascending order, fixed before generation; a collision advances to the next reserved pair and is never resolved by inspecting content",
+    "source_instances": 8,
+    "split": "confirmation_v1_3_1",
+    "variants": [
+      "base_entry",
+      "longest_artifact",
+      "artifact_reordering",
+      "symbol_renaming",
+      "candidate_label_renaming",
+      "artifact_identifier_variation",
+      "combined_permutation"
+    ]
+  },
+  "schema_version": 1,
+  "selected_component": {
+    "candidate_id": "est-repair-v1.3.1-B-1",
+    "class_sha256": "88b77c5f343117b354b5039d571bf03bf8867fcd7fb4f8fc91c1e1aefca7a048",
+    "fragile_label": null,
+    "module_sha256": "f9c92317abc562ac5175f90074238c666de55d557b02e0de368841676f4d910d"
+  },
+  "step": "8.7.2 freeze record"
+}

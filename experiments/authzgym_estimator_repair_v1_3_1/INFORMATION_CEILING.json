@@ -1,0 +1,287 @@
+{
+  "authorizing_adr": "ADR-0020",
+  "candidate_budget_consumed": 0,
+  "condition_id": "est-repair-v1.3.1",
+  "confirmation_authorized": false,
+  "correcting_adr": "ADR-0021",
+  "inference_authorized": false,
+  "outcome": "ceiling_sufficient",
+  "schema_version": 1,
+  "stage": "step3_authorized_information_ceiling",
+  "tier1": {
+    "case_count": 8,
+    "per_case": [
+      {
+        "attainable_top1": true,
+        "attainable_top2": true,
+        "case_id": "asv1-d-5e6417ce899f--base_entry--435260e32a",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "5": 1
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1,
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-5e6417ce899f",
+        "source_family": "ownership"
+      },
+      {
+        "attainable_top1": true,
+        "attainable_top2": true,
+        "case_id": "asv1-d-3a6b906af392--base_entry--4078dd725c",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "2": 1
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-3a6b906af392",
+        "source_family": "membership"
+      },
+      {
+        "attainable_top1": true,
+        "attainable_top2": true,
+        "case_id": "asv1-d-96ebfd30761f--base_entry--b8ee841a9a",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "1": 1
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-96ebfd30761f",
+        "source_family": "role"
+      },
+      {
+        "attainable_top1": false,
+        "attainable_top2": true,
+        "case_id": "asv1-d-2b1117581d19--base_entry--594c384449",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "4": 2
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-2b1117581d19",
+        "source_family": "context"
+      },
+      {
+        "attainable_top1": true,
+        "attainable_top2": true,
+        "case_id": "asv1-d-8883a56f6778--base_entry--1d3d70ec34",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "1": 1
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-8883a56f6778",
+        "source_family": "ownership"
+      },
+      {
+        "attainable_top1": true,
+        "attainable_top2": true,
+        "case_id": "asv1-d-4579914d0fa5--base_entry--9ba29e87ed",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "1": 1
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-4579914d0fa5",
+        "source_family": "membership"
+      },
+      {
+        "attainable_top1": true,
+        "attainable_top2": true,
+        "case_id": "asv1-d-fd4ff6d021dc--base_entry--369b6a44e8",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "3": 1
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3
+          ],
+          [
+            5
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-fd4ff6d021dc",
+        "source_family": "role"
+      },
+      {
+        "attainable_top1": false,
+        "attainable_top2": true,
+        "case_id": "asv1-d-f5f54c9c8670--base_entry--5788f5bc53",
+        "class_count": 4,
+        "class_size_of_maximum_usefulness_targets": {
+          "5": 2
+        },
+        "class_sizes": [
+          1,
+          1,
+          1,
+          2
+        ],
+        "classes_by_ordinal": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "maximum_usefulness_target_count": 1,
+        "source_episode_id": "asv1-d-f5f54c9c8670",
+        "source_family": "context"
+      }
+    ],
+    "required_top1": 0.6,
+    "required_top2": 0.8,
+    "tier1_top1_ceiling": 0.75,
+    "tier1_top2_ceiling": 1.0
+  },
+  "tier1_definition": "Blocking absolute ceiling: partition each case's legal targets into classes by identical category vector (r0..r4); any authorized-state function assigns equal value within a class, so the attainable rankings are the orderings of classes with the frozen evaluator ascending canonical-ordinal rule applied inside each class.",
+  "tier1_sufficient": true,
+  "tier2_definition": "Reported case-independent ceiling for a declared feature map phi: cases sharing (phi(case), class structure) must receive the same class ordering. Computed per candidate at handoff steps 7-9."
+}

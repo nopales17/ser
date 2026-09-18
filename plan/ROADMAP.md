@@ -178,12 +178,31 @@ Allowed statuses: `planned`, `active`, `done`.
   already spent, and no successor population existed, it does not invalidate the
   study, and the integrity procedure is amended so the development harness opens
   or hashes no confirmation path.
-- current cursor: `est-repair-v1.3.1` is the active Phase 5 work item, resumed at
-  handoff step 1 under ADR-0020 as corrected by ADR-0021. Its outcome, whatever
-  the label, is reported back to the deciding authority with the ceiling result,
-  the frozen baselines, the candidate ledger, the firewall scope statement, and
-  the unresolved questions; canonical state documents and generated views are
-  updated only by the acceptance workflow, not by the study steps themselves.
+- development result: the ADR-0020/0021 study terminated prospectively at its
+  first admissible pass. `est-repair-v1.3.1-B-1` (arm B, estimator-only) passes
+  all nine gate checks -- canonical top-1 `0.75`, top-2 `1.0`, regret
+  `0.116667`, zero illegal targets, ND-1/ND-2/ND-3 with strict-unique-maximum
+  `6` against the frozen floor `4`, own-selection equivariance `40/40`, frozen
+  section-14 equivalence `40/40`, complexity `3` of `4` -- with the expanded
+  action-value firewall passing and zero failing leave-one-source-out folds.
+  Three of ten attempts were used; A-1 and A-2 met the frozen thresholds but
+  failed ND-1/ND-2 on the two degenerate ownership cases, and Arm A was closed
+  after 2 of 4 attempts on a written impossibility argument, recorded as a
+  deviation. The label `estimator-only-change-sufficient` is sufficiency with the
+  adapter arm untested, not adapter adequacy and not attribution of the preserved
+  fresh-confirmation failure. The result confirms nothing and is a
+  `development_component_compatibility_diagnostic`.
+- current cursor: ADR-0022 authorizes only the already-preregistered section-8
+  successor confirmation for the exact frozen B-1 component named by hash:
+  generate and freeze `confirmation_v1_3_1` at layouts 42/43, certify and
+  validate in the isolation order, run one and only one oracle evaluation under
+  unchanged gates, and preserve the outcome either way. A construction,
+  duplication, answerability, firewall, or freeze failure stops execution and is
+  recorded rather than repaired; a failing one-shot result is final for this
+  component and no second population is generated. Changes to B-1, further
+  candidate development, spent-confirmation reuse, case replacement, threshold or
+  benchmark changes, inference, Jev, adaptive-routing experiments, and
+  architecture comparison all remain unauthorized.
 - readiness: Phase 5B is not ready. It requires a valid actual-model run to extract
   useful facts, rank inspections beyond trivial heuristics, route conditionally,
   and improve matched decision quality or efficiency under the frozen rule.

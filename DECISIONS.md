@@ -658,3 +658,110 @@ a new entry; do not rewrite it.
   label and a frozen development report, or a further implementation
   contradiction appears that neither the accepted preregistration nor this
   corrigendum resolves.
+
+## ADR-0022 -- Authorize the one-shot successor confirmation of the frozen `est-repair-v1.3.1-B-1` component
+
+- Status: accepted
+- Date: 2026-09-18
+- Context: The ADR-0020 study, corrected by ADR-0021, terminated prospectively at
+  its first admissible pass. Verification against repository artifacts confirms
+  every entry condition. The Tier-1 authorized-information ceiling was computed
+  before any candidate and is sufficient (top-1 `0.75`, top-2 `1.0`). B0--B3 and
+  the B2-derived `nd3_floor_from_b2 = 4` were frozen before any candidate
+  evaluation. Three attempts of ten were used. `est-repair-v1.3.1-B-1` passes all
+  nine section-4.2 gate checks: canonical top-1 `0.75`, top-2 `1.0`, mean
+  normalized regret `0.116667`, zero illegal targets, ND-1/ND-2/ND-3 all true
+  with strict-unique-maximum `6` against the frozen floor `4`, own-selection
+  equivariance `40/40`, frozen section-14 action-value equivalence `40/40` with
+  zero failures, complexity `3` against the bound `4`, and the expanded
+  action-value firewall checks 1--8 passing with the section-9.9 scope statement
+  recorded. Leave-one-source-out has zero failing folds and no `fragile` label.
+  Candidates A-1 and A-2 met all four frozen thresholds but failed ND-1 and ND-2
+  on the two degenerate ownership-family cases, so the non-degeneracy
+  requirement, not the thresholds, was the binding constraint. The component
+  class SHA-256, module SHA-256, and development-report markdown SHA-256 each
+  re-derive exactly from the artifacts on disk; every AuthzGym v1.2/v1.3
+  artifact, `src/ser/authzgym/policies.py` at `092a7a87...`, and
+  `src/ser/evaluation/authz_v1_3.py` are byte-unchanged; no provider, response,
+  or run artifact exists; and the access ledger records no confirmation access
+  during the resumed study.
+- Decision: Authorize execution of the already-preregistered section-8 successor
+  confirmation protocol for exactly one component, `est-repair-v1.3.1-B-1`
+  (component class SHA-256
+  `88b77c5f343117b354b5039d571bf03bf8867fcd7fb4f8fc91c1e1aefca7a048`, module
+  SHA-256
+  `f9c92317abc562ac5175f90074238c666de55d557b02e0de368841676f4d910d`), against
+  the frozen development report `DEVELOPMENT_REPORT.md` SHA-256
+  `f0629d3b78ba35258cc6d439e4b731c3682b76fa08e4155efbdad7cd0df18638`. Authorized:
+  (1) generation and freezing of the `confirmation_v1_3_1` population at layouts
+  42/43 under the preregistered content-independent selection rule, with the
+  preregistered collision rule advancing to the reserved pairs 44/45 then 46/47
+  and never by inspecting content; (2) independent certification, answerability
+  validation, and firewall validation in the section-8.7 isolation order, with
+  the section-8.5 access ledger and the section-8.3 duplication and equivalence
+  checks; (3) exactly one oracle evaluation of the frozen B-1 component under the
+  unchanged top-1 `>= 0.60`, top-2 `>= 0.80`, regret `<= 0.35`, zero-illegal,
+  section-14 equivalence, and own-selection equivariance gates; and (4)
+  preservation of the outcome, pass or failure, as this component's final
+  result. Nothing beyond these four items is authorized.
+- Why: The preregistered condition for a successor authorization -- a frozen
+  component and a frozen development report, both named by verified hash -- is
+  met, and section 8 already specifies the population, the freeze ordering, and
+  the one-shot rule in advance. Authorizing only execution of that fixed protocol
+  keeps the confirmation prospective: no parameter of it is chosen after seeing
+  the development result, and the component cannot change in response to what
+  confirmation shows.
+- Alternatives rejected: modifying B-1 or re-tuning it before or after
+  confirmation; opening further candidate development, including the two unused
+  Arm A attempts or Arm C; reusing, re-reading, or characterizing the spent
+  `confirmation_v1_3` population; replacing, repairing, excluding, or reweighting
+  a failing confirmation case; generating a second population for B-1 after a
+  failure; altering any threshold, gate, tie rule, usefulness label, or v1.3
+  semantic rule; running model or provider inference; and adding Jev,
+  adaptive-routing experiments, or architecture comparison.
+- Consequences: If the successor population fails any preregistered
+  construction, duplication, answerability, firewall, or freeze condition,
+  execution stops and the blocker is recorded; it is not repaired post hoc. The
+  one-shot component evaluation runs once and its result stands: a failure is
+  preserved as this component's final result and no further population is
+  generated for B-1. A pass establishes only confirmed compatibility of this
+  component with the fixed AuthzGym v1.3 instrument under the preregistered
+  controlled condition, carrying the section-10.2 claim boundary unchanged; it is
+  not general authorization reasoning, adaptive-routing success, SER architecture
+  superiority, GitLab transfer, real-world action-value validity, model
+  capability, or an `E-*` record, and it promotes no hypothesis. Phase 5 remains
+  active and Phase 5B remains blocked.
+- Preserved procedural history: three disclosures are preserved as history and
+  are not reinterpreted as candidate tuning, because repository evidence supports
+  the recorded facts. (1) The pre-ADR-0021 step-0 hashing of 16
+  confirmation-named files, already recorded under ADR-0021. (2) The duplicate
+  candidate evaluation round: component class hashes and gate numbers are
+  byte-identical across both rounds, and the dispositions differ only because the
+  study's own firewall check 7 misclassified module-level constant maps as
+  mutable caches in the first round. (3) Newly recorded here: Arm A was closed
+  after 2 of its 4 budgeted attempts on a written impossibility argument rather
+  than by exhausting its budget, which deviates from the section-5.4 rule 3 and
+  handoff step-8 precondition that Arm A be exhausted first. The argument is
+  corroborated -- an adapter-only change cannot alter the frozen `1.0 + max(0,
+  support)` term when every candidate effect is non-positive, and A-1 and A-2
+  failed ND-1/ND-2 on exactly those two cases -- and the deviation reduced the
+  search rather than relaxing any gate, so it does not affect B-1's measured
+  result. It does mean Arm A is under-tested relative to plan, and the
+  `estimator-only-change-sufficient` label must continue to be read as
+  sufficiency with the adapter arm untested, never as adapter adequacy or as
+  attribution of the preserved fresh-confirmation failure. Two bookkeeping
+  defects are recorded without altering the frozen artifacts: the candidate
+  ledger's `stale_outcome_record` note misdescribes which superseded line was
+  stale and points its `authoritative_outcome_record_index` at itself rather than
+  at the last `study_outcome` record, and `freeze.report_json_sha256`
+  (`444c76c0...`) does not re-derive from `DEVELOPMENT_REPORT.json` under
+  canonical re-serialization. The authoritative development outcome is
+  `estimator-only-change-sufficient` with passing candidate
+  `est-repair-v1.3.1-B-1`, and the identifying hashes for this authorization are
+  the component class, component module, and report markdown hashes named in the
+  decision, each verified against the artifacts on disk.
+- Revisit when: The successor confirmation terminates with a recorded pass or
+  failure, or its construction, answerability, firewall, duplication, or freeze
+  gate fires a blocker. Any component other than the exact frozen B-1 requires
+  its own development study, its own decision, and its own new untouched
+  population.

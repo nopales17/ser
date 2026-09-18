@@ -1,0 +1,290 @@
+{
+  "all_baselines_pass": true,
+  "authorizing_adr": "ADR-0020",
+  "b3_exempt_by_definition": "B3",
+  "baselines": {
+    "B0": {
+      "checks": {
+        "check1_static_and_dynamic_allowlist": {
+          "parts": {
+            "dynamic_sealed_input": {
+              "accessed_items": [],
+              "passed": true,
+              "violations": []
+            },
+            "static_import_closure": {
+              "detail": "baselines are defined inside the harness, which imports the frozen evaluator for the preserved oracle path; the static closure check is enforced on candidate modules",
+              "not_applicable": true,
+              "passed": true
+            }
+          },
+          "passed": true
+        },
+        "check2_restricted_field_mutation": {
+          "digest": "e8d61280a1501bd5abe344404fec50387f37a8d244419a06d3116612d061dbd6",
+          "failing_mutations": [],
+          "injected_fields": [
+            "certificate",
+            "confirmation_identifiers",
+            "discriminating_role",
+            "gold_annotations",
+            "logical_role_index",
+            "logical_roles",
+            "mechanism_identifiers",
+            "retired_v1_2_expected_tags"
+          ],
+          "mutated_fields": [
+            "usefulness_by_variant_target_slot",
+            "canonical_source_ordinal_by_variant_slot",
+            "transformation_maps",
+            "source_family",
+            "canonical_current_artifact_id",
+            "public_id_by_canonical_artifact_id",
+            "candidate_family_by_slot",
+            "candidate_slot_by_effect_family"
+          ],
+          "passed": true
+        },
+        "check3_public_only_replay": {
+          "blocked_module_scope": "In-harness baselines remove the restricted-data modules from the process path; the preserved adapter module stays importable because B0's preserved component identity includes it. Candidate modules additionally have ser.evaluation.authz_v1_3 removed, matching the static closure rule.",
+          "blocked_modules": [
+            "ser.authzgym.v1_3_annotation_builder",
+            "ser.authzgym.generation",
+            "ser.authzgym.v1_3_population"
+          ],
+          "passed": true,
+          "public_only_digest": "6d3a854035d5f5e4b7895a2ec20fdbdb8262761b6bf100f45f69b322544c0084",
+          "reference_digest": "6d3a854035d5f5e4b7895a2ec20fdbdb8262761b6bf100f45f69b322544c0084"
+        },
+        "check4_ordinal_non_consumption": {
+          "ordinal_permutation_stable": true,
+          "passed": true,
+          "static_violations": []
+        },
+        "check5_surface_statistic_non_consumption": {
+          "failing_modes": [],
+          "passed": true,
+          "perturbed": [
+            "line_count",
+            "inventory_order",
+            "public_id",
+            "path",
+            "exported_symbols",
+            "candidate_public_label"
+          ]
+        },
+        "check6_determinism_and_replay": {
+          "first": "6d3a854035d5f5e4b7895a2ec20fdbdb8262761b6bf100f45f69b322544c0084",
+          "passed": true,
+          "second": "6d3a854035d5f5e4b7895a2ec20fdbdb8262761b6bf100f45f69b322544c0084"
+        },
+        "check7_no_writable_shared_state": {
+          "forbidden_helpers_called": [],
+          "passed": true,
+          "static_findings": []
+        },
+        "check8_error_channel_audit": {
+          "observed_channels": [
+            "no-error"
+          ],
+          "passed": true
+        }
+      },
+      "component": "B0_preserved_historical_baseline",
+      "identifier": "B0",
+      "passed": true
+    },
+    "B1": {
+      "checks": {
+        "check1_static_and_dynamic_allowlist": {
+          "parts": {
+            "dynamic_sealed_input": {
+              "accessed_items": [],
+              "passed": true,
+              "violations": []
+            },
+            "static_import_closure": {
+              "detail": "baselines are defined inside the harness, which imports the frozen evaluator for the preserved oracle path; the static closure check is enforced on candidate modules",
+              "not_applicable": true,
+              "passed": true
+            }
+          },
+          "passed": true
+        },
+        "check2_restricted_field_mutation": {
+          "digest": "c346d8410b6f568da5819031734facecd8805f7c99be2365b388884ff0493ac2",
+          "failing_mutations": [],
+          "injected_fields": [
+            "certificate",
+            "confirmation_identifiers",
+            "discriminating_role",
+            "gold_annotations",
+            "logical_role_index",
+            "logical_roles",
+            "mechanism_identifiers",
+            "retired_v1_2_expected_tags"
+          ],
+          "mutated_fields": [
+            "usefulness_by_variant_target_slot",
+            "canonical_source_ordinal_by_variant_slot",
+            "transformation_maps",
+            "source_family",
+            "canonical_current_artifact_id",
+            "public_id_by_canonical_artifact_id",
+            "candidate_family_by_slot",
+            "candidate_slot_by_effect_family"
+          ],
+          "passed": true
+        },
+        "check3_public_only_replay": {
+          "blocked_module_scope": "In-harness baselines remove the restricted-data modules from the process path; the preserved adapter module stays importable because B0's preserved component identity includes it. Candidate modules additionally have ser.evaluation.authz_v1_3 removed, matching the static closure rule.",
+          "blocked_modules": [
+            "ser.authzgym.v1_3_annotation_builder",
+            "ser.authzgym.generation",
+            "ser.authzgym.v1_3_population"
+          ],
+          "passed": true,
+          "public_only_digest": "800cc8633fb9c5b857312c2fea40de143825c955dcc7b512ff9fd2f27520f42c",
+          "reference_digest": "800cc8633fb9c5b857312c2fea40de143825c955dcc7b512ff9fd2f27520f42c"
+        },
+        "check4_ordinal_non_consumption": {
+          "ordinal_permutation_stable": true,
+          "passed": true,
+          "static_violations": []
+        },
+        "check5_surface_statistic_non_consumption": {
+          "failing_modes": [],
+          "passed": true,
+          "perturbed": [
+            "line_count",
+            "inventory_order",
+            "public_id",
+            "path",
+            "exported_symbols",
+            "candidate_public_label"
+          ]
+        },
+        "check6_determinism_and_replay": {
+          "first": "800cc8633fb9c5b857312c2fea40de143825c955dcc7b512ff9fd2f27520f42c",
+          "passed": true,
+          "second": "800cc8633fb9c5b857312c2fea40de143825c955dcc7b512ff9fd2f27520f42c"
+        },
+        "check7_no_writable_shared_state": {
+          "forbidden_helpers_called": [],
+          "passed": true,
+          "static_findings": []
+        },
+        "check8_error_channel_audit": {
+          "observed_channels": [
+            "no-error"
+          ],
+          "passed": true
+        }
+      },
+      "component": "B1_degenerate_null",
+      "identifier": "B1",
+      "passed": true
+    },
+    "B2": {
+      "checks": {
+        "check1_static_and_dynamic_allowlist": {
+          "parts": {
+            "dynamic_sealed_input": {
+              "accessed_items": [],
+              "passed": true,
+              "violations": []
+            },
+            "static_import_closure": {
+              "detail": "baselines are defined inside the harness, which imports the frozen evaluator for the preserved oracle path; the static closure check is enforced on candidate modules",
+              "not_applicable": true,
+              "passed": true
+            }
+          },
+          "passed": true
+        },
+        "check2_restricted_field_mutation": {
+          "digest": "eb1619b4cd59762f04ac4144582d4d896b9e9af8a4cfb5cee292782f5e05a4e7",
+          "failing_mutations": [],
+          "injected_fields": [
+            "certificate",
+            "confirmation_identifiers",
+            "discriminating_role",
+            "gold_annotations",
+            "logical_role_index",
+            "logical_roles",
+            "mechanism_identifiers",
+            "retired_v1_2_expected_tags"
+          ],
+          "mutated_fields": [
+            "usefulness_by_variant_target_slot",
+            "canonical_source_ordinal_by_variant_slot",
+            "transformation_maps",
+            "source_family",
+            "canonical_current_artifact_id",
+            "public_id_by_canonical_artifact_id",
+            "candidate_family_by_slot",
+            "candidate_slot_by_effect_family"
+          ],
+          "passed": true
+        },
+        "check3_public_only_replay": {
+          "blocked_module_scope": "In-harness baselines remove the restricted-data modules from the process path; the preserved adapter module stays importable because B0's preserved component identity includes it. Candidate modules additionally have ser.evaluation.authz_v1_3 removed, matching the static closure rule.",
+          "blocked_modules": [
+            "ser.authzgym.v1_3_annotation_builder",
+            "ser.authzgym.generation",
+            "ser.authzgym.v1_3_population"
+          ],
+          "passed": true,
+          "public_only_digest": "2790c83cefbd26633001b933ad416ccdede444c1480bb9ad1b029d156d7f96eb",
+          "reference_digest": "2790c83cefbd26633001b933ad416ccdede444c1480bb9ad1b029d156d7f96eb"
+        },
+        "check4_ordinal_non_consumption": {
+          "ordinal_permutation_stable": true,
+          "passed": true,
+          "static_violations": []
+        },
+        "check5_surface_statistic_non_consumption": {
+          "failing_modes": [],
+          "passed": true,
+          "perturbed": [
+            "line_count",
+            "inventory_order",
+            "public_id",
+            "path",
+            "exported_symbols",
+            "candidate_public_label"
+          ]
+        },
+        "check6_determinism_and_replay": {
+          "first": "2790c83cefbd26633001b933ad416ccdede444c1480bb9ad1b029d156d7f96eb",
+          "passed": true,
+          "second": "2790c83cefbd26633001b933ad416ccdede444c1480bb9ad1b029d156d7f96eb"
+        },
+        "check7_no_writable_shared_state": {
+          "forbidden_helpers_called": [],
+          "passed": true,
+          "static_findings": []
+        },
+        "check8_error_channel_audit": {
+          "observed_channels": [
+            "no-error"
+          ],
+          "passed": true
+        }
+      },
+      "component": "B2_category_match_floor",
+      "identifier": "B2",
+      "passed": true
+    }
+  },
+  "condition_id": "est-repair-v1.3.1",
+  "confirmation_authorized": false,
+  "correcting_adr": "ADR-0021",
+  "experiment": "authzgym-estimator-repair-v1.3.1-component-firewall",
+  "inference_authorized": false,
+  "preserved_firewall_unchanged": true,
+  "preserved_firewall_validation": "experiments/authzgym_semantic_contract_v1_3/FIREWALL_VALIDATION.json",
+  "schema_version": 1,
+  "scope_statement": "This validation demonstrates isolation of the action-value path for the 56 development cases and the specific component(s) named here, and nothing broader. It does not supersede, extend, or re-run experiments/authzgym_semantic_contract_v1_3/FIREWALL_VALIDATION.json, which remains byte-frozen with its own recorded scope. No confirmation path was opened, read, or hashed.",
+  "stage": "baselines"
+}

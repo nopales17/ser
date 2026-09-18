@@ -12,6 +12,7 @@ validator does. No confirmation path is opened: reads fail closed.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import subprocess
@@ -32,6 +33,10 @@ from ser.authzgym.policies import (
 )
 from ser.authzgym.v1_3_contract import load_public_contract, parse_response
 from ser.core.types import content_hash
+from ser.evaluation.authz_v1_3_1_sealed_input import (
+    SealedComponentInput,
+    build_sealed_input,
+)
 from ser.evaluation.authz_v1_3 import (
     EFFECT_SIGN,
     RELATION_TAG_BY_CATEGORY,
@@ -47,6 +52,8 @@ from ser.evaluation.authz_v1_3 import (
 ROOT = Path(__file__).resolve().parents[3]
 V13_DIR = ROOT / "experiments" / "authzgym_semantic_contract_v1_3"
 REPAIR_DIR = ROOT / "experiments" / "authzgym_estimator_repair_v1_3_1"
+CORRIGENDUM_PATH = "experiments/authzgym_estimator_repair_v1_3_1/CORRIGENDUM.md"
+CORRIGENDUM_ADR = "ADR-0021"
 
 CANONICAL_VARIANT = "base_entry"
 READOUT_VARIANT = "longest_artifact"
@@ -59,10 +66,16 @@ EQUIVALENCE_VARIANTS = (
 )
 CANONICAL_SOURCE_COUNT = 8
 
-# Preserved figures recorded in preregistration section 6 for baseline B0.
-# ``longest_artifact_regret`` is the figure as written in the accepted
-# preregistration and handoff step 1; it is recorded here verbatim so the
-# reproduction check can fail rather than silently substitute a value.
+# Preserved figures for baseline B0.
+#
+# Preregistration section 6 and handoff step 1 recorded the ``longest_artifact``
+# regret as the *confirmation*-split value. ADR-0021 and CORRIGENDUM.md section
+# 1.3 correct that transcription error: step-1 reproduction is authorized
+# against the development-split value recorded below. The confirmation-split
+# read-out is already-exposed spent-confirmation information (corrigendum
+# section 1.5) and must not be used in any candidate rationale, design,
+# selection, ceiling, or non-degeneracy computation. It is deliberately not
+# restated anywhere in this module.
 FROZEN_B0_RECORDED = {
     "canonical_top1": 0.625,
     "canonical_top2": 0.875,
@@ -72,7 +85,18 @@ FROZEN_B0_RECORDED = {
     "own_ranking_invariance": "36/40",
     "longest_artifact_top1": 0.125,
     "longest_artifact_top2": 0.375,
-    "longest_artifact_regret": 0.783,
+    "longest_artifact_regret": 0.6583333333333333,
+}
+RECORDED_EXPECTATION_AUTHORITY = {
+    "longest_artifact_regret": (
+        f"{CORRIGENDUM_PATH} section 1.3 ({CORRIGENDUM_ADR}); the preregistration "
+        "and handoff recorded the confirmation-split value, which is forbidden "
+        "development information"
+    ),
+    "own_ranking_invariance": (
+        f"{CORRIGENDUM_PATH} section 2.3 ({CORRIGENDUM_ADR}); own-selection "
+        "equivariance with the recorded B0 36/40 fixture"
+    ),
 }
 FROZEN_GATE_ACCEPTANCE_FIGURES = (
     "canonical_top1",
@@ -142,6 +166,42 @@ def read_jsonl(path: Path | str) -> dict[str, dict]:
     }
 
 
+def is_confirmation_name(path: Path | str) -> bool:
+    """The name predicate of preregistration section 3.3 and corrigendum 3.5.3."""
+
+    return "confirmation" in Path(path).name.lower()
+
+
+def guarded_sha256(path: Path | str) -> str:
+    """Hash a protected file, failing closed on any confirmation-named path.
+
+    Corrigendum section 3.5 amends handoff step 0: the development integrity
+    pass must not open, read, or hash a confirmation-named path, including files
+    inside ``PUBLIC_BUNDLE/``, ``RESTRICTED_BUNDLE/`` and ``annotations/``.
+    """
+
+    candidate = Path(path)
+    if is_confirmation_name(candidate):
+        raise ConfirmationAccessError(
+            f"integrity check refused to hash confirmation path: {candidate.name}"
+        )
+    return hashlib.sha256(candidate.read_bytes()).hexdigest()
+
+
+def integrity_files_v13() -> tuple[Path, ...]:
+    """Every non-confirmation file under the frozen v1.3 instrument directory.
+
+    Directory traversal and ``stat`` only: no confirmation-named path is ever
+    opened, read, or hashed.
+    """
+
+    return tuple(
+        path
+        for path in sorted(V13_DIR.rglob("*"))
+        if path.is_file() and not is_confirmation_name(path)
+    )
+
+
 def repository_commit() -> str:
     return (
         subprocess.run(
@@ -169,6 +229,9 @@ class DevelopmentBundle:
             if case["case_id"] == case_id:
                 return case
         raise HarnessError(f"unknown case id: {case_id}")
+
+    def case_ids(self) -> tuple[str, ...]:
+        return tuple(str(item["case_id"]) for item in self.cases)
 
     def canonical_cases(self) -> tuple[Mapping[str, object], ...]:
         return tuple(item for item in self.cases if item["variant"] == CANONICAL_VARIANT)
@@ -224,61 +287,10 @@ def load_development_bundle() -> DevelopmentBundle:
     )
 
 
-@dataclass(frozen=True)
-class ComponentInput:
-    """The seven allowlisted items of preregistration section 2.4.
-
-    Step 2 replaces this provisional container with an attribute-enforcing
-    sealed object; the exposed fields are deliberately identical.
-    """
-
-    facts: Mapping[str, bool]
-    candidate_effects: Mapping[str, str]
-    unresolved_targets: Mapping[int, tuple[bool, bool, bool, bool, bool]]
-    candidate_hypotheses: tuple[tuple[str, str, str], ...]
-    contract_constants: Mapping[str, object]
-    legal_target_slots: tuple[int, ...]
-    current_artifact_slot: int
-
-    @property
-    def legal_target_count(self) -> int:
-        return len(self.legal_target_slots)
-
-    def category_vector(self, slot: int) -> tuple[bool, bool, bool, bool, bool]:
-        return self.unresolved_targets[slot]
-
-
-def build_component_input(
-    case: Mapping[str, object],
-    response: Mapping[str, object],
-    contract: Mapping[str, object],
-) -> ComponentInput:
-    legal = tuple(int(item) for item in case["runner_control"]["legal_target_slots"])
-    parsed = parse_response(response, contract, legal)
-    targets = {
-        slot: tuple(bool(parsed["unresolved_targets"][f"t{slot}"][f"r{index}"]) for index in range(5))
-        for slot in legal
-    }
-    return ComponentInput(
-        facts={slot: bool(value) for slot, value in parsed["facts"].items()},
-        candidate_effects={slot: str(value) for slot, value in parsed["candidate_effects"].items()},
-        unresolved_targets=targets,
-        candidate_hypotheses=tuple(
-            (str(item["slot"]), str(item["effect_family"]), str(item["description"]))
-            for item in case["model_visible_input"]["candidate_hypotheses"]
-        ),
-        contract_constants={
-            "fact_slots": contract["fact_slots"],
-            "effect_support_cues": contract["effect_support_cues"],
-            "effect_counter_cues": contract["effect_counter_cues"],
-            "effect_values": contract["effect_values"],
-            "relation_slots": contract["relation_slots"],
-            "relation_precedence": contract["relation_precedence"],
-            "candidate_slots": contract["candidate_slots"],
-        },
-        legal_target_slots=legal,
-        current_artifact_slot=int(case["runner_control"]["current_artifact_slot"]),
-    )
+# Step 2 replaces the provisional container with the sealed, attribute-enforcing
+# object. ``ComponentInput`` remains the name used by the component interface.
+ComponentInput = SealedComponentInput
+build_component_input = build_sealed_input
 
 
 class Component:
@@ -414,19 +426,17 @@ class CategoryMatchFloorComponent(Component):
             for slot, family, _ in sealed.candidate_hypotheses
             if sealed.candidate_effects[slot] == "support"
         }
-        indices = {
-            str(relation): index
-            for index, relation in enumerate(
-                sorted(sealed.contract_constants["relation_slots"], key=lambda r: int(r[1:]))
-            )
+        relation_slots = sealed.contract_constants["relation_slots"]
+        family_index = {
+            str(name): int(str(slot)[1:]) for slot, name in relation_slots.items()
         }
         values = {}
         for slot in sealed.legal_target_slots:
             vector = sealed.category_vector(slot)
             matched = any(
-                vector[indices[relation]]
-                for relation in supporting_categories
-                if relation in indices
+                vector[family_index[family]]
+                for family in supporting_categories
+                if family in family_index
             )
             values[slot] = 1.0 if matched else 0.0
         return values
@@ -447,6 +457,7 @@ class OracleUsefulnessComponent(Component):
     name = "B3_oracle_usefulness_upper_bound"
     identifier = "B3"
     upper_bound_only = True
+    gate_eligible = False
 
     def __init__(self, usefulness_by_case: Mapping[str, Mapping[str, float]]) -> None:
         self._usefulness = usefulness_by_case
@@ -459,9 +470,7 @@ class OracleUsefulnessComponent(Component):
 
     def values(self, sealed: ComponentInput) -> dict[int, float]:
         usefulness = self._usefulness[self._case_id]
-        return {
-            slot: float(usefulness[f"t{slot}"]) for slot in sealed.legal_target_slots
-        }
+        return {slot: float(usefulness[slot]) for slot in sealed.legal_target_slots}
 
     def declared_ties(self, sealed: ComponentInput) -> list[list[int]]:
         values = self.values(sealed)
@@ -470,6 +479,20 @@ class OracleUsefulnessComponent(Component):
             [slot for slot in sealed.legal_target_slots if values[slot] == level]
             for level in levels
         ]
+
+
+class BaselineNotSelectableError(HarnessError):
+    """B3 may never be submitted as a candidate."""
+
+
+def assert_candidate_eligible(component: Component) -> None:
+    if getattr(component, "upper_bound_only", False) or not getattr(
+        component, "gate_eligible", True
+    ):
+        raise BaselineNotSelectableError(
+            f"{component.identifier} is an evaluator-channel upper bound and is "
+            "never eligible for selection"
+        )
 
 
 def _slot_to_artifact_id(case: Mapping[str, object]) -> dict[int, str]:
@@ -495,6 +518,20 @@ def _ordinal_by_slot(
 def _usefulness_by_slot(bundle: DevelopmentBundle, case_id: str) -> dict[int, float]:
     raw = bundle.restricted[case_id]["usefulness_by_variant_target_slot"]
     return {int(slot[1:]): float(value) for slot, value in raw.items()}
+
+
+def bound_values(
+    component: Component, sealed: ComponentInput, case: Mapping[str, object]
+) -> dict[int, float]:
+    """Evaluate one component on one case, binding the case where required.
+
+    Only evaluator-channel-only baselines (B3) define ``for_case``; candidate
+    components never do, so the sealed input remains their only information.
+    """
+
+    case_id = str(case["case_id"])
+    bound = component.for_case(case_id) if hasattr(component, "for_case") else component
+    return bound.values(sealed)
 
 
 def diagnostic_for_case(
@@ -574,7 +611,7 @@ def criterion(bundle: DevelopmentBundle, component: Component) -> dict:
         sealed = build_component_input(
             case, bundle.response_for(str(case["case_id"])), bundle.contract
         )
-        rows.append(diagnostic_for_case(bundle, case, component.values(sealed), component=component))
+        rows.append(diagnostic_for_case(bundle, case, bound_values(component, sealed, case), component=component))
     return _aggregate(rows)
 
 
@@ -586,7 +623,7 @@ def readout(bundle: DevelopmentBundle, component: Component, variant: str) -> di
         sealed = build_component_input(
             case, bundle.response_for(str(case["case_id"])), bundle.contract
         )
-        rows.append(diagnostic_for_case(bundle, case, component.values(sealed), component=component))
+        rows.append(diagnostic_for_case(bundle, case, bound_values(component, sealed, case), component=component))
     return _aggregate(rows)
 
 
@@ -605,7 +642,7 @@ def family_macro(bundle: DevelopmentBundle, component: Component) -> dict[str, d
                 continue
             sealed = build_component_input(case, bundle.response_for(case_id), bundle.contract)
             rows.append(
-                diagnostic_for_case(bundle, case, component.values(sealed), component=component)
+                diagnostic_for_case(bundle, case, bound_values(component, sealed, case), component=component)
             )
         summary[family] = _aggregate(rows)
     return summary
@@ -619,7 +656,7 @@ def degeneracy_census(bundle: DevelopmentBundle, component: Component) -> dict:
     for case in bundle.canonical_cases():
         case_id = str(case["case_id"])
         sealed = build_component_input(case, bundle.response_for(case_id), bundle.contract)
-        values = component.values(sealed)
+        values = bound_values(component, sealed, case)
         counts: dict[float, int] = {}
         for slot in sealed.legal_target_slots:
             counts[round(values[slot], 12)] = counts.get(round(values[slot], 12), 0) + 1
@@ -650,8 +687,31 @@ def _mapped_order(
     return [[ordinal[slot] for slot in group] for group in groups]
 
 
+def bound_order(
+    component: Component, sealed: ComponentInput, case: Mapping[str, object]
+) -> list[list[int]]:
+    bound = (
+        component.for_case(str(case["case_id"]))
+        if hasattr(component, "for_case")
+        else component
+    )
+    return bound.own_order(sealed, case)
+
+
 def own_ranking_invariance(bundle: DevelopmentBundle, component: Component) -> dict:
-    """Preregistration section 2.6, in both recorded and descriptive readings."""
+    """Section-2.6 obligation as resolved by CORRIGENDUM.md section 2.3.
+
+    The gate is *own-selection-decision equivariance*: the target the
+    component's own selection rule returns must be equivariant under the five
+    equivalence transformations, compared after mapping through
+    ``canonical_ordinal_by_variant_public_id``. A component may legitimately
+    preserve a top tie and delegate it to the frozen evaluator canonical-ordinal
+    rule (section 2.4 route 2); a declared top tie whose mapped ordinal set is
+    identical therefore passes, and resolves to the same target. Breaking a top
+    tie internally by an identifier-dependent rule is inadmissible and is what
+    B0's recorded 36/40 fixture measures. Full-order invariance is descriptive
+    only (section 2.3(f)) and is never a gate.
+    """
 
     selection_checks = 0
     selection_failures: list[dict] = []
@@ -664,7 +724,7 @@ def own_ranking_invariance(bundle: DevelopmentBundle, component: Component) -> d
             base, bundle.response_for(str(base["case_id"])), bundle.contract
         )
         base_groups = _mapped_order(
-            bundle, base, component.own_order(base_sealed, base)
+            bundle, base, bound_order(component, base_sealed, base)
         )
         for case in cases:
             if case["variant"] not in EQUIVALENCE_VARIANTS:
@@ -672,7 +732,7 @@ def own_ranking_invariance(bundle: DevelopmentBundle, component: Component) -> d
             sealed = build_component_input(
                 case, bundle.response_for(str(case["case_id"])), bundle.contract
             )
-            groups = _mapped_order(bundle, case, component.own_order(sealed, case))
+            groups = _mapped_order(bundle, case, bound_order(component, sealed, case))
             selection_checks += 1
             if set(groups[0]) != set(base_groups[0]):
                 selection_failures.append(
@@ -695,10 +755,16 @@ def own_ranking_invariance(bundle: DevelopmentBundle, component: Component) -> d
                 )
     return {
         "definition": (
-            "own-selection invariance: the component's own first choice, mapped "
-            "through canonical_ordinal_by_variant_public_id, must agree with "
-            "base_entry (preregistration section 2.6; recorded B0 value 36/40)"
+            "own-selection-decision equivariance: the target the component's own "
+            "selection rule returns, mapped through "
+            "canonical_ordinal_by_variant_public_id, must agree with base_entry; "
+            "a declared top tie delegated to the frozen canonical-ordinal rule is "
+            "admissible (CORRIGENDUM.md section 2.3; recorded B0 value 36/40)"
         ),
+        "gate_metric": "selection",
+        "candidate_requirement": "40/40",
+        "recorded_b0_fixture": "36/40",
+        "authority": f"{CORRIGENDUM_PATH} section 2.3 ({CORRIGENDUM_ADR})",
         "selection_pass": selection_checks - len(selection_failures),
         "selection_total": selection_checks,
         "selection_failures": selection_failures,
@@ -706,6 +772,7 @@ def own_ranking_invariance(bundle: DevelopmentBundle, component: Component) -> d
         "full_order_total": order_checks,
         "full_order_failures": order_failures,
         "full_order_is_descriptive_only": True,
+        "full_order_not_a_gate": True,
     }
 
 
@@ -717,11 +784,10 @@ def section_14_equivalence(bundle: DevelopmentBundle, component: Component) -> d
     for source in bundle.source_episode_ids():
         cases = bundle.cases_for_source(source)
         base = next(item for item in cases if item["variant"] == CANONICAL_VARIANT)
-        base_values = component.values(
-            build_component_input(
-                base, bundle.response_for(str(base["case_id"])), bundle.contract
-            )
+        base_sealed = build_component_input(
+            base, bundle.response_for(str(base["case_id"])), bundle.contract
         )
+        base_values = bound_values(component, base_sealed, base)
         base_diagnostic = diagnostic_for_case(
             bundle, base, base_values, component=component
         )
@@ -731,9 +797,10 @@ def section_14_equivalence(bundle: DevelopmentBundle, component: Component) -> d
             if case["variant"] not in EQUIVALENCE_VARIANTS:
                 continue
             case_id = str(case["case_id"])
-            values = component.values(
-                build_component_input(case, bundle.response_for(case_id), bundle.contract)
+            sealed = build_component_input(
+                case, bundle.response_for(case_id), bundle.contract
             )
+            values = bound_values(component, sealed, case)
             diagnostic = diagnostic_for_case(bundle, case, values, component=component)
             ordinal = _ordinal_by_slot(bundle, case_id)
             mapped = {ordinal[slot]: values[slot] for slot in values}
@@ -768,7 +835,7 @@ def leave_one_source_out(bundle: DevelopmentBundle, component: Component) -> dic
                 case, bundle.response_for(str(case["case_id"])), bundle.contract
             )
             rows.append(
-                diagnostic_for_case(bundle, case, component.values(sealed), component=component)
+                diagnostic_for_case(bundle, case, bound_values(component, sealed, case), component=component)
             )
         folds[excluded] = _aggregate(rows)
     failing = [
@@ -792,7 +859,7 @@ def tie_dependence(bundle: DevelopmentBundle, component: Component) -> dict:
     for case in bundle.canonical_cases():
         case_id = str(case["case_id"])
         sealed = build_component_input(case, bundle.response_for(case_id), bundle.contract)
-        values = component.values(sealed)
+        values = bound_values(component, sealed, case)
         usefulness = _usefulness_by_slot(bundle, case_id)
         legal = tuple(sealed.legal_target_slots)
         best = max(usefulness[slot] for slot in legal)
@@ -823,7 +890,7 @@ def is_non_degenerate(
     for case in bundle.canonical_cases():
         case_id = str(case["case_id"])
         sealed = build_component_input(case, bundle.response_for(case_id), bundle.contract)
-        values = component.values(sealed)
+        values = bound_values(component, sealed, case)
         legal = tuple(sealed.legal_target_slots)
         distinct = {round(values[slot], 12) for slot in legal}
         if len(distinct) <= 1:
@@ -857,13 +924,38 @@ def is_non_degenerate(
     }
 
 
-def baseline_b0(bundle: DevelopmentBundle) -> dict:
-    assert_frozen_estimator()
-    component = HistoricalEstimatorComponent()
+def metric_block(
+    bundle: DevelopmentBundle, component: Component, *, nd3_floor: int | None = None
+) -> dict:
+    """Every reported diagnostic, computed identically for every baseline."""
+
     canonical = criterion(bundle, component)
     longest = readout(bundle, component, READOUT_VARIANT)
     equivalence = section_14_equivalence(bundle, component)
     invariance = own_ranking_invariance(bundle, component)
+    return {
+        "canonical_aggregate": canonical,
+        "longest_artifact_aggregate": longest,
+        "section_14_equivalence": equivalence,
+        "own_ranking_invariance": invariance,
+        "degeneracy_census": degeneracy_census(bundle, component),
+        "family_macro": family_macro(bundle, component),
+        "leave_one_source_out": leave_one_source_out(bundle, component),
+        "tie_dependence": tie_dependence(bundle, component),
+        "non_degeneracy": is_non_degenerate(bundle, component, nd3_floor=nd3_floor),
+        "upper_bound_only": bool(getattr(component, "upper_bound_only", False)),
+        "gate_eligible": bool(getattr(component, "gate_eligible", True)),
+    }
+
+
+def baseline_b0(bundle: DevelopmentBundle) -> dict:
+    assert_frozen_estimator()
+    component = HistoricalEstimatorComponent()
+    metrics = metric_block(bundle, component)
+    canonical = metrics["canonical_aggregate"]
+    longest = metrics["longest_artifact_aggregate"]
+    equivalence = metrics["section_14_equivalence"]
+    invariance = metrics["own_ranking_invariance"]
     observed = {
         "canonical_top1": canonical["top1"],
         "canonical_top2": canonical["top2"],
@@ -882,25 +974,144 @@ def baseline_b0(bundle: DevelopmentBundle) -> dict:
         if not _matches(FROZEN_B0_RECORDED[key], observed[key])
     }
     return {
+        **metrics,
         "component": component.name,
         "identifier": component.identifier,
         "recorded_expectation": dict(FROZEN_B0_RECORDED),
+        "recorded_expectation_authority": dict(RECORDED_EXPECTATION_AUTHORITY),
         "acceptance_figures": list(FROZEN_GATE_ACCEPTANCE_FIGURES),
         "observed": observed,
-        "canonical_aggregate": canonical,
-        "longest_artifact_aggregate": longest,
         "reproduces_recorded_figures": not mismatches,
         "reproduces_acceptance_figures": all(
             _matches(FROZEN_B0_RECORDED[key], observed[key])
             for key in FROZEN_GATE_ACCEPTANCE_FIGURES
         ),
         "mismatches": mismatches,
-        "section_14_equivalence": equivalence,
-        "own_ranking_invariance": invariance,
-        "degeneracy_census": degeneracy_census(bundle, component),
-        "family_macro": family_macro(bundle, component),
-        "leave_one_source_out": leave_one_source_out(bundle, component),
-        "tie_dependence": tie_dependence(bundle, component),
+    }
+
+
+def baseline_record(
+    bundle: DevelopmentBundle,
+    component: Component,
+    *,
+    nd3_floor: int | None = None,
+) -> dict:
+    metrics = metric_block(bundle, component, nd3_floor=nd3_floor)
+    return {
+        **metrics,
+        "component": component.name,
+        "identifier": component.identifier,
+    }
+
+
+def oracle_usefulness_baseline(bundle: DevelopmentBundle) -> OracleUsefulnessComponent:
+    return OracleUsefulnessComponent(
+        {
+            case_id: _usefulness_by_slot(bundle, case_id)
+            for case_id in bundle.case_ids()
+        }
+    )
+
+
+def freeze_nd3_floor(path: Path, floor: int) -> bool:
+    """Write the B2-derived ND-3 floor exactly once (handoff step 4).
+
+    Returns ``True`` when the value is written for the first time. A later call
+    that would change the frozen value raises; a later call with the identical
+    value performs no write and returns ``False``.
+    """
+
+    path = Path(path)
+    if path.exists():
+        existing = json.loads(path.read_text(encoding="utf-8"))
+        frozen = existing.get("frozen_nd3_floor_from_b2")
+        if frozen is not None:
+            if frozen != floor:
+                raise HarnessError(
+                    "nd3_floor_from_b2 is already frozen at "
+                    f"{frozen}; refusing to re-freeze it at {floor}"
+                )
+            return False
+    document = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+    document["frozen_nd3_floor_from_b2"] = floor
+    path.write_text(
+        json.dumps(document, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
+    return True
+
+
+# Preregistration section 4.2, frozen and unchanged.
+GATE = {
+    "canonical_top1": (">=", 0.60),
+    "canonical_top2": (">=", 0.80),
+    "mean_normalized_regret": ("<=", 0.35),
+    "illegal_target_count": ("==", 0),
+    "section_14_equivalence": ("==", "40/40"),
+    "own_selection_equivariance": ("==", "40/40"),
+    "nd1": ("==", True),
+    "nd2": ("==", True),
+    "nd3": ("==", True),
+}
+
+
+def complexity_score(
+    *,
+    numeric_constants: int = 0,
+    family_branches: int = 0,
+    relation_category_branches: int = 0,
+) -> int:
+    """Preregistration section 4.8 complexity control.
+
+    Counted: free numeric constants introduced (+1), conditionals testing a
+    concrete candidate ``effect_family`` (+2), and conditionals testing or newly
+    mapping a concrete published relation category (+3). Constants and the
+    published relation-category map inherited unchanged from the frozen code are
+    not counted, exactly as section 4.8 says for inherited constants.
+    """
+
+    return (
+        int(numeric_constants)
+        + 2 * int(family_branches)
+        + 3 * int(relation_category_branches)
+    )
+
+
+def gate_record(
+    bundle: DevelopmentBundle,
+    component: Component,
+    *,
+    nd3_floor: int,
+) -> dict:
+    """The frozen section-4.2 criterion plus the structural admissibility gates."""
+
+    metrics = metric_block(bundle, component, nd3_floor=nd3_floor)
+    canonical = metrics["canonical_aggregate"]
+    equivalence = metrics["section_14_equivalence"]
+    invariance = metrics["own_ranking_invariance"]
+    degeneracy = metrics["non_degeneracy"]
+    checks = {
+        "canonical_top1": canonical["top1"] >= 0.60,
+        "canonical_top2": canonical["top2"] >= 0.80,
+        "mean_normalized_regret": canonical["mean_normalized_regret"] <= 0.35,
+        "illegal_target_count": canonical["illegal_target_count"] == 0,
+        "section_14_equivalence": (
+            equivalence["pair_count"] == 40 and not equivalence["failures"]
+        ),
+        "own_selection_equivariance": (
+            invariance["selection_total"] == 40 and invariance["selection_pass"] == 40
+        ),
+        "nd1": degeneracy["nd1_pass"],
+        "nd2": degeneracy["nd2_pass"],
+        "nd3": degeneracy["nd3_pass"],
+    }
+    return {
+        **metrics,
+        "requirements": {
+            key: {"requirement": GATE[key], "observed": checks[key]}
+            for key in GATE
+        },
+        "checks": checks,
+        "passes": all(checks.values()),
     }
 
 
@@ -927,12 +1138,60 @@ def access_ledger_record(*, actor: str, motivation: str) -> dict:
 
 
 def append_access_ledger(path: Path, record: Mapping[str, object]) -> bool:
-    """Append-only, idempotent: the study-start record is written once."""
+    """Append-only, idempotent per ``event``: no record is ever rewritten."""
 
     path = guard_path(path)
     existing = path.read_text(encoding="utf-8") if path.exists() else ""
-    if '"event": "study_start"' in existing:
+    marker = json.dumps(str(record["event"]))[1:-1]
+    if f'"event": "{marker}"' in existing:
         return False
     with path.open("a", encoding="utf-8") as handle:
         handle.write(json.dumps(record, sort_keys=True) + "\n")
     return True
+
+
+def resumption_ledger_record(*, actor: str) -> dict:
+    """Corrigendum section 5: the resumption is recorded by appending."""
+
+    return {
+        "schema_version": 1,
+        "event": "study_resumption",
+        "actor": actor,
+        "operation": "resume:step1",
+        "tool": "tools/run_estimator_repair_study.py",
+        "condition_id": "est-repair-v1.3.1",
+        "authorizing_adr": "ADR-0020",
+        "correcting_adr": CORRIGENDUM_ADR,
+        "corrigendum": CORRIGENDUM_PATH,
+        "supersedes_blocker": "experiments/authzgym_estimator_repair_v1_3_1/STUDY_BLOCKER.md",
+        "blocker_retained": True,
+        "candidate_budget_consumed": 0,
+        "inference_authorized": False,
+        "confirmation_authorized": False,
+        "repository_commit": repository_commit(),
+    }
+
+
+def deviation_ledger_record(*, actor: str) -> dict:
+    """Corrigendum section 3.6: carry the step-0 deviation forward explicitly."""
+
+    return {
+        "schema_version": 1,
+        "event": "confirmation_path_hashing_deviation",
+        "actor": actor,
+        "operation": "record:procedural_deviation",
+        "tool": "handoff step 0 integrity pass (completed before ADR-0021)",
+        "condition_id": "est-repair-v1.3.1",
+        "authority": f"{CORRIGENDUM_PATH} section 3 ({CORRIGENDUM_ADR})",
+        "description": (
+            "The pre-corrigendum step-0 integrity pass computed SHA-256 over the "
+            "16 confirmation-named files under the v1.3 directory, because "
+            "handoff step 0 said to hash everything there. No confirmation "
+            "content was parsed, scored, counted, retained, or used for any "
+            "design or selection decision."
+        ),
+        "classification": "procedural_deviation_not_retroactively_authorized",
+        "invalidates_study": False,
+        "retroactively_authorized": False,
+        "future_integrity_policy": "hash no confirmation-named path; fail closed",
+    }

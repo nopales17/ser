@@ -1,0 +1,32 @@
+{
+  "all_passed": true,
+  "case_ids_disjoint_from_development": true,
+  "checks_verified_by_construction": [
+    "population_hash_differs_from_spent_confirmation",
+    "case_ids_disjoint_from_spent_confirmation",
+    "public_input_hashes_disjoint_from_spent_confirmation",
+    "source_episode_ids_disjoint_from_spent_confirmation",
+    "no_byte_identical_public_input_against_spent_confirmation"
+  ],
+  "checks_verified_directly": [
+    "population_hash_differs_from_development",
+    "case_ids_disjoint_from_development",
+    "public_input_hashes_disjoint_from_development",
+    "source_episode_ids_disjoint_from_development",
+    "layout_digests_differ"
+  ],
+  "layout_digests": {
+    "42": "7baf27b76157139918edd5e2d453fb8a7d34f942488932fd851344a1b96f816d",
+    "43": "5a4b4363f26188fbb8eae9d1eff61279748bebd6b8f9489dc75eaf2612f700df"
+  },
+  "layout_digests_differ": true,
+  "population_file_sha256": "1321bcd190c2bfbef884aac55421669401fe321797345ad54556d0f55251787c",
+  "population_hash_differs_from_development": true,
+  "population_hash_differs_from_spent_confirmation": true,
+  "public_input_hashes_disjoint_from_development": true,
+  "schema_version": 1,
+  "source_episode_ids_disjoint_from_development": true,
+  "spent_population_method": "verified_by_construction: the split label 'confirmation_v1_3_1' differs from 'confirmation_v1_3', the layout indices [42, 43] are disjoint from the spent layouts 40/41, and the frozen converter derives every public identifier from a bijection over (source_episode_id, variant_id, namespace, original_token) where source_episode_id embeds the split label and layout index. The spent population content was not opened, per section 12.2.",
+  "spent_population_opened": false,
+  "split": "confirmation_v1_3_1"
+}

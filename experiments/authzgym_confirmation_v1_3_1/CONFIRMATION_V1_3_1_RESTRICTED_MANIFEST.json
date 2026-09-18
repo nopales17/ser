@@ -1,0 +1,9 @@
+{
+  "files": {
+    "CONFIRMATION_RESTRICTED_POPULATION.json": "ee40f2997bdc6479609aaf13c6e4565dceb575cf28d04ee8e07cd29cc1c5f75b",
+    "CONFIRMATION_TRANSFORMATION_MAPS.json": "239a9636ae99482562d7fb46f1dff6e04d1eeaa2ccc8cba3acb8dfffa8b9fe2b",
+    "annotations/confirmation_v1_3_1_annotations.jsonl": "9bef13556e10e63eb751f9d52745bf81051cbf1873d603cf52fc0c0d5c86a75c"
+  },
+  "manifest_sha256": "610e89de29d8ba939cee872e68e6fe3c85e31fa4b9fe4e316d24e32c7c300a34",
+  "schema_version": 1
+}
