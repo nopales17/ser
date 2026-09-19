@@ -1,0 +1,353 @@
+{
+  "authorizing_adr": "ADR-0023",
+  "blocker_checks": {
+    "9.1 catalog probe non-200 or unreachable": {
+      "detail": "http_status=200",
+      "result": "pass"
+    },
+    "9.1 supervised hop reachable": {
+      "detail": "one supervised hop started; connectivity probe returned 200",
+      "result": "pass"
+    },
+    "9.2 identifier absent, re-owned or duplicated": {
+      "detail": "exactly one entry with id patchersniper_praneeth/gpt-5.4-nano; owned_by=openai",
+      "result": "pass"
+    },
+    "9.3 required capability not documented as supported": {
+      "detail": "chat completions, json-schema response_format and reasoning_effort none recorded as supported",
+      "result": "pass"
+    },
+    "9.5 cost gate proceed false": {
+      "detail": "evaluated after this record",
+      "result": "pending (written in COST_GATE.json)"
+    },
+    "chat/completions submission in this stage": {
+      "detail": "0 submissions; the stage has no chat/completions code path",
+      "result": "pass"
+    },
+    "paid inference in this stage": {
+      "detail": "false",
+      "result": "pass"
+    }
+  },
+  "blockers": [],
+  "catalog_snapshot_file_sha256": "f3ca49bf1d16c3c9891bbdbe7c69ec8146bcfc6ab29474f72002207b143960e6",
+  "catalog_snapshot_path": "experiments/authzgym_model_semantic_v1_3_1/MODEL_CATALOG_SNAPSHOT.json",
+  "chat_completions_submissions": 0,
+  "condition_id": "model-semantic-v1.3.1-N1",
+  "paid_inference": false,
+  "proceed": true,
+  "schema_version": 1,
+  "stage": "9 model-condition verification (zero inference)",
+  "steps": {
+    "1 supervised_hop": {
+      "established": false,
+      "policy_protocol_id": "authzgym-transport-envelope-v1",
+      "proxy_dns_mode": "socks5h_remote_resolution",
+      "remote_host": "nopales17@wiseau.seclab.cs.ucsb.edu",
+      "startup_attempts_allowed": 2,
+      "stripped_ssh_environment_names": [
+        "OPENAI_API_KEY",
+        "OPENAI_BASE_URL"
+      ],
+      "tls_verification": false,
+      "tunnel_events": [
+        {
+          "elapsed_ms": 3.3773749601095915,
+          "event": "tunnel_start",
+          "event_index": 1,
+          "generation": 1,
+          "local_port": 47819,
+          "reason": "model_condition_verification",
+          "record_hash": "579a3920ae63be32e387b34b5c490a5b2b25e3884b56593ff1b00190e7f8b62b",
+          "remote_command": false,
+          "schema_version": 1,
+          "ssh_args": [
+            "ssh",
+            "-N",
+            "-T",
+            "-D",
+            "127.0.0.1:47819",
+            "-o",
+            "ExitOnForwardFailure=yes",
+            "-o",
+            "ServerAliveInterval=15",
+            "-o",
+            "ServerAliveCountMax=2",
+            "-o",
+            "ConnectTimeout=15",
+            "-o",
+            "TCPKeepAlive=yes",
+            "-o",
+            "BatchMode=yes",
+            "-o",
+            "ControlMaster=no",
+            "nopales17@wiseau.seclab.cs.ucsb.edu"
+          ],
+          "startup_attempt": 1,
+          "stripped_environment_names": [
+            "OPENAI_API_KEY",
+            "OPENAI_BASE_URL"
+          ]
+        },
+        {
+          "elapsed_ms": 942.0277499593794,
+          "event": "api_connectivity_probe",
+          "event_index": 2,
+          "generation": 1,
+          "local_port": 47819,
+          "probe": {
+            "credential_redacted": false,
+            "curl_returncode": 0,
+            "http_status": 200,
+            "latency_ms": 521.3418328203261,
+            "ok": true,
+            "paid_inference": false,
+            "proxy_dns_mode": "socks5h_remote_resolution",
+            "stderr": "",
+            "tls_verification": false
+          },
+          "record_hash": "ed5c47f3d5934ad3fb8e063aa85efc02a68e6d65ebd43a528785c1df3e7adcd1",
+          "schema_version": 1
+        },
+        {
+          "connection_ms": 942.5282089505345,
+          "elapsed_ms": 942.6100000273436,
+          "event": "tunnel_ready",
+          "event_index": 3,
+          "generation": 1,
+          "local_port": 47819,
+          "reason": "model_condition_verification",
+          "record_hash": "10604c3da37a00e19cd76a6d0cf5def7d3b44d1599b42f02b189884c71eea39d",
+          "schema_version": 1,
+          "startup_attempt": 1
+        },
+        {
+          "elapsed_ms": 944.771041860804,
+          "event": "tunnel_stopped",
+          "event_index": 4,
+          "generation": 1,
+          "listener_closed": true,
+          "local_port": 47819,
+          "process_exited": true,
+          "reason": "model_condition_verification_complete",
+          "record_hash": "3f723f9511c50e38635252f82213c33ec0eaa9c541b2acd474865c70bd80cd5a",
+          "schema_version": 1,
+          "ssh_stderr": "",
+          "was_alive": true
+        },
+        {
+          "elapsed_ms": 945.0047498103231,
+          "event": "cleanup_complete",
+          "event_index": 5,
+          "generation": 1,
+          "listener_closed": true,
+          "local_port": 47819,
+          "process_exited": true,
+          "reason": "model_condition_verification_complete",
+          "record_hash": "185b57a7773666daebb446756914466f3c9bf6cc6df73b2cc20c17e52bc1979d",
+          "schema_version": 1
+        }
+      ],
+      "tunnel_generations": 1
+    },
+    "10 privacy_and_caveat": {
+      "caveat": "the institutional endpoint's actual behaviour and billing are not established by its model catalog or by vendor documentation",
+      "credentials_on_command_line": false
+    },
+    "11 immutable_revision": {
+      "catalog_snapshot_file_sha256": "f3ca49bf1d16c3c9891bbdbe7c69ec8146bcfc6ab29474f72002207b143960e6",
+      "field": "",
+      "immutable_revision": "unavailable_without_inference"
+    },
+    "12 fingerprint_policy": {
+      "mid_condition_change_is_blocking": true,
+      "observed_fingerprint_first": "recorded from the first development response"
+    },
+    "13 fingerprint_policy_confirmation": "any change of the observed fingerprint mid-condition stops the run and is recorded as invalid for identity drift",
+    "14 tariff": {
+      "caveat": "official list pricing applied to provider-reported usage; not an institutional billing statement",
+      "documentation_url": "https://developers.openai.com/api/docs/models/gpt-5.4-nano",
+      "official_model_id": "gpt-5.4-nano",
+      "repository_recorded_nano_pricing_matches": true,
+      "retrieval_date": "2026-09-18",
+      "verification_basis": "re-verified against the repository's recorded Nano list pricing; no vendor-documentation fetch is permitted in this stage by section 9",
+      "verified_pricing_per_million_tokens_usd": {
+        "cached_input_per_million_tokens_usd": 0.02,
+        "input_per_million_tokens_usd": 0.2,
+        "output_per_million_tokens_usd": 1.25
+      }
+    },
+    "15 accounting_basis": "official list pricing applied to provider-reported usage; not an institutional billing statement",
+    "16 cost_gate": "written after this record (COST_GATE.json)",
+    "2 catalog_probe": {
+      "curl_returncode": 0,
+      "endpoint": "https://128.111.49.117/v1/models",
+      "http_status": 200,
+      "latency_ms": 521.3418328203261,
+      "raw_bytes": 4485,
+      "raw_sha256": "f70861d6cf610b03506a3006ea9468f97bb98ad77ca36819c3757c6f1a616b65"
+    },
+    "3 paid_inference": false,
+    "4 catalog_snapshot": {
+      "file_sha256": "f3ca49bf1d16c3c9891bbdbe7c69ec8146bcfc6ab29474f72002207b143960e6",
+      "path": "experiments/authzgym_model_semantic_v1_3_1/MODEL_CATALOG_SNAPSHOT.json"
+    },
+    "5 route_model_identity": {
+      "catalog_fields_exposed_by_route_entry": [
+        "created",
+        "id",
+        "object",
+        "owned_by"
+      ],
+      "catalog_identifiers": [
+        "azure_jazzy_suraj/claude-sonnet-4-6",
+        "azure_jazzy_suraj/claude-opus-4-6",
+        "azure_kernel_leonardo/claude-sonnet-4-6",
+        "azure_kernel_leonardo/claude-haiku-4-5",
+        "azure_jazzy_suraj/gpt-4o",
+        "ctfbench_saastha/gpt-5.5",
+        "ctfbench_saastha/gpt-5.4-mini",
+        "azure_jazzy_suraj/kimi-k3",
+        "ctfbench_saastha/deepseek-v4-pro",
+        "azure_jazzy_suraj/gpt-5.6-sol",
+        "patchersniper_praneeth/DeepSeek-V4-Pro",
+        "azure_artifact_charlie/gpt-5.3-codex",
+        "azure_jazzy_suraj/claude-opus-5",
+        "azure_jazzy_suraj/gemini-3.5-flash",
+        "azure_jazzy_suraj/claude-sonnet-4-5",
+        "azure_jazzy_suraj/gpt-5",
+        "azure_kernel_leonardo/deepseek-v4-flash",
+        "ctfbench_saastha/glm-5.2",
+        "azure_kernel_leonardo/kimi-k2-6",
+        "azure_artifact_charlie/claude-opus-4-7",
+        "azure_artifact_charlie/gpt-5.5",
+        "azure_artifact_charlie/claude-sonnet-4-6",
+        "azure_artifact_charlie/claude-haiku-4-5",
+        "azure_jazzy_suraj/gpt-5-mini",
+        "patchersniper_praneeth/gpt-5.5",
+        "patchersniper_praneeth/gpt-5.4",
+        "patchersniper_praneeth/claude-opus-4-6",
+        "patchersniper_praneeth/claude-opus-4-7",
+        "ctfbench_saastha/claude-opus-4-8",
+        "azure_jazzy_suraj/gpt-5.6-terra",
+        "azure_jazzy_suraj/llama-3.3-70b-instruct",
+        "patchersniper_praneeth/text-embedding-3-large",
+        "patchersniper_praneeth/claude-haiku-4-5",
+        "ctfbench_saastha/claude-haiku-4-5",
+        "patchersniper_praneeth/gpt-5.4-mini",
+        "patchersniper_praneeth/gpt-5.4-nano",
+        "azure_jazzy_suraj/claude-opus-4-7",
+        "patchersniper_praneeth/DeepSeek-V4-Flash",
+        "azure_jazzy_suraj/gpt-5.4",
+        "azure_jazzy_suraj/gpt-5.5",
+        "azure_jazzy_suraj/claude-haiku-4-5",
+        "azure_jazzy_suraj/gpt-5.4-mini",
+        "azure_jazzy_suraj/text-embedding-3-small",
+        "azure_artifact_charlie/claude-sonnet-4-5"
+      ],
+      "catalog_total_model_count": 44,
+      "identifier_present_exactly_once": true,
+      "immutable_revision": "unavailable_without_inference",
+      "immutable_revision_field": "",
+      "owned_by_conflict_check": "no prior repository record names an expected `owned_by` for this route; the catalog value is recorded verbatim and the identifier appears exactly once, so no conflict is observed",
+      "route_model_created": 1677610602,
+      "route_model_entry": {
+        "created": 1677610602,
+        "id": "patchersniper_praneeth/gpt-5.4-nano",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      "route_model_entry_count": 1,
+      "route_model_identifier": "patchersniper_praneeth/gpt-5.4-nano",
+      "route_model_owned_by": "openai"
+    },
+    "6 catalog_audit": {
+      "all_identifiers": [
+        "azure_jazzy_suraj/claude-sonnet-4-6",
+        "azure_jazzy_suraj/claude-opus-4-6",
+        "azure_kernel_leonardo/claude-sonnet-4-6",
+        "azure_kernel_leonardo/claude-haiku-4-5",
+        "azure_jazzy_suraj/gpt-4o",
+        "ctfbench_saastha/gpt-5.5",
+        "ctfbench_saastha/gpt-5.4-mini",
+        "azure_jazzy_suraj/kimi-k3",
+        "ctfbench_saastha/deepseek-v4-pro",
+        "azure_jazzy_suraj/gpt-5.6-sol",
+        "patchersniper_praneeth/DeepSeek-V4-Pro",
+        "azure_artifact_charlie/gpt-5.3-codex",
+        "azure_jazzy_suraj/claude-opus-5",
+        "azure_jazzy_suraj/gemini-3.5-flash",
+        "azure_jazzy_suraj/claude-sonnet-4-5",
+        "azure_jazzy_suraj/gpt-5",
+        "azure_kernel_leonardo/deepseek-v4-flash",
+        "ctfbench_saastha/glm-5.2",
+        "azure_kernel_leonardo/kimi-k2-6",
+        "azure_artifact_charlie/claude-opus-4-7",
+        "azure_artifact_charlie/gpt-5.5",
+        "azure_artifact_charlie/claude-sonnet-4-6",
+        "azure_artifact_charlie/claude-haiku-4-5",
+        "azure_jazzy_suraj/gpt-5-mini",
+        "patchersniper_praneeth/gpt-5.5",
+        "patchersniper_praneeth/gpt-5.4",
+        "patchersniper_praneeth/claude-opus-4-6",
+        "patchersniper_praneeth/claude-opus-4-7",
+        "ctfbench_saastha/claude-opus-4-8",
+        "azure_jazzy_suraj/gpt-5.6-terra",
+        "azure_jazzy_suraj/llama-3.3-70b-instruct",
+        "patchersniper_praneeth/text-embedding-3-large",
+        "patchersniper_praneeth/claude-haiku-4-5",
+        "ctfbench_saastha/claude-haiku-4-5",
+        "patchersniper_praneeth/gpt-5.4-mini",
+        "patchersniper_praneeth/gpt-5.4-nano",
+        "azure_jazzy_suraj/claude-opus-4-7",
+        "patchersniper_praneeth/DeepSeek-V4-Flash",
+        "azure_jazzy_suraj/gpt-5.4",
+        "azure_jazzy_suraj/gpt-5.5",
+        "azure_jazzy_suraj/claude-haiku-4-5",
+        "azure_jazzy_suraj/gpt-5.4-mini",
+        "azure_jazzy_suraj/text-embedding-3-small",
+        "azure_artifact_charlie/claude-sonnet-4-5"
+      ],
+      "total_model_count": 44
+    },
+    "7 selection_rule": {
+      "comparison_performed": false,
+      "other_models_selected_evaluated_probed_or_compared": [],
+      "rule": "the route previously exercised by authzgym_static_realmodel_v1, authzgym_semantic_contract_v1_2 and authzgym_transport_envelope_v1"
+    },
+    "8 official_documentation": {
+      "documentation_fetched_in_this_step": false,
+      "documentation_url": "https://developers.openai.com/api/docs/models/gpt-5.4-nano",
+      "official_model_id": "gpt-5.4-nano",
+      "provenance": {
+        "note": "Section 9 permits only the supervised hop and GET /models as network operations, so the official capability and price record is restated from repository authority rather than re-fetched here.",
+        "recorded_capability_record": {
+          "chat_completions": true,
+          "reasoning_effort_none": true,
+          "structured_outputs": true
+        },
+        "recorded_capability_source": "experiments/authzgym_stronger_model_v1/MODEL_SELECTION.json",
+        "recorded_capability_source_file_sha256": "a1ac691a88499eaade8a37b6bc7841acb0ba02fb7cdfa18bb4a98c9d257abcbb",
+        "recorded_pricing_source": "experiments/authzgym_semantic_contract_v1_2/model_config.json",
+        "recorded_pricing_source_file_sha256": "fb711a2df1f29ab11fcd35671461c5f8624aaa2ed0fe1d507995ff240ec705ec",
+        "recorded_sibling_pricing": {
+          "cached_input": 0.075,
+          "input": 0.75,
+          "output": 4.5
+        }
+      },
+      "retrieval_date": "2026-09-18"
+    },
+    "9 documented_support_assertion": {
+      "any_field_unsupported": false,
+      "chat_completions": true,
+      "endpoint_behaviour_caveat": "the institutional endpoint's actual behaviour and billing are not established by its model catalog or by vendor documentation",
+      "json_schema_response_format": true,
+      "maximum_output_tokens_inherited_ceiling": 1024,
+      "maximum_output_tokens_sent": 1024,
+      "maximum_output_tokens_within_documented_limit": true,
+      "reasoning_effort_none": true
+    }
+  }
+}

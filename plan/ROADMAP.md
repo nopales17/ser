@@ -238,7 +238,44 @@ Allowed statuses: `planned`, `active`, `done`.
   and closed-loop execution or architecture work all remain unauthorized; each
   requires its own later decision.
 - current cursor: model-semantic study accepted; zero-inference implementation
-  pending.
+  in progress, freeze incomplete. Handoff steps 1--6 are complete with zero
+  provider calls: integrity baseline, zero-inference model-condition
+  verification and cost gate (`patchersniper_praneeth/gpt-5.4-nano`, projected
+  worst case `$0.69888` against the `$2.50` ceiling), audited reader and access
+  ledger, client and retry state machine, and the S-3 gold-adequacy check
+  reproducing the recorded B-1 development figures with no degenerate gold
+  choice set. `freeze_complete` is `false` on two recorded items: the section
+  12.1 S-7 structural non-gating guarantees and the section-18 complete
+  scoring/gate/error-propagation implementation and tests.
+  `IMPLEMENTATION_CLARIFICATION.md` records that this machinery is already
+  inside ADR-0023's authorized scope -- its `Authorized scope` bullet names
+  "scorer wiring, error-propagation classification and tests" -- and that the
+  defect was only the handoff's mechanical step order, which placed that
+  machinery after the development-inference stage that the freeze itself gates.
+  No ADR is appended for it: `MAP.md` assigns step order to the warm handoff and
+  explicitly not authorization scope, and nothing research-semantic changes.
+  Steps 6A--6D now carry the dormant implementation, the final
+  integrity/static/access checks, the manifest and checklist finalization, and
+  the stop. Steps 6A--6C are complete; the sole remaining blocker is PENDING-3.
+  Four living-governance documents -- `MAP.md`, `plan/ROADMAP.md`,
+  `state/STATUS.yaml`, `state/CONTEXT_PACKET.md` -- differ from their Step-1
+  integrity baseline because ADR-0023 item D10 and the accepted ordering
+  clarification required exactly those edits. Independent recomputation confirms
+  4 differing files of 233 baselined, none missing; all 52 section-18 frozen
+  inputs and every model-facing input -- populations, prompt, schemas, v1.3
+  contract, B-1, thresholds, model condition and retry machinery -- are
+  byte-identical to their Step-1 hashes.
+  `IMPLEMENTATION_CLARIFICATION.md` section 6 prospectively accepts those four
+  exact old-to-new transitions by hash for the final freeze, preserves the
+  Step-1 baseline unaltered as historical evidence, waives integrity checking
+  for nothing else, and makes any later change to those four files new drift
+  that halts again. Two disclosed deviations are acknowledged prospectively without
+  retroactive authorization: DEV-1, the handoff naming a never-open path as a
+  restatement source, resolved fail-closed; and DEV-2, a procedural never-open
+  violation in pre-`AuditedReader` reconnaissance that reproduced an
+  already-published digest, recorded with its evidentiary scope stated precisely
+  rather than overclaimed. Step 7 development inference remains unauthorized and
+  requires its own later decision.
 - readiness: Phase 5B is not ready. It requires a valid actual-model run to extract
   useful facts, rank inspections beyond trivial heuristics, route conditionally,
   and improve matched decision quality or efficiency under the frozen rule.

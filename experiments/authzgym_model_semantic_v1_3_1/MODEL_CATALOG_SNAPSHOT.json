@@ -1,0 +1,327 @@
+{
+  "authorizing_adr": "ADR-0023",
+  "catalog": {
+    "data": [
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/claude-sonnet-4-6",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/claude-opus-4-6",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_kernel_leonardo/claude-sonnet-4-6",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_kernel_leonardo/claude-haiku-4-5",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/gpt-4o",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "ctfbench_saastha/gpt-5.5",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "ctfbench_saastha/gpt-5.4-mini",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/kimi-k3",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "ctfbench_saastha/deepseek-v4-pro",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/gpt-5.6-sol",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "patchersniper_praneeth/DeepSeek-V4-Pro",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_artifact_charlie/gpt-5.3-codex",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/claude-opus-5",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/gemini-3.5-flash",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/claude-sonnet-4-5",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/gpt-5",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_kernel_leonardo/deepseek-v4-flash",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "ctfbench_saastha/glm-5.2",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_kernel_leonardo/kimi-k2-6",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_artifact_charlie/claude-opus-4-7",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_artifact_charlie/gpt-5.5",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_artifact_charlie/claude-sonnet-4-6",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_artifact_charlie/claude-haiku-4-5",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/gpt-5-mini",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "patchersniper_praneeth/gpt-5.5",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "patchersniper_praneeth/gpt-5.4",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "patchersniper_praneeth/claude-opus-4-6",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "patchersniper_praneeth/claude-opus-4-7",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "ctfbench_saastha/claude-opus-4-8",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/gpt-5.6-terra",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/llama-3.3-70b-instruct",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "patchersniper_praneeth/text-embedding-3-large",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "patchersniper_praneeth/claude-haiku-4-5",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "ctfbench_saastha/claude-haiku-4-5",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "patchersniper_praneeth/gpt-5.4-mini",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "patchersniper_praneeth/gpt-5.4-nano",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/claude-opus-4-7",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "patchersniper_praneeth/DeepSeek-V4-Flash",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/gpt-5.4",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/gpt-5.5",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/claude-haiku-4-5",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/gpt-5.4-mini",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_jazzy_suraj/text-embedding-3-small",
+        "object": "model",
+        "owned_by": "openai"
+      },
+      {
+        "created": 1677610602,
+        "id": "azure_artifact_charlie/claude-sonnet-4-5",
+        "object": "model",
+        "owned_by": "openai"
+      }
+    ],
+    "object": "list"
+  },
+  "chat_completions_submissions": 0,
+  "condition_id": "model-semantic-v1.3.1-N1",
+  "credential_redacted": false,
+  "curl_returncode": 0,
+  "endpoint": "https://128.111.49.117/v1/models",
+  "http_status": 200,
+  "latency_ms": 521.3418328203261,
+  "paid_inference": false,
+  "raw_catalog_body_bytes": 4485,
+  "raw_catalog_body_sha256": "f70861d6cf610b03506a3006ea9468f97bb98ad77ca36819c3757c6f1a616b65",
+  "raw_catalog_body_text": "{\"data\":[{\"id\":\"azure_jazzy_suraj/claude-sonnet-4-6\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/claude-opus-4-6\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_kernel_leonardo/claude-sonnet-4-6\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_kernel_leonardo/claude-haiku-4-5\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/gpt-4o\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"ctfbench_saastha/gpt-5.5\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"ctfbench_saastha/gpt-5.4-mini\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/kimi-k3\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"ctfbench_saastha/deepseek-v4-pro\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/gpt-5.6-sol\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"patchersniper_praneeth/DeepSeek-V4-Pro\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_artifact_charlie/gpt-5.3-codex\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/claude-opus-5\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/gemini-3.5-flash\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/claude-sonnet-4-5\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/gpt-5\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_kernel_leonardo/deepseek-v4-flash\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"ctfbench_saastha/glm-5.2\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_kernel_leonardo/kimi-k2-6\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_artifact_charlie/claude-opus-4-7\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_artifact_charlie/gpt-5.5\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_artifact_charlie/claude-sonnet-4-6\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_artifact_charlie/claude-haiku-4-5\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/gpt-5-mini\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"patchersniper_praneeth/gpt-5.5\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"patchersniper_praneeth/gpt-5.4\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"patchersniper_praneeth/claude-opus-4-6\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"patchersniper_praneeth/claude-opus-4-7\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"ctfbench_saastha/claude-opus-4-8\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/gpt-5.6-terra\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/llama-3.3-70b-instruct\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"patchersniper_praneeth/text-embedding-3-large\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"patchersniper_praneeth/claude-haiku-4-5\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"ctfbench_saastha/claude-haiku-4-5\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"patchersniper_praneeth/gpt-5.4-mini\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"patchersniper_praneeth/gpt-5.4-nano\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/claude-opus-4-7\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"patchersniper_praneeth/DeepSeek-V4-Flash\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/gpt-5.4\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/gpt-5.5\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/claude-haiku-4-5\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/gpt-5.4-mini\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_jazzy_suraj/text-embedding-3-small\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"},{\"id\":\"azure_artifact_charlie/claude-sonnet-4-5\",\"object\":\"model\",\"created\":1677610602,\"owned_by\":\"openai\"}],\"object\":\"list\"}",
+  "request": "GET /models",
+  "schema_version": 1,
+  "stage": "9.1 route availability / catalog probe",
+  "stderr": "",
+  "time_total_seconds": 0.497952,
+  "transport_policy": {
+    "connectivity_probe": {
+      "connect_timeout_seconds": 15,
+      "paid_inference": false,
+      "path": "/models",
+      "timeout_seconds": 30
+    },
+    "exit_on_forward_failure": true,
+    "http_connection_strategy": "fresh_curl_process_per_api_submission_no_shared_pool",
+    "keepalive": {
+      "server_alive_count_max": 2,
+      "server_alive_interval_seconds": 15,
+      "ssh_connect_timeout_seconds": 15
+    },
+    "local_bind_host": "127.0.0.1",
+    "preferred_local_port": 47819,
+    "protocol_id": "authzgym-transport-envelope-v1",
+    "proxy_dns_mode": "socks5h_remote_resolution",
+    "recovery": {
+      "backoff_seconds": 1.0,
+      "maximum_api_submissions": 384,
+      "maximum_reconnections_per_logical_call": 1
+    },
+    "remote_host": "nopales17@wiseau.seclab.cs.ucsb.edu",
+    "ssh_binary": "ssh",
+    "startup": {
+      "attempts": 2,
+      "listener_connect_timeout_seconds": 0.2,
+      "listener_poll_interval_seconds": 0.1,
+      "timeout_seconds": 20
+    },
+    "stripped_ssh_environment_names": [
+      "OPENAI_API_KEY",
+      "OPENAI_BASE_URL"
+    ],
+    "tls_verification": false
+  },
+  "transport_policy_file_sha256": "912012c3dcf3b4e967d10830ec5624b58984195b7e70176f21b78239458a6f30",
+  "tunnel_event_count": 5
+}

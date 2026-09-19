@@ -1,0 +1,80 @@
+{
+  "api_style": "openai_chat_completions_json_schema",
+  "authorizing_adr": "ADR-0023",
+  "catalog_snapshot_file_sha256": "f3ca49bf1d16c3c9891bbdbe7c69ec8146bcfc6ab29474f72002207b143960e6",
+  "client_side_retries": 0,
+  "condition_id": "model-semantic-v1.3.1-N1",
+  "connect_timeout_seconds": 15,
+  "endpoint_label": "configured OpenAI-compatible institutional endpoint via the approved UCSB egress hop",
+  "frozen_utc": "2026-09-18T19:01:11.368595+00:00",
+  "hard_spend_ceiling_usd": 2.5,
+  "immutable_revision": "unavailable_without_inference",
+  "immutable_revision_field": "",
+  "inherits_from": {
+    "file_sha256": "9077d32dc10a25419636bc21e9e1766cc7ebc37c872e4ea5e5efd17a3d91e7f2",
+    "inherited_limits": {
+      "hard_spend_ceiling_usd": 2.5,
+      "maximum_input_tokens": 4000,
+      "maximum_output_tokens": 1024
+    },
+    "inherited_model_identifier": "unassigned_until_separate_inference_authorization",
+    "note": "the protected file stays byte-unchanged, including its `model_identifier` value; this condition assigns the identifier only in its own MODEL_CONDITION.json",
+    "path": "experiments/authzgym_semantic_contract_v1_3/MODEL_TRANSPORT_CONFIG.json"
+  },
+  "maximum_input_tokens": 4000,
+  "maximum_output_tokens": 1024,
+  "n": "not_sent",
+  "official_model_id": "gpt-5.4-nano",
+  "pricing": {
+    "cached_input_per_million_tokens_usd": 0.02,
+    "input_per_million_tokens_usd": 0.2,
+    "output_per_million_tokens_usd": 1.25
+  },
+  "pricing_provenance": {
+    "accounting_basis": "official list pricing applied to provider-reported usage; not an institutional billing statement",
+    "caveat": "official list pricing is used for conservative local accounting; the institutional endpoint's actual billing is not established by its model catalog",
+    "documentation_url": "https://developers.openai.com/api/docs/models/gpt-5.4-nano",
+    "retrieval_date": "2026-09-18"
+  },
+  "prohibited_within_condition": [
+    "second model",
+    "automatic or manual escalation",
+    "prompt search or variation",
+    "system-instruction edit",
+    "self-critique",
+    "voting",
+    "multiple completions",
+    "few-shot examples",
+    "chain-of-thought elicitation",
+    "tool use",
+    "semantic-response repair",
+    "post-hoc request-field change"
+  ],
+  "python_implementation": "CPython",
+  "reasoning_effort": "none",
+  "request_timeout_seconds": 90,
+  "response_format": "JSON schema, the per-case `response_schema` already frozen in the population",
+  "retry_policy": {
+    "authority": "PREREGISTRATION.md section 11.2",
+    "identical_request_bytes_required": true,
+    "inherited_field_name_note": "the protected MODEL_TRANSPORT_CONFIG.json carries a field named `retry_policy.semantic_retries`; section 11.2 of the preregistration governs the retry semantics for this condition, so its structural-response retry is recorded here as `structural_response_retries` and `semantic_retries` is 0",
+    "semantic_retries": 0,
+    "structural_response_retries": 1,
+    "transport_replays": 1
+  },
+  "route_model_identifier": "patchersniper_praneeth/gpt-5.4-nano",
+  "runtime_version": "Python 3.14.6",
+  "schema_version": 1,
+  "seed": "not_sent",
+  "stop": "not_sent",
+  "temperature": null,
+  "tls_verification": false,
+  "tls_verification_note": "the existing user-approved endpoint-scoped insecure/no-certificate-verification exception, restated exactly",
+  "top_p": "not_sent",
+  "transport_client": "system-curl",
+  "transport_client_version": "curl 8.7.1 (x86_64-apple-darwin25.0) libcurl/8.7.1 (SecureTransport) LibreSSL/3.3.6 zlib/1.2.12 nghttp2/1.67.1",
+  "verification_record": {
+    "file_sha256": "e57c4913d218e096e9eacf0450a7b0fe9e4e715cd806e0f62273990c17e726e0",
+    "path": "experiments/authzgym_model_semantic_v1_3_1/MODEL_CONDITION_VERIFICATION.json"
+  }
+}

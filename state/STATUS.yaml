@@ -379,12 +379,34 @@
       "confirmation_layout_sequence": [[44, 45], [46, 47], [48, 49]],
       "effect_self_consistency_disposition": "diagnostic_only",
       "hard_spend_ceiling_usd": 2.5,
+      "implementation_clarification": "experiments/authzgym_model_semantic_v1_3_1/IMPLEMENTATION_CLARIFICATION.md",
+      "handoff_steps_1_to_6_complete": true,
       "implementation_complete": false,
       "frozen": false,
+      "freeze_complete": false,
+      "handoff_steps_6a_to_6c_complete": true,
+      "outstanding_freeze_items": ["PENDING-3 governance-file rebaseline record and 6B re-run"],
+      "resolved_freeze_items": ["section 12.1 S-7 structural non-gating guarantees", "section 18 complete scoring/gate/error-propagation implementation and tests"],
+      "governance_rebaseline": {
+        "record": "experiments/authzgym_model_semantic_v1_3_1/GOVERNANCE_REBASELINE.json",
+        "authority": "IMPLEMENTATION_CLARIFICATION.md section 6",
+        "accepted_transitions": 4,
+        "files": ["MAP.md", "plan/ROADMAP.md", "state/STATUS.yaml", "state/CONTEXT_PACKET.md"],
+        "model_facing": false,
+        "in_section_18_frozen_inputs": false,
+        "step1_baseline_preserved": true,
+        "waives_integrity_for_other_files": false
+      },
+      "authorized_step_range": "1..6D",
       "inference_authorized": false,
       "development_calls_authorized": false,
       "confirmation_generation_authorized": false,
-      "evidence_status": "accepted_specification_zero_inference_implementation_pending",
+      "provider_calls_made": 0,
+      "acknowledged_deviations": {
+        "DEV-1": "handoff step-1 item 3 named a never-open confirmation path as the restatement source; resolved fail-closed by stat-only existence check, restated from authorized readable records, re_derived false; handoff wording corrected prospectively",
+        "DEV-2": "procedural never-open violation: pre-AuditedReader reconnaissance computed the raw-file SHA-256 of the sealed confirmation_v1_3_1 public population, reproducing the already-published 1321bcd1...; recorded, not retroactively authorized, not erased; evidentiary scope stated precisely in IMPLEMENTATION_CLARIFICATION.md section 4.2"
+      },
+      "evidence_status": "accepted_specification_zero_inference_implementation_in_progress_freeze_incomplete",
       "summary": "ADR-0023 accepts the model-semantic condition and authorizes only zero-inference mechanical implementation through the preregistered pre-inference freeze boundary. The experiment changes exactly one link, gold semantic response to actual model semantic response, leaving v1.3 semantics, B-1, thresholds, endpoints, populations and retry policy frozen. Effect self-consistency is diagnostic_only: mandatory to compute, enumerate and report, outside validity precedence, with no advancement threshold and no veto. No model or provider call is authorized, no development call is authorized, and confirmation generation and access require a separate later authorization."
     },
     "historical_only": [
@@ -400,7 +422,7 @@
   "roadmap": {
     "active_phase_id": 5,
     "active_phase_title": "Controlled authorization action-value estimation",
-    "immediate_next_task": "Model-semantic study accepted; zero-inference implementation pending. Under ADR-0023, execute only step 1 of experiments/authzgym_model_semantic_v1_3_1/IMPLEMENTATION_HANDOFF.md: the integrity baseline and hash restatement, producing RESTATED_HASHES.json and INTEGRITY_BASELINE.json with zero network access and zero provider calls, refusing to open any confirmation_v1_3 or confirmation_v1_3_1 path. Then proceed through the handoff in order to the pre-inference freeze boundary at step 6 and stop. Model or provider inference, the 112 development calls, confirmation generation or access, changes to v1.3 semantics, changes to est-repair-v1.3.1-B-1, changes to thresholds or endpoints, model substitution or escalation, prompt tuning, retry-policy changes, Jev, and closed-loop execution or architecture work all remain unauthorized.",
+    "immediate_next_task": "Model-semantic study accepted; zero-inference implementation in progress with the freeze incomplete. Handoff steps 1 through 6C are done and freeze_complete is false on one recorded item, PENDING-3. Four living-governance documents differ from their step-1 integrity baseline because ADR-0023 item D10 and the accepted ordering clarification required those edits; none is model-facing and none is a section-18 frozen input. IMPLEMENTATION_CLARIFICATION.md section 6 accepts those four exact old-to-new hash transitions for the final freeze without restoring the stale versions and without erasing the step-1 baseline. Next: write GOVERNANCE_REBASELINE.json recording path, step-1 hash, current hash, responsible governance change, model_facing false and accepted_for_final_freeze true for each of the four, plus the seven required statements; re-run the step 6B integrity, static and access checks against the original baseline plus exactly those four transitions; rebuild the step 6C manifest and checklist; set freeze_complete true only if every other requirement still passes; stop at 6D. Model or provider inference, the 112 development calls, scoring or analysis of actual model responses, confirmation generation or access, changes to v1.3 semantics, changes to est-repair-v1.3.1-B-1, changes to thresholds or endpoints, model substitution or escalation, prompt tuning, retry-policy changes, Jev, and closed-loop execution or architecture work all remain unauthorized; step 7 requires its own later decision.",
     "research_trunk": "GitLab authorization investigation is the primary practical target. MicroGym is a control validation instrument; IDS is only a possible semantic bridge; controlled software experimentation is trunk-aligned; remote sensing is dormant."
   },
   "non_goals": [

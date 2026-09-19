@@ -1,0 +1,101 @@
+{
+  "accepted_transition_count": 4,
+  "additional_transitions_accepted": false,
+  "authority": "IMPLEMENTATION_CLARIFICATION.md section 6 (PENDING-3); IMPLEMENTATION_HANDOFF.md step 6B item 5",
+  "authorizing_adr": "ADR-0023",
+  "condition_id": "model-semantic-v1.3.1-N1",
+  "hashing_convention": "raw-file SHA-256 (PREREGISTRATION.md section 5.1): SHA-256 over the exact bytes on disk",
+  "integrity_baseline": {
+    "current_file_sha256": "77fc3920ecc4df47abd63bf3ce56fc520c2f0d5b12af7fd31a0b508a3c9d6c32",
+    "original_file_sha256": "77fc3920ecc4df47abd63bf3ce56fc520c2f0d5b12af7fd31a0b508a3c9d6c32",
+    "path": "experiments/authzgym_model_semantic_v1_3_1/INTEGRITY_BASELINE.json",
+    "preserved_unchanged": true,
+    "regenerated_or_overwritten": false
+  },
+  "model_facing": false,
+  "repository_commit": "6b0de4b1abea87d5bc8e18b87ef9f697ff2a3c24",
+  "schema_version": 1,
+  "stage": "step6b_governance_rebaseline",
+  "statements": {
+    "no_experiment_semantics_gate_threshold_model_condition_retry_rule_b1_population_or_claim_boundary_changes": {
+      "holds": true,
+      "statement": "no experiment semantic, gate, threshold, model condition, retry rule, B-1 behaviour, population or claim boundary changes"
+    },
+    "no_model_facing_input_rebaselined": {
+      "holds": true,
+      "statement": "**no model-facing input is re-baselined** -- no population, prompt, schema, contract, estimator, B-1 source, threshold, model condition or retry rule"
+    },
+    "no_other_protected_file_integrity_checking_waived": {
+      "holds": true,
+      "statement": "this waives integrity checking for **no** other protected file; the remaining 229 baseline entries are verified unchanged exactly as before"
+    },
+    "not_retroactive_authorization_of_dev_2": {
+      "holds": true,
+      "statement": "this is **not** retroactive authorization of DEV-2, which remains a recorded procedural never-open violation under section 4.2 with its evidentiary scope stated there and not broadened here"
+    },
+    "only_four_exact_transitions_accepted": {
+      "holds": true,
+      "statement": "only these four exact old->new hash transitions are accepted"
+    },
+    "original_step1_integrity_baseline_preserved_unaltered": {
+      "holds": true,
+      "statement": "the original Step-1 integrity baseline remains preserved, unaltered, as historical evidence -- `INTEGRITY_BASELINE.json` is **not** edited, regenerated or overwritten"
+    },
+    "subsequent_change_to_four_files_is_new_drift_and_must_halt": {
+      "holds": true,
+      "statement": "any subsequent change to these four files after this rebaseline is **new drift** and must halt the study again"
+    }
+  },
+  "transition_paths": [
+    "MAP.md",
+    "plan/ROADMAP.md",
+    "state/STATUS.yaml",
+    "state/CONTEXT_PACKET.md"
+  ],
+  "transitions": [
+    {
+      "accepted_current_file_sha256": "15a3eb2eef3fcbc7c91399f4120cc1cda55dc9af53927acafbb60639bca959a6",
+      "accepted_for_final_freeze": true,
+      "authorized_governance_change": "ADR-0023 item D10 authority-index rows for the sealed confirmation and the condition directory; clarification section 5 listing",
+      "current_file_sha256": "15a3eb2eef3fcbc7c91399f4120cc1cda55dc9af53927acafbb60639bca959a6",
+      "current_matches_accepted": true,
+      "in_section_18_frozen_inputs": false,
+      "model_facing": false,
+      "path": "MAP.md",
+      "step1_file_sha256": "140c7317f37c572c1fb431def598333bd8188492ee53c9695b996187a84d5723"
+    },
+    {
+      "accepted_current_file_sha256": "0ccc0c74936abcd01696e9c2b7b0810ae74cedcc1fd3b5ea4d02d43aae2cae93",
+      "accepted_for_final_freeze": true,
+      "authorized_governance_change": "ADR-0023 item D10 cursor reconciliation; ordering clarification 6A->6B->6C->6D; DEV-1/DEV-2 record; PENDING-3 record",
+      "current_file_sha256": "0ccc0c74936abcd01696e9c2b7b0810ae74cedcc1fd3b5ea4d02d43aae2cae93",
+      "current_matches_accepted": true,
+      "in_section_18_frozen_inputs": false,
+      "model_facing": false,
+      "path": "plan/ROADMAP.md",
+      "step1_file_sha256": "d04fcaae5d7cdcf48686cd83b5b2bcf36edd08a39f60149ed2ddc96e83b202da"
+    },
+    {
+      "accepted_current_file_sha256": "4f22bf6f824a867eb4905864fdfc4f563f748730332590acf36c236575f83fe0",
+      "accepted_for_final_freeze": true,
+      "authorized_governance_change": "ADR-0023 item D10 cursor reconciliation; ordering clarification; DEV-1/DEV-2 acknowledgement; PENDING-3 rebaseline record",
+      "current_file_sha256": "4f22bf6f824a867eb4905864fdfc4f563f748730332590acf36c236575f83fe0",
+      "current_matches_accepted": true,
+      "in_section_18_frozen_inputs": false,
+      "model_facing": false,
+      "path": "state/STATUS.yaml",
+      "step1_file_sha256": "53adf3444881e53ef3cb9df2f133d13a3436af125c1e88820fcaceecafba892a"
+    },
+    {
+      "accepted_current_file_sha256": "f06f8f35f2d1b05153b084fb39ee397520c11478dfcda3b8642e3414e9a0f1fb",
+      "accepted_for_final_freeze": true,
+      "authorized_governance_change": "deterministic regeneration by `tools/emit_context.py` from the reconciled canonical sources; never hand-edited",
+      "current_file_sha256": "f06f8f35f2d1b05153b084fb39ee397520c11478dfcda3b8642e3414e9a0f1fb",
+      "current_matches_accepted": true,
+      "in_section_18_frozen_inputs": false,
+      "model_facing": false,
+      "path": "state/CONTEXT_PACKET.md",
+      "step1_file_sha256": "cedf6170917dcbda550ff0b4e3993b600f9d09baf192536c841a7e7b0cc99bcc"
+    }
+  ]
+}

@@ -1,0 +1,1291 @@
+{
+  "access_ledger": {
+    "ledger_file_sha256": "51426c08befacf5c77fd67ee7d8678418a8cec841fa68f2a4e014691a6603679",
+    "ledger_path": "experiments/authzgym_model_semantic_v1_3_1/ACCESS_LEDGER.jsonl",
+    "malformed_record_indices": [],
+    "missing_tool_sha256_indices": [],
+    "never_open_open_count": 0,
+    "never_open_open_paths": [],
+    "passes": true,
+    "record_count": 1872,
+    "schema_complete": true,
+    "schema_version": 1,
+    "stages": [
+      "freeze",
+      "gold-adequacy",
+      "integrity",
+      "integrity_recheck",
+      "model"
+    ],
+    "stat_records_without_stat_only_detail": 0
+  },
+  "authorizing_adr": "ADR-0023",
+  "blockers": [],
+  "condition_id": "model-semantic-v1.3.1-N1",
+  "dirty_status": {
+    "clean_except_condition_directory": true,
+    "outside_condition_directory": [],
+    "porcelain_entries": [
+      "?? experiments/authzgym_model_semantic_v1_3_1/ACCESS_LEDGER.jsonl",
+      "?? experiments/authzgym_model_semantic_v1_3_1/COST_GATE.json",
+      "?? experiments/authzgym_model_semantic_v1_3_1/DEVELOPMENT_ACCESS_LEDGER.jsonl",
+      "?? experiments/authzgym_model_semantic_v1_3_1/FREEZE_CHECKLIST.md",
+      "?? experiments/authzgym_model_semantic_v1_3_1/FROZEN_INPUTS_MODEL_V1_3_1.json",
+      "?? experiments/authzgym_model_semantic_v1_3_1/GOLD_ADEQUACY_DEVELOPMENT.json",
+      "?? experiments/authzgym_model_semantic_v1_3_1/INTEGRITY_BASELINE.json",
+      "?? experiments/authzgym_model_semantic_v1_3_1/MODEL_CATALOG_SNAPSHOT.json",
+      "?? experiments/authzgym_model_semantic_v1_3_1/MODEL_CONDITION.json",
+      "?? experiments/authzgym_model_semantic_v1_3_1/MODEL_CONDITION_TRANSPORT_EVENTS.jsonl",
+      "?? experiments/authzgym_model_semantic_v1_3_1/MODEL_CONDITION_VERIFICATION.json",
+      "?? experiments/authzgym_model_semantic_v1_3_1/RESTATED_HASHES.json",
+      "?? src/ser/authzgym/semantic_contract_v1_3.py",
+      "?? src/ser/authzgym/supervised_transport_v1_3.py",
+      "?? src/ser/evaluation/authz_model_semantic_v1_3_1.py",
+      "?? tests/test_model_semantic_v1_3_1_client.py",
+      "?? tests/test_model_semantic_v1_3_1_reader.py",
+      "?? tests/test_model_semantic_v1_3_1_retry.py",
+      "?? tools/run_authzgym_model_semantic_development.py",
+      "?? tools/score_authzgym_model_semantic.py",
+      "?? tools/verify_authzgym_model_condition.py"
+    ]
+  },
+  "hashed_file_count": 233,
+  "hashed_files": {
+    "AGENTS.md": {
+      "bytes": 5918,
+      "file_sha256": "a8cb14c84b721b1449124f51abeb69bd2dfe7aeac8a4adef295f36bcaf41ad8d"
+    },
+    "CHARTER.md": {
+      "bytes": 11783,
+      "file_sha256": "1c557d661579abdaeda9276ba9fbdfb1db85eb062d74615c4b1d10308f1edd9f"
+    },
+    "DECISIONS.md": {
+      "bytes": 59314,
+      "file_sha256": "6c3d4defa3e97f4ac2220a7e99b4a38211b5cb93a65585337e9330b56519674a"
+    },
+    "MAP.md": {
+      "bytes": 12351,
+      "file_sha256": "140c7317f37c572c1fb431def598333bd8188492ee53c9695b996187a84d5723"
+    },
+    "README.md": {
+      "bytes": 5792,
+      "file_sha256": "7c93592b5503a137b0d794033ff432ae5640d5c1f807258f4cabd64e840eedcd"
+    },
+    "experiments/README.md": {
+      "bytes": 10624,
+      "file_sha256": "5df9e3e1b6c51cde453e10f6a9bd7de20aeb0622cf3661a3787786baaed22735"
+    },
+    "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_ORACLE_VALIDATION.json": {
+      "bytes": 5481,
+      "file_sha256": "1d52035c11a466c54d82035193b63b71d9f296415e598f936a8fa555147417f8"
+    },
+    "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_SEAL.json": {
+      "bytes": 1965,
+      "file_sha256": "dbb791c7ac17e8e1618406c780e2b3a8beed78ef50144cdbf91d553a5ff70274"
+    },
+    "experiments/authzgym_confirmation_v1_3_1/REPORT.md": {
+      "bytes": 4592,
+      "file_sha256": "c19d8d1a2879190087172998fd1343b20a15d00297256a9882237443f29b879c"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/ACCESS_LEDGER.jsonl": {
+      "bytes": 1937,
+      "file_sha256": "4249e7c9a36a636b30b31d9ebfcb73c80c531ef9d3f3b7d00b1d4b51d9a6cd63"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/BASELINES.json": {
+      "bytes": 35409,
+      "file_sha256": "64a8930b4f80810b9326cc5c68e33eee86c779ba0e4b958f058ad6a52ef5f6a1"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/CANDIDATE_LEDGER.jsonl": {
+      "bytes": 67616,
+      "file_sha256": "455ad2295a932a7b92e4f43a9a00f2b33202f62943cd6fd300347fcae7af6dfc"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/CORRIGENDUM.md": {
+      "bytes": 15771,
+      "file_sha256": "4c76699ae7f5ba62108d5f825b71e8a501da401455c29d985cbb9a4f94c1a87e"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/DEVELOPMENT_REPORT.json": {
+      "bytes": 58476,
+      "file_sha256": "d232d9fe1c1c017a978cabe8949477e045cf7b9ee2ace70329b5ec8e685070c2"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/DEVELOPMENT_REPORT.md": {
+      "bytes": 10588,
+      "file_sha256": "f0629d3b78ba35258cc6d439e4b731c3682b76fa08e4155efbdad7cd0df18638"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/FIREWALL_V1_3_1_VALIDATION.json": {
+      "bytes": 11295,
+      "file_sha256": "3e218d98e360274c8dbb9673d6e16ad93231fb6930e5986c99f78675be8990d0"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/IMPLEMENTATION_HANDOFF.md": {
+      "bytes": 27091,
+      "file_sha256": "e410f7c49b8c1b5915a19a3c1b48041b293e6ac7e9d9082519ae5720ad067275"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/INFORMATION_CEILING.json": {
+      "bytes": 6615,
+      "file_sha256": "1b68c9ab9adbf3e42746f25d4a05a772bf01bd9f566ae63c6a5e5458c20f314b"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/REPAIR_STUDY_PREREGISTRATION.md": {
+      "bytes": 55300,
+      "file_sha256": "32bbc01f7c33debd9d2e93c5fbe6015d46f604e4a944ff0c70792481420f6038"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/STUDY_BLOCKER.md": {
+      "bytes": 6532,
+      "file_sha256": "98d9eec6e2cbb1a5b145d6c14425963eeabc013be638e4212e2d6ea94562f508"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/candidates/est-repair-v1.3.1-A-1/COMPONENT.py": {
+      "bytes": 974,
+      "file_sha256": "0ae12ae1118ec8e216c0d6037b2ce73869f42ddb5554ec81968ff40db64da73f"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/candidates/est-repair-v1.3.1-A-1/RATIONALE.txt": {
+      "bytes": 821,
+      "file_sha256": "025e52534dbdd0ec5aaccf435543cacbb5c8f55ce04545ba3a20524b15af96c7"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/candidates/est-repair-v1.3.1-A-1/RECORD.json": {
+      "bytes": 10903,
+      "file_sha256": "446fbd9f7da9ade345c36ac993f2b3d7c84c6e132f79e4657172333bbc1b3d15"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/candidates/est-repair-v1.3.1-A-2/COMPONENT.py": {
+      "bytes": 1595,
+      "file_sha256": "86dfc6dcfc874bf4b32c212fdf077d907559acce75ca38f5c3f923cf5f70cb3b"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/candidates/est-repair-v1.3.1-A-2/RATIONALE.txt": {
+      "bytes": 658,
+      "file_sha256": "f4773b518eb7e100e8425b671f973d22ac79f3ded93dde6a1c1a9b62aceb6c79"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/candidates/est-repair-v1.3.1-A-2/RECORD.json": {
+      "bytes": 10903,
+      "file_sha256": "8f745c81a5eddc6838ab02e5976b6147071e2cf4adfbf73259ee8baea18ed0d4"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/candidates/est-repair-v1.3.1-B-1/COMPONENT.py": {
+      "bytes": 2513,
+      "file_sha256": "88b77c5f343117b354b5039d571bf03bf8867fcd7fb4f8fc91c1e1aefca7a048"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/candidates/est-repair-v1.3.1-B-1/RATIONALE.txt": {
+      "bytes": 1184,
+      "file_sha256": "83d3111585f1f21b9ca081bb1b4f5208eb00af1c49bab68e1e2896886a648459"
+    },
+    "experiments/authzgym_estimator_repair_v1_3_1/candidates/est-repair-v1.3.1-B-1/RECORD.json": {
+      "bytes": 9808,
+      "file_sha256": "e9876aa11e1ac29d4379719363e929be3cfbc7b7f1a28aec438ae9564a6d050d"
+    },
+    "experiments/authzgym_semantic_bottleneck_v1/COST_ACCOUNTING.json": {
+      "bytes": 613,
+      "file_sha256": "cf6f1906190eda480b06a3587dd5e9217b99d7bdf1171f6c896faad3e9a2aa42"
+    },
+    "experiments/authzgym_semantic_bottleneck_v1/DIAGNOSTIC_MATRIX.json": {
+      "bytes": 2275,
+      "file_sha256": "2ca72c757b170786fb62e08b0aed5368a9f0fcce137274d7b8f836710b6a78c7"
+    },
+    "experiments/authzgym_semantic_bottleneck_v1/FROZEN_CASE_SELECTION.json": {
+      "bytes": 2889,
+      "file_sha256": "0b9b805e9248870fe9ab2843f5999de3872d58e3d985a60e8f4d62efb98475f2"
+    },
+    "experiments/authzgym_semantic_bottleneck_v1/FROZEN_INPUTS.json": {
+      "bytes": 1638,
+      "file_sha256": "f93db12e0e7f9c126be09b64283d9d4f5486ad6ba6047f1e317bfecca8a85118"
+    },
+    "experiments/authzgym_semantic_bottleneck_v1/IMPLEMENTATION_NOTES.md": {
+      "bytes": 1003,
+      "file_sha256": "308fa37e8fb686b5f2c11748a3b7e6ca998a4da1f760501ab9abcd7827913c0b"
+    },
+    "experiments/authzgym_semantic_bottleneck_v1/INTERPRETATION.md": {
+      "bytes": 950,
+      "file_sha256": "7381fc6fba0f1722372c5783ccc776ea49af4506a739c16965417d423da2babf"
+    },
+    "experiments/authzgym_semantic_bottleneck_v1/MODEL_CONFIGS.json": {
+      "bytes": 2095,
+      "file_sha256": "5fc4a9af9b218ce481fe0edda808282dc8041ab974de783dcd33ae285300322e"
+    },
+    "experiments/authzgym_semantic_bottleneck_v1/OFFLINE_FAILURE_TAXONOMY.json": {
+      "bytes": 118025,
+      "file_sha256": "6cfe02f355080541dda1cbf06716ad5f88269e1cc76d462f0cf67e62498cca70"
+    },
+    "experiments/authzgym_semantic_bottleneck_v1/PREREGISTRATION.md": {
+      "bytes": 5128,
+      "file_sha256": "e472f992ac42284836bc618df79b452ab70069125e2922f1bfe5bf50d7756397"
+    },
+    "experiments/authzgym_semantic_bottleneck_v1/REPORT.md": {
+      "bytes": 7573,
+      "file_sha256": "3ad3d2be5cebc91140e250ce307fb5af517fa5feefc2c8ebe2bf9a0306647039"
+    },
+    "experiments/authzgym_semantic_bottleneck_v1/SOURCE_ARTIFACTS.json": {
+      "bytes": 1821,
+      "file_sha256": "1764ea49b586bf3f1f2ac1ff0eb1ce9a0eb122db48149c551a61aebddf2a298a"
+    },
+    "experiments/authzgym_semantic_bottleneck_v1/summary.json": {
+      "bytes": 3370,
+      "file_sha256": "be2ee8c4b1ba17ba3d650ffb182e7aec497d4f442b034a7bb2b63a42d67b0bc1"
+    },
+    "experiments/authzgym_semantic_bottleneck_v1/validation.json": {
+      "bytes": 839,
+      "file_sha256": "83e585fa714b096c81fa65af7eaad211e6d830fba70de1d1ab98cadb201479ef"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/COST_GATE.json": {
+      "bytes": 602,
+      "file_sha256": "bb04ca8f98b3c8d3f25298ed09feba1e29d1af87b9dbd34e275ff43f30ecb242"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/FROZEN_INPUTS.json": {
+      "bytes": 16212,
+      "file_sha256": "ffab6b94a2d46bed2981df70436a83c3f029aff02265a717cf680644aefcbc0b"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/IMPLEMENTATION_NOTES.md": {
+      "bytes": 5555,
+      "file_sha256": "aa79e4f3d899631a9f9c5aa82ab761751e61ea1c711f937425e6f7a6ea96b9c5"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/INTERPRETATION.md": {
+      "bytes": 499,
+      "file_sha256": "1bad8a3f55efb57decbbd3fc2242b92c4eb5eeaf0848d7d7417223e81a8cdd58"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/OFFLINE_AUTOPSY.json": {
+      "bytes": 534591,
+      "file_sha256": "098e92eb9c5290d5c76ded86f169140c34c70961adfd72aea098778181ed1f47"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/OFFLINE_AUTOPSY.md": {
+      "bytes": 2405,
+      "file_sha256": "0109d29eaad409139f2e55320bfefb6158719f9921a1bb56803e9a79f8d5c00d"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/PREREGISTRATION.md": {
+      "bytes": 7351,
+      "file_sha256": "50cc8a240136461265a49d01c2acaf29d1ee24b194752d77df352a0e129f702e"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/REPORT.md": {
+      "bytes": 2152,
+      "file_sha256": "195cfb64294f076207ea231d9f4a1df37aff4314e6c0694222566efc9b16f7e2"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/STRESS_POPULATION.json": {
+      "bytes": 2003415,
+      "file_sha256": "004e9e84f45aecffb2b59a06cd2168a197b87a3ee3ef5bb606fd0c244863257f"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/model_config.json": {
+      "bytes": 1170,
+      "file_sha256": "fb711a2df1f29ab11fcd35671461c5f8624aaa2ed0fe1d507995ff240ec705ec"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/prompts/semantic_observation_v1_2.txt": {
+      "bytes": 2742,
+      "file_sha256": "420e5e5b9129c53e0fe54b278b9bc22e0deae5c7a7914e5baef5d5c144e2b9db"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/provider_responses.jsonl": {
+      "bytes": 250960,
+      "file_sha256": "d6fca2991e68787544cf61cd291097459679a6955cea60b917ffc16c6b988d6a"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/schemas/README.md": {
+      "bytes": 641,
+      "file_sha256": "359e3b98ce91b2569bc9a8711222ed64e5a4762ec3fc3b7adcc150afec9e6e78"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/schemas/semantic_vocabulary_v1_2.json": {
+      "bytes": 1592,
+      "file_sha256": "db1e46ced39bcde71250dd02ed68b238e39718b711e94f2b294feb83d00ab4b5"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/stress_runs.jsonl": {
+      "bytes": 329746,
+      "file_sha256": "b246524b22e38edbfb0c97f66249bb0fa5becf0f053acf8f6763eb2b78be903e"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/summary.json": {
+      "bytes": 4133,
+      "file_sha256": "3a2d3fe8b58ddf0bbde8c1d7e55d88af7ff4af9222f20d24be7741fd73d6cc81"
+    },
+    "experiments/authzgym_semantic_contract_v1_2/validation.json": {
+      "bytes": 2076,
+      "file_sha256": "b0fb4452edd6cc4ec8d72b1b67758eb939036bdfabf851236c14406521ac6098"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/ANSWERABILITY_VALIDATION.json": {
+      "bytes": 716,
+      "file_sha256": "d686745236ac756a95071eb72aaacdc0ef20f8d2281fe12ee83821d1f21eb54b"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/DEVELOPMENT_PUBLIC_POPULATION.json": {
+      "bytes": 696354,
+      "file_sha256": "dda4e0c08a9c29a58a912fdcb5268ddf602aac79c47f6dd3fb94102b5dc8c365"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/DEVELOPMENT_RESTRICTED_POPULATION.json": {
+      "bytes": 186882,
+      "file_sha256": "1e75338a76db9128fb67ae5d71864424f0075dde401bb661d7ba2abd90e7e675"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/DEVELOPMENT_SCHEDULE.json": {
+      "bytes": 11832,
+      "file_sha256": "6e8c4e80fe9df0ae58dd87d5131411c97663f369fce2bdbafee779ce1fa65224"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/DEVELOPMENT_SOURCE_MANIFEST.json": {
+      "bytes": 378,
+      "file_sha256": "e9c2ac40a0c6c7e5116c539073eb3a476d8e976ae0df209bed830508541e1b01"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/DEVELOPMENT_TRANSFORMATION_MAPS.json": {
+      "bytes": 110073,
+      "file_sha256": "3a6ef5638485a225388348965339b66b9948a955170339d91b33802e01fc0465"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/FIREWALL_VALIDATION.json": {
+      "bytes": 1177,
+      "file_sha256": "f729c760f9fd87b6dbacfddf30fb2e7b1df0ad78a28e680fc7700408f12b4793"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/IMPLEMENTATION_PLAN.md": {
+      "bytes": 19082,
+      "file_sha256": "70462424871e1d6ec7bf9f6116c06c4e1aad7da960c5b849ee8af0086c189c97"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/MODEL_TRANSPORT_CONFIG.json": {
+      "bytes": 524,
+      "file_sha256": "9077d32dc10a25419636bc21e9e1766cc7ebc37c872e4ea5e5efd17a3d91e7f2"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/ORACLE_BLOCKER.md": {
+      "bytes": 2026,
+      "file_sha256": "6aa2998086b2bed7d8d0e19c2ea8aa70126437a6b427e7d72450b3c156fc7ed5"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/ORACLE_VALIDATION.json": {
+      "bytes": 2891,
+      "file_sha256": "eb4172d80bf642f66de2a22011267d3c0a1e1805fe5f6d0c3f16feff3eefff24"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/PREREGISTRATION.md": {
+      "bytes": 33092,
+      "file_sha256": "56d60cd38a027c075a69631fe73f194f5baa22f60011d99d9c047b43ad355604"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/PRIOR_RESULT_CORRIGENDUM.md": {
+      "bytes": 5233,
+      "file_sha256": "ff29be12ff0f4d6861f5a9ba7f31dde5ef325f4f6fcb8d451796fb8276878404"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/PUBLIC_BUNDLE/DEVELOPMENT_PUBLIC_POPULATION.json": {
+      "bytes": 696354,
+      "file_sha256": "dda4e0c08a9c29a58a912fdcb5268ddf602aac79c47f6dd3fb94102b5dc8c365"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/PUBLIC_BUNDLE/DEVELOPMENT_SCHEDULE.json": {
+      "bytes": 11832,
+      "file_sha256": "6e8c4e80fe9df0ae58dd87d5131411c97663f369fce2bdbafee779ce1fa65224"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/PUBLIC_BUNDLE/PUBLIC_CONTRACT.json": {
+      "bytes": 3175,
+      "file_sha256": "95df3f56cfabadd3aefa50e7fd5a3e6d77b7625c7db0860649a92ff4f213bb26"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/PUBLIC_BUNDLE/prompts/semantic_observation_v1_3.txt": {
+      "bytes": 4818,
+      "file_sha256": "6921e45042f5f34f3fcb25ba1d2732e3bcbc89a8ae12f1f2cb867520534dff9e"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/PUBLIC_BUNDLE/schemas/semantic_vocabulary_v1_3.json": {
+      "bytes": 1123,
+      "file_sha256": "06dea1e26856b216e5476803f3db9a4dd299f61f9a7927481d78db0da62c56c0"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/PUBLIC_BUNDLE_MANIFEST.json": {
+      "bytes": 879,
+      "file_sha256": "b20dd663ea6c638d1c0dc7879b07022961195cf2539b1100a3e907927ac5df67"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/PUBLIC_CONTRACT.json": {
+      "bytes": 3175,
+      "file_sha256": "95df3f56cfabadd3aefa50e7fd5a3e6d77b7625c7db0860649a92ff4f213bb26"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/RESTRICTED_BUNDLE/DEVELOPMENT_RESTRICTED_POPULATION.json": {
+      "bytes": 186882,
+      "file_sha256": "1e75338a76db9128fb67ae5d71864424f0075dde401bb661d7ba2abd90e7e675"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/RESTRICTED_BUNDLE/DEVELOPMENT_TRANSFORMATION_MAPS.json": {
+      "bytes": 110073,
+      "file_sha256": "3a6ef5638485a225388348965339b66b9948a955170339d91b33802e01fc0465"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/RESTRICTED_BUNDLE/annotations/development_annotations.jsonl": {
+      "bytes": 2859078,
+      "file_sha256": "d308e68b72020380bed7680749dd5f5dfe58935a511be1da32074aa107e2b817"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/RESTRICTED_BUNDLE_MANIFEST.json": {
+      "bytes": 919,
+      "file_sha256": "28f921889e06fa496025ad6c20849e4fc5abd91941e205d179d3b52bedb1b585"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/annotations/development_annotations.jsonl": {
+      "bytes": 2859078,
+      "file_sha256": "d308e68b72020380bed7680749dd5f5dfe58935a511be1da32074aa107e2b817"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/prompts/semantic_observation_v1_3.txt": {
+      "bytes": 4818,
+      "file_sha256": "6921e45042f5f34f3fcb25ba1d2732e3bcbc89a8ae12f1f2cb867520534dff9e"
+    },
+    "experiments/authzgym_semantic_contract_v1_3/schemas/semantic_vocabulary_v1_3.json": {
+      "bytes": 1123,
+      "file_sha256": "06dea1e26856b216e5476803f3db9a4dd299f61f9a7927481d78db0da62c56c0"
+    },
+    "experiments/authzgym_static_realmodel_v1/COST_GATE.json": {
+      "bytes": 926,
+      "file_sha256": "cc709750710027f2f38654c0aa9fd10f5f90a77fe891b0767c52739253bbe437"
+    },
+    "experiments/authzgym_static_realmodel_v1/FROZEN_INPUTS.json": {
+      "bytes": 29046,
+      "file_sha256": "09cc01b84cfc9eab30abe54677ee62944e989952117fc6679158cb9d3edc7952"
+    },
+    "experiments/authzgym_static_realmodel_v1/IMPLEMENTATION_NOTES.md": {
+      "bytes": 4626,
+      "file_sha256": "cd2b97189313e4d41a4cc7b7fe6b8b1c6c1fe7d978e209e34832c3582b82dd4a"
+    },
+    "experiments/authzgym_static_realmodel_v1/INTERPRETATION.md": {
+      "bytes": 483,
+      "file_sha256": "fc19bfe51e5962c759aa2416a3661d64938f9e3967b52330e98cb6f2f66b63cc"
+    },
+    "experiments/authzgym_static_realmodel_v1/PREREGISTRATION.md": {
+      "bytes": 7574,
+      "file_sha256": "56d5e9068bbbf637fd7a16d7cbd0c17aa4489d35fe2023f8b273a0f18edefec9"
+    },
+    "experiments/authzgym_static_realmodel_v1/REPORT.md": {
+      "bytes": 2189,
+      "file_sha256": "8549f7216e376b3c573a8c8918212b762479b257dc6325e32698af047ac76516"
+    },
+    "experiments/authzgym_static_realmodel_v1/development_call.json": {
+      "bytes": 3716,
+      "file_sha256": "909b482db975f83569527cd682eb103867d59fa525475d42ec09a87dcc081c58"
+    },
+    "experiments/authzgym_static_realmodel_v1/development_provider_responses.jsonl": {
+      "bytes": 3779,
+      "file_sha256": "4edbdfb80bae76f80648ead7f31c8d9fc4a2332999476bb37cc56a5fce3e65ec"
+    },
+    "experiments/authzgym_static_realmodel_v1/evaluation_runs.jsonl": {
+      "bytes": 1639565,
+      "file_sha256": "e0a907a8ecea26c54120bf56b5b3121e4175f398aa4b67231199b96595dce947"
+    },
+    "experiments/authzgym_static_realmodel_v1/model_config.json": {
+      "bytes": 1150,
+      "file_sha256": "24f47f849f04e978a061d247daf236fd8f5206d129fd3b879a26547db82af8df"
+    },
+    "experiments/authzgym_static_realmodel_v1/perturbation_runs.jsonl": {
+      "bytes": 2297179,
+      "file_sha256": "aad07f741e3f9c4384d6c9c90b4fa69ad5dabaa0f29d4b080389cae4d667a2cc"
+    },
+    "experiments/authzgym_static_realmodel_v1/prompts/semantic_interpretation_v1.txt": {
+      "bytes": 3009,
+      "file_sha256": "d91b4c504ac7beee4be32a6676baf6cd5c16b4fe1b7c92a59eef8f23bd2f8c77"
+    },
+    "experiments/authzgym_static_realmodel_v1/provider_responses.jsonl": {
+      "bytes": 2296708,
+      "file_sha256": "0e0f8b2d387c7bddf74abc0a152d51a2307138b0dae2c46904a887bfbf50d7b3"
+    },
+    "experiments/authzgym_static_realmodel_v1/schemas/semantic_observation_v1.json": {
+      "bytes": 1927,
+      "file_sha256": "9f734f2c3bfaa4174587f1ddf5ce93b707a0010cb6b2d3c511a0cf67bf70585a"
+    },
+    "experiments/authzgym_static_realmodel_v1/summary.json": {
+      "bytes": 70579,
+      "file_sha256": "804fc437a582223293423eb9c763d46522a3c3f4085665fcd40ff02d474058de"
+    },
+    "experiments/authzgym_static_realmodel_v1/validation.json": {
+      "bytes": 1397,
+      "file_sha256": "0edfed4de2794d2dd639421a7bb3ee3c3c3b4dce3de512d32cf592115f1ede8b"
+    },
+    "experiments/authzgym_static_v1/FIRST_RUN_FAILURE.json": {
+      "bytes": 1198,
+      "file_sha256": "f75c69f914ac414b011baf5fd642fa41c5592fb4edc810f88fd91fb9a4b68fd3"
+    },
+    "experiments/authzgym_static_v1/IMPLEMENTATION_NOTES.md": {
+      "bytes": 1850,
+      "file_sha256": "d85e0b6ea995dbf72281ad3d72f20c7a67960cd2ad6753ebc59d32934693ecbc"
+    },
+    "experiments/authzgym_static_v1/INTERPRETATION.md": {
+      "bytes": 1195,
+      "file_sha256": "5f073b7ec03682a4917c000f549e9f7249f346e01ac7aae9030547c971c42a56"
+    },
+    "experiments/authzgym_static_v1/PREREGISTRATION.md": {
+      "bytes": 10101,
+      "file_sha256": "00c3a7286245c347bdc5cae07afaa8f24e71fa2a81de1b333bcaad2ccc29df64"
+    },
+    "experiments/authzgym_static_v1/REPORT.md": {
+      "bytes": 4714,
+      "file_sha256": "d4bd17dd83e1bb2e90d4813d713dc93e678f79b96c41600914028eee22f8cfa4"
+    },
+    "experiments/authzgym_static_v1/development_population.json": {
+      "bytes": 92076,
+      "file_sha256": "9ecd8d6bcc2475f4f27869043aa71d828ff268be4282f6c7f73f35cf0417e8bb"
+    },
+    "experiments/authzgym_static_v1/evaluation_population.json": {
+      "bytes": 273838,
+      "file_sha256": "8eed6625735eb05e0a831c98d6d5c467b92ad87f96523b19315cda973bb24481"
+    },
+    "experiments/authzgym_static_v1/model_conditions.json": {
+      "bytes": 896,
+      "file_sha256": "677dc3da6d0674c1ed903ecb3f39181812b0a84bdc40b9745fafec0c1b90ef83"
+    },
+    "experiments/authzgym_static_v1/perturbation_population.json": {
+      "bytes": 275022,
+      "file_sha256": "2751a37f41deb0e7c586df79d2db293e18e2d34b0353720013eee02b5eb680c5"
+    },
+    "experiments/authzgym_static_v1/perturbation_runs.jsonl": {
+      "bytes": 4876199,
+      "file_sha256": "c62d27109fc47b53f5b2c055aa7f1f888af682d3e1ca7611d0bb20237612743a"
+    },
+    "experiments/authzgym_static_v1/prompts/interpret_artifact_v1.txt": {
+      "bytes": 808,
+      "file_sha256": "9a332d151bc9a7e1b1fed221b04de6d111369fe2dc8ced62ea57882a26c12218"
+    },
+    "experiments/authzgym_static_v1/runs.jsonl": {
+      "bytes": 4823809,
+      "file_sha256": "820674a646bb58e107bd1e871a842617211f953563c26c041fd44bc552713ede"
+    },
+    "experiments/authzgym_static_v1/summary.json": {
+      "bytes": 18976,
+      "file_sha256": "4758cd6fe87e1319f37d25672a1351530973140c598cd1b1bcb4d749c8b01867"
+    },
+    "experiments/authzgym_static_v1/validation.json": {
+      "bytes": 2376,
+      "file_sha256": "61a719349b948835b69706200a795ff26dffbbd2af569c6ff911d736a601482c"
+    },
+    "experiments/authzgym_static_v1_1/INTERPRETATION.md": {
+      "bytes": 1195,
+      "file_sha256": "5f073b7ec03682a4917c000f549e9f7249f346e01ac7aae9030547c971c42a56"
+    },
+    "experiments/authzgym_static_v1_1/PREREGISTRATION.md": {
+      "bytes": 4426,
+      "file_sha256": "5c9c46fd9032969c9a07ccb153cff8081f56fddebe68bf37e3aaae4656702407"
+    },
+    "experiments/authzgym_static_v1_1/REPORT.md": {
+      "bytes": 4734,
+      "file_sha256": "ce0b032b9bdb504392b745c5879edc320f1cf118d6113a15fe7aa51fc49a533f"
+    },
+    "experiments/authzgym_static_v1_1/REVISION.md": {
+      "bytes": 602,
+      "file_sha256": "27e7f2d38e0d9883c043b4dc83e58fa01c8898ca946123e00f575cd005823172"
+    },
+    "experiments/authzgym_static_v1_1/development_population.json": {
+      "bytes": 92076,
+      "file_sha256": "47ea8f0d20f5cdbf9b9f55ccf301a77fa742131d2b182a19ab29972b9102eb16"
+    },
+    "experiments/authzgym_static_v1_1/evaluation_population.json": {
+      "bytes": 273838,
+      "file_sha256": "2b31c0830bde29c79bd815b4c33cb79071bae236d01ef53fc1ae7a7fb21f2a42"
+    },
+    "experiments/authzgym_static_v1_1/model_conditions.json": {
+      "bytes": 950,
+      "file_sha256": "8694df4229b1f200b2856c249a634e224f4d19c51d0b89d640af08bd0f6b2721"
+    },
+    "experiments/authzgym_static_v1_1/perturbation_population.json": {
+      "bytes": 275022,
+      "file_sha256": "92410b13f08081343fb52e99e72fc138a590e4d0429a33763c8c73965c65e32b"
+    },
+    "experiments/authzgym_static_v1_1/perturbation_runs.jsonl": {
+      "bytes": 4950717,
+      "file_sha256": "e45a9442e4b347c696634276fa03216e333ff9fdf92eb6d1efd7069975c756e3"
+    },
+    "experiments/authzgym_static_v1_1/prompts/interpret_artifact_v1.txt": {
+      "bytes": 808,
+      "file_sha256": "9a332d151bc9a7e1b1fed221b04de6d111369fe2dc8ced62ea57882a26c12218"
+    },
+    "experiments/authzgym_static_v1_1/runs.jsonl": {
+      "bytes": 4938016,
+      "file_sha256": "41cf731108ecf647131db4d507d0ba77be569861083795504734b9e76603c7f0"
+    },
+    "experiments/authzgym_static_v1_1/summary.json": {
+      "bytes": 18796,
+      "file_sha256": "481a405ab3b22a0fa16a19934a9d8c46f501fbb941c0b1273cfc1f7071287d2b"
+    },
+    "experiments/authzgym_static_v1_1/validation.json": {
+      "bytes": 2376,
+      "file_sha256": "bec154ab36b1dbec503e609d27e17a6ded3379503f08746380d4fc61920f8587"
+    },
+    "experiments/authzgym_stronger_model_v1/CONFIRMATORY_POPULATION.json": {
+      "bytes": 1998554,
+      "file_sha256": "cf6eefbdb3b3e771f04d788463d4fbf57fae8353a7dd8baefef78f86e50d65ed"
+    },
+    "experiments/authzgym_stronger_model_v1/COST_GATE.json": {
+      "bytes": 988,
+      "file_sha256": "b4398133d715d0a704452d4dd50b5a353b5ca6686ae54871c63b9e608cffd200"
+    },
+    "experiments/authzgym_stronger_model_v1/DEVELOPMENT_POPULATION.json": {
+      "bytes": 998429,
+      "file_sha256": "6e6d8cf229bc3f0c105f6d674736aeeea0f4db358953f9eda5d92d83fa5bbd86"
+    },
+    "experiments/authzgym_stronger_model_v1/FROZEN_INPUTS.json": {
+      "bytes": 17075,
+      "file_sha256": "7a4d3b77b06682ed3a252c1e8e5e5b7f2b2901d553ff10ae6014fe0ee4b92b21"
+    },
+    "experiments/authzgym_stronger_model_v1/IMPLEMENTATION_NOTES.md": {
+      "bytes": 929,
+      "file_sha256": "9a59c6f5b28c860b18d4e5c286c8f5abe3c5a5f1b3b2e759d84dec2b84ec4f09"
+    },
+    "experiments/authzgym_stronger_model_v1/INTERPRETATION.md": {
+      "bytes": 457,
+      "file_sha256": "9e9a4070364f4949416a9f094e4c064cb7fa1a74dfbc226356888c1a8c871be4"
+    },
+    "experiments/authzgym_stronger_model_v1/MODEL_SELECTION.json": {
+      "bytes": 2819,
+      "file_sha256": "a1ac691a88499eaade8a37b6bc7841acb0ba02fb7cdfa18bb4a98c9d257abcbb"
+    },
+    "experiments/authzgym_stronger_model_v1/PREFLIGHT_FAILURE.md": {
+      "bytes": 2160,
+      "file_sha256": "b4c5c7be9c22c28f4bdd3fdc3e209808ad0fa510b8885146e1bdcb66157fb00c"
+    },
+    "experiments/authzgym_stronger_model_v1/PREREGISTRATION.md": {
+      "bytes": 11796,
+      "file_sha256": "87526badb32c02513aca90e27ab1a413d28075ebf030f141acc7f9a3e0d2e5d9"
+    },
+    "experiments/authzgym_stronger_model_v1/REPORT.md": {
+      "bytes": 2917,
+      "file_sha256": "adc61128c152c4ee68c2294decde441be06a5e6ba7552965b6ad129f1c6e6596"
+    },
+    "experiments/authzgym_stronger_model_v1/SMOKE_POPULATION.json": {
+      "bytes": 127888,
+      "file_sha256": "a7603f2e8689d88118a55daaec73092c1ed7af2acaca9e5340db99ea05314f42"
+    },
+    "experiments/authzgym_stronger_model_v1/confirmatory_source_population.json": {
+      "bytes": 92107,
+      "file_sha256": "3672824f28e7df76dec11a3795d6f2f4a0bc58be3d8314c733a9cccacbf497fc"
+    },
+    "experiments/authzgym_stronger_model_v1/development/execution.json": {
+      "bytes": 4637,
+      "file_sha256": "e3323406089950b5e9fc22e504df0d2eae34cabb73a5811ec912d7fbc76a04aa"
+    },
+    "experiments/authzgym_stronger_model_v1/development/provider_responses.jsonl": {
+      "bytes": 69197,
+      "file_sha256": "bcf4979248969b4d8ea27a0cdf74b54f79705a25e88a617138cae5774f63a1cb"
+    },
+    "experiments/authzgym_stronger_model_v1/development/runs.jsonl": {
+      "bytes": 98835,
+      "file_sha256": "528fa3622207777a8ffded6efe5ed499336a23809f122425f4b706ba7208447a"
+    },
+    "experiments/authzgym_stronger_model_v1/development/transport_attempts.jsonl": {
+      "bytes": 20789,
+      "file_sha256": "d9441a354f790b78dec493ba3a397648c2e0fb317ab27beec668e269ff5420ce"
+    },
+    "experiments/authzgym_stronger_model_v1/development/tunnel_events.jsonl": {
+      "bytes": 6035,
+      "file_sha256": "9d9c46bb32512620b2e8cbb16c37bb2decbb9f633bbe2b483bcfb8ce01190885"
+    },
+    "experiments/authzgym_stronger_model_v1/model_config.json": {
+      "bytes": 1171,
+      "file_sha256": "3d38e962f524b3e3452bc58c3daf1bf41da42f7b002f09fa329e20c4a8e80e99"
+    },
+    "experiments/authzgym_stronger_model_v1/preflight_attempt_1/COST_GATE.json": {
+      "bytes": 766,
+      "file_sha256": "2cf50dd3a940579681b38b36d6565f6a7921645c1f0ba8abd5bfeea83e68cf91"
+    },
+    "experiments/authzgym_stronger_model_v1/preflight_attempt_1/FROZEN_INPUTS.json": {
+      "bytes": 15617,
+      "file_sha256": "4e78c257840daee32bdab93a769995a518e887535139d84ac50bd0050b2cfa1e"
+    },
+    "experiments/authzgym_stronger_model_v1/preflight_attempt_1/smoke/execution.json": {
+      "bytes": 892,
+      "file_sha256": "4798b9e510285f1a112515d8aeefb6f99cf5f70ff45687ef34b56933e9855906"
+    },
+    "experiments/authzgym_stronger_model_v1/preflight_attempt_1/smoke/provider_responses.jsonl": {
+      "bytes": 17233,
+      "file_sha256": "8e3a47731a3c2d3ad48a76f2bab3eb2e17ca6eab388c415b6d3e0063d641b27f"
+    },
+    "experiments/authzgym_stronger_model_v1/preflight_attempt_1/smoke/runs.jsonl": {
+      "bytes": 24627,
+      "file_sha256": "7ad6708053c76fd0d7a0b667ff4bcfded772108a06b7e642dadad52439a320a4"
+    },
+    "experiments/authzgym_stronger_model_v1/preflight_attempt_1/smoke/transport_attempts.jsonl": {
+      "bytes": 5130,
+      "file_sha256": "d2233a5f8cb69e4b70d142138cf363b25ac3e03953bea6755a3d094cfe534c6f"
+    },
+    "experiments/authzgym_stronger_model_v1/preflight_attempt_1/smoke/tunnel_events.jsonl": {
+      "bytes": 2970,
+      "file_sha256": "9d20a14d7faac6427423cf6f3635c890930f58ed5f6b8cba4650f468cf9a721b"
+    },
+    "experiments/authzgym_stronger_model_v1/smoke/execution.json": {
+      "bytes": 892,
+      "file_sha256": "ad4c2e67aa3535da37d66a2e9651b0e63b93bbe433eb59f448021109aaeb3884"
+    },
+    "experiments/authzgym_stronger_model_v1/smoke/provider_responses.jsonl": {
+      "bytes": 17233,
+      "file_sha256": "b2f2404cab1c5e64150cf61abbd4f76a07822a0564ff61178ff50f545bc19445"
+    },
+    "experiments/authzgym_stronger_model_v1/smoke/runs.jsonl": {
+      "bytes": 24847,
+      "file_sha256": "b9aa750f11d67249e70ffc20ec5101d7a06ab64c96a15a5bd822a6250779de1b"
+    },
+    "experiments/authzgym_stronger_model_v1/smoke/transport_attempts.jsonl": {
+      "bytes": 5131,
+      "file_sha256": "0d1bd31b61b1329c95f4861f1302f3aebe8668b1518612e8faff007ba478c975"
+    },
+    "experiments/authzgym_stronger_model_v1/smoke/tunnel_events.jsonl": {
+      "bytes": 2968,
+      "file_sha256": "be6b362bc2c0ca9182d9af127d6cc0af5a7c0a1e0141e3b5e9a764ef3c9e4f71"
+    },
+    "experiments/authzgym_stronger_model_v1/summary.json": {
+      "bytes": 17307,
+      "file_sha256": "2e31dd2ca05fa5a64da5408ee7a74ab97498c425ae43e6e24cf52196ee2a7c2c"
+    },
+    "experiments/authzgym_stronger_model_v1/validation.json": {
+      "bytes": 1262,
+      "file_sha256": "7ff8b7a9918c8644af72f67eff6e9e3aabb5e0fec6fc01ef46428dff7f948f0c"
+    },
+    "experiments/authzgym_transport_envelope_v1/COST_GATE.json": {
+      "bytes": 752,
+      "file_sha256": "d6382c3080efa6435d9de0138776035d1848edaccebdc079173ecb343a9ebe50"
+    },
+    "experiments/authzgym_transport_envelope_v1/FROZEN_INPUTS.json": {
+      "bytes": 17987,
+      "file_sha256": "4964f3f70f2669341719b0b9f3998fad0f994ce82610400774e50b61f3f7e56e"
+    },
+    "experiments/authzgym_transport_envelope_v1/IMPLEMENTATION_NOTES.md": {
+      "bytes": 2956,
+      "file_sha256": "795faca7fcbc6caea5aee46c53d4726f749a86818b29de98f744084fcacb4c17"
+    },
+    "experiments/authzgym_transport_envelope_v1/INTERPRETATION.md": {
+      "bytes": 497,
+      "file_sha256": "7c52b58117d9eece4ff813087dd1f1cc5baf5756e58c08b6df2481d4d2371a1a"
+    },
+    "experiments/authzgym_transport_envelope_v1/PREFLIGHT_FAILURE.md": {
+      "bytes": 1457,
+      "file_sha256": "40d176e51c28a308ba340c3e3f670cfc4a7e16c4d31eceec07033c068d6061a9"
+    },
+    "experiments/authzgym_transport_envelope_v1/PREREGISTRATION.md": {
+      "bytes": 7889,
+      "file_sha256": "bf81c97143bc9b953d0ae569324ce10e1ae43b9b30c5a86b9d6f58eeb3634fde"
+    },
+    "experiments/authzgym_transport_envelope_v1/REPORT.md": {
+      "bytes": 2148,
+      "file_sha256": "0ac8451cd1cc463017b776505abbf239ee43dfd57172b56fc93d4ce94c0b8a3c"
+    },
+    "experiments/authzgym_transport_envelope_v1/TRANSPORT_AUTOPSY.json": {
+      "bytes": 4339,
+      "file_sha256": "dd09df431639de1c17191c20715f30df1750288ae36280a262e2e481267bc5cc"
+    },
+    "experiments/authzgym_transport_envelope_v1/TRANSPORT_AUTOPSY.md": {
+      "bytes": 1402,
+      "file_sha256": "cff1b88910cdb71e2a3a41cf837e9435e9152f79064afaa071ab977f4677f37c"
+    },
+    "experiments/authzgym_transport_envelope_v1/preflight_attempt_1/COST_GATE.json": {
+      "bytes": 752,
+      "file_sha256": "a11f8a2255773bfdf7da7d3977180e565d3d5d24f63c22d86239c6e534e92cf1"
+    },
+    "experiments/authzgym_transport_envelope_v1/preflight_attempt_1/FROZEN_INPUTS.json": {
+      "bytes": 17552,
+      "file_sha256": "1f17598e747cc33e6652ccd7f8cebfe229dc5e0f27a823d8779407a1459b07b0"
+    },
+    "experiments/authzgym_transport_envelope_v1/preflight_attempt_1/tunnel_events.jsonl": {
+      "bytes": 3925,
+      "file_sha256": "78a6efe65c2793180a47079a7d1fd6c3e4e5ec46bf5e6a9a99c404c84eede10b"
+    },
+    "experiments/authzgym_transport_envelope_v1/provider_responses.jsonl": {
+      "bytes": 536254,
+      "file_sha256": "294bd3ed4d4737b2fe5a88a9a1451220f356fd08dc5788a80ffb9f1850e9ac6c"
+    },
+    "experiments/authzgym_transport_envelope_v1/stress_runs.jsonl": {
+      "bytes": 767088,
+      "file_sha256": "994cf0d9c9e67af66502f21d583abd0bf4792f5c9e404d28f524b2a93578c914"
+    },
+    "experiments/authzgym_transport_envelope_v1/summary.json": {
+      "bytes": 6757,
+      "file_sha256": "a8b89c6313d8f8882cba34b3f0090714e45148058e842a97fa48fd59d38ecc91"
+    },
+    "experiments/authzgym_transport_envelope_v1/transport_attempts.jsonl": {
+      "bytes": 164931,
+      "file_sha256": "5e6a710d233389793f4025f8e1f2319789d6d98a5006602fd64f172129aeca02"
+    },
+    "experiments/authzgym_transport_envelope_v1/transport_config.json": {
+      "bytes": 1050,
+      "file_sha256": "912012c3dcf3b4e967d10830ec5624b58984195b7e70176f21b78239458a6f30"
+    },
+    "experiments/authzgym_transport_envelope_v1/tunnel_events.jsonl": {
+      "bytes": 34513,
+      "file_sha256": "3f5cb690e7072a2c95eec92fc142778fff1275b6e1571e294a7d993cf4fb4997"
+    },
+    "experiments/authzgym_transport_envelope_v1/validation.json": {
+      "bytes": 3929,
+      "file_sha256": "a5e55f4c5a5faf38e50fd23e2509b54513e0d791c029db4989d7f6f410b802cb"
+    },
+    "experiments/microgym_routing_v1/IMPLEMENTATION_NOTES.md": {
+      "bytes": 1312,
+      "file_sha256": "db369b8c9ed973ec2d294d96b1777e78cdf292654a28a493d02007938461070d"
+    },
+    "experiments/microgym_routing_v1/INTERPRETATION.md": {
+      "bytes": 2319,
+      "file_sha256": "39ec149843fbbe17a79988689f4928cca214c6b8bd42f8a08401be67b9c103a6"
+    },
+    "experiments/microgym_routing_v1/PREREGISTRATION.md": {
+      "bytes": 7010,
+      "file_sha256": "5dbd5e213fd4a35ded53ccda51ee8d9d8d5c451c5dcbdbffe17dad832cb05323"
+    },
+    "experiments/microgym_routing_v1/REPORT.md": {
+      "bytes": 7743,
+      "file_sha256": "7b3e8db1eac5e5447969fbe5b0e6a84a52ee071c658aaa82419515f971031349"
+    },
+    "experiments/microgym_routing_v1/oracle.jsonl": {
+      "bytes": 7888,
+      "file_sha256": "4e43f1f705afc3bea265b382a75a4699d36c1c850c7a89dc0ac05304b400884f"
+    },
+    "experiments/microgym_routing_v1/population.json": {
+      "bytes": 304146,
+      "file_sha256": "b872eaa773ca287fcd8d2a131c769af1e56476d874a4872cb26e4728c4f7dc50"
+    },
+    "experiments/microgym_routing_v1/runs.jsonl": {
+      "bytes": 9248933,
+      "file_sha256": "41fc10a9bbd155c2361f7b2c91fd4b1e9318bf12735f2fcd5ec2ed2b57e8794e"
+    },
+    "experiments/microgym_routing_v1/summary.json": {
+      "bytes": 15084,
+      "file_sha256": "b9a35a1edc9900792df51aac208d186dfe7744abc2071c177e1b05dbbdd4c894"
+    },
+    "experiments/microgym_routing_v1/validation.json": {
+      "bytes": 2670,
+      "file_sha256": "898e8f45be8bb4957bdfe933511c9cfe17a6a181e4d6a5c1a62bbcf67fbd5b07"
+    },
+    "experiments/microgym_v1/INTERPRETATION.md": {
+      "bytes": 5257,
+      "file_sha256": "90dda6c70aca917c1ff096ea406b91598e912a415bbc1fc7281f9be17afde053"
+    },
+    "experiments/microgym_v1/PREREGISTRATION.md": {
+      "bytes": 4226,
+      "file_sha256": "b5c06de36cd96edce6da8d460cda454df28c6f447233e008d5def04b5e89fb96"
+    },
+    "experiments/microgym_v1/REPORT.md": {
+      "bytes": 20475,
+      "file_sha256": "ef0b751739a56c034dce37f2111a95c6f36f9977dd3c98cfe9eef9bb6a8504bf"
+    },
+    "experiments/microgym_v1/adaptivity.json": {
+      "bytes": 3199,
+      "file_sha256": "a75e06e62377f0538a1c8b2e79409e8d7a22034895fc3bd7e28000a4d5af8e9a"
+    },
+    "experiments/microgym_v1/oracle.jsonl": {
+      "bytes": 1384134,
+      "file_sha256": "6e81a977208e60f6a587e3f6f67d60d578972a2d4340fd66bc056c22db747785"
+    },
+    "experiments/microgym_v1/population.json": {
+      "bytes": 271671,
+      "file_sha256": "780512a47e201acc5c1a4795550a4a8484aa83d17b0106e4097e1fd53bd05283"
+    },
+    "experiments/microgym_v1/runs.jsonl": {
+      "bytes": 27161259,
+      "file_sha256": "95fcbd61e94ca3acf11288856be5f2d60a590ee09dfe31fecf0105a1ff8c7ddc"
+    },
+    "experiments/microgym_v1/summary.json": {
+      "bytes": 115800,
+      "file_sha256": "813a0b6c1b65852dea8f5047089bb58dc4a0e786891fdcd5d7d77c6e5fc21faf"
+    },
+    "experiments/microgym_v1/validation.json": {
+      "bytes": 7445,
+      "file_sha256": "497077ca6964f8fb193889ab479fad5d0c080bfa3898c336ea6840b579625e14"
+    },
+    "plan/ROADMAP.md": {
+      "bytes": 16818,
+      "file_sha256": "d04fcaae5d7cdcf48686cd83b5b2bcf36edd08a39f60149ed2ddc96e83b202da"
+    },
+    "reference/IDS_LEGACY.md": {
+      "bytes": 4272,
+      "file_sha256": "227191a18eb59ed149ecc3f810c0cb2cb4adfdae81a7d78b4cf6db860f5020e6"
+    },
+    "reference/IDS_LESSONS.md": {
+      "bytes": 5698,
+      "file_sha256": "9d1da3600778786ba9df4e3001750a9ae11616360f82c8b15f70fa144210fda2"
+    },
+    "reference/LEGACY_INVENTORY.md": {
+      "bytes": 61209,
+      "file_sha256": "9ae4d1f8e2caa4440859c06a6c9b1d8318a045d8eaa92a8b716f85394b5b9e58"
+    },
+    "reference/LEGACY_INVENTORY.yaml": {
+      "bytes": 57982,
+      "file_sha256": "51db7872ca88dffe47933111bb45755766aa192b782ab02a255075723d78ff21"
+    },
+    "reference/TERMINOLOGY.md": {
+      "bytes": 4973,
+      "file_sha256": "35d489a1ce44c74bbef4f8d253851e91249555899343f417a6b704b6a7cd7c83"
+    },
+    "src/ser/authzgym/generation.py": {
+      "bytes": 17626,
+      "file_sha256": "03bfe556091e8da118c1c27058a8edaa393473c17c4fa45645837b08b7163461"
+    },
+    "src/ser/authzgym/model.py": {
+      "bytes": 10026,
+      "file_sha256": "9637e6549e97e80d0a0d76e1cf5a03684af411a6f4fc54c8877504a136ed205b"
+    },
+    "src/ser/authzgym/policies.py": {
+      "bytes": 5767,
+      "file_sha256": "092a7a87d1227c1a1c85ac46c7122e38ac1b6b24d7aaa90abee05abfe4167393"
+    },
+    "src/ser/authzgym/policies_v1_3_1.py": {
+      "bytes": 3824,
+      "file_sha256": "f9c92317abc562ac5175f90074238c666de55d557b02e0de368841676f4d910d"
+    },
+    "src/ser/authzgym/v1_3_annotation_builder.py": {
+      "bytes": 22692,
+      "file_sha256": "ca13215247297cd090ce7c6b23b94246295d94b260d78925233babdfa50c32ef"
+    },
+    "src/ser/authzgym/v1_3_contract.py": {
+      "bytes": 8898,
+      "file_sha256": "3a30d384a9c2337e8f002b9af8606c2800791daf5eff68af0f248bfb0e6ac8ee"
+    },
+    "src/ser/authzgym/v1_3_population.py": {
+      "bytes": 20888,
+      "file_sha256": "ac4b8d47bd1369a16f4fed0d80abe7e0943c90317c0037bb6c8715882f470fca"
+    },
+    "src/ser/authzgym/v1_3_public_input.py": {
+      "bytes": 5464,
+      "file_sha256": "716bb02b8a5231f36ba8d85401c8352e2bcf73e01a38ae15df1be1a2565c4623"
+    },
+    "src/ser/evaluation/authz_v1_3.py": {
+      "bytes": 17237,
+      "file_sha256": "60b1cb5df27346ce65c6400cd33583782e176ca888567c7c052d1037aea098f6"
+    },
+    "src/ser/evaluation/authz_v1_3_1_harness.py": {
+      "bytes": 45450,
+      "file_sha256": "bcc19fbc578c72cca537d0405abbc00648029c2d72569bdd3f7d41c6e4ff3fb6"
+    },
+    "src/ser/evaluation/authz_v1_3_1_sealed_input.py": {
+      "bytes": 13654,
+      "file_sha256": "f2a0a572607f43394f4029d8357af2be3e7b1af57952783c1dfdcb64b5a6413b"
+    },
+    "state/CONTEXT_PACKET.md": {
+      "bytes": 29634,
+      "file_sha256": "cedf6170917dcbda550ff0b4e3993b600f9d09baf192536c841a7e7b0cc99bcc"
+    },
+    "state/STATUS.yaml": {
+      "bytes": 29621,
+      "file_sha256": "53adf3444881e53ef3cb9df2f133d13a3436af125c1e88820fcaceecafba892a"
+    },
+    "theory/CONTRACTS.yaml": {
+      "bytes": 24970,
+      "file_sha256": "252b550ac139572bad9047dfb5e1c01aa34a3f3b7fc6446e547aa95ad2ce7657"
+    },
+    "theory/CONTROL_PROBLEM.md": {
+      "bytes": 32272,
+      "file_sha256": "2a5a439b632aa30c71c0cc2634aee969d80b35ce431a69e5ad0c992027761a58"
+    },
+    "theory/DOMAIN_INSTANTIATIONS.md": {
+      "bytes": 12654,
+      "file_sha256": "f0ddd63d3d45fc603afb20db259e5c207f0975fefb4dad2960ef2d3f4bb63325"
+    },
+    "theory/HYPOTHESES.md": {
+      "bytes": 6662,
+      "file_sha256": "bb7d26129b92d0a8db2f65fbfa3d2edf0f2bfdbb9538a362861ad5d75a681785"
+    },
+    "theory/IDEA_MAP.md": {
+      "bytes": 79839,
+      "file_sha256": "c0d63853a39b6694d5dd69806b22ee3614622e34f9b378abda1005a6a8a6b45b"
+    },
+    "theory/IDEA_MAP.yaml": {
+      "bytes": 85191,
+      "file_sha256": "ec3abd49176911898a20294c2f4f45577388255f5f04dbda40a88d5cf7c539ee"
+    },
+    "theory/INFORMATION_BOUNDARIES.md": {
+      "bytes": 13543,
+      "file_sha256": "d579f6589552d6c8f4da9cd3f913fc953b4318775660d93670e64e8ea3f49c37"
+    },
+    "theory/PRIMITIVES.md": {
+      "bytes": 2586,
+      "file_sha256": "9057c9b2d90e1ac07db4dbdafaac2333d80ec9b24cf8d0ea9408039088725228"
+    },
+    "theory/QUESTIONS.md": {
+      "bytes": 2017,
+      "file_sha256": "2e899b2709c5f81d7362c1bb94e1a91737ef395347d90a505b2f5b9adf59012b"
+    },
+    "tools/prepare_authzgym_v1_3.py": {
+      "bytes": 10443,
+      "file_sha256": "c5c03007c9be910f8b77241d431769399365b895536857625f8d4be017900ebe"
+    },
+    "tools/run_authzgym_confirmation_v1_3_1.py": {
+      "bytes": 38896,
+      "file_sha256": "c59c7f5904e32397f839137eed638c20f3924794b2bb33a111e43bad6200bee4"
+    },
+    "tools/run_estimator_repair_study.py": {
+      "bytes": 48130,
+      "file_sha256": "147c99617df3429f663322fa9f90ecfa4dac406cf790b2e43e98d928f692b972"
+    },
+    "tools/validate_authzgym_v1_3_1_component_firewall.py": {
+      "bytes": 27267,
+      "file_sha256": "b792a0f6cf7c93653eb8740768ac75a8c768749cb39f8eb4ec718f536749dc89"
+    },
+    "tools/validate_authzgym_v1_3_answerability.py": {
+      "bytes": 26901,
+      "file_sha256": "be7003ba946e79993778ae727cd5eab7cdee3e58baedb71b5d44ed03da814aa0"
+    },
+    "tools/validate_authzgym_v1_3_firewall.py": {
+      "bytes": 10808,
+      "file_sha256": "e7078e134800acc75efb593def8106a48936e554ca2302a0ac13506d948d9403"
+    },
+    "tools/validate_authzgym_v1_3_oracle.py": {
+      "bytes": 7487,
+      "file_sha256": "dcb7d0f37a876281c7dba508983839666218a2ed04ab6868c25da2ab83195700"
+    }
+  },
+  "integrity_baseline_canonical_json_sha256": "b901921e38cd5565f26439f1127f8934c6747dc8973dbdeac88d6ebaa3707b6a",
+  "never_open_assertion": {
+    "all_present": true,
+    "missing": [],
+    "opens_recorded": [],
+    "section_0_2_names": [
+      "CONFIRMATION_ANSWERABILITY_VALIDATION.json",
+      "CONFIRMATION_ELIGIBILITY.json",
+      "CONFIRMATION_ORACLE_BLOCKER.md",
+      "CONFIRMATION_ORACLE_VALIDATION.json",
+      "CONFIRMATION_PUBLIC_POPULATION.json",
+      "CONFIRMATION_RESTRICTED_POPULATION.json",
+      "CONFIRMATION_SCHEDULE.json",
+      "CONFIRMATION_SOURCE_MANIFEST.json",
+      "CONFIRMATION_TRANSFORMATION_MAPS.json",
+      "PUBLIC_BUNDLE/CONFIRMATION_PUBLIC_POPULATION.json",
+      "PUBLIC_BUNDLE/CONFIRMATION_SCHEDULE.json",
+      "RESTRICTED_BUNDLE/CONFIRMATION_ELIGIBILITY.json",
+      "RESTRICTED_BUNDLE/CONFIRMATION_RESTRICTED_POPULATION.json",
+      "RESTRICTED_BUNDLE/CONFIRMATION_TRANSFORMATION_MAPS.json",
+      "RESTRICTED_BUNDLE/annotations/confirmation_annotations.jsonl",
+      "annotations/confirmation_annotations.jsonl"
+    ],
+    "zero_opens": true
+  },
+  "passes": true,
+  "reference_check": {
+    "all_re_derive": true,
+    "mismatches": [],
+    "observed": {
+      "B-1 component class source text": {
+        "expected": "88b77c5f343117b354b5039d571bf03bf8867fcd7fb4f8fc91c1e1aefca7a048",
+        "file_sha256": "88b77c5f343117b354b5039d571bf03bf8867fcd7fb4f8fc91c1e1aefca7a048",
+        "matches": true
+      },
+      "experiments/authzgym_estimator_repair_v1_3_1/DEVELOPMENT_REPORT.md": {
+        "expected": "f0629d3b78ba35258cc6d439e4b731c3682b76fa08e4155efbdad7cd0df18638",
+        "file_sha256": "f0629d3b78ba35258cc6d439e4b731c3682b76fa08e4155efbdad7cd0df18638",
+        "matches": true
+      },
+      "experiments/authzgym_semantic_contract_v1_3/DEVELOPMENT_PUBLIC_POPULATION.json": {
+        "expected": "dda4e0c08a9c29a58a912fdcb5268ddf602aac79c47f6dd3fb94102b5dc8c365",
+        "file_sha256": "dda4e0c08a9c29a58a912fdcb5268ddf602aac79c47f6dd3fb94102b5dc8c365",
+        "matches": true
+      },
+      "src/ser/authzgym/generation.py": {
+        "expected": "03bfe556091e8da118c1c27058a8edaa393473c17c4fa45645837b08b7163461",
+        "file_sha256": "03bfe556091e8da118c1c27058a8edaa393473c17c4fa45645837b08b7163461",
+        "matches": true
+      },
+      "src/ser/authzgym/policies.py": {
+        "expected": "092a7a87d1227c1a1c85ac46c7122e38ac1b6b24d7aaa90abee05abfe4167393",
+        "file_sha256": "092a7a87d1227c1a1c85ac46c7122e38ac1b6b24d7aaa90abee05abfe4167393",
+        "matches": true
+      },
+      "src/ser/authzgym/policies_v1_3_1.py": {
+        "expected": "f9c92317abc562ac5175f90074238c666de55d557b02e0de368841676f4d910d",
+        "file_sha256": "f9c92317abc562ac5175f90074238c666de55d557b02e0de368841676f4d910d",
+        "matches": true
+      },
+      "src/ser/authzgym/v1_3_population.py": {
+        "expected": "ac4b8d47bd1369a16f4fed0d80abe7e0943c90317c0037bb6c8715882f470fca",
+        "file_sha256": "ac4b8d47bd1369a16f4fed0d80abe7e0943c90317c0037bb6c8715882f470fca",
+        "matches": true
+      },
+      "src/ser/evaluation/authz_v1_3.py": {
+        "expected": "60b1cb5df27346ce65c6400cd33583782e176ca888567c7c052d1037aea098f6",
+        "file_sha256": "60b1cb5df27346ce65c6400cd33583782e176ca888567c7c052d1037aea098f6",
+        "matches": true
+      }
+    }
+  },
+  "repository_commit": "6b0de4b1abea87d5bc8e18b87ef9f697ff2a3c24",
+  "restated_hashes_file_sha256": "591fd0114c2c9a377565ecab79153b846b3f9975422217cf9d63dbe86b53d20d",
+  "schema_version": 1,
+  "stage": "integrity",
+  "stat_only_files": {
+    "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_PUBLIC_POPULATION.json": {
+      "bytes": 690989,
+      "mtime_ns": 1789744970189205498,
+      "never_open": true,
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_PUBLIC_POPULATION.json",
+      "present": true
+    },
+    "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_RESTRICTED_POPULATION.json": {
+      "bytes": 186832,
+      "mtime_ns": 1789744970191260126,
+      "never_open": true,
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_RESTRICTED_POPULATION.json",
+      "present": true
+    },
+    "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_SCHEDULE.json": {
+      "bytes": 6016,
+      "mtime_ns": 1789744970191722959,
+      "never_open": true,
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_SCHEDULE.json",
+      "present": true
+    },
+    "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_TRANSFORMATION_MAPS.json": {
+      "bytes": 110107,
+      "mtime_ns": 1789744970221419661,
+      "never_open": true,
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_TRANSFORMATION_MAPS.json",
+      "present": true
+    },
+    "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_ACCESS_LEDGER.jsonl": {
+      "bytes": 3382,
+      "mtime_ns": 1789745002084533158,
+      "never_open": true,
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_ACCESS_LEDGER.jsonl",
+      "present": true
+    },
+    "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_ANSWERABILITY_VALIDATION.json": {
+      "bytes": 872,
+      "mtime_ns": 1789744990060780790,
+      "never_open": true,
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_ANSWERABILITY_VALIDATION.json",
+      "present": true
+    },
+    "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_DUPLICATION_CHECKS.json": {
+      "bytes": 1757,
+      "mtime_ns": 1789744970226786959,
+      "never_open": true,
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_DUPLICATION_CHECKS.json",
+      "present": true
+    },
+    "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_FIREWALL_VALIDATION.json": {
+      "bytes": 1225,
+      "mtime_ns": 1789744990060948374,
+      "never_open": true,
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_FIREWALL_VALIDATION.json",
+      "present": true
+    },
+    "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_FREEZE_RECORD.json": {
+      "bytes": 1889,
+      "mtime_ns": 1789744965566050868,
+      "never_open": true,
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_FREEZE_RECORD.json",
+      "present": true
+    },
+    "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_PUBLIC_MANIFEST.json": {
+      "bytes": 441,
+      "mtime_ns": 1789744970232174007,
+      "never_open": true,
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_PUBLIC_MANIFEST.json",
+      "present": true
+    },
+    "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_RESTRICTED_MANIFEST.json": {
+      "bytes": 485,
+      "mtime_ns": 1789744970236124595,
+      "never_open": true,
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_RESTRICTED_MANIFEST.json",
+      "present": true
+    },
+    "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_SOURCE_MANIFEST.json": {
+      "bytes": 1173,
+      "mtime_ns": 1789744970230602921,
+      "never_open": true,
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_SOURCE_MANIFEST.json",
+      "present": true
+    },
+    "experiments/authzgym_confirmation_v1_3_1/FROZEN_INPUTS_V1_3_1.json": {
+      "bytes": 2464,
+      "mtime_ns": 1789744970250975695,
+      "never_open": true,
+      "path": "experiments/authzgym_confirmation_v1_3_1/FROZEN_INPUTS_V1_3_1.json",
+      "present": true
+    },
+    "experiments/authzgym_confirmation_v1_3_1/annotations/confirmation_v1_3_1_annotations.jsonl": {
+      "bytes": 2859526,
+      "mtime_ns": 1789744970219823617,
+      "never_open": true,
+      "path": "experiments/authzgym_confirmation_v1_3_1/annotations/confirmation_v1_3_1_annotations.jsonl",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_ANSWERABILITY_VALIDATION.json": {
+      "bytes": 722,
+      "mtime_ns": 1789736999302837190,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_ANSWERABILITY_VALIDATION.json",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_ELIGIBILITY.json": {
+      "bytes": 974,
+      "mtime_ns": 1789736972059782892,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_ELIGIBILITY.json",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_ORACLE_BLOCKER.md": {
+      "bytes": 237,
+      "mtime_ns": 1789736999438249761,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_ORACLE_BLOCKER.md",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_ORACLE_VALIDATION.json": {
+      "bytes": 1223,
+      "mtime_ns": 1789736999438060553,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_ORACLE_VALIDATION.json",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_PUBLIC_POPULATION.json": {
+      "bytes": 690873,
+      "mtime_ns": 1789736972713018889,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_PUBLIC_POPULATION.json",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_RESTRICTED_POPULATION.json": {
+      "bytes": 186828,
+      "mtime_ns": 1789736972714668224,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_RESTRICTED_POPULATION.json",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_SCHEDULE.json": {
+      "bytes": 6014,
+      "mtime_ns": 1789736972715056391,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_SCHEDULE.json",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_SOURCE_MANIFEST.json": {
+      "bytes": 334,
+      "mtime_ns": 1789736972749111347,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_SOURCE_MANIFEST.json",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_TRANSFORMATION_MAPS.json": {
+      "bytes": 110073,
+      "mtime_ns": 1789736972750745766,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_TRANSFORMATION_MAPS.json",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/PUBLIC_BUNDLE/CONFIRMATION_PUBLIC_POPULATION.json": {
+      "bytes": 690873,
+      "mtime_ns": 1789736972713018889,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/PUBLIC_BUNDLE/CONFIRMATION_PUBLIC_POPULATION.json",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/PUBLIC_BUNDLE/CONFIRMATION_SCHEDULE.json": {
+      "bytes": 6014,
+      "mtime_ns": 1789736972715056391,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/PUBLIC_BUNDLE/CONFIRMATION_SCHEDULE.json",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/RESTRICTED_BUNDLE/CONFIRMATION_ELIGIBILITY.json": {
+      "bytes": 974,
+      "mtime_ns": 1789736972059782892,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/RESTRICTED_BUNDLE/CONFIRMATION_ELIGIBILITY.json",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/RESTRICTED_BUNDLE/CONFIRMATION_RESTRICTED_POPULATION.json": {
+      "bytes": 186828,
+      "mtime_ns": 1789736972714668224,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/RESTRICTED_BUNDLE/CONFIRMATION_RESTRICTED_POPULATION.json",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/RESTRICTED_BUNDLE/CONFIRMATION_TRANSFORMATION_MAPS.json": {
+      "bytes": 110073,
+      "mtime_ns": 1789736972750745766,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/RESTRICTED_BUNDLE/CONFIRMATION_TRANSFORMATION_MAPS.json",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/RESTRICTED_BUNDLE/annotations/confirmation_annotations.jsonl": {
+      "bytes": 2859414,
+      "mtime_ns": 1789736972748478638,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/RESTRICTED_BUNDLE/annotations/confirmation_annotations.jsonl",
+      "present": true
+    },
+    "experiments/authzgym_semantic_contract_v1_3/annotations/confirmation_annotations.jsonl": {
+      "bytes": 2859414,
+      "mtime_ns": 1789736972748478638,
+      "never_open": true,
+      "path": "experiments/authzgym_semantic_contract_v1_3/annotations/confirmation_annotations.jsonl",
+      "present": true
+    }
+  },
+  "static_check": {
+    "checked_paths": [
+      "src/ser/authzgym/semantic_contract_v1_3.py",
+      "src/ser/authzgym/supervised_transport_v1_3.py",
+      "tools/run_authzgym_model_semantic_development.py",
+      "tools/score_authzgym_model_semantic.py",
+      "tools/verify_authzgym_model_condition.py"
+    ],
+    "exempt_paths": [
+      "src/ser/evaluation/authz_model_semantic_v1_3_1.py"
+    ],
+    "passes": true,
+    "violations": []
+  },
+  "tool_file_sha256": "b1d3f4e5d25a6a61fafd110a4d8215a945f7e1f6258eb11b1482f12d753dd60a",
+  "tool_path": "tools/verify_authzgym_model_condition.py"
+}

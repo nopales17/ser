@@ -1,0 +1,228 @@
+{
+  "authorizing_adr": "ADR-0023",
+  "condition_id": "model-semantic-v1.3.1-N1",
+  "convention": "Raw-file SHA-256 is authoritative for every new artifact this condition creates. A canonicalized JSON digest, where useful, is recorded in its own `*_canonical_json_sha256` field and never in place of a file hash. No field carrying more than one digest type is named `population_hash`.",
+  "deviations": [
+    {
+      "actor": "implementation agent (pre-tooling reconnaissance)",
+      "authorization": "none; section-0.2 never-open path",
+      "classification": "procedural_deviation_not_retroactively_authorized",
+      "content_parsed_or_used": false,
+      "detail": "The raw-file SHA-256 of the sealed confirmation_v1_3_1 public population was computed during repository reconnaissance before the condition's audited reader existed. No case content was parsed, scored, counted, retained or used for any design, selection or scoring decision, and the population was already spent and sealed under ADR-0022. That open is not authorized by section 6.3 and is not treated as a satisfied step-1 re-derivation. The condition's own harness refuses it.",
+      "id": "DEV-2",
+      "operation": "hash",
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_PUBLIC_POPULATION.json"
+    },
+    {
+      "authority_conflict": "IMPLEMENTATION_HANDOFF.md step 1 item 3 names `CONFIRMATION_V1_3_1_FREEZE_RECORD.json` as the restatement source for `0e20284b...`, while IMPLEMENTATION_HANDOFF.md section 0.2 lists every file under `experiments/authzgym_confirmation_v1_3_1/` except the three step-1 metadata files as never-open, and PREREGISTRATION.md sections 6.3 and 14.2 make any open of a confirmation_v1_3_1 path a blocking violation.",
+      "classification": "recorded_difference",
+      "content_read": false,
+      "id": "DEV-1",
+      "kind": "governance_recording",
+      "resolution": "Fail closed: the freeze record is stat-ed for existence and never opened; the digest is restated from the authorized readable records that carry it verbatim. Recorded, not chosen away; new authority is required if a direct read is intended."
+    }
+  ],
+  "reference_check": {
+    "all_re_derive": true,
+    "mismatches": [],
+    "observed": {
+      "B-1 component class source text": {
+        "expected": "88b77c5f343117b354b5039d571bf03bf8867fcd7fb4f8fc91c1e1aefca7a048",
+        "file_sha256": "88b77c5f343117b354b5039d571bf03bf8867fcd7fb4f8fc91c1e1aefca7a048",
+        "matches": true
+      },
+      "experiments/authzgym_estimator_repair_v1_3_1/DEVELOPMENT_REPORT.md": {
+        "expected": "f0629d3b78ba35258cc6d439e4b731c3682b76fa08e4155efbdad7cd0df18638",
+        "file_sha256": "f0629d3b78ba35258cc6d439e4b731c3682b76fa08e4155efbdad7cd0df18638",
+        "matches": true
+      },
+      "experiments/authzgym_semantic_contract_v1_3/DEVELOPMENT_PUBLIC_POPULATION.json": {
+        "expected": "dda4e0c08a9c29a58a912fdcb5268ddf602aac79c47f6dd3fb94102b5dc8c365",
+        "file_sha256": "dda4e0c08a9c29a58a912fdcb5268ddf602aac79c47f6dd3fb94102b5dc8c365",
+        "matches": true
+      },
+      "src/ser/authzgym/generation.py": {
+        "expected": "03bfe556091e8da118c1c27058a8edaa393473c17c4fa45645837b08b7163461",
+        "file_sha256": "03bfe556091e8da118c1c27058a8edaa393473c17c4fa45645837b08b7163461",
+        "matches": true
+      },
+      "src/ser/authzgym/policies.py": {
+        "expected": "092a7a87d1227c1a1c85ac46c7122e38ac1b6b24d7aaa90abee05abfe4167393",
+        "file_sha256": "092a7a87d1227c1a1c85ac46c7122e38ac1b6b24d7aaa90abee05abfe4167393",
+        "matches": true
+      },
+      "src/ser/authzgym/policies_v1_3_1.py": {
+        "expected": "f9c92317abc562ac5175f90074238c666de55d557b02e0de368841676f4d910d",
+        "file_sha256": "f9c92317abc562ac5175f90074238c666de55d557b02e0de368841676f4d910d",
+        "matches": true
+      },
+      "src/ser/authzgym/v1_3_population.py": {
+        "expected": "ac4b8d47bd1369a16f4fed0d80abe7e0943c90317c0037bb6c8715882f470fca",
+        "file_sha256": "ac4b8d47bd1369a16f4fed0d80abe7e0943c90317c0037bb6c8715882f470fca",
+        "matches": true
+      },
+      "src/ser/evaluation/authz_v1_3.py": {
+        "expected": "60b1cb5df27346ce65c6400cd33583782e176ca888567c7c052d1037aea098f6",
+        "file_sha256": "60b1cb5df27346ce65c6400cd33583782e176ca888567c7c052d1037aea098f6",
+        "matches": true
+      }
+    }
+  },
+  "repository_commit": "6b0de4b1abea87d5bc8e18b87ef9f697ff2a3c24",
+  "restatements": [
+    {
+      "actual_convention": "file_sha256 (section 5.1 raw bytes)",
+      "file_sha256": "dda4e0c08a9c29a58a912fdcb5268ddf602aac79c47f6dd3fb94102b5dc8c365",
+      "path": "experiments/authzgym_semantic_contract_v1_3/DEVELOPMENT_PUBLIC_POPULATION.json",
+      "re_derivation_status": "re-derived",
+      "re_derived": true,
+      "recorded_as": "development population hash",
+      "recorded_digest": "dda4e0c0..."
+    },
+    {
+      "actual_convention": "canonical_json_sha256 of the same file's parsed value",
+      "canonical_json_sha256": "1615b87ed2c05b41861f4765d31fdab0ef3124029496dd2f110a290ae6f2d000",
+      "file_sha256": "dda4e0c08a9c29a58a912fdcb5268ddf602aac79c47f6dd3fb94102b5dc8c365",
+      "path": "experiments/authzgym_semantic_contract_v1_3/DEVELOPMENT_PUBLIC_POPULATION.json",
+      "re_derivation_status": "computed for the record; section 5.3 records it as not applicable and it is never used by a gate",
+      "recorded_as": "not recorded anywhere (section 5.3)",
+      "recorded_digest": "1615b87e..."
+    },
+    {
+      "actual_convention": "inherited source-population hash from authzgym_static_v1_1",
+      "embedded_population_hash": "471c233d9c79ef61fe11bea070049d4fd62c8b03d2e697618b627a05da7dbdcf",
+      "file_sha256": "dda4e0c08a9c29a58a912fdcb5268ddf602aac79c47f6dd3fb94102b5dc8c365",
+      "path": "experiments/authzgym_semantic_contract_v1_3/DEVELOPMENT_PUBLIC_POPULATION.json",
+      "re_derivation_status": "quoted verbatim; never re-derived and never a file hash",
+      "recorded_as": "the file's own embedded `population_hash` field",
+      "recorded_digest": "471c233d..."
+    },
+    {
+      "actual_convention": "file_sha256 (section 5.1 raw bytes)",
+      "file_sha256": "1321bcd190c2bfbef884aac55421669401fe321797345ad54556d0f55251787c",
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_PUBLIC_POPULATION.json",
+      "re_derivation_status": "NOT re-derived at step 1: the path is a section-0.2 never-open path and section 6.3 makes any open of a confirmation_v1_3_1 path a blocking violation. The digest is restated from the authorized readable seal record. See deviations.",
+      "re_derived": false,
+      "reconnaissance_deviation": "DEV-2",
+      "recorded_as": "population hash and public population file SHA-256 (confirmation_v1_3_1)",
+      "recorded_digest": "1321bcd1...",
+      "seal_recorded_population_file_sha256": "1321bcd190c2bfbef884aac55421669401fe321797345ad54556d0f55251787c"
+    },
+    {
+      "actual_convention": "file_sha256 (section 5.1 raw bytes)",
+      "file_sha256": "0e20284be388131d451f5befc22a048b3badba87a338168d8f7865bfbc9bd28f",
+      "note": "Handoff step 1 names `CONFIRMATION_V1_3_1_FREEZE_RECORD.json` as the restatement source, but that path is in the section-0.2 never-open set for this condition and section 6.3 makes any open of a confirmation_v1_3_1 path a blocking violation. The difference is recorded as a deviation and resolved fail-closed: the freeze record was stat-ed, never opened, and the digest is restated from the authorized readable records above.",
+      "path": "experiments/authzgym_semantic_contract_v1_3/CONFIRMATION_PUBLIC_POPULATION.json",
+      "re_derivation_status": "not re-derived, by design",
+      "re_derived": false,
+      "reason": "spent population never opened",
+      "recorded_as": "spent confirmation public",
+      "recorded_digest": "0e20284b...",
+      "restatement_sources": [
+        {
+          "carries": "0e20284be388131d451f5befc22a048b3badba87a338168d8f7865bfbc9bd28f",
+          "file_sha256": "c59c7f5904e32397f839137eed638c20f3924794b2bb33a111e43bad6200bee4",
+          "path": "tools/run_authzgym_confirmation_v1_3_1.py"
+        },
+        {
+          "carries": "0e20284b... (truncated)",
+          "file_sha256": "32bbc01f7c33debd9d2e93c5fbe6015d46f604e4a944ff0c70792481420f6038",
+          "path": "experiments/authzgym_estimator_repair_v1_3_1/REPAIR_STUDY_PREREGISTRATION.md"
+        }
+      ]
+    },
+    {
+      "actual_convention": "canonical_json_sha256 of the seal record with its own `seal_sha256` field omitted; it is NOT the file hash",
+      "canonical_json_sha256": "463d208f0e02fc17fc66dd52a211e365fc464cafcb8344c4d91955d4fb0986b8",
+      "file_sha256": "dbb791c7ac17e8e1618406c780e2b3a8beed78ef50144cdbf91d553a5ff70274",
+      "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_SEAL.json",
+      "re_derivation_status": "re-derived under the canonical-JSON convention; the raw file hash differs, which is exactly the C-2 vocabulary defect section 5.2 fixes",
+      "re_derived": true,
+      "recorded_as": "`CONFIRMATION_V1_3_1_SEAL.json` (handoff section 0.1)",
+      "recorded_digest": "463d208f..."
+    },
+    {
+      "actual_convention": "file_sha256; `88b77c5f...` is SHA-256 of the B-1 component class source text",
+      "re_derivation_status": "re-derived (see reference_check)",
+      "re_derived": true,
+      "recorded_as": "component/protected-file hash",
+      "recorded_digest": "092a7a87..."
+    },
+    {
+      "actual_convention": "file_sha256; `88b77c5f...` is SHA-256 of the B-1 component class source text",
+      "re_derivation_status": "re-derived (see reference_check)",
+      "re_derived": true,
+      "recorded_as": "component/protected-file hash",
+      "recorded_digest": "f9c92317..."
+    },
+    {
+      "actual_convention": "file_sha256; `88b77c5f...` is SHA-256 of the B-1 component class source text",
+      "re_derivation_status": "re-derived (see reference_check)",
+      "re_derived": true,
+      "recorded_as": "component/protected-file hash",
+      "recorded_digest": "88b77c5f..."
+    },
+    {
+      "actual_convention": "file_sha256; `88b77c5f...` is SHA-256 of the B-1 component class source text",
+      "re_derivation_status": "re-derived (see reference_check)",
+      "re_derived": true,
+      "recorded_as": "component/protected-file hash",
+      "recorded_digest": "f0629d3b..."
+    },
+    {
+      "actual_convention": "file_sha256; `88b77c5f...` is SHA-256 of the B-1 component class source text",
+      "re_derivation_status": "re-derived (see reference_check)",
+      "re_derived": true,
+      "recorded_as": "component/protected-file hash",
+      "recorded_digest": "03bfe556..."
+    },
+    {
+      "actual_convention": "file_sha256; `88b77c5f...` is SHA-256 of the B-1 component class source text",
+      "re_derivation_status": "re-derived (see reference_check)",
+      "re_derived": true,
+      "recorded_as": "component/protected-file hash",
+      "recorded_digest": "ac4b8d47..."
+    },
+    {
+      "actual_convention": "file_sha256; `88b77c5f...` is SHA-256 of the B-1 component class source text",
+      "re_derivation_status": "re-derived (see reference_check)",
+      "re_derived": true,
+      "recorded_as": "component/protected-file hash",
+      "recorded_digest": "60b1cb5d..."
+    }
+  ],
+  "schema_version": 1,
+  "seal_restatement": {
+    "actual_convention": "canonical_json_sha256 of the seal record with its own `seal_sha256` field omitted; it is NOT the file hash",
+    "canonical_json_sha256": "463d208f0e02fc17fc66dd52a211e365fc464cafcb8344c4d91955d4fb0986b8",
+    "file_sha256": "dbb791c7ac17e8e1618406c780e2b3a8beed78ef50144cdbf91d553a5ff70274",
+    "note": "Section 5.2: a canonicalized JSON digest is recorded in its own `*_canonical_json_sha256` field and never in place of a file hash.",
+    "path": "experiments/authzgym_confirmation_v1_3_1/CONFIRMATION_V1_3_1_SEAL.json",
+    "re_derived": true,
+    "recorded_as": "`CONFIRMATION_V1_3_1_SEAL.json` in handoff section 0.1",
+    "recorded_digest": "463d208f0e02fc17fc66dd52a211e365fc464cafcb8344c4d91955d4fb0986b8",
+    "recorded_files": {
+      "CONFIRMATION_PUBLIC_POPULATION.json": "1321bcd190c2bfbef884aac55421669401fe321797345ad54556d0f55251787c",
+      "CONFIRMATION_RESTRICTED_POPULATION.json": "ee40f2997bdc6479609aaf13c6e4565dceb575cf28d04ee8e07cd29cc1c5f75b",
+      "CONFIRMATION_SCHEDULE.json": "df338466cf85e88df5a28149357cc6bcdd0df9bb28e780bbd51684e5463c1d7b",
+      "CONFIRMATION_TRANSFORMATION_MAPS.json": "239a9636ae99482562d7fb46f1dff6e04d1eeaa2ccc8cba3acb8dfffa8b9fe2b",
+      "CONFIRMATION_V1_3_1_ANSWERABILITY_VALIDATION.json": "8be26e20882b4ce1975e04017967d6d5cd432192b60ff3d80da947b5e14b90ce",
+      "CONFIRMATION_V1_3_1_DUPLICATION_CHECKS.json": "08e4b6cea514056b3db0ef992f547b122692eedc297ad0b3ad29e51b5629db57",
+      "CONFIRMATION_V1_3_1_FIREWALL_VALIDATION.json": "5573ba047bc59f46095157a60eb106575fb1fe00013fed3f45a6435ca75f9425",
+      "CONFIRMATION_V1_3_1_FREEZE_RECORD.json": "2a17e0642c861b7b67fd5c1bff2f0d2e3254f3d187b27ecb2acc6e502f76ec66",
+      "CONFIRMATION_V1_3_1_ORACLE_VALIDATION.json": "1d52035c11a466c54d82035193b63b71d9f296415e598f936a8fa555147417f8",
+      "CONFIRMATION_V1_3_1_PUBLIC_MANIFEST.json": "2bb8cc85d3fd5cd2ac585d9b38ba94af48be0beec5aa352d5fdf6d1424468f05",
+      "CONFIRMATION_V1_3_1_RESTRICTED_MANIFEST.json": "b7a065bb637bb04de688c9859094b4a62d02329de26e9b64b1a09a03813da50e",
+      "CONFIRMATION_V1_3_1_SOURCE_MANIFEST.json": "318b486c51e10bb3dbd6ec87d4014d73d3a30547c8d645cbe16bbbf866fd7610",
+      "FROZEN_INPUTS_V1_3_1.json": "050fdad07ea902f977c4bbe2a0ccebbc13ba011918b7a8f46ae616bf515f28c2",
+      "annotations/confirmation_v1_3_1_annotations.jsonl": "9bef13556e10e63eb751f9d52745bf81051cbf1873d603cf52fc0c0d5c86a75c"
+    },
+    "seal_sha256_field": "463d208f0e02fc17fc66dd52a211e365fc464cafcb8344c4d91955d4fb0986b8"
+  },
+  "stage": "integrity",
+  "vocabulary": {
+    "*_canonical_json_sha256": "secondary and optional: canonical_json_sha256 of a named value; never used where a file is meant and never used by a gate",
+    "*_embedded_population_hash": "the value of a population file's own internal `population_hash` field, quoted verbatim",
+    "*_file_sha256": "authoritative: file_sha256 of a named path"
+  }
+}

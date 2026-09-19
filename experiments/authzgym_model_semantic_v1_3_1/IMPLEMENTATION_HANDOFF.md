@@ -15,6 +15,16 @@ If a step would require you to choose one, stop at step 12 rather than choosing.
 **Do not start** until ADR-0023 is appended to `DECISIONS.md`. Every
 research-semantic decision is resolved; nothing else is pending.
 
+**Currently authorized range: Steps 1 through 6D, stopping at Step 6D.** The
+pre-inference freeze is a sequence -- Step 6 writes provisional artifacts, Step
+6A implements the Steps 8--10 machinery *dormant* (synthetic fixtures only, no
+model response), Step 6B re-runs the integrity, static and access checks, Step
+6C finalizes the manifest and checklist, Step 6D stops. Steps 7 and beyond
+require a separate later authorization. See
+`IMPLEMENTATION_CLARIFICATION.md` sections 1--3 for why Step 6A is already
+within ADR-0023's authorized scope and for the exhaustive list of what remains
+unauthorized.
+
 Every threshold is fixed. S-13, S-14 and S-15 now carry the numbers the
 accepted research design supplies:
 
@@ -43,6 +53,16 @@ or not. Steps 8, 9 and 10 make this structural rather than a matter of care.
 
 Compute `file_sha256` for each at step start and step end. Any difference halts
 the study.
+
+**One narrow exception, and only the one.** Four living-governance documents --
+`MAP.md`, `plan/ROADMAP.md`, `state/STATUS.yaml`, `state/CONTEXT_PACKET.md` --
+were changed after the Step-1 baseline by the governance reconciliation that
+ADR-0023 item D10 itself mandates and by the accepted ordering clarification.
+`IMPLEMENTATION_CLARIFICATION.md` section 6 accepts those four exact old->new
+transitions, by hash, for the final freeze. They are **not** section-18 frozen
+inputs -- the manifest's `files{}` set contains none of them -- and they are not
+model-facing. Every other protected file, and any later change to these four,
+remains a halting difference.
 
 - Everything under `experiments/authzgym_semantic_contract_v1_3/` **except** the
   four `CONFIRMATION_*` names listed in section 0.2 as never-open. Directory
@@ -139,10 +159,16 @@ Create `tools/verify_authzgym_model_condition.py --stage integrity`.
    re-derivation status. Raw-file SHA-256 is authoritative for every new
    artifact; a canonicalized JSON digest, where useful, goes in its own
    `*_canonical_json_sha256` field and never in place of a file hash; and no
-   field carrying more than one digest type is ever named `population_hash`. Restate `0e20284b...` from
-   `CONFIRMATION_V1_3_1_FREEZE_RECORD.json` **without opening the spent
-   population**; mark it `re_derived: false, reason: "spent population never
-   opened"`.
+   field carrying more than one digest type is ever named `population_hash`.
+   Restate `0e20284b...` **only from records this handoff authorizes you to
+   read** -- `CONFIRMATION_V1_3_1_ORACLE_VALIDATION.json`,
+   `CONFIRMATION_V1_3_1_SEAL.json` or `REPORT.md` -- and **never** by opening
+   `CONFIRMATION_V1_3_1_FREEZE_RECORD.json`, the spent `confirmation_v1_3`
+   population, or any other section-0.2 path. Check existence with `stat` only.
+   Mark the entry `re_derived: false, reason: "restated from authorized readable
+   records; spent population never opened"`.
+   (Corrected under `IMPLEMENTATION_CLARIFICATION.md` section 4.1, DEV-1: the
+   earlier wording named a never-open path as the source.)
 4. Write `INTEGRITY_BASELINE.json` with every hash and the repository commit.
 
 **Acceptance:** every given hash re-derives; zero section-0.2 opens; the
@@ -251,17 +277,119 @@ wiring, do not adjust anything frozen.
 **Stop if:** any canonical `G_i == L_i`; that is an instrument-validity blocker
 (`PREREGISTRATION.md` section 13.7).
 
-## Step 6 -- Freeze
+## Step 6 -- Provisional freeze artifacts
 
 Write `FROZEN_INPUTS_MODEL_V1_3_1.json` (`PREREGISTRATION.md` section 18) and
-`FREEZE_CHECKLIST.md` with every item checked and reviewer/date fields. Use the
+`FREEZE_CHECKLIST.md` with every item recorded and reviewer/date fields. Use the
 section-5 convention throughout. Include the repository commit and dirty status.
 Recompute the manifest hash with its own field omitted, then store it.
 
-**Acceptance:** every listed artifact present and matched; checklist complete.
-**No model call may be made before this step completes.**
+The freeze is a **sequence**, not a single step: sections 12.1 and 18 require
+the scoring, gate and error-propagation machinery and its tests to exist before
+model call 1, so `freeze_complete` stays `false` here and is finalized at Step
+6C. Record any section-12.1 or section-18 item you cannot yet satisfy as
+`not_satisfied` with its authority and reason, and continue to Step 6A.
 
-## Step 7 -- Development inference, 112 logical calls
+**Acceptance:** every artifact that exists is present and matched; every
+outstanding item is recorded with its authority. `freeze_complete: false`.
+**No model call may be made at this step or at any of 6A--6D.**
+
+## Step 6A -- Dormant implementation and tests required by sections 12.1 and 18
+
+Authorized by ADR-0023's `Authorized scope` bullet ("scorer wiring,
+error-propagation classification and tests") and ordered here by
+`IMPLEMENTATION_CLARIFICATION.md` section 2. This step builds the Steps 8--10
+machinery; it does **not** execute it against any model response.
+
+Implement and unit-test, exactly as Steps 8, 9 and 10 specify them:
+
+- the scoring wiring of Step 8, including choice-set computation, the per-repeat
+  primary endpoint, S-7 as `diagnostic_only`, and gates S-13, S-14 and S-15;
+- the error-propagation classification and the `D0`--`D4` evaluator-only
+  substitutions of Step 9;
+- the gate and eligibility machinery of Step 10, including the three
+  `PREREGISTRATION.md` section-12.1 structural guarantees:
+  `GATED_DEVELOPMENT_ITEMS` as a frozen literal set excluding `11`, the
+  `DiagnosticOnly` wrapper whose `verdict` access raises `DiagnosticOnlyMisuse`,
+  and the total-S-7-failure test that must still yield `pass` and
+  `development_eligible`;
+- every test file named in section 0.3:
+  `tests/test_model_semantic_v1_3_1_choice_sets.py`,
+  `tests/test_model_semantic_v1_3_1_error_classes.py`,
+  `tests/test_model_semantic_v1_3_1_gates.py`.
+
+**Dormant means dormant.** Exercise this machinery only against synthetic
+fixtures authored from the published v1.3 grammar and hand-constructed response
+objects. Do not run it against any model response -- none exists and none is
+authorized to exist. Do not produce any scored number from a real response. The
+only real-data computation authorized at this point remains the Step-5
+gold-adequacy check, already complete.
+
+**Acceptance:** all named modules and tests exist; the full test suite passes;
+the three section-12.1 guarantees are demonstrated by passing tests, including
+the total-failure test.
+**Stop if:** a test would require a threshold, denominator or interpretation the
+preregistration does not fix, or a fixture would have to be derived from a real
+response.
+
+## Step 6B -- Final integrity, static and access checks
+
+Over the **complete** implementation set now on disk:
+
+1. re-run the Step-1 integrity pass; every protected hash must still match and
+   `git status` must still be clean outside this condition's directory;
+2. re-run the Step-3 static check: no module or tool of this condition bypasses
+   `AuditedReader` for a protected or confirmation path;
+3. validate `ACCESS_LEDGER.jsonl` in full -- schema-complete, `tool_sha256`,
+   `process_id`, `file_sha256` and `authorization` present on every record, and
+   **zero** never-open opens for every stage that ran under the reader;
+4. append the single `retrospective_disclosure` record for DEV-2 required by
+   `IMPLEMENTATION_CLARIFICATION.md` section 4.2, with
+   `occurred_before_audited_reader: true` and a `disclosed_at` timestamp. Do not
+   fabricate an original timestamp and do not rewrite any existing record.
+
+5. write `GOVERNANCE_REBASELINE.json` per `IMPLEMENTATION_CLARIFICATION.md`
+   section 6, then re-run item 1 against **the original Step-1 baseline plus
+   exactly these four accepted transitions**. For each of the four files record:
+   `path`; `step1_file_sha256`; `current_file_sha256`; the authorized governance
+   change responsible; `model_facing: false`; `accepted_for_final_freeze: true`.
+   The record must also carry, as explicit fields, the seven statements of
+   clarification section 6.3. Assert that each `current_file_sha256` equals the
+   value section 6.2 records; a mismatch is **new drift** and halts.
+
+**Acceptance:** all five pass, with the four-file drift resolved only through
+the explicit rebaseline and every other baseline entry matching unchanged.
+**Stop if:** any protected hash other than those four differs, any of the four
+differs from its section-6.2 accepted value, any bypass is found, or any
+never-open open is recorded for an audited stage. Do **not** restore the Step-1
+versions of the four files, and do **not** edit `INTEGRITY_BASELINE.json`.
+
+## Step 6C -- Finalize the frozen manifest and checklist
+
+Rebuild `FROZEN_INPUTS_MODEL_V1_3_1.json` to include every module and test added
+at Step 6A, then rebuild `FREEZE_CHECKLIST.md`:
+
+- items 9 and 10 move to `pass` only when the section-12.1 guarantees and the
+  complete section-18 implementation are present, tested and hashed;
+- the protected-file item moves to `pass` only when the sole outstanding
+  differences are the four accepted governance transitions, each matching
+  `GOVERNANCE_REBASELINE.json`, and `GOVERNANCE_REBASELINE.json` itself is
+  present and hashed into the manifest;
+- item 13 moves to `acknowledged`, citing
+  `IMPLEMENTATION_CLARIFICATION.md` section 4;
+- `freeze_complete` becomes `true` **only if every item passes**. If any item is
+  still outstanding, leave it `false`, record the item, and stop.
+
+**Acceptance:** manifest matches the tree; checklist complete; reviewer and date
+fields present; `freeze_complete: true`.
+
+## Step 6D -- Stop
+
+Stop here. Report: files created, hashes, checklist status, `freeze_complete`,
+`git status`, and every blocker and deviation. Make **no** model or provider
+call. Then wait for the separate Step-7 development-inference authorization.
+
+## Step 7 -- Development inference, 112 logical calls (requires separate authorization)
 
 `tools/run_authzgym_model_semantic_development.py`.
 
@@ -283,7 +411,9 @@ Artifacts: `development/attempts.jsonl`, `development/responses.jsonl`,
 None of these is permission to tune, escalate, reduce the schedule, or retry
 semantics.
 
-## Step 8 -- Scoring
+## Step 8 -- Scoring (implemented dormant at Step 6A; executed only under a separate Step-7 authorization)
+
+Implement and test this step's content at **Step 6A**, against synthetic fixtures only. Execute it against real model responses only after Step 7 is separately authorized.
 
 `tools/score_authzgym_model_semantic.py --stage score --split development`.
 
@@ -347,7 +477,9 @@ strict passes; `M == G` passes; `M` containing one target outside `G` fails;
 missing response fails; the canonical ordinal is provably not read on the
 choice-set path (permute it, assert byte-identical `M_i` and `G_i`).
 
-## Step 9 -- Error propagation
+## Step 9 -- Error propagation (implemented dormant at Step 6A; executed only under a separate Step-7 authorization)
+
+Implement and test this step's content at **Step 6A**, against synthetic fixtures only. Execute it against real model responses only after Step 7 is separately authorized.
 
 Implement `PREREGISTRATION.md` section 10 in
 `src/ser/evaluation/authz_model_semantic_v1_3_1.py`:
@@ -378,7 +510,9 @@ passed. Add a test asserting that the effect vector B-1 receives is byte-equal
 to the model's submitted effect vector for every case, including every case with
 an S-7 violation.
 
-## Step 10 -- Gates and eligibility
+## Step 10 -- Gates and eligibility (implemented dormant at Step 6A; executed only under a separate Step-7 authorization)
+
+Implement and test this step's content at **Step 6A**, against synthetic fixtures only. Execute it against real model responses only after Step 7 is separately authorized.
 
 `tests/test_model_semantic_v1_3_1_gates.py` plus
 `tools/score_authzgym_model_semantic.py --stage gates`.
@@ -434,7 +568,10 @@ Hash both under the section-5 convention. `DEVELOPMENT_REPORT.json` must
 re-derive under `file_sha256` -- verify it, since a failure of exactly this kind
 is a recorded defect of the preceding study.
 
-## Step 12 -- Stop
+## Step 12 -- Stop after development scoring
+
+Reached only under a separate Step-7 authorization. The **pre-inference** stop
+point for the currently authorized work is Step 6D, not this step.
 
 Stop here. Do **not** generate, list for content, open or call the confirmation
 population. Report: files created, hashes, gates, outcome label, `git status`,
