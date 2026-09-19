@@ -237,8 +237,43 @@ Allowed statuses: `planned`, `active`, `done`.
   model substitution or escalation, prompt tuning, retry-policy changes, Jev,
   and closed-loop execution or architecture work all remain unauthorized; each
   requires its own later decision.
-- current cursor: model-semantic study accepted; zero-inference implementation
-  in progress, freeze incomplete. Handoff steps 1--6 are complete with zero
+- N1 development result: the 112-call `model-semantic-v1.3.1-N1` development
+  execution occurred **without the required separate Step-7 authorization**.
+  ADR-0023 had explicitly withheld "model or provider inference of any kind; the
+  112 development calls"; the run recorded `authorizing_adr: ADR-0023` and cited
+  preregistration section 14.1, a latent defect of that preregistration which
+  ADR-0023 already overrode and which ADR-0024 has now struck prospectively.
+  This is a **procedural authorization deviation** and is **not** retroactively
+  authorized. Independent verification re-derived the entire frozen scientific
+  and acquisition condition -- execution checkout and manifest, model condition,
+  the exact 112-call schedule in frozen order, all 112 request hashes
+  re-derived from the frozen population, prompt and model condition, supervised
+  transport and retry policy (112 first attempts, zero retries, zero transport
+  failures), attempt accounting at `$0.05775615` against the `$2.50` ceiling,
+  the raw-response lock written before every scoring artifact, the scorer and
+  gate implementation byte-matching the manifest, and no tuning, rescue,
+  substitution, threshold change or confirmation access. ADR-0024 therefore
+  accepts the preserved run as the N1 development measurement and freezes its
+  result unaltered: verdict `fail`, outcome `semantic_screen_below_threshold`
+  (S-7 violations 189), `development_eligible: false`, choice-set preservation
+  **0/8 on repeat 1 and 0/8 on repeat 2** with repeat agreement 8/8, failed
+  gated items 13--21, and S-7 `diagnostic_only` at `C_response 0.1696`. The
+  classifier is `model_semantic_compatibility_diagnostic`; it is not an `E-*`
+  record and promotes no concept. N1 is not rerun, the locked artifacts are not
+  edited, and `PROCEDURAL_CORRIGENDUM.md` records the incorrect
+  `authorizing_adr` field, the reporting-stage wording, and the D0--D4
+  serialization defect.
+- current cursor: N1 development measurement preserved and frozen with a
+  recorded procedural deviation; bounded zero-inference postmortem authorized
+  and not yet executed. ADR-0024 authorizes only the localization specified in
+  `experiments/authzgym_model_semantic_v1_3_1/POSTMORTEM_SPECIFICATION.md`, over
+  the locked responses, certified development gold, the frozen v1.3 contract and
+  truth table, frozen B-1 and the frozen D0--D4 machinery. It is exploratory
+  evidence, not a registered condition: it may not modify the verdict, satisfy
+  or rerun any gate, create a threshold or an `E-*` record, alter B-1, v1.3, the
+  model, the prompt, the retry policy or any population, run inference, access
+  or generate confirmation, or authorize N2. A fresh Astra research-design
+  adjudication may use the completed postmortem to choose the next experiment. Handoff steps 1--6 are complete with zero
   provider calls: integrity baseline, zero-inference model-condition
   verification and cost gate (`patchersniper_praneeth/gpt-5.4-nano`, projected
   worst case `$0.69888` against the `$2.50` ceiling), audited reader and access

@@ -1,0 +1,55 @@
+{
+  "authorizing_adr": "ADR-0023",
+  "condition_id": "model-semantic-v1.3.1-N1",
+  "created_utc": "2026-09-19T08:04:54Z",
+  "lock_status": "complete_development_raw_response_set_locked",
+  "manifest": {
+    "manifest_file_sha256": "f72f3eef97013ad83e21a4bf273c2ffd4fcdb7eea022ee53e314ad69ddf35d3b",
+    "manifest_sha256": "f2a68728c8742c2a03e685487a07aebcf77fba791008a31c5df7d9116b67a2b6"
+  },
+  "raw_artifacts": {
+    "attempts": {
+      "line_count": 112,
+      "path": "experiments/authzgym_model_semantic_v1_3_1/development/attempts.jsonl",
+      "file_sha256": "47a5a8c3d1bbbc90ae735081621c138b43832041f7339311b25d47210de04d23"
+    },
+    "responses": {
+      "line_count": 112,
+      "path": "experiments/authzgym_model_semantic_v1_3_1/development/responses.jsonl",
+      "file_sha256": "841427ab8334f3fa7e89a21ae93a8e0ee678824c98fee80048b0294ac0bdd11e"
+    },
+    "spend_ledger": {
+      "line_count": 112,
+      "path": "experiments/authzgym_model_semantic_v1_3_1/development/spend_ledger.jsonl",
+      "file_sha256": "4ed23722564bbff99b4668e2fb45e7b4bd02e7879d1ade4fee006186931693b0"
+    },
+    "transport_events": {
+      "line_count": 229,
+      "path": "experiments/authzgym_model_semantic_v1_3_1/development/transport_events.jsonl",
+      "file_sha256": "0ecacd8ec8e2996c0705e6dd55e7f2c7a9adbd65c16ad53c81a3e5fc7c8b6582"
+    },
+    "development_access_ledger": {
+      "line_count": 24,
+      "path": "experiments/authzgym_model_semantic_v1_3_1/DEVELOPMENT_ACCESS_LEDGER.jsonl",
+      "file_sha256": "2851515bf6fe6f6b1979e4657f3c6a47ff4fb3accf4545d33f3ff5a3c4741173"
+    }
+  },
+  "schedule": {
+    "logical_calls_completed": 112,
+    "logical_calls_planned": 112,
+    "schedule_complete": true,
+    "submissions": 112
+  },
+  "accounting": {
+    "actual_spend_usd": 0.05775615,
+    "hard_spend_ceiling_usd": 2.5,
+    "within_ceiling": true
+  },
+  "integrity": {
+    "all_attempts_structurally_valid": true,
+    "transport_failures": 0,
+    "model_ids": ["patchersniper_praneeth/gpt-5.4-nano"],
+    "system_fingerprint_values": [""],
+    "system_fingerprint_provider_field_unavailable": true
+  }
+}

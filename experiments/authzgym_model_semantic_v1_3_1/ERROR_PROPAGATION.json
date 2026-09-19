@@ -1,0 +1,1411 @@
+{
+  "D0_D3_localization": [
+    {
+      "D0_choice_set": [
+        1
+      ],
+      "D3_choice_set": [
+        1
+      ],
+      "case_id": "asv1-d-2b1117581d19--base_entry--594c384449#repeat1",
+      "decision_level_contribution_of_s7_violations": false
+    },
+    {
+      "D0_choice_set": [
+        1
+      ],
+      "D3_choice_set": [
+        4
+      ],
+      "case_id": "asv1-d-2b1117581d19--base_entry--594c384449#repeat2",
+      "decision_level_contribution_of_s7_violations": true
+    },
+    {
+      "D0_choice_set": [
+        3
+      ],
+      "D3_choice_set": [
+        2
+      ],
+      "case_id": "asv1-d-3a6b906af392--base_entry--4078dd725c#repeat1",
+      "decision_level_contribution_of_s7_violations": true
+    },
+    {
+      "D0_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "D3_choice_set": [
+        2
+      ],
+      "case_id": "asv1-d-3a6b906af392--base_entry--4078dd725c#repeat2",
+      "decision_level_contribution_of_s7_violations": true
+    },
+    {
+      "D0_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "D3_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "case_id": "asv1-d-4579914d0fa5--base_entry--9ba29e87ed#repeat1",
+      "decision_level_contribution_of_s7_violations": false
+    },
+    {
+      "D0_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "D3_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "case_id": "asv1-d-4579914d0fa5--base_entry--9ba29e87ed#repeat2",
+      "decision_level_contribution_of_s7_violations": false
+    },
+    {
+      "D0_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "D3_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "case_id": "asv1-d-5e6417ce899f--base_entry--435260e32a#repeat1",
+      "decision_level_contribution_of_s7_violations": false
+    },
+    {
+      "D0_choice_set": [
+        1,
+        3
+      ],
+      "D3_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "case_id": "asv1-d-5e6417ce899f--base_entry--435260e32a#repeat2",
+      "decision_level_contribution_of_s7_violations": false
+    },
+    {
+      "D0_choice_set": [
+        1,
+        3,
+        5
+      ],
+      "D3_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "case_id": "asv1-d-8883a56f6778--base_entry--1d3d70ec34#repeat1",
+      "decision_level_contribution_of_s7_violations": false
+    },
+    {
+      "D0_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "D3_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "case_id": "asv1-d-8883a56f6778--base_entry--1d3d70ec34#repeat2",
+      "decision_level_contribution_of_s7_violations": false
+    },
+    {
+      "D0_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "D3_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "case_id": "asv1-d-96ebfd30761f--base_entry--b8ee841a9a#repeat1",
+      "decision_level_contribution_of_s7_violations": false
+    },
+    {
+      "D0_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "D3_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "case_id": "asv1-d-96ebfd30761f--base_entry--b8ee841a9a#repeat2",
+      "decision_level_contribution_of_s7_violations": false
+    },
+    {
+      "D0_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "D3_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "case_id": "asv1-d-f5f54c9c8670--base_entry--5788f5bc53#repeat1",
+      "decision_level_contribution_of_s7_violations": false
+    },
+    {
+      "D0_choice_set": [
+        2,
+        5
+      ],
+      "D3_choice_set": [
+        5
+      ],
+      "case_id": "asv1-d-f5f54c9c8670--base_entry--5788f5bc53#repeat2",
+      "decision_level_contribution_of_s7_violations": true
+    },
+    {
+      "D0_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "D3_choice_set": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "case_id": "asv1-d-fd4ff6d021dc--base_entry--369b6a44e8#repeat1",
+      "decision_level_contribution_of_s7_violations": false
+    },
+    {
+      "D0_choice_set": [
+        1,
+        2
+      ],
+      "D3_choice_set": [
+        1
+      ],
+      "case_id": "asv1-d-fd4ff6d021dc--base_entry--369b6a44e8#repeat2",
+      "decision_level_contribution_of_s7_violations": false
+    }
+  ],
+  "authorization": "ADR-0023 section 14.1; PREREGISTRATION.md section 10; IMPLEMENTATION_HANDOFF.md step 9 (implemented dormant at step 6A)",
+  "authorizing_adr": "ADR-0023",
+  "condition_id": "model-semantic-v1.3.1-N1",
+  "error_class_census": {
+    "decision_changing": 7,
+    "decision_harmless": 0,
+    "malformed_or_missing": 0,
+    "structurally_catastrophic": 9,
+    "value_harmless": 0
+  },
+  "error_classes_are_exhaustive_and_exclusive": true,
+  "evaluator_only_diagnostic_substitution": {
+    "D0_D3_pair_localizes": "section 8.6 consequence 10",
+    "measured_response_unchanged": true,
+    "row_label": "evaluator_only_diagnostic_substitution",
+    "rows": {
+      "D0": {
+        "M_i_is_subset_of_G_i": false,
+        "case_id": "asv1-d-f5f54c9c8670--base_entry--5788f5bc53#repeat2",
+        "choice_set": [
+          2,
+          5
+        ],
+        "effects_source": "model",
+        "gold_values": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 2.0,
+          "5": 2.0
+        },
+        "identifier": "D0",
+        "isolates": "the measured result (not a substitution)",
+        "mean_normalized_regret": 1.0,
+        "measured_result": true,
+        "nondiscriminating": false,
+        "preserved_equivalent": false,
+        "relations_source": "model",
+        "row_type": "evaluator_only_diagnostic_substitution",
+        "schema_version": 1,
+        "selected": 2,
+        "top1": false,
+        "top2": true,
+        "value_vector": {
+          "1": 1.0,
+          "2": 2.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 2.0
+        }
+      },
+      "D1": {
+        "M_i_is_subset_of_G_i": true,
+        "case_id": "asv1-d-f5f54c9c8670--base_entry--5788f5bc53#repeat2",
+        "choice_set": [
+          5
+        ],
+        "effects_source": "gold",
+        "gold_values": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 2.0,
+          "5": 2.0
+        },
+        "identifier": "D1",
+        "isolates": "the decision cost of the model's effect errors",
+        "mean_normalized_regret": 0.0,
+        "measured_result": false,
+        "nondiscriminating": false,
+        "preserved_equivalent": true,
+        "relations_source": "model",
+        "row_type": "evaluator_only_diagnostic_substitution",
+        "schema_version": 1,
+        "selected": 5,
+        "top1": true,
+        "top2": true,
+        "value_vector": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 2.0
+        }
+      },
+      "D2": {
+        "M_i_is_subset_of_G_i": false,
+        "case_id": "asv1-d-f5f54c9c8670--base_entry--5788f5bc53#repeat2",
+        "choice_set": [
+          3,
+          4,
+          5
+        ],
+        "effects_source": "model",
+        "gold_values": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 2.0,
+          "5": 2.0
+        },
+        "identifier": "D2",
+        "isolates": "the decision cost of the model's relation errors",
+        "mean_normalized_regret": 1.0,
+        "measured_result": false,
+        "nondiscriminating": false,
+        "preserved_equivalent": false,
+        "relations_source": "gold",
+        "row_type": "evaluator_only_diagnostic_substitution",
+        "schema_version": 1,
+        "selected": 3,
+        "top1": false,
+        "top2": false,
+        "value_vector": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 2.0,
+          "4": 2.0,
+          "5": 2.0
+        }
+      },
+      "D3": {
+        "M_i_is_subset_of_G_i": true,
+        "case_id": "asv1-d-f5f54c9c8670--base_entry--5788f5bc53#repeat2",
+        "choice_set": [
+          5
+        ],
+        "effects_source": "effect_from_facts(model facts)",
+        "gold_values": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 2.0,
+          "5": 2.0
+        },
+        "identifier": "D3",
+        "isolates": "S-7 localization: effect errors downstream of facts or not",
+        "mean_normalized_regret": 0.0,
+        "measured_result": false,
+        "nondiscriminating": false,
+        "preserved_equivalent": true,
+        "relations_source": "model",
+        "row_type": "evaluator_only_diagnostic_substitution",
+        "schema_version": 1,
+        "selected": 5,
+        "top1": true,
+        "top2": true,
+        "value_vector": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 2.0
+        }
+      },
+      "D4": {
+        "M_i_is_subset_of_G_i": true,
+        "case_id": "asv1-d-f5f54c9c8670--base_entry--5788f5bc53#repeat2",
+        "choice_set": [
+          4,
+          5
+        ],
+        "effects_source": "gold",
+        "gold_values": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 2.0,
+          "5": 2.0
+        },
+        "identifier": "D4",
+        "isolates": "the gold reference",
+        "mean_normalized_regret": 0.4666666666666666,
+        "measured_result": false,
+        "nondiscriminating": false,
+        "preserved_equivalent": true,
+        "relations_source": "gold",
+        "row_type": "evaluator_only_diagnostic_substitution",
+        "schema_version": 1,
+        "selected": 4,
+        "top1": false,
+        "top2": true,
+        "value_vector": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 2.0,
+          "5": 2.0
+        }
+      }
+    },
+    "schema_version": 1,
+    "substituted_results_never_satisfy_a_gate": true
+  },
+  "localization": {
+    "candidate_effect_confusion": {
+      "c0": {
+        "neutral->unknown": 2,
+        "unknown->unknown": 14
+      },
+      "c1": {
+        "contradict->support": 3,
+        "neutral->contradict": 1,
+        "support->contradict": 10,
+        "support->support": 1,
+        "unknown->contradict": 1
+      },
+      "c2": {
+        "contradict->support": 1,
+        "contradict->unknown": 1,
+        "neutral->unknown": 1,
+        "support->support": 2,
+        "unknown->support": 1,
+        "unknown->unknown": 10
+      },
+      "c3": {
+        "contradict->contradict": 1,
+        "contradict->support": 3,
+        "neutral->contradict": 1,
+        "support->contradict": 9,
+        "support->support": 1,
+        "unknown->contradict": 1
+      }
+    },
+    "directional_effect_subset": {
+      "false_negative": 31,
+      "false_positive": 27,
+      "true_positive": 5
+    },
+    "fact_slot_confusion": {
+      "f0": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "true_negative": 12,
+        "true_positive": 4
+      },
+      "f1": {
+        "false_negative": 0,
+        "false_positive": 3,
+        "true_negative": 9,
+        "true_positive": 4
+      },
+      "f10": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "true_negative": 16,
+        "true_positive": 0
+      },
+      "f11": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "true_negative": 16,
+        "true_positive": 0
+      },
+      "f12": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "true_negative": 16,
+        "true_positive": 0
+      },
+      "f13": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "true_negative": 16,
+        "true_positive": 0
+      },
+      "f14": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "true_negative": 16,
+        "true_positive": 0
+      },
+      "f15": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "true_negative": 16,
+        "true_positive": 0
+      },
+      "f16": {
+        "false_negative": 16,
+        "false_positive": 0,
+        "true_negative": 0,
+        "true_positive": 0
+      },
+      "f2": {
+        "false_negative": 5,
+        "false_positive": 0,
+        "true_negative": 4,
+        "true_positive": 7
+      },
+      "f3": {
+        "false_negative": 3,
+        "false_positive": 0,
+        "true_negative": 12,
+        "true_positive": 1
+      },
+      "f4": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "true_negative": 16,
+        "true_positive": 0
+      },
+      "f5": {
+        "false_negative": 0,
+        "false_positive": 0,
+        "true_negative": 16,
+        "true_positive": 0
+      },
+      "f6": {
+        "false_negative": 1,
+        "false_positive": 0,
+        "true_negative": 12,
+        "true_positive": 3
+      },
+      "f7": {
+        "false_negative": 1,
+        "false_positive": 0,
+        "true_negative": 12,
+        "true_positive": 3
+      },
+      "f8": {
+        "false_negative": 11,
+        "false_positive": 0,
+        "true_negative": 4,
+        "true_positive": 1
+      },
+      "f9": {
+        "false_negative": 4,
+        "false_positive": 1,
+        "true_negative": 3,
+        "true_positive": 8
+      }
+    },
+    "per_case_paired_readout": [
+      {
+        "G_i": [
+          5
+        ],
+        "M_i": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "case_id": "asv1-d-5e6417ce899f--base_entry--435260e32a",
+        "gold_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'contradict')"
+        ],
+        "model_salient_tags": [
+          "('context', 'support')",
+          "('membership', 'support')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 2.0
+        },
+        "value_vector_model": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        }
+      },
+      {
+        "G_i": [
+          5
+        ],
+        "M_i": [
+          1,
+          3
+        ],
+        "case_id": "asv1-d-5e6417ce899f--base_entry--435260e32a",
+        "gold_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'contradict')"
+        ],
+        "model_salient_tags": [
+          "('membership', 'support')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 2.0
+        },
+        "value_vector_model": {
+          "1": 2.0,
+          "2": 1.0,
+          "3": 2.0,
+          "4": 1.0,
+          "5": 1.0
+        }
+      },
+      {
+        "G_i": [
+          2
+        ],
+        "M_i": [
+          3
+        ],
+        "case_id": "asv1-d-3a6b906af392--base_entry--4078dd725c",
+        "gold_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'support')"
+        ],
+        "model_salient_tags": [
+          "('context', 'support')",
+          "('membership', 'contradict')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 1.0,
+          "2": 2.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        },
+        "value_vector_model": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 2.0,
+          "4": 1.0,
+          "5": 1.0
+        }
+      },
+      {
+        "G_i": [
+          2
+        ],
+        "M_i": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "case_id": "asv1-d-3a6b906af392--base_entry--4078dd725c",
+        "gold_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'support')"
+        ],
+        "model_salient_tags": [
+          "('context', 'support')",
+          "('membership', 'contradict')",
+          "('role', 'contradict')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 1.0,
+          "2": 2.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        },
+        "value_vector_model": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        }
+      },
+      {
+        "G_i": [
+          1
+        ],
+        "M_i": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "case_id": "asv1-d-96ebfd30761f--base_entry--b8ee841a9a",
+        "gold_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'contradict')",
+          "('role', 'support')"
+        ],
+        "model_salient_tags": [],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 2.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        },
+        "value_vector_model": {
+          "1": 2.0,
+          "2": 2.0,
+          "3": 2.0,
+          "4": 2.0,
+          "5": 2.0
+        }
+      },
+      {
+        "G_i": [
+          1
+        ],
+        "M_i": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "case_id": "asv1-d-96ebfd30761f--base_entry--b8ee841a9a",
+        "gold_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'contradict')",
+          "('role', 'support')"
+        ],
+        "model_salient_tags": [
+          "('context', 'support')",
+          "('membership', 'support')",
+          "('role', 'support')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 2.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        },
+        "value_vector_model": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        }
+      },
+      {
+        "G_i": [
+          3,
+          4
+        ],
+        "M_i": [
+          1
+        ],
+        "case_id": "asv1-d-2b1117581d19--base_entry--594c384449",
+        "gold_salient_tags": [
+          "('context', 'support')",
+          "('membership', 'contradict')"
+        ],
+        "model_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'support')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 2.0,
+          "4": 2.0,
+          "5": 1.0
+        },
+        "value_vector_model": {
+          "1": 2.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        }
+      },
+      {
+        "G_i": [
+          3,
+          4
+        ],
+        "M_i": [
+          1
+        ],
+        "case_id": "asv1-d-2b1117581d19--base_entry--594c384449",
+        "gold_salient_tags": [
+          "('context', 'support')",
+          "('membership', 'contradict')"
+        ],
+        "model_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'support')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 2.0,
+          "4": 2.0,
+          "5": 1.0
+        },
+        "value_vector_model": {
+          "1": 2.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        }
+      },
+      {
+        "G_i": [
+          1
+        ],
+        "M_i": [
+          1,
+          3,
+          5
+        ],
+        "case_id": "asv1-d-8883a56f6778--base_entry--1d3d70ec34",
+        "gold_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'contradict')"
+        ],
+        "model_salient_tags": [
+          "('context', 'support')",
+          "('membership', 'support')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 2.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        },
+        "value_vector_model": {
+          "1": 2.0,
+          "2": 1.0,
+          "3": 2.0,
+          "4": 1.0,
+          "5": 2.0
+        }
+      },
+      {
+        "G_i": [
+          1
+        ],
+        "M_i": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "case_id": "asv1-d-8883a56f6778--base_entry--1d3d70ec34",
+        "gold_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'contradict')"
+        ],
+        "model_salient_tags": [
+          "('context', 'support')",
+          "('membership', 'support')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 2.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        },
+        "value_vector_model": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        }
+      },
+      {
+        "G_i": [
+          1
+        ],
+        "M_i": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "case_id": "asv1-d-4579914d0fa5--base_entry--9ba29e87ed",
+        "gold_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'support')"
+        ],
+        "model_salient_tags": [
+          "('context', 'support')",
+          "('membership', 'support')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 2.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        },
+        "value_vector_model": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        }
+      },
+      {
+        "G_i": [
+          1
+        ],
+        "M_i": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "case_id": "asv1-d-4579914d0fa5--base_entry--9ba29e87ed",
+        "gold_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'support')"
+        ],
+        "model_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'contradict')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 2.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        },
+        "value_vector_model": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        }
+      },
+      {
+        "G_i": [
+          3
+        ],
+        "M_i": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "case_id": "asv1-d-fd4ff6d021dc--base_entry--369b6a44e8",
+        "gold_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'contradict')",
+          "('role', 'support')"
+        ],
+        "model_salient_tags": [
+          "('context', 'support')",
+          "('membership', 'support')",
+          "('role', 'support')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 2.0,
+          "4": 1.0,
+          "5": 1.0
+        },
+        "value_vector_model": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        }
+      },
+      {
+        "G_i": [
+          3
+        ],
+        "M_i": [
+          1,
+          2
+        ],
+        "case_id": "asv1-d-fd4ff6d021dc--base_entry--369b6a44e8",
+        "gold_salient_tags": [
+          "('context', 'contradict')",
+          "('membership', 'contradict')",
+          "('role', 'support')"
+        ],
+        "model_salient_tags": [
+          "('context', 'support')",
+          "('membership', 'support')",
+          "('role', 'contradict')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 2.0,
+          "4": 1.0,
+          "5": 1.0
+        },
+        "value_vector_model": {
+          "1": 2.0,
+          "2": 2.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        }
+      },
+      {
+        "G_i": [
+          4,
+          5
+        ],
+        "M_i": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "case_id": "asv1-d-f5f54c9c8670--base_entry--5788f5bc53",
+        "gold_salient_tags": [
+          "('context', 'support')",
+          "('membership', 'contradict')"
+        ],
+        "model_salient_tags": [
+          "('context', 'contradict')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 2.0,
+          "5": 2.0
+        },
+        "value_vector_model": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 1.0
+        }
+      },
+      {
+        "G_i": [
+          4,
+          5
+        ],
+        "M_i": [
+          2,
+          5
+        ],
+        "case_id": "asv1-d-f5f54c9c8670--base_entry--5788f5bc53",
+        "gold_salient_tags": [
+          "('context', 'support')",
+          "('membership', 'contradict')"
+        ],
+        "model_salient_tags": [
+          "('context', 'support')",
+          "('membership', 'support')"
+        ],
+        "regret_gold": null,
+        "regret_model": null,
+        "selected_gold": null,
+        "selected_model": null,
+        "top1_gold": true,
+        "top1_model": false,
+        "top2_gold": null,
+        "top2_model": null,
+        "value_vector_gold": {
+          "1": 1.0,
+          "2": 1.0,
+          "3": 1.0,
+          "4": 2.0,
+          "5": 2.0
+        },
+        "value_vector_model": {
+          "1": 1.0,
+          "2": 2.0,
+          "3": 1.0,
+          "4": 1.0,
+          "5": 2.0
+        }
+      }
+    ],
+    "relation_confusion": {
+      "t1:r0": {
+        "agree_false": 16,
+        "agree_true": 0,
+        "gold_only": 0,
+        "model_only": 0
+      },
+      "t1:r1": {
+        "agree_false": 9,
+        "agree_true": 3,
+        "gold_only": 3,
+        "model_only": 1
+      },
+      "t1:r2": {
+        "agree_false": 10,
+        "agree_true": 1,
+        "gold_only": 5,
+        "model_only": 0
+      },
+      "t1:r3": {
+        "agree_false": 13,
+        "agree_true": 0,
+        "gold_only": 2,
+        "model_only": 1
+      },
+      "t1:r4": {
+        "agree_false": 11,
+        "agree_true": 0,
+        "gold_only": 2,
+        "model_only": 3
+      },
+      "t2:r0": {
+        "agree_false": 12,
+        "agree_true": 1,
+        "gold_only": 3,
+        "model_only": 0
+      },
+      "t2:r1": {
+        "agree_false": 13,
+        "agree_true": 2,
+        "gold_only": 0,
+        "model_only": 1
+      },
+      "t2:r2": {
+        "agree_false": 16,
+        "agree_true": 0,
+        "gold_only": 0,
+        "model_only": 0
+      },
+      "t2:r3": {
+        "agree_false": 6,
+        "agree_true": 3,
+        "gold_only": 7,
+        "model_only": 0
+      },
+      "t2:r4": {
+        "agree_false": 15,
+        "agree_true": 0,
+        "gold_only": 0,
+        "model_only": 1
+      },
+      "t3:r0": {
+        "agree_false": 16,
+        "agree_true": 0,
+        "gold_only": 0,
+        "model_only": 0
+      },
+      "t3:r1": {
+        "agree_false": 10,
+        "agree_true": 2,
+        "gold_only": 4,
+        "model_only": 0
+      },
+      "t3:r2": {
+        "agree_false": 12,
+        "agree_true": 2,
+        "gold_only": 2,
+        "model_only": 0
+      },
+      "t3:r3": {
+        "agree_false": 10,
+        "agree_true": 1,
+        "gold_only": 5,
+        "model_only": 0
+      },
+      "t3:r4": {
+        "agree_false": 14,
+        "agree_true": 0,
+        "gold_only": 0,
+        "model_only": 2
+      },
+      "t4:r0": {
+        "agree_false": 12,
+        "agree_true": 0,
+        "gold_only": 4,
+        "model_only": 0
+      },
+      "t4:r1": {
+        "agree_false": 14,
+        "agree_true": 0,
+        "gold_only": 2,
+        "model_only": 0
+      },
+      "t4:r2": {
+        "agree_false": 12,
+        "agree_true": 2,
+        "gold_only": 2,
+        "model_only": 0
+      },
+      "t4:r3": {
+        "agree_false": 10,
+        "agree_true": 2,
+        "gold_only": 4,
+        "model_only": 0
+      },
+      "t4:r4": {
+        "agree_false": 12,
+        "agree_true": 0,
+        "gold_only": 0,
+        "model_only": 4
+      },
+      "t5:r0": {
+        "agree_false": 12,
+        "agree_true": 1,
+        "gold_only": 3,
+        "model_only": 0
+      },
+      "t5:r1": {
+        "agree_false": 16,
+        "agree_true": 0,
+        "gold_only": 0,
+        "model_only": 0
+      },
+      "t5:r2": {
+        "agree_false": 14,
+        "agree_true": 2,
+        "gold_only": 0,
+        "model_only": 0
+      },
+      "t5:r3": {
+        "agree_false": 8,
+        "agree_true": 2,
+        "gold_only": 6,
+        "model_only": 0
+      },
+      "t5:r4": {
+        "agree_false": 12,
+        "agree_true": 0,
+        "gold_only": 2,
+        "model_only": 2
+      }
+    },
+    "schema_version": 1
+  },
+  "model_calls_made_by_this_stage": 0,
+  "paid_inference": false,
+  "schema_version": 1,
+  "split": "development",
+  "stage": "error-propagation"
+}

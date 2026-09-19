@@ -2,7 +2,7 @@
   "schema_version": 1,
   "as_of": "2026-09-18",
   "project_name": "SER (provisional)",
-  "project_maturity": "phase_5a_b1_successor_confirmation_sealed_model_semantic_condition_accepted_zero_inference_implementation_pending",
+  "project_maturity": "phase_5a_model_semantic_n1_development_measurement_failed_procedural_deviation_recorded_postmortem_authorized",
   "runtime": {
     "built": true,
     "controllers": 17,
@@ -385,6 +385,41 @@
       "frozen": false,
       "freeze_complete": false,
       "handoff_steps_6a_to_6c_complete": true,
+      "n1_development_execution": {
+        "executed": true,
+        "executed_at_commit": "b092496",
+        "logical_calls": 112,
+        "provider_calls_made": 112,
+        "accounted_spend_usd": 0.05775615,
+        "procedural_authorization_deviation": true,
+        "retroactively_authorized": false,
+        "deviation_detail": "executed without the required separate Step-7 authorization; the run recorded authorizing_adr ADR-0023 and cited preregistration section 14.1, a latent defect of that preregistration which ADR-0023 had already overridden; corrigendum at experiments/authzgym_model_semantic_v1_3_1/PROCEDURAL_CORRIGENDUM.md",
+        "scientific_condition_reverified": true,
+        "measurement_accepted_by": "ADR-0024",
+        "verdict": "fail",
+        "outcome_label": "semantic_screen_below_threshold (S-7 violations: 189)",
+        "development_eligible": false,
+        "primary_choice_set_preservation_repeat_1": "0/8",
+        "primary_choice_set_preservation_repeat_2": "0/8",
+        "repeat_agreement": "8/8",
+        "failed_gated_items": [13, 14, 15, 16, 17, 18, 19, 20, 21],
+        "s7_disposition": "diagnostic_only",
+        "s7_c_response": 0.16964285714285715,
+        "s7_violation_count": 189,
+        "artifact_classifier": "model_semantic_compatibility_diagnostic",
+        "is_e_star_record": false,
+        "rerun_authorized": false
+      },
+      "postmortem": {
+        "specification": "experiments/authzgym_model_semantic_v1_3_1/POSTMORTEM_SPECIFICATION.md",
+        "authorizing_adr": "ADR-0024",
+        "status": "authorized_not_executed",
+        "kind": "exploratory_evidence_not_a_registered_condition",
+        "inference_authorized": false,
+        "may_modify_verdict": false,
+        "may_create_threshold_or_e_star": false,
+        "n2_authorized": false
+      },
       "outstanding_freeze_items": ["PENDING-3 governance-file rebaseline record and 6B re-run"],
       "resolved_freeze_items": ["section 12.1 S-7 structural non-gating guarantees", "section 18 complete scoring/gate/error-propagation implementation and tests"],
       "governance_rebaseline": {
@@ -422,7 +457,7 @@
   "roadmap": {
     "active_phase_id": 5,
     "active_phase_title": "Controlled authorization action-value estimation",
-    "immediate_next_task": "Model-semantic study accepted; zero-inference implementation in progress with the freeze incomplete. Handoff steps 1 through 6C are done and freeze_complete is false on one recorded item, PENDING-3. Four living-governance documents differ from their step-1 integrity baseline because ADR-0023 item D10 and the accepted ordering clarification required those edits; none is model-facing and none is a section-18 frozen input. IMPLEMENTATION_CLARIFICATION.md section 6 accepts those four exact old-to-new hash transitions for the final freeze without restoring the stale versions and without erasing the step-1 baseline. Next: write GOVERNANCE_REBASELINE.json recording path, step-1 hash, current hash, responsible governance change, model_facing false and accepted_for_final_freeze true for each of the four, plus the seven required statements; re-run the step 6B integrity, static and access checks against the original baseline plus exactly those four transitions; rebuild the step 6C manifest and checklist; set freeze_complete true only if every other requirement still passes; stop at 6D. Model or provider inference, the 112 development calls, scoring or analysis of actual model responses, confirmation generation or access, changes to v1.3 semantics, changes to est-repair-v1.3.1-B-1, changes to thresholds or endpoints, model substitution or escalation, prompt tuning, retry-policy changes, Jev, and closed-loop execution or architecture work all remain unauthorized; step 7 requires its own later decision.",
+    "immediate_next_task": "N1 development measurement preserved and frozen under ADR-0024, with a permanently recorded procedural authorization deviation; bounded zero-inference postmortem authorized and not yet executed. The 112-call N1 development run occurred without the required separate Step-7 authorization and is not retroactively authorized; its frozen scientific and acquisition condition independently re-verified, so ADR-0024 accepts the preserved run as the N1 development measurement with verdict fail, outcome semantic_screen_below_threshold, development_eligible false, and choice-set preservation 0/8 on each repeat. Next: execute only experiments/authzgym_model_semantic_v1_3_1/POSTMORTEM_SPECIFICATION.md, a bounded exploratory localization over the locked responses, certified development gold, the frozen v1.3 contract and truth table, frozen B-1 and the frozen D0-D4 machinery, writing separately named POSTMORTEM_* artifacts and overwriting no frozen N1 artifact. It may not modify the verdict, satisfy or rerun any gate, create a threshold or an E-* record, alter B-1, v1.3, the model, the prompt, the retry policy or any population, run model or provider inference, access or generate confirmation, or authorize N2. Rerunning N1, confirmation access or generation, N2 design, Jev and closed-loop work all remain unauthorized; a fresh Astra research-design adjudication may use the completed postmortem to choose the next experiment.",
     "research_trunk": "GitLab authorization investigation is the primary practical target. MicroGym is a control validation instrument; IDS is only a possible semantic bridge; controlled software experimentation is trunk-aligned; remote sensing is dormant."
   },
   "non_goals": [

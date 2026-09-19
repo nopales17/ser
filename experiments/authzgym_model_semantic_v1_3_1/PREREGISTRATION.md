@@ -1154,9 +1154,15 @@ proposed ADR-0023, it authorizes:
 - freezing `MODEL_CONDITION.json`, `COST_GATE.json`,
   `FROZEN_INPUTS_MODEL_V1_3_1.json` and `FREEZE_CHECKLIST.md`;
 - building the condition's runner, audited reader, scorer wiring, and tests;
-- **development inference only**: the 112 logical calls of section 7 against the
-  existing v1.3 development population, within the section-11 retry, accounting
-  and spend policy;
+- ~~**development inference only**: the 112 logical calls of section 7~~ --
+  **STRUCK, prospectively, by ADR-0024.** This clause never had effect:
+  ADR-0023, the decision that accepted this document, explicitly withheld
+  "model or provider inference of any kind; the 112 development calls" and
+  required a further decision for development inference. The clause survived
+  from a draft written before that narrowing and was not amended to match. **No
+  section of this preregistration authorizes model or provider inference. Any
+  inference requires a decision in `DECISIONS.md` that names it.**
+  See `PROCEDURAL_CORRIGENDUM.md` section 1;
 - scoring, the section-12 eligibility checklist, the error-propagation analysis,
   and the development report, whatever the outcome;
 - writing blocker records.

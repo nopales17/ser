@@ -909,3 +909,126 @@ a new entry; do not rewrite it.
   integrity baseline or the access-logging validation fires a blocker; or an
   implementation contradiction appears that this decision and the accepted
   preregistration do not resolve.
+
+## ADR-0024 -- Record the `model-semantic-v1.3.1-N1` procedural authorization deviation, accept the preserved development measurement, and authorize a bounded zero-inference failure localization
+
+- Status: accepted
+- Date: 2026-09-19
+- Context: The 112-call `model-semantic-v1.3.1-N1` development execution
+  occurred on 2026-09-19 and produced a complete, locked raw-response set. At
+  execution time `DECISIONS.md` contained no Step-7 inference authorization:
+  ADR-0023's `Not authorized` bullet names "model or provider inference of any
+  kind; the 112 development calls" and states that development inference
+  requires a further decision. The run recorded `authorizing_adr: "ADR-0023"`
+  and cited preregistration section 14.1, which -- as a latent defect of that
+  preregistration, written before ADR-0023 narrowed acceptance to zero-inference
+  work and never amended to match -- lists "development inference only: the 112
+  logical calls" among what acceptance authorizes. `MAP.md` makes the condition
+  directory non-authoritative for authority to run inference, so ADR-0023
+  governs and the execution was not pre-authorized. Independent verification of
+  the scientific condition re-derived every element reported.
+- Decision: Record permanently that the N1 execution occurred, that repository
+  authority did not then contain the required Step-7 authorization, and that the
+  run's reliance on ADR-0023 / preregistration section 14.1 is therefore a
+  **procedural authorization deviation**. The execution is **not** retroactively
+  authorized and must never be described as properly pre-authorized. Because the
+  frozen scientific and acquisition condition re-verifies exactly, accept the
+  preserved run as the N1 development measurement and freeze its result
+  unaltered. Do not rerun N1, do not edit the locked artifacts, and record the
+  incorrect `authorizing_adr` field in an append-only corrigendum instead.
+  Authorize the bounded zero-inference failure localization specified in
+  `experiments/authzgym_model_semantic_v1_3_1/POSTMORTEM_SPECIFICATION.md`, and
+  amend preregistration section 14.1 prospectively so it can no longer be read
+  as authorizing inference.
+- Scientific verification performed before acceptance: execution checkout
+  `b092496` with frozen-manifest integrity passing over 54 inputs; model
+  condition `patchersniper_praneeth/gpt-5.4-nano` constant across all attempts
+  and `MODEL_CONDITION.json` byte-unchanged; the 112-call schedule matching the
+  frozen `DEVELOPMENT_SCHEDULE.json` in exact order; **all 112 request hashes
+  independently re-derived** from the frozen population, prompt and model
+  condition, with repeat-pair request bytes identical for all 56 cases;
+  supervised transport and retry policy honoured -- 112 first attempts, zero
+  retries, zero transport failures, zero client-side retries, all HTTP 200, all
+  `finish_reason: stop`; attempt accounting complete at 112 attempts, 112 spend
+  rows and `$0.05775615` against the `$2.50` ceiling; the raw-response lock
+  written before every scoring artifact and its five recorded file hashes and
+  line counts matching on disk; scorer, gate, harness, sealed-input, contract,
+  serializer and B-1 sources all byte-matching the frozen manifest; zero
+  never-open opens across 2,806 access-ledger records; no confirmation access,
+  no tuning, no rescue, no substitution into a gate, and no threshold change.
+- Frozen result, preserved without alteration: verdict `fail`; outcome
+  `semantic_screen_below_threshold (S-7 violations: 189)`;
+  `development_eligible: false`; primary choice-set preservation **0/8 on repeat
+  1 and 0/8 on repeat 2**, all eight canonical sources failing both; repeat
+  agreement 8/8; failed gated items 13, 14, 15, 16, 17, 18, 19, 20, 21; S-8 fact
+  precision `0.9529` and recall `0.5376` passing; S-9 `0.2315`/`0.2098`; S-10
+  `0.5302`/`0.2460`; S-11 top-1 `0.375`, top-2 `0.5`, regret `0.5583`; S-14
+  `24/80`; S-15 `0.5992`/`0.5970`; S-7 `C_response 0.16964285714285715`,
+  `C_field 0.578125`, 189 violations, `diagnostic_only` and correctly excluded
+  from the gated item set. Confirmation remains unauthorized.
+- Named result artifacts: `development/RAW_RESPONSE_LOCK.json`; locked responses
+  `development/responses.jsonl`
+  (`841427ab8334f3fa7e89a21ae93a8e0ee678824c98fee80048b0294ac0bdd11e`, 112
+  lines); `development/attempts.jsonl`
+  (`47a5a8c3d1bbbc90ae735081621c138b43832041f7339311b25d47210de04d23`);
+  `development/spend_ledger.jsonl`
+  (`4ed23722564bbff99b4668e2fb45e7b4bd02e7879d1ade4fee006186931693b0`);
+  `development/transport_events.jsonl`
+  (`0ecacd8ec8e2996c0705e6dd55e7f2c7a9adbd65c16ad53c81a3e5fc7c8b6582`);
+  `DEVELOPMENT_ACCESS_LEDGER.jsonl`
+  (`2851515bf6fe6f6b1979e4657f3c6a47ff4fb3accf4545d33f3ff5a3c4741173`); plus
+  `DEVELOPMENT_SCORE.json`, `ELIGIBILITY.json`, `ERROR_PROPAGATION.json`,
+  `DEVELOPMENT_REPORT.json` and `DEVELOPMENT_REPORT.md`, each hashed in the
+  corrigendum record. Committing these preserved artifacts as repository state
+  is authorized.
+- Authorized next work: only the bounded, zero-inference postmortem of
+  `POSTMORTEM_SPECIFICATION.md` over the locked N1 responses, the certified
+  development gold semantics, the frozen v1.3 contract and truth table, frozen
+  B-1, and the existing frozen D0--D4 and section-8/10/12 diagnostic machinery.
+  It is **exploratory evidence, not a new registered experimental condition**.
+  It may not modify N1's verdict, satisfy or rerun any gate, create a threshold,
+  create an `E-*` record, alter B-1, v1.3, the model, the prompt, the retry
+  policy or any population, run model or provider inference, access or generate
+  confirmation, or authorize N2. Choosing or designing N2 is expressly not part
+  of this decision; a fresh Astra research-design adjudication may use the
+  completed postmortem to do that.
+- Why: A measurement's scientific validity and its procedural authorization are
+  different properties, and conflating them would damage the record either way.
+  Discarding a run whose every frozen element re-verifies would destroy real
+  evidence to punish a paperwork failure; silently accepting it would teach that
+  an authorization boundary is advisory. Recording the deviation permanently,
+  refusing retroactive authorization, and accepting the measurement on its
+  independently verified merits keeps both facts true at once. Freezing the
+  result before any localization begins is what keeps the postmortem
+  exploratory: the verdict cannot be revised by what the analysis finds, so the
+  analysis cannot become a rescue. Amending preregistration section 14.1 removes
+  the defect that made the deviation foreseeable.
+- Alternatives rejected: describing the execution as retroactively authorized,
+  or as covered by preregistration section 14.1; treating ADR-0023 as having
+  authorized Step 7; discarding or rerunning the N1 measurement; editing the
+  locked artifacts to correct their `authorizing_adr` field in place; revising
+  the verdict, the outcome label, `development_eligible`, the 0/8 primary
+  results or any gate result; reinterpreting a failed gate after seeing the
+  numbers; letting the postmortem satisfy, rerun or relax any gate, or create a
+  new threshold or an `E-*` record; repairing measured responses or feeding a
+  substituted state into a gate; treating the D0--D4 serialization defect as
+  changing the registered verdict; using the postmortem to choose or design N2
+  inside this decision; authorizing confirmation access or generation; and any
+  model or provider inference.
+- Consequences: N1 is a preserved development measurement carrying a recorded
+  procedural authorization deviation. Its classifier remains
+  `model_semantic_compatibility_diagnostic`; it is not an `E-*` record and
+  promotes no concept. `PROCEDURAL_CORRIGENDUM.md` records the incorrect
+  `authorizing_adr` value, why it is incorrect, this decision's later acceptance
+  of the measurement, and that such acceptance does not convert the execution
+  into a properly pre-authorized run; it also records that "Model or provider
+  calls made by this stage: 0" in the development report refers to the
+  scoring/reporting stage, while N1 acquisition made 112/112 calls. The existing
+  `ERROR_PROPAGATION.json` stays byte-unchanged and its D0--D4 serialization
+  defect is recorded and re-derived in a separately named postmortem artifact.
+  Phase 5 remains active and Phase 5B remains blocked. Confirmation, N2 and
+  closed-loop work remain unauthorized.
+- Revisit when: The bounded postmortem completes and is frozen, at which point a
+  fresh Astra research-design adjudication may choose the next experiment; or
+  the postmortem surfaces a contradiction that neither this decision nor the
+  accepted preregistration resolves.
