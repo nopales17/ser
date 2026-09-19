@@ -6,44 +6,10 @@
   "cost_gate_file_sha256": "04f690a4759aa9906351917c708e8813cd387db8d91b7e522714f43c3f140e0e",
   "development_planned_calls": 112,
   "dirty_status": {
-    "outside_condition_owned_paths": [
-      " M MAP.md",
-      " M plan/ROADMAP.md",
-      " M state/CONTEXT_PACKET.md",
-      " M state/STATUS.yaml"
-    ],
+    "outside_condition_owned_paths": [],
     "porcelain_entries": [
-      " M MAP.md",
-      " M experiments/authzgym_model_semantic_v1_3_1/IMPLEMENTATION_HANDOFF.md",
-      " M plan/ROADMAP.md",
-      " M state/CONTEXT_PACKET.md",
-      " M state/STATUS.yaml",
-      "?? experiments/authzgym_model_semantic_v1_3_1/ACCESS_LEDGER.jsonl",
-      "?? experiments/authzgym_model_semantic_v1_3_1/COST_GATE.json",
-      "?? experiments/authzgym_model_semantic_v1_3_1/DEVELOPMENT_ACCESS_LEDGER.jsonl",
-      "?? experiments/authzgym_model_semantic_v1_3_1/FREEZE_CHECKLIST.md",
-      "?? experiments/authzgym_model_semantic_v1_3_1/FROZEN_INPUTS_MODEL_V1_3_1.json",
-      "?? experiments/authzgym_model_semantic_v1_3_1/GOLD_ADEQUACY_DEVELOPMENT.json",
-      "?? experiments/authzgym_model_semantic_v1_3_1/GOVERNANCE_REBASELINE.json",
-      "?? experiments/authzgym_model_semantic_v1_3_1/IMPLEMENTATION_CLARIFICATION.md",
-      "?? experiments/authzgym_model_semantic_v1_3_1/INTEGRITY_BASELINE.json",
-      "?? experiments/authzgym_model_semantic_v1_3_1/MODEL_CATALOG_SNAPSHOT.json",
-      "?? experiments/authzgym_model_semantic_v1_3_1/MODEL_CONDITION.json",
-      "?? experiments/authzgym_model_semantic_v1_3_1/MODEL_CONDITION_TRANSPORT_EVENTS.jsonl",
-      "?? experiments/authzgym_model_semantic_v1_3_1/MODEL_CONDITION_VERIFICATION.json",
-      "?? experiments/authzgym_model_semantic_v1_3_1/RESTATED_HASHES.json",
-      "?? src/ser/authzgym/semantic_contract_v1_3.py",
-      "?? src/ser/authzgym/supervised_transport_v1_3.py",
-      "?? src/ser/evaluation/authz_model_semantic_v1_3_1.py",
-      "?? tests/test_model_semantic_v1_3_1_choice_sets.py",
-      "?? tests/test_model_semantic_v1_3_1_client.py",
-      "?? tests/test_model_semantic_v1_3_1_error_classes.py",
-      "?? tests/test_model_semantic_v1_3_1_gates.py",
-      "?? tests/test_model_semantic_v1_3_1_reader.py",
-      "?? tests/test_model_semantic_v1_3_1_retry.py",
-      "?? tools/run_authzgym_model_semantic_development.py",
-      "?? tools/score_authzgym_model_semantic.py",
-      "?? tools/verify_authzgym_model_condition.py"
+      " M experiments/authzgym_model_semantic_v1_3_1/ACCESS_LEDGER.jsonl",
+      " M experiments/authzgym_model_semantic_v1_3_1/FREEZE_CHECKLIST.md"
     ]
   },
   "file_count": 54,
@@ -109,7 +75,7 @@
     "experiments/authzgym_estimator_repair_v1_3_1/DEVELOPMENT_REPORT.md": "f0629d3b78ba35258cc6d439e4b731c3682b76fa08e4155efbdad7cd0df18638",
     "experiments/authzgym_model_semantic_v1_3_1/ADR_0023.md": "965c093c3ef35ad0a3c476e8e33efa1f5a391f99bea98d00523abc5bc330566e",
     "experiments/authzgym_model_semantic_v1_3_1/COST_GATE.json": "04f690a4759aa9906351917c708e8813cd387db8d91b7e522714f43c3f140e0e",
-    "experiments/authzgym_model_semantic_v1_3_1/FREEZE_CHECKLIST.md": "de0a99068d4a7c7be383d0904e232a4bcd0904d105cded52513c7e3835cd2bec",
+    "experiments/authzgym_model_semantic_v1_3_1/FREEZE_CHECKLIST.md": "bf7ae87a96b0d83f49ead6f6c1e57cb641772121360d65d59af4159a13767415",
     "experiments/authzgym_model_semantic_v1_3_1/GOLD_ADEQUACY_DEVELOPMENT.json": "371bc7815d8b2e8f8274f62da75d0a85d01264671055bc09ebd8d572823e4ff8",
     "experiments/authzgym_model_semantic_v1_3_1/GOVERNANCE_REBASELINE.json": "d3441bf6b6ffb20b89145bfefd46faf9ed5fa926a52acf2506deb08c22a36057",
     "experiments/authzgym_model_semantic_v1_3_1/IMPLEMENTATION_CLARIFICATION.md": "c34d03e137dce168daae9f2da1e793bbd0657bc35f6467c1728cdf742d684819",
@@ -158,7 +124,7 @@
     "tools/score_authzgym_model_semantic.py": "b1834355f379544faadf1881ff18f5cf3b165c4365779838b8a480c3f4c76e59",
     "tools/verify_authzgym_model_condition.py": "352dac4d572b70d0d48bbf78761576a5999e2dc477f3878d5726f39ccfe85200"
   },
-  "freeze_checklist_file_sha256": "de0a99068d4a7c7be383d0904e232a4bcd0904d105cded52513c7e3835cd2bec",
+  "freeze_checklist_file_sha256": "bf7ae87a96b0d83f49ead6f6c1e57cb641772121360d65d59af4159a13767415",
   "freeze_complete": true,
   "gold_adequacy_file_sha256": "371bc7815d8b2e8f8274f62da75d0a85d01264671055bc09ebd8d572823e4ff8",
   "governance_items": [
@@ -344,7 +310,7 @@
   "inference_authorized": false,
   "integrity_baseline_file_sha256": "77fc3920ecc4df47abd63bf3ce56fc520c2f0d5b12af7fd31a0b508a3c9d6c32",
   "integrity_baseline_preserved_unchanged": true,
-  "manifest_sha256": "2b6d37c03bee5ac811d3e2f3e18d782f991c32591a923d2aa44f7f1fb634095f",
+  "manifest_sha256": "f2a68728c8742c2a03e685487a07aebcf77fba791008a31c5df7d9116b67a2b6",
   "model_condition_file_sha256": "ce914ab3033819611343ec33b284d43d1643dfa9d354fa9bf28e8e5e3158394e",
   "outstanding_items": [],
   "protected_file_recheck": {
@@ -463,7 +429,7 @@
     "stat_only_count": 30
   },
   "provider_calls_authorized": 0,
-  "repository_commit": "6b0de4b1abea87d5bc8e18b87ef9f697ff2a3c24",
+  "repository_commit": "9beded780b5d3c83b7c60f9f70c3860953164dba",
   "restated_hashes_file_sha256": "591fd0114c2c9a377565ecab79153b846b3f9975422217cf9d63dbe86b53d20d",
   "schema_version": 1,
   "section_12_1_machine_probe": {

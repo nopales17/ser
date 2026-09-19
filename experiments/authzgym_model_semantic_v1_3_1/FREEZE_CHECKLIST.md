@@ -7,9 +7,9 @@ inference.
 
 - Condition: `model-semantic-v1.3.1-N1`
 - Authority: ADR-0023
-- Repository commit: `6b0de4b1abea87d5bc8e18b87ef9f697ff2a3c24`
+- Repository commit: `9beded780b5d3c83b7c60f9f70c3860953164dba`
 - Date: 2026-09-19
-- Reviewer: implementation_agent (review required by Sol/Astra before any development call; signature pending_separate_step_7_authorization)
+- Reviewer: senior_reasoning_agent (review required by Sol/Astra before any development call; signature pending_separate_step_7_authorization)
 - Freeze complete: `true`
 - Model or provider calls made: 0
 
@@ -18,7 +18,7 @@ inference.
 | 1 | step 1 integrity baseline and hash restatement | `pass` | {"accepted_governance_transitions_matched": ["MAP.md", "plan/ROADMAP.md", "state/CONTEXT_PACKET.md", "state/STATUS.yaml"], "baseline_clean_except_condition_directory": true, "clean_except_condition_directory": true, "governance_rebaseline": {"accepted_paths": ["MAP.md", "plan/ROADMAP.md", "state/CONTEXT_PACKET.md", "state/STATUS.yaml"], "accepted_transition_count": 4, "additional_transitions_ac... |
 | 2 | step 2 model-condition verification (zero inference) | `pass` | {"catalog_snapshot_file_sha256": "f3ca49bf1d16c3c9891bbdbe7c69ec8146bcfc6ab29474f72002207b143960e6", "chat_completions_submissions": 0, "immutable_revision": "unavailable_without_inference", "paid_inference": false, "route_model_entry_count": 1, "route_model_identifier": "patchersniper_praneeth/gpt-5.4-nano"} |
 | 3 | step 2 cost gate under section 9.5 | `pass` | {"hard_spend_ceiling_usd": 2.5, "max_submissions": 336, "projected_worst_case_usd": 0.69888, "verified_pricing": {"cached_input": 0.02, "input": 0.2, "output": 1.25}} |
-| 4 | step 3 audited reader and access ledger | `pass` | {"ledger": {"ledger_file_sha256": "a049f33b8180e5122629f83d462849a7d0acaf93e849d9ec6e9ed68a5c0421af", "ledger_path": "experiments/authzgym_model_semantic_v1_3_1/ACCESS_LEDGER.jsonl", "malformed_record_indices": [], "missing_tool_sha256_indices": [], "never_open_open_count": 0, "never_open_open_paths": [], "passes": true, "record_count": 2451, "retrospective_disclosure_count": 1, "retrospective_... |
+| 4 | step 3 audited reader and access ledger | `pass` | {"ledger": {"ledger_file_sha256": "7d5bbfe1dfbde8c93ef44867383e7f61af96d59210d477c7a58b56dc1db80ee3", "ledger_path": "experiments/authzgym_model_semantic_v1_3_1/ACCESS_LEDGER.jsonl", "malformed_record_indices": [], "missing_tool_sha256_indices": [], "never_open_open_count": 0, "never_open_open_paths": [], "passes": true, "record_count": 2514, "retrospective_disclosure_count": 1, "retrospective_... |
 | 5 | step 4 client and retry state machine | `pass` | {"client_and_retry_tests": {"errors": 0, "failures": 0, "modules": ["tests.test_model_semantic_v1_3_1_client", "tests.test_model_semantic_v1_3_1_retry"], "status": "pass", "tests_run": 20}} |
 | 6 | step 5 gold adequacy (S-3) on development | `pass` | {"canonical_gold_aggregate": {"case_count": 8, "discriminating_case_count": 8, "illegal_target_count": 0, "mean_normalized_regret": 0.11666666666666665, "nondiscriminating_case_count": 0, "top1": 0.75, "top2": 1.0}, "degenerate_gold_choice_set_sources": [], "gold_adequacy_file_sha256": "371bc7815d8b2e8f8274f62da75d0a85d01264671055bc09ebd8d572823e4ff8", "recorded_figure_reproduction": {"authorit... |
 | 7 | section 18 inherited-input and artifact references present by hash | `pass` | {"missing": [], "referenced_file_count": 53} |
